@@ -1,0 +1,25 @@
+{
+  "Meta": {
+    "siteName": "Nasim Home Care",
+    "titleTemplate": "%s | Nasim Home Care Dubai",
+    "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, a one-hour arrival slot and a photo report in WhatsApp."
+  },
+  "Pages": {
+    "home": { "title": "AC cleaning and upholstery care in Dubai" },
+    "services": { "title": "Services" },
+    "serviceDetail": { "title": "Service" },
+    "pricing": { "title": "Prices" },
+    "annualContracts": { "title": "Annual maintenance contracts" },
+    "areas": { "title": "Areas we serve" },
+    "areaDetail": { "title": "Area" },
+    "about": { "title": "About us" },
+    "contact": { "title": "Contact us" },
+    "privacy": { "title": "Privacy policy" },
+    "terms": { "title": "Terms of service" },
+    "thankYou": { "title": "Thank you! We'll be in touch soon." }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "backHome": "Back to home"
+  }
+}

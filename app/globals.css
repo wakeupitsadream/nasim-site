@@ -101,7 +101,7 @@
     -webkit-font-smoothing: antialiased;
   }
   body {
-    @apply bg-background text-foreground text-body;
+    @apply bg-background text-body text-foreground;
     line-height: var(--nasim-leading-body);
   }
   h1,
