@@ -6,10 +6,10 @@ import { alternatesFor } from '@/lib/seo';
 /** Phase 0 placeholder page: a translated heading. Real sections arrive in phase 3. */
 export function PageStub({ title, children }: { title: string; children?: ReactNode }) {
   return (
-    <main className="mx-auto w-full max-w-page px-gutter py-16 lg:px-gutter-lg">
+    <div className="mx-auto w-full max-w-page px-gutter py-16 lg:px-gutter-lg">
       <h1 className="text-h1 text-primary">{title}</h1>
       {children}
-    </main>
+    </div>
   );
 }
 

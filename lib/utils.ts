@@ -12,7 +12,7 @@ export const cn = createCn({
       container: ['page'],
     },
     classGroups: {
-      'font-size': [{ text: ['small', 'body', 'lead', 'h1', 'h2', 'h3'] }],
+      'font-size': [{ text: ['small', 'body', 'lead', 'logo', 'h1', 'h2', 'h3'] }],
       shadow: [{ shadow: ['card', 'float'] }],
     },
   },
