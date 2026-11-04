@@ -23,7 +23,7 @@ type Item = {
  * Mobile-only bottom bar: WhatsApp (message) + Call (plain tel:), plus Telegram on /ru when the
  * owner enables it. WhatsApp is never «call» — WhatsApp calls are blocked in the UAE (rule 16).
  */
-export async function StickyBar() {
+export async function StickyBar({ preview }: { preview?: { telegram: boolean } } = {}) {
   const locale = await getLocale();
   const [t, tBar, tCommon, settings] = await Promise.all([
     getTranslations('Cta'),
@@ -40,7 +40,7 @@ export async function StickyBar() {
       icon: <WhatsAppIcon />,
       label: t('whatsappShort'),
     },
-    ...(showTelegramCta(locale, settings)
+    ...((preview ? preview.telegram : showTelegramCta(locale, settings))
       ? [
           {
             key: 'telegram',
@@ -60,26 +60,42 @@ export async function StickyBar() {
     },
   ];
 
+  const list = (
+    <ul className="mx-auto flex max-w-page gap-2">
+      {items.map((item) => (
+        <li key={item.key} className="min-w-0 flex-1">
+          <CtaLink
+            target={item.target}
+            newTabHint={tCommon('opensInNewTab')}
+            variant={item.variant}
+            className="h-12 w-full flex-col gap-0.5 px-2 text-small"
+          >
+            {item.icon}
+            <span className="max-w-full truncate">{item.label}</span>
+          </CtaLink>
+        </li>
+      ))}
+    </ul>
+  );
+
+  // UI kit preview: same buttons in place, not fixed, not a second landmark with the same name.
+  if (preview) {
+    return (
+      <div
+        data-testid="sticky-bar-preview"
+        className="w-full max-w-sm rounded-xl border bg-background p-2"
+      >
+        {list}
+      </div>
+    );
+  }
+
   return (
     <nav
       aria-label={tBar('label')}
       className="fixed inset-x-0 bottom-0 z-40 border-t bg-background/95 px-gutter pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] shadow-float backdrop-blur md:hidden"
     >
-      <ul className="mx-auto flex max-w-page gap-2">
-        {items.map((item) => (
-          <li key={item.key} className="min-w-0 flex-1">
-            <CtaLink
-              target={item.target}
-              newTabHint={tCommon('opensInNewTab')}
-              variant={item.variant}
-              className="h-12 w-full flex-col gap-0.5 px-2 text-small"
-            >
-              {item.icon}
-              <span className="max-w-full truncate">{item.label}</span>
-            </CtaLink>
-          </li>
-        ))}
-      </ul>
+      {list}
     </nav>
   );
 }

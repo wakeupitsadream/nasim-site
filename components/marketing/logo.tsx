@@ -40,16 +40,23 @@ export async function Logo({ brandName, className }: { brandName: Localized; cla
   const [first = '', ...rest] = brandName.text.split(' ');
   const latin = /^[A-Za-z]/.test(first);
 
+  // Stretched link: the link holds only the mark and the name (aria-label), its ::after covers the
+  // whole logo. The visible wordmark («Nasım» with a breeze dot) stays outside the link, so the
+  // accessible name never has to match the stylised letters (WCAG 2.5.3, axe label-content-name-mismatch).
   return (
-    <Link
-      href="/"
-      aria-label={t('homeLabel', { brand: brandName.text })}
+    <div
       className={cn(
-        'inline-flex min-h-tap shrink-0 items-center gap-2 rounded-lg text-primary outline-none focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+        'relative inline-flex min-h-tap w-fit shrink-0 items-center gap-2 text-primary',
         className,
       )}
     >
-      <BreezeMark className="size-8 shrink-0" />
+      <Link
+        href="/"
+        aria-label={t('homeLabel', { brand: brandName.text })}
+        className="rounded-lg outline-none after:absolute after:inset-0 after:rounded-lg after:content-[''] focus-visible:after:ring-3 focus-visible:after:ring-ring focus-visible:after:ring-offset-2 focus-visible:after:ring-offset-background"
+      >
+        <BreezeMark className="size-8 shrink-0" />
+      </Link>
       <span aria-hidden="true" lang={brandName.lang} className="flex items-baseline gap-1.5">
         <span className="text-logo leading-none font-semibold">
           <FirstWord word={first} latin={latin} />
@@ -60,6 +67,6 @@ export async function Logo({ brandName, className }: { brandName: Localized; cla
           </span>
         ) : null}
       </span>
-    </Link>
+    </div>
   );
 }

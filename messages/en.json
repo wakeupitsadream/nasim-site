@@ -137,6 +137,7 @@
       "forms": "Form fields",
       "phone": "Phone input",
       "feedback": "Skeleton and toast",
+      "stickyBar": "Mobile contact bar (with Telegram, as on /ru when enabled)",
       "sheet": "Sheet",
       "breadcrumbs": "Breadcrumbs",
       "numbers": "Numbers, prices, emails, URLs",

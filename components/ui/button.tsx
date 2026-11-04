@@ -23,7 +23,7 @@ const buttonVariants = cva(
         whatsapp: "bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp-hover",
         telegram: "bg-telegram text-telegram-foreground hover:bg-telegram-hover",
         destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:ring-destructive/40",
+          "bg-danger-soft text-danger-ink hover:bg-[color-mix(in_oklch,var(--color-danger-soft),var(--color-danger-ink)_10%)] focus-visible:ring-danger-ink",
         link: "text-primary underline underline-offset-4 hover:no-underline",
       },
       size: {

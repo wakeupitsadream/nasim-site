@@ -16,7 +16,7 @@ const badgeVariants = cva(
         highlight: "bg-highlight-soft text-primary",
         success: "bg-success-soft text-success-ink",
         warning: "bg-warning-soft text-warning-ink",
-        destructive: "bg-destructive/10 text-destructive",
+        destructive: "bg-danger-soft text-danger-ink",
         chip: "bg-surface-2 text-foreground hover:bg-accent aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground aria-pressed:bg-primary aria-pressed:text-primary-foreground",
       },
       size: {

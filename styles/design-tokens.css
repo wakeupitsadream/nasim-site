@@ -34,6 +34,7 @@
   --nasim-warning-ink: #7c3d05; /* текст на warning-soft: контраст ≥ 7:1 */
   --nasim-danger: #c2410c;
   --nasim-danger-soft: #fbe7df;
+  --nasim-danger-ink: #9a3412; /* текст на danger-soft / destructive/10: #c2410c даёт 4.47:1 */
   --nasim-success: #15803d;
   --nasim-success-soft: #dcf5e3;
   --nasim-success-ink: #14532d; /* текст на success-soft: #15803d даёт только 4.4:1 */
@@ -81,6 +82,7 @@ html[lang='ar'] {
   --color-warning-soft: var(--nasim-warning-soft);
   --color-warning-ink: var(--nasim-warning-ink);
   --color-danger-soft: var(--nasim-danger-soft);
+  --color-danger-ink: var(--nasim-danger-ink);
   --color-success: var(--nasim-success);
   --color-success-soft: var(--nasim-success-soft);
   --color-success-ink: var(--nasim-success-ink);

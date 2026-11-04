@@ -10,6 +10,7 @@ import { TelegramIcon, WhatsAppIcon } from '@/components/icons/brand';
 import { LocalizedText } from '@/components/localized-text';
 import { Ltr } from '@/components/ltr';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { StickyBar } from '@/components/marketing/sticky-bar';
 import {
   Accordion,
   AccordionContent,
@@ -285,6 +286,10 @@ export default async function DevUiPage() {
         <div>
           <ToastDemo label={t('samples.toastButton')} message={t('samples.toastMessage')} />
         </div>
+      </Section>
+
+      <Section id="sticky-bar" title={t('sections.stickyBar')}>
+        <StickyBar preview={{ telegram: true }} />
       </Section>
 
       <Section id="sheet" title={t('sections.sheet')}>
