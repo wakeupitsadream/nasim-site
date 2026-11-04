@@ -1,0 +1,8 @@
+# Postinstall-скрипты этих пакетов не нужны: бинарники приходят через optionalDependencies,
+# а оптимизацию картинок на Vercel делает платформа, не локальный sharp.
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@swc/core'
+  - esbuild
+  - sharp
+  - unrs-resolver
