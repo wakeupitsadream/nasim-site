@@ -21,12 +21,20 @@ export const RULES = [
   ['left-/right-', String.raw`(?:left|right)-`, 'inset-s-/inset-e-'],
   ['start-/end- (deprecated)', String.raw`(?:start|end)-`, 'inset-s-/inset-e-'],
   ['text-left/right', String.raw`text-(?:left|right)\b`, 'text-start/text-end'],
-  ['rounded-l/r/tl/tr/bl/br', String.raw`rounded-(?:[lr]|tl|tr|bl|br)\b`, 'rounded-s/e/ss/se/es/ee'],
+  [
+    'rounded-l/r/tl/tr/bl/br',
+    String.raw`rounded-(?:[lr]|tl|tr|bl|br)\b`,
+    'rounded-s/e/ss/se/es/ee',
+  ],
   ['border-l/r', String.raw`border-[lr]\b(?:-|(?=[\s"'\`]))`, 'border-s/border-e'],
   ['scroll-ml/mr/pl/pr', String.raw`scroll-[mp][lr]-`, 'scroll-ms/me/ps/pe'],
   ['float-left/right', String.raw`float-(?:left|right)\b`, 'float-start/float-end'],
   ['clear-left/right', String.raw`clear-(?:left|right)\b`, 'clear-start/clear-end'],
-  ['bg-linear-to-l/r', String.raw`bg-(?:linear-)?(?:gradient-)?to-[lr]\b`, 'an rtl: counterpart or a logical layout'],
+  [
+    'bg-linear-to-l/r',
+    String.raw`bg-(?:linear-)?(?:gradient-)?to-[lr]\b`,
+    'an rtl: counterpart or a logical layout',
+  ],
   ['dark: variant (no dark theme, rule 13)', String.raw`dark:`, 'delete the class'],
 ].map(([name, pattern, fix]) => ({ name, fix, re: new RegExp(PREFIX + pattern, 'g') }));
 

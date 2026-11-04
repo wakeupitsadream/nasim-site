@@ -1,9 +1,7 @@
 import { describe, expect, it } from 'vitest';
-// @ts-expect-error — plain .mjs script without type declarations
 import { checkSource } from '../../scripts/check-logical-css.mjs';
 
-const rulesFor = (source: string) =>
-  (checkSource(source) as { rule: string }[]).map((p) => p.rule);
+const rulesFor = (source: string) => (checkSource(source) as { rule: string }[]).map((p) => p.rule);
 
 describe('check-logical-css', () => {
   it.each([

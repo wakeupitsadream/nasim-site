@@ -5,21 +5,52 @@
     "description": "تنظيف وصيانة المكيفات وتنظيف المفروشات في دبي. السعر ثابت قبل الزيارة، والفني يصل في الموعد المحدد خلال ساعة، وتقرير بالصور عبر واتساب."
   },
   "Pages": {
-    "home": { "title": "تنظيف المكيفات والمفروشات في دبي" },
-    "services": { "title": "الخدمات" },
-    "serviceDetail": { "title": "الخدمة" },
-    "pricing": { "title": "الأسعار" },
-    "annualContracts": { "title": "عقود الصيانة السنوية" },
-    "areas": { "title": "المناطق التي نخدمها" },
-    "areaDetail": { "title": "المنطقة" },
-    "about": { "title": "من نحن" },
-    "contact": { "title": "اتصل بنا" },
-    "privacy": { "title": "سياسة الخصوصية" },
-    "terms": { "title": "شروط الخدمة" },
-    "thankYou": { "title": "شكراً لك! سنتواصل معك قريباً." }
+    "home": {
+      "title": "تنظيف المكيفات والمفروشات في دبي"
+    },
+    "services": {
+      "title": "الخدمات"
+    },
+    "serviceDetail": {
+      "title": "الخدمة"
+    },
+    "pricing": {
+      "title": "الأسعار"
+    },
+    "annualContracts": {
+      "title": "عقود الصيانة السنوية"
+    },
+    "areas": {
+      "title": "المناطق التي نخدمها"
+    },
+    "areaDetail": {
+      "title": "المنطقة"
+    },
+    "about": {
+      "title": "من نحن"
+    },
+    "contact": {
+      "title": "اتصل بنا"
+    },
+    "privacy": {
+      "title": "سياسة الخصوصية"
+    },
+    "terms": {
+      "title": "شروط الخدمة"
+    },
+    "thankYou": {
+      "title": "شكراً لك! سنتواصل معك قريباً."
+    }
   },
   "NotFound": {
     "title": "الصفحة غير موجودة",
     "backHome": "العودة إلى الصفحة الرئيسية"
+  },
+  "Common": {
+    "skipToContent": "انتقل إلى المحتوى الرئيسي",
+    "close": "إغلاق",
+    "breadcrumbLabel": "مسار التنقل",
+    "notifications": "الإشعارات",
+    "opensInNewTab": "(يفتح في علامة تبويب جديدة)"
   }
 }
