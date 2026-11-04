@@ -26,14 +26,17 @@
   --nasim-whatsapp: #25d366;
   --nasim-whatsapp-hover: #1ebe5b;
   --nasim-telegram: #2aabee;
+  --nasim-telegram-hover: #229ed9;
 
   /* Цвет — статусы */
   --nasim-warning: #d97706;
   --nasim-warning-soft: #fdf1dd;
+  --nasim-warning-ink: #7c3d05; /* текст на warning-soft: контраст ≥ 7:1 */
   --nasim-danger: #c2410c;
   --nasim-danger-soft: #fbe7df;
   --nasim-success: #15803d;
   --nasim-success-soft: #dcf5e3;
+  --nasim-success-ink: #14532d; /* текст на success-soft: #15803d даёт только 4.4:1 */
 
   /* Типографика: шрифты подставляет next/font (--font-plex, --font-plex-arabic) */
   --nasim-font: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
@@ -50,6 +53,7 @@
   --nasim-gutter-lg: 32px;
   --nasim-tap-min: 44px; /* минимальная высота интерактивных элементов */
   --nasim-sticky-bar-h: 64px; /* липкая мобильная панель WhatsApp/Call */
+  --nasim-header-h: 64px; /* липкая шапка; scroll-padding-top для якорей */
 }
 
 html[lang='ar'] {
@@ -69,11 +73,17 @@ html[lang='ar'] {
   --color-whatsapp: var(--nasim-whatsapp);
   --color-whatsapp-hover: var(--nasim-whatsapp-hover);
   --color-telegram: var(--nasim-telegram);
+  --color-telegram-hover: var(--nasim-telegram-hover);
+  /* Белый на #25D366 / #2AABEE ≈ 2:1 и не проходит WCAG — на кнопках каналов тёмный текст */
+  --color-whatsapp-foreground: var(--nasim-ink);
+  --color-telegram-foreground: var(--nasim-ink);
   --color-warning: var(--nasim-warning);
   --color-warning-soft: var(--nasim-warning-soft);
+  --color-warning-ink: var(--nasim-warning-ink);
   --color-danger-soft: var(--nasim-danger-soft);
   --color-success: var(--nasim-success);
   --color-success-soft: var(--nasim-success-soft);
+  --color-success-ink: var(--nasim-success-ink);
 
   --font-sans: var(--nasim-font);
   --font-heading: var(--nasim-font);
@@ -92,6 +102,8 @@ html[lang='ar'] {
   --spacing-gutter: var(--nasim-gutter);
   --spacing-gutter-lg: var(--nasim-gutter-lg);
   --spacing-tap: var(--nasim-tap-min);
+  --spacing-sticky-bar: var(--nasim-sticky-bar-h);
+  --spacing-header: var(--nasim-header-h);
 }
 
 /* Служебные */

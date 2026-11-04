@@ -8,7 +8,7 @@ import { createCn } from 'cn/config';
 export const cn = createCn({
   extend: {
     theme: {
-      spacing: ['tap', 'gutter', 'gutter-lg', 'sticky-bar'],
+      spacing: ['tap', 'gutter', 'gutter-lg', 'sticky-bar', 'header'],
       container: ['page'],
     },
     classGroups: {
