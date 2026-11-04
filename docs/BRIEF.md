@@ -32,19 +32,19 @@
 ## 2. Проверенные факты (поиск 04.11.2026)
 
 1. **Next.js** стабильная — 16.4.5 (03.11.2026). Берём 16.x, App Router.
-2. **Vercel Hobby** — только некоммерческое использование по fair use policy; сайт компании = Pro ($20/мес за место). Регион функций: у Vercel есть `dxb1` (Дубай), но БД там нет, поэтому функции и БД колокируем во Франкфурте (см. §13).
+2. **Vercel Hobby** — только некоммерческое использование по fair use policy; сайт компании = Pro ($20/мес, одно деплой-место включено; Pro-команда Максима, Миша — в роли Billing со своей картой ОАЭ, см. `docs/INFRASTRUCTURE.md`). Регион функций: `dxb1` (Дубай) недоступен для Functions с марта 2026 (после аварии AWS me-central-1; в документации регионов его нет, дашборд пишет «under maintenance»), и БД там нет — функции и БД колокируем во Франкфурте: Vercel `fra1` = AWS eu-central-1 = Neon `aws-eu-central-1` (см. §13). Статику отдаёт CDN; по сообщениям сообщества, трафик из Персидского залива сейчас обслуживается через bom1 (Мумбаи) — официально не подтверждено.
 3. **Neon** регионы: Франкфурт `aws-eu-central-1`, Сингапур `aws-ap-southeast-1`. Ближе к Дубаю Ближнего Востока нет.
 4. **Рынок Дубая** (сайты конкурентов и блоги, не первичные данные): стандартная чистка сплита 150–350 AED/блок; глубокая чистка 250–600 AED/блок; пакет на квартиру 3–4 блока 350–600 AED; годовой контракт на 4–6 блоков 800–2 000 AED, виллы 1 500–4 000 AED; заправка фреона 200–400 AED; поиск и устранение утечки с азотной опрессовкой 600–1 200 AED; диван 40–70 AED за место или 150–350 AED за 2–3-местный; ковёр ~20 AED/м²; пакет «вся мягкая мебель в 1BHK» ~500 AED. Дешёвые офферы 29–49 AED обычно не включают радиатор и дренаж — это аргумент для позиционирования «честная цена заранее».
 5. **Dubai Municipality**: чистка воздуховодов и чистка резервуаров воды требуют отдельных разрешений DM сверх trade license. Подтверждает слова Миши: воздуховоды — через партнёра, резервуары — с июля 2027.
 6. **UAE PDPL** (Federal Decree-Law 45/2021): нужна privacy policy, отдельное согласие на маркетинг, согласие на аналитические cookies без cookie-wall. Статус исполнительных регламентов в источниках противоречив — делаем консервативно: баннер согласия только если включаем GA4/Meta Pixel; Vercel Analytics без cookies согласия не требует.
-7. **next-intl v4** + App Router: `app/[locale]/`, `routing.ts` + `navigation.ts`, middleware, `dir="rtl"` на `<html>` для AR, арабский шрифт через `next/font` только в AR-локали, hreflang через `metadata.alternates.languages`.
-8. **Домены** (проверено через Vercel API, .com): свободны `nasimcare.com`, `nasimdubai.com`, `getnasim.com`, `baridcare.com`, `coolnestdubai.com`, `breezecaredubai.com`, `aircaredubai.com`, `coolhands.co`, `nasim.services`. Заняты: `nasimhome.com`, `hawacare.com`, `coilcare.com`, `freshcoil.com`, `sahabcare.com`, `airnest.co`. Зону `.ae` Vercel не продаёт — проверять у регистратора ОАЭ (GoDaddy UAE, AEserver).
+7. **next-intl v4** + App Router: `app/[locale]/` как корневой layout (без `app/layout.tsx`), `lib/i18n/{routing,navigation,request}.ts`, локаль из `next/root-params` (Next ≥16.3; `setRequestLocale` устарел с next-intl 4.13.5), `proxy.ts` (в Next 16 `middleware.ts` устарел), `dir="rtl"` на `<html>` для AR, арабский шрифт через `next/font` только в AR-локали, hreflang через `metadata.alternates.languages` (в routing `alternateLinks: false`).
+8. **Домены** (проверено через Vercel API, .com): свободны `nasimcare.com`, `nasimdubai.com`, `getnasim.com`, `baridcare.com`, `coolnestdubai.com`, `breezecaredubai.com`, `aircaredubai.com`, `coolhands.co`, `nasim.services`. Заняты: `nasimhome.com`, `hawacare.com`, `coilcare.com`, `freshcoil.com`, `sahabcare.com`, `airnest.co`. Зону `.ae` не продают Vercel и Cloudflare; GoDaddy нет в списке аккредитованных TDRA регистраторов. `.ae` — у аккредитованного регистратора (AEserver: AED 125 первый год, ~145 продление, цены без учёта 5% VAT; Dynadot: $32.67/год). `name.ae` регистрирует кто угодно без документов; `co.ae` — только с UAE trade licence или товарным знаком; WHOIS-privacy у .ae нет. `nasim.ae` занят (зарегистрирован через Etisalat сторонним владельцем).
 
 ---
 
 ## 3. Бренд (рабочий)
 
-**Рабочее имя: Nasim** (араб. نسيم — «лёгкий ветерок, бриз»). Критерии: читается одинаково на EN/AR/RU, короткое, позитивное, не привязано к «AC», чтобы охватывать химчистку и будущие услуги, арабское слово даёт местный акцент для арабской аудитории и не отталкивает экспатов. Домен: `nasimcare.com` (свободен) + по возможности `nasim.ae` у регистратора ОАЭ. Полное название на сайте: «Nasim Home Care» (EN), «نسيم للعناية بالمنزل» (AR), «Nasim Home Care» (RU, латиницей).
+**Рабочее имя: Nasim** (араб. نسيم — «лёгкий ветерок, бриз»). Критерии: читается одинаково на EN/AR/RU, короткое, позитивное, не привязано к «AC», чтобы охватывать химчистку и будущие услуги, арабское слово даёт местный акцент для арабской аудитории и не отталкивает экспатов. Домен: `nasimcare.com` (свободен на 04.11.2026) в аккаунте Миши у Cloudflare Registrar или Porkbun; `nasim.ae` занят — перед покупкой проверить `nasimcare.ae` у AEserver (как редирект). Регистрант — Миша или его компания, не Максим. Полное название на сайте: «Nasim Home Care» (EN), «نسيم للعناية بالمنزل» (AR), «Nasim Home Care» (RU, латиницей).
 
 Запасные: Barid Care (`baridcare.com`, بارد — «прохладный»), CoolNest Dubai (`coolnestdubai.com`), AirCare Dubai (`aircaredubai.com`, описательное, слабее для бренда).
 
@@ -197,13 +197,13 @@ Hero (название, 1 абзац, цена «от» и единица, дл�
 
 ## 9. Многоязычность и RTL
 
-1. **next-intl v4**: `i18n/routing.ts` (locales `['en','ar','ru']`, defaultLocale `en`, `localePrefix: 'always'`), `i18n/navigation.ts` (локальные `Link`, `useRouter`, `redirect`), `i18n/request.ts`, `middleware.ts` (в Next 16 — `proxy.ts`, проверить имя файла по версии). UI-строки (кнопки, формы, ошибки) — `messages/{en,ar,ru}.json`. Контент — в БД как локализованные поля.
+1. **next-intl v4**: `lib/i18n/routing.ts` (locales `['en','ar','ru']`, defaultLocale `en`, `localePrefix: 'always'`, `alternateLinks: false`), `lib/i18n/navigation.ts` (`Link`, `useRouter`, `redirect`, `getPathname`), `lib/i18n/request.ts` (локаль из `next/root-params`), `proxy.ts` в корне (Next 16, Node runtime). В server actions и route handlers `next/root-params` недоступен — локаль передаётся явно: `getTranslations({ locale, namespace })`. UI-строки (кнопки, формы, ошибки) — `messages/{en,ar,ru}.json`. Контент — в БД как локализованные поля.
 2. **Локализованные поля**: тип `I18nText = { en: string; ar?: string; ru?: string }` в JSONB; на чтении fallback на EN с пометкой в админке «нет перевода». Валидация zod.
 3. **RTL**: `<html lang dir>` из локали; только логические CSS-свойства (`ms-/me-/ps-/pe-`, `text-start`), в Tailwind v4 они есть; направленные иконки (стрелки, шевроны) зеркалятся через `rtl:-scale-x-100`; телефоны, цены, email, URL — в `<span dir="ltr">`; слайдер до/после и карусели учитывают направление; тестовый экран в Storybook-подобной странице `/admin/dev/rtl` (только dev) не нужен — проверяем Playwright-скриншотами.
 4. **Шрифты**: IBM Plex Sans (latin + cyrillic) для EN/RU, IBM Plex Sans Arabic для AR, через `next/font/google` с `subsets` по локали, `display: swap`; размеры арабского на 5–10% крупнее на тех же токенах (переменная `--font-scale`).
 5. **Числа и даты**: `Intl.NumberFormat` с `nu-latn` для AR; часы работы — `Intl.DateTimeFormat`; дни недели Дубая Пн–Вс, выходные Сб–Вс — просто текст в settings по локалям.
 6. **hreflang**: `generateMetadata` → `alternates: { canonical, languages: { en, ar, ru, 'x-default': en } }` на каждой странице; `sitemap.ts` отдаёт все локали с `alternates`.
-7. **Переключатель языка**: в хедере, сохраняет текущий путь (slug общий), ставит cookie `NEXT_LOCALE`; подписи на родных языках: English · العربية · Русский.
+7. **Переключатель языка**: в хедере, сохраняет текущий путь (slug общий), cookie `NEXT_LOCALE` ставит прокси next-intl сам (сессионная, sameSite=lax); подписи на родных языках: English · العربية · Русский.
 8. **Арабский копирайт**: Opus пишет AR-черновик по EN; в плане запуска — ревью носителем (Upwork/Fiverr, ~$50–100) до публикации AR-версии. До ревью AR можно держать в `noindex` (флаг в settings) — чтобы не индексировать слабый текст.
 
 ---
@@ -233,7 +233,7 @@ Hero (название, 1 абзац, цена «от» и единица, дл�
 
 **AI-помощник в админке** (сервер, ключ в env): перевод EN → AR/RU с сохранением HTML-разметки и терминов (глоссарий в settings: «split AC» = «сплит-система», и т.д.), улучшение текста («короче», «проще», «дружелюбнее»), генерация alt-текстов. Реализация по skill `claude-api`: SDK `@anthropic-ai/sdk`, модель `claude-opus-5-5` (дефолт по правилам skill; Максим может переключить на `claude-haiku-5-5` через env `AI_MODEL` — для коротких переводов это в 40 раз дешевле), structured outputs через `output_config.format` с zod-схемой `{ar: string, ru: string}`, `output_config.effort: 'low'`, `fallbacks: 'default'` с beta-заголовком `server-side-fallback-2026-07-01`, таймаут 60 с, результат показывается как diff и применяется только по подтверждению. Стоимость на объёме сайта — единицы долларов.
 
-**Публикация**: сохранение = запись в БД + `revalidateTag('content')` (и точечные теги `service:{slug}`, `area:{slug}`); публичные страницы — ISR без времени (`revalidate = false`), пересборка только по тегу; предпросмотр черновика через `draftMode()`.
+**Публикация**: сохранение = запись в БД + `updateTag('content')` и точечные `updateTag('service:{slug}')`/`updateTag('area:{slug}')` в server action (read-your-own-writes); запросы публичных страниц — `'use cache'` + `cacheLife('max')` + `cacheTag`; экспорт `revalidate` с Cache Components запрещён — статический shell живёт в ISR Vercel до инвалидации тега; предпросмотр черновика через `draftMode()`.
 
 ---
 
@@ -274,7 +274,7 @@ rate_limits(key, window_start, count)
 audit_log(id, user_id, entity, entity_id, action, diff jsonb, created_at)
 ```
 
-Индексы: `leads(status, created_at desc)`, `leads(phone_e164)`, `track_events(created_at)`, уникальность slug. Миграции — `drizzle-kit generate` в репо, применяются в билде (как в daylik: `scripts/migrate-if-db.mjs`). Сид — `scripts/seed.ts` из `content/seed/*.json` (стартовый контент на трёх языках, цены из §8, районы, FAQ).
+Индексы: `leads(status, created_at desc)`, `leads(phone_e164)`, `track_events(created_at)`, уникальность slug. Миграции — `drizzle-kit generate` в репо, применяются в билде (как в daylik: `scripts/migrate-if-db.mjs`) через `DATABASE_URL_UNPOOLED`; Preview-деплои обязаны получать свою Neon-ветку (интеграция Neon ↔ Vercel), иначе превью-сборка мигрирует продакшен. Сид — `scripts/seed.ts` из `content/seed/*.json` (стартовый контент на трёх языках, цены из §8, районы, FAQ).
 
 ---
 
@@ -294,28 +294,28 @@ audit_log(id, user_id, entity, entity_id, action, diff jsonb, created_at)
 
 | Слой | Выбор | Почему |
 |---|---|---|
-| Фреймворк | Next.js 16.x, App Router, TypeScript strict, React 19 | актуальная стабильная; Vercel-native |
-| Стили | Tailwind CSS v4 + shadcn/ui (Radix) | логические свойства для RTL, быстрые формы и таблицы в админке |
-| i18n | next-intl v4 | стандарт для App Router, RTL-дружелюбен |
-| БД | Neon Postgres (Frankfurt) + Drizzle ORM | тот же стек, что в daylik — знакомые паттерны, бесплатного тарифа хватит на годы |
+| Фреймворк | Next.js 16.4, App Router, TypeScript strict, React 19.3, Cache Components | актуальная стабильная; Vercel-native |
+| Стили | Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, radix-nova, `rtl: true`; дефолт shadcn теперь Base UI — Radix выбираем явно) | логические свойства для RTL, быстрые формы и таблицы в админке |
+| i18n | next-intl v4.14 (`next/root-params`) | стандарт для App Router, RTL-дружелюбен |
+| БД | Neon Postgres (Frankfurt) + Drizzle ORM 0.45 (1.0 пока rc), драйвер `pg` Pool + `attachDatabasePool` | тот же стек, что в daylik — знакомые паттерны, бесплатного тарифа хватит на годы |
 | Функции | Vercel, регион `fra1` | колокация с БД важнее близости к пользователю: публичные страницы отдаёт CDN, а функции ходят в БД несколько раз за запрос |
 | Файлы | Vercel Blob | входит в Pro, простая интеграция |
-| Auth | Auth.js v5 (Credentials) + argon2 | без внешнего провайдера, 2–3 пользователя |
+| Auth | Auth.js v5 (Credentials) + argon2 | без внешнего провайдера, 2–3 пользователя; Auth.js v5 всё ещё beta и в режиме поддержки — предложение перейти на Better Auth в `docs/DECISIONS.md`, решение до фазы 5a |
 | Email | Resend (бесплатный тариф: 3 000 писем/мес, 1 домен) | уведомления, авто-ответы, сброс пароля |
 | Уведомления | Telegram Bot API (fetch, без библиотек) | мгновенно и бесплатно |
 | Антиспам | Cloudflare Turnstile + honeypot + лимит в БД | бесплатно, без Redis |
 | AI в админке | `@anthropic-ai/sdk`, `claude-opus-5-5` (env-переключатель на haiku) | перевод/копирайт, см. §10 |
 | Rich text | Tiptap (минимальный набор: заголовки, списки, ссылки, жирный) | HTML в БД, санитизация `sanitize-html` на выходе |
 | Валидация | zod (общие схемы клиент/сервер) | |
-| Тесты | Vitest (pricing, whatsapp link, i18n fallback, формат чисел), Playwright (e2e в 3 локалях + скриншоты RTL), axe-core в Playwright | |
+| Тесты | Vitest (pricing, whatsapp link, i18n fallback, формат чисел), Playwright 1.63 (закреплён под браузер контейнера; e2e в 3 локалях + скриншоты RTL), axe-core в Playwright | |
 | CI | GitHub Actions: typecheck, lint, unit, build на PR; Vercel preview на каждый PR | |
 | Аналитика | Vercel Web Analytics (без cookies) + свои `track_events`; GA4/Meta Pixel — опционально за баннером согласия | PDPL-консервативно |
 | Мониторинг | Vercel logs; Telegram-алерт при ошибке доставки лида (уже в пайплайне) | минимум |
 
 **Переменные окружения** (`.env.example` в репо):
-`DATABASE_URL`, `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `ANTHROPIC_API_KEY`, `AI_MODEL` (default `claude-opus-5-5`), `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Telegram chat id, WhatsApp и контакты — в БД (settings), не в env.
+`DATABASE_URL` (pooled), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `ANTHROPIC_API_KEY`, `AI_MODEL` (default `claude-opus-5-5`), `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Telegram chat id, WhatsApp и контакты — в БД (settings), не в env.
 
-**Стоимость в месяц**: Vercel Pro $20, Neon $0 (free), Resend $0, Turnstile $0, Blob в Pro, домен ~$12/год (.com) и/или .ae ~AED 100–150/год, Anthropic API ≈ $1–3, ревью AR-текста одноразово $50–100. Итого ≈ $22/мес + разовые.
+**Стоимость в месяц**: Vercel Pro $20, Neon $0 (free), Resend $0, Turnstile $0, Blob в Pro, домен ~$12/год (.com) и/или .ae ~AED 100–150/год, Anthropic API ≈ $1–3, ревью AR-текста одноразово $50–100. Итого ≈ $22/мес + разовые. Платит Миша картой ОАЭ (роль Billing у Vercel); российские карты эти сервисы не принимают.
 
 ---
 
@@ -325,15 +325,16 @@ audit_log(id, user_id, entity, entity_id, action, diff jsonb, created_at)
 nasim-site/
   app/
     [locale]/
-      layout.tsx                 # html lang/dir, шрифты по локали, header/footer, JSON-LD LocalBusiness
+      layout.tsx                 # КОРНЕВОЙ layout: html lang/dir, шрифты по локали, header/footer, JSON-LD LocalBusiness
       page.tsx                   # главная
       services/page.tsx  services/[slug]/page.tsx
       pricing/page.tsx  annual-contracts/page.tsx
       areas/page.tsx  areas/[slug]/page.tsx
       about/page.tsx  contact/page.tsx  privacy/page.tsx  terms/page.tsx  thank-you/page.tsx
-      opengraph-image.tsx  not-found.tsx
+      opengraph-image.tsx  not-found.tsx  [...rest]/page.tsx
+    not-found.tsx                # глобальный 404 со своим <html> (app/layout.tsx нет)
     admin/
-      layout.tsx  (auth guard, shell)  page.tsx (дашборд)
+      layout.tsx  (корневой layout админки с <html>; auth guard, shell)  page.tsx (дашборд)
       leads/  services/  pricing/  areas/  faqs/  reviews/  media/  pages/  settings/  users/  audit/
       login/page.tsx
     api/
@@ -346,7 +347,7 @@ nasim-site/
     ui/        (shadcn)
   lib/
     db/ (client.ts, schema.ts, queries/*.ts с cache tags)
-    i18n/ (routing.ts, navigation.ts, request.ts, format.ts)
+    i18n/ (routing.ts, navigation.ts, request.ts, format.ts, text.ts)
     pricing.ts  whatsapp.ts  telegram.ts  email.ts  ai.ts  auth.ts  ratelimit.ts  seo.ts  sanitize.ts
     validation/ (zod-схемы лидов, контента)
   messages/ en.json ar.json ru.json        # UI-строки
@@ -355,8 +356,8 @@ nasim-site/
   scripts/ seed.ts migrate-if-db.mjs
   tests/ unit/ e2e/
   public/ (favicon, logo.svg, og-fallback)
-  docs/ BRIEF.md (этот план) DECISIONS.md RUNBOOK.md (операции: деплой, бэкап, добавить пользователя)
-  CLAUDE.md  .env.example  proxy.ts|middleware.ts  next.config.ts  drizzle.config.ts
+  docs/ BRIEF.md (этот план) DECISIONS.md INFRASTRUCTURE.md RUNBOOK.md (операции: деплой, бэкап, добавить пользователя)
+  CLAUDE.md  AGENTS.md  .env.example  proxy.ts  next.config.ts  drizzle.config.ts  vercel.json
 ```
 
 ---
@@ -438,6 +439,9 @@ nasim-site/
 | Vercel Hobby заблокируют за коммерцию | Сразу Pro |
 | Админка раздувает сроки | Фаза 5 разбивается на 5a/5b; дашборд и канбан — в конце, inbox и редактор услуг — первыми |
 | Опечатки/несогласованность трёх языков | Индикаторы «нет перевода», AI-перевод с diff, предпросмотр по локали перед публикацией |
+| Аккаунты на гражданине РФ, провайдер «перестрахуется» | Платёжный метод и домен — у Миши; план выхода — перенос Vercel-проекта в команду Миши без даунтайма (env, домены, git-связь переезжают; интеграции и Blob — отдельно), см. `docs/INFRASTRUCTURE.md` |
+| Anthropic API не обслуживает Россию | Аккаунт и ключ — на Мише, вызовы только с сервера (fra1) |
+| Разработчик в РФ: троттлинг Cloudflare, блокировки кастомных доменов Vercel, WhatsApp | VPN для дашбордов; превью `*.vercel.app` обычно открываются; проверка WhatsApp-ссылок — через Мишу или VPN |
 
 ---
 

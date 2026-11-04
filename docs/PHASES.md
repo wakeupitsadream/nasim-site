@@ -15,12 +15,14 @@
 
 **Цель:** пустой, но полностью настроенный проект, который деплоится на Vercel в трёх локалях.
 
+**Статус:** выполнена 04.11.2026 (ветка `phase-0/scaffold`), кроме подключения Vercel-проекта и Neon — ждут Pro-команду (см. `docs/INFRASTRUCTURE.md`). Фактический состав и отклонения — в `docs/DECISIONS.md`. Промпт ниже оставлен для истории и обновлён под проверенные факты.
+
 **Промпт:**
 
 > Прочитай CLAUDE.md, docs/BRIEF.md (особенно §9, §13, §14) и docs/DECISIONS.md. Задача фазы 0 — каркас проекта.
 >
-> 1. Инициализируй Next.js 16 (App Router, TypeScript strict, Tailwind v4, без `src/`, pnpm). Подключи shadcn/ui (стиль new-york, нейтральная база), ESLint + Prettier, Vitest, Playwright (chromium), GitHub Actions `ci.yml` (typecheck, lint, test, build на PR и push в main).
-> 2. next-intl v4: `lib/i18n/routing.ts` (en/ar/ru, default en, localePrefix always), `navigation.ts`, `request.ts`, middleware/proxy (проверь актуальное имя файла для установленной версии Next и запиши в DECISIONS). `app/[locale]/layout.tsx` ставит `lang` и `dir`, грузит IBM Plex Sans для en/ru и IBM Plex Sans Arabic для ar через next/font (subsets по локали). Подключи `styles/design-tokens.css` в `app/globals.css`. Пустые страницы по карте BRIEF §5 с заголовком из `messages/*.json`.
+> 1. Инициализируй Next.js 16 (App Router, TypeScript strict, Tailwind v4, без `src/`, pnpm). Подключи shadcn/ui 4.23 (`init --base radix --preset nova --rtl`: стиль radix-nova, нейтральная база, `rtl: true` — new-york не получает RTL-конвертацию), ESLint + Prettier, Vitest, Playwright 1.63.0 (chromium; версия = браузер в /opt/pw-browsers), GitHub Actions `ci.yml` (typecheck, lint, test, build на PR и push в main).
+> 2. next-intl v4: `lib/i18n/routing.ts` (en/ar/ru, default en, localePrefix always), `navigation.ts`, `request.ts`, `proxy.ts` (имя для Next 16; запиши в DECISIONS); `request.ts` берёт локаль из `next/root-params`. `app/[locale]/layout.tsx` ставит `lang` и `dir`, грузит IBM Plex Sans для en/ru и IBM Plex Sans Arabic для ar через next/font (subsets по локали). Подключи `styles/design-tokens.css` в `app/globals.css`. Пустые страницы по карте BRIEF §5 с заголовком из `messages/*.json`.
 > 3. Drizzle + Neon: `lib/db/client.ts`, пустая `schema.ts` с таблицей `settings` (id=1, brand_name i18n), `drizzle.config.ts`, `scripts/migrate-if-db.mjs` (как в BRIEF: миграции применяются в `pnpm build`, если есть DATABASE_URL), `.env.example` со всеми переменными из CLAUDE.md.
 > 4. `lib/i18n/text.ts` (`pick`), `lib/i18n/format.ts` (`formatAED`, `formatNumber` с `nu-latn` для ar) + unit-тесты; компонент `<Ltr>`.
 > 5. Vercel: `vercel.json` с `regions: ["fra1"]` для функций; README с шагами подключения проекта, Neon (Frankfurt) и env.
@@ -53,7 +55,7 @@
 >
 > 1. Реализуй полную схему BRIEF §11 в `lib/db/schema.ts` (JSONB для i18n-полей с типом `I18nText`, enum'ы, индексы). Сгенерируй миграции.
 > 2. `lib/validation/content.ts` — zod-схемы всех сущностей (включая `i18nText` с обязательным `en`).
-> 3. `lib/db/queries/*`: `getSettings`, `getServices({status})`, `getServiceBySlug`, `getPriceItems`, `getPackages`, `getAreas`, `getAreaBySlug`, `getFaqs(scope, id)`, `getReviews`, `getMedia`, `getBlock(key)` — все с кэш-тегами (`content`, `settings`, `service:{slug}`, `area:{slug}`) и функцией `revalidateContent(tags)`.
+> 3. `lib/db/queries/*`: `getSettings`, `getServices({status})`, `getServiceBySlug`, `getPriceItems`, `getPackages`, `getAreas`, `getAreaBySlug`, `getFaqs(scope, id)`, `getReviews`, `getMedia`, `getBlock(key)` — все с `'use cache'` + `cacheLife('max')` + `cacheTag` (`content`, `settings`, `service:{slug}`, `area:{slug}`) и функцией `revalidateContent(tags)` (вызывает `updateTag` по каждому тегу; только из server actions).
 > 4. `scripts/seed.ts`: читает `content/seed/*.json`, upsert по slug/key, не трогает записи с `updated_at > seeded_at` (поле `seeded_at` добавь в схему там, где есть сид). Пустые `ar` оставляй пустыми — их заполнит AI-перевод в админке и ревью носителя.
 > 5. Юнит-тесты: `pick()` fallback, валидация сида (все JSON проходят zod), `pricing.ts` — реализуй по BRIEF §7.2 и §8: тарифные ступени по количеству, минимумы, пакеты (предлагать пакет, если он дешевле набора), допы, режим «диагностика + смета» для ремонта и фреона. Тесты на каждую ветку.
 >
@@ -102,7 +104,7 @@
 >
 > 1. Auth.js v5 Credentials: таблица `users`, argon2id, JWT-сессия 7 дней, лимит попыток 5/15 мин, сброс пароля по ссылке через Resend, роли `owner`/`staff`, защита `/admin/*` и `/api/admin/*` в middleware/proxy и в каждом server action (`requireRole`). Сид двух owner-пользователей из env `SEED_ADMIN_EMAILS` с одноразовыми паролями, выводимыми в консоль сида.
 > 2. Оболочка `/admin`: адаптивная (телефон первым), боковое меню → нижняя навигация на мобильном, переключатель языка интерфейса RU/EN (cookie), поиск, тосты с undo, скелетоны, пустые состояния с подсказкой «что сделать».
-> 3. Общие компоненты: DataTable (сортировка, фильтры, пагинация, drag-and-drop порядка), I18nFields (три колонки en/ar/ru side-by-side, EN как источник, индикатор «нет перевода», кнопка «Перевести с EN» с diff-подтверждением), RichEditor (Tiptap: h2/h3, списки, ссылки, жирный; сериализация в HTML, санитизация при рендере), MediaPicker, StatusToggle, PublishBar (сохранить = опубликовать + revalidate тегов; предпросмотр через `draftMode`).
+> 3. Общие компоненты: DataTable (сортировка, фильтры, пагинация, drag-and-drop порядка), I18nFields (три колонки en/ar/ru side-by-side, EN как источник, индикатор «нет перевода», кнопка «Перевести с EN» с diff-подтверждением), RichEditor (Tiptap: h2/h3, списки, ссылки, жирный; сериализация в HTML, санитизация при рендере), MediaPicker, StatusToggle, PublishBar (сохранить = опубликовать + `updateTag` по тегам; предпросмотр через `draftMode`).
 > 4. Модули: Услуги, Цены и пакеты (инлайн-таблица + живой предпросмотр калькулятора + переключатель VAT), Районы, FAQ, Отзывы (источник обязателен, скриншот-подтверждение), Медиа (Vercel Blob, сжатие на клиенте до 2000px, EXIF-очистка, пары до/после, alt по локалям, флаг placeholder), Страницы (контент-блоки с версиями: 10 последних, откат).
 > 5. `lib/ai.ts` + `POST /api/admin/ai/translate`: `@anthropic-ai/sdk`, модель `process.env.AI_MODEL ?? 'claude-opus-5-5'`, `output_config.format` с zod-схемой `{ ar, ru }`, `output_config.effort: 'low'`, `fallbacks: 'default'` + beta `server-side-fallback-2026-07-01`, глоссарий из settings в системном промпте, сохранение HTML-разметки, таймаут 60 с. Результат возвращается в UI как предложение, не пишется в БД.
 > 6. Аудит: каждое изменение → `audit_log` с diff.
@@ -133,7 +135,7 @@
 
 > Прочитай CLAUDE.md, docs/BRIEF.md §12, §16, §17 (фаза 6), §19 и docs/DECISIONS.md. Фаза 6 — подготовка к запуску. Данные от Миши — в `docs/MISHA-ANSWERS.md` (если файла нет — работай с плейсхолдерами и перечисли в отчёте, что заблокировано).
 >
-> 1. `docs/RUNBOOK.md`: подключение домена и DNS на Vercel, домен Resend (SPF/DKIM/DMARC), Turnstile на боевой домен, Telegram-бот и chat id Миши, создание пользователей, бэкапы Neon (PITR), откат деплоя, ротация ключей, как добавить район/услугу, как снять `noindex` с AR после ревью.
+> 1. `docs/RUNBOOK.md`: подключение домена: DNS у Cloudflare в аккаунте Миши в режиме DNS only (A — значение из карточки домена Vercel, CNAME www → *.vercel-dns-0xx.com; MX/TXT Resend там же), регистрант — Миша/его компания, домен Resend (SPF/DKIM/DMARC), Turnstile на боевой домен, Telegram-бот и chat id Миши, создание пользователей, бэкапы Neon (PITR), откат деплоя, ротация ключей, как добавить район/услугу, как снять `noindex` с AR после ревью.
 > 2. Контент: внести ответы Миши в settings и сид (контакты, лицензия, часы, цены, гарантии), заменить заглушки реальными фото где есть, проверить все `is_placeholder`.
 > 3. Legal: финальные privacy и terms на трёх языках по BRIEF §16 с реальными данными компании.
 > 4. Чеклист SEO: Search Console (sitemap отправлен), Bing, Google Business Profile — инструкция для Миши в RUNBOOK; проверить Rich Results для Service/FAQPage/LocalBusiness; hreflang-валидация.
