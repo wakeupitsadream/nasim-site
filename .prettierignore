@@ -1,0 +1,19 @@
+# generated / external
+.next
+node_modules
+pnpm-lock.yaml
+drizzle
+next-env.d.ts
+playwright-report
+test-results
+.vitest
+
+# hand-written documents and seed content keep their own formatting
+docs
+content
+CLAUDE.md
+AGENTS.md
+README.md
+
+# shadcn-generated components keep the registry style, so later `shadcn add --diff` stays readable
+components/ui
