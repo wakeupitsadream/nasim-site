@@ -1,0 +1,514 @@
+{
+  "_comment": "Стартовый контент услуг. en — источник, ru — перевод, ar — пусто: заполняется AI-переводом в админке и ревью носителя. pricing_unit: unit|fcu|visit|seat|item|sqm|from|quote.",
+  "services": [
+    {
+      "slug": "ac-cleaning",
+      "category": "ac",
+      "status": "active",
+      "sort": 10,
+      "name": { "en": "AC Cleaning", "ru": "Чистка кондиционера", "ar": "" },
+      "short": {
+        "en": "Filters, indoor coil, blower fan, drain line and outdoor unit. Measurements and before/after photos in your WhatsApp report.",
+        "ru": "Фильтры, внутренний радиатор, вентилятор, дренаж и наружный блок. Замеры и фото до/после в отчёте в WhatsApp.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>Dubai dust and humidity load an AC unit fast: filters clog, the indoor coil grows a film of dust and mould, the drain line silts up and starts dripping. A standard clean every 4–6 months keeps the air clean, the unit cold and the DEWA bill where it should be.</p><p>The price is fixed before we come. The technician arrives in the agreed one-hour slot, and you get a report with photos and temperature readings in WhatsApp before he leaves.</p>",
+        "ru": "<p>Пыль и влажность Дубая быстро забивают кондиционер: фильтры засоряются, на внутреннем радиаторе появляется плёнка пыли и плесени, дренаж заиливается и начинает капать. Стандартная чистка раз в 4–6 месяцев держит воздух чистым, блок — холодным, а счёт DEWA — в норме.</p><p>Цена фиксируется до приезда. Техник приезжает в согласованный часовой слот, и вы получаете отчёт с фото и замерами температуры в WhatsApp ещё до его ухода.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Filter wash and antibacterial treatment", "ru": "Мойка фильтров и антибактериальная обработка", "ar": "" },
+        { "en": "Indoor coil cleaning with foam cleaner", "ru": "Чистка внутреннего радиатора пеной", "ar": "" },
+        { "en": "Blower fan surface cleaning", "ru": "Чистка поверхности вентилятора", "ar": "" },
+        { "en": "Drain pan and drain line flush", "ru": "Промывка поддона и дренажной трубки", "ar": "" },
+        { "en": "Outdoor unit rinse and check", "ru": "Промывка и проверка наружного блока", "ar": "" },
+        { "en": "Outlet temperature reading before and after", "ru": "Замер температуры на выходе до и после", "ar": "" },
+        { "en": "Photo report in WhatsApp", "ru": "Фотоотчёт в WhatsApp", "ar": "" }
+      ],
+      "excludes": [
+        { "en": "Full disassembly of the indoor unit (see Deep Cleaning)", "ru": "Полная разборка внутреннего блока (см. Глубокая чистка)", "ar": "" },
+        { "en": "Refrigerant top-up or repairs", "ru": "Заправка фреона и ремонт", "ar": "" },
+        { "en": "Duct cleaning (arranged via licensed partner)", "ru": "Чистка воздуховодов (через лицензированного партнёра)", "ar": "" }
+      ],
+      "symptoms": [
+        { "en": "Weaker airflow than before", "ru": "Поток воздуха слабее, чем раньше", "ar": "" },
+        { "en": "Dusty smell when the unit starts", "ru": "Запах пыли при включении", "ar": "" },
+        { "en": "Last clean was more than 6 months ago", "ru": "Последняя чистка была больше 6 месяцев назад", "ar": "" }
+      ],
+      "visit_steps": [
+        { "en": "Protective sheeting, temperature reading before", "ru": "Защитная плёнка, замер температуры до", "ar": "" },
+        { "en": "Filters, coil, fan and drain cleaned", "ru": "Чистка фильтров, радиатора, вентилятора и дренажа", "ar": "" },
+        { "en": "Outdoor unit rinsed, operation checked", "ru": "Промывка наружного блока, проверка работы", "ar": "" },
+        { "en": "Reading after, photos sent to your WhatsApp", "ru": "Замер после, фото в ваш WhatsApp", "ar": "" }
+      ],
+      "duration_min": 45,
+      "price_from": 149,
+      "pricing_unit": "unit",
+      "available_from": null,
+      "seo_title": { "en": "AC Cleaning in Dubai — fixed price, photo report", "ru": "Чистка кондиционеров в Дубае — фиксированная цена, фотоотчёт", "ar": "" },
+      "seo_description": {
+        "en": "Split AC cleaning in Dubai from AED 149 per unit. Filters, coil, fan, drain and outdoor unit. Fixed price, one-hour arrival slot, WhatsApp report with photos.",
+        "ru": "Чистка сплит-систем в Дубае от 149 AED за блок. Фильтры, радиатор, вентилятор, дренаж, наружный блок. Фиксированная цена, часовой слот, отчёт в WhatsApp.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "ac-deep-cleaning",
+      "category": "ac",
+      "status": "active",
+      "sort": 20,
+      "name": { "en": "AC Deep Cleaning", "ru": "Глубокая чистка кондиционера", "ar": "" },
+      "short": {
+        "en": "Near-full disassembly of the indoor unit. For smell, mould or black build-up that a standard clean cannot reach.",
+        "ru": "Почти полная разборка внутреннего блока. Когда есть запах, плесень или чёрный налёт, до которых не достаёт обычная чистка.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>When the unit smells musty, you see black spots on the louvres, or someone at home keeps sneezing when the AC runs, the problem sits deep inside: on the blower drum, behind the coil, in the drain pan. We take the indoor unit apart, wash every part with an antibacterial cleaner and reassemble it.</p><p>Recommended once a year for bedrooms and for any unit older than 5 years. For very old units we check the plastic parts first and tell you honestly if disassembly is risky.</p>",
+        "ru": "<p>Если из блока пахнет сыростью, на жалюзи чёрные точки или кто-то дома чихает при включённом кондиционере — проблема глубоко внутри: на барабане вентилятора, за радиатором, в поддоне. Мы разбираем внутренний блок, моем каждую деталь антибактериальным средством и собираем обратно.</p><p>Рекомендуем раз в год для спален и для блоков старше 5 лет. Для очень старых блоков сначала проверяем пластик и честно говорим, если разборка рискованна.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Everything in the standard clean", "ru": "Всё из стандартной чистки", "ar": "" },
+        { "en": "Removal of the front cover, louvres and drain pan", "ru": "Снятие передней крышки, жалюзи и поддона", "ar": "" },
+        { "en": "Blower drum removed and washed", "ru": "Снятие и мойка барабана вентилятора", "ar": "" },
+        { "en": "Coil high-pressure wash with coil cleaner", "ru": "Мойка радиатора под давлением со спецсредством", "ar": "" },
+        { "en": "Antibacterial and anti-mould treatment", "ru": "Антибактериальная и противогрибковая обработка", "ar": "" },
+        { "en": "Photo report of every stage", "ru": "Фотоотчёт по каждому этапу", "ar": "" }
+      ],
+      "excludes": [
+        { "en": "Repairs and refrigerant work", "ru": "Ремонт и работа с фреоном", "ar": "" }
+      ],
+      "symptoms": [
+        { "en": "Musty or sour smell when the AC runs", "ru": "Запах сырости или кислый запах при работе", "ar": "" },
+        { "en": "Black spots on the louvres or air outlet", "ru": "Чёрные точки на жалюзи или решётке", "ar": "" },
+        { "en": "Allergies or coughing indoors", "ru": "Аллергия или кашель в помещении", "ar": "" }
+      ],
+      "visit_steps": [
+        { "en": "Protective sheeting, readings before", "ru": "Защитная плёнка, замеры до", "ar": "" },
+        { "en": "Indoor unit disassembled, parts washed outside", "ru": "Разборка внутреннего блока, мойка деталей снаружи", "ar": "" },
+        { "en": "Coil washed, treatment applied", "ru": "Мойка радиатора, обработка", "ar": "" },
+        { "en": "Reassembly, test run, report", "ru": "Сборка, тестовый запуск, отчёт", "ar": "" }
+      ],
+      "duration_min": 90,
+      "price_from": 349,
+      "pricing_unit": "unit",
+      "available_from": null,
+      "seo_title": { "en": "AC Deep Cleaning in Dubai — removes smell and mould", "ru": "Глубокая чистка кондиционера в Дубае — убираем запах и плесень", "ar": "" },
+      "seo_description": {
+        "en": "Deep AC cleaning with full disassembly of the indoor unit from AED 349. Blower drum, coil and drain pan washed, anti-mould treatment, photo report.",
+        "ru": "Глубокая чистка кондиционера с разборкой внутреннего блока от 349 AED. Барабан, радиатор и поддон, противогрибковая обработка, фотоотчёт.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "ducted-ac-fcu-service",
+      "category": "ac",
+      "status": "active",
+      "sort": 30,
+      "name": { "en": "Ducted AC & Fan Coil Service", "ru": "Обслуживание канальных систем и фанкойлов", "ar": "" },
+      "short": {
+        "en": "For villas with ducted systems and towers with fan coil units: filters, coils, drain, thermostat check.",
+        "ru": "Для вилл с канальными системами и башен с фанкойлами: фильтры, радиаторы, дренаж, проверка термостатов.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>Villas and most towers run ducted systems: a fan coil unit hidden above a ceiling hatch feeds several rooms. Nobody sees it, so it is cleaned far less often than it should be, and the first sign of trouble is usually a water stain on the ceiling.</p><p>We service each fan coil unit through the access hatch: filters, coil, drain pan and line, thermostat and airflow check. Duct cleaning itself needs a separate Dubai Municipality approval, so we arrange it through a licensed partner when needed.</p>",
+        "ru": "<p>На виллах и в большинстве башен стоят канальные системы: фанкойл спрятан за люком в потолке и обслуживает несколько комнат. Его никто не видит, поэтому чистят его гораздо реже, чем нужно, и первый признак проблемы — обычно пятно воды на потолке.</p><p>Мы обслуживаем каждый фанкойл через люк: фильтры, радиатор, поддон и дренаж, проверка термостата и потока. Сама чистка воздуховодов требует отдельного разрешения Dubai Municipality — при необходимости организуем через лицензированного партнёра.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Filter cleaning or replacement advice", "ru": "Чистка фильтров или рекомендация по замене", "ar": "" },
+        { "en": "Fan coil cleaning", "ru": "Чистка радиатора фанкойла", "ar": "" },
+        { "en": "Drain pan and line flush", "ru": "Промывка поддона и дренажа", "ar": "" },
+        { "en": "Thermostat and airflow check per room", "ru": "Проверка термостата и потока по комнатам", "ar": "" },
+        { "en": "Report with photos from inside the hatch", "ru": "Отчёт с фото из-за люка", "ar": "" }
+      ],
+      "excludes": [
+        { "en": "Duct cleaning (licensed partner)", "ru": "Чистка воздуховодов (лицензированный партнёр)", "ar": "" },
+        { "en": "Large office VRF systems", "ru": "Большие офисные VRF-системы", "ar": "" }
+      ],
+      "symptoms": [
+        { "en": "Water stain near a ceiling hatch", "ru": "Пятно воды у потолочного люка", "ar": "" },
+        { "en": "Some rooms colder than others", "ru": "Одни комнаты холоднее других", "ar": "" },
+        { "en": "Dust blowing from ceiling grilles", "ru": "Пыль из потолочных решёток", "ar": "" }
+      ],
+      "visit_steps": [
+        { "en": "Hatches opened, readings before", "ru": "Открываем люки, замеры до", "ar": "" },
+        { "en": "Each FCU cleaned and drained", "ru": "Чистка и прокачка каждого фанкойла", "ar": "" },
+        { "en": "Thermostats and airflow checked", "ru": "Проверка термостатов и потока", "ar": "" },
+        { "en": "Report per unit", "ru": "Отчёт по каждому блоку", "ar": "" }
+      ],
+      "duration_min": 40,
+      "price_from": 249,
+      "pricing_unit": "fcu",
+      "available_from": null,
+      "seo_title": { "en": "Ducted AC & FCU Service in Dubai villas and towers", "ru": "Обслуживание канальных кондиционеров и фанкойлов в Дубае", "ar": "" },
+      "seo_description": {
+        "en": "Fan coil unit cleaning and ducted AC service for Dubai villas and apartments from AED 249 per FCU. Filters, coil, drain, thermostat check, photo report.",
+        "ru": "Чистка фанкойлов и обслуживание канальных систем в виллах и квартирах Дубая от 249 AED за фанкойл. Фильтры, радиатор, дренаж, термостаты, фотоотчёт.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "emergency-ac-repair",
+      "category": "ac",
+      "status": "active",
+      "sort": 40,
+      "name": { "en": "Emergency AC Call-out", "ru": "Срочный вызов", "ar": "" },
+      "short": {
+        "en": "Not cooling, leaking water, won't switch on. Same-day visit, fixed diagnostic fee credited to the repair.",
+        "ru": "Не холодит, течёт вода, не включается. Выезд в тот же день, фиксированная диагностика засчитывается в ремонт.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>An AC that stops in July is an emergency, and we treat it like one. Call or message before the cut-off time shown in our hours and a technician comes today.</p><p>The call-out includes diagnostics at a fixed price. If we repair on the spot, that fee is credited to the repair. If a part needs ordering, you get a written quote first and decide.</p>",
+        "ru": "<p>Кондиционер, который встал в июле, — это аварийная ситуация, и мы так к ней и относимся. Напишите или позвоните до времени, указанного в часах работы, и техник приедет сегодня.</p><p>Выезд включает диагностику по фиксированной цене. Если ремонтируем на месте — эта сумма засчитывается в ремонт. Если нужно заказать деталь — сначала вы получаете письменную смету и решаете.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Same-day visit within the emergency hours", "ru": "Выезд в тот же день в часы срочных вызовов", "ar": "" },
+        { "en": "Full diagnostics: electrics, refrigerant pressure, drain, sensors", "ru": "Полная диагностика: электрика, давление фреона, дренаж, датчики", "ar": "" },
+        { "en": "Minor fixes on the spot where possible", "ru": "Мелкий ремонт на месте, где возможно", "ar": "" },
+        { "en": "Written quote for anything bigger", "ru": "Письменная смета на всё остальное", "ar": "" }
+      ],
+      "excludes": [
+        { "en": "Parts (quoted separately)", "ru": "Запчасти (по смете)", "ar": "" }
+      ],
+      "symptoms": [
+        { "en": "Blowing warm air", "ru": "Дует тёплым воздухом", "ar": "" },
+        { "en": "Water dripping from the indoor unit", "ru": "Капает вода из внутреннего блока", "ar": "" },
+        { "en": "Unit won't start or trips the breaker", "ru": "Не включается или выбивает автомат", "ar": "" },
+        { "en": "Loud noise or ice on the pipes", "ru": "Громкий шум или лёд на трубках", "ar": "" }
+      ],
+      "visit_steps": [
+        { "en": "You describe the problem in WhatsApp, we confirm the slot", "ru": "Вы описываете проблему в WhatsApp, мы подтверждаем слот", "ar": "" },
+        { "en": "Diagnostics and explanation in plain words", "ru": "Диагностика и объяснение простыми словами", "ar": "" },
+        { "en": "Fix on the spot or written quote", "ru": "Ремонт на месте или письменная смета", "ar": "" }
+      ],
+      "duration_min": 60,
+      "price_from": 149,
+      "pricing_unit": "visit",
+      "available_from": null,
+      "seo_title": { "en": "Emergency AC Repair in Dubai — same-day call-out", "ru": "Срочный ремонт кондиционера в Дубае — выезд в тот же день", "ar": "" },
+      "seo_description": {
+        "en": "AC not cooling or leaking? Same-day emergency call-out in Dubai, AED 149 diagnostics credited to the repair, written quote before any work.",
+        "ru": "Кондиционер не холодит или течёт? Срочный выезд в Дубае в тот же день, диагностика 149 AED засчитывается в ремонт, смета до начала работ.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "ac-repair",
+      "category": "ac",
+      "status": "active",
+      "sort": 50,
+      "name": { "en": "AC Repair", "ru": "Ремонт кондиционера", "ar": "" },
+      "short": {
+        "en": "Start capacitors, sensors, fan motors, control boards, drain pumps. Quote before work, 90-day warranty on parts and labour.",
+        "ru": "Пусковые конденсаторы, датчики, моторы, платы, дренажные насосы. Смета до начала работ, гарантия 90 дней.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>Most split-unit failures come down to a handful of parts: a swollen start capacitor, a failed fan motor, a dead temperature sensor, a drain pump that stopped pumping, or a control board after a power surge. We carry the common parts in the van and fix most of them in one visit.</p><p>We do not install new systems and do not take on complex office VRF repairs. If that is what you need, we will say so and point you to the right people.</p>",
+        "ru": "<p>Большинство поломок сплит-систем сводится к нескольким деталям: вздувшийся пусковой конденсатор, сгоревший мотор вентилятора, мёртвый датчик температуры, остановившийся дренажный насос или плата после скачка напряжения. Ходовые детали у нас в фургоне, большинство чиним за один визит.</p><p>Мы не устанавливаем новые системы и не берёмся за сложный ремонт офисных VRF. Если вам нужно именно это — так и скажем и подскажем, к кому обратиться.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Diagnostics with explanation", "ru": "Диагностика с объяснением", "ar": "" },
+        { "en": "Replacement of capacitors, sensors, motors, boards, drain pumps", "ru": "Замена конденсаторов, датчиков, моторов, плат, дренажных насосов", "ar": "" },
+        { "en": "Test run and readings after repair", "ru": "Тестовый запуск и замеры после ремонта", "ar": "" },
+        { "en": "90-day warranty on parts and labour", "ru": "Гарантия 90 дней на детали и работу", "ar": "" }
+      ],
+      "excludes": [
+        { "en": "New installations", "ru": "Установка новых систем", "ar": "" },
+        { "en": "Office VRF systems", "ru": "Офисные VRF-системы", "ar": "" }
+      ],
+      "symptoms": [
+        { "en": "Outdoor unit hums but the fan does not spin", "ru": "Наружный блок гудит, вентилятор не крутится", "ar": "" },
+        { "en": "Unit switches off by itself", "ru": "Блок сам выключается", "ar": "" },
+        { "en": "Remote works but nothing happens", "ru": "Пульт работает, но ничего не происходит", "ar": "" }
+      ],
+      "visit_steps": [
+        { "en": "Diagnostics", "ru": "Диагностика", "ar": "" },
+        { "en": "Written quote, your go-ahead", "ru": "Письменная смета, ваше согласие", "ar": "" },
+        { "en": "Repair, test, report", "ru": "Ремонт, тест, отчёт", "ar": "" }
+      ],
+      "duration_min": 60,
+      "price_from": 199,
+      "pricing_unit": "from",
+      "available_from": null,
+      "seo_title": { "en": "AC Repair in Dubai — quote first, 90-day warranty", "ru": "Ремонт кондиционеров в Дубае — смета до работ, гарантия 90 дней", "ar": "" },
+      "seo_description": {
+        "en": "Split AC repair in Dubai: capacitors, sensors, motors, boards, drain pumps. Labour from AED 199, parts quoted before work, 90-day warranty.",
+        "ru": "Ремонт сплит-систем в Дубае: конденсаторы, датчики, моторы, платы, дренажные насосы. Работа от 199 AED, запчасти по смете, гарантия 90 дней.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "refrigerant-leak-refill",
+      "category": "ac",
+      "status": "active",
+      "sort": 60,
+      "name": { "en": "Refrigerant Leak Detection & Refill", "ru": "Поиск утечки фреона и заправка", "ar": "" },
+      "short": {
+        "en": "We find and fix the leak first, then refill. A top-up without fixing the leak is money thrown away.",
+        "ru": "Сначала находим и устраняем утечку, потом заправляем. Дозаправка без ремонта утечки — выброшенные деньги.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>If your AC needed a “gas top-up” last summer and is warm again, the refrigerant did not evaporate — it leaked. Topping up again buys a few weeks. We pressure-test the system with nitrogen, find the leak, repair it (brazing or fitting replacement), vacuum the lines and charge the correct amount by weight.</p>",
+        "ru": "<p>Если прошлым летом кондиционеру «дозаправили газ», а он снова тёплый — фреон не испарился, он вытек. Повторная дозаправка даст несколько недель. Мы опрессовываем систему азотом, находим утечку, устраняем (пайка или замена соединения), вакуумируем трассу и заправляем нужное количество по весу.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Nitrogen pressure test and leak search", "ru": "Азотная опрессовка и поиск утечки", "ar": "" },
+        { "en": "Leak repair (brazing or fitting) — quoted after detection", "ru": "Устранение утечки (пайка или фитинг) — по смете после поиска", "ar": "" },
+        { "en": "Vacuum and charge by weight", "ru": "Вакуумирование и заправка по весу", "ar": "" },
+        { "en": "Pressure and temperature readings in the report", "ru": "Давление и температура в отчёте", "ar": "" }
+      ],
+      "excludes": [
+        { "en": "Top-up without leak repair (we do not offer it)", "ru": "Дозаправка без ремонта утечки (не делаем)", "ar": "" }
+      ],
+      "symptoms": [
+        { "en": "Cooling got weaker over weeks", "ru": "Холодит всё слабее неделя за неделей", "ar": "" },
+        { "en": "Ice on the thin copper pipe", "ru": "Лёд на тонкой медной трубке", "ar": "" },
+        { "en": "Had a “gas refill” less than a year ago", "ru": "«Заправляли газ» меньше года назад", "ar": "" }
+      ],
+      "visit_steps": [
+        { "en": "Pressure check and nitrogen test", "ru": "Проверка давления и опрессовка азотом", "ar": "" },
+        { "en": "Leak located, repair quoted", "ru": "Утечка найдена, смета на ремонт", "ar": "" },
+        { "en": "Repair, vacuum, charge, readings", "ru": "Ремонт, вакуум, заправка, замеры", "ar": "" }
+      ],
+      "duration_min": 120,
+      "price_from": 249,
+      "pricing_unit": "from",
+      "available_from": null,
+      "seo_title": { "en": "AC Refrigerant Leak Repair & Refill in Dubai", "ru": "Утечка и заправка фреона в Дубае — находим и устраняем", "ar": "" },
+      "seo_description": {
+        "en": "Nitrogen leak test from AED 249, repair quoted on site, refill by weight from AED 349. We fix the leak before refilling — no repeat top-ups.",
+        "ru": "Поиск утечки азотом от 249 AED, ремонт по смете на месте, заправка по весу от 349 AED. Устраняем утечку до заправки — без повторных дозаправок.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "sofa-cleaning",
+      "category": "upholstery",
+      "status": "active",
+      "sort": 110,
+      "name": { "en": "Sofa & Armchair Cleaning", "ru": "Химчистка диванов и кресел", "ar": "" },
+      "short": {
+        "en": "Hot-water extraction or dry foam depending on fabric. Dries in 4–6 hours, safe for kids and pets.",
+        "ru": "Экстракция горячей водой или сухая пена в зависимости от ткани. Высыхает за 4–6 часов, безопасно для детей и животных.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>We test the fabric first, then pick the method: hot-water extraction for most fabrics, low-moisture foam for delicate ones, a leather-specific routine for leather. Stains are pre-treated, the sofa is vacuumed and extracted, and the result is dry enough to sit on the same evening.</p>",
+        "ru": "<p>Сначала тестируем ткань, потом выбираем метод: экстракция горячей водой для большинства тканей, малоувлажняющая пена для деликатных, отдельная процедура для кожи. Пятна обрабатываем заранее, диван пылесосим и экстрагируем — вечером на нём уже можно сидеть.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Fabric test and method choice", "ru": "Тест ткани и выбор метода", "ar": "" },
+        { "en": "Pre-treatment of visible stains", "ru": "Предобработка видимых пятен", "ar": "" },
+        { "en": "Deep vacuum and extraction", "ru": "Глубокое пылесошение и экстракция", "ar": "" },
+        { "en": "Deodorising", "ru": "Нейтрализация запахов", "ar": "" }
+      ],
+      "excludes": [
+        { "en": "Guaranteed removal of old set-in stains (we tell you honestly before starting)", "ru": "Гарантия удаления старых въевшихся пятен (честно скажем до начала)", "ar": "" }
+      ],
+      "symptoms": [],
+      "visit_steps": [
+        { "en": "Fabric test, photos before", "ru": "Тест ткани, фото до", "ar": "" },
+        { "en": "Stain pre-treatment, cleaning", "ru": "Обработка пятен, чистка", "ar": "" },
+        { "en": "Drying advice, photos after", "ru": "Рекомендации по сушке, фото после", "ar": "" }
+      ],
+      "duration_min": 60,
+      "price_from": 49,
+      "pricing_unit": "seat",
+      "available_from": null,
+      "seo_title": { "en": "Sofa Cleaning in Dubai — from AED 49 per seat", "ru": "Химчистка дивана в Дубае — от 49 AED за место", "ar": "" },
+      "seo_description": {
+        "en": "Professional sofa and armchair cleaning in Dubai from AED 49 per seat. Fabric-safe methods, stain pre-treatment, dry in 4–6 hours. Book on WhatsApp.",
+        "ru": "Профессиональная химчистка диванов и кресел в Дубае от 49 AED за место. Безопасные методы, обработка пятен, сухо через 4–6 часов. Заказ в WhatsApp.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "mattress-cleaning",
+      "category": "upholstery",
+      "status": "active",
+      "sort": 120,
+      "name": { "en": "Mattress Cleaning", "ru": "Химчистка матрасов", "ar": "" },
+      "short": {
+        "en": "Dust mites, sweat and stains removed with extraction and UV-free antibacterial treatment. Single to king.",
+        "ru": "Пылевые клещи, пот и пятна — экстракция и антибактериальная обработка. От single до king.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>A mattress collects what you would rather not think about: skin flakes, dust mites, sweat. In Dubai humidity it also grows mould faster than you expect. We vacuum with a HEPA machine, treat stains, extract and apply an antibacterial finish. Dry by bedtime.</p>",
+        "ru": "<p>Матрас собирает то, о чём лучше не думать: частицы кожи, пылевых клещей, пот. Во влажности Дубая на нём ещё и быстрее появляется плесень. Мы пылесосим HEPA-машиной, обрабатываем пятна, экстрагируем и наносим антибактериальное средство. К ночи сухо.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "HEPA vacuum both sides", "ru": "HEPA-пылесос с обеих сторон", "ar": "" },
+        { "en": "Stain treatment", "ru": "Обработка пятен", "ar": "" },
+        { "en": "Extraction and antibacterial finish", "ru": "Экстракция и антибактериальная обработка", "ar": "" }
+      ],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [
+        { "en": "Photos before, vacuum", "ru": "Фото до, пылесос", "ar": "" },
+        { "en": "Stain treatment and extraction", "ru": "Обработка пятен и экстракция", "ar": "" },
+        { "en": "Antibacterial finish, photos after", "ru": "Антибактериальная обработка, фото после", "ar": "" }
+      ],
+      "duration_min": 40,
+      "price_from": 149,
+      "pricing_unit": "item",
+      "available_from": null,
+      "seo_title": { "en": "Mattress Cleaning in Dubai — dust mites and stains", "ru": "Химчистка матраса в Дубае — клещи, пятна, запах", "ar": "" },
+      "seo_description": {
+        "en": "Mattress deep cleaning in Dubai from AED 149. HEPA vacuum, stain treatment, extraction and antibacterial finish. Dry by bedtime.",
+        "ru": "Глубокая чистка матраса в Дубае от 149 AED. HEPA-пылесос, обработка пятен, экстракция, антибактериальная обработка. К ночи сухо.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "carpet-cleaning",
+      "category": "upholstery",
+      "status": "active",
+      "sort": 130,
+      "name": { "en": "Carpet & Rug Cleaning", "ru": "Химчистка ковров", "ar": "" },
+      "short": {
+        "en": "Fitted carpets and rugs cleaned in place. Priced per square metre, minimum order applies.",
+        "ru": "Ковролин и ковры чистим на месте. Цена за м², действует минимальный заказ.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>Sand gets into carpet pile and works like sandpaper on the fibres; spills and pet marks add smell. We vacuum, pre-spray, agitate and extract in place, then speed-dry. For delicate wool or silk rugs we test a corner first and may recommend specialist off-site cleaning.</p>",
+        "ru": "<p>Песок попадает в ворс и работает как наждак; пролитое и следы животных добавляют запах. Мы пылесосим, наносим состав, прочёсываем и экстрагируем на месте, затем ускоряем сушку. Для деликатных шерстяных и шёлковых ковров сначала тестируем уголок и можем посоветовать специализированную чистку вне дома.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Vacuum and pre-spray", "ru": "Пылесос и предобработка", "ar": "" },
+        { "en": "Agitation and hot-water extraction", "ru": "Прочёсывание и экстракция", "ar": "" },
+        { "en": "Speed drying", "ru": "Ускоренная сушка", "ar": "" }
+      ],
+      "excludes": [
+        { "en": "Off-site cleaning of antique or silk rugs", "ru": "Чистка антикварных и шёлковых ковров вне дома", "ar": "" }
+      ],
+      "symptoms": [],
+      "visit_steps": [
+        { "en": "Measure, test, photos before", "ru": "Замер, тест, фото до", "ar": "" },
+        { "en": "Clean and extract", "ru": "Чистка и экстракция", "ar": "" },
+        { "en": "Dry, photos after", "ru": "Сушка, фото после", "ar": "" }
+      ],
+      "duration_min": 60,
+      "price_from": 25,
+      "pricing_unit": "sqm",
+      "available_from": null,
+      "seo_title": { "en": "Carpet Cleaning in Dubai — per m², cleaned in place", "ru": "Химчистка ковров в Дубае — за м², на месте", "ar": "" },
+      "seo_description": {
+        "en": "Carpet and rug cleaning in Dubai from AED 25 per m² (minimum AED 150). Hot-water extraction in place, speed drying, photo report.",
+        "ru": "Химчистка ковров и ковролина в Дубае от 25 AED за м² (минимум 150 AED). Экстракция на месте, ускоренная сушка, фотоотчёт.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "stain-odour-removal",
+      "category": "upholstery",
+      "status": "active",
+      "sort": 140,
+      "name": { "en": "Stain & Odour Removal", "ru": "Выведение пятен и запахов", "ar": "" },
+      "short": {
+        "en": "Targeted treatment for coffee, wine, pet accidents, smoke and damp smell. Add-on to any upholstery service or on its own.",
+        "ru": "Точечная обработка: кофе, вино, следы животных, табак и запах сырости. Дополнение к химчистке или отдельно.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>Different stains need different chemistry, and the wrong one sets the stain for good. We identify the stain, treat it with the right agent and neutralise the smell at the source rather than masking it. We tell you honestly before starting if an old stain is unlikely to come out.</p>",
+        "ru": "<p>Разным пятнам нужна разная химия, и неправильная закрепляет пятно навсегда. Мы определяем природу пятна, обрабатываем нужным средством и нейтрализуем запах у источника, а не маскируем. Если старое пятно вряд ли выйдет — честно скажем до начала.</p>",
+        "ar": ""
+      },
+      "includes": [
+        { "en": "Stain identification and spot test", "ru": "Определение пятна и тест", "ar": "" },
+        { "en": "Targeted treatment", "ru": "Целевая обработка", "ar": "" },
+        { "en": "Enzyme or oxidising odour neutraliser", "ru": "Ферментный или окислительный нейтрализатор запаха", "ar": "" }
+      ],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": 20,
+      "price_from": 79,
+      "pricing_unit": "item",
+      "available_from": null,
+      "seo_title": { "en": "Stain and Odour Removal from Upholstery in Dubai", "ru": "Выведение пятен и запахов с мебели в Дубае", "ar": "" },
+      "seo_description": {
+        "en": "Targeted stain and odour treatment for sofas, mattresses and carpets in Dubai from AED 79 per item. Honest assessment before we start.",
+        "ru": "Точечное выведение пятен и запахов с диванов, матрасов и ковров в Дубае от 79 AED за предмет. Честная оценка до начала.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "humidity-mould-check",
+      "category": "coming_soon",
+      "status": "coming_soon",
+      "sort": 210,
+      "name": { "en": "Humidity & Mould Check", "ru": "Диагностика влажности и плесени", "ar": "" },
+      "short": {
+        "en": "For villas near the water: humidity diagnostics, ducted dehumidifier solutions and summer home watch while you are away. Coming soon — join the waitlist.",
+        "ru": "Для вилл у воды: диагностика влажности, канальные осушители и летний присмотр за домом, пока вы в отъезде. Скоро — запишитесь в лист ожидания.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>Villas near the coast and lakes share one problem: mould under the AC units, in wardrobes and behind furniture. Portable dehumidifiers help, but emptying tanks every few days gets old. We are preparing a service that starts with proper humidity diagnostics, continues with a ducted dehumidifier integrated into your AC where it makes sense, and includes a summer home watch: fortnightly visits while you are away, with AC checks, leak checks and a photo report.</p>",
+        "ru": "<p>У вилл у побережья и озёр одна общая проблема: плесень под кондиционерами, в шкафах и за мебелью. Переносные осушители помогают, но выливать баки каждые несколько дней надоедает. Мы готовим услугу: сначала грамотная диагностика влажности, затем канальный осушитель, встроенный в вашу систему кондиционирования, где это оправдано, и летний присмотр за домом — визиты раз в две недели, пока вы в отъезде, с проверкой кондиционеров, протечек и фотоотчётом.</p>",
+        "ar": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": { "en": "Humidity and Mould Diagnostics for Dubai Villas — coming soon", "ru": "Диагностика влажности и плесени для вилл Дубая — скоро", "ar": "" },
+      "seo_description": {
+        "en": "Humidity diagnostics, ducted dehumidifier solutions and summer home watch for Dubai villas. Coming soon — join the waitlist.",
+        "ru": "Диагностика влажности, канальные осушители и летний присмотр за домом для вилл Дубая. Скоро — лист ожидания.",
+        "ar": ""
+      }
+    },
+    {
+      "slug": "water-tank-cleaning",
+      "category": "coming_soon",
+      "status": "coming_soon",
+      "sort": 220,
+      "name": { "en": "Water Tank Cleaning", "ru": "Чистка резервуаров воды", "ar": "" },
+      "short": {
+        "en": "Dubai Municipality-approved tank cleaning from July 2027. Join the waitlist and we will contact you first.",
+        "ru": "Чистка резервуаров с разрешением Dubai Municipality — с июля 2027. Запишитесь в лист ожидания, свяжемся первыми.",
+        "ar": ""
+      },
+      "description_html": {
+        "en": "<p>Water tank cleaning in Dubai requires a separate Dubai Municipality approval. We are going through that process and plan to offer the service from July 2027. If you would like a reminder when it launches, leave your details.</p>",
+        "ru": "<p>Чистка резервуаров воды в Дубае требует отдельного разрешения Dubai Municipality. Мы проходим этот процесс и планируем запустить услугу с июля 2027. Если хотите напоминание о запуске — оставьте контакты.</p>",
+        "ar": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": "2027-07-01",
+      "seo_title": { "en": "Water Tank Cleaning in Dubai — from July 2027", "ru": "Чистка резервуаров воды в Дубае — с июля 2027", "ar": "" },
+      "seo_description": {
+        "en": "Dubai Municipality-approved water tank cleaning, launching July 2027. Join the waitlist.",
+        "ru": "Чистка резервуаров воды с разрешением Dubai Municipality, запуск в июле 2027. Лист ожидания.",
+        "ar": ""
+      }
+    }
+  ]
+}
