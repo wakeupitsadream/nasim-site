@@ -1,0 +1,69 @@
+{
+  "_comment": "Стартовые цены (AED) — рыночные ориентиры Дубая на 11.2026, Миша подтверждает/правит в админке. tier_from_qty — ступень по количеству: берётся строка с максимальным tier_from_qty <= qty.",
+  "price_items": [
+    { "service_slug": "ac-cleaning", "key": "ac_clean_1", "name": { "en": "Standard clean, 1 unit", "ru": "Стандартная чистка, 1 блок", "ar": "" }, "unit": "unit", "price": 199, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Call-out included", "ru": "Выезд включён", "ar": "" }, "sort": 1 },
+    { "service_slug": "ac-cleaning", "key": "ac_clean_2_3", "name": { "en": "Standard clean, 2–3 units", "ru": "Стандартная чистка, 2–3 блока", "ar": "" }, "unit": "unit", "price": 169, "min_qty": 2, "tier_from_qty": 2, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 2 },
+    { "service_slug": "ac-cleaning", "key": "ac_clean_4plus", "name": { "en": "Standard clean, 4+ units", "ru": "Стандартная чистка, 4+ блоков", "ar": "" }, "unit": "unit", "price": 149, "min_qty": 4, "tier_from_qty": 4, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 3 },
+
+    { "service_slug": "ac-deep-cleaning", "key": "ac_deep_1", "name": { "en": "Deep clean, 1 unit", "ru": "Глубокая чистка, 1 блок", "ar": "" }, "unit": "unit", "price": 399, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Full indoor unit disassembly", "ru": "Разборка внутреннего блока", "ar": "" }, "sort": 1 },
+    { "service_slug": "ac-deep-cleaning", "key": "ac_deep_2plus", "name": { "en": "Deep clean, 2+ units", "ru": "Глубокая чистка, 2+ блоков", "ar": "" }, "unit": "unit", "price": 349, "min_qty": 2, "tier_from_qty": 2, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 2 },
+
+    { "service_slug": "ducted-ac-fcu-service", "key": "fcu_service", "name": { "en": "Fan coil unit service", "ru": "Обслуживание фанкойла", "ar": "" }, "unit": "fcu", "price": 249, "min_qty": 2, "tier_from_qty": 1, "note": { "en": "Minimum 2 FCU", "ru": "Минимум 2 фанкойла", "ar": "" }, "sort": 1 },
+
+    { "service_slug": "emergency-ac-repair", "key": "emergency_callout", "name": { "en": "Emergency call-out + diagnostics", "ru": "Срочный выезд + диагностика", "ar": "" }, "unit": "visit", "price": 149, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Credited to a repair done in the same visit", "ru": "Засчитывается в ремонт в тот же визит", "ar": "" }, "sort": 1 },
+
+    { "service_slug": "ac-repair", "key": "repair_labour", "name": { "en": "Repair labour", "ru": "Ремонт, работа", "ar": "" }, "unit": "from", "price": 199, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Parts quoted separately, 90-day warranty", "ru": "Запчасти по смете, гарантия 90 дней", "ar": "" }, "sort": 1 },
+
+    { "service_slug": "refrigerant-leak-refill", "key": "leak_test", "name": { "en": "Nitrogen leak test", "ru": "Поиск утечки (азот)", "ar": "" }, "unit": "unit", "price": 249, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Per system", "ru": "За систему", "ar": "" }, "sort": 1 },
+    { "service_slug": "refrigerant-leak-refill", "key": "refill", "name": { "en": "Refill after leak repair", "ru": "Заправка после устранения утечки", "ar": "" }, "unit": "from", "price": 349, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "By refrigerant type and weight", "ru": "По типу фреона и весу", "ar": "" }, "sort": 2 },
+
+    { "service_slug": "sofa-cleaning", "key": "sofa_seat", "name": { "en": "Sofa, per seat", "ru": "Диван, за место", "ar": "" }, "unit": "seat", "price": 49, "min_qty": 3, "tier_from_qty": 1, "note": { "en": "Minimum 3 seats", "ru": "Минимум 3 места", "ar": "" }, "sort": 1 },
+    { "service_slug": "sofa-cleaning", "key": "armchair", "name": { "en": "Armchair", "ru": "Кресло", "ar": "" }, "unit": "item", "price": 69, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "", "ru": "", "ar": "" }, "sort": 2 },
+
+    { "service_slug": "mattress-cleaning", "key": "mattress_single", "name": { "en": "Mattress, single", "ru": "Матрас single", "ar": "" }, "unit": "item", "price": 149, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "", "ru": "", "ar": "" }, "sort": 1 },
+    { "service_slug": "mattress-cleaning", "key": "mattress_double", "name": { "en": "Mattress, double / queen", "ru": "Матрас double / queen", "ar": "" }, "unit": "item", "price": 199, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "", "ru": "", "ar": "" }, "sort": 2 },
+    { "service_slug": "mattress-cleaning", "key": "mattress_king", "name": { "en": "Mattress, king", "ru": "Матрас king", "ar": "" }, "unit": "item", "price": 249, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "", "ru": "", "ar": "" }, "sort": 3 },
+
+    { "service_slug": "carpet-cleaning", "key": "carpet_sqm", "name": { "en": "Carpet, per m²", "ru": "Ковёр, за м²", "ar": "" }, "unit": "sqm", "price": 25, "min_qty": 6, "tier_from_qty": 1, "note": { "en": "Minimum AED 150", "ru": "Минимум 150 AED", "ar": "" }, "sort": 1 },
+
+    { "service_slug": "stain-odour-removal", "key": "stain_item", "name": { "en": "Stain & odour treatment, per item", "ru": "Пятна и запах, за предмет", "ar": "" }, "unit": "item", "price": 79, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Add-on to any upholstery service", "ru": "Дополнение к любой химчистке", "ar": "" }, "sort": 1 }
+  ],
+  "packages": [
+    {
+      "type": "bundle", "slug": "fresh-home", "sort": 1, "highlighted": true, "published": true,
+      "name": { "en": "Fresh Home", "ru": "Fresh Home", "ar": "" },
+      "description": { "en": "3 split units standard clean + 3-seat sofa cleaning in one visit.", "ru": "Стандартная чистка 3 блоков + химчистка 3-местного дивана за один визит.", "ar": "" },
+      "price": 599, "compare_price": 654,
+      "includes": { "ac_clean": 3, "sofa_seat": 3 }
+    },
+    {
+      "type": "annual", "slug": "essential", "sort": 1, "highlighted": false, "published": true,
+      "name": { "en": "Essential", "ru": "Essential", "ar": "" },
+      "description": { "en": "Up to 3 split units. 3 standard cleans a year, priority booking, 10% off repairs.", "ru": "До 3 блоков. 3 стандартные чистки в год, приоритетная запись, −10% на ремонт.", "ar": "" },
+      "price": 899, "compare_price": null,
+      "includes": { "units_max": 3, "visits": 3, "deep_cleans": 0, "priority_hours": 48, "repair_discount_pct": 10 }
+    },
+    {
+      "type": "annual", "slug": "comfort", "sort": 2, "highlighted": true, "published": true,
+      "name": { "en": "Comfort", "ru": "Comfort", "ar": "" },
+      "description": { "en": "Up to 5 split units. 3 visits a year, one of them a deep clean, priority booking, 10% off repairs.", "ru": "До 5 блоков. 3 визита в год, один из них — глубокая чистка, приоритетная запись, −10% на ремонт.", "ar": "" },
+      "price": 1499, "compare_price": null,
+      "includes": { "units_max": 5, "visits": 3, "deep_cleans": 1, "priority_hours": 48, "repair_discount_pct": 10 }
+    },
+    {
+      "type": "annual", "slug": "villa", "sort": 3, "highlighted": false, "published": true,
+      "name": { "en": "Villa", "ru": "Villa", "ar": "" },
+      "description": { "en": "Up to 8 FCUs or split units. 3 visits a year, 24-hour priority call-out, 15% off repairs.", "ru": "До 8 фанкойлов или блоков. 3 визита в год, приоритетный выезд за 24 часа, −15% на ремонт.", "ar": "" },
+      "price": 2499, "compare_price": null,
+      "includes": { "units_max": 8, "visits": 3, "deep_cleans": 0, "priority_hours": 24, "repair_discount_pct": 15 }
+    }
+  ],
+  "pricing_rules": {
+    "currency": "AED",
+    "rounding": 1,
+    "vat_rate": 0.05,
+    "diagnostics_credited_to_repair": true,
+    "quote_only_services": ["ac-repair", "refrigerant-leak-refill", "humidity-mould-check", "water-tank-cleaning"],
+    "suggest_bundle_when_cheaper": true
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "_comment": "Районы обслуживания. featured=true → публикуются на старте (с уникальным intro). Остальные — черновики для админки. ar — пусто.",
+  "areas": [
+    { "slug": "dubai-marina", "featured": true, "published": true, "sort": 1, "eta_minutes": 30,
+      "name": { "en": "Dubai Marina", "ru": "Дубай Марина", "ar": "" },
+      "intro_html": {
+        "en": "<p>High-rise apartments with wall-mounted split units or fan coil units above the corridor ceiling, sea air and year-round humidity. Marina units clog faster than inland ones and the drain lines in older towers are a frequent source of dripping. We recommend a standard clean every 4 months and a drain check at the start of summer.</p>",
+        "ru": "<p>Высотные квартиры со сплит-системами или фанкойлами над потолком коридора, морской воздух и влажность круглый год. Блоки в Марине забиваются быстрее, чем вглубь города, а дренаж в старых башнях — частая причина капели. Рекомендуем стандартную чистку раз в 4 месяца и проверку дренажа в начале лета.</p>",
+        "ar": "" } },
+    { "slug": "jbr", "featured": true, "published": true, "sort": 2, "eta_minutes": 30,
+      "name": { "en": "JBR", "ru": "JBR", "ar": "" },
+      "intro_html": {
+        "en": "<p>Beachfront towers with fan coil units and heavy salt-air exposure on the outdoor side. Many JBR apartments are holiday lets, so we work around check-in schedules and send the report to the owner wherever they are.</p>",
+        "ru": "<p>Башни на первой линии с фанкойлами и сильным воздействием солёного воздуха на наружные блоки. Многие квартиры в JBR сдаются посуточно — подстраиваемся под заезды и отправляем отчёт владельцу, где бы он ни был.</p>",
+        "ar": "" } },
+    { "slug": "palm-jumeirah", "featured": true, "published": true, "sort": 3, "eta_minutes": 35,
+      "name": { "en": "Palm Jumeirah", "ru": "Палм Джумейра", "ar": "" },
+      "intro_html": {
+        "en": "<p>Villas and townhouses right on the water with ducted systems and multiple fan coil units, plus the highest humidity in Dubai. Mould under AC units and in wardrobes is the number one complaint here. We service every FCU through its hatch and flag humidity problems early.</p>",
+        "ru": "<p>Виллы и таунхаусы прямо на воде с канальными системами и несколькими фанкойлами, плюс самая высокая влажность в Дубае. Плесень под кондиционерами и в шкафах — жалоба номер один. Обслуживаем каждый фанкойл через люк и заранее предупреждаем о проблемах с влажностью.</p>",
+        "ar": "" } },
+    { "slug": "downtown-dubai", "featured": true, "published": true, "sort": 4, "eta_minutes": 30,
+      "name": { "en": "Downtown Dubai", "ru": "Даунтаун", "ar": "" },
+      "intro_html": {
+        "en": "<p>Premium towers with fan coil units and strict building access rules. We register with security in advance, protect floors and finishes, and work within the building's permitted hours.</p>",
+        "ru": "<p>Премиальные башни с фанкойлами и строгими правилами доступа. Регистрируемся у охраны заранее, защищаем полы и отделку, работаем в разрешённые здание часы.</p>",
+        "ar": "" } },
+    { "slug": "business-bay", "featured": true, "published": true, "sort": 5, "eta_minutes": 25,
+      "name": { "en": "Business Bay", "ru": "Бизнес Бэй", "ar": "" },
+      "intro_html": {
+        "en": "<p>A mix of apartments and small offices, mostly fan coil units. For offices we offer visits before 9am or after 6pm so the team is not disturbed, and annual contracts covering all units in the suite.</p>",
+        "ru": "<p>Смесь квартир и небольших офисов, в основном фанкойлы. Для офисов предлагаем визиты до 9:00 или после 18:00, чтобы не мешать команде, и годовые контракты на все блоки в помещении.</p>",
+        "ar": "" } },
+    { "slug": "jvc", "featured": true, "published": true, "sort": 6, "eta_minutes": 20,
+      "name": { "en": "JVC", "ru": "JVC", "ar": "" },
+      "intro_html": {
+        "en": "<p>Mid-rise buildings and townhouses, mostly split units, and a lot of construction dust that gets into filters and coils. A standard clean twice a year keeps JVC units running cold; new tenants often start with a deep clean.</p>",
+        "ru": "<p>Среднеэтажные дома и таунхаусы, в основном сплиты, и много строительной пыли, которая забивает фильтры и радиаторы. Стандартная чистка дважды в год держит блоки в JVC холодными; новые арендаторы часто начинают с глубокой чистки.</p>",
+        "ar": "" } },
+    { "slug": "jlt", "featured": true, "published": true, "sort": 7, "eta_minutes": 25,
+      "name": { "en": "JLT", "ru": "JLT", "ar": "" },
+      "intro_html": {
+        "en": "<p>Towers around the lakes with fan coil units and a large Russian-speaking community. Humidity from the lakes plus older towers means drain lines deserve attention every visit.</p>",
+        "ru": "<p>Башни вокруг озёр с фанкойлами и большое русскоязычное сообщество. Влажность от озёр плюс возраст башен — дренаж заслуживает внимания при каждом визите.</p>",
+        "ar": "" } },
+    { "slug": "arabian-ranches", "featured": true, "published": true, "sort": 8, "eta_minutes": 35,
+      "name": { "en": "Arabian Ranches", "ru": "Арабиан Ранчес", "ar": "" },
+      "intro_html": {
+        "en": "<p>Family villas with ducted systems, 4–8 fan coil units and outdoor condensers exposed to desert dust. We service all units in one visit and most Ranches families move to an annual Villa contract after the first one.</p>",
+        "ru": "<p>Семейные виллы с канальными системами, 4–8 фанкойлов и наружные блоки в пустынной пыли. Обслуживаем все блоки за один визит; большинство семей в Ранчес после первого раза переходят на годовой контракт Villa.</p>",
+        "ar": "" } },
+    { "slug": "dubai-hills", "featured": true, "published": true, "sort": 9, "eta_minutes": 30,
+      "name": { "en": "Dubai Hills", "ru": "Дубай Хиллс", "ar": "" },
+      "intro_html": {
+        "en": "<p>Newer villas and apartments with modern ducted systems that are still under developer warranty for parts — we service and clean without voiding it, and tell you when something should go to the developer instead.</p>",
+        "ru": "<p>Новые виллы и квартиры с современными канальными системами, часто ещё на гарантии застройщика по деталям — обслуживаем и чистим, не нарушая её, и говорим, когда вопрос лучше адресовать застройщику.</p>",
+        "ar": "" } },
+    { "slug": "damac-hills", "featured": true, "published": true, "sort": 10, "eta_minutes": 35,
+      "name": { "en": "Damac Hills", "ru": "Дамак Хиллс", "ar": "" },
+      "intro_html": {
+        "en": "<p>Villas and townhouses on the golf course with ducted systems; irrigation and greenery raise local humidity. We check drain pans carefully — overflowing pans are the usual cause of ceiling stains here.</p>",
+        "ru": "<p>Виллы и таунхаусы у гольф-поля с канальными системами; полив и зелень повышают локальную влажность. Внимательно проверяем поддоны — переполненный поддон здесь обычная причина пятен на потолке.</p>",
+        "ar": "" } },
+    { "slug": "al-barsha", "featured": false, "published": false, "sort": 11, "eta_minutes": 25, "name": { "en": "Al Barsha", "ru": "Аль Барша", "ar": "" }, "intro_html": { "en": "", "ru": "", "ar": "" } },
+    { "slug": "jumeirah-umm-suqeim", "featured": false, "published": false, "sort": 12, "eta_minutes": 30, "name": { "en": "Jumeirah & Umm Suqeim", "ru": "Джумейра и Умм-Сукейм", "ar": "" }, "intro_html": { "en": "", "ru": "", "ar": "" } },
+    { "slug": "springs-meadows-lakes", "featured": false, "published": false, "sort": 13, "eta_minutes": 30, "name": { "en": "Springs, Meadows & Lakes", "ru": "Спрингс, Медоуз и Лейкс", "ar": "" }, "intro_html": { "en": "", "ru": "", "ar": "" } },
+    { "slug": "motor-city-sports-city", "featured": false, "published": false, "sort": 14, "eta_minutes": 30, "name": { "en": "Motor City & Sports City", "ru": "Мотор Сити и Спортс Сити", "ar": "" }, "intro_html": { "en": "", "ru": "", "ar": "" } },
+    { "slug": "mirdif", "featured": false, "published": false, "sort": 15, "eta_minutes": 40, "name": { "en": "Mirdif", "ru": "Мирдиф", "ar": "" }, "intro_html": { "en": "", "ru": "", "ar": "" } },
+    { "slug": "silicon-oasis", "featured": false, "published": false, "sort": 16, "eta_minutes": 40, "name": { "en": "Dubai Silicon Oasis", "ru": "Силикон Оазис", "ar": "" }, "intro_html": { "en": "", "ru": "", "ar": "" } }
+  ]
+}

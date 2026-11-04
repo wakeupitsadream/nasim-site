@@ -1,0 +1,148 @@
+{
+  "_comment": "Контент-блоки статических текстов (таблица content_blocks). kind: text | html | json. Ключи wa.template.* и reply.template.* — шаблоны WhatsApp; плейсхолдеры {brand} {service} {units} {area} {time} {page} {name} подставляет lib/whatsapp.ts, пустые опускаются вместе со своим фрагментом в скобках. AR заполнено только там, где текст короткий и однозначный; остальное — AI-перевод + ревью носителя.",
+  "blocks": [
+    { "key": "home.hero.title", "kind": "text",
+      "value": { "en": "Clean, cold air. No surprises.", "ru": "Чистый холодный воздух. Без сюрпризов.", "ar": "" } },
+    { "key": "home.hero.subtitle", "kind": "text",
+      "value": { "en": "AC cleaning, repair and upholstery cleaning in Dubai. The price is fixed before we come, the technician arrives in a one-hour slot, and you get a photo report in WhatsApp.", "ru": "Чистка и ремонт кондиционеров, химчистка мебели в Дубае. Цена фиксируется до приезда, техник приезжает в часовой слот, отчёт с фото — в WhatsApp.", "ar": "" } },
+    { "key": "home.hero.cta_primary", "kind": "text",
+      "value": { "en": "Book on WhatsApp", "ru": "Заказать в WhatsApp", "ar": "احجز عبر واتساب" } },
+    { "key": "home.hero.cta_secondary", "kind": "text",
+      "value": { "en": "Get an instant price", "ru": "Узнать цену сразу", "ar": "احصل على السعر فوراً" } },
+    { "key": "home.trust.items", "kind": "json",
+      "value": { "en": ["Fixed price before the visit", "One-hour arrival slot", "Photo report in WhatsApp", "30-day guarantee"], "ru": ["Цена фиксирована до визита", "Часовой слот приезда", "Фотоотчёт в WhatsApp", "Гарантия 30 дней"], "ar": [] } },
+
+    { "key": "home.how.steps", "kind": "json",
+      "value": {
+        "en": [
+          { "title": "Message us", "text": "WhatsApp or the form. Tell us what, where and how many units." },
+          { "title": "Price and slot confirmed", "text": "You get the exact price and a one-hour arrival window in writing." },
+          { "title": "The technician comes", "text": "Protective sheeting, photos before, the work, photos after." },
+          { "title": "Report and reminder", "text": "Readings and photos in WhatsApp. We remind you when the next clean is due." }
+        ],
+        "ru": [
+          { "title": "Напишите нам", "text": "WhatsApp или форма. Что, где и сколько блоков." },
+          { "title": "Цена и слот подтверждены", "text": "Точная цена и часовое окно приезда — письменно." },
+          { "title": "Приезжает техник", "text": "Защитная плёнка, фото до, работа, фото после." },
+          { "title": "Отчёт и напоминание", "text": "Замеры и фото в WhatsApp. Напомним, когда пора чистить снова." }
+        ],
+        "ar": []
+      } },
+
+    { "key": "home.why.title", "kind": "text",
+      "value": { "en": "Why every 4–6 months in Dubai", "ru": "Почему раз в 4–6 месяцев в Дубае", "ar": "" } },
+    { "key": "home.why.items", "kind": "json",
+      "value": {
+        "en": [
+          { "title": "Dust", "text": "Desert dust settles on the coil and filters within weeks. Airflow drops, the compressor works longer." },
+          { "title": "Humidity", "text": "A wet coil in a warm room grows mould. That is the smell when the unit starts." },
+          { "title": "Your DEWA bill", "text": "A dirty coil can cost 10–20% more electricity for the same cooling." }
+        ],
+        "ru": [
+          { "title": "Пыль", "text": "Пустынная пыль оседает на радиаторе и фильтрах за недели. Поток падает, компрессор работает дольше." },
+          { "title": "Влажность", "text": "Мокрый радиатор в тёплой комнате растит плесень. Это и есть запах при включении." },
+          { "title": "Счёт DEWA", "text": "Грязный радиатор может стоить на 10–20% больше электричества за тот же холод." }
+        ],
+        "ar": []
+      } },
+
+    { "key": "guarantee.text", "kind": "html",
+      "value": {
+        "en": "<p><strong>Cleaning:</strong> 30 days. If the smell or problem we cleaned comes back, we redo it free.<br><strong>Repairs:</strong> 90 days on parts and labour.</p>",
+        "ru": "<p><strong>Чистка:</strong> 30 дней. Если запах или проблема вернулись — переделаем бесплатно.<br><strong>Ремонт:</strong> 90 дней на детали и работу.</p>",
+        "ar": "" } },
+
+    { "key": "report.mockup", "kind": "json",
+      "value": {
+        "en": { "header": "Report · Bedroom AC", "lines": ["Before: 16.8 °C at the outlet", "After: 11.2 °C at the outlet", "Filters, coil, fan, drain cleaned", "Next clean due: in 5 months"] },
+        "ru": { "header": "Отчёт · кондиционер в спальне", "lines": ["До: 16,8 °C на выходе", "После: 11,2 °C на выходе", "Фильтры, радиатор, вентилятор, дренаж", "Следующая чистка: через 5 месяцев"] },
+        "ar": {}
+      } },
+
+    { "key": "about.body", "kind": "html",
+      "value": {
+        "en": "<p>[Placeholder — Misha provides the facts, Opus writes the text in phase 3.] Who we are, why we started with AC cleaning, how the team works.</p>",
+        "ru": "<p>[Заглушка — факты от Миши, текст пишет Opus в фазе 3.] Кто мы, почему начали с чистки кондиционеров, как работает команда.</p>",
+        "ar": "" } },
+    { "key": "about.not_doing", "kind": "html",
+      "value": {
+        "en": "<p>We do not install new systems, do not repair large office VRF systems, and do not clean ducts or remove mould from walls ourselves — the last two need separate Dubai Municipality approvals, so we arrange them through a licensed partner. If your job is one of these, we will say so straight away.</p>",
+        "ru": "<p>Мы не устанавливаем новые системы, не ремонтируем большие офисные VRF и сами не чистим воздуховоды и не удаляем плесень со стен — последние два требуют отдельных разрешений Dubai Municipality, поэтому организуем их через лицензированного партнёра. Если ваша задача из этого списка — скажем сразу.</p>",
+        "ar": "" } },
+
+    { "key": "contact.response_note", "kind": "text",
+      "value": { "en": "We reply in WhatsApp within 15 minutes during working hours.", "ru": "Отвечаем в WhatsApp в течение 15 минут в рабочее время.", "ar": "" } },
+
+    { "key": "thankyou.title", "kind": "text",
+      "value": { "en": "Got it — we will call you back", "ru": "Принято — мы перезвоним", "ar": "" } },
+    { "key": "thankyou.text", "kind": "text",
+      "value": { "en": "Want it faster? Message us in WhatsApp and we will confirm the price and slot right away.", "ru": "Хотите быстрее? Напишите в WhatsApp — подтвердим цену и слот сразу.", "ar": "" } },
+
+    { "key": "wa.template.generic", "kind": "text",
+      "value": {
+        "en": "Hi {brand}! I'd like to book {service}( — {units} units)( in {area}).( Preferred time: {time}.) — from website/{page}",
+        "ru": "Здравствуйте! Хочу заказать {service}( — {units} блоков)( в {area}).( Удобное время: {time}.) — с сайта/{page}",
+        "ar": "مرحباً {brand}! أود حجز {service}( — {units} وحدة)( في {area}).( الوقت المفضل: {time}.) — من الموقع/{page}"
+      } },
+    { "key": "wa.template.emergency", "kind": "text",
+      "value": {
+        "en": "Hi {brand}! Emergency: my AC {service}( in {area}). Can you come today? — from website/{page}",
+        "ru": "Здравствуйте! Срочно: кондиционер {service}( в {area}). Сможете сегодня? — с сайта/{page}",
+        "ar": "مرحباً {brand}! حالة طارئة: المكيف {service}( في {area}). هل يمكنكم القدوم اليوم؟ — من الموقع/{page}"
+      } },
+    { "key": "wa.template.quote", "kind": "text",
+      "value": {
+        "en": "Hi {brand}! I'd like to book this: {quote_lines}. Total {total}.( Area: {area}.)( Preferred time: {time}.) — from website/calculator",
+        "ru": "Здравствуйте! Хочу заказать: {quote_lines}. Итого {total}.( Район: {area}.)( Удобное время: {time}.) — с сайта/калькулятор",
+        "ar": "مرحباً {brand}! أود حجز: {quote_lines}. المجموع {total}.( المنطقة: {area}.)( الوقت المفضل: {time}.) — من الموقع/الحاسبة"
+      } },
+    { "key": "wa.template.contract", "kind": "text",
+      "value": {
+        "en": "Hi {brand}! I'm interested in the {service} annual contract( for {units} units)( in {area}). — from website/annual-contracts",
+        "ru": "Здравствуйте! Интересует годовой контракт {service}( на {units} блоков)( в {area}). — с сайта/контракты",
+        "ar": "مرحباً {brand}! أنا مهتم بالعقد السنوي {service}( لـ {units} وحدة)( في {area}). — من الموقع/العقود السنوية"
+      } },
+
+    { "key": "reply.template.new_lead", "kind": "text",
+      "value": {
+        "en": "Hi {name}, this is {brand}. Thanks for your request for {service}. The price is {total} and we can come {time}. Does that work for you?",
+        "ru": "Здравствуйте, {name}! Это {brand}. Спасибо за заявку на {service}. Цена — {total}, можем приехать {time}. Подходит?",
+        "ar": "مرحباً {name}، معك {brand}. شكراً لطلبك {service}. السعر {total} ويمكننا القدوم {time}. هل يناسبك ذلك؟"
+      } },
+    { "key": "reply.template.reminder", "kind": "text",
+      "value": {
+        "en": "Hi {name}, this is {brand}. It has been about 5 months since we cleaned your AC — a good time for the next clean before the heat. Shall we book a slot?",
+        "ru": "Здравствуйте, {name}! Это {brand}. Прошло около 5 месяцев с чистки вашего кондиционера — пора повторить до жары. Подобрать слот?",
+        "ar": "مرحباً {name}، معك {brand}. مرّت نحو 5 أشهر على تنظيف مكيفكم — وقت مناسب للتنظيف التالي قبل الحر. هل نحدد موعداً؟"
+      } },
+
+    { "key": "legal.privacy", "kind": "html",
+      "value": { "en": "<p>[Draft in phase 3 per BRIEF §16; final in phase 6 with company data.]</p>", "ru": "<p>[Черновик в фазе 3 по BRIEF §16; финал в фазе 6 с данными компании.]</p>", "ar": "" } },
+    { "key": "legal.terms", "kind": "html",
+      "value": { "en": "<p>[Draft in phase 3 per BRIEF §16; final in phase 6 with company data.]</p>", "ru": "<p>[Черновик в фазе 3 по BRIEF §16; финал в фазе 6 с данными компании.]</p>", "ar": "" } },
+
+    { "key": "settings.defaults", "kind": "json",
+      "value": {
+        "en": {
+          "brand_name": "Nasim Home Care",
+          "hours": "Daily 8:00–20:00",
+          "emergency_hours": "Same-day visits for requests before 16:00; emergency line until 22:00",
+          "service_area_note": "Dubai, all communities",
+          "response_time_note": "We reply within 15 minutes during working hours",
+          "flags": { "ar_noindex": true, "show_reviews": true, "emergency_enabled": true, "telegram_cta_ru": false },
+          "vat_registered": false, "vat_included": false,
+          "glossary": { "split AC": "сплит-система", "fan coil unit (FCU)": "фанкойл", "ducted AC": "канальный кондиционер", "deep cleaning": "глубокая чистка", "refrigerant": "фреон", "call-out": "выезд", "annual contract": "годовой контракт" }
+        },
+        "ru": {
+          "brand_name": "Nasim Home Care",
+          "hours": "Ежедневно 8:00–20:00",
+          "emergency_hours": "Выезд в тот же день по заявкам до 16:00; срочная линия до 22:00",
+          "service_area_note": "Дубай, все районы",
+          "response_time_note": "Отвечаем в течение 15 минут в рабочее время"
+        },
+        "ar": {
+          "brand_name": "نسيم للعناية بالمنزل"
+        }
+      } }
+  ]
+}
