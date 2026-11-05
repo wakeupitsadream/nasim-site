@@ -11,6 +11,7 @@ import {
   seedPricingRules,
   seedServices,
 } from '@/lib/content/seed';
+import { buildPricingConfig, type PricingConfig } from '@/lib/pricing';
 import type {
   Area,
   BlockKey,
@@ -62,6 +63,11 @@ export async function getPackages(filter: { type?: Package['type'] } = {}): Prom
 
 export async function getPricingRules(): Promise<PricingRulesRecord> {
   return seedPricingRules();
+}
+
+/** Serializable config for lib/pricing.ts (the booking wizard receives it as a prop). */
+export async function getPricingConfig(): Promise<PricingConfig> {
+  return buildPricingConfig(seedPriceItems(), seedPackages(), seedPricingRules());
 }
 
 /** Published areas only (BRIEF §5: unpublished drafts never get a page or a link). */
