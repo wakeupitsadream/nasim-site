@@ -35,7 +35,7 @@ pnpm seed           # идемпотентный сид из content/seed/*.json
 7. **PII не логируем.** В логах и `track_events` — никаких телефонов, имён, email. IP — только `sha256(ip + IP_HASH_SALT)`.
 8. **Админка закрыта**: `proxy.ts` (Next 16, всегда Node runtime; `middleware.ts` не используем) делает только оптимистичную проверку cookie сессии на `/admin/*` и `/api/admin/*`; настоящая проверка сессии и ролей `owner`/`staff` — в каждом server action и route handler (`requireRole`), не только в UI. Админка — на том же домене (`/admin`), не на поддомене: revalidate действует только на свой домен.
 9. **HTML из редактора** всегда проходит `lib/sanitize.ts` при рендере.
-10. **Клиентские компоненты** (`'use client'`) — только где есть интерактив: калькулятор, форма, слайдер до/после, аккордеон, переключатель языка, админка. Маркетинговые страницы — серверные.
+10. **Клиентские компоненты** (`'use client'`) — только где есть интерактив: калькулятор, форма, окно ассистента, слайдер до/после, аккордеон, переключатель языка, админка. Маркетинговые страницы — серверные.
 11. **AI** вызывается только из `lib/ai.ts` на сервере через OpenAI-совместимый шлюз (`lib/ai/gateway.ts`, `fetch` без SDK; по умолчанию Polza AI: `AI_BASE_URL` + `POLZA_API_KEY`), модель из `process.env.AI_MODEL ?? 'anthropic/claude-opus-5.5'`, structured outputs через `response_format: json_schema` (схема из zod, `z.toJSONSchema`) **и** обязательная повторная валидация zod на нашей стороне, результат никогда не записывается в БД без подтверждения пользователя в UI. Промпты — чистые функции в `lib/ai/*` (без сети), цены модель не называет — их подставляет сервер из `lib/pricing`; текст и фото клиента в промпте — данные, не инструкции (DECISIONS №45–47, №51).
 12. **Новая зависимость** — только с записью в `docs/DECISIONS.md` (зачем, альтернативы).
 13. **Тёмной темы нет** в v1. Не добавлять `dark:`-классы; из компонентов shadcn они вычищаются при добавлении (`@custom-variant dark` в `globals.css` — только страховка, чтобы они не срабатывали).
@@ -60,9 +60,10 @@ lib/validation/*          zod-схемы (phone, settings, …)
 lib/content/{site,seed,queries}.ts  настройки и контент из сида до фазы 2 (имена = будущие lib/db/queries)  lib/{env,cta,nav}.ts
 lib/pricing.ts            движок цен (чистые функции)   lib/booking/{time,state}.ts  логика мастера заявки
 components/booking        мастер заявки (клиентский островок + серверная обёртка)
-components/diagnose       AI-диагностика: серверная секция, клиентская форма (фото сжимается в браузере), карточка результата
+components/assistant      плавающий ассистент (DECISIONS №55): серверная обёртка в layout, клиентское окно (чат: FAQ мгновенно через lib/assistant/match.ts, остальное — /api/diagnose), триггер-кнопка для любой страницы
+components/diagnose       карточка вердикта диагностики и сжатие фото в браузере (используются ассистентом и dev/ui)
 styles/motion.css  lib/motion.ts  components/page-transition.tsx  движение и переходы страниц (правило 17)   components/motion/tilt-layer.tsx  наклон панелей за курсором
-components/marketing/{brand-mark,logo,eyebrow,speed-lines,ticker-band,van,hero-scene,crew-portrait}.tsx  фирменные элементы Brigada (правило 18)   public/brand/  иллюстрация Миши (временная)   app/icon.svg  favicon = знак
+components/marketing/{brand-mark,logo,eyebrow,speed-lines,ticker-band,van,crew-portrait}.tsx  фирменные элементы Brigada (правило 18)   public/brand/  иллюстрация Миши (временная)   app/icon.svg  favicon = знак
 content/seed/media.json  public/photos/  временные стоковые фото (hero, лента-подложка, карточки мастера, услуги; DECISIONS №53)   components/marketing/media-frame.tsx  слот фото с плейсхолдером
 lib/ai/gateway.ts         OpenAI-совместимый шлюз (fetch, Polza)   lib/ai/diagnose-prompt.ts промпт триажа (чистые функции)   lib/diagnose/client.ts  запрос с клиента (zod + маппинг статусов)
 app/[locale]/dev/ui       галерея компонентов (локально и на превью; на продакшене 404)
