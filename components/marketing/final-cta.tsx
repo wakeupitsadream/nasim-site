@@ -6,7 +6,7 @@ import { AirflowLines } from '@/components/marketing/airflow-lines';
 import { CtaLink } from '@/components/marketing/cta-link';
 import { Section } from '@/components/marketing/section';
 import { SpeedLines } from '@/components/marketing/speed-lines';
-import { Van } from '@/components/marketing/van';
+import { VanDrive } from '@/components/marketing/van-drive';
 import { Button } from '@/components/ui/button';
 import { getPhoto } from '@/lib/content/queries';
 import type { CtaTarget } from '@/lib/cta';
@@ -53,7 +53,7 @@ export async function FinalCta({ id = 'final-cta', title, lead, primary, whatsap
             <SpeedLines />
           </div>
           <div className="absolute inset-e-[4%] bottom-2 w-36 text-on-deep sm:w-52 lg:w-72">
-            <Van className="van-drive w-full" />
+            <VanDrive />
           </div>
         </>
       }

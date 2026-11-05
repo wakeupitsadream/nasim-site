@@ -224,7 +224,7 @@
       "label": "Our services"
     },
     "team": {
-      "alt": "Two Brigada technicians in red T-shirts with a duct brush and a spray bottle (illustration)",
+      "alt": "Two Brigada technicians in black T-shirts with a duct brush and a spray bottle against the Dubai night skyline (illustration)",
       "caption": "The Brigada crew (illustration)"
     },
     "book": {
@@ -299,7 +299,7 @@
     },
     "form": {
       "label": "What's happening?",
-      "placeholder": "e.g. The bedroom AC smells musty when it starts and drips water from the indoor unit",
+      "placeholder": "Describe the problem or ask a question",
       "counter": "{count} / {max}",
       "examples": {
         "smell": "Musty smell when the AC starts",
@@ -364,7 +364,7 @@
     "launcher": "Assistant",
     "launcherLabel": "Open the assistant: AI diagnosis and quick answers",
     "title": "Brigada assistant",
-    "subtitle": "AI diagnosis of AC and upholstery problems, answers to frequent questions",
+    "subtitle": "AI diagnosis and quick answers",
     "close": "Close the assistant",
     "greeting": "Hi! Describe what the AC or the sofa is doing, send a photo — or tap one of the questions below.",
     "faqGroup": "Frequent questions",

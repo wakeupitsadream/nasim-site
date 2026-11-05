@@ -391,6 +391,19 @@
     }
   }
 
+  /* Фолбэк для браузеров без scroll-driven анимаций (Safari до 26, Firefox): фургон едет по
+     времени, когда components/marketing/van-drive.tsx отмечает его видимым (data-driven). */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports not (animation-timeline: view()) {
+      .van-drive[data-driven] {
+        animation: nasim-drive-in 1.4s var(--nasim-ease-out) both;
+      }
+      .van-drive[data-driven] .van__wheel {
+        animation: nasim-wheel 1.4s var(--nasim-ease-out) both;
+      }
+    }
+  }
+
   /* Фургон и линии скорости: точки вращения/роста в координатах самих фигур. */
   .van__wheel {
     transform-box: fill-box;
