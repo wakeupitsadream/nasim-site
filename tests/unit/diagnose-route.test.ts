@@ -7,18 +7,24 @@ vi.mock('@/lib/ai', async () => {
   class AiNotConfiguredError extends Error {}
   class AiRefusedError extends Error {}
   class AiParseError extends Error {}
-  class ApiError extends Error {}
-  class RateLimit extends ApiError {}
-  class Connection extends Error {}
-  class Authentication extends ApiError {}
+  class AiNetworkError extends Error {}
+  class AiUpstreamError extends Error {
+    constructor(
+      public readonly status: number,
+      public readonly code?: string,
+    ) {
+      super(`upstream ${status}`);
+    }
+  }
   return {
     diagnose,
     AiNotConfiguredError,
     AiRefusedError,
     AiParseError,
-    AiErrors: { Api: ApiError, RateLimit, Connection, Authentication },
+    AiNetworkError,
+    AiUpstreamError,
     isAiConfigured: () => true,
-    AI_MODEL: 'claude-opus-5-5',
+    AI_MODEL: 'anthropic/claude-opus-5.5',
   };
 });
 
@@ -88,16 +94,28 @@ describe('POST /api/diagnose', () => {
 
   it('maps AI errors to honest statuses', async () => {
     const ai = await import('@/lib/ai');
-    // The mocked SDK error classes take no constructor arguments, unlike the real ones.
-    const sdkError = (Ctor: unknown) => new (Ctor as new () => Error)();
+    // A fresh visitor IP per call: nine requests from one address would hit the rate limit.
+    let visitor = 0;
+    const ask = () => post({ locale: 'en', text: 'drips water' }, `203.0.113.${(visitor += 1)}`);
     diagnose.mockRejectedValueOnce(new ai.AiNotConfiguredError());
-    expect((await post({ locale: 'en', text: 'drips water' })).status).toBe(503);
+    expect((await ask()).status).toBe(503);
     diagnose.mockRejectedValueOnce(new ai.AiRefusedError());
-    expect((await post({ locale: 'en', text: 'drips water' })).status).toBe(422);
-    diagnose.mockRejectedValueOnce(sdkError(ai.AiErrors.RateLimit));
-    expect((await post({ locale: 'en', text: 'drips water' })).status).toBe(503);
-    diagnose.mockRejectedValueOnce(sdkError(ai.AiErrors.Api));
-    expect((await post({ locale: 'en', text: 'drips water' })).status).toBe(502);
+    expect((await ask()).status).toBe(422);
+    // Key, balance and rate problems are ours: "unavailable", not "failed".
+    for (const status of [401, 402, 403, 429]) {
+      diagnose.mockRejectedValueOnce(new ai.AiUpstreamError(status));
+      const response = await ask();
+      expect(response.status).toBe(503);
+      expect(await response.json()).toEqual({ error: 'unavailable' });
+    }
+    diagnose.mockRejectedValueOnce(new ai.AiUpstreamError(500, 'server_error'));
+    expect((await ask()).status).toBe(502);
+    diagnose.mockRejectedValueOnce(new ai.AiNetworkError());
+    expect((await ask()).status).toBe(502);
+    diagnose.mockRejectedValueOnce(new ai.AiParseError());
+    expect((await ask()).status).toBe(502);
+    diagnose.mockRejectedValueOnce(new Error('boom'));
+    expect((await ask()).status).toBe(500);
   });
 
   it('rate-limits a visitor after six requests a minute', async () => {

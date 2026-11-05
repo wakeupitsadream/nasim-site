@@ -1,7 +1,6 @@
-// The only module that talks to the Claude API (CLAUDE.md rule 11). Server-only. Results are
+// The only module that talks to the AI gateway (CLAUDE.md rule 11). Server-only. Results are
 // shown to the visitor and never written anywhere; nothing the customer sends is logged.
-import Anthropic from '@anthropic-ai/sdk';
-import { betaZodOutputFormat } from '@anthropic-ai/sdk/helpers/beta/zod';
+import { AiNetworkError, AiUpstreamError, chatJson, type GatewayConfig } from '@/lib/ai/gateway';
 import {
   buildDiagnosisSystemPrompt,
   buildDiagnosisUserContent,
@@ -9,11 +8,41 @@ import {
 } from '@/lib/ai/diagnose-prompt';
 import { diagnosisSchema, type DiagnoseRequest, type Diagnosis } from '@/lib/validation/diagnose';
 
-export const AI_MODEL = process.env.AI_MODEL ?? 'claude-opus-5-5';
+export { AiNetworkError, AiUpstreamError };
+
+/** Polza AI: OpenAI-compatible, billed in roubles, reachable from Russia (DECISIONS №51). */
+export const AI_DEFAULT_BASE_URL = 'https://polza.ai/api/v1';
+/** Gateway model ids carry the vendor prefix and a dotted version. */
+export const AI_DEFAULT_MODEL = 'anthropic/claude-opus-5.5';
+export const AI_MODEL = process.env.AI_MODEL ?? AI_DEFAULT_MODEL;
+
+const EFFORTS = new Set(['low', 'medium', 'high']);
+
+/**
+ * Gateway settings from the environment, or null when no key is set. `POLZA_API_KEY` is the
+ * documented name; `AI_API_KEY` works for any other OpenAI-compatible gateway behind `AI_BASE_URL`.
+ * `AI_EFFORT` defaults to low — the triage is short and the visitor is waiting; an empty value
+ * leaves the provider default.
+ */
+export function resolveAiConfig(env: NodeJS.ProcessEnv = process.env): GatewayConfig | null {
+  const apiKey = env.POLZA_API_KEY?.trim() || env.AI_API_KEY?.trim();
+  if (!apiKey) return null;
+  const effort = env.AI_EFFORT === undefined ? 'low' : env.AI_EFFORT.trim();
+  return {
+    baseUrl: env.AI_BASE_URL?.trim() || AI_DEFAULT_BASE_URL,
+    apiKey,
+    model: env.AI_MODEL?.trim() || AI_DEFAULT_MODEL,
+    effort: EFFORTS.has(effort) ? (effort as GatewayConfig['effort']) : null,
+    // One attempt within the route's budget: the route maps failures to a friendly state.
+    timeoutMs: 45_000,
+  };
+}
+
+export const isAiConfigured = (): boolean => resolveAiConfig() !== null;
 
 export class AiNotConfiguredError extends Error {
   constructor() {
-    super('ANTHROPIC_API_KEY is not set');
+    super('POLZA_API_KEY (or AI_API_KEY) is not set');
     this.name = 'AiNotConfiguredError';
   }
 }
@@ -30,52 +59,34 @@ export class AiParseError extends Error {
   }
 }
 
-let client: Anthropic | null = null;
-
-function getClient(): Anthropic {
-  if (!process.env.ANTHROPIC_API_KEY) throw new AiNotConfiguredError();
-  // One short attempt: the visitor is waiting, and the route maps failures to a friendly state.
-  client ??= new Anthropic({ timeout: 45_000, maxRetries: 1 });
-  return client;
-}
-
-export const isAiConfigured = (): boolean => Boolean(process.env.ANTHROPIC_API_KEY);
-
 const MAX_CAUSES = 4;
 const MAX_QUESTIONS = 3;
 
 /**
- * Triage a customer's description and optional photo against the service catalogue. Structured
- * output keeps the answer to the schema; refusals fall back server-side to another model.
+ * Triage a customer's description and optional photo against the service catalogue. The answer
+ * is requested and validated as strict JSON; the service slug is checked against the catalogue
+ * once more here, so the UI never links to a service the model made up.
  */
 export async function diagnose(
   input: DiagnoseRequest,
   brand: string,
   catalogue: CatalogueEntry[],
 ): Promise<Diagnosis> {
-  const response = await getClient().beta.messages.parse({
-    model: AI_MODEL,
-    max_tokens: 2048,
-    // Server-side fallback exists for Opus and Sonnet; Haiku has none, so the flag is skipped there.
-    ...(AI_MODEL.includes('haiku')
-      ? {}
-      : { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const }),
-    output_config: { effort: 'low', format: betaZodOutputFormat(diagnosisSchema) },
-    system: [
-      {
-        type: 'text',
-        text: buildDiagnosisSystemPrompt(brand, catalogue),
-        cache_control: { type: 'ephemeral' },
-      },
-    ],
-    messages: [{ role: 'user', content: buildDiagnosisUserContent(input) }],
-  });
+  const config = resolveAiConfig();
+  if (!config) throw new AiNotConfiguredError();
 
-  if (response.stop_reason === 'refusal') throw new AiRefusedError();
-  const parsed = response.parsed_output;
-  if (!parsed) throw new AiParseError();
+  const result = await chatJson(config, {
+    system: buildDiagnosisSystemPrompt(brand, catalogue),
+    user: buildDiagnosisUserContent(input),
+    schema: diagnosisSchema,
+    schemaName: 'diagnosis',
+    maxTokens: 2048,
+  });
+  if (result.kind === 'refused') throw new AiRefusedError();
+  if (result.kind === 'unparsable') throw new AiParseError();
 
   const slugs = new Set(catalogue.map((s) => s.slug));
+  const parsed = result.data;
   return {
     ...parsed,
     service: parsed.service && slugs.has(parsed.service) ? parsed.service : null,
@@ -83,11 +94,3 @@ export async function diagnose(
     questions: parsed.questions.slice(0, MAX_QUESTIONS),
   };
 }
-
-/** Typed error classes of the SDK, re-exported so route handlers never import the SDK themselves. */
-export const AiErrors = {
-  RateLimit: Anthropic.RateLimitError,
-  Authentication: Anthropic.AuthenticationError,
-  Connection: Anthropic.APIConnectionError,
-  Api: Anthropic.APIError,
-} as const;

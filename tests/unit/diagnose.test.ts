@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
+  ANSWER_SHAPE,
   buildDiagnosisSystemPrompt,
   buildDiagnosisUserContent,
   type CatalogueEntry,
@@ -95,13 +96,23 @@ describe('diagnosis prompt', () => {
     expect(system).toContain('Nasim Home Care');
   });
 
+  it('spells out every field of the answer schema', () => {
+    expect(system).toContain(ANSWER_SHAPE);
+    for (const key of Object.keys(diagnosisSchema.shape)) {
+      expect(ANSWER_SHAPE, key).toContain(`"${key}"`);
+    }
+  });
+
   it('puts the photo before the text and names the answer language', () => {
     const blocks = buildDiagnosisUserContent({
       locale: 'ru',
       text: 'Капает вода из блока',
       image: { mediaType: 'image/jpeg', data: png },
     });
-    expect(blocks[0]?.type).toBe('image');
+    expect(blocks[0]?.type).toBe('image_url');
+    expect(blocks[0]?.type === 'image_url' && blocks[0].image_url.url).toBe(
+      `data:image/jpeg;base64,${png}`,
+    );
     expect(blocks[1]?.type).toBe('text');
     const text = blocks[1]?.type === 'text' ? blocks[1].text : '';
     expect(text).toContain('Russian');
