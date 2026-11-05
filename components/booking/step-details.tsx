@@ -49,9 +49,7 @@ export function StepDetails({
       <div className="flex flex-col gap-6">
         {state.category === 'ac' ? (
           <fieldset className="flex flex-col gap-2">
-            <legend className="mb-3 text-body font-medium text-foreground">
-              {t('details.acQuestion')}
-            </legend>
+            <legend className="sr-only">{t('details.acQuestion')}</legend>
             {services.map((service) => {
               const checked = service.slug === state.acService;
               return (
@@ -114,9 +112,7 @@ export function StepDetails({
         {stepperLines.length > 0 ? (
           <div className="flex flex-col divide-y divide-border rounded-card border border-border bg-card px-5">
             {state.category === 'upholstery' ? (
-              <p className="pt-4 text-body font-medium text-foreground">
-                {t('details.upholsteryQuestion')}
-              </p>
+              <p className="sr-only">{t('details.upholsteryQuestion')}</p>
             ) : null}
             {stepperLines.map((id) => {
               const line = findLine(pricing, id)!;
