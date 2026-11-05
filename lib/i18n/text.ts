@@ -24,3 +24,27 @@ export function pickLocalized(field: I18nText | null | undefined, locale: Locale
     ? { text: value, lang: locale }
     : { text: field.en, lang: 'en' };
 }
+
+/** A localized structured value (array or object) with its source locale. */
+export type LocalizedValue<T> = { value: T; lang: Locale };
+
+/**
+ * `pickLocalized` for structured content (`{ en: T; ar?: T; ru?: T }`). A missing locale, an empty
+ * array or an empty object counts as untranslated and falls back to EN.
+ */
+export function pickLocalizedValue<T>(
+  field: { en: T; ar?: unknown; ru?: unknown },
+  locale: Locale,
+): LocalizedValue<T> {
+  const candidate = locale === 'en' ? field.en : field[locale];
+  if (isPresent(candidate)) return { value: candidate as T, lang: locale };
+  return { value: field.en, lang: 'en' };
+}
+
+function isPresent(value: unknown): boolean {
+  if (value === undefined || value === null) return false;
+  if (Array.isArray(value)) return value.length > 0;
+  if (typeof value === 'object') return Object.keys(value).length > 0;
+  if (typeof value === 'string') return value.trim() !== '';
+  return true;
+}

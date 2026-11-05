@@ -21,6 +21,15 @@
   --nasim-teal-deep-hover: #0b303a;
   --nasim-turquoise: #19b3a6; /* прохладная бирюза: иконки, выделения, прогресс калькулятора */
   --nasim-turquoise-soft: #d9f2ef;
+  --nasim-teal-ink: #0a2c35; /* самый тёмный: конец градиента тёмной полосы, шапка мокапа */
+  --nasim-turquoise-ink: #0f766e; /* бирюза как ТЕКСТ на песке/белом: 4.99:1 (сама бирюза — 2.4:1) */
+  --nasim-mist: #e8f4f1; /* холодная подложка; teal-deep на ней 10.7:1 */
+  --nasim-line-strong: #d6cec1; /* волосяные линии, которые должны читаться на песке */
+  /* Текст на тёмной полосе (teal-deep → teal-ink): 12.1 / 7.3 / 7.6 : 1 */
+  --nasim-on-deep: #ffffff;
+  --nasim-on-deep-muted: #b7cdd1;
+  --nasim-on-deep-accent: #7eddd3;
+  --nasim-line-on-deep: rgb(255 255 255 / 0.14);
 
   /* Цвет — каналы связи (только для своих кнопок) */
   --nasim-whatsapp: #25d366;
@@ -43,13 +52,42 @@
   --nasim-font: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
   --nasim-font-scale: 1; /* в RTL → 1.06: арабский на тех же токенах чуть крупнее */
   --nasim-leading-body: 1.5;
-  --nasim-leading-heading: 1.15;
-  --nasim-weight-heading: 600; /* и на AR: 600, не 700 */
+  /* Дисплейная типографика: лёгкий крупный шрифт — Plex Sans variable даёт 300 бесплатно; на AR Light
+     не грузим (см. html[lang='ar'] ниже). Арабский никогда не трекаем — рвёт соединения букв. */
+  --nasim-weight-display: 300;
+  --nasim-weight-h1: 300;
+  --nasim-weight-h2: 400;
+  --nasim-weight-h3: 500;
+  --nasim-weight-strong: 600; /* и на AR: 600, не 700 */
+  --nasim-leading-display: 1.04;
+  --nasim-leading-h1: 1.08;
+  --nasim-leading-h2: 1.15;
+  --nasim-leading-h3: 1.25;
+  --nasim-tracking-display: -0.025em;
+  --nasim-tracking-h1: -0.02em;
+  --nasim-tracking-h2: -0.015em;
+  --nasim-tracking-h3: -0.01em;
+  --nasim-tracking-eyebrow: 0.14em;
+  --nasim-eyebrow-case: uppercase;
 
   /* Геометрия */
-  --nasim-radius: 12px;
-  --nasim-shadow-card: 0 1px 2px rgb(18 26 31 / 0.06), 0 8px 24px rgb(18 26 31 / 0.06);
+  --nasim-radius: 12px; /* контролы */
+  --nasim-radius-card: 20px;
+  --nasim-radius-panel: 28px; /* крупные панели: карточки выбора, мокап отчёта */
+  --nasim-shadow-card: 0 1px 2px rgb(14 59 71 / 0.04), 0 8px 24px -12px rgb(14 59 71 / 0.12);
+  --nasim-shadow-lift: 0 2px 4px rgb(14 59 71 / 0.05), 0 18px 40px -16px rgb(14 59 71 / 0.22);
   --nasim-shadow-float: 0 12px 40px rgb(18 26 31 / 0.14);
+  --nasim-shadow-mockup:
+    0 40px 80px -32px rgb(10 44 53 / 0.45), 0 16px 32px -16px rgb(10 44 53 / 0.25);
+  /* Ритм секций: 64 → 128px */
+  --nasim-section-y: clamp(4rem, 2.5rem + 6vw, 8rem);
+  --nasim-section-y-sm: clamp(3rem, 2rem + 4vw, 5rem);
+  --nasim-stack: clamp(2rem, 1.5rem + 2vw, 3.5rem); /* шапка секции → контент */
+  /* Движение */
+  --nasim-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nasim-dur-fast: 160ms;
+  --nasim-dur: 240ms;
+  --nasim-dur-slow: 480ms;
   --nasim-gutter: 16px; /* мобильный боковой отступ */
   --nasim-gutter-lg: 32px;
   --nasim-tap-min: 44px; /* минимальная высота интерактивных элементов */
@@ -59,6 +97,21 @@
 
 html[lang='ar'] {
   --nasim-font: var(--font-plex-arabic), var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  /* Plex Sans Arabic статический: 400/500/600 без Light; без трекинга и капса, интерлиньяж выше */
+  --nasim-weight-display: 400;
+  --nasim-weight-h1: 400;
+  --nasim-weight-h2: 500;
+  --nasim-weight-h3: 600;
+  --nasim-leading-display: 1.3;
+  --nasim-leading-h1: 1.3;
+  --nasim-leading-h2: 1.35;
+  --nasim-leading-h3: 1.4;
+  --nasim-tracking-display: 0;
+  --nasim-tracking-h1: 0;
+  --nasim-tracking-h2: 0;
+  --nasim-tracking-h3: 0;
+  --nasim-tracking-eyebrow: 0;
+  --nasim-eyebrow-case: none;
 }
 
 [dir='rtl'] {
@@ -70,6 +123,14 @@ html[lang='ar'] {
   --color-surface-2: var(--nasim-surface-2);
   --color-highlight: var(--nasim-turquoise);
   --color-highlight-soft: var(--nasim-turquoise-soft);
+  --color-highlight-ink: var(--nasim-turquoise-ink);
+  --color-teal-ink: var(--nasim-teal-ink);
+  --color-mist: var(--nasim-mist);
+  --color-line-strong: var(--nasim-line-strong);
+  --color-on-deep: var(--nasim-on-deep);
+  --color-on-deep-muted: var(--nasim-on-deep-muted);
+  --color-on-deep-accent: var(--nasim-on-deep-accent);
+  --color-line-on-deep: var(--nasim-line-on-deep);
   --color-primary-hover: var(--nasim-teal-deep-hover);
   --color-whatsapp: var(--nasim-whatsapp);
   --color-whatsapp-hover: var(--nasim-whatsapp-hover);
@@ -91,15 +152,51 @@ html[lang='ar'] {
   --font-heading: var(--nasim-font);
 
   --text-small: calc(0.875rem * var(--nasim-font-scale));
+  --text-eyebrow: calc(0.8125rem * var(--nasim-font-scale));
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: var(--nasim-tracking-eyebrow);
+  --text-eyebrow--font-weight: 500;
   --text-logo: calc(1.375rem * var(--nasim-font-scale)); /* первое слово логотипа */
   --text-body: calc(1.0625rem * var(--nasim-font-scale)); /* 17px */
-  --text-lead: calc(1.1875rem * var(--nasim-font-scale));
+  --text-lead: calc(clamp(1.1875rem, 1.1rem + 0.4vw, 1.3125rem) * var(--nasim-font-scale));
+  --text-lead--line-height: 1.5;
+  /* text-h1/h2/h3/display задают размер, интерлиньяж, трекинг и вес одной утилитой */
   --text-h3: calc(clamp(1.375rem, 1.1rem + 1vw, 1.75rem) * var(--nasim-font-scale));
+  --text-h3--line-height: var(--nasim-leading-h3);
+  --text-h3--letter-spacing: var(--nasim-tracking-h3);
+  --text-h3--font-weight: var(--nasim-weight-h3);
   --text-h2: calc(clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem) * var(--nasim-font-scale));
+  --text-h2--line-height: var(--nasim-leading-h2);
+  --text-h2--letter-spacing: var(--nasim-tracking-h2);
+  --text-h2--font-weight: var(--nasim-weight-h2);
   --text-h1: calc(clamp(2.25rem, 1.6rem + 2.8vw, 3.5rem) * var(--nasim-font-scale));
+  --text-h1--line-height: var(--nasim-leading-h1);
+  --text-h1--letter-spacing: var(--nasim-tracking-h1);
+  --text-h1--font-weight: var(--nasim-weight-h1);
+  --text-display: calc(
+    clamp(2.625rem, 1.75rem + 3.6vw, 4.5rem) * var(--nasim-font-scale)
+  ); /* 42 → 72px, только h1 главной */
+  --text-display--line-height: var(--nasim-leading-display);
+  --text-display--letter-spacing: var(--nasim-tracking-display);
+  --text-display--font-weight: var(--nasim-weight-display);
 
   --shadow-card: var(--nasim-shadow-card);
+  --shadow-lift: var(--nasim-shadow-lift);
   --shadow-float: var(--nasim-shadow-float);
+  --shadow-mockup: var(--nasim-shadow-mockup);
+
+  --radius-card: var(--nasim-radius-card);
+  --radius-panel: var(--nasim-radius-panel);
+
+  --ease-brand: var(--nasim-ease);
+
+  /* Дрейф линий потока воздуха (AirflowLines): только под motion-safe */
+  --animate-airflow: airflow 40s linear infinite;
+  @keyframes airflow {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
   --container-page: 1200px;
   --spacing-gutter: var(--nasim-gutter);
@@ -107,6 +204,9 @@ html[lang='ar'] {
   --spacing-tap: var(--nasim-tap-min);
   --spacing-sticky-bar: var(--nasim-sticky-bar-h);
   --spacing-header: var(--nasim-header-h);
+  --spacing-section: var(--nasim-section-y);
+  --spacing-section-sm: var(--nasim-section-y-sm);
+  --spacing-stack: var(--nasim-stack);
 }
 
 /* Служебные */

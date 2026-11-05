@@ -1,12 +1,12 @@
 {
-  "_comment": "Стартовые цены (AED) — рыночные ориентиры Дубая на 11.2026, Миша подтверждает/правит в админке. tier_from_qty — ступень по количеству: берётся строка с максимальным tier_from_qty <= qty.",
+  "_comment": "Стартовые цены (AED) — рыночные ориентиры Дубая на 11.2026, Миша подтверждает/правит в админке. tier_from_qty — ступень по количеству: берётся строка с максимальным tier_from_qty <= qty; tier_group объединяет ступени одной строки прайса (ключи includes у пакетов ссылаются на tier_group или key). min_qty — минимальный чек. diagnostics_item_key — цена диагностики для услуг «по смете».",
   "price_items": [
-    { "service_slug": "ac-cleaning", "key": "ac_clean_1", "name": { "en": "Standard clean, 1 unit", "ru": "Стандартная чистка, 1 блок", "ar": "" }, "unit": "unit", "price": 199, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Call-out included", "ru": "Выезд включён", "ar": "" }, "sort": 1 },
-    { "service_slug": "ac-cleaning", "key": "ac_clean_2_3", "name": { "en": "Standard clean, 2–3 units", "ru": "Стандартная чистка, 2–3 блока", "ar": "" }, "unit": "unit", "price": 169, "min_qty": 2, "tier_from_qty": 2, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 2 },
-    { "service_slug": "ac-cleaning", "key": "ac_clean_4plus", "name": { "en": "Standard clean, 4+ units", "ru": "Стандартная чистка, 4+ блоков", "ar": "" }, "unit": "unit", "price": 149, "min_qty": 4, "tier_from_qty": 4, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 3 },
+    { "service_slug": "ac-cleaning", "key": "ac_clean_1", "tier_group": "ac_clean", "name": { "en": "Standard clean, 1 unit", "ru": "Стандартная чистка, 1 блок", "ar": "" }, "unit": "unit", "price": 199, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Call-out included", "ru": "Выезд включён", "ar": "" }, "sort": 1 },
+    { "service_slug": "ac-cleaning", "key": "ac_clean_2_3", "tier_group": "ac_clean", "name": { "en": "Standard clean, 2–3 units", "ru": "Стандартная чистка, 2–3 блока", "ar": "" }, "unit": "unit", "price": 169, "min_qty": 2, "tier_from_qty": 2, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 2 },
+    { "service_slug": "ac-cleaning", "key": "ac_clean_4plus", "tier_group": "ac_clean", "name": { "en": "Standard clean, 4+ units", "ru": "Стандартная чистка, 4+ блоков", "ar": "" }, "unit": "unit", "price": 149, "min_qty": 4, "tier_from_qty": 4, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 3 },
 
-    { "service_slug": "ac-deep-cleaning", "key": "ac_deep_1", "name": { "en": "Deep clean, 1 unit", "ru": "Глубокая чистка, 1 блок", "ar": "" }, "unit": "unit", "price": 399, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Full indoor unit disassembly", "ru": "Разборка внутреннего блока", "ar": "" }, "sort": 1 },
-    { "service_slug": "ac-deep-cleaning", "key": "ac_deep_2plus", "name": { "en": "Deep clean, 2+ units", "ru": "Глубокая чистка, 2+ блоков", "ar": "" }, "unit": "unit", "price": 349, "min_qty": 2, "tier_from_qty": 2, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 2 },
+    { "service_slug": "ac-deep-cleaning", "key": "ac_deep_1", "tier_group": "ac_deep", "name": { "en": "Deep clean, 1 unit", "ru": "Глубокая чистка, 1 блок", "ar": "" }, "unit": "unit", "price": 399, "min_qty": 1, "tier_from_qty": 1, "note": { "en": "Full indoor unit disassembly", "ru": "Разборка внутреннего блока", "ar": "" }, "sort": 1 },
+    { "service_slug": "ac-deep-cleaning", "key": "ac_deep_2plus", "tier_group": "ac_deep", "name": { "en": "Deep clean, 2+ units", "ru": "Глубокая чистка, 2+ блоков", "ar": "" }, "unit": "unit", "price": 349, "min_qty": 2, "tier_from_qty": 2, "note": { "en": "Per unit", "ru": "За блок", "ar": "" }, "sort": 2 },
 
     { "service_slug": "ducted-ac-fcu-service", "key": "fcu_service", "name": { "en": "Fan coil unit service", "ru": "Обслуживание фанкойла", "ar": "" }, "unit": "fcu", "price": 249, "min_qty": 2, "tier_from_qty": 1, "note": { "en": "Minimum 2 FCU", "ru": "Минимум 2 фанкойла", "ar": "" }, "sort": 1 },
 
@@ -63,7 +63,7 @@
     "rounding": 1,
     "vat_rate": 0.05,
     "diagnostics_credited_to_repair": true,
-    "quote_only_services": ["ac-repair", "refrigerant-leak-refill", "humidity-mould-check", "water-tank-cleaning"],
+    "diagnostics_item_key": "emergency_callout", "quote_only_services": ["ac-repair", "refrigerant-leak-refill", "humidity-mould-check", "water-tank-cleaning"],
     "suggest_bundle_when_cheaper": true
   }
 }

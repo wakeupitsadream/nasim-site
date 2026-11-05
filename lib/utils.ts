@@ -8,12 +8,25 @@ import { createCn } from 'cn/config';
 export const cn = createCn({
   extend: {
     theme: {
-      spacing: ['tap', 'gutter', 'gutter-lg', 'sticky-bar', 'header'],
+      spacing: [
+        'tap',
+        'gutter',
+        'gutter-lg',
+        'sticky-bar',
+        'header',
+        'section',
+        'section-sm',
+        'stack',
+      ],
+      radius: ['card', 'panel'],
+      ease: ['brand'],
       container: ['page'],
     },
     classGroups: {
-      'font-size': [{ text: ['small', 'body', 'lead', 'logo', 'h1', 'h2', 'h3'] }],
-      shadow: [{ shadow: ['card', 'float'] }],
+      'font-size': [
+        { text: ['small', 'eyebrow', 'body', 'lead', 'logo', 'h1', 'h2', 'h3', 'display'] },
+      ],
+      shadow: [{ shadow: ['card', 'lift', 'float', 'mockup'] }],
     },
   },
 });

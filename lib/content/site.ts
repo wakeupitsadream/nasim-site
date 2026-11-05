@@ -6,6 +6,7 @@ import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized, type I18nText, type Localized } from '@/lib/i18n/text';
 import {
   settingsDefaultsSchema,
+  type BookingSettings,
   type SettingsDefaults,
   type SettingsLocaleFields,
 } from '@/lib/validation/settings';
@@ -20,6 +21,8 @@ export type SiteFlags = {
 export type SiteContacts = { phone: string; whatsapp: string; telegram: string; email: string };
 export type SiteSocial = { instagram: string; facebook: string; tiktok: string };
 export type SiteLegal = { legalName: string; licenseNo: string; trn: string; address: string };
+/** `registered` false → prices show no VAT line at all (BRIEF §6.3). */
+export type SiteVat = { registered: boolean; included: boolean };
 
 export type SiteSettings = {
   brandName: Localized;
@@ -28,6 +31,8 @@ export type SiteSettings = {
   serviceAreaNote: Localized;
   responseTimeNote: Localized;
   flags: SiteFlags;
+  booking: BookingSettings;
+  vat: SiteVat;
   contacts: SiteContacts;
   social: SiteSocial;
   legal: SiteLegal;
@@ -70,6 +75,8 @@ export function readSiteSettings(locale: Locale): SiteSettings {
       emergencyEnabled: f.emergency_enabled,
       telegramCtaRu: f.telegram_cta_ru,
     },
+    booking: d.en.booking,
+    vat: { registered: d.en.vat_registered, included: d.en.vat_included },
     contacts: PENDING_CONTACTS,
     social: PENDING_SOCIAL,
     legal: PENDING_LEGAL,

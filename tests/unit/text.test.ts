@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { pick, pickLocalized } from '@/lib/i18n/text';
+import { pick, pickLocalized, pickLocalizedValue } from '@/lib/i18n/text';
 
 describe('pick', () => {
   const field = { en: 'AC cleaning', ru: 'Чистка кондиционеров', ar: '' };
@@ -35,5 +35,22 @@ describe('pickLocalized', () => {
 
   it('keeps the page locale for an empty field', () => {
     expect(pickLocalized(null, 'ar')).toEqual({ text: '', lang: 'ar' });
+  });
+});
+
+describe('pickLocalizedValue', () => {
+  const field = { en: ['a', 'b'], ru: ['а', 'б'], ar: [] as never[] };
+
+  it('returns the locale value when it is present', () => {
+    expect(pickLocalizedValue(field, 'ru')).toEqual({ value: ['а', 'б'], lang: 'ru' });
+    expect(pickLocalizedValue(field, 'en')).toEqual({ value: ['a', 'b'], lang: 'en' });
+  });
+
+  it('treats empty arrays and objects as untranslated', () => {
+    expect(pickLocalizedValue(field, 'ar')).toEqual({ value: ['a', 'b'], lang: 'en' });
+    expect(pickLocalizedValue({ en: { header: 'x' }, ru: {} }, 'ru')).toEqual({
+      value: { header: 'x' },
+      lang: 'en',
+    });
   });
 });

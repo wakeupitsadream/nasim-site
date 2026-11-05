@@ -3,7 +3,11 @@
  * - CLAUDE.md rule 2: only logical CSS utilities, so layouts mirror correctly in Arabic (RTL).
  * - CLAUDE.md rule 13: no dark: variants (there is no dark theme in v1).
  * - Components import `cn` from @/lib/utils (token-aware config), never straight from "cn".
- * Scans app/ and components/. `checkSource` is exported for unit tests.
+ * - Client components never import the seed or the content layer (server data stays on the server).
+ * - No zero-argument `new Date()` / `Date.now()` in app/ and components/: pages are prerendered,
+ *   and the current time is sync IO under Cache Components. Clocks are read in event handlers only
+ *   (allowlist below) and passed down as values.
+ * Scans app/ and components/. `checkSource(source, file?)` is exported for unit tests.
  */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
@@ -39,10 +43,18 @@ export const RULES = [
 ].map(([name, pattern, fix]) => ({ name, fix, re: new RegExp(PREFIX + pattern, 'g') }));
 
 const CN_IMPORT = /from\s+['"]cn['"]/;
+const SERVER_DATA_IMPORT =
+  /from\s+['"]@\/(?:content\/seed|lib\/content|lib\/ai|lib\/sanitize|lib\/ratelimit)(?:\/|['"])/;
+const USE_CLIENT = /^\s*['"]use client['"]/m;
+const WALL_CLOCK = /\bnew Date\(\s*\)|\bDate\.now\(\)/;
+/** Files allowed to read the wall clock (inside event handlers only). */
+export const CLOCK_ALLOWLIST = new Set(['components/booking/wizard.tsx']);
 
-/** Problems in one file's text: `{ line, rule, fix, text }` per match. */
-export function checkSource(source) {
+/** Problems in one file's text: `{ line, rule, fix, text }` per match. `file` enables file rules. */
+export function checkSource(source, file = '') {
   const problems = [];
+  const isClient = USE_CLIENT.test(source);
+  const clockAllowed = CLOCK_ALLOWLIST.has(file.split(path.sep).join('/'));
   source.split('\n').forEach((text, i) => {
     for (const rule of RULES) {
       rule.re.lastIndex = 0;
@@ -53,6 +65,22 @@ export function checkSource(source) {
         line: i + 1,
         rule: 'cn imported from "cn"',
         fix: "import { cn } from '@/lib/utils'",
+        text,
+      });
+    }
+    if (isClient && SERVER_DATA_IMPORT.test(text)) {
+      problems.push({
+        line: i + 1,
+        rule: 'client component imports server content',
+        fix: 'load the data in a server component and pass it as props',
+        text,
+      });
+    }
+    if (!clockAllowed && WALL_CLOCK.test(text)) {
+      problems.push({
+        line: i + 1,
+        rule: 'wall clock read during render',
+        fix: 'read the time in an event handler (see CLOCK_ALLOWLIST) and pass it as a value',
         text,
       });
     }
@@ -78,7 +106,7 @@ function main() {
       continue;
     }
     for (const file of files) {
-      for (const p of checkSource(readFileSync(file, 'utf8'))) {
+      for (const p of checkSource(readFileSync(file, 'utf8'), file)) {
         report.push(`${file}:${p.line}  ${p.rule} → use ${p.fix}\n    ${p.text.trim()}`);
       }
     }
@@ -87,7 +115,9 @@ function main() {
     console.error(`[lint:css] ${report.length} forbidden class(es) found:\n${report.join('\n')}`);
     process.exit(1);
   }
-  console.log('[lint:css] ok — logical CSS only, no dark: variants, cn from @/lib/utils');
+  console.log(
+    '[lint:css] ok — logical CSS only, no dark: variants, cn from @/lib/utils, no server data or clocks in client code',
+  );
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();

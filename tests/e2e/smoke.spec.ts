@@ -30,13 +30,26 @@ function homeTitle(locale: string): string {
   return messages.Pages.home.title;
 }
 
+/** The hero h1 comes from the content block; AR falls back to EN and is marked as such. */
+function heroTitle(locale: string): { text: string; lang: string } {
+  const blocks = JSON.parse(readFileSync('content/seed/blocks.json', 'utf8')).blocks as {
+    key: string;
+    value: Record<string, string>;
+  }[];
+  const value = blocks.find((b) => b.key === 'home.hero.title')!.value;
+  return value[locale] ? { text: value[locale], lang: locale } : { text: value.en, lang: 'en' };
+}
+
 for (const { locale, dir } of LOCALES) {
   test(`/${locale} sets lang, dir and the translated heading`, async ({ page }) => {
     const response = await page.goto(`/${locale}`);
     expect(response?.status()).toBe(200);
     await expect(page.locator('html')).toHaveAttribute('lang', locale);
     await expect(page.locator('html')).toHaveAttribute('dir', dir);
-    await expect(page.locator('h1')).toHaveText(homeTitle(locale));
+    await expect(page).toHaveTitle(new RegExp(homeTitle(locale)));
+    const hero = heroTitle(locale);
+    await expect(page.locator('h1')).toHaveText(hero.text);
+    if (hero.lang !== locale) await expect(page.locator('h1')).toHaveAttribute('lang', hero.lang);
     await page.screenshot({ path: `test-results/screenshots/home-${locale}.png`, fullPage: true });
   });
 }
@@ -73,6 +86,20 @@ for (const { locale } of LOCALES) {
     }
   });
 }
+
+test('every service page answers 200 in every locale', async ({ request }) => {
+  const seed = JSON.parse(readFileSync('content/seed/services.json', 'utf8')) as {
+    services: { slug: string; status: string }[];
+  };
+  const slugs = seed.services.filter((s) => s.status !== 'hidden').map((s) => s.slug);
+  expect(slugs.length).toBe(12);
+  for (const { locale } of LOCALES) {
+    for (const slug of slugs) {
+      const response = await request.get(`/${locale}/services/${slug}`);
+      expect(response.status(), `/${locale}/services/${slug}`).toBe(200);
+    }
+  }
+});
 
 test('/ redirects by Accept-Language', async ({ request }) => {
   const ar = await request.get('/', { headers: { 'Accept-Language': 'ar' }, maxRedirects: 0 });
