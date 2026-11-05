@@ -40,6 +40,10 @@ export const settingsDefaultsSchema = z.looseObject({
   }),
   ar: localeFields.partial().optional(),
   ru: localeFields.partial().optional(),
+  fr: localeFields.partial().optional(),
+  de: localeFields.partial().optional(),
+  zh: localeFields.partial().optional(),
+  hi: localeFields.partial().optional(),
 });
 
 export type SettingsDefaults = z.infer<typeof settingsDefaultsSchema>;

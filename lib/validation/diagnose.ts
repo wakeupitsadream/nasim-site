@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { routing } from '@/lib/i18n/routing';
 
 // Boundary schemas for the AI triage feature (CLAUDE.md rule 6). The request schema runs on the
 // client before sending and in the route handler; the diagnosis schema is also the structured
@@ -20,7 +21,7 @@ export const diagnoseImageSchema = z.object({
 
 export const diagnoseRequestSchema = z
   .object({
-    locale: z.enum(['en', 'ar', 'ru']),
+    locale: z.enum(routing.locales),
     text: z.string().trim().max(DIAGNOSE_MAX_TEXT).default(''),
     image: diagnoseImageSchema.optional(),
   })

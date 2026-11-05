@@ -132,6 +132,48 @@ html[lang='ar'] {
   --nasim-font-scale: 1.06;
 }
 
+/* Китайский: Noto Sans SC (Plex без CJK); заголовки в нём же, без трекинга и капса. */
+html[lang='zh'] {
+  --nasim-font: var(--font-noto-sc), var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --nasim-font-display: var(--nasim-font);
+  --nasim-weight-display: 700;
+  --nasim-weight-h1: 700;
+  --nasim-weight-h2: 600;
+  --nasim-weight-h3: 600;
+  --nasim-leading-display: 1.2;
+  --nasim-leading-h1: 1.25;
+  --nasim-leading-h2: 1.3;
+  --nasim-leading-h3: 1.4;
+  --nasim-leading-body: 1.7;
+  --nasim-tracking-display: 0;
+  --nasim-tracking-h1: 0;
+  --nasim-tracking-h2: 0;
+  --nasim-tracking-h3: 0;
+  --nasim-tracking-eyebrow: 0.08em;
+  --nasim-eyebrow-case: none;
+}
+
+/* Хинди: Plex Sans Devanagari (статический 400/500/600), матры требуют интерлиньяжа выше. */
+html[lang='hi'] {
+  --nasim-font: var(--font-plex-devanagari), var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --nasim-font-display: var(--nasim-font);
+  --nasim-weight-display: 600;
+  --nasim-weight-h1: 600;
+  --nasim-weight-h2: 600;
+  --nasim-weight-h3: 600;
+  --nasim-leading-display: 1.3;
+  --nasim-leading-h1: 1.3;
+  --nasim-leading-h2: 1.35;
+  --nasim-leading-h3: 1.45;
+  --nasim-leading-body: 1.65;
+  --nasim-tracking-display: 0;
+  --nasim-tracking-h1: 0;
+  --nasim-tracking-h2: 0;
+  --nasim-tracking-h3: 0;
+  --nasim-tracking-eyebrow: 0;
+  --nasim-eyebrow-case: none;
+}
+
 /* Утилиты Tailwind поверх токенов: bg-surface-2, bg-brand, text-h1, shadow-card, max-w-page, p-gutter … */
 @theme inline {
   --color-surface-2: var(--nasim-surface-2);

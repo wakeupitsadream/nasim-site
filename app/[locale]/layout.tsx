@@ -1,5 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic, Unbounded } from 'next/font/google';
+import {
+  IBM_Plex_Sans,
+  IBM_Plex_Sans_Arabic,
+  IBM_Plex_Sans_Devanagari,
+  Noto_Sans_SC,
+  Unbounded,
+} from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import { AssistantWidget } from '@/components/assistant/assistant-widget';
@@ -29,11 +35,28 @@ const plexArabic = IBM_Plex_Sans_Arabic({
   display: 'swap',
   preload: false,
 });
-// Display face of the Brigada wordmark and h1/h2 (variable 200–900, Latin + Cyrillic; /ar keeps Plex).
+// Display face of the Brigada wordmark and h1/h2 (variable 200–900, Latin + Cyrillic; /ar, /zh
+// and /hi keep their body face for headings).
 const unbounded = Unbounded({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-unbounded',
   display: 'swap',
+});
+// /zh: Plex has no CJK. Noto Sans SC is sliced by unicode-range, so a page downloads only the
+// glyph blocks it uses; not preloaded, html[lang="zh"] switches --nasim-font to it.
+const notoSansSC = Noto_Sans_SC({
+  subsets: ['latin'],
+  variable: '--font-noto-sc',
+  display: 'swap',
+  preload: false,
+});
+// /hi: Devanagari companion of Plex (static 400/500/600, like the Arabic one).
+const plexDevanagari = IBM_Plex_Sans_Devanagari({
+  subsets: ['devanagari', 'latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-plex-devanagari',
+  display: 'swap',
+  preload: false,
 });
 
 /** Namespaces read by client components (LangSwitcher, Sonner). Everything else stays on the server. */
@@ -74,7 +97,7 @@ export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'
       lang={locale}
       dir={dir}
       data-scroll-behavior="smooth"
-      className={`${plexSans.variable} ${plexArabic.variable} ${unbounded.variable}`}
+      className={`${plexSans.variable} ${plexArabic.variable} ${unbounded.variable} ${notoSansSC.variable} ${plexDevanagari.variable}`}
     >
       <body className="flex min-h-dvh flex-col pb-[calc(var(--nasim-sticky-bar-h)+env(safe-area-inset-bottom))] md:pb-0">
         <DirectionProvider dir={dir}>

@@ -57,7 +57,15 @@ function defaults(): SettingsDefaults {
 type FieldKey = keyof SettingsLocaleFields;
 
 function field(d: SettingsDefaults, key: FieldKey): I18nText {
-  return { en: d.en[key], ar: d.ar?.[key], ru: d.ru?.[key] };
+  return {
+    en: d.en[key],
+    ar: d.ar?.[key],
+    ru: d.ru?.[key],
+    fr: d.fr?.[key],
+    de: d.de?.[key],
+    zh: d.zh?.[key],
+    hi: d.hi?.[key],
+  };
 }
 
 export function readSiteSettings(locale: Locale): SiteSettings {
