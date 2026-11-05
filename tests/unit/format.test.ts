@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { formatAED, formatNumber } from '@/lib/i18n/format';
+import {
+  formatAED,
+  formatDay,
+  formatMinutes,
+  formatMonthYear,
+  formatNumber,
+  formatTimeRange,
+} from '@/lib/i18n/format';
 import { routing } from '@/lib/i18n/routing';
 
 // ICU's grouping and spacing characters (NBSP vs narrow NBSP) differ between Node versions.
@@ -40,5 +47,28 @@ describe('formatNumber', () => {
 
   it('uses Russian separators', () => {
     expect(norm(formatNumber(12345.5, 'ru'))).toBe('12 345,5');
+  });
+});
+
+describe('dates and durations', () => {
+  it('formats a day with Latin digits in every locale', () => {
+    expect(norm(formatDay('2026-11-06', 'en'))).toBe('Fri, 6 Nov');
+    expect(norm(formatDay('2026-11-06', 'ru'))).toBe('пт, 6 нояб.');
+    expect(formatDay('2026-11-06', 'ar')).toContain('6');
+    expect(formatDay('2026-11-06', 'ar')).not.toMatch(ARABIC_INDIC_DIGITS);
+  });
+
+  it('formats month and year', () => {
+    expect(formatMonthYear('2027-07-01', 'en')).toBe('July 2027');
+    expect(formatMonthYear('2027-07-01', 'ru')).toBe('июль 2027 г.');
+    expect(formatMonthYear('2027-07-01', 'ar')).toBe('يوليو 2027');
+  });
+
+  it('formats time ranges and durations', () => {
+    expect(formatTimeRange('08:00', '12:00')).toBe('08:00–12:00');
+    expect(norm(formatMinutes(45, 'en'))).toBe('45 min');
+    expect(norm(formatMinutes(45, 'ru'))).toBe('45 мин');
+    expect(norm(formatMinutes(120, 'en'))).toBe('2 hr');
+    expect(formatMinutes(90, 'ar')).not.toMatch(ARABIC_INDIC_DIGITS);
   });
 });

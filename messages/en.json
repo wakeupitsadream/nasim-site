@@ -6,16 +6,19 @@
   },
   "Pages": {
     "home": {
-      "title": "AC cleaning and upholstery care in Dubai"
+      "title": "AC cleaning and upholstery care in Dubai",
+      "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, one-hour arrival slot, photo report in WhatsApp."
     },
     "services": {
-      "title": "Services"
+      "title": "Services",
+      "description": "AC cleaning, deep cleaning, fan coil service, repairs, refrigerant, sofa, mattress and carpet cleaning in Dubai. Fixed prices, photo reports."
     },
     "serviceDetail": {
       "title": "Service"
     },
     "pricing": {
-      "title": "Prices"
+      "title": "Prices",
+      "description": "Fixed prices for AC and upholstery cleaning in Dubai, volume tiers, packages and an instant calculator."
     },
     "annualContracts": {
       "title": "Annual maintenance contracts"
@@ -30,7 +33,8 @@
       "title": "About us"
     },
     "contact": {
-      "title": "Contact us"
+      "title": "Contact us",
+      "description": "Contact Nasim Home Care in Dubai: WhatsApp, phone, working hours and service area."
     },
     "privacy": {
       "title": "Privacy policy"
@@ -138,6 +142,7 @@
       "phone": "Phone input",
       "feedback": "Skeleton and toast",
       "stickyBar": "Mobile contact bar (with Telegram, as on /ru when enabled)",
+      "marketing": "Marketing blocks",
       "sheet": "Sheet",
       "breadcrumbs": "Breadcrumbs",
       "numbers": "Numbers, prices, emails, URLs",
@@ -194,5 +199,294 @@
       "longWord": "Supercalifragilisticexpialidocious-air-conditioning-maintenance",
       "longButton": "Book a deep clean for all five split units in the villa this Saturday"
     }
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "AC & upholstery care · Dubai",
+      "reportCaption": "Example of the report you get after every visit"
+    },
+    "book": {
+      "eyebrow": "Book online",
+      "title": "Your price in a minute",
+      "lead": "Pick a service, see the exact price, choose a day. We confirm the one-hour slot in WhatsApp.",
+      "talk": "Prefer to talk? Message us"
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Four steps, no surprises"
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Everything for cool, clean air at home",
+      "lead": "Fixed prices per unit, seat or square metre. Call-out included.",
+      "ac": "Air conditioning",
+      "upholstery": "Upholstery and carpets",
+      "all": "All services"
+    },
+    "why": {
+      "eyebrow": "Why it matters"
+    },
+    "guarantee": {
+      "eyebrow": "Our guarantee",
+      "title": "If it comes back, we come back"
+    },
+    "packages": {
+      "eyebrow": "Packages",
+      "title": "Save with a bundle or a yearly plan",
+      "all": "Compare annual plans"
+    },
+    "areas": {
+      "eyebrow": "Where we work",
+      "title": "All over Dubai",
+      "all": "All areas"
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "Before you book"
+    },
+    "finalCta": {
+      "title": "Ready when you are",
+      "lead": "Get the price in a minute and pick a day. Or message us — we reply fast during working hours.",
+      "primary": "Get an instant price"
+    }
+  },
+  "Services": {
+    "lead": "Ten services with fixed prices and two coming soon. Every visit ends with a photo report in WhatsApp.",
+    "category": {
+      "ac": "Air conditioning",
+      "upholstery": "Upholstery and carpets",
+      "comingSoon": "Coming soon"
+    },
+    "summary": {
+      "ac": "Cleaning, deep cleaning, fan coil units, repairs and refrigerant.",
+      "upholstery": "Sofas, mattresses, carpets, stains and odours — dry within hours.",
+      "comingSoon": "Join the waitlist and we will message you first."
+    },
+    "card": {
+      "more": "Details"
+    },
+    "badge": {
+      "sameDay": "Same-day",
+      "estimate": "Diagnostics + estimate",
+      "comingSoon": "Coming soon",
+      "availableFrom": "From {date}"
+    },
+    "contract": {
+      "title": "Annual contract",
+      "text": "Three visits a year, priority booking and a repair discount.",
+      "cta": "Compare plans"
+    },
+    "notSure": {
+      "title": "Not sure which one? Get a price in a minute.",
+      "cta": "Open the calculator"
+    }
+  },
+  "Service": {
+    "included": "What's included",
+    "excluded": "Not included",
+    "symptoms": "When you need it",
+    "causes": "Typical causes",
+    "glance": "At a glance",
+    "prices": "Prices",
+    "visit": "How the visit goes",
+    "visitDuration": "Visit time: {duration}",
+    "beforeAfter": "Before and after",
+    "guarantee": "Guarantee",
+    "faq": "Questions about this service",
+    "related": "Usually booked together",
+    "book": "Book this service",
+    "fixedChip": "Fixed price",
+    "duration": "Duration",
+    "unit": "Billed",
+    "note": "Note",
+    "specifics": {
+      "deepVsStandard": "Standard or deep clean?",
+      "standard": "Standard clean",
+      "deep": "Deep clean",
+      "ageNote": "Older units",
+      "sameDay": "Same-day visits",
+      "callout": "Call-out with diagnostics",
+      "credited": "Credited to a repair done in the same visit",
+      "principle": "Find and fix first, then refill",
+      "leakTest": "Leak test",
+      "refill": "Refill",
+      "repairByEstimate": "Repair by written estimate",
+      "vsSplit": "How it differs from a split"
+    },
+    "comingSoon": {
+      "badge": "Coming soon",
+      "from": "Available from {date}",
+      "waitlist": "Join the waitlist",
+      "note": "We message you first when it opens. No newsletters."
+    }
+  },
+  "Price": {
+    "from": "from <price>{amount}</price>",
+    "per": {
+      "unit": "per unit",
+      "fcu": "per fan coil unit",
+      "visit": "per visit",
+      "seat": "per seat",
+      "item": "per item",
+      "sqm": "per m²",
+      "from": "+ estimate"
+    },
+    "perYear": "{amount} a year",
+    "save": "Save {amount}",
+    "instead": "instead of {amount}",
+    "recommended": "Recommended",
+    "vatIncluded": "Prices include 5% VAT.",
+    "vatAdded": "5% VAT is added to the total.",
+    "minimum": "Minimum {qty}",
+    "tierPlus": "{n}+",
+    "tierRange": "{from}–{to}",
+    "perYearRich": "<a>{amount}</a> a year",
+    "insteadRich": "instead of <s>{amount}</s>"
+  },
+  "Pricing": {
+    "lead": "Every price below is fixed before the visit and includes the call-out. Repairs start with a fixed diagnostics fee that counts towards the work.",
+    "jump": {
+      "ac": "Air conditioning",
+      "upholstery": "Upholstery",
+      "packages": "Packages",
+      "calculator": "Calculator"
+    },
+    "table": {
+      "item": "Service",
+      "price": "Price"
+    },
+    "captions": {
+      "ac": "Air conditioning prices",
+      "upholstery": "Upholstery and carpet prices"
+    },
+    "factors": {
+      "title": "What affects the price"
+    },
+    "tiers": {
+      "title": "Volume prices"
+    }
+  },
+  "Report": {
+    "before": "Before",
+    "after": "After",
+    "example": "Example from a report",
+    "sent": "Sent after the visit"
+  },
+  "Contact": {
+    "lead": "Write, call or send a request with the exact price — whichever is easier for you.",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "phone": "Phone",
+      "email": "Email",
+      "telegram": "Telegram"
+    },
+    "actions": {
+      "message": "Message",
+      "call": "Call",
+      "email": "Write"
+    },
+    "pending": "Our phone and WhatsApp number are being set up and will appear here before we start taking bookings.",
+    "pendingCta": "See prices and plan your visit",
+    "hours": "Working hours",
+    "emergency": "Urgent visits",
+    "area": "Service area",
+    "legal": "Company details",
+    "getPrice": "Get an instant price"
+  },
+  "Booking": {
+    "progressLabel": "Booking steps",
+    "progress": "Step {step} of {total}",
+    "steps": {
+      "category": "Service",
+      "details": "Details",
+      "time": "Time",
+      "send": "Send"
+    },
+    "category": {
+      "question": "What needs doing?",
+      "ac": {
+        "title": "Air conditioning",
+        "text": "Cleaning, deep cleaning, fan coil units, repairs"
+      },
+      "upholstery": {
+        "title": "Upholstery and carpets",
+        "text": "Sofas, mattresses, carpets, stains and odours"
+      }
+    },
+    "details": {
+      "acQuestion": "Which service?",
+      "upholsteryQuestion": "What are we cleaning?",
+      "qty": {
+        "unit": "Units",
+        "fcu": "Fan coil units",
+        "visit": "Visits",
+        "seat": "Seats",
+        "item": "Items",
+        "sqm": "Square metres"
+      },
+      "inc": "Add one: {item}",
+      "dec": "Remove one: {item}",
+      "min": "Minimum charge: {qty}",
+      "empty": "Choose at least one item to continue."
+    },
+    "summary": {
+      "subtotal": "Items",
+      "total": "Total",
+      "bundle": "{name} package",
+      "save": "You save {amount}",
+      "diagnostics": "Diagnostics",
+      "credited": "credited to the repair",
+      "fromLine": "from {amount}",
+      "repairEstimate": "Labour from {amount}, parts by written estimate",
+      "estimateNote": "The final amount is confirmed in writing before any repair starts.",
+      "live": "Total: {total}",
+      "minApplied": "minimum charge",
+      "line": "{qty} × {price}"
+    },
+    "offer": {
+      "text": "Add {items} for {add} more — {name} package, save {savings}",
+      "add": "Add"
+    },
+    "time": {
+      "question": "When suits you?",
+      "day": "Day",
+      "window": "Time of day",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "windows": {
+        "morning": "Morning",
+        "afternoon": "Afternoon",
+        "evening": "Evening",
+        "any": "Any time",
+        "asap": "As soon as possible"
+      },
+      "tooLate": "Too late for today",
+      "confirmNote": "We confirm the exact one-hour slot in WhatsApp.",
+      "area": "Your area (optional)",
+      "areaOther": "Other",
+      "areaNone": "Not chosen"
+    },
+    "send": {
+      "title": "Check and send",
+      "edit": "Edit",
+      "service": "Service",
+      "time": "Time",
+      "area": "Area",
+      "preview": "Your message",
+      "whatsapp": "Send in WhatsApp",
+      "opened": "WhatsApp opened in a new tab. Didn't open? Copy the message and send it yourself.",
+      "copy": "Copy message",
+      "copied": "Copied",
+      "contact": "Contact options",
+      "pending": "Online booking opens soon — our WhatsApp number will appear here. Copy the message for now, or see the contact options.",
+      "startOver": "Start over"
+    },
+    "nav": {
+      "back": "Back",
+      "next": "Next",
+      "toTime": "Choose a time",
+      "toSend": "Review and send"
+    },
+    "line": "{name} × {qty}"
   }
 }

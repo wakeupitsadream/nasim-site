@@ -22,6 +22,10 @@ const buttonVariants = cva(
         ghost: "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
         whatsapp: "bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp-hover",
         telegram: "bg-telegram text-telegram-foreground hover:bg-telegram-hover",
+        // For dark brand bands (.tone-deep): never put `primary`/`outline` on teal-deep.
+        inverse: "bg-on-deep text-primary hover:bg-mist",
+        "outline-inverse":
+          "border-on-deep/30 bg-transparent text-on-deep hover:bg-on-deep/10 aria-expanded:bg-on-deep/10",
         destructive:
           "bg-danger-soft text-danger-ink hover:bg-[color-mix(in_oklch,var(--color-danger-soft),var(--color-danger-ink)_10%)] focus-visible:ring-danger-ink",
         link: "text-primary underline underline-offset-4 hover:no-underline",

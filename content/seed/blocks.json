@@ -52,6 +52,10 @@
         "ru": "<p><strong>Чистка:</strong> 30 дней. Если запах или проблема вернулись — переделаем бесплатно.<br><strong>Ремонт:</strong> 90 дней на детали и работу.</p>",
         "ar": "" } },
 
+    {"key": "service.ac-deep-cleaning.age_note", "kind": "text", "value": {"en": "Units older than 8–10 years: plastic clips and the fan bearing can be brittle. We check before disassembly and tell you if a deep clean is not worth the risk — then we do a thorough standard clean instead.", "ru": "Блоки старше 8–10 лет: пластиковые защёлки и подшипник вентилятора могут быть хрупкими. Проверяем до разборки и честно говорим, если глубокая чистка не стоит риска — тогда делаем тщательную стандартную.", "ar": ""}},
+    {"key": "service.refrigerant-leak-refill.principle", "kind": "json", "value": {"en": [{"title": "Find the leak", "text": "Nitrogen pressure test and leak detector on joints, valves and the coil. A top-up without this is money thrown away: the gas leaves again within weeks."}, {"title": "Fix it", "text": "Brazing or a new flare joint, a valve core or a section of pipe. Parts are quoted in writing before we start."}, {"title": "Vacuum and refill", "text": "Deep vacuum to remove moisture, then refill by weight to the manufacturer's spec. Outlet temperature is checked and photographed."}], "ru": [{"title": "Находим утечку", "text": "Опрессовка азотом и течеискатель по соединениям, вентилям и радиатору. Дозаправка без этого — выброшенные деньги: газ уйдёт снова за несколько недель."}, {"title": "Устраняем", "text": "Пайка или новая вальцовка, золотник вентиля или участок трубы. Запчасти — письменной сметой до начала работ."}, {"title": "Вакуумируем и заправляем", "text": "Глубокое вакуумирование от влаги, затем заправка по весу по спецификации производителя. Температуру на выходе проверяем и фотографируем."}], "ar": []}},
+    {"key": "service.ducted-ac-fcu-service.vs_split", "kind": "html", "value": {"en": "<p>A split unit hangs on the wall and is cleaned in place. A fan coil unit (FCU) sits above the false ceiling of a corridor or bathroom and is reached through an access hatch: filters, the drain tray and the coil are serviced from below, the thermostat and the belt or motor are checked on the spot. Ducted systems in villas work the same way but have longer drain runs and more filters, so the visit takes longer and we price it per FCU. Duct cleaning itself needs a separate Dubai Municipality approval, so we arrange it through a licensed partner.</p>", "ru": "<p>Сплит висит на стене и чистится на месте. Фанкойл (FCU) стоит над подвесным потолком коридора или ванной, доступ — через люк: фильтры, поддон дренажа и радиатор обслуживаются снизу, термостат и ремень или мотор проверяются на месте. Канальные системы в виллах устроены так же, но у них длиннее дренаж и больше фильтров, поэтому визит дольше, и мы считаем его по числу фанкойлов. Чистка самих воздуховодов требует отдельного разрешения муниципалитета Дубая — её делает лицензированный партнёр.</p>", "ar": ""}},
+    {"key": "pricing.factors", "kind": "json", "value": {"en": [{"title": "How many units", "text": "The price per unit drops from the second and the fourth unit. The call-out is always included."}, {"title": "Access to the outdoor unit", "text": "A condenser on a balcony or roof is included. One that needs a ladder on a facade or a lift is quoted after a photo."}, {"title": "Villa or apartment", "text": "Villas with ducted systems are priced per fan coil unit; apartments with splits — per unit."}, {"title": "Age and condition", "text": "Units older than 8–10 years may need a deep clean or parts. We say so after the first look and never start extra work without your yes."}], "ru": [{"title": "Сколько блоков", "text": "Цена за блок снижается со второго и с четвёртого блока. Выезд всегда включён."}, {"title": "Доступ к наружному блоку", "text": "Наружный блок на балконе или крыше — включено. Если нужен подъёмник или работа на фасаде — считаем по фото."}, {"title": "Вилла или квартира", "text": "Виллы с канальными системами считаем по числу фанкойлов, квартиры со сплитами — по блокам."}, {"title": "Возраст и состояние", "text": "Блокам старше 8–10 лет может понадобиться глубокая чистка или запчасти. Скажем после первого осмотра и не начнём лишнего без вашего согласия."}], "ar": []}},
     { "key": "report.mockup", "kind": "json",
       "value": {
         "en": { "header": "Report · Bedroom AC", "lines": ["Before: 16.8 °C at the outlet", "After: 11.2 °C at the outlet", "Filters, coil, fan, drain cleaned", "Next clean due: in 5 months"] },
@@ -59,6 +63,7 @@
         "ar": {}
       } },
 
+    {"key": "report.readings", "kind": "json", "value": {"en": {"before_c": 16.8, "after_c": 11.2, "label": "Outlet air temperature"}, "ru": {"label": "Температура воздуха на выходе"}, "ar": {}}},
     { "key": "about.body", "kind": "html",
       "value": {
         "en": "<p>[Placeholder — Misha provides the facts, Opus writes the text in phase 3.] Who we are, why we started with AC cleaning, how the team works.</p>",
@@ -103,6 +108,7 @@
         "ar": "مرحباً {brand}! أنا مهتم بالعقد السنوي {service}( لـ {units} وحدة)( في {area}). — من الموقع/العقود السنوية"
       } },
 
+    {"key": "wa.template.waitlist", "kind": "text", "value": {"en": "Hi {brand}! Please add me to the waitlist for {service}( in {area}). — from website/{page}", "ru": "Здравствуйте! Запишите меня в лист ожидания на {service}( в {area}). — с сайта/{page}", "ar": "مرحباً {brand}! أرجو إضافتي إلى قائمة الانتظار لخدمة {service}( في {area}). — من الموقع/{page}"}},
     { "key": "reply.template.new_lead", "kind": "text",
       "value": {
         "en": "Hi {name}, this is {brand}. Thanks for your request for {service}. The price is {total} and we can come {time}. Does that work for you?",
@@ -130,6 +136,7 @@
           "service_area_note": "Dubai, all communities",
           "response_time_note": "We reply within 15 minutes during working hours",
           "flags": { "ar_noindex": true, "show_reviews": true, "emergency_enabled": true, "telegram_cta_ru": false },
+          "booking": { "days_ahead": 7, "lead_minutes": 90, "same_day_cutoff": "16:00", "emergency_until": "22:00", "windows": [ { "key": "morning", "from": "08:00", "to": "12:00" }, { "key": "afternoon", "from": "12:00", "to": "16:00" }, { "key": "evening", "from": "16:00", "to": "20:00" } ] },
           "vat_registered": false, "vat_included": false,
           "glossary": { "split AC": "сплит-система", "fan coil unit (FCU)": "фанкойл", "ducted AC": "канальный кондиционер", "deep cleaning": "глубокая чистка", "refrigerant": "фреон", "call-out": "выезд", "annual contract": "годовой контракт" }
         },

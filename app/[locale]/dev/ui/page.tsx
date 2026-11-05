@@ -10,7 +10,14 @@ import { TelegramIcon, WhatsAppIcon } from '@/components/icons/brand';
 import { LocalizedText } from '@/components/localized-text';
 import { Ltr } from '@/components/ltr';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { Eyebrow } from '@/components/marketing/eyebrow';
+import { MediaFrame } from '@/components/marketing/media-frame';
+import { SectionHeader } from '@/components/marketing/section-header';
+import { ServiceCard } from '@/components/marketing/service-card';
 import { StickyBar } from '@/components/marketing/sticky-bar';
+import { TierLadder } from '@/components/marketing/tier-ladder';
+import { getPricingConfig, getServices } from '@/lib/content/queries';
+import { findLine, priceFrom } from '@/lib/pricing';
 import {
   Accordion,
   AccordionContent,
@@ -92,6 +99,13 @@ export default async function DevUiPage() {
     getSiteSettings(locale),
   ]);
 
+  const [pricing, marketingServices] = await Promise.all([
+    getPricingConfig(),
+    getServices({ status: ['active', 'coming_soon'] }).then((all) =>
+      all.filter((s) => s.slug === 'emergency-ac-repair' || s.slug === 'water-tank-cleaning'),
+    ),
+  ]);
+  const acLine = findLine(pricing, 'ac_clean');
   const prices = pricesSeed.price_items.slice(0, 8);
   const areas = areasSeed.areas.filter((a) => a.published);
   const marina = areasSeed.areas.find((a) => a.slug === 'dubai-marina');
@@ -290,6 +304,42 @@ export default async function DevUiPage() {
 
       <Section id="sticky-bar" title={t('sections.stickyBar')}>
         <StickyBar preview={{ telegram: true }} />
+      </Section>
+
+      <Section id="marketing" title={t('sections.marketing')}>
+        <SectionHeader
+          id="marketing-sample"
+          eyebrow={t('sections.marketing')}
+          title={t('samples.cardTitle')}
+          lead={t('samples.cardText')}
+          className="mb-0"
+        />
+        <div className="grid gap-4 sm:grid-cols-2">
+          <MediaFrame ratio="4/3" art="ac" sizes="50vw" />
+          <MediaFrame ratio="4/3" art="upholstery" sizes="50vw" />
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          {marketingServices.map((service) => (
+            <ServiceCard
+              key={service.slug}
+              service={service}
+              priceFrom={priceFrom(pricing, service.slug)}
+              locale={locale}
+              badges={service.slug === 'emergency-ac-repair' ? ['sameDay'] : []}
+            />
+          ))}
+        </div>
+        {acLine ? (
+          <TierLadder line={acLine} locale={locale} label={t('samples.cardTitle')} />
+        ) : null}
+        <div className="tone-deep flex flex-col gap-3 rounded-panel p-6">
+          <Eyebrow>{t('sections.marketing')}</Eyebrow>
+          <p className="text-h3 text-on-deep">{t('samples.primary')}</p>
+          <div className="flex flex-wrap gap-3">
+            <Button variant="inverse">{t('samples.primary')}</Button>
+            <Button variant="outline-inverse">{t('samples.secondary')}</Button>
+          </div>
+        </div>
       </Section>
 
       <Section id="sheet" title={t('sections.sheet')}>
