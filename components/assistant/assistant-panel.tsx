@@ -73,6 +73,12 @@ const ERROR_KEY = {
 
 const FALLBACK_ERRORS: ReadonlySet<Failure> = new Set(['unavailable', 'failed', 'network']);
 
+/**
+ * Only a mouse/trackpad user gets the field focused for them: on a phone that would pop the
+ * keyboard over the chips the moment the window opens or a chip is tapped.
+ */
+const wantsFieldFocus = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
 const CHIP =
   'inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3.5 py-1.5 text-start text-small text-foreground transition-[border-color,background-color,scale] duration-(--nasim-dur-fast) outline-none hover:border-primary/40 hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 motion-safe:active:scale-95';
 
@@ -101,6 +107,7 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
   const errorId = `${id}-error`;
   const nextId = useRef(1);
   const launcherRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLTextAreaElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
@@ -134,12 +141,13 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
     }
   }, [pathname]);
 
-  // Focus follows the window: into the field on open, back to the launcher on close. On phones
-  // the window covers the page, which must not scroll underneath (html[data-assistant-open]).
+  // Focus follows the window: into the field on open (the window itself on touch screens, so no
+  // keyboard pops up), back to the launcher on close. On phones the window covers the page, which
+  // must not scroll underneath (html[data-assistant-open]).
   useEffect(() => {
     if (open) {
       document.documentElement.setAttribute('data-assistant-open', '');
-      textRef.current?.focus({ preventScroll: true });
+      (wantsFieldFocus() ? textRef.current : panelRef.current)?.focus({ preventScroll: true });
     } else {
       document.documentElement.removeAttribute('data-assistant-open');
       if (wasOpen.current) launcherRef.current?.focus({ preventScroll: true });
@@ -202,7 +210,7 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
       const faq = matchFaq(description, faqs);
       if (faq) {
         answerFaq(description, faq);
-        textRef.current?.focus();
+        if (wantsFieldFocus()) textRef.current?.focus();
         return;
       }
     }
@@ -282,8 +290,10 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
 
   return (
     <section
+      ref={panelRef}
       role="dialog"
       aria-labelledby={titleId}
+      tabIndex={-1}
       data-testid="assistant-panel"
       onKeyDown={(e) => {
         if (e.key === 'Escape') {
@@ -292,7 +302,7 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
         }
       }}
       style={{ viewTransitionName: 'assistant-panel' }}
-      className="fixed inset-0 z-50 flex flex-col bg-background text-foreground motion-safe:animate-in motion-safe:duration-(--nasim-dur) motion-safe:fill-mode-both motion-safe:fade-in motion-safe:slide-in-from-bottom-4 sm:inset-auto sm:inset-e-6 sm:bottom-6 sm:h-[min(42rem,calc(100dvh-5rem))] sm:w-[26rem] sm:overflow-clip sm:rounded-panel sm:border sm:border-border sm:shadow-lift"
+      className="fixed inset-0 z-50 flex flex-col bg-background text-foreground outline-none motion-safe:animate-in motion-safe:duration-(--nasim-dur) motion-safe:fill-mode-both motion-safe:fade-in motion-safe:slide-in-from-bottom-4 sm:inset-auto sm:inset-e-6 sm:bottom-6 sm:h-[min(42rem,calc(100dvh-5rem))] sm:w-[26rem] sm:overflow-clip sm:rounded-panel sm:border sm:border-border sm:shadow-lift"
     >
       <header className="flex items-start gap-3 border-b border-border bg-card px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:pt-3">
         <span
@@ -339,7 +349,7 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
                 dir={faq.lang !== locale ? 'auto' : undefined}
                 onClick={() => {
                   answerFaq(faq.question, faq);
-                  textRef.current?.focus();
+                  if (wantsFieldFocus()) textRef.current?.focus();
                 }}
                 className={CHIP}
               >
@@ -586,7 +596,7 @@ function Bubble({
       ) : null}
       <div
         className={cn(
-          'max-w-[85%] rounded-card px-4 py-3 text-body',
+          'max-w-[85%] rounded-card px-4 py-3 text-[0.9375rem] leading-relaxed',
           user
             ? 'rounded-ee-sm bg-primary text-primary-foreground'
             : tone === 'error'
