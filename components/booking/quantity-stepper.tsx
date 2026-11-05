@@ -89,7 +89,7 @@ export function QuantityStepper({ line, label, qty, locale, onChange }: Props) {
           aria-label={t('details.dec', { item: label.text })}
           onClick={() => set(qty - 1)}
           disabled={qty === 0}
-          className="inline-flex size-tap items-center justify-center rounded-lg border border-input bg-card text-foreground transition-colors outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring disabled:opacity-40"
+          className="inline-flex size-tap items-center justify-center rounded-lg border border-input bg-card text-foreground transition-[background-color,scale] duration-(--nasim-dur-fast) outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring disabled:opacity-40 motion-safe:active:scale-90"
         >
           <MinusIcon aria-hidden="true" strokeWidth={1.5} className="size-5" />
         </button>
@@ -108,7 +108,7 @@ export function QuantityStepper({ line, label, qty, locale, onChange }: Props) {
           type="button"
           aria-label={t('details.inc', { item: label.text })}
           onClick={() => set(qty + 1)}
-          className="inline-flex size-tap items-center justify-center rounded-lg border border-input bg-card text-foreground transition-colors outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring"
+          className="inline-flex size-tap items-center justify-center rounded-lg border border-input bg-card text-foreground transition-[background-color,scale] duration-(--nasim-dur-fast) outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring motion-safe:active:scale-90"
         >
           <PlusIcon aria-hidden="true" strokeWidth={1.5} className="size-5" />
         </button>

@@ -20,6 +20,8 @@ type Props = {
   headingRef?: RefObject<HTMLHeadingElement | null>;
   onReset?: () => void;
   className?: string;
+  /** A canned example shown while the assistant is not switched on: says so in a badge. */
+  demo?: boolean;
 };
 
 const URGENCY: Record<DiagnoseResponse['urgency'], string> = {
@@ -47,6 +49,7 @@ export function DiagnoseResult({
   headingRef,
   onReset,
   className,
+  demo = false,
 }: Props) {
   const t = useTranslations('Diagnose');
   const tPrice = useTranslations('Price');
@@ -82,6 +85,14 @@ export function DiagnoseResult({
           >
             {t(`result.urgency.${result.urgency}`)}
           </span>
+          {demo ? (
+            <span
+              data-testid="diagnose-demo"
+              className="inline-flex h-7 items-center rounded-full bg-warning-soft px-3 font-medium text-warning-ink"
+            >
+              {t('result.demoBadge')}
+            </span>
+          ) : null}
           <span className="text-muted-foreground">
             {t('result.confidence.label', { level: t(`result.confidence.${result.confidence}`) })}
           </span>
@@ -115,7 +126,7 @@ export function DiagnoseResult({
       ) : null}
 
       {service ? (
-        <div className="flex flex-col gap-5 rounded-card bg-mist p-5">
+        <div className="group flex flex-col gap-5 rounded-card bg-mist p-5">
           <p className="text-small font-medium text-muted-foreground">{t('result.recommended')}</p>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">

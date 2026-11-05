@@ -273,6 +273,40 @@
     "privacy": "The photo is analysed, not stored. No name or phone needed.",
     "calculator": "Already know what you need?",
     "calculatorCta": "Open the calculator",
+    "demo": {
+      "smell": {
+        "summary": "A musty smell when the unit starts almost always comes from a film of dust and mould on the indoor coil and in the drain tray. A standard clean removes it; the technician confirms on site.",
+        "cause1": "Dust and mould on the coil",
+        "cause1Text": "Dubai humidity turns coil dust into a film that smells when the fan starts.",
+        "cause2": "Standing water in the drain tray",
+        "cause2Text": "A slow drain keeps condensate in the tray, where bacteria grow.",
+        "question": "When was the unit last cleaned?"
+      },
+      "drip": {
+        "summary": "Water from the indoor unit usually means the drain line is silted or the coil has iced up behind a dirty filter. A standard clean clears the drain; the technician checks the filter and the slope of the pipe.",
+        "cause1": "Silted drain line",
+        "cause1Text": "Condensate backs up in the tray and overflows.",
+        "cause2": "Ice on the coil",
+        "cause2Text": "A clogged filter starves the airflow, the coil freezes and drips as it melts.",
+        "question": "Does it drip only while cooling, or after the unit is off too?"
+      },
+      "weak": {
+        "summary": "Weak cooling with the unit running all day points to a coil and blower caked in dust; after years without service a deep clean restores the airflow. If it stays weak, the technician checks the refrigerant.",
+        "cause1": "Coil and blower caked in dust",
+        "cause1Text": "Airflow drops and the unit never reaches the set temperature.",
+        "cause2": "Low refrigerant",
+        "cause2Text": "A slow leak lowers cooling over months; checked with gauges on site.",
+        "question": "How old is the unit, and when was it last serviced?"
+      },
+      "stain": {
+        "summary": "A fresh coffee stain on light fabric usually lifts with hot-water extraction and a tannin treatment. The technician tests a hidden spot first.",
+        "cause1": "Tannin stain in the fibres",
+        "cause1Text": "Coffee tannins bind to cotton and linen quickly; the sooner, the easier.",
+        "cause2": "Set by a home remedy",
+        "cause2Text": "Rubbing or hot water can fix the stain; blotting only is best until the visit.",
+        "question": "What is the sofa fabric, and how old is the stain?"
+      }
+    },
     "form": {
       "label": "What's happening?",
       "placeholder": "e.g. The bedroom AC smells musty when it starts and drips water from the indoor unit",
@@ -335,7 +369,8 @@
       "questions": "The technician will ask",
       "questionsHint": "Add the answers to your booking message and the visit goes faster.",
       "again": "Ask about something else",
-      "contact": "Message us"
+      "contact": "Message us",
+      "demoBadge": "Example answer — the live assistant is being connected"
     }
   },
   "Services": {

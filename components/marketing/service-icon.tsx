@@ -14,6 +14,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { BreezeMark } from '@/components/marketing/breeze-mark';
+import { ICON_MOTION } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 const ICONS: Record<string, LucideIcon> = {
@@ -33,18 +34,29 @@ const ICONS: Record<string, LucideIcon> = {
 
 type Props = { slug: string; tile?: boolean; className?: string };
 
-/** Line icon for a service slug (lucide, 1.5px), optionally in a 48px soft tile. Decorative. */
+/**
+ * Line icon for a service slug (lucide, 1.5px), optionally in a 48px soft tile. Decorative.
+ * `data-motion` lets the icon move when its card or row (`.group`) is hovered (styles/motion.css).
+ */
 export function ServiceIcon({ slug, tile = true, className }: Props) {
   const Icon = ICONS[slug];
+  const motion = ICON_MOTION[slug];
   const glyph = Icon ? (
     <Icon aria-hidden="true" strokeWidth={1.5} className="size-[22px]" />
   ) : (
     <BreezeMark className="size-6" />
   );
-  if (!tile) return <span className={cn('inline-flex text-primary', className)}>{glyph}</span>;
+  if (!tile) {
+    return (
+      <span data-motion={motion} className={cn('inline-flex text-primary', className)}>
+        {glyph}
+      </span>
+    );
+  }
   return (
     <span
       aria-hidden="true"
+      data-motion={motion}
       className={cn(
         'inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-surface-2 text-primary',
         className,

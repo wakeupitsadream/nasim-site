@@ -86,7 +86,10 @@ export function PriceSummary({ payload, quote, suggestion, onAddSuggestion, comp
       <div className="flex items-baseline justify-between gap-4 border-t border-border pt-3">
         <span className="font-medium text-foreground">{t('summary.total')}</span>
         <span className="text-h3 font-light text-primary tabular-nums">
-          <Ltr>{money(quote.total)}</Ltr>
+          {/* Remounted on every change, so the total "pops" once (styles/motion.css `.pop`). */}
+          <Ltr key={quote.total} className="pop inline-block">
+            {money(quote.total)}
+          </Ltr>
           {quote.kind === 'estimate' ? (
             <span className="ms-1 text-small font-normal text-muted-foreground">
               {tPrice('per.from')}

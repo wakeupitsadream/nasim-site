@@ -22,11 +22,16 @@ export function Progress({ step, locale }: { step: Step; locale: Locale }) {
           <li
             key={s}
             aria-current={s === step ? 'step' : undefined}
-            className={cn(
-              'h-1.5 flex-1 rounded-full transition-colors duration-(--nasim-dur)',
-              i <= index ? 'bg-primary' : 'bg-line-strong',
-            )}
+            className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-line-strong"
           >
+            {/* The fill grows from the inline start as the step is reached (`.grow-x`). */}
+            <span
+              aria-hidden="true"
+              className={cn(
+                'grow-x absolute inset-0 rounded-full bg-primary transition-transform duration-(--nasim-dur-slow) ease-brand-out',
+                i <= index ? 'scale-x-100' : 'scale-x-0',
+              )}
+            />
             <span className="sr-only">{t(`steps.${s}`)}</span>
           </li>
         ))}

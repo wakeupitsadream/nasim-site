@@ -21,7 +21,8 @@ export function BreezeGlyph({ className, ...props }: ComponentProps<'svg'>) {
   );
 }
 
-/** Overline above a heading: small caps on Latin, plain on Arabic (styles/design-tokens.css). */
+/** Overline above a heading: small caps on Latin, plain on Arabic (styles/design-tokens.css).
+ * Extra props (className, style) pass through, so it can join an entrance stagger. */
 export function Eyebrow({ className, children, ...props }: ComponentProps<'p'>) {
   return (
     <p

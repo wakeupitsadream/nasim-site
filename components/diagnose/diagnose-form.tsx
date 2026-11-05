@@ -2,7 +2,15 @@
 
 import { CameraIcon, Loader2Icon, MessageSquareIcon, SparklesIcon, XIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useEffect, useId, useRef, useState } from 'react';
+import {
+  startTransition,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  ViewTransition,
+} from 'react';
 import { DiagnoseResult } from '@/components/diagnose/diagnose-result';
 import { ImageError, prepareImage, type PreparedImage } from '@/components/diagnose/image';
 import { Ltr } from '@/components/ltr';
@@ -14,18 +22,24 @@ import { Link } from '@/lib/i18n/navigation';
 import type { Locale } from '@/lib/i18n/routing';
 import { DIAGNOSE_MAX_TEXT, type DiagnoseResponse } from '@/lib/validation/diagnose';
 
+/** A canned verdict for one example chip, used only while the assistant answers "unavailable". */
+export type DemoVerdict = { text: string; result: DiagnoseResponse };
+
 type Props = {
   locale: Locale;
   calculatorHref: string;
   /** Example complaints that fill the textarea (UI strings, picked by the server wrapper). */
   examples: string[];
+  demos: DemoVerdict[];
 };
 
 type Phase =
   | { kind: 'idle' }
   | { kind: 'loading' }
-  | { kind: 'done'; result: DiagnoseResponse }
+  | { kind: 'done'; result: DiagnoseResponse; demo: boolean }
   | { kind: 'error'; error: DiagnoseFailure | 'photoType' | 'photoSize' };
+
+const subscribeNoop = () => () => {};
 
 const ERROR_KEY = {
   invalid: 'empty',
@@ -41,9 +55,10 @@ const ERROR_KEY = {
 /**
  * Client island of the AI triage: description, optional photo (shrunk in the browser), one
  * request, then the verdict card or an honest error. Nothing is stored anywhere; no clock, no
- * cookies, so the page around it stays prerendered.
+ * cookies, so the page around it stays prerendered. While the assistant has no key, the four
+ * example chips still show a labelled example verdict, so the block can be tried on previews.
  */
-export function DiagnoseForm({ locale, calculatorHref, examples }: Props) {
+export function DiagnoseForm({ locale, calculatorHref, examples, demos }: Props) {
   const t = useTranslations('Diagnose');
   const [text, setText] = useState('');
   const [image, setImage] = useState<PreparedImage | null>(null);
@@ -54,6 +69,14 @@ export function DiagnoseForm({ locale, calculatorHref, examples }: Props) {
   const fileRef = useRef<HTMLInputElement>(null);
   const textRef = useRef<HTMLTextAreaElement>(null);
   const resultRef = useRef<HTMLHeadingElement>(null);
+  // Hydration marker (data-ready) for the e2e tests: text typed into the controlled field before
+  // React attaches would be reset, so tests wait for it instead of racing the bundle. The server
+  // snapshot is false, the client one true, so it flips exactly once hydration is done.
+  const ready = useSyncExternalStore(
+    subscribeNoop,
+    () => true,
+    () => false,
+  );
 
   // Thumbnails are object URLs: free them when the photo changes or the island unmounts.
   useEffect(() => () => (image ? URL.revokeObjectURL(image.previewUrl) : undefined), [image]);
@@ -98,45 +121,49 @@ export function DiagnoseForm({ locale, calculatorHref, examples }: Props) {
       text: description,
       ...(image ? { image: { mediaType: image.mediaType, data: image.data } } : {}),
     });
-    setPhase(
-      outcome.ok ? { kind: 'done', result: outcome.data } : { kind: 'error', error: outcome.error },
+    const demo =
+      !outcome.ok && outcome.error === 'unavailable'
+        ? demos.find((d) => d.text === description)
+        : undefined;
+    // Inside a transition so the form → verdict swap runs as a view transition.
+    startTransition(() =>
+      setPhase(
+        demo
+          ? { kind: 'done', result: demo.result, demo: true }
+          : outcome.ok
+            ? { kind: 'done', result: outcome.data, demo: false }
+            : { kind: 'error', error: outcome.error },
+      ),
     );
   };
 
   const reset = () => {
-    setPhase({ kind: 'idle' });
-    setText('');
-    setImage(null);
+    startTransition(() => {
+      setPhase({ kind: 'idle' });
+      setText('');
+      setImage(null);
+    });
     // Return focus to the field so the next question starts where the first one did.
     requestAnimationFrame(() => textRef.current?.focus());
   };
-
-  if (phase.kind === 'done') {
-    return (
-      <DiagnoseResult
-        result={phase.result}
-        locale={locale}
-        calculatorHref={calculatorHref}
-        headingRef={resultRef}
-        onReset={reset}
-        className="motion-safe:animate-in motion-safe:duration-(--nasim-dur) motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
-      />
-    );
-  }
 
   const loading = phase.kind === 'loading';
   const error = phase.kind === 'error' ? phase.error : null;
   const fieldError = error === 'invalid';
   const showFallbacks = error === 'unavailable' || error === 'failed' || error === 'network';
 
-  return (
+  const form = (
     <form
       noValidate
       onSubmit={submit}
       aria-busy={loading}
       data-testid="diagnose-form"
-      className="flex flex-col gap-5 rounded-panel border border-border bg-card p-5 shadow-lift sm:p-6 lg:p-8"
+      data-ready={ready || undefined}
+      className="relative flex flex-col gap-5 overflow-clip rounded-panel border border-border bg-card p-5 shadow-lift sm:p-6 lg:p-8"
     >
+      {loading ? (
+        <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 shimmer bg-mist" />
+      ) : null}
       <div className="flex flex-col gap-2">
         <label htmlFor={textId} className="text-body font-medium text-foreground">
           {t('form.label')}
@@ -181,7 +208,7 @@ export function DiagnoseForm({ locale, calculatorHref, examples }: Props) {
               if (fieldError) setPhase({ kind: 'idle' });
               textRef.current?.focus();
             }}
-            className="inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3.5 py-1.5 text-small text-foreground transition-colors outline-none hover:border-primary/40 hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
+            className="inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3.5 py-1.5 text-small text-foreground transition-[border-color,background-color,scale] duration-(--nasim-dur-fast) outline-none hover:border-primary/40 hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 motion-safe:active:scale-95"
           >
             {example}
           </button>
@@ -200,7 +227,7 @@ export function DiagnoseForm({ locale, calculatorHref, examples }: Props) {
           onChange={(e) => void pickPhoto(e.target.files?.[0])}
         />
         {image ? (
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 motion-safe:animate-in motion-safe:duration-(--nasim-dur) motion-safe:zoom-in-95 motion-safe:fade-in">
             <span className="relative inline-flex size-16 overflow-hidden rounded-xl border border-border bg-surface-2">
               {/* eslint-disable-next-line @next/next/no-img-element -- object URL thumbnail */}
               <img
@@ -238,7 +265,7 @@ export function DiagnoseForm({ locale, calculatorHref, examples }: Props) {
         <div
           role="alert"
           id={errorId}
-          className="flex flex-col gap-3 rounded-card border border-danger-ink/20 bg-danger-soft p-4 text-small text-danger-ink"
+          className="flex flex-col gap-3 rounded-card border border-danger-ink/20 bg-danger-soft p-4 text-small text-danger-ink motion-safe:animate-in motion-safe:duration-(--nasim-dur) motion-safe:fade-in motion-safe:slide-in-from-top-1"
         >
           <p>{t(`errors.${ERROR_KEY[error]}`)}</p>
           {showFallbacks ? (
@@ -278,5 +305,29 @@ export function DiagnoseForm({ locale, calculatorHref, examples }: Props) {
         {loading ? t('form.submitting') : null}
       </p>
     </form>
+  );
+
+  return (
+    <ViewTransition
+      key={phase.kind === 'done' ? 'result' : 'form'}
+      enter="step-in"
+      exit="step-out"
+      default="none"
+    >
+      <div>
+        {phase.kind === 'done' ? (
+          <DiagnoseResult
+            result={phase.result}
+            demo={phase.demo}
+            locale={locale}
+            calculatorHref={calculatorHref}
+            headingRef={resultRef}
+            onReset={reset}
+          />
+        ) : (
+          form
+        )}
+      </div>
+    </ViewTransition>
   );
 }

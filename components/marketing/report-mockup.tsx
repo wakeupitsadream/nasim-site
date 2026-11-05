@@ -1,9 +1,11 @@
 import { getTranslations } from 'next-intl/server';
+import type { CSSProperties } from 'react';
 import { WhatsAppIcon } from '@/components/icons/brand';
 import { BreezeMark } from '@/components/marketing/breeze-mark';
 import { MediaFrame } from '@/components/marketing/media-frame';
 import type { Locale } from '@/lib/i18n/routing';
 import type { LocalizedValue } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -14,20 +16,30 @@ type Props = {
   /** Phones: no photo bubble, less padding. */
   compact?: boolean;
   className?: string;
+  style?: CSSProperties;
 };
 
 /**
  * The hero's "what you get": a chat card with the report we send after a visit. Honest by
- * design — no timestamps, no "online", and the caption says it is an example.
+ * design — no timestamps, no "online", and the caption says it is an example. The bubbles arrive
+ * one after another, like real messages (styles/motion.css `.enter`).
  */
-export async function ReportMockup({ brand, data, locale, caption, compact, className }: Props) {
+export async function ReportMockup({
+  brand,
+  data,
+  locale,
+  caption,
+  compact,
+  className,
+  style,
+}: Props) {
   const t = await getTranslations('Report');
   const fallback = data.lang !== locale;
   const bubble =
     'rounded-card rounded-ss-sm bg-card px-4 py-3 text-body text-foreground shadow-card';
 
   return (
-    <figure className={cn('relative', className)}>
+    <figure className={cn('relative', className)} style={style}>
       <div
         aria-hidden="true"
         className="absolute -inset-x-10 -top-10 bottom-0 -z-10 rounded-full bg-mist blur-3xl"
@@ -44,7 +56,7 @@ export async function ReportMockup({ brand, data, locale, caption, compact, clas
         </div>
         <div className={cn('flex flex-col gap-3 bg-mist/50', compact ? 'p-3' : 'p-4 sm:p-5')}>
           {!compact ? (
-            <div className={cn(bubble, 'me-6 p-2')}>
+            <div className={cn(bubble, 'enter me-6 p-2')} style={stagger(7)}>
               <div className="grid grid-cols-2 gap-2">
                 {(['before', 'after'] as const).map((key) => (
                   <div key={key} className="relative">
@@ -57,7 +69,7 @@ export async function ReportMockup({ brand, data, locale, caption, compact, clas
               </div>
             </div>
           ) : null}
-          <div className={cn(bubble, 'me-6')}>
+          <div className={cn(bubble, 'enter me-6')} style={stagger(compact ? 8 : 10)}>
             <p className="font-medium">{data.value.header}</p>
             <ul className="mt-2 flex flex-col gap-1 text-small text-muted-foreground">
               {data.value.lines.map((line) => (
@@ -71,7 +83,10 @@ export async function ReportMockup({ brand, data, locale, caption, compact, clas
               ))}
             </ul>
           </div>
-          <p className="ms-auto rounded-full bg-card/70 px-3 py-1 text-xs text-muted-foreground">
+          <p
+            className="enter-fade ms-auto rounded-full bg-card/70 px-3 py-1 text-xs text-muted-foreground"
+            style={stagger(compact ? 11 : 13)}
+          >
             {t('sent')}
           </p>
         </div>

@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { PageTransition } from '@/components/page-transition';
 import { alternatesFor } from '@/lib/seo';
 
 /** Phase 0 placeholder page: a translated heading. Real sections arrive in phase 3. */
 export function PageStub({ title, children }: { title: string; children?: ReactNode }) {
   return (
-    <div className="mx-auto w-full max-w-page px-gutter py-16 lg:px-gutter-lg">
-      <h1 className="text-h1 text-primary">{title}</h1>
-      {children}
-    </div>
+    <PageTransition>
+      <div className="mx-auto w-full max-w-page px-gutter py-16 lg:px-gutter-lg">
+        <h1 className="text-h1 text-primary">{title}</h1>
+        {children}
+      </div>
+    </PageTransition>
   );
 }
 

@@ -8,6 +8,7 @@ import { getSiteSettings, hasAny } from '@/lib/content/site';
 import { callTarget, telegramTarget, whatsappTarget } from '@/lib/cta';
 import { Link } from '@/lib/i18n/navigation';
 import { LEGAL_NAV, MAIN_NAV } from '@/lib/nav';
+import { stagger } from '@/lib/motion';
 import { formatPhoneForDisplay } from '@/lib/validation/phone';
 
 const linkClass =
@@ -41,7 +42,7 @@ export async function Footer() {
   return (
     <footer className="border-t bg-surface-2 text-muted-foreground">
       <div className="mx-auto grid max-w-page gap-10 px-gutter py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-gutter-lg">
-        <div className="flex flex-col gap-3">
+        <div className="reveal-fade flex flex-col gap-3" style={stagger(0)}>
           <Logo brandName={s.brandName} />
           <p>{t('tagline')}</p>
           <p>
@@ -50,7 +51,11 @@ export async function Footer() {
           </p>
         </div>
 
-        <section aria-labelledby="footer-hours" className="flex flex-col gap-3">
+        <section
+          aria-labelledby="footer-hours"
+          className="reveal-fade flex flex-col gap-3"
+          style={stagger(1)}
+        >
           <h2 id="footer-hours" className={headingClass}>
             {t('hoursTitle')}
           </h2>
@@ -112,7 +117,11 @@ export async function Footer() {
           </section>
         ) : null}
 
-        <nav aria-label={t('navLabel')} className="flex flex-col gap-1">
+        <nav
+          aria-label={t('navLabel')}
+          className="reveal-fade flex flex-col gap-1"
+          style={stagger(2)}
+        >
           <h2 className={`${headingClass} mb-2`}>{t('linksTitle')}</h2>
           <ul className="grid grid-cols-2 gap-x-4 sm:grid-cols-1">
             {[...MAIN_NAV, ...LEGAL_NAV].map(({ key, href }) => (
@@ -125,7 +134,11 @@ export async function Footer() {
           </ul>
         </nav>
 
-        <section aria-labelledby="footer-language" className="flex flex-col gap-1">
+        <section
+          aria-labelledby="footer-language"
+          className="reveal-fade flex flex-col gap-1"
+          style={stagger(3)}
+        >
           <h2 id="footer-language" className={`${headingClass} mb-2`}>
             {t('languageTitle')}
           </h2>

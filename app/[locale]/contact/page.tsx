@@ -9,6 +9,7 @@ import { FinalCta } from '@/components/marketing/final-cta';
 import { HoursCard } from '@/components/marketing/hours-card';
 import { Section } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
+import { PageTransition } from '@/components/page-transition';
 import { getAreas } from '@/lib/content/queries';
 import { getSiteSettings, hasAny } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
@@ -48,7 +49,7 @@ export default async function ContactPage() {
   ).filter(([, value]) => value.trim() !== '');
 
   return (
-    <>
+    <PageTransition>
       <Section tone="sand" aria-labelledby="contact-title" className="pt-6 lg:pt-10" size="compact">
         <Breadcrumbs items={[{ label: tNav('contact') }]} className="mb-8" />
         <SectionHeader
@@ -85,7 +86,7 @@ export default async function ContactPage() {
             {legalRows.map(([key, value]) => (
               <div
                 key={key}
-                className="flex flex-col gap-1 rounded-card border border-border bg-card p-5"
+                className="reveal flex flex-col gap-1 rounded-card border border-border bg-card p-5"
               >
                 <dt className="text-small text-muted-foreground">{tFooter(key)}</dt>
                 <dd className="text-body text-foreground">
@@ -103,6 +104,6 @@ export default async function ContactPage() {
         primary={{ href: '/pricing#book', label: t('getPrice') }}
         whatsapp={{ target: whatsapp, label: tCta('whatsapp') }}
       />
-    </>
+    </PageTransition>
   );
 }

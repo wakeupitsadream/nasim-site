@@ -1,11 +1,16 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
-import { DiagnoseForm } from '@/components/diagnose/diagnose-form';
+import { DiagnoseForm, type DemoVerdict } from '@/components/diagnose/diagnose-form';
 import { Ltr } from '@/components/ltr';
 import { Section, type SectionTone } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
+import { getPricingConfig, getServices } from '@/lib/content/queries';
 import { formatNumber } from '@/lib/i18n/format';
 import { Link } from '@/lib/i18n/navigation';
+import { pick } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
+import { priceFrom } from '@/lib/pricing';
+import type { DiagnoseResponse } from '@/lib/validation/diagnose';
 
 type Props = {
   tone: SectionTone;
@@ -15,7 +20,26 @@ type Props = {
 };
 
 const EXAMPLES = ['smell', 'drip', 'weak', 'stain'] as const;
+type ExampleKey = (typeof EXAMPLES)[number];
 const STEPS = ['describe', 'cause', 'book'] as const;
+
+/**
+ * Canned verdicts for the four example chips, shown (clearly labelled) while the assistant has no
+ * API key. Texts live in messages `Diagnose.demo.*`; the service, its name and price are real.
+ */
+const DEMO: Record<
+  ExampleKey,
+  {
+    service: string;
+    urgency: DiagnoseResponse['urgency'];
+    confidence: DiagnoseResponse['confidence'];
+  }
+> = {
+  smell: { service: 'ac-cleaning', urgency: 'soon', confidence: 'high' },
+  drip: { service: 'ac-cleaning', urgency: 'soon', confidence: 'medium' },
+  weak: { service: 'ac-deep-cleaning', urgency: 'soon', confidence: 'medium' },
+  stain: { service: 'stain-odour-removal', urgency: 'routine', confidence: 'high' },
+};
 
 /**
  * Server half of the AI triage block: the pitch, the three-step explainer and the client form in
@@ -23,8 +47,51 @@ const STEPS = ['describe', 'cause', 'book'] as const;
  */
 export async function DiagnoseSection({ tone, calculatorHref, id = 'diagnose' }: Props) {
   const locale = await getLocale();
-  const [t, messages] = await Promise.all([getTranslations('Diagnose'), getMessages()]);
+  const [t, messages, services, pricing] = await Promise.all([
+    getTranslations('Diagnose'),
+    getMessages(),
+    getServices({ status: ['active', 'coming_soon'] }),
+    getPricingConfig(),
+  ]);
   const titleId = `${id}-title`;
+
+  const demos: DemoVerdict[] = EXAMPLES.map((key) => {
+    const spec = DEMO[key];
+    const service = services.find((s) => s.slug === spec.service);
+    return {
+      text: t(`form.examples.${key}`),
+      result: {
+        summary: t(`demo.${key}.summary`),
+        causes: [
+          {
+            title: t(`demo.${key}.cause1`),
+            detail: t(`demo.${key}.cause1Text`),
+            likelihood: 'likely',
+          },
+          {
+            title: t(`demo.${key}.cause2`),
+            detail: t(`demo.${key}.cause2Text`),
+            likelihood: 'possible',
+          },
+        ],
+        service: service
+          ? {
+              slug: service.slug,
+              name: pick(service.name, locale),
+              href: `/services/${service.slug}`,
+              priceFrom: priceFrom(pricing, service.slug),
+              estimate: service.pricing_unit === 'from',
+              comingSoon: service.status === 'coming_soon',
+            }
+          : null,
+        urgency: spec.urgency,
+        safety: null,
+        questions: [t(`demo.${key}.question`)],
+        outOfScope: false,
+        confidence: spec.confidence,
+      },
+    };
+  });
 
   return (
     <Section id={id} tone={tone} aria-labelledby={titleId}>
@@ -39,7 +106,7 @@ export async function DiagnoseSection({ tone, calculatorHref, id = 'diagnose' }:
           />
           <ol className="flex flex-col gap-4">
             {STEPS.map((step, i) => (
-              <li key={step} className="flex items-baseline gap-4">
+              <li key={step} className="reveal flex items-baseline gap-4" style={stagger(i + 1)}>
                 <Ltr
                   aria-hidden="true"
                   className="w-8 shrink-0 text-h3 font-light text-highlight-ink tabular-nums"
@@ -50,7 +117,7 @@ export async function DiagnoseSection({ tone, calculatorHref, id = 'diagnose' }:
               </li>
             ))}
           </ol>
-          <p className="text-small text-muted-foreground">
+          <p className="reveal-fade text-small text-muted-foreground" style={stagger(4)}>
             {t('calculator')}{' '}
             {calculatorHref.startsWith('#') ? (
               <a
@@ -69,7 +136,8 @@ export async function DiagnoseSection({ tone, calculatorHref, id = 'diagnose' }:
             )}
           </p>
         </div>
-        <div className="lg:col-span-7">
+        {/* Fade only: the form is tappable, so it must not slide while people reach for it. */}
+        <div className="reveal-fade lg:col-span-7" style={stagger(1)}>
           <NextIntlClientProvider
             messages={{
               Diagnose: messages.Diagnose,
@@ -81,6 +149,7 @@ export async function DiagnoseSection({ tone, calculatorHref, id = 'diagnose' }:
               locale={locale}
               calculatorHref={calculatorHref}
               examples={EXAMPLES.map((key) => t(`form.examples.${key}`))}
+              demos={demos}
             />
           </NextIntlClientProvider>
         </div>

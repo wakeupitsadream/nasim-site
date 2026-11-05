@@ -91,9 +91,11 @@ export async function StickyBar({ preview }: { preview?: { telegram: boolean } }
   }
 
   return (
+    // Slides up after the page has settled; anchored during page transitions (styles/motion.css).
     <nav
       aria-label={tBar('label')}
-      className="fixed inset-x-0 bottom-0 z-40 border-t bg-background/95 px-gutter pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] shadow-float backdrop-blur md:hidden"
+      style={{ viewTransitionName: 'site-sticky-bar' }}
+      className="fixed inset-x-0 bottom-0 z-40 border-t bg-background/95 px-gutter pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] shadow-float backdrop-blur motion-safe:animate-in motion-safe:duration-(--nasim-dur-slow) motion-safe:fill-mode-both motion-safe:[animation-delay:400ms] motion-safe:fade-in motion-safe:slide-in-from-bottom-6 md:hidden"
     >
       {list}
     </nav>

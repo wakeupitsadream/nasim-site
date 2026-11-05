@@ -15,6 +15,8 @@ type Props = {
   className?: string;
   /** Language of the title when it fell back to EN (LocalizedText semantics). */
   titleLang?: string;
+  /** Scroll-driven reveal (styles/motion.css); off for headers that must never move. */
+  motion?: boolean;
 };
 
 const SIZE = { display: 'text-display', h1: 'text-h1', h2: 'text-h2' } as const;
@@ -31,6 +33,7 @@ export function SectionHeader({
   actions,
   className,
   titleLang,
+  motion = true,
 }: Props) {
   const sizeClass = SIZE[size ?? (Tag === 'h1' ? 'h1' : 'h2')];
   const centered = align === 'center';
@@ -39,6 +42,8 @@ export function SectionHeader({
       className={cn(
         'mb-stack flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between',
         centered && 'items-center text-center lg:flex-col lg:items-center',
+        // Headers with action buttons only fade, so the buttons never slide under a tap.
+        motion && (actions ? 'reveal-fade' : 'reveal'),
         className,
       )}
     >

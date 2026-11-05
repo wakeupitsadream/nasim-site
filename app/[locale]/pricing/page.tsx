@@ -9,12 +9,14 @@ import { PriceTable, type PriceGroup } from '@/components/marketing/price-table'
 import { Section } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
 import { TierLadder } from '@/components/marketing/tier-ladder';
+import { PageTransition } from '@/components/page-transition';
 import { Badge } from '@/components/ui/badge';
 import { getBlock, getPriceItems, getPricingConfig, getServices } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
 import { formatNumber } from '@/lib/i18n/format';
 import { pick, pickLocalizedValue } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 import { alternatesFor } from '@/lib/seo';
 import type { Service, PriceItem } from '@/lib/validation/content';
 
@@ -66,7 +68,7 @@ export default async function PricingPage() {
   ];
 
   return (
-    <>
+    <PageTransition>
       <Section tone="sand" aria-labelledby="pricing-title" className="pt-6 lg:pt-10" size="compact">
         <Breadcrumbs items={[{ label: tNav('pricing') }]} className="mb-8" />
         <SectionHeader
@@ -78,8 +80,8 @@ export default async function PricingPage() {
           className="mb-8"
         />
         <ul className="flex flex-wrap gap-2">
-          {jumps.map((jump) => (
-            <li key={jump.href}>
+          {jumps.map((jump, i) => (
+            <li key={jump.href} className="enter" style={stagger(i + 2)}>
               <Badge variant="chip" asChild>
                 <a href={jump.href}>{jump.label}</a>
               </Badge>
@@ -136,7 +138,11 @@ export default async function PricingPage() {
           className="grid gap-8 sm:grid-cols-2 lg:gap-x-12"
         >
           {factorList.value.map((factor, i) => (
-            <li key={factor.title} className="flex gap-5 border-t border-border pt-5">
+            <li
+              key={factor.title}
+              className="reveal flex gap-5 border-t border-border pt-5"
+              style={stagger(i % 2)}
+            >
               <span
                 aria-hidden="true"
                 className="text-h2 leading-none font-light text-highlight-ink tabular-nums"
@@ -170,6 +176,6 @@ export default async function PricingPage() {
         primary={{ href: '#book', label: tHome('finalCta.primary') }}
         whatsapp={{ target: whatsapp, label: tCta('whatsapp') }}
       />
-    </>
+    </PageTransition>
   );
 }

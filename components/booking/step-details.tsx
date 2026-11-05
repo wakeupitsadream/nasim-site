@@ -79,7 +79,12 @@ export function StepDetails({
                         : 'border-line-strong',
                     )}
                   >
-                    {checked ? <CheckIcon strokeWidth={2.5} className="size-3.5" /> : null}
+                    {checked ? (
+                      <CheckIcon
+                        strokeWidth={2.5}
+                        className="size-3.5 motion-safe:animate-in motion-safe:duration-(--nasim-dur-fast) motion-safe:zoom-in-50"
+                      />
+                    ) : null}
                   </span>
                   <span className="flex min-w-0 flex-1 flex-col gap-0.5">
                     <span

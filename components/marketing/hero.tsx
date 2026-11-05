@@ -14,6 +14,7 @@ import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized, pickLocalizedValue } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 
 /** The promise (BRIEF §4), two CTAs, the trust strip and the report mockup. */
 export async function HomeHero({ locale }: { locale: Locale }) {
@@ -50,21 +51,28 @@ export async function HomeHero({ locale }: { locale: Locale }) {
         </div>
       }
     >
+      {/* Entrance: each row of the stack rises in turn (styles/motion.css `.enter`, stagger --i). */}
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="flex flex-col gap-7 lg:col-span-7 lg:pe-8">
-          <Eyebrow>{t('hero.eyebrow')}</Eyebrow>
+          <Eyebrow className="enter" style={stagger(0)}>
+            {t('hero.eyebrow')}
+          </Eyebrow>
           <h1
             id="hero-title"
             lang={heading.lang !== locale ? heading.lang : undefined}
             dir={heading.lang !== locale ? 'auto' : undefined}
-            className="max-w-[14ch] text-display text-balance text-primary"
+            className="enter max-w-[14ch] text-display text-balance text-primary"
+            style={stagger(1)}
           >
             {heading.text}
           </h1>
-          <p className="max-w-[38rem] text-lead text-pretty text-muted-foreground">
+          <p
+            className="enter max-w-[38rem] text-lead text-pretty text-muted-foreground"
+            style={stagger(2)}
+          >
             <LocalizedText value={lead} locale={locale} />
           </p>
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="enter flex flex-col gap-3 sm:flex-row sm:flex-wrap" style={stagger(3)}>
             <Button size="lg" asChild className="sm:min-w-56">
               <a href="#book">
                 <LocalizedText value={pickLocalized(ctaSecondary, locale)} locale={locale} />
@@ -80,7 +88,10 @@ export async function HomeHero({ locale }: { locale: Locale }) {
               <LocalizedText value={pickLocalized(ctaPrimary, locale)} locale={locale} />
             </CtaLink>
           </div>
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-body text-muted-foreground">
+          <p
+            className="enter flex flex-wrap items-center gap-x-2 gap-y-1 text-body text-muted-foreground"
+            style={stagger(4)}
+          >
             <SparklesIcon
               aria-hidden="true"
               strokeWidth={1.5}
@@ -94,11 +105,21 @@ export async function HomeHero({ locale }: { locale: Locale }) {
               {t('hero.diagnoseCta')}
             </a>
           </p>
-          <TrustStrip items={pickLocalizedValue(trust, locale)} locale={locale} className="mt-2" />
-          <ReportMockup {...mockup} compact className="mt-4 max-w-sm lg:hidden" />
+          <TrustStrip
+            items={pickLocalizedValue(trust, locale)}
+            locale={locale}
+            className="enter mt-2"
+            style={stagger(5)}
+          />
+          <ReportMockup
+            {...mockup}
+            compact
+            className="enter mt-4 max-w-sm lg:hidden"
+            style={stagger(6)}
+          />
         </div>
-        <div className="hidden lg:col-span-5 lg:block lg:ps-4">
-          <ReportMockup {...mockup} />
+        <div className="enter hidden lg:col-span-5 lg:block lg:ps-4" style={stagger(3)}>
+          <ReportMockup {...mockup} className="float" />
         </div>
       </div>
     </Section>

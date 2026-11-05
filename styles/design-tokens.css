@@ -83,8 +83,9 @@
   --nasim-section-y: clamp(4rem, 2.5rem + 6vw, 8rem);
   --nasim-section-y-sm: clamp(3rem, 2rem + 4vw, 5rem);
   --nasim-stack: clamp(2rem, 1.5rem + 2vw, 3.5rem); /* шапка секции → контент */
-  /* Движение */
+  /* Движение (styles/motion.css) */
   --nasim-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nasim-ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* появление: быстрый старт, мягкий финиш */
   --nasim-dur-fast: 160ms;
   --nasim-dur: 240ms;
   --nasim-dur-slow: 480ms;
@@ -189,6 +190,7 @@ html[lang='ar'] {
   --radius-panel: var(--nasim-radius-panel);
 
   --ease-brand: var(--nasim-ease);
+  --ease-brand-out: var(--nasim-ease-out);
 
   /* Дрейф линий потока воздуха (AirflowLines): только под motion-safe */
   --animate-airflow: airflow 40s linear infinite;

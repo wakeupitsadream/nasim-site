@@ -8,6 +8,7 @@ import { FinalCta } from '@/components/marketing/final-cta';
 import { ServiceGrid } from '@/components/marketing/related-services';
 import { Section } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
+import { PageTransition } from '@/components/page-transition';
 import { Button } from '@/components/ui/button';
 import { getPackages, getPricingConfig, getServices } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
@@ -51,7 +52,7 @@ export default async function ServicesPage() {
   );
 
   return (
-    <>
+    <PageTransition>
       <Section
         tone="sand"
         aria-labelledby="services-title"
@@ -77,7 +78,7 @@ export default async function ServicesPage() {
           locale={locale}
           emergencyEnabled={emergencyEnabled}
         />
-        <div className="mt-6 flex flex-col gap-4 rounded-card border border-border bg-background p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="reveal mt-6 flex flex-col gap-4 rounded-card border border-border bg-background p-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-4">
             <span
               aria-hidden="true"
@@ -149,6 +150,6 @@ export default async function ServicesPage() {
         primary={{ href: '/pricing#book', label: tHome('finalCta.primary') }}
         whatsapp={{ target: whatsapp, label: tCta('whatsapp') }}
       />
-    </>
+    </PageTransition>
   );
 }

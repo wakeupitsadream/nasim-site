@@ -2,6 +2,7 @@ import { CheckIcon, MinusIcon } from 'lucide-react';
 import { LocalizedText } from '@/components/localized-text';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized, type I18nText } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -16,8 +17,12 @@ export function CheckList({ items, locale, variant = 'include', className }: Pro
   const Icon = variant === 'include' ? CheckIcon : MinusIcon;
   return (
     <ul className={cn('flex flex-col gap-3', className)}>
-      {items.map((item) => (
-        <li key={item.en} className="flex items-start gap-3 text-body">
+      {items.map((item, i) => (
+        <li
+          key={item.en}
+          className="reveal flex items-start gap-3 text-body"
+          style={stagger(Math.min(i, 5))}
+        >
           <span
             aria-hidden="true"
             className={cn(

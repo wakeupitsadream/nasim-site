@@ -29,7 +29,7 @@ export async function HoursCard({ settings, areas, locale }: Props) {
   );
 
   return (
-    <div className="grid gap-8 rounded-panel border border-border bg-card p-6 shadow-card lg:grid-cols-3 lg:gap-10 lg:p-10">
+    <div className="reveal-fade grid gap-8 rounded-panel border border-border bg-card p-6 shadow-card lg:grid-cols-3 lg:gap-10 lg:p-10">
       {row(
         <ClockIcon strokeWidth={1.5} className="size-6" />,
         t('hours'),

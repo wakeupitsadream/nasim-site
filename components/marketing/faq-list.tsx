@@ -10,13 +10,14 @@ type Props = { faqs: Faq[]; locale: Locale; name: string; className?: string };
 
 /**
  * Native <details>: no JS, every answer is in the HTML (Radix unmounts closed panels, which
- * would hide them from search and reader modes). `name` makes the group exclusive.
+ * would hide them from search and reader modes). `name` makes the group exclusive; the answer's
+ * height animates where the browser can (`details.faq` in styles/motion.css).
  */
 export function FaqList({ faqs, locale, name, className }: Props) {
   return (
-    <div className={cn('divide-y divide-border border-y border-border', className)}>
+    <div className={cn('reveal-fade divide-y divide-border border-y border-border', className)}>
       {faqs.map((faq) => (
-        <details key={faq.question.en} name={name} className="group">
+        <details key={faq.question.en} name={name} className="group faq">
           <summary className="flex min-h-tap cursor-pointer list-none items-center justify-between gap-4 rounded-md py-4 text-body font-medium text-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background [&::-webkit-details-marker]:hidden">
             <LocalizedText value={pickLocalized(faq.question, locale)} locale={locale} />
             <ChevronDownIcon

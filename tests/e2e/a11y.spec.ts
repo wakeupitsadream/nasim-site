@@ -1,6 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
-import { diagnosisSample, mockDiagnose } from './diagnose-fixture';
+import { diagnoseReady, diagnosisSample, mockDiagnose } from './diagnose-fixture';
 import { DESKTOP, MOBILE, msg } from './helpers';
 
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'];
@@ -71,6 +71,7 @@ for (const locale of ['en', 'ar'] as const) {
     await mockDiagnose(page, { ...diagnosisSample, safety: 'Switch the unit off at the breaker.' });
     await page.goto(`/${locale}`);
     const section = page.locator('#diagnose');
+    await diagnoseReady(page);
     // Inline validation error, then the verdict card.
     await section.getByRole('button', { name: msg(locale, 'Diagnose.form.submit') }).click();
     await expect(section.getByRole('alert')).toBeVisible();

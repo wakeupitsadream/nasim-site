@@ -13,6 +13,7 @@ import {
   type CtaTarget,
 } from '@/lib/cta';
 import type { Locale } from '@/lib/i18n/routing';
+import { stagger } from '@/lib/motion';
 import { formatPhoneForDisplay } from '@/lib/validation/phone';
 
 type Channel = {
@@ -83,10 +84,11 @@ export async function ContactChannels({
 
   return (
     <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {channels.map((channel) => (
+      {channels.map((channel, i) => (
         <li
           key={channel.key}
-          className="flex flex-col gap-4 rounded-card border border-border bg-card p-6 shadow-card"
+          className="reveal flex flex-col gap-4 rounded-card border border-border bg-card p-6 shadow-card"
+          style={stagger(i)}
         >
           <span
             aria-hidden="true"

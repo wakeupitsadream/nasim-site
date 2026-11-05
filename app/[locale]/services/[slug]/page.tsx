@@ -21,6 +21,7 @@ import { SymptomList } from '@/components/marketing/symptom-list';
 import { TierLadder } from '@/components/marketing/tier-ladder';
 import { VisitSteps } from '@/components/marketing/visit-steps';
 import { LocalizedText } from '@/components/localized-text';
+import { PageTransition } from '@/components/page-transition';
 import {
   getBlock,
   getFaqs,
@@ -119,7 +120,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
       }),
     );
     return (
-      <>
+      <PageTransition>
         <ComingSoonHero service={service} locale={locale} waitlist={waitlist} />
         <Section tone="surface" aria-labelledby="description-title">
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
@@ -151,7 +152,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
           primary={{ href: '/pricing#book', label: tHome('finalCta.primary') }}
           whatsapp={{ target: whatsapp, label: tCta('whatsapp') }}
         />
-      </>
+      </PageTransition>
     );
   }
 
@@ -389,7 +390,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
   });
 
   return (
-    <>
+    <PageTransition>
       <ServiceHero service={service} locale={locale} priceFrom={from} whatsapp={whatsapp} />
       {rendered}
       <FinalCta
@@ -398,6 +399,6 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
         primary={{ href: '#book', label: tHome('finalCta.primary') }}
         whatsapp={{ target: whatsapp, label: tCta('whatsapp') }}
       />
-    </>
+    </PageTransition>
   );
 }
