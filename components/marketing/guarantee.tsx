@@ -3,7 +3,7 @@ import { CrewPortrait } from '@/components/marketing/crew-portrait';
 import { Eyebrow } from '@/components/marketing/eyebrow';
 import { RichText } from '@/components/marketing/rich-text';
 import { Section, type SectionTone } from '@/components/marketing/section';
-import { Van } from '@/components/marketing/van';
+import { VanDrive } from '@/components/marketing/van-drive';
 import { getBlock } from '@/lib/content/queries';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized } from '@/lib/i18n/text';
@@ -52,7 +52,7 @@ export async function Guarantee({ locale, tone = 'sand', van = false }: Props) {
             className="relative h-16 border-t border-border bg-surface-2/60 sm:h-20 lg:h-24"
           >
             <div className="absolute inset-e-[5%] bottom-1 w-36 text-muted-foreground sm:w-44 lg:w-56">
-              <Van className="van-drive w-full" />
+              <VanDrive />
             </div>
           </div>
         ) : null}

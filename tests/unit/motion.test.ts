@@ -64,6 +64,12 @@ describe('styles/motion.css', () => {
     expect(css).toMatch(/::view-transition-group\(\.page-fade\),[\s\S]*?animation: none;/);
   });
 
+  it('drives the van by time where the browser has no view timelines', () => {
+    expect(css).toMatch(
+      /@supports not \(animation-timeline: view\(\)\) \{\s*\.van-drive\[data-driven\] \{\s*animation: nasim-drive-in/,
+    );
+  });
+
   it('animates only compositor-friendly properties', () => {
     const keyframes = css.match(/@keyframes[\s\S]*?\n}/g) ?? [];
     expect(keyframes.length).toBeGreaterThan(5);
