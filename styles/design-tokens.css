@@ -190,6 +190,14 @@ html[lang='ar'] {
 
   --ease-brand: var(--nasim-ease);
 
+  /* Дрейф линий потока воздуха (AirflowLines): только под motion-safe */
+  --animate-airflow: airflow 40s linear infinite;
+  @keyframes airflow {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   --container-page: 1200px;
   --spacing-gutter: var(--nasim-gutter);
   --spacing-gutter-lg: var(--nasim-gutter-lg);
