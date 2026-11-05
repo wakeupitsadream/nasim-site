@@ -6,7 +6,7 @@
 
 ## Стек
 
-Next.js 16.4 (App Router, TypeScript strict, React 19.3, Cache Components, Turbopack) · Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, стиль radix-nova, `rtl: true`) · next-intl v4.14 (`next/root-params`) · Drizzle ORM 0.45 (стабильная ветка, не 1.0-rc) + Neon Postgres (`pg` Pool) · Auth.js v5 (Credentials; см. предложение Better Auth в DECISIONS) · Vercel (Blob, Web Analytics, регион функций `fra1`) · Resend · Telegram Bot API (fetch) · Cloudflare Turnstile · Tiptap · zod · Vitest · Playwright · `@anthropic-ai/sdk` (только на сервере).
+Next.js 16.4 (App Router, TypeScript strict, React 19.3, Cache Components, Turbopack) · Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, стиль radix-nova, `rtl: true`) · next-intl v4.14 (`next/root-params`) · Drizzle ORM 0.45 (стабильная ветка, не 1.0-rc) + Neon Postgres (`pg` Pool) · Auth.js v5 (Credentials; см. предложение Better Auth в DECISIONS) · Vercel (Blob, Web Analytics, регион функций `fra1`) · Resend · Telegram Bot API (fetch) · Cloudflare Turnstile · Tiptap · zod · Vitest · Playwright · Polza AI (OpenAI-совместимый шлюз к Claude через `fetch`, только с сервера).
 
 ## Команды
 
@@ -36,7 +36,7 @@ pnpm seed           # идемпотентный сид из content/seed/*.json
 8. **Админка закрыта**: `proxy.ts` (Next 16, всегда Node runtime; `middleware.ts` не используем) делает только оптимистичную проверку cookie сессии на `/admin/*` и `/api/admin/*`; настоящая проверка сессии и ролей `owner`/`staff` — в каждом server action и route handler (`requireRole`), не только в UI. Админка — на том же домене (`/admin`), не на поддомене: revalidate действует только на свой домен.
 9. **HTML из редактора** всегда проходит `lib/sanitize.ts` при рендере.
 10. **Клиентские компоненты** (`'use client'`) — только где есть интерактив: калькулятор, форма, слайдер до/после, аккордеон, переключатель языка, админка. Маркетинговые страницы — серверные.
-11. **AI (Anthropic SDK)** вызывается только из `lib/ai.ts` на сервере, модель из `process.env.AI_MODEL ?? 'claude-opus-5-5'`, structured outputs через `output_config.format`, результат никогда не записывается в БД без подтверждения пользователя в UI. Промпты — чистые функции в `lib/ai/*` (без SDK), цены модель не называет — их подставляет сервер из `lib/pricing`; текст и фото клиента в промпте — данные, не инструкции (DECISIONS №45–47).
+11. **AI** вызывается только из `lib/ai.ts` на сервере через OpenAI-совместимый шлюз (`lib/ai/gateway.ts`, `fetch` без SDK; по умолчанию Polza AI: `AI_BASE_URL` + `POLZA_API_KEY`), модель из `process.env.AI_MODEL ?? 'anthropic/claude-opus-5.5'`, structured outputs через `response_format: json_schema` (схема из zod, `z.toJSONSchema`) **и** обязательная повторная валидация zod на нашей стороне, результат никогда не записывается в БД без подтверждения пользователя в UI. Промпты — чистые функции в `lib/ai/*` (без сети), цены модель не называет — их подставляет сервер из `lib/pricing`; текст и фото клиента в промпте — данные, не инструкции (DECISIONS №45–47, №51).
 12. **Новая зависимость** — только с записью в `docs/DECISIONS.md` (зачем, альтернативы).
 13. **Тёмной темы нет** в v1. Не добавлять `dark:`-классы; из компонентов shadcn они вычищаются при добавлении (`@custom-variant dark` в `globals.css` — только страховка, чтобы они не срабатывали).
 14. **Контент-сид** (`content/seed/*.json`) — источник правды для первого наполнения; `pnpm seed` не перезаписывает записи, изменённые в админке (`updated_at` > `seeded_at`).
@@ -61,7 +61,7 @@ lib/pricing.ts            движок цен (чистые функции)   li
 components/booking        мастер заявки (клиентский островок + серверная обёртка)
 components/diagnose       AI-диагностика: серверная секция, клиентская форма (фото сжимается в браузере), карточка результата
 styles/motion.css  lib/motion.ts  components/page-transition.tsx  движение и переходы страниц (правило 17)
-lib/ai/diagnose-prompt.ts промпт триажа (чистые функции)   lib/diagnose/client.ts  запрос с клиента (zod + маппинг статусов)
+lib/ai/gateway.ts         OpenAI-совместимый шлюз (fetch, Polza)   lib/ai/diagnose-prompt.ts промпт триажа (чистые функции)   lib/diagnose/client.ts  запрос с клиента (zod + маппинг статусов)
 app/[locale]/dev/ui       галерея компонентов (локально и на превью; на продакшене 404)
 messages/{en,ar,ru}.json  UI-строки
 content/seed/*.json       стартовый контент
@@ -79,7 +79,7 @@ tests/unit  tests/e2e     docs/{BRIEF,PHASES,DECISIONS,RUNBOOK}.md
 
 ## Переменные окружения
 
-`DATABASE_URL` (pooled, runtime), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `ANTHROPIC_API_KEY`, `AI_MODEL`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Контакты, WhatsApp, Telegram chat id, лицензия — в таблице `settings`, не в env. Ключ Anthropic — с аккаунта Миши (Россия не поддерживается API), вызовы только с сервера. Кто владеет каким аккаунтом — `docs/INFRASTRUCTURE.md`.
+`DATABASE_URL` (pooled, runtime), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `POLZA_API_KEY` (или `AI_API_KEY` для другого шлюза), `AI_MODEL`, `AI_BASE_URL`, `AI_EFFORT`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Контакты, WhatsApp, Telegram chat id, лицензия — в таблице `settings`, не в env. Ключ Polza — аккаунт Максима, оплата в рублях; вызовы только с сервера. Кто владеет каким аккаунтом — `docs/INFRASTRUCTURE.md`.
 
 ## Коммиты
 

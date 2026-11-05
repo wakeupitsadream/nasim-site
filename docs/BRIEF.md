@@ -231,7 +231,7 @@ Hero (название, 1 абзац, цена «от» и единица, дл�
 | Пользователи | Список, приглашение по email, роль, сброс пароля, деактивация. |
 | Журнал | Кто что менял (entity, поле, старое → новое), последние 90 дней. |
 
-**AI-помощник в админке** (сервер, ключ в env): перевод EN → AR/RU с сохранением HTML-разметки и терминов (глоссарий в settings: «split AC» = «сплит-система», и т.д.), улучшение текста («короче», «проще», «дружелюбнее»), генерация alt-текстов. Реализация по skill `claude-api`: SDK `@anthropic-ai/sdk`, модель `claude-opus-5-5` (дефолт по правилам skill; Максим может переключить на `claude-haiku-5-5` через env `AI_MODEL` — для коротких переводов это в 40 раз дешевле), structured outputs через `output_config.format` с zod-схемой `{ar: string, ru: string}`, `output_config.effort: 'low'`, `fallbacks: 'default'` с beta-заголовком `server-side-fallback-2026-07-01`, таймаут 60 с, результат показывается как diff и применяется только по подтверждению. Стоимость на объёме сайта — единицы долларов.
+**AI-помощник в админке** (сервер, ключ в env; с 05.11.2026 все вызовы идут через шлюз Polza AI — DECISIONS №51): перевод EN → AR/RU с сохранением HTML-разметки и терминов (глоссарий в settings: «split AC» = «сплит-система», и т.д.), улучшение текста («короче», «проще», «дружелюбнее»), генерация alt-текстов. Реализация по skill `claude-api`: SDK `@anthropic-ai/sdk`, модель `claude-opus-5-5` (дефолт по правилам skill; Максим может переключить на `claude-haiku-5-5` через env `AI_MODEL` — для коротких переводов это в 40 раз дешевле), structured outputs через `output_config.format` с zod-схемой `{ar: string, ru: string}`, `output_config.effort: 'low'`, `fallbacks: 'default'` с beta-заголовком `server-side-fallback-2026-07-01`, таймаут 60 с, результат показывается как diff и применяется только по подтверждению. Стоимость на объёме сайта — единицы долларов.
 
 **Публикация**: сохранение = запись в БД + `updateTag('content')` и точечные `updateTag('service:{slug}')`/`updateTag('area:{slug}')` в server action (read-your-own-writes); запросы публичных страниц — `'use cache'` + `cacheLife('max')` + `cacheTag`; экспорт `revalidate` с Cache Components запрещён — статический shell живёт в ISR Vercel до инвалидации тега; предпросмотр черновика через `draftMode()`.
 
@@ -304,7 +304,7 @@ audit_log(id, user_id, entity, entity_id, action, diff jsonb, created_at)
 | Email | Resend (бесплатный тариф: 3 000 писем/мес, 1 домен) | уведомления, авто-ответы, сброс пароля |
 | Уведомления | Telegram Bot API (fetch, без библиотек) | мгновенно и бесплатно |
 | Антиспам | Cloudflare Turnstile + honeypot + лимит в БД | бесплатно, без Redis |
-| AI в админке | `@anthropic-ai/sdk`, `claude-opus-5-5` (env-переключатель на haiku) | перевод/копирайт, см. §10 |
+| AI (диагностика на сайте, позже админка) | шлюз Polza AI (OpenAI-совместимый, `fetch`), `anthropic/claude-opus-5.5` (env-переключатель на sonnet/haiku) — DECISIONS №51 | триаж, перевод/копирайт, см. §10 |
 | Rich text | Tiptap (минимальный набор: заголовки, списки, ссылки, жирный) | HTML в БД, санитизация `sanitize-html` на выходе |
 | Валидация | zod (общие схемы клиент/сервер) | |
 | Тесты | Vitest (pricing, whatsapp link, i18n fallback, формат чисел), Playwright 1.63 (закреплён под браузер контейнера; e2e в 3 локалях + скриншоты RTL), axe-core в Playwright | |
@@ -313,9 +313,9 @@ audit_log(id, user_id, entity, entity_id, action, diff jsonb, created_at)
 | Мониторинг | Vercel logs; Telegram-алерт при ошибке доставки лида (уже в пайплайне) | минимум |
 
 **Переменные окружения** (`.env.example` в репо):
-`DATABASE_URL` (pooled), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `ANTHROPIC_API_KEY`, `AI_MODEL` (default `claude-opus-5-5`), `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Telegram chat id, WhatsApp и контакты — в БД (settings), не в env.
+`DATABASE_URL` (pooled), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `POLZA_API_KEY`, `AI_MODEL` (default `anthropic/claude-opus-5.5`), `AI_BASE_URL`, `AI_EFFORT`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Telegram chat id, WhatsApp и контакты — в БД (settings), не в env.
 
-**Стоимость в месяц**: Vercel Pro $20, Neon $0 (free), Resend $0, Turnstile $0, Blob в Pro, домен ~$12/год (.com) и/или .ae ~AED 100–150/год, Anthropic API ≈ $1–3, ревью AR-текста одноразово $50–100. Итого ≈ $22/мес + разовые. Платит Миша картой ОАЭ (роль Billing у Vercel); российские карты эти сервисы не принимают.
+**Стоимость в месяц**: Vercel Pro $20, Neon $0 (free), Resend $0, Turnstile $0, Blob в Pro, домен ~$12/год (.com) и/или .ae ~AED 100–150/год, Polza AI (Claude) ≈ 1,5–2 ₽ за AI-диагноз и сотни рублей в месяц на админку, ревью AR-текста одноразово $50–100. Итого ≈ $22/мес + разовые. Платит Миша картой ОАЭ (роль Billing у Vercel); российские карты эти сервисы не принимают.
 
 ---
 
@@ -440,7 +440,7 @@ nasim-site/
 | Админка раздувает сроки | Фаза 5 разбивается на 5a/5b; дашборд и канбан — в конце, inbox и редактор услуг — первыми |
 | Опечатки/несогласованность трёх языков | Индикаторы «нет перевода», AI-перевод с diff, предпросмотр по локали перед публикацией |
 | Аккаунты на гражданине РФ, провайдер «перестрахуется» | Платёжный метод и домен — у Миши; план выхода — перенос Vercel-проекта в команду Миши без даунтайма (env, домены, git-связь переезжают; интеграции и Blob — отдельно), см. `docs/INFRASTRUCTURE.md` |
-| Anthropic API не обслуживает Россию | Аккаунт и ключ — на Мише, вызовы только с сервера (fra1) |
+| Anthropic API не обслуживает Россию | Шлюз Polza AI с оплатой в рублях (аккаунт Максима), вызовы только с сервера (fra1) — DECISIONS №51 |
 | Разработчик в РФ: троттлинг Cloudflare, блокировки кастомных доменов Vercel, WhatsApp | VPN для дашбордов; превью `*.vercel.app` обычно открываются; проверка WhatsApp-ссылок — через Мишу или VPN |
 
 ---
