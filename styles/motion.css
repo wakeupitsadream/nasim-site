@@ -499,17 +499,24 @@
 ::view-transition {
   pointer-events: none;
 }
+/* …как и плавающий ассистент (кнопка и окно): он живёт в layout и не едет вместе со страницей. */
 ::view-transition-group(site-header),
-::view-transition-group(site-sticky-bar) {
+::view-transition-group(site-sticky-bar),
+::view-transition-group(assistant-launcher),
+::view-transition-group(assistant-panel) {
   animation: none;
   z-index: 100;
 }
 ::view-transition-old(site-header),
-::view-transition-old(site-sticky-bar) {
+::view-transition-old(site-sticky-bar),
+::view-transition-old(assistant-launcher),
+::view-transition-old(assistant-panel) {
   display: none;
 }
 ::view-transition-new(site-header),
-::view-transition-new(site-sticky-bar) {
+::view-transition-new(site-sticky-bar),
+::view-transition-new(assistant-launcher),
+::view-transition-new(assistant-panel) {
   animation: none;
 }
 

@@ -2,7 +2,7 @@
 
 import { ArrowRightIcon, MessageSquareIcon, RotateCcwIcon, TriangleAlertIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import type { RefObject } from 'react';
+import { useId, type RefObject } from 'react';
 import { Ltr } from '@/components/ltr';
 import { ServiceIcon } from '@/components/marketing/service-icon';
 import { Button } from '@/components/ui/button';
@@ -53,6 +53,11 @@ export function DiagnoseResult({
 }: Props) {
   const t = useTranslations('Diagnose');
   const tPrice = useTranslations('Price');
+  // Unique per card: the assistant can show several verdicts in one conversation.
+  const id = useId();
+  const titleId = `${id}-title`;
+  const causesId = `${id}-causes`;
+  const questionsId = `${id}-questions`;
   const { service } = result;
   const price =
     service?.priceFrom && !service.comingSoon
@@ -67,7 +72,7 @@ export function DiagnoseResult({
 
   return (
     <article
-      aria-labelledby="diagnose-result-title"
+      aria-labelledby={titleId}
       data-testid="diagnose-result"
       className={cn(
         'flex flex-col gap-6 rounded-panel border border-border bg-card p-5 shadow-lift sm:p-6 lg:p-8',
@@ -98,7 +103,7 @@ export function DiagnoseResult({
           </span>
         </div>
         <h3
-          id="diagnose-result-title"
+          id={titleId}
           ref={headingRef}
           tabIndex={-1}
           dir="auto"
@@ -192,8 +197,8 @@ export function DiagnoseResult({
       )}
 
       {result.causes.length > 0 ? (
-        <section aria-labelledby="diagnose-causes-title" className="flex flex-col gap-2">
-          <h4 id="diagnose-causes-title" className="text-small font-medium text-muted-foreground">
+        <section aria-labelledby={causesId} className="flex flex-col gap-2">
+          <h4 id={causesId} className="text-small font-medium text-muted-foreground">
             {t('result.causes')}
           </h4>
           <ol className="flex flex-col divide-y divide-border">
@@ -219,11 +224,8 @@ export function DiagnoseResult({
       ) : null}
 
       {result.questions.length > 0 ? (
-        <section aria-labelledby="diagnose-questions-title" className="flex flex-col gap-2">
-          <h4
-            id="diagnose-questions-title"
-            className="text-small font-medium text-muted-foreground"
-          >
+        <section aria-labelledby={questionsId} className="flex flex-col gap-2">
+          <h4 id={questionsId} className="text-small font-medium text-muted-foreground">
             {t('result.questions')}
           </h4>
           <ul className="flex flex-col gap-1.5 ps-5 text-body text-foreground [list-style:disc]">

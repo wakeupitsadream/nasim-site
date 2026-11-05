@@ -217,10 +217,8 @@
   "Home": {
     "hero": {
       "eyebrow": "AC & upholstery care · Dubai",
-      "reportCaption": "Example of the report you get after every visit",
       "diagnoseLead": "Not sure what's wrong?",
-      "diagnoseCta": "Try the AI diagnosis",
-      "sceneAlt": "Brigada technicians cleaning a ceiling AC unit and a sofa in a Dubai living room (illustration)"
+      "diagnoseCta": "Try the AI diagnosis"
     },
     "ticker": {
       "label": "Our services"
@@ -234,18 +232,6 @@
       "title": "Your price in a minute",
       "lead": "Pick a service, see the exact price, choose a day. We confirm the one-hour slot in WhatsApp.",
       "talk": "Prefer to talk? Message us"
-    },
-    "how": {
-      "eyebrow": "How it works",
-      "title": "Four steps, no surprises"
-    },
-    "services": {
-      "eyebrow": "Services",
-      "title": "Everything for cool, clean air at home",
-      "lead": "Fixed prices per unit, seat or square metre. Call-out included.",
-      "ac": "Air conditioning",
-      "upholstery": "Upholstery and carpets",
-      "all": "All services"
     },
     "why": {
       "eyebrow": "Why it matters"
@@ -275,16 +261,7 @@
     }
   },
   "Diagnose": {
-    "eyebrow": "AI diagnosis",
-    "title": "Tell us what's wrong. We'll tell you what it needs.",
-    "lead": "Describe the problem in your own words or send a photo of the unit, the leak or the stain. In a few seconds you see the likely cause, the right service and its fixed price.",
-    "steps": {
-      "describe": "Describe it in a sentence, or take a photo",
-      "cause": "See the likely cause and the service that fixes it",
-      "book": "Book at the fixed price — the technician confirms on site"
-    },
     "privacy": "The photo is analysed, not stored. No name or phone needed.",
-    "calculator": "Already know what you need?",
     "calculatorCta": "Open the calculator",
     "demo": {
       "smell": {
@@ -324,7 +301,6 @@
       "label": "What's happening?",
       "placeholder": "e.g. The bedroom AC smells musty when it starts and drips water from the indoor unit",
       "counter": "{count} / {max}",
-      "examplesLabel": "Try an example:",
       "examples": {
         "smell": "Musty smell when the AC starts",
         "drip": "Water dripping from the indoor unit",
@@ -332,10 +308,8 @@
         "stain": "Coffee stain on a light sofa"
       },
       "photo": "Add a photo",
-      "photoHint": "JPEG, PNG or WebP — shrunk on your phone before sending.",
       "photoAlt": "Your photo",
       "removePhoto": "Remove photo",
-      "submit": "Diagnose",
       "submitting": "Analysing…",
       "disclaimer": "An AI estimate, not a verdict: the technician confirms everything on site before any work starts."
     },
@@ -386,6 +360,20 @@
       "demoBadge": "Example answer — the live assistant is being connected"
     }
   },
+  "Assistant": {
+    "launcher": "Assistant",
+    "launcherLabel": "Open the assistant: AI diagnosis and quick answers",
+    "title": "Brigada assistant",
+    "subtitle": "AI diagnosis of AC and upholstery problems, answers to frequent questions",
+    "close": "Close the assistant",
+    "greeting": "Hi! Describe what the AC or the sofa is doing, send a photo — or tap one of the questions below.",
+    "faqGroup": "Frequent questions",
+    "examplesGroup": "Or describe a problem",
+    "send": "Send",
+    "faqNote": "From our FAQ. Anything else — just type it.",
+    "you": "You",
+    "assistant": "Assistant"
+  },
   "Services": {
     "lead": "Ten services with fixed prices and two coming soon. Every visit ends with a photo report in WhatsApp.",
     "category": {
@@ -411,6 +399,12 @@
       "title": "Annual contract",
       "text": "Three visits a year, priority booking and a repair discount.",
       "cta": "Compare plans"
+    },
+    "notSure": {
+      "title": "Not sure which service you need?",
+      "text": "Describe the problem or send a photo — the assistant names the likely cause and the service that fixes it, with its fixed price. Frequent questions are answered right there too.",
+      "ask": "Ask the assistant",
+      "price": "Open the calculator"
     }
   },
   "Service": {

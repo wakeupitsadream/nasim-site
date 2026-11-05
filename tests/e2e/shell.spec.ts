@@ -128,9 +128,9 @@ test.describe('inner pages', () => {
   });
 
   test('FAQ answers are in the HTML and <details> toggles', async ({ page, request }) => {
-    const html = await (await request.get('/en')).text();
-    expect(html).toContain('Every 4–6 months for a unit that runs daily');
-    await page.goto('/en');
+    const html = await (await request.get('/en/annual-contracts')).text();
+    expect(html).toContain('priority call-out within the hours of your plan');
+    await page.goto('/en/annual-contracts');
     const first = page.locator('details').first();
     await expect(first).not.toHaveAttribute('open', '');
     await first.locator('summary').click();

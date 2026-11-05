@@ -1,8 +1,8 @@
 {
-  "_comment": "TEMPORARY stock photos (Pexels License) standing in until the owner’s own photos arrive through the admin media library (DECISIONS №53). url = path under public/. kind: hero | band | category | service | team | before_after.",
+  "_comment": "TEMPORARY stock photos (Pexels License) standing in until the owner’s own photos arrive through the admin media library (DECISIONS №53). url = path under public/. kind: why (the home we work in, the «why every 4–6 months» block) | band | category | service | team | before_after.",
   "media": [
     {
-      "kind": "hero",
+      "kind": "why",
       "url": "/photos/home-hero.jpg",
       "width": 1600,
       "height": 1066,

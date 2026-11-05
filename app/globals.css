@@ -175,6 +175,12 @@
     scroll-padding-top: calc(var(--nasim-header-h) + 8px);
     scroll-padding-bottom: calc(var(--nasim-sticky-bar-h) + 8px);
   }
+  /* Окно ассистента на телефоне занимает весь экран: страница под ним не прокручивается. */
+  @media (width < 40rem) {
+    html[data-assistant-open] {
+      overflow: hidden;
+    }
+  }
   body {
     @apply bg-background text-body text-foreground;
     line-height: var(--nasim-leading-body);

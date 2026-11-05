@@ -133,7 +133,7 @@ describe('content getters', () => {
   });
 
   it('return photos by kind, service and category, with the alt picked per locale', async () => {
-    expect((await getMedia({ kind: 'hero' })).length).toBe(1);
+    expect((await getMedia({ kind: 'why' })).length).toBe(1);
     expect((await getMedia({ kind: 'service', serviceSlug: 'ac-cleaning' })).length).toBe(1);
     expect((await getMedia({ kind: 'category', category: 'upholstery' })).length).toBe(1);
     expect((await getMedia({ kind: 'before_after' })).length).toBe(0);

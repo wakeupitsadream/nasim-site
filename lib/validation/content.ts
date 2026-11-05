@@ -184,7 +184,7 @@ export const blockRecordSchema = z.object({
  * photo slot of one service page; `team` / `before_after`: reserved for real photos later.
  */
 export const mediaKindSchema = z.enum([
-  'hero',
+  'why',
   'band',
   'category',
   'service',

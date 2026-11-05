@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic, Unbounded } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import { AssistantWidget } from '@/components/assistant/assistant-widget';
 import { Footer } from '@/components/marketing/footer';
 import { Header } from '@/components/marketing/header';
 import { StickyBar } from '@/components/marketing/sticky-bar';
@@ -90,6 +91,9 @@ export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'
             </main>
             <Footer />
             <StickyBar />
+            {/* The floating assistant: AI triage and the FAQ in one window on every page; in the
+                layout so the conversation survives navigations (DECISIONS №55). */}
+            <AssistantWidget />
             {/* The red curtain of page transitions: parked off-screen, its view-transition group
                 sweeps across on link navigations (styles/motion.css, DECISIONS №52). */}
             <div
