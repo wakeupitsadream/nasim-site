@@ -43,7 +43,8 @@ export const RULES = [
 ].map(([name, pattern, fix]) => ({ name, fix, re: new RegExp(PREFIX + pattern, 'g') }));
 
 const CN_IMPORT = /from\s+['"]cn['"]/;
-const SERVER_DATA_IMPORT = /from\s+['"]@\/(?:content\/seed|lib\/content)(?:\/|['"])/;
+const SERVER_DATA_IMPORT =
+  /from\s+['"]@\/(?:content\/seed|lib\/content|lib\/ai|lib\/sanitize|lib\/ratelimit)(?:\/|['"])/;
 const USE_CLIENT = /^\s*['"]use client['"]/m;
 const WALL_CLOCK = /\bnew Date\(\s*\)|\bDate\.now\(\)/;
 /** Files allowed to read the wall clock (inside event handlers only). */
