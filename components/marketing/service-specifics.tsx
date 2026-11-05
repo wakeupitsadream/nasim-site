@@ -86,29 +86,27 @@ export async function ServiceSpecifics({ service, locale, tone, settings, pricin
             </p>
           </div>
           {callout ? (
-            <dl className="flex flex-col gap-4 self-center rounded-card bg-background p-6">
+            <div className="flex flex-col gap-4 self-center rounded-card bg-background p-6">
               <div className="flex flex-col gap-1">
-                <dt className="text-small text-muted-foreground">{t('specifics.callout')}</dt>
-                <dd>
-                  <PriceFrom
-                    amount={callout.tiers[0]!.price}
-                    unit={callout.unit}
-                    locale={locale}
-                    size="lg"
-                  />
-                </dd>
+                <p className="text-small text-muted-foreground">{t('specifics.callout')}</p>
+                <PriceFrom
+                  amount={callout.tiers[0]!.price}
+                  unit={callout.unit}
+                  locale={locale}
+                  size="lg"
+                />
               </div>
               {pricing.rules.diagnosticsCreditedToRepair ? (
-                <div className="flex items-start gap-2 text-small text-foreground">
+                <p className="flex items-start gap-2 text-small text-foreground">
                   <InfoIcon
                     aria-hidden="true"
                     strokeWidth={1.5}
                     className="mt-0.5 size-4 shrink-0 text-highlight-ink"
                   />
                   {t('specifics.credited')}
-                </div>
+                </p>
               ) : null}
-            </dl>
+            </div>
           ) : null}
         </div>
       </Section>

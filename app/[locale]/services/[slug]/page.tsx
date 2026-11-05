@@ -178,33 +178,35 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
                 className="text-lead text-muted-foreground"
               />
             </div>
-            <dl className="flex h-fit flex-col gap-4 rounded-panel border border-border bg-card p-6 shadow-card lg:col-span-5">
+            <div className="flex h-fit flex-col gap-4 rounded-panel border border-border bg-card p-6 shadow-card lg:col-span-5">
               <p className="text-eyebrow text-highlight-ink">{t('glance')}</p>
-              {from ? (
-                <div className="flex flex-col gap-1">
-                  <dt className="text-small text-muted-foreground">{t('prices')}</dt>
-                  <dd>
-                    <PriceFrom amount={from.amount} unit={from.unit} locale={locale} size="lg" />
-                  </dd>
-                </div>
-              ) : null}
-              {service.duration_min ? (
-                <div className="flex flex-col gap-1 border-t border-border pt-4">
-                  <dt className="text-small text-muted-foreground">{t('duration')}</dt>
-                  <dd className="text-body text-foreground">
-                    {formatMinutes(service.duration_min, locale)}
-                  </dd>
-                </div>
-              ) : null}
-              {note?.text ? (
-                <div className="flex flex-col gap-1 border-t border-border pt-4">
-                  <dt className="text-small text-muted-foreground">{t('note')}</dt>
-                  <dd className="text-body text-foreground">
-                    <LocalizedText value={note} locale={locale} />
-                  </dd>
-                </div>
-              ) : null}
-            </dl>
+              <dl className="flex flex-col gap-4">
+                {from ? (
+                  <div className="flex flex-col gap-1">
+                    <dt className="text-small text-muted-foreground">{t('prices')}</dt>
+                    <dd>
+                      <PriceFrom amount={from.amount} unit={from.unit} locale={locale} size="lg" />
+                    </dd>
+                  </div>
+                ) : null}
+                {service.duration_min ? (
+                  <div className="flex flex-col gap-1 border-t border-border pt-4">
+                    <dt className="text-small text-muted-foreground">{t('duration')}</dt>
+                    <dd className="text-body text-foreground">
+                      {formatMinutes(service.duration_min, locale)}
+                    </dd>
+                  </div>
+                ) : null}
+                {note?.text ? (
+                  <div className="flex flex-col gap-1 border-t border-border pt-4">
+                    <dt className="text-small text-muted-foreground">{t('note')}</dt>
+                    <dd className="text-body text-foreground">
+                      <LocalizedText value={note} locale={locale} />
+                    </dd>
+                  </div>
+                ) : null}
+              </dl>
+            </div>
           </div>
         </Section>
       ),

@@ -87,6 +87,20 @@ for (const { locale } of LOCALES) {
   });
 }
 
+test('every service page answers 200 in every locale', async ({ request }) => {
+  const seed = JSON.parse(readFileSync('content/seed/services.json', 'utf8')) as {
+    services: { slug: string; status: string }[];
+  };
+  const slugs = seed.services.filter((s) => s.status !== 'hidden').map((s) => s.slug);
+  expect(slugs.length).toBe(12);
+  for (const { locale } of LOCALES) {
+    for (const slug of slugs) {
+      const response = await request.get(`/${locale}/services/${slug}`);
+      expect(response.status(), `/${locale}/services/${slug}`).toBe(200);
+    }
+  }
+});
+
 test('/ redirects by Accept-Language', async ({ request }) => {
   const ar = await request.get('/', { headers: { 'Accept-Language': 'ar' }, maxRedirects: 0 });
   expect(ar.status()).toBe(307);

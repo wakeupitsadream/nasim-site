@@ -46,4 +46,14 @@ describe('messages', () => {
       expect(mismatched).toEqual([]);
     },
   );
+
+  it.each(routing.locales)(
+    '%s never formats numbers through ICU (Latin digits, rule 3)',
+    (locale) => {
+      const offenders = [...messages[locale]!]
+        .filter(([, v]) => v.includes('#') || /,\s*number/.test(v))
+        .map(([k]) => k);
+      expect(offenders).toEqual([]);
+    },
+  );
 });

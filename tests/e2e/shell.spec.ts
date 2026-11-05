@@ -97,6 +97,34 @@ test.describe('no invented contacts', () => {
   });
 });
 
+test.describe('inner pages', () => {
+  for (const path of ['/en/pricing', '/en/services/ac-cleaning', '/ar/contact', '/ru/services']) {
+    test(`${path} has no tel, wa.me or t.me links while contacts are empty`, async ({
+      request,
+    }) => {
+      const html = await (await request.get(path)).text();
+      expect(html).not.toMatch(/href="(tel:|https:\/\/wa\.me|https:\/\/t\.me)/);
+    });
+  }
+
+  test('/en/contact shows the pending notice and points to the calculator', async ({ page }) => {
+    await page.goto('/en/contact');
+    const pending = page.getByTestId('contacts-pending');
+    await expect(pending).toBeVisible();
+    await expect(pending.getByRole('link')).toHaveAttribute('href', '/en/pricing#book');
+  });
+
+  test('FAQ answers are in the HTML and <details> toggles', async ({ page, request }) => {
+    const html = await (await request.get('/en')).text();
+    expect(html).toContain('Every 4–6 months for a unit that runs daily');
+    await page.goto('/en');
+    const first = page.locator('details').first();
+    await expect(first).not.toHaveAttribute('open', '');
+    await first.locator('summary').click();
+    await expect(first).toHaveAttribute('open', '');
+  });
+});
+
 test('skip link moves focus to the main content', async ({ page }) => {
   await page.goto('/en');
   await page.keyboard.press('Tab');
