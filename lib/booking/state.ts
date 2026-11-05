@@ -37,6 +37,19 @@ export type BookingAction =
 
 export type InitialBooking = { category: Category; service?: ServiceChoice };
 
+/** Default quantities when a service is chosen: its minimum charge per line (1 for estimates). */
+export function defaultSelection(
+  lines: { id: string; unit: string; minQty: number }[],
+  lineIds: string[],
+): Selection {
+  const defaults: Selection = {};
+  for (const id of lineIds) {
+    const line = lines.find((l) => l.id === id);
+    if (line) defaults[id] = line.unit === 'from' ? 1 : line.minQty;
+  }
+  return defaults;
+}
+
 export function initialState(init?: InitialBooking): BookingState {
   const base: BookingState = {
     step: 'category',
