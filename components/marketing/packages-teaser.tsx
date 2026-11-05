@@ -2,7 +2,7 @@ import { ArrowRightIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { LocalizedText } from '@/components/localized-text';
 import { Ltr } from '@/components/ltr';
-import { Section } from '@/components/marketing/section';
+import { Section, type SectionTone } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,15 @@ import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized } from '@/lib/i18n/text';
 
 /** Fresh Home bundle plus the three annual plans (seed packages). */
-export async function PackagesTeaser({ locale }: { locale: Locale }) {
+export async function PackagesTeaser({
+  locale,
+  tone = 'surface',
+  id,
+}: {
+  locale: Locale;
+  tone?: SectionTone;
+  id?: string;
+}) {
   const [t, tPrice, bundles, annual] = await Promise.all([
     getTranslations('Home'),
     getTranslations('Price'),
@@ -25,7 +33,7 @@ export async function PackagesTeaser({ locale }: { locale: Locale }) {
     bundle?.type === 'bundle' && bundle.compare_price ? bundle.compare_price - bundle.price : null;
 
   return (
-    <Section tone="surface" aria-labelledby="packages-title">
+    <Section id={id} tone={tone} aria-labelledby="packages-title">
       <SectionHeader
         id="packages-title"
         eyebrow={t('packages.eyebrow')}
