@@ -1,4 +1,8 @@
-import type { Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
+
+/** The form marks itself once hydrated; typing before that would be lost by the controlled field. */
+export const diagnoseReady = (page: Page) =>
+  expect(page.getByTestId('diagnose-form')).toHaveAttribute('data-ready', 'true');
 
 /** A route-shaped diagnosis (the server attaches `service` with its price; the model never does). */
 export const diagnosisSample = {

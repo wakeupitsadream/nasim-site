@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { diagnosisSample, mockDiagnose } from './diagnose-fixture';
+import { diagnoseReady, diagnosisSample, mockDiagnose } from './diagnose-fixture';
 import { msg } from './helpers';
 
 // Visual record for PR review (CI uploads test-results/screenshots). Not a pixel diff.
@@ -59,6 +59,7 @@ for (const locale of ['en', 'ar'] as const) {
     await page.goto(`/${locale}`);
     await page.evaluate(() => document.fonts.ready);
     const section = page.locator('#diagnose');
+    await diagnoseReady(page);
     await section
       .getByRole('button', { name: msg(locale, 'Diagnose.form.examples.smell') })
       .click();

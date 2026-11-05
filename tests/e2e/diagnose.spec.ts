@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { diagnosisSample, mockDiagnose, TINY_PNG } from './diagnose-fixture';
+import { diagnoseReady, diagnosisSample, mockDiagnose, TINY_PNG } from './diagnose-fixture';
 import { DESKTOP, MOBILE, msg } from './helpers';
 
 test.describe('AI diagnosis', () => {
@@ -10,6 +10,7 @@ test.describe('AI diagnosis', () => {
     await page.setViewportSize(DESKTOP);
     await page.goto('/en');
     const section = page.locator('#diagnose');
+    await diagnoseReady(page);
     const example = msg('en', 'Diagnose.form.examples.smell');
 
     await section.getByRole('button', { name: example }).click();
@@ -36,6 +37,7 @@ test.describe('AI diagnosis', () => {
     const requests = await mockDiagnose(page);
     await page.goto('/en');
     const section = page.locator('#diagnose');
+    await diagnoseReady(page);
     await section.getByTestId('diagnose-photo').setInputFiles({
       name: 'unit.png',
       mimeType: 'image/png',
@@ -58,6 +60,7 @@ test.describe('AI diagnosis', () => {
     const requests = await mockDiagnose(page);
     await page.goto('/en');
     const section = page.locator('#diagnose');
+    await diagnoseReady(page);
     await section.getByRole('button', { name: msg('en', 'Diagnose.form.submit') }).click();
     await expect(section.getByRole('alert')).toHaveText(msg('en', 'Diagnose.errors.empty'));
     await expect(section.getByRole('textbox')).toBeFocused();
@@ -70,6 +73,7 @@ test.describe('AI diagnosis', () => {
     await mockDiagnose(page, { error: 'unavailable' }, 503);
     await page.goto('/en');
     const section = page.locator('#diagnose');
+    await diagnoseReady(page);
     await section.getByRole('textbox').fill('Drips water inside');
     await section.getByRole('button', { name: msg('en', 'Diagnose.form.submit') }).click();
     const alert = section.getByRole('alert');
@@ -82,10 +86,38 @@ test.describe('AI diagnosis', () => {
     ).toHaveAttribute('href', '/en/contact');
   });
 
+  test('while the assistant is off, an example chip still shows a labelled example verdict', async ({
+    page,
+  }) => {
+    await mockDiagnose(page, { error: 'unavailable' }, 503);
+    await page.goto('/en');
+    const section = page.locator('#diagnose');
+    await diagnoseReady(page);
+    await section.getByRole('button', { name: msg('en', 'Diagnose.form.examples.stain') }).click();
+    await section.getByRole('button', { name: msg('en', 'Diagnose.form.submit') }).click();
+    const result = section.getByTestId('diagnose-result');
+    await expect(result.getByTestId('diagnose-demo')).toHaveText(
+      msg('en', 'Diagnose.result.demoBadge'),
+    );
+    await expect(result.getByText(msg('en', 'Diagnose.demo.stain.summary'))).toBeVisible();
+    await expect(result.getByText('Stain & Odour Removal')).toBeVisible();
+    await expect(
+      result.getByRole('link', { name: msg('en', 'Diagnose.result.book') }),
+    ).toHaveAttribute('href', '/en/services/stain-odour-removal#book');
+    // Typed text never gets a canned answer: the honest error stays.
+    await result.getByRole('button', { name: msg('en', 'Diagnose.result.again') }).click();
+    await section.getByRole('textbox').fill('Coffee stain on a light sofa, but typed differently');
+    await section.getByRole('button', { name: msg('en', 'Diagnose.form.submit') }).click();
+    await expect(section.getByRole('alert')).toContainText(
+      msg('en', 'Diagnose.errors.unavailable'),
+    );
+  });
+
   test('429 asks to wait, out-of-scope verdicts point to the contact page', async ({ page }) => {
     await mockDiagnose(page, { error: 'rate_limited' }, 429);
     await page.goto('/en/services');
     const section = page.locator('#diagnose');
+    await diagnoseReady(page);
     await section.getByRole('textbox').fill('Drips water inside');
     await section.getByRole('button', { name: msg('en', 'Diagnose.form.submit') }).click();
     await expect(section.getByRole('alert')).toHaveText(msg('en', 'Diagnose.errors.rateLimited'));
@@ -113,6 +145,7 @@ test.describe('AI diagnosis', () => {
     await page.setViewportSize(MOBILE);
     await page.goto('/ar');
     const section = page.locator('#diagnose');
+    await diagnoseReady(page);
     await section.getByRole('button', { name: msg('ar', 'Diagnose.form.examples.drip') }).click();
     await section.getByRole('button', { name: msg('ar', 'Diagnose.form.submit') }).click();
     const result = section.getByTestId('diagnose-result');
