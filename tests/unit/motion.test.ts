@@ -57,9 +57,11 @@ describe('styles/motion.css', () => {
     });
   });
 
-  it('silences view transitions under reduced motion and mirrors slides in RTL', () => {
+  it('silences view transitions under reduced motion and mirrors the curtain in RTL', () => {
     expect(css).toMatch(/prefers-reduced-motion: reduce\)[\s\S]*::view-transition-old\(\*\)/);
-    expect(css).toContain(":root[dir='rtl']::view-transition-new(.nav-forward)");
+    expect(css).toMatch(/:root\[dir='rtl'\] \{\s*--nasim-curtain-dir: -1;/);
+    // Page groups never tween their geometry between pages of different heights.
+    expect(css).toMatch(/::view-transition-group\(\.page-fade\),[\s\S]*?animation: none;/);
   });
 
   it('animates only compositor-friendly properties', () => {
