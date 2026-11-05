@@ -15,6 +15,10 @@ async function seriousViolations(page: Page) {
 const PAGES = [
   '/en',
   '/ar',
+  '/fr',
+  '/de',
+  '/zh',
+  '/hi',
   '/en/dev/ui',
   '/ar/dev/ui',
   '/en/services',

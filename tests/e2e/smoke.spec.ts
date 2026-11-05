@@ -5,6 +5,10 @@ const LOCALES = [
   { locale: 'en', dir: 'ltr' },
   { locale: 'ar', dir: 'rtl' },
   { locale: 'ru', dir: 'ltr' },
+  { locale: 'fr', dir: 'ltr' },
+  { locale: 'de', dir: 'ltr' },
+  { locale: 'zh', dir: 'ltr' },
+  { locale: 'hi', dir: 'ltr' },
 ] as const;
 
 const ROUTES = [

@@ -8,23 +8,44 @@ test.describe('language switcher', () => {
     expect(html).toContain('href="/ru/services/ac-cleaning"');
   });
 
-  test('keeps the path when switching', async ({ page }) => {
+  test('keeps the path when switching through the header menu', async ({ page }) => {
     await page.setViewportSize(DESKTOP);
     await page.goto('/en/pricing');
     // getByRole skips hidden nodes: Next keeps the previous locale's tree mounted in a hidden <Activity>.
     const header = page.getByRole('banner');
-    // The Suspense fallback links the home page of each locale until the real switcher (which
-    // knows the pathname) streams in: wait for the same-page href before clicking.
-    const ar = header.locator('a[hreflang="ar"]');
+    // The menu is one button for all seven languages; its items are the same page in each locale.
+    await header.getByTestId('lang-menu').click();
+    const menu = page.getByRole('menu');
+    const ar = menu.locator('a[hreflang="ar"]');
     await expect(ar).toHaveAttribute('href', '/ar/pricing');
     await ar.click();
     await expect(page).toHaveURL(/\/ar\/pricing$/);
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-    const ru = header.locator('a[hreflang="ru"]');
+    await header.getByTestId('lang-menu').click();
+    const ru = page.getByRole('menu').locator('a[hreflang="ru"]');
     await expect(ru).toHaveAttribute('href', '/ru/pricing');
     await ru.click();
     await expect(page).toHaveURL(/\/ru\/pricing$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'ru');
+    // The footer list keeps every locale in the static HTML (SEO + no-JS).
+    const footer = page.getByRole('contentinfo');
+    await expect(footer.locator('a[hreflang="zh"]')).toHaveAttribute('href', '/zh/pricing');
+  });
+
+  test('every locale renders its own fonts and direction', async ({ page }) => {
+    for (const [locale, dir] of [
+      ['fr', 'ltr'],
+      ['de', 'ltr'],
+      ['zh', 'ltr'],
+      ['hi', 'ltr'],
+      ['ar', 'rtl'],
+    ] as const) {
+      await page.goto(`/${locale}`);
+      const html = page.locator('html');
+      await expect(html).toHaveAttribute('lang', locale);
+      await expect(html).toHaveAttribute('dir', dir);
+      await expect(page.getByRole('banner').getByTestId('lang-menu')).toBeVisible();
+    }
   });
 });
 
