@@ -2,7 +2,13 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { BookingWizard } from '@/components/booking/wizard';
 import type { BookingPayload, BookingService } from '@/components/booking/types';
-import { getAreas, getBlock, getPricingConfig, getServices } from '@/lib/content/queries';
+import {
+  getAreas,
+  getBlock,
+  getPackages,
+  getPricingConfig,
+  getServices,
+} from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { pickLocalized } from '@/lib/i18n/text';
 import { defaultSelection } from '@/lib/booking/state';
@@ -20,12 +26,13 @@ type Props = {
  */
 export async function BookingSection({ initialService }: Props) {
   const locale = await getLocale();
-  const [settings, pricing, services, areas, template, messages] = await Promise.all([
+  const [settings, pricing, services, areas, template, bundles, messages] = await Promise.all([
     getSiteSettings(locale),
     getPricingConfig(),
     getServices({ status: ['active'] }),
     getAreas(),
     getBlock('wa.template.quote'),
+    getPackages({ type: 'bundle' }),
     getMessages(),
   ]);
 
@@ -58,6 +65,7 @@ export async function BookingSection({ initialService }: Props) {
     booking: settings.booking,
     services: bookable,
     lineLabels,
+    bundleNames: Object.fromEntries(bundles.map((b) => [b.slug, pickLocalized(b.name, locale)])),
     areas: areas.map((a) => ({ slug: a.slug, name: pickLocalized(a.name, locale) })),
     whatsapp: settings.contacts.whatsapp,
     template: pickLocalized(template, locale).text,

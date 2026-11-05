@@ -28,6 +28,8 @@ export type BookingPayload = {
   services: BookingService[];
   /** Human label per price line: the service name for single-line services, else the item name. */
   lineLabels: Record<string, Localized>;
+  /** Bundle names by slug (`Fresh Home`). */
+  bundleNames: Record<string, Localized>;
   areas: { slug: string; name: Localized }[];
   /** WhatsApp number in E.164, or '' while the owner has not provided one. */
   whatsapp: string;

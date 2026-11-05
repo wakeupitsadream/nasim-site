@@ -33,9 +33,7 @@ export function PriceSummary({ payload, quote, suggestion, onAddSuggestion, comp
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quote.total]);
 
-  const bundleName = quote.bundle
-    ? (payload.pricing.bundles.find((b) => b.slug === quote.bundle?.slug)?.slug ?? '')
-    : '';
+  const bundleName = (slug: string) => payload.bundleNames[slug]?.text ?? slug;
 
   return (
     <div className={cn('flex flex-col gap-3', compact ? 'text-small' : 'text-body')}>
@@ -77,7 +75,7 @@ export function PriceSummary({ payload, quote, suggestion, onAddSuggestion, comp
         ))}
         {quote.bundle ? (
           <div className="flex items-baseline justify-between gap-4 text-highlight-ink">
-            <dt>{t('summary.bundle', { name: bundleName })}</dt>
+            <dt>{t('summary.bundle', { name: bundleName(quote.bundle.slug) })}</dt>
             <dd className="shrink-0 tabular-nums">
               <Ltr>−{money(quote.savings)}</Ltr>
             </dd>
@@ -121,7 +119,7 @@ export function PriceSummary({ payload, quote, suggestion, onAddSuggestion, comp
                 )
                 .join(', '),
               add: money(suggestion.addCost),
-              name: suggestion.slug,
+              name: bundleName(suggestion.slug),
               savings: money(suggestion.savings),
             })}
           </p>

@@ -205,8 +205,8 @@
       "reportCaption": "Example of the report you get after every visit"
     },
     "book": {
-      "eyebrow": "Book in a minute",
-      "title": "What do you need?",
+      "eyebrow": "Book online",
+      "title": "Your price in a minute",
       "lead": "Pick a service, see the exact price, choose a day. We confirm the one-hour slot in WhatsApp.",
       "talk": "Prefer to talk? Message us"
     },
@@ -338,7 +338,9 @@
     "vatAdded": "5% VAT is added to the total.",
     "minimum": "Minimum {qty}",
     "tierPlus": "{n}+",
-    "tierRange": "{from}–{to}"
+    "tierRange": "{from}–{to}",
+    "perYearRich": "<a>{amount}</a> a year",
+    "insteadRich": "instead of <s>{amount}</s>"
   },
   "Pricing": {
     "lead": "Every price below is fixed before the visit and includes the call-out. Repairs start with a fixed diagnostics fee that counts towards the work.",
