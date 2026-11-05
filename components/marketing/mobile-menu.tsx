@@ -2,7 +2,6 @@
 
 import { MenuIcon } from 'lucide-react';
 import { useState, type MouseEvent, type ReactNode } from 'react';
-import { LangSwitcher } from '@/components/marketing/lang-switcher';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -61,10 +60,6 @@ export function MobileMenu({ items, labels, cta, className }: Props) {
             ))}
           </ul>
         </nav>
-        {/* Sheet content mounts only on the client after opening, so no Suspense is needed. */}
-        <div className="border-t px-2 pt-2">
-          <LangSwitcher />
-        </div>
         <SheetFooter>{cta}</SheetFooter>
       </SheetContent>
     </Sheet>

@@ -2,7 +2,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 import { WhatsAppIcon } from '@/components/icons/brand';
 import { CtaLink } from '@/components/marketing/cta-link';
-import { LangLinks, LangSwitcher } from '@/components/marketing/lang-switcher';
+import { LangMenu, LangMenuFor } from '@/components/marketing/lang-switcher';
 import { Logo } from '@/components/marketing/logo';
 import { MobileMenu } from '@/components/marketing/mobile-menu';
 import { getSiteSettings } from '@/lib/content/site';
@@ -51,8 +51,9 @@ export async function Header() {
         </nav>
 
         <div className="ms-auto flex items-center gap-1 xl:ms-2">
-          <Suspense fallback={<LangLinks pathname="/" compact className="hidden md:flex" />}>
-            <LangSwitcher compact className="hidden md:flex" />
+          {/* One language button on every screen size (DECISIONS №57). */}
+          <Suspense fallback={<LangMenuFor pathname="/" />}>
+            <LangMenu />
           </Suspense>
           <CtaLink
             target={whatsapp}

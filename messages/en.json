@@ -114,6 +114,7 @@
     "licenseNo": "Licence No.",
     "trn": "TRN",
     "address": "Address",
+    "photoCredits": "Photos:",
     "copyright": "© {brand}"
   },
   "LangSwitcher": {
@@ -121,12 +122,20 @@
     "names": {
       "en": "English",
       "ar": "العربية",
-      "ru": "Русский"
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch",
+      "zh": "中文",
+      "hi": "हिन्दी"
     },
     "short": {
       "en": "EN",
       "ar": "ع",
-      "ru": "RU"
+      "ru": "RU",
+      "fr": "FR",
+      "de": "DE",
+      "zh": "中",
+      "hi": "हि"
     }
   },
   "PhoneInput": {
