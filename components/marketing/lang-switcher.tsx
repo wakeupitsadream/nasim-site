@@ -62,18 +62,19 @@ export function LangMenuFor({ pathname, className }: Props & { pathname: string 
 
   return (
     <DropdownMenu dir={dir}>
+      {/* The visible code stays part of the accessible name (WCAG 2.5.3 label-in-name):
+          "Language: EN — English". */}
       <DropdownMenuTrigger
         data-testid="lang-menu"
-        aria-label={`${t('label')}: ${t(`names.${locale}`)}`}
         className={cn(
           'inline-flex h-tap items-center gap-1.5 rounded-lg px-2.5 text-small font-medium text-foreground transition-colors duration-(--nasim-dur-fast) outline-none select-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring aria-expanded:bg-accent',
           className,
         )}
       >
         <LanguagesIcon aria-hidden="true" strokeWidth={1.75} className="size-5" />
-        <span aria-hidden="true" lang={locale}>
-          {t(`short.${locale}`)}
-        </span>
+        <span className="sr-only">{t('label')}: </span>
+        <span lang={locale}>{t(`short.${locale}`)}</span>
+        <span className="sr-only"> — {t(`names.${locale}`)}</span>
         <ChevronDownIcon
           aria-hidden="true"
           strokeWidth={1.75}
