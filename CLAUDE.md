@@ -42,6 +42,7 @@ pnpm seed           # идемпотентный сид из content/seed/*.json
 14. **Контент-сид** (`content/seed/*.json`) — источник правды для первого наполнения; `pnpm seed` не перезаписывает записи, изменённые в админке (`updated_at` > `seeded_at`).
 15. **Drizzle 0.45**: документация Drizzle уже написана под 1.0-rc — сниппеты оттуда не копировать без проверки на 0.45 (RQB v1, структура миграций). Клиент — `getDb()` из `lib/db/client.ts`, не создавать пулы в других местах.
 16. **WhatsApp в ОАЭ** — только переписка: звонки через WhatsApp/Telegram в ОАЭ заблокированы. В UI «Написать в WhatsApp», никогда «Позвонить в WhatsApp»; звонок — только обычный `tel:`.
+17. **Движение** — только через `styles/motion.css` (DECISIONS №48–49): CSS-first, каждое правило под `prefers-reduced-motion: no-preference`, scroll-driven — под `@supports`; классы `reveal`/`reveal-fade`/`enter` со stagger через `stagger(i)` из `lib/motion.ts`; интерактивные блоки (формы, чипы, списки ссылок) — только `reveal-fade`; предки с обрезкой — `overflow-clip`, не `overflow-hidden`; страницы оборачиваются в `PageTransition`, переходы внутри островков — `<ViewTransition key>` + `startTransition`; только compositor-свойства; JS-библиотеки анимации не добавлять. Проверяется `tests/unit/motion.test.ts` и `tests/e2e/motion.spec.ts`.
 
 ## Карта репо
 
@@ -59,6 +60,7 @@ lib/content/{site,seed,queries}.ts  настройки и контент из с
 lib/pricing.ts            движок цен (чистые функции)   lib/booking/{time,state}.ts  логика мастера заявки
 components/booking        мастер заявки (клиентский островок + серверная обёртка)
 components/diagnose       AI-диагностика: серверная секция, клиентская форма (фото сжимается в браузере), карточка результата
+styles/motion.css  lib/motion.ts  components/page-transition.tsx  движение и переходы страниц (правило 17)
 lib/ai/diagnose-prompt.ts промпт триажа (чистые функции)   lib/diagnose/client.ts  запрос с клиента (zod + маппинг статусов)
 app/[locale]/dev/ui       галерея компонентов (локально и на превью; на продакшене 404)
 messages/{en,ar,ru}.json  UI-строки
