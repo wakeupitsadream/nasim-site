@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import type { CSSProperties } from 'react';
 import { WhatsAppIcon } from '@/components/icons/brand';
-import { BreezeMark } from '@/components/marketing/breeze-mark';
+import { BrandMark } from '@/components/marketing/brand-mark';
 import { MediaFrame } from '@/components/marketing/media-frame';
 import type { Locale } from '@/lib/i18n/routing';
 import type { LocalizedValue } from '@/lib/i18n/text';
@@ -12,8 +12,9 @@ type Props = {
   brand: string;
   data: LocalizedValue<{ header: string; lines: string[] }>;
   locale: Locale;
-  caption: string;
-  /** Phones: no photo bubble, less padding. */
+  /** "Example of the report…" under the card; omit when a parent figure carries the caption. */
+  caption?: string;
+  /** Phones and overlays: no photo bubble, less padding. */
   compact?: boolean;
   className?: string;
   style?: CSSProperties;
@@ -37,9 +38,10 @@ export async function ReportMockup({
   const fallback = data.lang !== locale;
   const bubble =
     'rounded-card rounded-ss-sm bg-card px-4 py-3 text-body text-foreground shadow-card';
+  const Root = caption ? 'figure' : 'div';
 
   return (
-    <figure className={cn('relative', className)} style={style}>
+    <Root className={cn('relative', className)} style={style}>
       <div
         aria-hidden="true"
         className="absolute -inset-x-10 -top-10 bottom-0 -z-10 rounded-full bg-mist blur-3xl"
@@ -50,7 +52,7 @@ export async function ReportMockup({
         className="overflow-hidden rounded-panel bg-card shadow-mockup ring-1 ring-foreground/5"
       >
         <div className="flex items-center gap-3 bg-teal-ink px-5 py-3 text-on-deep">
-          <BreezeMark className="size-7" />
+          <BrandMark className="h-6 w-[1.8rem] [--brand-mark-surface:var(--color-teal-ink)]" />
           <span className="text-body font-medium">{brand}</span>
           <WhatsAppIcon className="ms-auto size-4 opacity-70" />
         </div>
@@ -91,7 +93,9 @@ export async function ReportMockup({
           </p>
         </div>
       </div>
-      <figcaption className="mt-3 text-small text-muted-foreground">{caption}</figcaption>
-    </figure>
+      {caption ? (
+        <figcaption className="mt-3 text-small text-muted-foreground">{caption}</figcaption>
+      ) : null}
+    </Root>
   );
 }

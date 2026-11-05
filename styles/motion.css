@@ -134,7 +134,7 @@
 @keyframes nasim-header-solid {
   from {
     border-color: transparent;
-    box-shadow: 0 0 0 0 rgb(14 59 71 / 0);
+    box-shadow: 0 0 0 0 rgb(18 20 22 / 0);
   }
   to {
     border-color: var(--border);
@@ -147,6 +147,48 @@
   }
   to {
     translate: 0 0;
+  }
+}
+@keyframes nasim-sweep {
+  from {
+    translate: -120% 0;
+    opacity: 1;
+  }
+  to {
+    translate: 120% 0;
+    opacity: 1;
+  }
+}
+@keyframes nasim-ticker {
+  to {
+    translate: var(--nasim-ticker-shift, -50%) 0;
+  }
+}
+@keyframes nasim-drive-in {
+  from {
+    translate: var(--nasim-drive-from, -70vw) 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes nasim-wheel {
+  to {
+    rotate: 900deg;
+  }
+}
+@keyframes nasim-curtain {
+  0% {
+    translate: 0 0;
+  }
+  42% {
+    translate: calc(100% * var(--nasim-curtain-dir, 1)) 0;
+  }
+  56% {
+    translate: calc(100% * var(--nasim-curtain-dir, 1)) 0;
+  }
+  100% {
+    translate: calc(200% * var(--nasim-curtain-dir, 1)) 0;
   }
 }
 
@@ -193,6 +235,28 @@
       }
       [dir='rtl'] .reveal-line {
         transform-origin: 100% 50%;
+      }
+      /* Фургон въезжает в финальную полосу; колёса крутятся от той же именованной view-timeline
+         (у <g> внутри SVG своей нет). В RTL стартует с другой стороны (--nasim-drive-from). */
+      .van-drive {
+        view-timeline: --nasim-van block;
+        animation: nasim-drive-in linear both;
+        animation-timeline: --nasim-van;
+        animation-range: entry 0% cover 40%;
+      }
+      .van-drive .van__wheel {
+        animation: nasim-wheel linear both;
+        animation-timeline: --nasim-van;
+        animation-range: entry 0% cover 40%;
+      }
+      /* Линии скорости вырастают по одной, пока рисунок входит в экран. */
+      .speed-lines {
+        view-timeline: --nasim-speed block;
+      }
+      .speed-lines path {
+        animation: nasim-grow-x var(--nasim-ease-out) both;
+        animation-timeline: --nasim-speed;
+        animation-range: entry calc(10% + var(--i, 0) * 10%) entry calc(60% + var(--i, 0) * 10%);
       }
     }
 
@@ -266,15 +330,111 @@
     .group:focus-within [data-motion='pulse'] > svg {
       animation: nasim-pop 900ms ease-in-out infinite;
     }
-    /* Знак бриза в логотипе оживает при наведении на логотип (.group). */
-    .group:hover .breeze-hover > path,
-    .group:focus-within .breeze-hover > path {
-      animation: nasim-breeze 1.5s ease-in-out infinite;
-      animation-delay: calc(var(--i, 0) * 0.18s);
+    /* Знак Brigada при загрузке: буква проявляется, красный штрих прорезает её от начала к концу
+       (scale по X от левого края; знак всегда LTR, как и словесный знак). */
+    .brand-mark--enter .brand-mark__letter {
+      animation: nasim-fade 500ms var(--nasim-ease-out) both;
+    }
+    .brand-mark--enter .brand-mark__gap,
+    .brand-mark--enter .brand-mark__streak {
+      transform-box: fill-box;
+      transform-origin: 0% 50%;
+      animation: nasim-grow-x 600ms var(--nasim-ease-out) 250ms both;
+    }
+    /* При наведении на логотип (.group) штрих чуть уезжает вперёд — намёк на скорость. */
+    .brand-mark__streak {
+      transition: translate var(--nasim-dur) var(--nasim-ease-out);
+    }
+    .group:hover .brand-mark__streak,
+    .group:focus-within .brand-mark__streak {
+      translate: 5px 0;
+    }
+    /* Красная кнопка: при наведении по ней пробегает блик (только translate у ::before). */
+    .btn-sweep:hover::before,
+    .btn-sweep:focus-visible::before {
+      animation: nasim-sweep 700ms var(--nasim-ease-out);
+    }
+    [dir='rtl'] .btn-sweep:hover::before,
+    [dir='rtl'] .btn-sweep:focus-visible::before {
+      animation-direction: reverse;
+    }
+    /* Красная лента услуг: дорожка из двух копий списка едет на половину своей ширины и
+       повторяется без шва (в RTL — в другую сторону). Пауза при наведении и фокусе внутри. */
+    .ticker {
+      animation: nasim-ticker var(--nasim-ticker-duration, 48s) linear infinite;
+    }
+    .ticker-band:hover .ticker,
+    .ticker-band:focus-within .ticker {
+      animation-play-state: paused;
     }
     .underline-grow::after {
       transition: scale var(--nasim-dur) var(--nasim-ease-out);
     }
+  }
+
+  /* Без движения лента — обычный список в несколько строк без второй копии: это делают
+     утилиты motion-reduce:* на самих элементах (components/marketing/ticker-band.tsx). */
+  .ticker {
+    display: flex;
+    width: max-content;
+  }
+  [dir='rtl'] .ticker {
+    --nasim-ticker-shift: 50%;
+  }
+
+  /* Наклон панели за курсором (components/motion/tilt-layer.tsx ставит --tx/--ty):
+     только мышь/трекпад и только без reduced-motion. */
+  @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+    .tilt {
+      transform: perspective(1200px) rotateX(var(--ty, 0deg)) rotateY(var(--tx, 0deg));
+      transition: transform var(--nasim-dur) var(--nasim-ease-out);
+    }
+  }
+
+  /* Фургон и линии скорости: точки вращения/роста в координатах самих фигур. */
+  .van__wheel {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  [dir='rtl'] .van-drive {
+    --nasim-drive-from: 70vw;
+  }
+  /* Фургон в RTL зеркален целиком (rtl:-scale-x-100); знак на борту зеркалится обратно. */
+  .van__label {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  [dir='rtl'] .van__label {
+    scale: -1 1;
+  }
+  .speed-lines path {
+    transform-box: fill-box;
+    transform-origin: 0% 50%;
+  }
+
+  /* Блик красной кнопки: ::before под текстом (isolation), обрезка по скруглению кнопки.
+     В покое блик стоит внутри кнопки невидимым, а не за её краем: вынесенный за край
+     псевдоэлемент увеличивал scrollWidth кнопки в RTL (тест dev-ui про переполнение). */
+  .btn-sweep {
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+  }
+  .btn-sweep::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      105deg,
+      transparent 32%,
+      rgb(255 255 255 / 0.3) 50%,
+      transparent 68%
+    );
+    opacity: 0;
+  }
+  [dir='rtl'] .btn-sweep::before {
+    scale: -1 1;
   }
 
   /* Полоса прогресса мастера: сегмент растёт от inline-start. */
@@ -398,6 +558,65 @@
 }
 :root[dir='rtl']::view-transition-new(.nav-back) {
   --nasim-vt-slide: 40px;
+}
+
+/*
+ * Красная шторка (DECISIONS №52). .page-curtain стоит за краем экрана и носит
+ * view-transition-name, так что в каждом переходе у неё есть своя группа. Едет она только в
+ * переходах с типом навигации по ссылке (nav-page по умолчанию у Link, nav-forward / nav-back),
+ * а не при смене шага мастера или карточки диагноза. Пока шторка закрывает экран
+ * (≈ 0,29–0,38 с), старая страница исчезает и появляется новая — смена происходит «за кулисами».
+ */
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: var(--nasim-red);
+  translate: -100% 0;
+}
+[dir='rtl'] .page-curtain {
+  translate: 100% 0;
+}
+:root[dir='rtl'] {
+  --nasim-curtain-dir: -1;
+}
+::view-transition-old(page-curtain) {
+  display: none;
+}
+::view-transition-new(page-curtain) {
+  animation: none;
+}
+::view-transition-group(page-curtain) {
+  z-index: 200;
+  animation: none;
+}
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-group(
+    page-curtain
+  ) {
+  animation: 680ms var(--nasim-ease) both nasim-curtain;
+}
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-old(.page-fade),
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-old(
+    .nav-forward
+  ),
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-old(.nav-back) {
+  animation: 80ms ease-in 240ms both nasim-fade reverse;
+}
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-new(
+    .page-fade
+  ) {
+  animation:
+    1ms linear 340ms both nasim-fade,
+    440ms var(--nasim-ease-out) 340ms both nasim-rise;
+}
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-new(
+    .nav-forward
+  ),
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-new(.nav-back) {
+  animation:
+    1ms linear 340ms both nasim-fade,
+    420ms var(--nasim-ease-out) 340ms both nasim-slide-x;
 }
 
 /* Шаги мастера и карточка диагноза: тот же язык движения внутри страницы. */

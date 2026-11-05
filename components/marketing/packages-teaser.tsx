@@ -50,7 +50,10 @@ export async function PackagesTeaser({
       />
       <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
         {bundle && bundle.type === 'bundle' ? (
-          <div className="tone-deep reveal flex flex-col gap-5 rounded-panel p-8 lg:col-span-5">
+          <div
+            data-tilt=""
+            className="tone-deep tilt reveal flex flex-col gap-5 rounded-panel p-8 lg:col-span-5"
+          >
             <div className="flex items-center justify-between gap-3">
               <h3 className="text-h3 text-on-deep">
                 <LocalizedText value={pickLocalized(bundle.name, locale)} locale={locale} />

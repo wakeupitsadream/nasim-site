@@ -30,8 +30,9 @@ export async function ServiceCard({ service, priceFrom, locale, badges = [], cla
 
   return (
     <article
+      data-tilt=""
       className={cn(
-        'group relative flex h-full flex-col gap-5 rounded-card border border-border bg-card p-6 shadow-card transition-[transform,box-shadow] duration-(--nasim-dur) ease-brand hover:shadow-lift motion-safe:hover:-translate-y-0.5',
+        'group tilt relative flex h-full flex-col gap-5 rounded-card border border-border bg-card p-6 shadow-card transition-[transform,box-shadow] duration-(--nasim-dur) ease-brand hover:shadow-lift motion-safe:hover:-translate-y-0.5',
         className,
       )}
     >

@@ -13,7 +13,7 @@ describe('readSiteSettings', () => {
   });
 
   it('reads the Arabic brand name', () => {
-    expect(readSiteSettings('ar').brandName).toEqual({ text: 'نسيم للعناية بالمنزل', lang: 'ar' });
+    expect(readSiteSettings('ar').brandName).toEqual({ text: 'بريجادا', lang: 'ar' });
   });
 
   it('takes flags from EN', () => {

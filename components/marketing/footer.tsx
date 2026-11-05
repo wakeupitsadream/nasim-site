@@ -43,7 +43,11 @@ export async function Footer() {
     <footer className="border-t bg-surface-2 text-muted-foreground">
       <div className="mx-auto grid max-w-page gap-10 px-gutter py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-gutter-lg">
         <div className="reveal-fade flex flex-col gap-3" style={stagger(0)}>
-          <Logo brandName={s.brandName} />
+          <Logo
+            brandName={s.brandName}
+            tagline
+            className="[--brand-mark-surface:var(--color-surface-2)]"
+          />
           <p>{t('tagline')}</p>
           <p>
             <span className="font-medium text-foreground">{t('serviceAreaTitle')}: </span>

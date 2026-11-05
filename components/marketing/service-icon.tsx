@@ -13,7 +13,7 @@ import {
   Wrench,
   type LucideIcon,
 } from 'lucide-react';
-import { BreezeMark } from '@/components/marketing/breeze-mark';
+import { BrandMark } from '@/components/marketing/brand-mark';
 import { ICON_MOTION } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
@@ -44,7 +44,7 @@ export function ServiceIcon({ slug, tile = true, className }: Props) {
   const glyph = Icon ? (
     <Icon aria-hidden="true" strokeWidth={1.5} className="size-[22px]" />
   ) : (
-    <BreezeMark className="size-6" />
+    <BrandMark className={cn('h-5 w-6', tile && '[--brand-mark-surface:var(--color-surface-2)]')} />
   );
   if (!tile) {
     return (

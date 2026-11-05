@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
 
-// The signature motif: long, thin airflow lines derived from the breeze mark. Pure SVG, drawn
-// once at module load; the optional drift is a compositor-only transform under motion-safe.
+// Background motif: long, thin airflow lines (the air we clean). Pure SVG, drawn once at module
+// load; the optional drift is a compositor-only transform under motion-safe. Quiet by design:
+// faint graphite on light bands, faint white on dark ones — red is reserved for the speed lines.
 const WIDTH = 1200;
 const HEIGHT = 320;
 
@@ -36,7 +37,7 @@ function wavePath({ y, amplitude, wavelength, phase }: Wave): string {
 const PATHS = WAVES.map(wavePath);
 
 type Props = {
-  /** `sand`: turquoise lines on light bands; `deep`: white lines on the dark band. */
+  /** `sand`: faint graphite lines on light bands; `deep`: white lines on the dark band. */
   tone?: 'sand' | 'deep';
   /** Slow drift along the flow direction (motion-safe only). */
   drift?: boolean;
@@ -53,7 +54,7 @@ export function AirflowLines({ tone = 'sand', drift = false, className }: Props)
       focusable="false"
       className={cn(
         'pointer-events-none block h-full w-full rtl:-scale-x-100',
-        tone === 'deep' ? 'text-on-deep' : 'text-highlight',
+        tone === 'deep' ? 'text-on-deep' : 'text-foreground',
         className,
       )}
     >
@@ -61,7 +62,7 @@ export function AirflowLines({ tone = 'sand', drift = false, className }: Props)
         fill="none"
         stroke="currentColor"
         strokeWidth="1"
-        strokeOpacity={tone === 'deep' ? 0.1 : 0.25}
+        strokeOpacity={tone === 'deep' ? 0.1 : 0.12}
         strokeLinecap="round"
         className={drift ? 'motion-safe:animate-airflow' : undefined}
       >

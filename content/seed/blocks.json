@@ -130,7 +130,7 @@
     { "key": "settings.defaults", "kind": "json",
       "value": {
         "en": {
-          "brand_name": "Nasim Home Care",
+          "brand_name": "Brigada",
           "hours": "Daily 8:00–20:00",
           "emergency_hours": "Same-day visits for requests before 16:00; emergency line until 22:00",
           "service_area_note": "Dubai, all communities",
@@ -141,14 +141,14 @@
           "glossary": { "split AC": "сплит-система", "fan coil unit (FCU)": "фанкойл", "ducted AC": "канальный кондиционер", "deep cleaning": "глубокая чистка", "refrigerant": "фреон", "call-out": "выезд", "annual contract": "годовой контракт" }
         },
         "ru": {
-          "brand_name": "Nasim Home Care",
+          "brand_name": "Brigada",
           "hours": "Ежедневно 8:00–20:00",
           "emergency_hours": "Выезд в тот же день по заявкам до 16:00; срочная линия до 22:00",
           "service_area_note": "Дубай, все районы",
           "response_time_note": "Отвечаем в течение 15 минут в рабочее время"
         },
         "ar": {
-          "brand_name": "نسيم للعناية بالمنزل"
+          "brand_name": "بريجادا"
         }
       } }
   ]

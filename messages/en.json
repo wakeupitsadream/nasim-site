@@ -1,7 +1,7 @@
 {
   "Meta": {
-    "siteName": "Nasim Home Care",
-    "titleTemplate": "%s | Nasim Home Care Dubai",
+    "siteName": "Brigada",
+    "titleTemplate": "%s | Brigada Dubai",
     "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, a one-hour arrival slot and a photo report in WhatsApp."
   },
   "Pages": {
@@ -34,7 +34,7 @@
     },
     "contact": {
       "title": "Contact us",
-      "description": "Contact Nasim Home Care in Dubai: WhatsApp, phone, working hours and service area."
+      "description": "Contact Brigada in Dubai: WhatsApp, phone, working hours and service area."
     },
     "privacy": {
       "title": "Privacy policy"
@@ -48,7 +48,9 @@
   },
   "NotFound": {
     "title": "Page not found",
-    "backHome": "Back to home"
+    "lead": "The page may have moved, or the link had a typo. The crew is still here.",
+    "backHome": "Back to home",
+    "services": "See services"
   },
   "Common": {
     "skipToContent": "Skip to main content",
@@ -73,7 +75,8 @@
     "homeLabel": "{brand}, home page",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "menuTitle": "Menu"
+    "menuTitle": "Menu",
+    "tagline": "HVAC & Deep Cleaning · Dubai"
   },
   "Cta": {
     "whatsapp": "Message us on WhatsApp",
@@ -214,7 +217,15 @@
       "eyebrow": "AC & upholstery care · Dubai",
       "reportCaption": "Example of the report you get after every visit",
       "diagnoseLead": "Not sure what's wrong?",
-      "diagnoseCta": "Try the AI diagnosis"
+      "diagnoseCta": "Try the AI diagnosis",
+      "sceneAlt": "Brigada technicians cleaning a ceiling AC unit and a sofa in a Dubai living room (illustration)"
+    },
+    "ticker": {
+      "label": "Our services"
+    },
+    "team": {
+      "alt": "Two Brigada technicians in red T-shirts with a duct brush and a spray bottle (illustration)",
+      "caption": "The Brigada crew (illustration)"
     },
     "book": {
       "eyebrow": "Book online",
