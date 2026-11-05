@@ -21,7 +21,8 @@
       "description": "Fixed prices for AC and upholstery cleaning in Dubai, volume tiers, packages and an instant calculator."
     },
     "annualContracts": {
-      "title": "Annual maintenance contracts"
+      "title": "Annual maintenance contracts",
+      "description": "Annual AC maintenance plans in Dubai: three visits a year, priority call-outs and repair discounts. Compare Essential, Comfort and Villa."
     },
     "areas": {
       "title": "Areas we serve"
@@ -30,7 +31,8 @@
       "title": "Area"
     },
     "about": {
-      "title": "About us"
+      "title": "About us",
+      "description": "Brigada: a Dubai crew for AC cleaning, repairs and upholstery deep cleaning. How we work, our standards and what we don't do."
     },
     "contact": {
       "title": "Contact us",
@@ -522,6 +524,105 @@
     "area": "Service area",
     "legal": "Company details",
     "getPrice": "Get an instant price"
+  },
+  "Contracts": {
+    "lead": "One payment a year, three visits, a priority call-out when something breaks and a discount on repairs. Cheaper than booking each clean on its own.",
+    "plans": {
+      "eyebrow": "Three plans",
+      "title": "Pick the plan for your home",
+      "lead": "All plans cover split units in one home in Dubai. The unit count is confirmed at the first visit.",
+      "note": "Prices are per year, before VAT until we are registered. More units than the plan allows? We quote the difference per unit."
+    },
+    "includes": {
+      "units": "Up to {n} units",
+      "visits": "{n} visits a year",
+      "deep": "{n} deep clean included",
+      "priority": "Priority call-out within {n} hours",
+      "repairDiscount": "{n}% off repairs"
+    },
+    "card": {
+      "saving": "Booked visit by visit: <s>{separate}</s>. You save <s>{saving}</s> ({pct}%).",
+      "cta": "Ask about this plan"
+    },
+    "savings": {
+      "eyebrow": "The maths",
+      "title": "How the saving adds up",
+      "lead": "We count the plan's visits at the per-visit prices from the price list, for the plan's maximum number of split units.",
+      "caption": "Annual plans compared with separate bookings",
+      "cols": {
+        "plan": "Plan",
+        "visits": "What you get",
+        "separate": "Booked separately",
+        "price": "Plan price",
+        "saving": "You save"
+      },
+      "visitsStd": "{standard} standard cleans × {units} units",
+      "visitsMix": "{standard} standard + {deep} deep clean × {units} units",
+      "note": "The Villa plan is counted as split units here; fan coil units cost more per visit, so the saving there is larger."
+    },
+    "visit": {
+      "eyebrow": "Every visit",
+      "title": "A full clean, every time",
+      "lead": "A contract visit is the same standard clean as a one-off booking, with the same photo report."
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Three steps a year",
+      "lead": "If a unit breaks between visits, you get a call-out within the hours of your plan and the plan's repair discount."
+    },
+    "steps": {
+      "one": {
+        "title": "Message us",
+        "text": "Tell us the plan and how many units you have. We confirm the price and the first slot in WhatsApp."
+      },
+      "two": {
+        "title": "First visit",
+        "text": "We clean every unit, check the drains and set the dates of the next two visits with you."
+      },
+      "three": {
+        "title": "We remind you",
+        "text": "Before each visit we message you to confirm the time. Photos and readings arrive after every visit."
+      }
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "About the contract"
+    },
+    "cta": {
+      "title": "Ready for a year without AC worries?",
+      "lead": "Choose a plan or message us — we will help you pick the right one for your home.",
+      "primary": "See the plans"
+    }
+  },
+  "About": {
+    "lead": "A small Dubai crew for air-conditioning cleaning, repairs and deep cleaning of upholstery. Fixed prices, a one-hour arrival slot and a photo report after every visit.",
+    "story": {
+      "eyebrow": "Who we are",
+      "title": "Why we started with air conditioners"
+    },
+    "standards": {
+      "eyebrow": "Our standards",
+      "title": "What every technician does",
+      "lead": "The same checklist in every home, whatever the job.",
+      "items": {
+        "one": "Confirms the fixed price before starting any work",
+        "two": "Protects the floor and furniture with sheeting",
+        "three": "Measures the outlet temperature before and after",
+        "four": "Photographs the coil, filters and drain before and after",
+        "five": "Leaves the room as clean as it was found and sends the report in WhatsApp"
+      }
+    },
+    "notDoing": {
+      "eyebrow": "Honest scope",
+      "title": "What we don't do"
+    },
+    "legal": {
+      "title": "Company details"
+    },
+    "areas": {
+      "eyebrow": "Where we work",
+      "title": "All over Dubai"
+    }
   },
   "Booking": {
     "progressLabel": "Booking steps",

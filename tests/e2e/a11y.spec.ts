@@ -25,6 +25,10 @@ const PAGES = [
   '/ar/services/humidity-mould-check',
   '/en/pricing',
   '/ar/pricing',
+  '/en/annual-contracts',
+  '/ar/annual-contracts',
+  '/en/about',
+  '/ar/about',
   '/en/contact',
   '/ar/contact',
 ];

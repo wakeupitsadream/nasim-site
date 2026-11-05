@@ -6,7 +6,8 @@ import { stagger } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 type Props = {
-  items: I18nText[];
+  /** Seeded localized items, or already-translated UI strings. */
+  items: (I18nText | string)[];
   locale: Locale;
   variant?: 'include' | 'exclude';
   className?: string;
@@ -19,7 +20,7 @@ export function CheckList({ items, locale, variant = 'include', className }: Pro
     <ul className={cn('flex flex-col gap-3', className)}>
       {items.map((item, i) => (
         <li
-          key={item.en}
+          key={typeof item === 'string' ? item : item.en}
           className="reveal flex items-start gap-3 text-body"
           style={stagger(Math.min(i, 5))}
         >
@@ -35,7 +36,11 @@ export function CheckList({ items, locale, variant = 'include', className }: Pro
             <Icon strokeWidth={2} className="size-3.5" />
           </span>
           <span className={variant === 'exclude' ? 'text-muted-foreground' : undefined}>
-            <LocalizedText value={pickLocalized(item, locale)} locale={locale} />
+            {typeof item === 'string' ? (
+              item
+            ) : (
+              <LocalizedText value={pickLocalized(item, locale)} locale={locale} />
+            )}
           </span>
         </li>
       ))}

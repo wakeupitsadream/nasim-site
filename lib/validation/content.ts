@@ -157,6 +157,8 @@ export const blockSchemas = {
   'service.refrigerant-leak-refill.principle': i18nValue(z.array(titledItem)),
   'service.ducted-ac-fcu-service.vs_split': i18nText,
   'pricing.factors': i18nValue(z.array(titledItem)),
+  'about.body': i18nText,
+  'about.not_doing': i18nText,
   'contact.response_note': i18nText,
   'thankyou.title': i18nText,
   'thankyou.text': i18nText,

@@ -17,6 +17,10 @@ const SHOTS: { path: string; name: string; widths: number[] }[] = [
   { path: '/en/services/humidity-mould-check', name: 'service-coming-soon-en', widths: [390] },
   { path: '/en/pricing', name: 'pricing-en', widths: [390, 1280] },
   { path: '/ar/pricing', name: 'pricing-ar', widths: [390, 1280] },
+  { path: '/en/annual-contracts', name: 'contracts-en', widths: [390, 1280] },
+  { path: '/ar/annual-contracts', name: 'contracts-ar', widths: [1280] },
+  { path: '/en/about', name: 'about-en', widths: [390, 1280] },
+  { path: '/ar/about', name: 'about-ar', widths: [1280] },
   { path: '/en/contact', name: 'contact-en', widths: [390] },
   { path: '/ar/contact', name: 'contact-ar', widths: [390] },
 ];

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { seedPackages, seedPriceItems, seedPricingRules, seedServices } from '@/lib/content/seed';
 import {
+  annualPlanComparison,
   billableQty,
   buildPricingConfig,
   bundleSavings,
@@ -219,5 +220,56 @@ describe('seed consistency', () => {
   it('keeps the bundle compare price equal to the à-la-carte sum', () => {
     const bundle = cfg.bundles[0]!;
     expect(quote(cfg, bundle.includes, noVat).subtotal).toBe(bundle.comparePrice);
+  });
+});
+
+describe('annualPlanComparison', () => {
+  const plan = (slug: string) => {
+    const p = packages.find((x) => x.slug === slug);
+    if (!p || p.type !== 'annual') throw new Error(slug);
+    return p;
+  };
+
+  it('prices the plan visits one by one at the plan maximum of split units', () => {
+    // Essential: 3 units → 3 × 169 = 507 per standard clean, three times a year.
+    expect(annualPlanComparison(cfg, plan('essential'))).toEqual({
+      units: 3,
+      standardVisits: 3,
+      deepVisits: 0,
+      standardVisit: 507,
+      deepVisit: 0,
+      separate: 1521,
+      plan: 899,
+      saving: 622,
+      savingPct: 41,
+    });
+    // Comfort: 5 units → 2 standard (745 each) + 1 deep (5 × 349 = 1745).
+    expect(annualPlanComparison(cfg, plan('comfort'))).toMatchObject({
+      standardVisits: 2,
+      deepVisits: 1,
+      standardVisit: 745,
+      deepVisit: 1745,
+      separate: 3235,
+      saving: 1736,
+      savingPct: 54,
+    });
+    // Villa: 8 units at the 4+ tier, counted as split units.
+    expect(annualPlanComparison(cfg, plan('villa'))).toMatchObject({
+      separate: 3576,
+      saving: 1077,
+      savingPct: 30,
+    });
+  });
+
+  it('returns null when the price list lacks the lines or the plan has no visits', () => {
+    expect(
+      annualPlanComparison(cfg, plan('essential'), { standard: 'nope', deep: 'ac_deep' }),
+    ).toBeNull();
+    expect(
+      annualPlanComparison(cfg, {
+        price: 100,
+        includes: { units_max: 2, visits: 0, deep_cleans: 0 },
+      }),
+    ).toBeNull();
   });
 });

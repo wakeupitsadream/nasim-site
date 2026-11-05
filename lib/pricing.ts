@@ -207,6 +207,63 @@ export function priceFrom(
 export const bundleSavings = (bundle: BundleOffer): number | null =>
   bundle.comparePrice === null ? null : bundle.comparePrice - bundle.price;
 
+/** The lines an annual plan's visits are priced against: one standard and one deep clean of split units. */
+export const ANNUAL_PLAN_LINES = { standard: 'ac_clean', deep: 'ac_deep' } as const;
+
+export type AnnualPlanTerms = {
+  price: number;
+  includes: { units_max: number; visits: number; deep_cleans: number };
+};
+
+export type AnnualComparison = {
+  units: number;
+  standardVisits: number;
+  deepVisits: number;
+  /** One standard clean of `units` split units, booked on its own (before VAT). */
+  standardVisit: number;
+  /** One deep clean of `units` split units, booked on its own; 0 when the plan has none. */
+  deepVisit: number;
+  /** All the plan's visits booked one by one. */
+  separate: number;
+  plan: number;
+  saving: number;
+  savingPct: number;
+};
+
+const NO_VAT: VatState = { registered: false, included: false };
+
+/**
+ * What an annual plan's visits would cost booked one by one, at the plan's maximum number of
+ * split units (the conservative reading for FCU plans, whose per-visit prices are higher).
+ * Null when the price list lacks the standard-clean line or the plan has no visits.
+ */
+export function annualPlanComparison(
+  cfg: PricingConfig,
+  plan: AnnualPlanTerms,
+  lines: { standard: string; deep: string } = ANNUAL_PLAN_LINES,
+): AnnualComparison | null {
+  const units = Math.max(1, Math.floor(plan.includes.units_max));
+  const deepVisits = Math.min(Math.max(0, plan.includes.deep_cleans), plan.includes.visits);
+  const standardVisits = plan.includes.visits - deepVisits;
+  if (!findLine(cfg, lines.standard) || plan.includes.visits <= 0) return null;
+  if (deepVisits > 0 && !findLine(cfg, lines.deep)) return null;
+  const standardVisit = quote(cfg, { [lines.standard]: units }, NO_VAT).total;
+  const deepVisit = deepVisits > 0 ? quote(cfg, { [lines.deep]: units }, NO_VAT).total : 0;
+  const separate = standardVisits * standardVisit + deepVisits * deepVisit;
+  const saving = separate - plan.price;
+  return {
+    units,
+    standardVisits,
+    deepVisits,
+    standardVisit,
+    deepVisit,
+    separate,
+    plan: plan.price,
+    saving,
+    savingPct: separate > 0 ? Math.round((saving / separate) * 100) : 0,
+  };
+}
+
 function round(cfg: PricingConfig, value: number): number {
   const step = cfg.rules.rounding;
   return Math.round(value / step) * step;
