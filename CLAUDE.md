@@ -1,12 +1,12 @@
 # nasim-site — CLAUDE.md
 
-Сайт сервисной компании **Brigada** в Дубае (чистка/ремонт кондиционеров + химчистка мебели) на EN / AR / RU с собственной админкой. Бриф — `docs/BRIEF.md`, фазы — `docs/PHASES.md`, журнал решений — `docs/DECISIONS.md`. Перед любой задачей прочитай все три. Инфраструктура и аккаунты — `docs/INFRASTRUCTURE.md`. Имя репо и неймспейс токенов `--nasim-*` — от прежнего рабочего имени, менять не нужно (DECISIONS №52).
+Сайт сервисной компании **Brigada** в Дубае (чистка/ремонт кондиционеров + химчистка мебели) на семи языках (EN / AR / RU / FR / DE / ZH / HI, DECISIONS №57) с собственной админкой. Бриф — `docs/BRIEF.md`, фазы — `docs/PHASES.md`, журнал решений — `docs/DECISIONS.md`. Перед любой задачей прочитай все три. Инфраструктура и аккаунты — `docs/INFRASTRUCTURE.md`. Имя репо и неймспейс токенов `--nasim-*` — от прежнего рабочего имени, менять не нужно (DECISIONS №52).
 
 Специфика установленной версии Next.js — @AGENTS.md (читать docs из `node_modules/next/dist/docs`, они совпадают с версией в lockfile).
 
 ## Стек
 
-Next.js 16.4 (App Router, TypeScript strict, React 19.3, Cache Components, Turbopack) · Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, стиль radix-nova, `rtl: true`) · next-intl v4.14 (`next/root-params`) · Drizzle ORM 0.45 (стабильная ветка, не 1.0-rc) + Neon Postgres (`pg` Pool) · Auth.js v5 (Credentials; см. предложение Better Auth в DECISIONS) · Vercel (Blob, Web Analytics, регион функций `fra1`) · Resend · Telegram Bot API (fetch) · Cloudflare Turnstile · Tiptap · zod · Vitest · Playwright · Polza AI (OpenAI-совместимый шлюз к Claude через `fetch`, только с сервера) · шрифты через `next/font`: IBM Plex Sans (тело), IBM Plex Sans Arabic (`/ar`), Unbounded (h1/h2 и словесный знак, DECISIONS №52).
+Next.js 16.4 (App Router, TypeScript strict, React 19.3, Cache Components, Turbopack) · Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, стиль radix-nova, `rtl: true`) · next-intl v4.14 (`next/root-params`) · Drizzle ORM 0.45 (стабильная ветка, не 1.0-rc) + Neon Postgres (`pg` Pool) · Auth.js v5 (Credentials; см. предложение Better Auth в DECISIONS) · Vercel (Blob, Web Analytics, регион функций `fra1`) · Resend · Telegram Bot API (fetch) · Cloudflare Turnstile · Tiptap · zod · Vitest · Playwright · Polza AI (OpenAI-совместимый шлюз к Claude через `fetch`, только с сервера) · шрифты через `next/font`: IBM Plex Sans (тело), IBM Plex Sans Arabic (`/ar`), Noto Sans SC (`/zh`), IBM Plex Sans Devanagari (`/hi`), Unbounded (h1/h2 и словесный знак, DECISIONS №52; на `/zh` и `/hi` дисплей = шрифт текста, №57).
 
 ## Команды
 
@@ -26,7 +26,7 @@ pnpm seed           # идемпотентный сид из content/seed/*.json
 
 ## Жёсткие правила
 
-1. **Ни одной пользовательской строки в коде.** UI-строки — `messages/{en,ar,ru}.json` через `useTranslations`/`getTranslations`. Контент — в БД как поля `I18nText = { en: string; ar?: string; ru?: string }`. Читать через `pick(field, locale)` из `lib/i18n/text.ts` (fallback на `en`).
+1. **Ни одной пользовательской строки в коде.** UI-строки — `messages/{en,ar,ru,fr,de,zh,hi}.json` через `useTranslations`/`getTranslations` (ключи, плейсхолдеры и rich-теги во всех семи файлах совпадают — `tests/unit/messages.test.ts`). Контент — в БД как поля `I18nText = { en: string } & Partial<Record<Locale, string>>` (локали — из `routing.locales`, новый язык добавляется только там). Читать через `pick(field, locale)` из `lib/i18n/text.ts` (fallback на `en`).
 2. **Только логические CSS-свойства:** `ms-/me-/ps-/pe-/inset-s-/inset-e-/text-start/text-end/rounded-s-/rounded-e-/border-s/border-e`, никаких `ml-/mr-/pl-/pr-/left-/right-/text-left/text-right/rounded-l-/rounded-r-`; `start-*`/`end-*` устарели в Tailwind 4.2 — в новом коде `inset-s-*`/`inset-e-*`. Проверяется `pnpm lint` (`scripts/check-logical-css.mjs`). Направленные иконки (стрелки, шевроны) — класс `rtl:-scale-x-100` (в компонентах shadcn допустим их `rtl:rotate-180`). После каждого `shadcn add` — проверить `components/ui` на голые `rounded-l|rounded-r|rounded-tl|rounded-tr|rounded-bl|rounded-br` (баг shadcn #12475) и `start-`/`end-`, заменить логическими. Портальные компоненты (`*Content` у Popover/Tooltip/Select/Sheet/DropdownMenu) получают `dir={dir}`; у Sheet — логические стороны `inline-start`/`inline-end` (не `left`/`right`). Классы `dark:` запрещены; `cn` импортируется только из `@/lib/utils` (знает наши токены, DECISIONS №23); клиентские компоненты не импортируют `@/content/seed`, `@/lib/content`, `@/lib/ai`, `@/lib/sanitize`, `@/lib/ratelimit`; `new Date()`/`Date.now()` без аргументов в `app/` и `components/` запрещены (часы читаются в обработчике события и передаются значением, №37) — всё это проверяет `pnpm lint`. Телефоны, цены, email, URL, коды — всегда внутри `<span dir="ltr">` (компонент `<Ltr>`).
 3. **Числа и валюта** — только через `lib/i18n/format.ts` (`formatAED`, `formatNumber`); арабская локаль использует латинские цифры (`ar-AE-u-nu-latn`).
 4. **Все цены считаются в `lib/pricing.ts`** чистыми функциями с unit-тестами. Ни калькулятор, ни страницы не содержат арифметики цен.
@@ -43,7 +43,7 @@ pnpm seed           # идемпотентный сид из content/seed/*.json
 15. **Drizzle 0.45**: документация Drizzle уже написана под 1.0-rc — сниппеты оттуда не копировать без проверки на 0.45 (RQB v1, структура миграций). Клиент — `getDb()` из `lib/db/client.ts`, не создавать пулы в других местах.
 16. **WhatsApp в ОАЭ** — только переписка: звонки через WhatsApp/Telegram в ОАЭ заблокированы. В UI «Написать в WhatsApp», никогда «Позвонить в WhatsApp»; звонок — только обычный `tel:`.
 17. **Движение** — только через `styles/motion.css` (DECISIONS №48–49, №52): CSS-first, каждое правило под `prefers-reduced-motion: no-preference`, scroll-driven — под `@supports`; классы `reveal`/`reveal-fade`/`enter` со stagger через `stagger(i)` из `lib/motion.ts`; интерактивные блоки (формы, чипы, списки ссылок) — только `reveal-fade`; предки с обрезкой — `overflow-clip`, не `overflow-hidden`; страницы оборачиваются в `PageTransition`, переходы внутри островков — `<ViewTransition key>` + `startTransition`; только compositor-свойства; JS-библиотеки анимации не добавлять. Красная шторка переходов едет только у навигаций по `Link` из `lib/i18n/navigation` (типы `nav-page` по умолчанию, `nav-forward`/`nav-back`), поэтому внутренние ссылки — всегда этот `Link`, не `next/link`; наклон панелей — атрибут `data-tilt` + класс `tilt` (слушатель один, `components/motion/tilt-layer.tsx`); декор бренда (`BrandMark`, `Van`, `SpeedLines`, лента `TickerBand`) — `aria-hidden`, под reduced-motion статичен. Проверяется `tests/unit/motion.test.ts` и `tests/e2e/motion.spec.ts`.
-18. **Бренд** (DECISIONS №52–53): красный — только акцент (лок-ап, primary-кнопки, штрихи скорости, одна красная лента `.tone-brand`), тёмные полосы — графит `.tone-deep` (финальная — поверх приглушённого ночного Дубая); рядом с красной primary кнопка WhatsApp — `outline` с зелёной иконкой, зелёная — только отдельно (шапка, липкая панель, тёмная полоса). Словесный знак «BRIGADA» в `logo.tsx` — рисунок (латиница, LTR, `aria-hidden`), единственная строка в коде вне правила 1; имя для текста и `aria-label` — `brand_name` из настроек. Фото — только через `getPhoto`/`getMedia` из `content/seed/media.json` (временные стоковые Pexels с `credit`; alt на трёх языках; без подписей «наши работы») и `MediaFrame`; иллюстрация экипажа в `public/brand/` — временная, в подписях «иллюстрация». Настоящие фото Миши заменят и то, и другое через админку.
+18. **Бренд** (DECISIONS №52–53): красный — только акцент (лок-ап, primary-кнопки, штрихи скорости, одна красная лента `.tone-brand`), тёмные полосы — графит `.tone-deep` (финальная — поверх приглушённого ночного Дубая); рядом с красной primary кнопка WhatsApp — `outline` с зелёной иконкой, зелёная — только отдельно (шапка, липкая панель, тёмная полоса). Словесный знак «BRIGADA» в `logo.tsx` — рисунок (латиница, LTR, `aria-hidden`), единственная строка в коде вне правила 1; имя для текста и `aria-label` — `brand_name` из настроек. Фото — только через `getPhoto`/`getMedia` из `content/seed/media.json` (alt на всех языках; без подписей «наши работы») и `MediaFrame`: иллюстрации Миши в `public/brand/` без `credit` (hero, «Почему это важно», заголовки каталога и прайса), стоковые Pexels с `credit`, дубайские интерьеры Sofitel под CC BY 2.0 — автора обязательно показывает футер (`getPhotoCredits`, №57). Настоящие фото бригады заменят всё это через админку.
 
 ## Карта репо
 
@@ -64,10 +64,11 @@ components/assistant      плавающий ассистент (DECISIONS №55
 components/diagnose       карточка вердикта диагностики и сжатие фото в браузере (используются ассистентом и dev/ui)
 styles/motion.css  lib/motion.ts  components/page-transition.tsx  движение и переходы страниц (правило 17)   components/motion/tilt-layer.tsx  наклон панелей за курсором
 components/marketing/{brand-mark,logo,eyebrow,speed-lines,ticker-band,van,crew-portrait}.tsx  фирменные элементы Brigada (правило 18)   public/brand/  иллюстрация Миши (временная)   app/icon.svg  favicon = знак
-content/seed/media.json  public/photos/  временные стоковые фото (hero, лента-подложка, карточки мастера, услуги; DECISIONS №53)   components/marketing/media-frame.tsx  слот фото с плейсхолдером
+content/seed/media.json  public/photos/  фото (kinds: hero, why, band, category, catalogue, pricing, service; стоковые — с credit, DECISIONS №53, №57)   components/marketing/media-frame.tsx  слот фото с плейсхолдером
+components/marketing/lang-switcher.tsx  кнопка языка в шапке (DropdownMenu на `radix-ui`, `components/ui/dropdown-menu.tsx`) и список языков в футере (№57)
 lib/ai/gateway.ts         OpenAI-совместимый шлюз (fetch, Polza)   lib/ai/diagnose-prompt.ts промпт триажа (чистые функции)   lib/diagnose/client.ts  запрос с клиента (zod + маппинг статусов)
 app/[locale]/dev/ui       галерея компонентов (локально и на превью; на продакшене 404)
-messages/{en,ar,ru}.json  UI-строки
+messages/{en,ar,ru,fr,de,zh,hi}.json  UI-строки (порядок локалей = `routing.locales`)
 content/seed/*.json       стартовый контент
 drizzle/                  миграции    scripts/{seed.ts,migrate-if-db.mjs}
 tests/unit  tests/e2e     docs/{BRIEF,PHASES,DECISIONS,RUNBOOK}.md
@@ -76,7 +77,7 @@ tests/unit  tests/e2e     docs/{BRIEF,PHASES,DECISIONS,RUNBOOK}.md
 ## Definition of Done для любого PR
 
 - typecheck, lint, unit, build — зелёные; e2e — зелёные, если затронуты страницы/формы/админка.
-- Новые строки добавлены во все три `messages/*.json` (AR можно черновиком с пометкой `// TODO ar-review` в DECISIONS, не в JSON).
+- Новые строки добавлены во все семь `messages/*.json` (не-EN можно черновиком с пометкой `// TODO <locale>-review` в DECISIONS, не в JSON).
 - Скриншот (или Playwright-снимок) EN и AR для любого нового визуального блока.
 - Запись в `docs/DECISIONS.md`, если принималось архитектурное решение или добавлялась зависимость.
 - Миграция сгенерирована и применяется на пустой БД.
