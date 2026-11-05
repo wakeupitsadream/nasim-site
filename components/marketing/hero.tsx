@@ -1,3 +1,4 @@
+import { SparklesIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { WhatsAppIcon } from '@/components/icons/brand';
 import { LocalizedText } from '@/components/localized-text';
@@ -79,6 +80,20 @@ export async function HomeHero({ locale }: { locale: Locale }) {
               <LocalizedText value={pickLocalized(ctaPrimary, locale)} locale={locale} />
             </CtaLink>
           </div>
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-body text-muted-foreground">
+            <SparklesIcon
+              aria-hidden="true"
+              strokeWidth={1.5}
+              className="size-4 text-highlight-ink"
+            />
+            {t('hero.diagnoseLead')}
+            <a
+              href="#diagnose"
+              className="rounded-sm font-medium text-highlight-ink underline underline-offset-4 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
+            >
+              {t('hero.diagnoseCta')}
+            </a>
+          </p>
           <TrustStrip items={pickLocalizedValue(trust, locale)} locale={locale} className="mt-2" />
           <ReportMockup {...mockup} compact className="mt-4 max-w-sm lg:hidden" />
         </div>

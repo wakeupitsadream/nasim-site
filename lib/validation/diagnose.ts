@@ -56,11 +56,23 @@ export const diagnosisSchema = z.object({
 
 export type Diagnosis = z.infer<typeof diagnosisSchema>;
 
+/** Mirrors `priceUnitSchema` in lib/validation/content.ts (asserted by a unit test) so the client
+ * bundle does not pull in the whole seed schema registry for one enum. */
+export const DIAGNOSE_PRICE_UNITS = [
+  'unit',
+  'fcu',
+  'visit',
+  'seat',
+  'item',
+  'sqm',
+  'from',
+] as const;
+
 export const diagnoseServiceSchema = z.object({
   slug: z.string(),
   name: z.string(),
   href: z.string(),
-  priceFrom: z.object({ amount: z.number(), unit: z.string() }).nullable(),
+  priceFrom: z.object({ amount: z.number(), unit: z.enum(DIAGNOSE_PRICE_UNITS) }).nullable(),
   /** Repairs are priced as diagnostics plus an estimate, not a fixed sum. */
   estimate: z.boolean(),
   comingSoon: z.boolean(),

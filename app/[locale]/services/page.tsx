@@ -1,6 +1,7 @@
 import { ArrowRightIcon, CalendarCheckIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { DiagnoseSection } from '@/components/diagnose/diagnose-section';
 import { Ltr } from '@/components/ltr';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { FinalCta } from '@/components/marketing/final-cta';
@@ -139,19 +140,8 @@ export default async function ServicesPage() {
         </Section>
       ) : null}
 
-      <Section tone="sand" aria-labelledby="not-sure-title" size="compact">
-        <div className="flex flex-col gap-4 rounded-panel bg-mist p-8 sm:flex-row sm:items-center sm:justify-between lg:p-10">
-          <h2 id="not-sure-title" className="text-h3 text-balance text-primary">
-            {t('notSure.title')}
-          </h2>
-          <Button size="lg" asChild className="shrink-0">
-            <Link href="/pricing#book">
-              {t('notSure.cta')}
-              <ArrowRightIcon className="rtl:-scale-x-100" />
-            </Link>
-          </Button>
-        </div>
-      </Section>
+      {/* "Not sure which one?" — the AI triage answers it; its tone follows the optional #soon band. */}
+      <DiagnoseSection tone={soon.length > 0 ? 'sand' : 'surface'} calculatorHref="/pricing#book" />
 
       <FinalCta
         title={tHome('finalCta.title')}

@@ -56,8 +56,10 @@ export async function diagnose(
   const response = await getClient().beta.messages.parse({
     model: AI_MODEL,
     max_tokens: 2048,
-    betas: ['server-side-fallback-2026-07-01'],
-    fallbacks: 'default',
+    // Server-side fallback exists for Opus and Sonnet; Haiku has none, so the flag is skipped there.
+    ...(AI_MODEL.includes('haiku')
+      ? {}
+      : { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const }),
     output_config: { effort: 'low', format: betaZodOutputFormat(diagnosisSchema) },
     system: [
       {

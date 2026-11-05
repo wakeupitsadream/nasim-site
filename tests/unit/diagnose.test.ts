@@ -6,8 +6,10 @@ import {
 } from '@/lib/ai/diagnose-prompt';
 import { seedServices } from '@/lib/content/seed';
 import { allow, clientIp, hashIp, resetRateLimits } from '@/lib/ratelimit';
+import { priceUnitSchema } from '@/lib/validation/content';
 import {
   DIAGNOSE_MAX_TEXT,
+  DIAGNOSE_PRICE_UNITS,
   diagnoseRequestSchema,
   diagnosisSchema,
 } from '@/lib/validation/diagnose';
@@ -76,6 +78,10 @@ describe('diagnose request schema', () => {
       confidence: 'medium',
     };
     expect(diagnosisSchema.safeParse(sample).success).toBe(true);
+  });
+
+  it('mirrors the catalogue price units without importing the content schemas', () => {
+    expect([...DIAGNOSE_PRICE_UNITS]).toEqual(priceUnitSchema.options);
   });
 });
 

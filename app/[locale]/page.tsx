@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { BookingSection } from '@/components/booking/booking-section';
+import { DiagnoseSection } from '@/components/diagnose/diagnose-section';
 import { WhatsAppIcon } from '@/components/icons/brand';
 import { AreaChips } from '@/components/marketing/area-chips';
 import { CtaLink } from '@/components/marketing/cta-link';
@@ -46,7 +47,9 @@ export default async function HomePage() {
     <>
       <HomeHero locale={locale} />
 
-      <Section id="book" tone="surface" aria-labelledby="book-title">
+      <DiagnoseSection tone="surface" calculatorHref="#book" />
+
+      <Section id="book" tone="sand" aria-labelledby="book-title">
         <SectionHeader
           id="book-title"
           eyebrow={t('book.eyebrow')}

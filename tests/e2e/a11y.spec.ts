@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
+import { diagnosisSample, mockDiagnose } from './diagnose-fixture';
 import { DESKTOP, MOBILE, msg } from './helpers';
 
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'];
@@ -62,3 +63,23 @@ test('/ar booking wizard steps have no serious axe violations', async ({ page })
   await book.getByRole('button', { name: msg('ar', 'Booking.nav.toSend') }).click();
   expect(await seriousViolations(page)).toEqual([]);
 });
+
+for (const locale of ['en', 'ar'] as const) {
+  test(`/${locale} AI diagnosis states have no serious axe violations`, async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.setViewportSize(MOBILE);
+    await mockDiagnose(page, { ...diagnosisSample, safety: 'Switch the unit off at the breaker.' });
+    await page.goto(`/${locale}`);
+    const section = page.locator('#diagnose');
+    // Inline validation error, then the verdict card.
+    await section.getByRole('button', { name: msg(locale, 'Diagnose.form.submit') }).click();
+    await expect(section.getByRole('alert')).toBeVisible();
+    expect(await seriousViolations(page)).toEqual([]);
+    await section
+      .getByRole('button', { name: msg(locale, 'Diagnose.form.examples.smell') })
+      .click();
+    await section.getByRole('button', { name: msg(locale, 'Diagnose.form.submit') }).click();
+    await expect(section.getByTestId('diagnose-result')).toBeVisible();
+    expect(await seriousViolations(page)).toEqual([]);
+  });
+}

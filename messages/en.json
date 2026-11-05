@@ -143,6 +143,7 @@
       "feedback": "Skeleton and toast",
       "stickyBar": "Mobile contact bar (with Telegram, as on /ru when enabled)",
       "marketing": "Marketing blocks",
+      "diagnose": "AI diagnosis result (sample)",
       "sheet": "Sheet",
       "breadcrumbs": "Breadcrumbs",
       "numbers": "Numbers, prices, emails, URLs",
@@ -197,13 +198,23 @@
       "hoursText": "Working hours from settings:",
       "longParagraph": "Our technicians arrive with drop sheets, a wet-vacuum and their own ladder, so there is nothing to prepare except clear access to the indoor unit. After the clean you get before-and-after photos in WhatsApp and a note on anything that needs attention later. If a part has to be replaced, we send the price first and wait for your approval.",
       "longWord": "Supercalifragilisticexpialidocious-air-conditioning-maintenance",
-      "longButton": "Book a deep clean for all five split units in the villa this Saturday"
+      "longButton": "Book a deep clean for all five split units in the villa this Saturday",
+      "diagSummary": "Most likely the indoor coil and the drain line are dirty: the musty smell and the dripping point the same way. A standard clean usually fixes both; the technician confirms on site.",
+      "diagCause1Title": "Dust and mould on the coil",
+      "diagCause1Text": "Dubai humidity turns coil dust into a film that smells when the fan starts.",
+      "diagCause2Title": "Silted drain line",
+      "diagCause2Text": "Condensate backs up in the tray and drips from the unit.",
+      "diagQuestion1": "How old is the unit and when was it last cleaned?",
+      "diagQuestion2": "Does the water appear only while cooling, or also when the unit is off?",
+      "diagSafety": "If water is reaching a socket or the ceiling light, switch the unit off at the breaker until the visit."
     }
   },
   "Home": {
     "hero": {
       "eyebrow": "AC & upholstery care · Dubai",
-      "reportCaption": "Example of the report you get after every visit"
+      "reportCaption": "Example of the report you get after every visit",
+      "diagnoseLead": "Not sure what's wrong?",
+      "diagnoseCta": "Try the AI diagnosis"
     },
     "book": {
       "eyebrow": "Book online",
@@ -250,6 +261,83 @@
       "primary": "Get an instant price"
     }
   },
+  "Diagnose": {
+    "eyebrow": "AI diagnosis",
+    "title": "Tell us what's wrong. We'll tell you what it needs.",
+    "lead": "Describe the problem in your own words or send a photo of the unit, the leak or the stain. In a few seconds you see the likely cause, the right service and its fixed price.",
+    "steps": {
+      "describe": "Describe it in a sentence, or take a photo",
+      "cause": "See the likely cause and the service that fixes it",
+      "book": "Book at the fixed price — the technician confirms on site"
+    },
+    "privacy": "The photo is analysed, not stored. No name or phone needed.",
+    "calculator": "Already know what you need?",
+    "calculatorCta": "Open the calculator",
+    "form": {
+      "label": "What's happening?",
+      "placeholder": "e.g. The bedroom AC smells musty when it starts and drips water from the indoor unit",
+      "counter": "{count} / {max}",
+      "examplesLabel": "Try an example:",
+      "examples": {
+        "smell": "Musty smell when the AC starts",
+        "drip": "Water dripping from the indoor unit",
+        "weak": "Cools weakly and runs all day",
+        "stain": "Coffee stain on a light sofa"
+      },
+      "photo": "Add a photo",
+      "photoHint": "JPEG, PNG or WebP — shrunk on your phone before sending.",
+      "photoAlt": "Your photo",
+      "removePhoto": "Remove photo",
+      "submit": "Diagnose",
+      "submitting": "Analysing…",
+      "disclaimer": "An AI estimate, not a verdict: the technician confirms everything on site before any work starts."
+    },
+    "errors": {
+      "empty": "Describe the problem in a few words or add a photo.",
+      "photoType": "We can't read this file. Try a JPEG, PNG or WebP photo.",
+      "photoSize": "The photo is too large even after shrinking. Try another one.",
+      "unavailable": "The AI diagnosis isn't switched on yet. Pick a service in the calculator or message us — we answer fast.",
+      "rateLimited": "That's a lot of questions in one minute. Give it a moment and try again.",
+      "refused": "We couldn't analyse this request. Describe what the AC or the fabric is doing and try again.",
+      "failed": "Something went wrong on our side. Try again in a moment, or message us.",
+      "network": "No connection. Check the internet and try again."
+    },
+    "result": {
+      "title": "What it looks like",
+      "urgency": {
+        "routine": "No rush",
+        "soon": "Worth doing soon",
+        "today": "Needs attention today"
+      },
+      "confidence": {
+        "label": "Confidence: {level}",
+        "low": "low",
+        "medium": "medium",
+        "high": "high"
+      },
+      "safety": "Safety first",
+      "recommended": "Recommended service",
+      "comingSoon": "Coming soon — waitlist open",
+      "estimate": "Fixed diagnostics fee, then a written estimate",
+      "book": "Book at this price",
+      "details": "Service details",
+      "waitlist": "Join the waitlist",
+      "noService": "Several services could fit",
+      "noServiceText": "Add a detail or two, or message us with a photo — we'll tell you what to book.",
+      "outOfScope": "Outside what we do",
+      "outOfScopeText": "We clean and repair AC units and clean upholstery. This one needs another trade — message us and we'll point you to someone.",
+      "causes": "Likely causes",
+      "likelihood": {
+        "likely": "Likely",
+        "possible": "Possible",
+        "unlikely": "Less likely"
+      },
+      "questions": "The technician will ask",
+      "questionsHint": "Add the answers to your booking message and the visit goes faster.",
+      "again": "Ask about something else",
+      "contact": "Message us"
+    }
+  },
   "Services": {
     "lead": "Ten services with fixed prices and two coming soon. Every visit ends with a photo report in WhatsApp.",
     "category": {
@@ -275,10 +363,6 @@
       "title": "Annual contract",
       "text": "Three visits a year, priority booking and a repair discount.",
       "cta": "Compare plans"
-    },
-    "notSure": {
-      "title": "Not sure which one? Get a price in a minute.",
-      "cta": "Open the calculator"
     }
   },
   "Service": {

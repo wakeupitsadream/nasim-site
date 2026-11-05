@@ -1,11 +1,13 @@
 import { ArrowRightIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import areasSeed from '@/content/seed/areas.json';
 import pricesSeed from '@/content/seed/prices.json';
 import servicesSeed from '@/content/seed/services.json';
+import { DiagnoseResult } from '@/components/diagnose/diagnose-result';
 import { TelegramIcon, WhatsAppIcon } from '@/components/icons/brand';
 import { LocalizedText } from '@/components/localized-text';
 import { Ltr } from '@/components/ltr';
@@ -90,13 +92,14 @@ export default async function DevUiPage() {
   if (isProductionDeployment()) notFound();
 
   const locale = await getLocale();
-  const [t, tCommon, tPhone, tCta, tNav, settings] = await Promise.all([
+  const [t, tCommon, tPhone, tCta, tNav, settings, messages] = await Promise.all([
     getTranslations('DevUi'),
     getTranslations('Common'),
     getTranslations('PhoneInput'),
     getTranslations('Cta'),
     getTranslations('Nav'),
     getSiteSettings(locale),
+    getMessages(),
   ]);
 
   const [pricing, marketingServices] = await Promise.all([
@@ -111,6 +114,37 @@ export default async function DevUiPage() {
   const marina = areasSeed.areas.find((a) => a.slug === 'dubai-marina');
   const acCleaning = servicesSeed.services.find((sv) => sv.slug === 'ac-cleaning');
   const arrow = <ArrowRightIcon className="rtl:-scale-x-100" />;
+  // A fixed verdict so the AI block is reviewable on previews without an API key.
+  const sampleDiagnosis = {
+    summary: t('samples.diagSummary'),
+    causes: [
+      {
+        title: t('samples.diagCause1Title'),
+        detail: t('samples.diagCause1Text'),
+        likelihood: 'likely' as const,
+      },
+      {
+        title: t('samples.diagCause2Title'),
+        detail: t('samples.diagCause2Text'),
+        likelihood: 'possible' as const,
+      },
+    ],
+    service: acCleaning
+      ? {
+          slug: acCleaning.slug,
+          name: pick(acCleaning.name, locale),
+          href: `/services/${acCleaning.slug}`,
+          priceFrom: priceFrom(pricing, acCleaning.slug),
+          estimate: false,
+          comingSoon: false,
+        }
+      : null,
+    urgency: 'soon' as const,
+    safety: t('samples.diagSafety'),
+    questions: [t('samples.diagQuestion1'), t('samples.diagQuestion2')],
+    outOfScope: false,
+    confidence: 'medium' as const,
+  };
 
   return (
     <div className="mx-auto flex w-full max-w-page flex-col gap-12 px-gutter py-12 lg:px-gutter-lg">
@@ -340,6 +374,14 @@ export default async function DevUiPage() {
             <Button variant="outline-inverse">{t('samples.secondary')}</Button>
           </div>
         </div>
+      </Section>
+
+      <Section id="diagnose" title={t('sections.diagnose')}>
+        <NextIntlClientProvider
+          messages={{ Diagnose: messages.Diagnose, Price: messages.Price, Common: messages.Common }}
+        >
+          <DiagnoseResult result={sampleDiagnosis} locale={locale} calculatorHref="/pricing#book" />
+        </NextIntlClientProvider>
       </Section>
 
       <Section id="sheet" title={t('sections.sheet')}>

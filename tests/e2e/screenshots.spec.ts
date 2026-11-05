@@ -1,4 +1,5 @@
 import { test } from '@playwright/test';
+import { diagnosisSample, mockDiagnose } from './diagnose-fixture';
 import { msg } from './helpers';
 
 // Visual record for PR review (CI uploads test-results/screenshots). Not a pixel diff.
@@ -49,5 +50,20 @@ for (const locale of ['en', 'ar'] as const) {
     await book.screenshot({ path: `test-results/screenshots/wizard-time-${locale}.png` });
     await book.getByRole('button', { name: msg(locale, 'Booking.nav.toSend') }).click();
     await book.screenshot({ path: `test-results/screenshots/wizard-send-${locale}.png` });
+  });
+
+  test(`screenshot AI diagnosis verdict on /${locale} at 390px`, async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.setViewportSize({ width: 390, height: 844 });
+    await mockDiagnose(page, { ...diagnosisSample, safety: 'Switch the unit off at the breaker.' });
+    await page.goto(`/${locale}`);
+    await page.evaluate(() => document.fonts.ready);
+    const section = page.locator('#diagnose');
+    await section
+      .getByRole('button', { name: msg(locale, 'Diagnose.form.examples.smell') })
+      .click();
+    await section.getByRole('button', { name: msg(locale, 'Diagnose.form.submit') }).click();
+    await section.getByTestId('diagnose-result').waitFor();
+    await section.screenshot({ path: `test-results/screenshots/diagnose-result-${locale}.png` });
   });
 }
