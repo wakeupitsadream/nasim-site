@@ -22,7 +22,7 @@ const plexSans = IBM_Plex_Sans({
 });
 const plexArabic = IBM_Plex_Sans_Arabic({
   subsets: ['arabic'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600'], // no 700: headings and strong stop at 600 on /ar (one file less)
   variable: '--font-plex-arabic',
   display: 'swap',
   preload: false,

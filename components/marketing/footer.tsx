@@ -12,7 +12,7 @@ import { formatPhoneForDisplay } from '@/lib/validation/phone';
 
 const linkClass =
   'inline-flex min-h-tap items-center rounded-md underline-offset-4 outline-none hover:text-foreground hover:underline focus-visible:ring-3 focus-visible:ring-ring';
-const headingClass = 'text-small font-semibold tracking-wide text-foreground uppercase';
+const headingClass = 'text-eyebrow text-foreground';
 
 // Server component; no cookies/headers. Empty settings are hidden, never filled with placeholders.
 // No copyright year: reading the clock during prerender is a sync-IO error under Cache Components.
@@ -39,7 +39,7 @@ export async function Footer() {
   ).filter(([, value]) => value.trim() !== '');
 
   return (
-    <footer className="mt-16 border-t bg-surface-2 text-muted-foreground">
+    <footer className="border-t bg-surface-2 text-muted-foreground">
       <div className="mx-auto grid max-w-page gap-10 px-gutter py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-gutter-lg">
         <div className="flex flex-col gap-3">
           <Logo brandName={s.brandName} />
