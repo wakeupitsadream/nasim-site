@@ -1,10 +1,13 @@
+import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
   getAreaBySlug,
   getAreas,
   getBlock,
   getFaqs,
+  getMedia,
   getPackages,
+  getPhoto,
   getPriceItems,
   getRelatedServices,
   getServiceBySlug,
@@ -14,6 +17,7 @@ import {
   seedAreas,
   seedBlockKeys,
   seedFaqs,
+  seedMedia,
   seedPackages,
   seedPriceItems,
   seedPricingRules,
@@ -55,6 +59,22 @@ describe('seed files', () => {
   it('holds every typed block', () => {
     const keys = new Set(seedBlockKeys());
     for (const key of Object.keys(blockSchemas)) expect(keys.has(key), key).toBe(true);
+  });
+
+  it('media files exist, service photos point at real services, every active service has one', () => {
+    const slugs = new Set(seedServices().map((s) => s.slug));
+    const withPhoto = new Set<string>();
+    for (const m of seedMedia()) {
+      expect(existsSync(`public${m.url}`), m.url).toBe(true);
+      expect(m.credit.source.startsWith('https://'), m.url).toBe(true);
+      if (m.kind === 'service') {
+        expect(m.service_slug && slugs.has(m.service_slug), m.url).toBe(true);
+        withPhoto.add(m.service_slug!);
+      }
+      if (m.kind === 'category') expect(m.category, m.url).toBeDefined();
+    }
+    for (const s of seedServices().filter((x) => x.status === 'active'))
+      expect(withPhoto.has(s.slug), s.slug).toBe(true);
   });
 });
 
@@ -110,6 +130,17 @@ describe('content getters', () => {
     expect((await getFaqs('service', 'ac-cleaning')).length).toBe(3);
     expect((await getFaqs('service', 'carpet-cleaning')).length).toBe(0);
     expect((await getFaqs('contracts')).length).toBe(3);
+  });
+
+  it('return photos by kind, service and category, with the alt picked per locale', async () => {
+    expect((await getMedia({ kind: 'why' })).length).toBe(1);
+    expect((await getMedia({ kind: 'service', serviceSlug: 'ac-cleaning' })).length).toBe(1);
+    expect((await getMedia({ kind: 'category', category: 'upholstery' })).length).toBe(1);
+    expect((await getMedia({ kind: 'before_after' })).length).toBe(0);
+    const ru = await getPhoto({ kind: 'band' }, 'ru');
+    expect(ru?.url).toMatch(/^\/photos\/.+\.jpg$/);
+    expect(ru?.alt).toMatch(/Дубай/);
+    expect(await getPhoto({ kind: 'team' }, 'en')).toBeNull();
   });
 
   it('return typed blocks', async () => {

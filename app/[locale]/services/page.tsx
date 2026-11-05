@@ -1,7 +1,7 @@
-import { ArrowRightIcon, CalendarCheckIcon } from 'lucide-react';
+import { ArrowRightIcon, CalendarCheckIcon, SparklesIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
-import { DiagnoseSection } from '@/components/diagnose/diagnose-section';
+import { AssistantTrigger } from '@/components/assistant/assistant-trigger';
 import { Ltr } from '@/components/ltr';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { FinalCta } from '@/components/marketing/final-cta';
@@ -10,7 +10,7 @@ import { Section } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
 import { SpeedLines } from '@/components/marketing/speed-lines';
 import { PageTransition } from '@/components/page-transition';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { getPackages, getPricingConfig, getServices } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
@@ -147,8 +147,40 @@ export default async function ServicesPage() {
         </Section>
       ) : null}
 
-      {/* "Not sure which one?" — the AI triage answers it; its tone follows the optional #soon band. */}
-      <DiagnoseSection tone={soon.length > 0 ? 'sand' : 'surface'} calculatorHref="/pricing#book" />
+      {/* "Not sure which one?" — opens the floating assistant; the tone follows the optional #soon band. */}
+      <Section
+        tone={soon.length > 0 ? 'sand' : 'surface'}
+        aria-labelledby="not-sure-title"
+        size="compact"
+      >
+        <div className="reveal-fade flex flex-col gap-6 rounded-panel border border-border bg-card p-6 shadow-card sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <div className="flex items-start gap-4">
+            <span
+              aria-hidden="true"
+              className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-mist text-highlight-ink"
+            >
+              <SparklesIcon strokeWidth={1.5} className="size-6" />
+            </span>
+            <div className="flex flex-col gap-1">
+              <h2 id="not-sure-title" className="text-h3 text-primary">
+                {t('notSure.title')}
+              </h2>
+              <p className="max-w-[40rem] text-body text-pretty text-muted-foreground">
+                {t('notSure.text')}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:shrink-0">
+            <AssistantTrigger className={buttonVariants({ size: 'lg' })}>
+              <SparklesIcon strokeWidth={1.75} />
+              {t('notSure.ask')}
+            </AssistantTrigger>
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/pricing#book">{t('notSure.price')}</Link>
+            </Button>
+          </div>
+        </div>
+      </Section>
 
       <FinalCta
         title={tHome('finalCta.title')}

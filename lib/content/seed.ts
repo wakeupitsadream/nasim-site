@@ -5,6 +5,7 @@
 import areasJson from '@/content/seed/areas.json';
 import blocksJson from '@/content/seed/blocks.json';
 import faqsJson from '@/content/seed/faqs.json';
+import mediaJson from '@/content/seed/media.json';
 import pricesJson from '@/content/seed/prices.json';
 import servicesJson from '@/content/seed/services.json';
 import {
@@ -12,12 +13,14 @@ import {
   blockSchemas,
   blocksFileSchema,
   faqsFileSchema,
+  mediaFileSchema,
   pricesFileSchema,
   servicesFileSchema,
   type Area,
   type BlockKey,
   type BlockValue,
   type Faq,
+  type MediaRecord,
   type Package,
   type PriceItem,
   type PricingRulesRecord,
@@ -42,6 +45,9 @@ export const seedPricingRules = (): PricingRulesRecord => prices().pricing_rules
 
 export const seedAreas = memo((): Area[] => areasFileSchema.parse(areasJson).areas.slice().sort(bySort));
 export const seedFaqs = memo((): Faq[] => faqsFileSchema.parse(faqsJson).faqs.slice().sort(bySort));
+export const seedMedia = memo((): MediaRecord[] =>
+  mediaFileSchema.parse(mediaJson).media.slice().sort(bySort),
+);
 
 const blocks = memo(() => {
   const list = blocksFileSchema.parse(blocksJson).blocks;

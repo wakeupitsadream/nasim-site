@@ -1,0 +1,291 @@
+{
+  "_comment": "TEMPORARY stock photos (Pexels License) standing in until the owner’s own photos arrive through the admin media library (DECISIONS №53). url = path under public/. kind: why (the home we work in, the «why every 4–6 months» block) | band | category | service | team | before_after.",
+  "media": [
+    {
+      "kind": "why",
+      "url": "/photos/home-hero.jpg",
+      "width": 1600,
+      "height": 1066,
+      "alt": {
+        "en": "Bright living room with a grey sofa and a wall-mounted air conditioner",
+        "ru": "Светлая гостиная с серым диваном и настенным кондиционером",
+        "ar": "غرفة معيشة مشرقة مع أريكة رمادية ومكيف مثبت على الحائط"
+      },
+      "credit": {
+        "author": "Max Vakhtbovych",
+        "source": "https://www.pexels.com/photo/6588599/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 10
+    },
+    {
+      "kind": "band",
+      "url": "/photos/dubai-night.jpg",
+      "width": 1920,
+      "height": 1281,
+      "alt": {
+        "en": "Dubai skyline at night with the Burj Khalifa over lit highways",
+        "ru": "Ночной Дубай: Бурдж-Халифа над освещёнными магистралями",
+        "ar": "أفق دبي ليلاً مع برج خليفة فوق الطرق المضاءة"
+      },
+      "credit": {
+        "author": "Nihongraphy",
+        "source": "https://www.pexels.com/photo/dubai-skyline-at-night-13256066/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 10
+    },
+    {
+      "kind": "category",
+      "category": "ac",
+      "url": "/photos/category-ac.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Wall-mounted split air conditioner indoor unit on a cream wall",
+        "ru": "Внутренний блок сплит-кондиционера на кремовой стене",
+        "ar": "وحدة داخلية لمكيف سبليت مثبتة على جدار كريمي"
+      },
+      "credit": {
+        "author": "NEOSiAM",
+        "source": "https://www.pexels.com/photo/38788452/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 10
+    },
+    {
+      "kind": "category",
+      "category": "upholstery",
+      "url": "/photos/category-upholstery.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Professional cleaning a grey fabric sofa with an upholstery machine",
+        "ru": "Специалист чистит серый тканевый диван машиной для мебели",
+        "ar": "محترف ينظف أريكة قماشية رمادية بآلة تنظيف المفروشات"
+      },
+      "credit": {
+        "author": "alonssus",
+        "source": "https://www.pexels.com/photo/4401535/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 20
+    },
+    {
+      "kind": "service",
+      "service_slug": "ac-cleaning",
+      "url": "/photos/ac-cleaning.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Wall-mounted split air conditioner indoor unit on a cream wall",
+        "ru": "Внутренний блок сплит-кондиционера на кремовой стене",
+        "ar": "وحدة داخلية لمكيف سبليت مثبتة على جدار كريمي"
+      },
+      "credit": {
+        "author": "NEOSiAM",
+        "source": "https://www.pexels.com/photo/38788452/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 10
+    },
+    {
+      "kind": "service",
+      "service_slug": "ac-deep-cleaning",
+      "url": "/photos/ac-deep-cleaning.jpg",
+      "width": 1200,
+      "height": 1800,
+      "alt": {
+        "en": "Technician checking the coil fins of an air conditioner with an instrument",
+        "ru": "Техник проверяет ламели теплообменника кондиционера прибором",
+        "ar": "فني يفحص زعانف مبادل مكيف الهواء بجهاز قياس"
+      },
+      "credit": {
+        "author": "José Andrés Pacheco Cortes",
+        "source": "https://www.pexels.com/photo/man-repairing-an-aircon-5463580/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 20
+    },
+    {
+      "kind": "service",
+      "service_slug": "ducted-ac-fcu-service",
+      "url": "/photos/ducted-ac-fcu-service.jpg",
+      "width": 1200,
+      "height": 2134,
+      "alt": {
+        "en": "Technician in gloves servicing a built-in air-conditioning unit",
+        "ru": "Техник в перчатках обслуживает встроенный блок кондиционирования",
+        "ar": "فني يرتدي قفازات يصون وحدة تكييف مدمجة"
+      },
+      "credit": {
+        "author": "bulat843",
+        "source": "https://www.pexels.com/photo/32588555/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 30
+    },
+    {
+      "kind": "service",
+      "service_slug": "emergency-ac-repair",
+      "url": "/photos/emergency-ac-repair.jpg",
+      "width": 1200,
+      "height": 992,
+      "alt": {
+        "en": "Technician repairing a rooftop air-conditioning unit",
+        "ru": "Техник ремонтирует блок кондиционера на крыше",
+        "ar": "فني يصلح وحدة تكييف على السطح"
+      },
+      "credit": {
+        "author": "José Andrés Pacheco Cortes",
+        "source": "https://www.pexels.com/photo/5463587/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 40
+    },
+    {
+      "kind": "service",
+      "service_slug": "ac-repair",
+      "url": "/photos/ac-repair.jpg",
+      "width": 1200,
+      "height": 853,
+      "alt": {
+        "en": "Technician with a manifold gauge at an outdoor air-conditioning unit",
+        "ru": "Техник с манометрическим коллектором у наружного блока кондиционера",
+        "ar": "فني مع عدّاد ضغط عند الوحدة الخارجية لمكيف الهواء"
+      },
+      "credit": {
+        "author": "José Andrés Pacheco Cortes",
+        "source": "https://www.pexels.com/photo/man-checking-an-air-conditioner-5463575/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 50
+    },
+    {
+      "kind": "service",
+      "service_slug": "refrigerant-leak-refill",
+      "url": "/photos/refrigerant-leak-refill.jpg",
+      "width": 1200,
+      "height": 1716,
+      "alt": {
+        "en": "Close-up of refrigerant manifold gauges in a technician’s hands",
+        "ru": "Крупный план манометров для фреона в руках техника",
+        "ar": "لقطة قريبة لعدّادات غاز التبريد في يد الفني"
+      },
+      "credit": {
+        "author": "José Andrés Pacheco Cortes",
+        "source": "https://www.pexels.com/photo/6471912/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 60
+    },
+    {
+      "kind": "service",
+      "service_slug": "sofa-cleaning",
+      "url": "/photos/sofa-cleaning.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Cleaning a patterned sofa cushion with an upholstery nozzle",
+        "ru": "Чистка диванной подушки с узором насадкой для мебели",
+        "ar": "تنظيف وسادة أريكة منقوشة بفوهة المفروشات"
+      },
+      "credit": {
+        "author": "alonssus",
+        "source": "https://www.pexels.com/photo/4401537/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 70
+    },
+    {
+      "kind": "service",
+      "service_slug": "mattress-cleaning",
+      "url": "/photos/mattress-cleaning.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "Technician in protective gear vacuuming a mattress in a bedroom",
+        "ru": "Техник в защитной одежде пылесосит матрас в спальне",
+        "ar": "فني بملابس واقية ينظف مرتبة بالمكنسة في غرفة نوم"
+      },
+      "credit": {
+        "author": "The Healthy Home",
+        "source": "https://www.pexels.com/photo/14675103/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 80
+    },
+    {
+      "kind": "service",
+      "service_slug": "carpet-cleaning",
+      "url": "/photos/carpet-cleaning.jpg",
+      "width": 1200,
+      "height": 1798,
+      "alt": {
+        "en": "Cleaner in protective gear treating a rug in a bright living room",
+        "ru": "Клинер в защитной одежде обрабатывает ковёр в светлой гостиной",
+        "ar": "عامل نظافة بملابس واقية يعالج سجادة في غرفة معيشة مشرقة"
+      },
+      "credit": {
+        "author": "Michelangelo Buonarroti",
+        "source": "https://www.pexels.com/photo/4176300/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 90
+    },
+    {
+      "kind": "service",
+      "service_slug": "stain-odour-removal",
+      "url": "/photos/stain-odour-removal.jpg",
+      "width": 1200,
+      "height": 1800,
+      "alt": {
+        "en": "Woman cleaning the fabric of a sofa with a cloth",
+        "ru": "Женщина чистит ткань дивана салфеткой",
+        "ar": "امرأة تنظف قماش أريكة بقطعة قماش"
+      },
+      "credit": {
+        "author": "Polina Tankilevitch",
+        "source": "https://www.pexels.com/photo/4440570/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 100
+    },
+    {
+      "kind": "service",
+      "service_slug": "humidity-mould-check",
+      "url": "/photos/humidity-mould-check.jpg",
+      "width": 1200,
+      "height": 1600,
+      "alt": {
+        "en": "Condensation droplets on a window pane",
+        "ru": "Капли конденсата на оконном стекле",
+        "ar": "قطرات تكاثف على زجاج نافذة"
+      },
+      "credit": {
+        "author": "Pixabay",
+        "source": "https://www.pexels.com/photo/531768/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 110
+    },
+    {
+      "kind": "service",
+      "service_slug": "water-tank-cleaning",
+      "url": "/photos/water-tank-cleaning.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": {
+        "en": "White rooftop water storage tank against a clear sky",
+        "ru": "Белый бак для воды на крыше на фоне ясного неба",
+        "ar": "خزان مياه أبيض على السطح تحت سماء صافية"
+      },
+      "credit": {
+        "author": "izafi",
+        "source": "https://www.pexels.com/photo/37923604/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 120
+    }
+  ]
+}

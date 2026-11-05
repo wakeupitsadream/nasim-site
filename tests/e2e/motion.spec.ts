@@ -1,4 +1,5 @@
 import { expect, test, type Locator } from '@playwright/test';
+import { assistantReady } from './assistant-fixture';
 import { DESKTOP, MOBILE, msg } from './helpers';
 
 /** Names of the CSS animations currently attached to an element (empty when none run). */
@@ -16,9 +17,9 @@ test.describe('motion (styles/motion.css)', () => {
     await expect(h1).toHaveCSS('opacity', '1');
     expect(await animationNames(h1)).toEqual([]);
     // A reveal far below the fold is fully visible without scrolling.
-    const faq = page.locator('[aria-labelledby="faq-title"] .reveal').first();
-    await expect(faq).toHaveCSS('opacity', '1');
-    expect(await faq.evaluate((el) => el.getAnimations().length)).toBe(0);
+    const why = page.locator('[aria-labelledby="why-title"] .reveal').first();
+    await expect(why).toHaveCSS('opacity', '1');
+    expect(await why.evaluate((el) => el.getAnimations().length)).toBe(0);
     expect(await page.locator('html').evaluate((el) => getComputedStyle(el).scrollBehavior)).toBe(
       'auto',
     );
@@ -34,11 +35,11 @@ test.describe('motion (styles/motion.css)', () => {
     // Smooth anchors, but Next resets them during SPA navigation (data-scroll-behavior).
     await expect(page.locator('html')).toHaveAttribute('data-scroll-behavior', 'smooth');
 
-    const faq = page.locator('[aria-labelledby="faq-title"] .reveal').first();
-    await expect(faq).toHaveCSS('opacity', '0'); // scrubbed by a view timeline, not yet entered
-    await faq.scrollIntoViewIfNeeded();
+    const why = page.locator('[aria-labelledby="why-title"] .reveal').first();
+    await expect(why).toHaveCSS('opacity', '0'); // scrubbed by a view timeline, not yet entered
+    await why.scrollIntoViewIfNeeded();
     await page.mouse.wheel(0, 300);
-    await expect(faq).toHaveCSS('opacity', '1');
+    await expect(why).toHaveCSS('opacity', '1');
   });
 
   test('the header gains its hairline only after scrolling', async ({ page }) => {
@@ -126,8 +127,9 @@ test.describe('motion (styles/motion.css)', () => {
       /^-(100%|1280px)/,
     );
 
-    // The hero panel tilts after a fine pointer and settles when it leaves.
+    // The "why" photo panel tilts after a fine pointer and settles when it leaves.
     const panel = page.locator('[data-tilt]').first();
+    await panel.scrollIntoViewIfNeeded();
     const box = (await panel.boundingBox())!;
     await page.mouse.move(box.x + box.width * 0.9, box.y + box.height * 0.25);
     await expect
@@ -148,6 +150,8 @@ test.describe('motion (styles/motion.css)', () => {
   }) => {
     await page.setViewportSize(DESKTOP);
     await page.goto('/en/services');
+    // Hydrated first: a click before hydration is a plain page load with no transition at all.
+    await assistantReady(page);
     await page.evaluate(() => {
       const w = window as Window & { __vt?: unknown[] };
       w.__vt = [];
@@ -164,9 +168,20 @@ test.describe('motion (styles/motion.css)', () => {
       .getByRole('link', { name: msg('en', 'Nav.pricing') })
       .click();
     await expect(page).toHaveURL(/\/en\/pricing$/);
-    const types = await page.evaluate(() => (window as Window & { __vt?: unknown[] }).__vt);
-    expect(types?.[0]).toContain('nav-forward');
-    expect(types?.at(-1)).toContain('nav-page');
+    // Under load React may run an untyped transition for an unrelated update; the two link
+    // navigations must still show up with their types (card → nav-forward, header → nav-page).
+    const calls = (await page.evaluate(
+      () => (window as Window & { __vt?: unknown[] }).__vt ?? [],
+    )) as (string[] | null)[];
+    const typed = calls.filter((t): t is string[] => Array.isArray(t));
+    expect(
+      typed.some((t) => t.includes('nav-forward')),
+      JSON.stringify(calls),
+    ).toBe(true);
+    expect(
+      typed.some((t) => t.includes('nav-page')),
+      JSON.stringify(calls),
+    ).toBe(true);
   });
 
   test('/ar: the same motion mirrors its origin', async ({ page }) => {

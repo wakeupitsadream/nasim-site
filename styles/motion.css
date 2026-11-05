@@ -499,73 +499,57 @@
 ::view-transition {
   pointer-events: none;
 }
+/* …как и плавающий ассистент (кнопка и окно): он живёт в layout и не едет вместе со страницей. */
 ::view-transition-group(site-header),
-::view-transition-group(site-sticky-bar) {
+::view-transition-group(site-sticky-bar),
+::view-transition-group(assistant-launcher),
+::view-transition-group(assistant-panel) {
   animation: none;
   z-index: 100;
 }
 ::view-transition-old(site-header),
-::view-transition-old(site-sticky-bar) {
+::view-transition-old(site-sticky-bar),
+::view-transition-old(assistant-launcher),
+::view-transition-old(assistant-panel) {
   display: none;
 }
 ::view-transition-new(site-header),
-::view-transition-new(site-sticky-bar) {
+::view-transition-new(site-sticky-bar),
+::view-transition-new(assistant-launcher),
+::view-transition-new(assistant-panel) {
   animation: none;
 }
 
-::view-transition-old(.page-fade) {
+/*
+ * Страница как группа перехода (React назначает классы .page-fade / .nav-forward / .nav-back
+ * по типу навигации). Геометрию между страницами разной высоты не интерполируем: старый и новый
+ * снимки просто сменяют друг друга — иначе они накладывались и «тянулись» (DECISIONS №54).
+ * Переход без типа (кнопки браузера «назад / вперёд») — короткий fade без шторки.
+ */
+::view-transition-group(.page-fade),
+::view-transition-group(.nav-forward),
+::view-transition-group(.nav-back) {
+  animation: none;
+}
+::view-transition-old(.page-fade),
+::view-transition-old(.nav-forward),
+::view-transition-old(.nav-back) {
   animation: 120ms ease-in both nasim-fade reverse;
 }
-::view-transition-new(.page-fade) {
-  animation:
-    220ms ease-out 60ms both nasim-fade,
-    440ms var(--nasim-ease-out) both nasim-rise;
-}
-
-::view-transition-old(.nav-forward) {
-  --nasim-vt-slide: -40px;
-  animation:
-    140ms ease-in both nasim-fade reverse,
-    360ms var(--nasim-ease-out) both nasim-slide-x reverse;
-}
-::view-transition-new(.nav-forward) {
-  --nasim-vt-slide: 40px;
-  animation:
-    220ms ease-out 100ms both nasim-fade,
-    360ms var(--nasim-ease-out) both nasim-slide-x;
-}
-::view-transition-old(.nav-back) {
-  --nasim-vt-slide: 40px;
-  animation:
-    140ms ease-in both nasim-fade reverse,
-    360ms var(--nasim-ease-out) both nasim-slide-x reverse;
-}
+::view-transition-new(.page-fade),
+::view-transition-new(.nav-forward),
 ::view-transition-new(.nav-back) {
-  --nasim-vt-slide: -40px;
-  animation:
-    220ms ease-out 100ms both nasim-fade,
-    360ms var(--nasim-ease-out) both nasim-slide-x;
-}
-/* В RTL «вперёд» — влево. */
-:root[dir='rtl']::view-transition-old(.nav-forward) {
-  --nasim-vt-slide: 40px;
-}
-:root[dir='rtl']::view-transition-new(.nav-forward) {
-  --nasim-vt-slide: -40px;
-}
-:root[dir='rtl']::view-transition-old(.nav-back) {
-  --nasim-vt-slide: -40px;
-}
-:root[dir='rtl']::view-transition-new(.nav-back) {
-  --nasim-vt-slide: 40px;
+  animation: 200ms ease-out 80ms both nasim-fade;
 }
 
 /*
- * Красная шторка (DECISIONS №52). .page-curtain стоит за краем экрана и носит
+ * Красная шторка (DECISIONS №52, №54). .page-curtain стоит за краем экрана и носит
  * view-transition-name, так что в каждом переходе у неё есть своя группа. Едет она только в
  * переходах с типом навигации по ссылке (nav-page по умолчанию у Link, nav-forward / nav-back),
- * а не при смене шага мастера или карточки диагноза. Пока шторка закрывает экран
- * (≈ 0,29–0,38 с), старая страница исчезает и появляется новая — смена происходит «за кулисами».
+ * а не при смене шага мастера или карточки диагноза. Хореография одна: шторка закрывает экран
+ * к 42 %, под ней старая страница гаснет и появляется новая, после 54 % шторка уходит. Под
+ * шторкой больше ничего не едет и не поднимается — два движения сразу читались как наложение.
+ * Направление и есть подсказка: при nav-back шторка едет с другой стороны.
  */
 .page-curtain {
   position: fixed;
@@ -594,29 +578,28 @@
 :root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-group(
     page-curtain
   ) {
-  animation: 680ms var(--nasim-ease) both nasim-curtain;
+  animation: 560ms var(--nasim-ease) both nasim-curtain;
 }
+:root:active-view-transition-type(nav-back)::view-transition-group(page-curtain) {
+  animation-direction: reverse;
+}
+/* Старая страница и корень гаснут, когда экран уже закрыт (42 % = 235 мс)… */
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-old(root),
 :root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-old(.page-fade),
 :root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-old(
     .nav-forward
   ),
 :root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-old(.nav-back) {
-  animation: 80ms ease-in 240ms both nasim-fade reverse;
+  animation: 60ms linear 236ms both nasim-fade reverse;
 }
-:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-new(
-    .page-fade
-  ) {
-  animation:
-    1ms linear 340ms both nasim-fade,
-    440ms var(--nasim-ease-out) 340ms both nasim-rise;
-}
+/* …а новые просто стоят на месте к моменту, когда шторка начинает уходить (54 % = 302 мс). */
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-new(root),
+:root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-new(.page-fade),
 :root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-new(
     .nav-forward
   ),
 :root:active-view-transition-type(nav-page, nav-forward, nav-back)::view-transition-new(.nav-back) {
-  animation:
-    1ms linear 340ms both nasim-fade,
-    420ms var(--nasim-ease-out) 340ms both nasim-slide-x;
+  animation: 1ms linear 300ms both nasim-fade;
 }
 
 /* Шаги мастера и карточка диагноза: тот же язык движения внутри страницы. */

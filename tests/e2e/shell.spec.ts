@@ -13,10 +13,16 @@ test.describe('language switcher', () => {
     await page.goto('/en/pricing');
     // getByRole skips hidden nodes: Next keeps the previous locale's tree mounted in a hidden <Activity>.
     const header = page.getByRole('banner');
-    await header.locator('a[hreflang="ar"]').click();
+    // The Suspense fallback links the home page of each locale until the real switcher (which
+    // knows the pathname) streams in: wait for the same-page href before clicking.
+    const ar = header.locator('a[hreflang="ar"]');
+    await expect(ar).toHaveAttribute('href', '/ar/pricing');
+    await ar.click();
     await expect(page).toHaveURL(/\/ar\/pricing$/);
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-    await header.locator('a[hreflang="ru"]').click();
+    const ru = header.locator('a[hreflang="ru"]');
+    await expect(ru).toHaveAttribute('href', '/ru/pricing');
+    await ru.click();
     await expect(page).toHaveURL(/\/ru\/pricing$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'ru');
   });
@@ -98,7 +104,14 @@ test.describe('no invented contacts', () => {
 });
 
 test.describe('inner pages', () => {
-  for (const path of ['/en/pricing', '/en/services/ac-cleaning', '/ar/contact', '/ru/services']) {
+  for (const path of [
+    '/en/pricing',
+    '/en/services/ac-cleaning',
+    '/ar/contact',
+    '/ru/services',
+    '/en/annual-contracts',
+    '/ru/about',
+  ]) {
     test(`${path} has no tel, wa.me or t.me links while contacts are empty`, async ({
       request,
     }) => {
@@ -115,9 +128,9 @@ test.describe('inner pages', () => {
   });
 
   test('FAQ answers are in the HTML and <details> toggles', async ({ page, request }) => {
-    const html = await (await request.get('/en')).text();
-    expect(html).toContain('Every 4–6 months for a unit that runs daily');
-    await page.goto('/en');
+    const html = await (await request.get('/en/annual-contracts')).text();
+    expect(html).toContain('priority call-out within the hours of your plan');
+    await page.goto('/en/annual-contracts');
     const first = page.locator('details').first();
     await expect(first).not.toHaveAttribute('open', '');
     await first.locator('summary').click();
@@ -150,3 +163,23 @@ test('production stays out of search until the own domain is set', async ({ requ
   const html = await (await request.get('/en')).text();
   expect(html).toMatch(/<meta name="robots" content="noindex/);
 });
+
+// The lock-up is one stretched link: a click on the skewed letters (which paint above the link's
+// ::after) must still go home, in the header and in the footer, on every locale.
+for (const [path, home] of [
+  ['/en/services', '/en'],
+  ['/ar/pricing', '/ar'],
+  ['/ru/services/ac-cleaning', '/ru'],
+] as const) {
+  test(`${path}: clicking the wordmark goes to ${home}`, async ({ page }) => {
+    await page.setViewportSize(DESKTOP);
+    for (const scope of ['header', 'footer'] as const) {
+      await page.goto(path);
+      const word = page.locator(`${scope} span[dir="ltr"]`).first();
+      await word.scrollIntoViewIfNeeded();
+      const box = (await word.boundingBox())!;
+      await page.mouse.click(box.x + box.width * 0.7, box.y + box.height / 2);
+      await expect(page).toHaveURL(new RegExp(`${home}$`));
+    }
+  });
+}

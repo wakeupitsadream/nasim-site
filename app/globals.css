@@ -107,6 +107,7 @@
     --accent: rgb(255 255 255 / 0.1);
     --accent-foreground: var(--nasim-on-deep);
     --brand-mark-surface: var(--nasim-teal-deep);
+    --brand-mark-streak: #ffffff;
     background-color: var(--nasim-teal-deep);
     background-image: linear-gradient(
       160deg,
@@ -144,6 +145,23 @@
   .text-eyebrow {
     text-transform: var(--nasim-eyebrow-case);
   }
+  /* Closing band over the night photo: the shade is heaviest on the text side (inline-start). */
+  .band-shade {
+    background-image: linear-gradient(
+      90deg,
+      rgb(11 13 14 / 0.9) 0%,
+      rgb(11 13 14 / 0.62) 50%,
+      rgb(11 13 14 / 0.25) 100%
+    );
+  }
+  [dir='rtl'] .band-shade {
+    background-image: linear-gradient(
+      270deg,
+      rgb(11 13 14 / 0.9) 0%,
+      rgb(11 13 14 / 0.62) 50%,
+      rgb(11 13 14 / 0.25) 100%
+    );
+  }
 }
 
 @layer base {
@@ -156,6 +174,12 @@
     /* якоря и фокус не прячутся под липкой шапкой и мобильной панелью */
     scroll-padding-top: calc(var(--nasim-header-h) + 8px);
     scroll-padding-bottom: calc(var(--nasim-sticky-bar-h) + 8px);
+  }
+  /* Окно ассистента на телефоне занимает весь экран: страница под ним не прокручивается. */
+  @media (width < 40rem) {
+    html[data-assistant-open] {
+      overflow: hidden;
+    }
   }
   body {
     @apply bg-background text-body text-foreground;

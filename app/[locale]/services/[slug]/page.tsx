@@ -25,6 +25,7 @@ import { PageTransition } from '@/components/page-transition';
 import {
   getBlock,
   getFaqs,
+  getPhoto,
   getPriceItems,
   getPricingConfig,
   getRelatedServices,
@@ -85,6 +86,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     faqsGlobal,
     related,
     readings,
+    photo,
   ] = await Promise.all([
     getTranslations('Service'),
     getTranslations('Services'),
@@ -97,6 +99,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     getFaqs('global'),
     getRelatedServices(slug),
     getBlock('report.readings'),
+    getPhoto({ kind: 'service', serviceSlug: slug }, locale),
   ]);
   const name = pickLocalized(service.name, locale);
   const templateKey =
@@ -391,7 +394,13 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
 
   return (
     <PageTransition>
-      <ServiceHero service={service} locale={locale} priceFrom={from} whatsapp={whatsapp} />
+      <ServiceHero
+        service={service}
+        locale={locale}
+        priceFrom={from}
+        whatsapp={whatsapp}
+        photo={photo}
+      />
       {rendered}
       <FinalCta
         title={tHome('finalCta.title')}

@@ -6,6 +6,7 @@ import {
   getAreas,
   getBlock,
   getPackages,
+  getPhoto,
   getPricingConfig,
   getServices,
 } from '@/lib/content/queries';
@@ -26,15 +27,18 @@ type Props = {
  */
 export async function BookingSection({ initialService }: Props) {
   const locale = await getLocale();
-  const [settings, pricing, services, areas, template, bundles, messages] = await Promise.all([
-    getSiteSettings(locale),
-    getPricingConfig(),
-    getServices({ status: ['active'] }),
-    getAreas(),
-    getBlock('wa.template.quote'),
-    getPackages({ type: 'bundle' }),
-    getMessages(),
-  ]);
+  const [settings, pricing, services, areas, template, bundles, messages, acPhoto, sofaPhoto] =
+    await Promise.all([
+      getSiteSettings(locale),
+      getPricingConfig(),
+      getServices({ status: ['active'] }),
+      getAreas(),
+      getBlock('wa.template.quote'),
+      getPackages({ type: 'bundle' }),
+      getMessages(),
+      getPhoto({ kind: 'category', category: 'ac' }, locale),
+      getPhoto({ kind: 'category', category: 'upholstery' }, locale),
+    ]);
 
   const bookable: BookingService[] = services
     .filter((s) => s.category === 'ac' || s.category === 'upholstery')
@@ -67,6 +71,10 @@ export async function BookingSection({ initialService }: Props) {
     lineLabels,
     bundleNames: Object.fromEntries(bundles.map((b) => [b.slug, pickLocalized(b.name, locale)])),
     areas: areas.map((a) => ({ slug: a.slug, name: pickLocalized(a.name, locale) })),
+    categoryPhotos: {
+      ...(acPhoto ? { ac: acPhoto } : {}),
+      ...(sofaPhoto ? { upholstery: sofaPhoto } : {}),
+    },
     whatsapp: settings.contacts.whatsapp,
     template: pickLocalized(template, locale).text,
     initial: preselected

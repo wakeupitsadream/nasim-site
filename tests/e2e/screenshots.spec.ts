@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { diagnoseReady, diagnosisSample, mockDiagnose } from './diagnose-fixture';
+import { diagnosisSample, mockDiagnose, openAssistant } from './assistant-fixture';
 import { msg } from './helpers';
 
 // Visual record for PR review (CI uploads test-results/screenshots). Not a pixel diff.
@@ -17,6 +17,10 @@ const SHOTS: { path: string; name: string; widths: number[] }[] = [
   { path: '/en/services/humidity-mould-check', name: 'service-coming-soon-en', widths: [390] },
   { path: '/en/pricing', name: 'pricing-en', widths: [390, 1280] },
   { path: '/ar/pricing', name: 'pricing-ar', widths: [390, 1280] },
+  { path: '/en/annual-contracts', name: 'contracts-en', widths: [390, 1280] },
+  { path: '/ar/annual-contracts', name: 'contracts-ar', widths: [1280] },
+  { path: '/en/about', name: 'about-en', widths: [390, 1280] },
+  { path: '/ar/about', name: 'about-ar', widths: [1280] },
   { path: '/en/contact', name: 'contact-en', widths: [390] },
   { path: '/ar/contact', name: 'contact-ar', widths: [390] },
 ];
@@ -52,19 +56,24 @@ for (const locale of ['en', 'ar'] as const) {
     await book.screenshot({ path: `test-results/screenshots/wizard-send-${locale}.png` });
   });
 
-  test(`screenshot AI diagnosis verdict on /${locale} at 390px`, async ({ page }) => {
+  test(`screenshot assistant window on /${locale} at 390px and 1280px`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.setViewportSize({ width: 390, height: 844 });
     await mockDiagnose(page, { ...diagnosisSample, safety: 'Switch the unit off at the breaker.' });
-    await page.goto(`/${locale}`);
-    await page.evaluate(() => document.fonts.ready);
-    const section = page.locator('#diagnose');
-    await diagnoseReady(page);
-    await section
-      .getByRole('button', { name: msg(locale, 'Diagnose.form.examples.smell') })
-      .click();
-    await section.getByRole('button', { name: msg(locale, 'Diagnose.form.submit') }).click();
-    await section.getByTestId('diagnose-result').waitFor();
-    await section.screenshot({ path: `test-results/screenshots/diagnose-result-${locale}.png` });
+    for (const width of [390, 1280]) {
+      await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
+      await page.goto(`/${locale}`);
+      await page.evaluate(() => document.fonts.ready);
+      const dialog = await openAssistant(page);
+      await page.screenshot({
+        path: `test-results/screenshots/assistant-open-${locale}-${width}.png`,
+      });
+      await dialog
+        .getByRole('button', { name: msg(locale, 'Diagnose.form.examples.smell') })
+        .click();
+      await dialog.getByTestId('diagnose-result').waitFor();
+      await page.screenshot({
+        path: `test-results/screenshots/assistant-result-${locale}-${width}.png`,
+      });
+    }
   });
 }

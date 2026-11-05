@@ -33,14 +33,19 @@ export async function Logo({ brandName, tagline = false, className }: Props) {
       <Link
         href="/"
         aria-label={t('homeLabel', { brand: brandName.text })}
-        className="rounded-lg text-primary outline-none after:absolute after:inset-0 after:rounded-lg after:content-[''] focus-visible:after:ring-3 focus-visible:after:ring-ring focus-visible:after:ring-offset-2 focus-visible:after:ring-offset-background"
+        className="rounded-lg text-brand outline-none after:absolute after:inset-0 after:rounded-lg after:content-[''] focus-visible:after:ring-3 focus-visible:after:ring-ring focus-visible:after:ring-offset-2 focus-visible:after:ring-offset-background"
       >
         <BrandMark animated className="h-8 w-[2.4rem] shrink-0" />
       </Link>
-      <span aria-hidden="true" className="flex flex-col leading-none">
+      {/* pointer-events-none: the skewed wordmark paints above the link's stretched ::after, so
+          without it a click on the letters never reached the link. */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none flex flex-col leading-none select-none"
+      >
         <span
           dir="ltr"
-          className="-skew-x-6 font-wordmark text-logo font-extrabold tracking-tight text-foreground uppercase"
+          className="-skew-x-6 font-wordmark text-logo font-extrabold tracking-tight text-brand uppercase"
         >
           Brigada
         </span>
