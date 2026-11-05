@@ -5,13 +5,14 @@ import { AssistantTrigger } from '@/components/assistant/assistant-trigger';
 import { Ltr } from '@/components/ltr';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { FinalCta } from '@/components/marketing/final-cta';
+import { MediaFrame } from '@/components/marketing/media-frame';
 import { ServiceGrid } from '@/components/marketing/related-services';
 import { Section } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
 import { SpeedLines } from '@/components/marketing/speed-lines';
 import { PageTransition } from '@/components/page-transition';
 import { Button, buttonVariants } from '@/components/ui/button';
-import { getPackages, getPricingConfig, getServices } from '@/lib/content/queries';
+import { getPackages, getPhoto, getPricingConfig, getServices } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
 import { formatAED } from '@/lib/i18n/format';
@@ -30,21 +31,37 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ServicesPage() {
   const locale = await getLocale();
-  const [t, tPages, tNav, tCta, tHome, tPrice, settings, pricing, ac, upholstery, soon, annual] =
-    await Promise.all([
-      getTranslations('Services'),
-      getTranslations('Pages'),
-      getTranslations('Nav'),
-      getTranslations('Cta'),
-      getTranslations('Home'),
-      getTranslations('Price'),
-      getSiteSettings(locale),
-      getPricingConfig(),
-      getServices({ status: ['active'], category: 'ac' }),
-      getServices({ status: ['active'], category: 'upholstery' }),
-      getServices({ status: ['coming_soon'] }),
-      getPackages({ type: 'annual' }),
-    ]);
+  const [
+    t,
+    tPages,
+    tNav,
+    tCta,
+    tHome,
+    tPrice,
+    settings,
+    pricing,
+    ac,
+    upholstery,
+    soon,
+    annual,
+    acArt,
+    upholsteryArt,
+  ] = await Promise.all([
+    getTranslations('Services'),
+    getTranslations('Pages'),
+    getTranslations('Nav'),
+    getTranslations('Cta'),
+    getTranslations('Home'),
+    getTranslations('Price'),
+    getSiteSettings(locale),
+    getPricingConfig(),
+    getServices({ status: ['active'], category: 'ac' }),
+    getServices({ status: ['active'], category: 'upholstery' }),
+    getServices({ status: ['coming_soon'] }),
+    getPackages({ type: 'annual' }),
+    getPhoto({ kind: 'catalogue', category: 'ac' }, locale),
+    getPhoto({ kind: 'catalogue', category: 'upholstery' }, locale),
+  ]);
   const whatsapp = whatsappTarget(settings.contacts);
   const emergencyEnabled = settings.flags.emergencyEnabled;
   const cheapestPlan = annual.reduce<number | null>(
@@ -77,7 +94,26 @@ export default async function ServicesPage() {
       </Section>
 
       <Section id="ac" tone="surface" aria-labelledby="ac-title">
-        <SectionHeader id="ac-title" title={t('category.ac')} lead={t('summary.ac')} />
+        {/* The crew illustration beside each category header (owner's art, DECISIONS №57). */}
+        <div className="mb-stack grid gap-8 lg:grid-cols-12 lg:items-end">
+          <SectionHeader
+            id="ac-title"
+            title={t('category.ac')}
+            lead={t('summary.ac')}
+            className="mb-0 lg:col-span-8"
+          />
+          {acArt ? (
+            <div data-tilt="" className="tilt reveal lg:col-span-4">
+              <MediaFrame
+                media={acArt}
+                ratio="1/1"
+                rounded="panel"
+                sizes="(min-width: 1024px) 30vw, 100vw"
+                className="shadow-lift"
+              />
+            </div>
+          ) : null}
+        </div>
         <ServiceGrid
           services={ac}
           pricing={pricing}
@@ -118,11 +154,25 @@ export default async function ServicesPage() {
       </Section>
 
       <Section id="upholstery" tone="sand" aria-labelledby="upholstery-title">
-        <SectionHeader
-          id="upholstery-title"
-          title={t('category.upholstery')}
-          lead={t('summary.upholstery')}
-        />
+        <div className="mb-stack grid gap-8 lg:grid-cols-12 lg:items-end">
+          <SectionHeader
+            id="upholstery-title"
+            title={t('category.upholstery')}
+            lead={t('summary.upholstery')}
+            className="mb-0 lg:col-span-8"
+          />
+          {upholsteryArt ? (
+            <div data-tilt="" className="tilt reveal lg:col-span-4">
+              <MediaFrame
+                media={upholsteryArt}
+                ratio="1/1"
+                rounded="panel"
+                sizes="(min-width: 1024px) 30vw, 100vw"
+                className="shadow-lift"
+              />
+            </div>
+          ) : null}
+        </div>
         <ServiceGrid
           services={upholstery}
           pricing={pricing}

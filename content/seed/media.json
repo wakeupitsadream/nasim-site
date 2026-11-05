@@ -1,20 +1,65 @@
 {
-  "_comment": "TEMPORARY stock photos (Pexels License) standing in until the owner’s own photos arrive through the admin media library (DECISIONS №53). url = path under public/. kind: why (the home we work in, the «why every 4–6 months» block) | band | category | service | team | before_after.",
+  "_comment": "Photos and the owner’s illustrations (DECISIONS №53, №57). url = path under public/. Stock photos carry a credit (Pexels: none required; CC BY: shown in the footer); the owner’s own pictures have none. kind: hero (home) | why | band | category (wizard cards) | catalogue (services page, per category) | pricing | service | team | before_after.",
   "media": [
     {
-      "kind": "why",
-      "url": "/photos/home-hero.jpg",
-      "width": 1600,
-      "height": 1066,
+      "kind": "hero",
+      "url": "/brand/crew-hero.jpg",
+      "width": 1254,
+      "height": 1254,
       "alt": {
-        "en": "Bright living room with a grey sofa and a wall-mounted air conditioner",
-        "ru": "Светлая гостиная с серым диваном и настенным кондиционером",
-        "ar": "غرفة معيشة مشرقة مع أريكة رمادية ومكيف مثبت على الحائط"
+        "en": "Two Brigada technicians in red T-shirts: one on a ladder cleaning a ceiling AC unit with a wash bag, one extracting a sofa, Dubai skyline behind (illustration)",
+        "ru": "Два техника Brigada в красных футболках: один на стремянке чистит потолочный кондиционер с моечным чехлом, другой экстрагирует диван, за окном Дубай (иллюстрация)",
+        "ar": "فنيّان من بريجادا بقميصين أحمرين: أحدهما على سلّم ينظّف مكيفًا سقفيًا بكيس غسيل، والآخر ينظّف أريكة بالاستخلاص، وأفق دبي خلفهما (رسم توضيحي)"
       },
-      "credit": {
-        "author": "Max Vakhtbovych",
-        "source": "https://www.pexels.com/photo/6588599/",
-        "license": "Pexels License (free for commercial use, no attribution required)"
+      "sort": 10
+    },
+    {
+      "kind": "why",
+      "url": "/brand/dubai-cleaners.jpg",
+      "width": 1290,
+      "height": 684,
+      "alt": {
+        "en": "Three cleaners at work in a Dubai high-rise living room with the Burj Khalifa in the window",
+        "ru": "Трое клинеров работают в гостиной дубайской высотки, в окне — Бурдж-Халифа",
+        "ar": "ثلاثة عمال تنظيف يعملون في غرفة معيشة ببرج شاهق في دبي، وبرج خليفة يظهر من النافذة"
+      },
+      "sort": 10
+    },
+    {
+      "kind": "catalogue",
+      "category": "ac",
+      "url": "/brand/crew-ac.jpg",
+      "width": 1254,
+      "height": 1254,
+      "alt": {
+        "en": "Brigada technicians in black T-shirts: one brushes an AC filter on a drop sheet, one cleans a ceiling unit from a ladder (illustration)",
+        "ru": "Техники Brigada в чёрных футболках: один чистит фильтр кондиционера на защитной подстилке, другой — потолочный блок со стремянки (иллюстрация)",
+        "ar": "فنيّو بريجادا بقمصان سوداء: أحدهم ينظّف فلتر المكيف بالفرشاة على غطاء واقٍ، والآخر ينظّف وحدة سقفية من على سلّم (رسم توضيحي)"
+      },
+      "sort": 10
+    },
+    {
+      "kind": "catalogue",
+      "category": "upholstery",
+      "url": "/brand/crew-upholstery.jpg",
+      "width": 1254,
+      "height": 1254,
+      "alt": {
+        "en": "Brigada technicians in black T-shirts extracting a carpet and a sofa with red machines in a Dubai villa (illustration)",
+        "ru": "Техники Brigada в чёрных футболках чистят ковёр и диван экстракторами в дубайской вилле (иллюстрация)",
+        "ar": "فنيّو بريجادا بقمصان سوداء ينظّفون سجادة وأريكة بآلات استخلاص حمراء في فيلا بدبي (رسم توضيحي)"
+      },
+      "sort": 10
+    },
+    {
+      "kind": "pricing",
+      "url": "/brand/crew-sofa.jpg",
+      "width": 1200,
+      "height": 1800,
+      "alt": {
+        "en": "A Brigada technician in a red T-shirt extracting a sofa, an AC wash bag on the ladder behind him (illustration)",
+        "ru": "Техник Brigada в красной футболке чистит диван экстрактором, за ним на стремянке моечный чехол для кондиционера (иллюстрация)",
+        "ar": "فني من بريجادا بقميص أحمر ينظّف أريكة بالاستخلاص، وخلفه على السلّم كيس غسيل المكيف (رسم توضيحي)"
       },
       "sort": 10
     },
@@ -39,17 +84,17 @@
       "kind": "category",
       "category": "ac",
       "url": "/photos/category-ac.jpg",
-      "width": 1200,
-      "height": 800,
+      "width": 1023,
+      "height": 647,
       "alt": {
-        "en": "Wall-mounted split air conditioner indoor unit on a cream wall",
-        "ru": "Внутренний блок сплит-кондиционера на кремовой стене",
-        "ar": "وحدة داخلية لمكيف سبليت مثبتة على جدار كريمي"
+        "en": "Cool, air-conditioned Dubai hotel room with a view of the Burj Khalifa through the window",
+        "ru": "Прохладный кондиционированный номер дубайского отеля с видом на Бурдж-Халифу из окна",
+        "ar": "غرفة فندقية مكيّفة في دبي بإطلالة على برج خليفة من النافذة"
       },
       "credit": {
-        "author": "NEOSiAM",
-        "source": "https://www.pexels.com/photo/38788452/",
-        "license": "Pexels License (free for commercial use, no attribution required)"
+        "author": "Sofitel Dubai Downtown",
+        "source": "https://www.flickr.com/photos/123325273@N07/13867838455",
+        "license": "CC BY 2.0"
       },
       "sort": 10
     },
@@ -57,17 +102,17 @@
       "kind": "category",
       "category": "upholstery",
       "url": "/photos/category-upholstery.jpg",
-      "width": 1200,
-      "height": 800,
+      "width": 1024,
+      "height": 721,
       "alt": {
-        "en": "Professional cleaning a grey fabric sofa with an upholstery machine",
-        "ru": "Специалист чистит серый тканевый диван машиной для мебели",
-        "ar": "محترف ينظف أريكة قماشية رمادية بآلة تنظيف المفروشات"
+        "en": "Living area of a Dubai hotel suite: a green sofa and two armchairs with the Burj Khalifa in the window",
+        "ru": "Гостиная сьюта дубайского отеля: зелёный диван и два кресла, в окне — Бурдж-Халифа",
+        "ar": "منطقة المعيشة في جناح فندقي بدبي: أريكة خضراء ومقعدان وبرج خليفة يظهر من النافذة"
       },
       "credit": {
-        "author": "alonssus",
-        "source": "https://www.pexels.com/photo/4401535/",
-        "license": "Pexels License (free for commercial use, no attribution required)"
+        "author": "Sofitel Dubai Downtown",
+        "source": "https://www.flickr.com/photos/123325273@N07/13868230784",
+        "license": "CC BY 2.0"
       },
       "sort": 20
     },

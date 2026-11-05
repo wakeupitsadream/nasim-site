@@ -4,6 +4,7 @@ import { BookingSection } from '@/components/booking/booking-section';
 import { Ltr } from '@/components/ltr';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { FinalCta } from '@/components/marketing/final-cta';
+import { MediaFrame } from '@/components/marketing/media-frame';
 import { PackagesTeaser } from '@/components/marketing/packages-teaser';
 import { PriceTable, type PriceGroup } from '@/components/marketing/price-table';
 import { Section } from '@/components/marketing/section';
@@ -11,7 +12,13 @@ import { SectionHeader } from '@/components/marketing/section-header';
 import { TierLadder } from '@/components/marketing/tier-ladder';
 import { PageTransition } from '@/components/page-transition';
 import { Badge } from '@/components/ui/badge';
-import { getBlock, getPriceItems, getPricingConfig, getServices } from '@/lib/content/queries';
+import {
+  getBlock,
+  getPhoto,
+  getPriceItems,
+  getPricingConfig,
+  getServices,
+} from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
 import { formatNumber } from '@/lib/i18n/format';
@@ -37,21 +44,35 @@ const groupsFor = (services: Service[], items: PriceItem[]): PriceGroup[] =>
 
 export default async function PricingPage() {
   const locale = await getLocale();
-  const [t, tPages, tNav, tPrice, tHome, tCta, settings, pricing, items, ac, upholstery, factors] =
-    await Promise.all([
-      getTranslations('Pricing'),
-      getTranslations('Pages'),
-      getTranslations('Nav'),
-      getTranslations('Price'),
-      getTranslations('Home'),
-      getTranslations('Cta'),
-      getSiteSettings(locale),
-      getPricingConfig(),
-      getPriceItems(),
-      getServices({ status: ['active'], category: 'ac' }),
-      getServices({ status: ['active'], category: 'upholstery' }),
-      getBlock('pricing.factors'),
-    ]);
+  const [
+    t,
+    tPages,
+    tNav,
+    tPrice,
+    tHome,
+    tCta,
+    settings,
+    pricing,
+    items,
+    ac,
+    upholstery,
+    factors,
+    art,
+  ] = await Promise.all([
+    getTranslations('Pricing'),
+    getTranslations('Pages'),
+    getTranslations('Nav'),
+    getTranslations('Price'),
+    getTranslations('Home'),
+    getTranslations('Cta'),
+    getSiteSettings(locale),
+    getPricingConfig(),
+    getPriceItems(),
+    getServices({ status: ['active'], category: 'ac' }),
+    getServices({ status: ['active'], category: 'upholstery' }),
+    getBlock('pricing.factors'),
+    getPhoto({ kind: 'pricing' }, locale),
+  ]);
   const whatsapp = whatsappTarget(settings.contacts);
   const tiered = pricing.lines.filter((l) => l.tiers.length > 1);
   const factorList = pickLocalizedValue(factors, locale);
@@ -71,23 +92,43 @@ export default async function PricingPage() {
     <PageTransition>
       <Section tone="sand" aria-labelledby="pricing-title" className="pt-6 lg:pt-10" size="compact">
         <Breadcrumbs items={[{ label: tNav('pricing') }]} className="mb-8" />
-        <SectionHeader
-          id="pricing-title"
-          as="h1"
-          eyebrow={tNav('pricing')}
-          title={tPages('pricing.title')}
-          lead={t('lead')}
-          className="mb-8"
-        />
-        <ul className="flex flex-wrap gap-2">
-          {jumps.map((jump, i) => (
-            <li key={jump.href} className="enter" style={stagger(i + 2)}>
-              <Badge variant="chip" asChild>
-                <a href={jump.href}>{jump.label}</a>
-              </Badge>
-            </li>
-          ))}
-        </ul>
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-8">
+            <SectionHeader
+              id="pricing-title"
+              as="h1"
+              eyebrow={tNav('pricing')}
+              title={tPages('pricing.title')}
+              lead={t('lead')}
+              className="mb-8"
+            />
+            <ul className="flex flex-wrap gap-2">
+              {jumps.map((jump, i) => (
+                <li key={jump.href} className="enter" style={stagger(i + 2)}>
+                  <Badge variant="chip" asChild>
+                    <a href={jump.href}>{jump.label}</a>
+                  </Badge>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* The owner's illustration on wide screens only: phones go straight to the prices. */}
+          {art ? (
+            <div
+              data-tilt=""
+              className="tilt enter hidden lg:col-span-4 lg:block"
+              style={stagger(3)}
+            >
+              <MediaFrame
+                media={art}
+                ratio="4/5"
+                rounded="panel"
+                sizes="(min-width: 1024px) 30vw, 100vw"
+                className="shadow-lift"
+              />
+            </div>
+          ) : null}
+        </div>
       </Section>
 
       <Section id="ac" tone="surface" aria-labelledby="ac-title">

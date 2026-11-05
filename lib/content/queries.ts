@@ -123,6 +123,19 @@ export async function getMedia(filter: MediaFilter): Promise<MediaItem[]> {
   );
 }
 
+/** An attribution the licence obliges us to show (Creative Commons BY): one line per author. */
+export type PhotoCredit = { author: string; source: string; license: string };
+
+/** Distinct CC-licensed authors across the media library, for the footer line (DECISIONS №57). */
+export async function getPhotoCredits(): Promise<PhotoCredit[]> {
+  const byAuthor = new Map<string, PhotoCredit>();
+  for (const { credit } of seedMedia()) {
+    if (!credit || !credit.license.startsWith('CC ')) continue;
+    if (!byAuthor.has(credit.author)) byAuthor.set(credit.author, { ...credit });
+  }
+  return [...byAuthor.values()];
+}
+
 /** A photo as components render it: the locale's alt already picked. */
 export type Photo = { url: string; alt: string; width: number; height: number };
 

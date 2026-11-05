@@ -8,6 +8,7 @@ import {
   getMedia,
   getPackages,
   getPhoto,
+  getPhotoCredits,
   getPriceItems,
   getRelatedServices,
   getServiceBySlug,
@@ -66,7 +67,9 @@ describe('seed files', () => {
     const withPhoto = new Set<string>();
     for (const m of seedMedia()) {
       expect(existsSync(`public${m.url}`), m.url).toBe(true);
-      expect(m.credit.source.startsWith('https://'), m.url).toBe(true);
+      // Stock photos carry a credit; the owner's own pictures (public/brand) carry none.
+      if (m.credit) expect(m.credit.source.startsWith('https://'), m.url).toBe(true);
+      else expect(m.url.startsWith('/brand/'), m.url).toBe(true);
       if (m.kind === 'service') {
         expect(m.service_slug && slugs.has(m.service_slug), m.url).toBe(true);
         withPhoto.add(m.service_slug!);
@@ -141,6 +144,15 @@ describe('content getters', () => {
     expect(ru?.url).toMatch(/^\/photos\/.+\.jpg$/);
     expect(ru?.alt).toMatch(/Дубай/);
     expect(await getPhoto({ kind: 'team' }, 'en')).toBeNull();
+  });
+
+  it('list each Creative Commons author once for the footer attribution line', async () => {
+    const credits = await getPhotoCredits();
+    expect(credits.map((c) => c.author)).toEqual(['Sofitel Dubai Downtown']);
+    expect(credits[0]).toMatchObject({ license: 'CC BY 2.0' });
+    expect(credits[0].source.startsWith('https://')).toBe(true);
+    // Pexels pictures need no attribution, so they never reach the footer.
+    expect(seedMedia().filter((m) => m.credit?.license.startsWith('CC ')).length).toBe(2);
   });
 
   it('return typed blocks', async () => {
