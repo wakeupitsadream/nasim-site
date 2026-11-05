@@ -60,7 +60,9 @@ app/[locale]/      публичные страницы; app/[locale]/layout.tsx 
 app/not-found.tsx  глобальный 404 для адресов вне локалей
 proxy.ts           next-intl: локаль в URL, редирект с /
 lib/i18n/          routing, navigation, request (next/root-params), text (pick), format (formatAED)
-lib/content/site.ts  настройки сайта (временно из сида)   lib/{env,cta,nav,whatsapp}.ts   lib/validation/  zod
+lib/content/       настройки и контент из сида (временно; имена геттеров = будущие lib/db/queries)
+lib/pricing.ts     движок цен          lib/booking/   логика мастера заявки     lib/{env,cta,nav,whatsapp,sanitize}.ts   lib/validation/  zod
+components/booking мастер заявки
 components/marketing  шапка, футер, меню, панель связи    components/ui  shadcn с правками   components/icons
 app/[locale]/dev/ui  галерея компонентов (превью и локально)
 lib/db/            schema, client (pg Pool)          drizzle/  миграции
