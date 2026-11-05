@@ -1,12 +1,12 @@
 # nasim-site — CLAUDE.md
 
-Сайт сервисной компании в Дубае (чистка/ремонт кондиционеров + химчистка мебели) на EN / AR / RU с собственной админкой. Бриф — `docs/BRIEF.md`, фазы — `docs/PHASES.md`, журнал решений — `docs/DECISIONS.md`. Перед любой задачей прочитай все три. Инфраструктура и аккаунты — `docs/INFRASTRUCTURE.md`.
+Сайт сервисной компании **Brigada** в Дубае (чистка/ремонт кондиционеров + химчистка мебели) на EN / AR / RU с собственной админкой. Бриф — `docs/BRIEF.md`, фазы — `docs/PHASES.md`, журнал решений — `docs/DECISIONS.md`. Перед любой задачей прочитай все три. Инфраструктура и аккаунты — `docs/INFRASTRUCTURE.md`. Имя репо и неймспейс токенов `--nasim-*` — от прежнего рабочего имени, менять не нужно (DECISIONS №52).
 
 Специфика установленной версии Next.js — @AGENTS.md (читать docs из `node_modules/next/dist/docs`, они совпадают с версией в lockfile).
 
 ## Стек
 
-Next.js 16.4 (App Router, TypeScript strict, React 19.3, Cache Components, Turbopack) · Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, стиль radix-nova, `rtl: true`) · next-intl v4.14 (`next/root-params`) · Drizzle ORM 0.45 (стабильная ветка, не 1.0-rc) + Neon Postgres (`pg` Pool) · Auth.js v5 (Credentials; см. предложение Better Auth в DECISIONS) · Vercel (Blob, Web Analytics, регион функций `fra1`) · Resend · Telegram Bot API (fetch) · Cloudflare Turnstile · Tiptap · zod · Vitest · Playwright · `@anthropic-ai/sdk` (только на сервере).
+Next.js 16.4 (App Router, TypeScript strict, React 19.3, Cache Components, Turbopack) · Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, стиль radix-nova, `rtl: true`) · next-intl v4.14 (`next/root-params`) · Drizzle ORM 0.45 (стабильная ветка, не 1.0-rc) + Neon Postgres (`pg` Pool) · Auth.js v5 (Credentials; см. предложение Better Auth в DECISIONS) · Vercel (Blob, Web Analytics, регион функций `fra1`) · Resend · Telegram Bot API (fetch) · Cloudflare Turnstile · Tiptap · zod · Vitest · Playwright · Polza AI (OpenAI-совместимый шлюз к Claude через `fetch`, только с сервера) · шрифты через `next/font`: IBM Plex Sans (тело), IBM Plex Sans Arabic (`/ar`), Unbounded (h1/h2 и словесный знак, DECISIONS №52).
 
 ## Команды
 
@@ -36,13 +36,14 @@ pnpm seed           # идемпотентный сид из content/seed/*.json
 8. **Админка закрыта**: `proxy.ts` (Next 16, всегда Node runtime; `middleware.ts` не используем) делает только оптимистичную проверку cookie сессии на `/admin/*` и `/api/admin/*`; настоящая проверка сессии и ролей `owner`/`staff` — в каждом server action и route handler (`requireRole`), не только в UI. Админка — на том же домене (`/admin`), не на поддомене: revalidate действует только на свой домен.
 9. **HTML из редактора** всегда проходит `lib/sanitize.ts` при рендере.
 10. **Клиентские компоненты** (`'use client'`) — только где есть интерактив: калькулятор, форма, слайдер до/после, аккордеон, переключатель языка, админка. Маркетинговые страницы — серверные.
-11. **AI (Anthropic SDK)** вызывается только из `lib/ai.ts` на сервере, модель из `process.env.AI_MODEL ?? 'claude-opus-5-5'`, structured outputs через `output_config.format`, результат никогда не записывается в БД без подтверждения пользователя в UI. Промпты — чистые функции в `lib/ai/*` (без SDK), цены модель не называет — их подставляет сервер из `lib/pricing`; текст и фото клиента в промпте — данные, не инструкции (DECISIONS №45–47).
+11. **AI** вызывается только из `lib/ai.ts` на сервере через OpenAI-совместимый шлюз (`lib/ai/gateway.ts`, `fetch` без SDK; по умолчанию Polza AI: `AI_BASE_URL` + `POLZA_API_KEY`), модель из `process.env.AI_MODEL ?? 'anthropic/claude-opus-5.5'`, structured outputs через `response_format: json_schema` (схема из zod, `z.toJSONSchema`) **и** обязательная повторная валидация zod на нашей стороне, результат никогда не записывается в БД без подтверждения пользователя в UI. Промпты — чистые функции в `lib/ai/*` (без сети), цены модель не называет — их подставляет сервер из `lib/pricing`; текст и фото клиента в промпте — данные, не инструкции (DECISIONS №45–47, №51).
 12. **Новая зависимость** — только с записью в `docs/DECISIONS.md` (зачем, альтернативы).
 13. **Тёмной темы нет** в v1. Не добавлять `dark:`-классы; из компонентов shadcn они вычищаются при добавлении (`@custom-variant dark` в `globals.css` — только страховка, чтобы они не срабатывали).
 14. **Контент-сид** (`content/seed/*.json`) — источник правды для первого наполнения; `pnpm seed` не перезаписывает записи, изменённые в админке (`updated_at` > `seeded_at`).
 15. **Drizzle 0.45**: документация Drizzle уже написана под 1.0-rc — сниппеты оттуда не копировать без проверки на 0.45 (RQB v1, структура миграций). Клиент — `getDb()` из `lib/db/client.ts`, не создавать пулы в других местах.
 16. **WhatsApp в ОАЭ** — только переписка: звонки через WhatsApp/Telegram в ОАЭ заблокированы. В UI «Написать в WhatsApp», никогда «Позвонить в WhatsApp»; звонок — только обычный `tel:`.
-17. **Движение** — только через `styles/motion.css` (DECISIONS №48–49): CSS-first, каждое правило под `prefers-reduced-motion: no-preference`, scroll-driven — под `@supports`; классы `reveal`/`reveal-fade`/`enter` со stagger через `stagger(i)` из `lib/motion.ts`; интерактивные блоки (формы, чипы, списки ссылок) — только `reveal-fade`; предки с обрезкой — `overflow-clip`, не `overflow-hidden`; страницы оборачиваются в `PageTransition`, переходы внутри островков — `<ViewTransition key>` + `startTransition`; только compositor-свойства; JS-библиотеки анимации не добавлять. Проверяется `tests/unit/motion.test.ts` и `tests/e2e/motion.spec.ts`.
+17. **Движение** — только через `styles/motion.css` (DECISIONS №48–49, №52): CSS-first, каждое правило под `prefers-reduced-motion: no-preference`, scroll-driven — под `@supports`; классы `reveal`/`reveal-fade`/`enter` со stagger через `stagger(i)` из `lib/motion.ts`; интерактивные блоки (формы, чипы, списки ссылок) — только `reveal-fade`; предки с обрезкой — `overflow-clip`, не `overflow-hidden`; страницы оборачиваются в `PageTransition`, переходы внутри островков — `<ViewTransition key>` + `startTransition`; только compositor-свойства; JS-библиотеки анимации не добавлять. Красная шторка переходов едет только у навигаций по `Link` из `lib/i18n/navigation` (типы `nav-page` по умолчанию, `nav-forward`/`nav-back`), поэтому внутренние ссылки — всегда этот `Link`, не `next/link`; наклон панелей — атрибут `data-tilt` + класс `tilt` (слушатель один, `components/motion/tilt-layer.tsx`); декор бренда (`BrandMark`, `Van`, `SpeedLines`, лента `TickerBand`) — `aria-hidden`, под reduced-motion статичен. Проверяется `tests/unit/motion.test.ts` и `tests/e2e/motion.spec.ts`.
+18. **Бренд** (DECISIONS №52): красный — только акцент (primary-кнопки, знак, штрихи скорости, одна красная лента `.tone-brand`), тёмные полосы — графит `.tone-deep`; рядом с красной primary кнопка WhatsApp — `outline` с зелёной иконкой, зелёная — только отдельно (шапка, липкая панель, тёмная полоса). Словесный знак «BRIGADA» в `logo.tsx` — рисунок (латиница, LTR, `aria-hidden`), единственная строка в коде вне правила 1; имя для текста и `aria-label` — `brand_name` из настроек. Иллюстрации в `public/brand/` — временные, в подписях «иллюстрация»; настоящие фото придут через админку.
 
 ## Карта репо
 
@@ -60,8 +61,9 @@ lib/content/{site,seed,queries}.ts  настройки и контент из с
 lib/pricing.ts            движок цен (чистые функции)   lib/booking/{time,state}.ts  логика мастера заявки
 components/booking        мастер заявки (клиентский островок + серверная обёртка)
 components/diagnose       AI-диагностика: серверная секция, клиентская форма (фото сжимается в браузере), карточка результата
-styles/motion.css  lib/motion.ts  components/page-transition.tsx  движение и переходы страниц (правило 17)
-lib/ai/diagnose-prompt.ts промпт триажа (чистые функции)   lib/diagnose/client.ts  запрос с клиента (zod + маппинг статусов)
+styles/motion.css  lib/motion.ts  components/page-transition.tsx  движение и переходы страниц (правило 17)   components/motion/tilt-layer.tsx  наклон панелей за курсором
+components/marketing/{brand-mark,logo,eyebrow,speed-lines,ticker-band,van,hero-scene,crew-portrait}.tsx  фирменные элементы Brigada (правило 18)   public/brand/  иллюстрации Миши (временные)   app/icon.svg  favicon = знак
+lib/ai/gateway.ts         OpenAI-совместимый шлюз (fetch, Polza)   lib/ai/diagnose-prompt.ts промпт триажа (чистые функции)   lib/diagnose/client.ts  запрос с клиента (zod + маппинг статусов)
 app/[locale]/dev/ui       галерея компонентов (локально и на превью; на продакшене 404)
 messages/{en,ar,ru}.json  UI-строки
 content/seed/*.json       стартовый контент
@@ -79,7 +81,7 @@ tests/unit  tests/e2e     docs/{BRIEF,PHASES,DECISIONS,RUNBOOK}.md
 
 ## Переменные окружения
 
-`DATABASE_URL` (pooled, runtime), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `ANTHROPIC_API_KEY`, `AI_MODEL`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Контакты, WhatsApp, Telegram chat id, лицензия — в таблице `settings`, не в env. Ключ Anthropic — с аккаунта Миши (Россия не поддерживается API), вызовы только с сервера. Кто владеет каким аккаунтом — `docs/INFRASTRUCTURE.md`.
+`DATABASE_URL` (pooled, runtime), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `POLZA_API_KEY` (или `AI_API_KEY` для другого шлюза), `AI_MODEL`, `AI_BASE_URL`, `AI_EFFORT`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Контакты, WhatsApp, Telegram chat id, лицензия — в таблице `settings`, не в env. Ключ Polza — аккаунт Максима, оплата в рублях; вызовы только с сервера. Кто владеет каким аккаунтом — `docs/INFRASTRUCTURE.md`.
 
 ## Коммиты
 

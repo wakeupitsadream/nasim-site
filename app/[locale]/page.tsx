@@ -14,6 +14,7 @@ import { PackagesTeaser } from '@/components/marketing/packages-teaser';
 import { Section } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
 import { ServiceMenu } from '@/components/marketing/service-menu';
+import { TickerBand } from '@/components/marketing/ticker-band';
 import { WhyCadence } from '@/components/marketing/why-cadence';
 import { PageTransition } from '@/components/page-transition';
 import { getAreas, getFaqs } from '@/lib/content/queries';
@@ -47,6 +48,7 @@ export default async function HomePage() {
   return (
     <PageTransition>
       <HomeHero locale={locale} />
+      <TickerBand locale={locale} />
 
       <DiagnoseSection tone="surface" calculatorHref="#book" />
 

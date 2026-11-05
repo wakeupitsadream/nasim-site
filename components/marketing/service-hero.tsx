@@ -103,10 +103,10 @@ export async function ServiceHero({
             <CtaLink
               target={whatsapp}
               newTabHint={tCommon('opensInNewTab')}
-              variant="whatsapp"
+              variant="outline"
               size="lg"
             >
-              <WhatsAppIcon />
+              <WhatsAppIcon className="text-whatsapp" />
               {tCta('whatsapp')}
             </CtaLink>
           </div>

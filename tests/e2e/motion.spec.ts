@@ -98,6 +98,77 @@ test.describe('motion (styles/motion.css)', () => {
     await expect(fills.nth(2)).toHaveCSS('scale', '0 1');
   });
 
+  test('Brigada: the ticker runs and pauses, panels tilt, the van rolls in, the curtain waits', async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await page.setViewportSize(DESKTOP);
+    await page.goto('/en');
+
+    // The red band is a marquee that pauses under the pointer. (mouse.move, not hover(): the
+    // track never settles, so Playwright's stability wait would time out.)
+    const ticker = page.locator('.ticker');
+    expect(await animationNames(ticker)).toContain('nasim-ticker');
+    const band = (await page.locator('.ticker-band').boundingBox())!;
+    await page.mouse.move(band.x + band.width / 2, band.y + band.height / 2);
+    await expect
+      .poll(() => ticker.evaluate((el) => el.getAnimations()[0]?.playState))
+      .toBe('paused');
+
+    // The page curtain is parked off-screen, named for view transitions.
+    const curtain = page.locator('.page-curtain');
+    expect(
+      await curtain.evaluate(
+        (el) => (getComputedStyle(el) as CSSStyleDeclaration).viewTransitionName,
+      ),
+    ).toBe('page-curtain');
+    expect(await curtain.evaluate((el) => getComputedStyle(el).translate)).toMatch(
+      /^-(100%|1280px)/,
+    );
+
+    // The hero panel tilts after a fine pointer and settles when it leaves.
+    const panel = page.locator('[data-tilt]').first();
+    const box = (await panel.boundingBox())!;
+    await page.mouse.move(box.x + box.width * 0.9, box.y + box.height * 0.25);
+    await expect
+      .poll(() => panel.evaluate((el) => el.style.getPropertyValue('--tx')))
+      .toMatch(/deg$/);
+    await page.mouse.move(4, 4);
+    await expect.poll(() => panel.evaluate((el) => el.style.getPropertyValue('--tx'))).toBe('');
+
+    // The van drives into the closing band on a view timeline; the wheels share it.
+    const van = page.locator('.van-drive');
+    await van.scrollIntoViewIfNeeded();
+    expect(await animationNames(van)).toContain('nasim-drive-in');
+    expect(await animationNames(van.locator('.van__wheel').first())).toContain('nasim-wheel');
+  });
+
+  test('link navigations carry a view-transition type, so only they pull the curtain', async ({
+    page,
+  }) => {
+    await page.setViewportSize(DESKTOP);
+    await page.goto('/en/services');
+    await page.evaluate(() => {
+      const w = window as Window & { __vt?: unknown[] };
+      w.__vt = [];
+      const original = document.startViewTransition.bind(document);
+      document.startViewTransition = ((options: { types?: string[] }) => {
+        w.__vt!.push(options?.types ?? null);
+        return original(options as never);
+      }) as typeof document.startViewTransition;
+    });
+    await page.getByRole('link', { name: 'AC Cleaning' }).first().click();
+    await expect(page).toHaveURL(/\/en\/services\/ac-cleaning$/);
+    await page
+      .getByRole('banner')
+      .getByRole('link', { name: msg('en', 'Nav.pricing') })
+      .click();
+    await expect(page).toHaveURL(/\/en\/pricing$/);
+    const types = await page.evaluate(() => (window as Window & { __vt?: unknown[] }).__vt);
+    expect(types?.[0]).toContain('nav-forward');
+    expect(types?.at(-1)).toContain('nav-page');
+  });
+
   test('/ar: the same motion mirrors its origin', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.setViewportSize(MOBILE);
@@ -109,5 +180,15 @@ test.describe('motion (styles/motion.css)', () => {
       return parseFloat(transformOrigin) / (el as HTMLElement).offsetWidth;
     });
     expect(origin).toBeCloseTo(1, 1); // 100% in RTL, 0% in LTR
+    // The curtain waits on the other side and the van starts from there too.
+    await page.goto('/ar');
+    expect(
+      await page.locator('.page-curtain').evaluate((el) => getComputedStyle(el).translate),
+    ).toMatch(/^(100%|390px)/);
+    expect(
+      await page
+        .locator('.van-drive')
+        .evaluate((el) => getComputedStyle(el).getPropertyValue('--nasim-drive-from').trim()),
+    ).toBe('70vw');
   });
 });

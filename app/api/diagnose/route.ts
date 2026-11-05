@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server';
-import { AiErrors, AiNotConfiguredError, AiParseError, AiRefusedError, diagnose } from '@/lib/ai';
+import {
+  AiNetworkError,
+  AiNotConfiguredError,
+  AiParseError,
+  AiRefusedError,
+  AiUpstreamError,
+  diagnose,
+} from '@/lib/ai';
 import type { CatalogueEntry } from '@/lib/ai/diagnose-prompt';
 import { getPricingConfig, getServices } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
@@ -17,6 +24,8 @@ import {
 
 const PER_VISITOR = { limit: 6, windowMs: 60_000 };
 const PER_INSTANCE = { limit: 60, windowMs: 60_000 };
+// Gateway answers that are ours to fix (key, Polza balance, rate), not the visitor's to retry.
+const UNAVAILABLE_UPSTREAM = new Set([401, 402, 403, 429]);
 
 const fail = (error: DiagnoseError, status: number) =>
   NextResponse.json({ error }, { status, headers: { 'Cache-Control': 'no-store' } });
@@ -67,12 +76,13 @@ export async function POST(request: Request) {
   } catch (error) {
     if (error instanceof AiNotConfiguredError) return fail('unavailable', 503);
     if (error instanceof AiRefusedError) return fail('refused', 422);
-    if (error instanceof AiErrors.RateLimit) return fail('unavailable', 503);
-    if (
-      error instanceof AiParseError ||
-      error instanceof AiErrors.Api ||
-      error instanceof AiErrors.Connection
-    ) {
+    if (error instanceof AiUpstreamError) {
+      console.error(`[diagnose] upstream ${error.status}${error.code ? ` ${error.code}` : ''}`);
+      return UNAVAILABLE_UPSTREAM.has(error.status)
+        ? fail('unavailable', 503)
+        : fail('failed', 502);
+    }
+    if (error instanceof AiParseError || error instanceof AiNetworkError) {
       console.error(`[diagnose] ${error.name}`);
       return fail('failed', 502);
     }

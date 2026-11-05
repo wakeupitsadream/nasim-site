@@ -40,14 +40,14 @@ export function BookingWizard({ payload }: { payload: BookingPayload }) {
   const headingId = useId();
   const errorId = useId();
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const mounted = useRef(false);
+  const shownStep = useRef(initial.step);
 
-  // Move focus to the step heading on every step change (not on mount).
+  // Move focus to the step heading on every step change (not on mount). Compared against the
+  // step last shown, not a "mounted" flag: Strict Mode re-runs effects, and a flag would scroll
+  // the page to the wizard on load in development.
   useEffect(() => {
-    if (!mounted.current) {
-      mounted.current = true;
-      return;
-    }
+    if (shownStep.current === state.step) return;
+    shownStep.current = state.step;
     const heading = headingRef.current;
     if (!heading) return;
     heading.focus({ preventScroll: true });

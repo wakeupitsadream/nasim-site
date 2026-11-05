@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic, Unbounded } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import { Footer } from '@/components/marketing/footer';
 import { Header } from '@/components/marketing/header';
 import { StickyBar } from '@/components/marketing/sticky-bar';
+import { TiltLayer } from '@/components/motion/tilt-layer';
 import { DirectionProvider } from '@/components/ui/direction';
 import { getSiteSettings } from '@/lib/content/site';
 import { hasCanonicalDomain } from '@/lib/env';
@@ -27,11 +28,17 @@ const plexArabic = IBM_Plex_Sans_Arabic({
   display: 'swap',
   preload: false,
 });
+// Display face of the Brigada wordmark and h1/h2 (variable 200–900, Latin + Cyrillic; /ar keeps Plex).
+const unbounded = Unbounded({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-unbounded',
+  display: 'swap',
+});
 
 /** Namespaces read by client components (LangSwitcher, Sonner). Everything else stays on the server. */
 const CLIENT_NAMESPACES = ['LangSwitcher', 'Common'] as const;
 
-export const viewport: Viewport = { viewportFit: 'cover', themeColor: '#0e3b47' };
+export const viewport: Viewport = { viewportFit: 'cover', themeColor: '#d4262a' };
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -66,7 +73,7 @@ export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'
       lang={locale}
       dir={dir}
       data-scroll-behavior="smooth"
-      className={`${plexSans.variable} ${plexArabic.variable}`}
+      className={`${plexSans.variable} ${plexArabic.variable} ${unbounded.variable}`}
     >
       <body className="flex min-h-dvh flex-col pb-[calc(var(--nasim-sticky-bar-h)+env(safe-area-inset-bottom))] md:pb-0">
         <DirectionProvider dir={dir}>
@@ -83,6 +90,14 @@ export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'
             </main>
             <Footer />
             <StickyBar />
+            {/* The red curtain of page transitions: parked off-screen, its view-transition group
+                sweeps across on link navigations (styles/motion.css, DECISIONS №52). */}
+            <div
+              aria-hidden="true"
+              className="page-curtain"
+              style={{ viewTransitionName: 'page-curtain' }}
+            />
+            <TiltLayer />
           </NextIntlClientProvider>
         </DirectionProvider>
       </body>

@@ -40,7 +40,7 @@ test.describe('booking request wizard', () => {
     await expect(book.getByRole('radio', { name: /Afternoon/ })).toBeChecked();
 
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toSend') }).click();
-    const message = book.getByText(/^Hi Nasim Home Care!/);
+    const message = book.getByText(/^Hi Brigada!/);
     await expect(message).toContainText('AC Cleaning × 3');
     await expect(message).toContainText('AED 507');
     await expect(message).toContainText('Fri, 6 Nov');
@@ -76,7 +76,7 @@ test.describe('booking request wizard', () => {
     await expect(option(book, msg('ar', 'Booking.time.tomorrow'))).toBeVisible();
     await option(book, msg('ar', 'Booking.time.windows.morning')).click();
     await book.getByRole('button', { name: msg('ar', 'Booking.nav.toSend') }).click();
-    await expect(book.getByText(/نسيم/).first()).toBeVisible();
+    await expect(book.getByText(/بريجادا/).first()).toBeVisible();
     expect(await page.content()).not.toContain('wa.me');
   });
 

@@ -5,7 +5,7 @@ import { LocalizedText } from '@/components/localized-text';
 import { AirflowLines } from '@/components/marketing/airflow-lines';
 import { CtaLink } from '@/components/marketing/cta-link';
 import { Eyebrow } from '@/components/marketing/eyebrow';
-import { ReportMockup } from '@/components/marketing/report-mockup';
+import { HeroScene } from '@/components/marketing/hero-scene';
 import { Section } from '@/components/marketing/section';
 import { TrustStrip } from '@/components/marketing/trust-strip';
 import { Button } from '@/components/ui/button';
@@ -37,7 +37,6 @@ export async function HomeHero({ locale }: { locale: Locale }) {
     brand: settings.brandName.text,
     data: pickLocalizedValue(report, locale),
     locale,
-    caption: t('hero.reportCaption'),
   };
 
   return (
@@ -78,13 +77,15 @@ export async function HomeHero({ locale }: { locale: Locale }) {
                 <LocalizedText value={pickLocalized(ctaSecondary, locale)} locale={locale} />
               </a>
             </Button>
+            {/* Outline next to the red button: red and WhatsApp green side by side read as a
+                traffic light. The green icon keeps the channel recognisable. */}
             <CtaLink
               target={whatsapp}
               newTabHint={tCommon('opensInNewTab')}
-              variant="whatsapp"
+              variant="outline"
               size="lg"
             >
-              <WhatsAppIcon />
+              <WhatsAppIcon className="text-whatsapp" />
               <LocalizedText value={pickLocalized(ctaPrimary, locale)} locale={locale} />
             </CtaLink>
           </div>
@@ -111,16 +112,13 @@ export async function HomeHero({ locale }: { locale: Locale }) {
             className="enter mt-2"
             style={stagger(5)}
           />
-          <ReportMockup
-            {...mockup}
-            compact
-            className="enter mt-4 max-w-sm lg:hidden"
-            style={stagger(6)}
-          />
         </div>
-        <div className="enter hidden lg:col-span-5 lg:block lg:ps-4" style={stagger(3)}>
-          <ReportMockup {...mockup} className="float" />
-        </div>
+        <HeroScene
+          alt={t('hero.sceneAlt')}
+          caption={t('hero.reportCaption')}
+          mockup={mockup}
+          className="lg:col-span-5 lg:ps-4"
+        />
       </div>
     </Section>
   );

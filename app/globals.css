@@ -83,6 +83,9 @@
   --chart-4: var(--nasim-success);
   --chart-5: var(--nasim-ink-muted);
   --radius: var(--nasim-radius);
+  /* Знак Brigada (components/marketing/brand-mark.tsx): «прорезь» под штрихом рисуется цветом
+     поверхности, на которой стоит знак; на других поверхностях переопределяется на месте. */
+  --brand-mark-surface: var(--background);
   --sidebar: var(--nasim-surface);
   --sidebar-foreground: var(--nasim-ink);
   --sidebar-primary: var(--nasim-teal-deep);
@@ -103,12 +106,27 @@
     --ring: var(--nasim-on-deep);
     --accent: rgb(255 255 255 / 0.1);
     --accent-foreground: var(--nasim-on-deep);
+    --brand-mark-surface: var(--nasim-teal-deep);
     background-color: var(--nasim-teal-deep);
     background-image: linear-gradient(
       160deg,
       var(--nasim-teal-deep) 0%,
       var(--nasim-teal-ink) 100%
     );
+    color: var(--foreground);
+  }
+  /* The one red band (the promise ticker): white text, the ring stays white. */
+  .tone-brand {
+    --foreground: #ffffff;
+    --muted-foreground: rgb(255 255 255 / 0.78);
+    --border: rgb(255 255 255 / 0.22);
+    --ring: #ffffff;
+    --accent: rgb(255 255 255 / 0.12);
+    --accent-foreground: #ffffff;
+    --brand-mark-surface: var(--nasim-red);
+    --brand-mark-streak: #ffffff;
+    background-color: var(--nasim-red);
+    background-image: linear-gradient(160deg, var(--nasim-red) 0%, var(--nasim-red-hover) 100%);
     color: var(--foreground);
   }
   /* Image slot without a photo (BRIEF §15.6): a quiet cool panel, never a grey box with text. */
@@ -143,12 +161,15 @@
     @apply bg-background text-body text-foreground;
     line-height: var(--nasim-leading-body);
   }
+  /* h1/h2 in the display face (Unbounded; Plex Arabic on /ar); h3 and body stay in Plex. */
   h1 {
+    font-family: var(--font-display);
     font-weight: var(--nasim-weight-h1);
     line-height: var(--nasim-leading-h1);
     letter-spacing: var(--nasim-tracking-h1);
   }
   h2 {
+    font-family: var(--font-display);
     font-weight: var(--nasim-weight-h2);
     line-height: var(--nasim-leading-h2);
     letter-spacing: var(--nasim-tracking-h2);

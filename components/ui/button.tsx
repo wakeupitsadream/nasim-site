@@ -5,7 +5,10 @@ import { Slot } from "radix-ui"
 
 // Brand variants (BRIEF §15). Channel buttons use ink text: white on #25D366 / #2AABEE fails contrast.
 // Marketing sizes are ≥ 44px tall (--nasim-tap-min); `sm`/`xs` are for dense admin UI only.
-const primary = "bg-primary text-primary-foreground hover:bg-primary-hover"
+// `primary` is the Brigada red call to action (white on #d4262a: 4.9:1); `ink` is the graphite one.
+const primary =
+  "btn-sweep bg-brand text-brand-foreground hover:bg-brand-hover focus-visible:ring-brand-ink"
+const ink = "bg-primary text-primary-foreground hover:bg-primary-hover"
 
 const buttonVariants = cva(
   "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-body font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5",
@@ -15,6 +18,7 @@ const buttonVariants = cva(
         // `default` stays as an alias so registry components that pass variant="default" keep working
         default: primary,
         primary,
+        ink,
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-secondary",
         outline:

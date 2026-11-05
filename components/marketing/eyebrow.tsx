@@ -1,22 +1,19 @@
 import type { ComponentProps } from 'react';
 import { cn } from '@/lib/utils';
 
-/** The signature detail: three short breeze arcs before every overline. */
-export function BreezeGlyph({ className, ...props }: ComponentProps<'svg'>) {
+/** The signature detail: two short red speed dashes before every overline. */
+export function SpeedGlyph({ className, ...props }: ComponentProps<'svg'>) {
   return (
     <svg
-      viewBox="0 0 16 10"
-      fill="none"
+      viewBox="0 0 20 10"
+      fill="currentColor"
       aria-hidden="true"
       focusable="false"
-      className={cn('size-3.5 shrink-0 rtl:-scale-x-100', className)}
+      className={cn('h-2.5 w-5 shrink-0 rtl:-scale-x-100', className)}
       {...props}
     >
-      <g stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
-        <path d="M1 2.2c2-1.6 4-1.6 6 0s4 1.6 6 0" />
-        <path d="M1 5.4c2-1.6 4-1.6 6 0s4 1.6 6 0" />
-        <path d="M3 8.6c1.4-1.1 2.8-1.1 4.2 0s2.8 1.1 4.2 0" />
-      </g>
+      <path d="M2 7.5 4.6 2.5h5.2L7.2 7.5Z" />
+      <path d="M9.4 7.5l2.6-5h5.2l-2.6 5Z" opacity="0.55" />
     </svg>
   );
 }
@@ -27,12 +24,12 @@ export function Eyebrow({ className, children, ...props }: ComponentProps<'p'>) 
   return (
     <p
       className={cn(
-        'flex items-center gap-2 text-eyebrow text-highlight-ink in-[.tone-deep]:text-on-deep-accent',
+        'flex items-center gap-2 text-eyebrow text-highlight-ink in-[.tone-brand]:text-on-deep in-[.tone-deep]:text-on-deep-accent',
         className,
       )}
       {...props}
     >
-      <BreezeGlyph />
+      <SpeedGlyph />
       <span>{children}</span>
     </p>
   );

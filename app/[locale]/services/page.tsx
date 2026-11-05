@@ -8,6 +8,7 @@ import { FinalCta } from '@/components/marketing/final-cta';
 import { ServiceGrid } from '@/components/marketing/related-services';
 import { Section } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
+import { SpeedLines } from '@/components/marketing/speed-lines';
 import { PageTransition } from '@/components/page-transition';
 import { Button } from '@/components/ui/button';
 import { getPackages, getPricingConfig, getServices } from '@/lib/content/queries';
@@ -58,6 +59,11 @@ export default async function ServicesPage() {
         aria-labelledby="services-title"
         className="pt-6 lg:pt-10"
         size="compact"
+        decoration={
+          <div className="absolute inset-e-[4%] bottom-10 hidden w-64 text-brand opacity-50 md:block lg:w-80">
+            <SpeedLines />
+          </div>
+        }
       >
         <Breadcrumbs items={[{ label: tNav('services') }]} className="mb-8" />
         <SectionHeader
