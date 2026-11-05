@@ -1,0 +1,726 @@
+{
+  "Meta": {
+    "siteName": "Brigada",
+    "titleTemplate": "%s | Brigada Dubai",
+    "description": "Klimaanlagen reinigen und reparieren, Sofas, Matratzen und Teppiche reinigen – in Dubai. Festpreis vor dem Besuch, Ein-Stunden-Zeitfenster für die Ankunft und Fotobericht per WhatsApp."
+  },
+  "Pages": {
+    "home": {
+      "title": "Klimaanlagen-Reinigung und Polsterpflege in Dubai",
+      "description": "Klimaanlagen reinigen und reparieren, Sofas, Matratzen und Teppiche reinigen – in Dubai. Festpreis vor dem Besuch, Ein-Stunden-Zeitfenster, Fotobericht per WhatsApp."
+    },
+    "services": {
+      "title": "Leistungen",
+      "description": "Klimaanlagen-Reinigung, Tiefenreinigung, Wartung von Gebläsekonvektoren, Reparaturen, Kältemittel, Sofa-, Matratzen- und Teppichreinigung in Dubai. Festpreise, Fotoberichte."
+    },
+    "serviceDetail": {
+      "title": "Leistung"
+    },
+    "pricing": {
+      "title": "Preise",
+      "description": "Festpreise für Klimaanlagen- und Polsterreinigung in Dubai, Mengenstaffeln, Pakete und ein Sofortrechner."
+    },
+    "annualContracts": {
+      "title": "Jahreswartungsverträge",
+      "description": "Jahreswartung für Klimaanlagen in Dubai: drei Besuche pro Jahr, bevorzugte Einsätze und Rabatt auf Reparaturen. Vergleichen Sie Essential, Comfort und Villa."
+    },
+    "areas": {
+      "title": "Einsatzgebiete"
+    },
+    "areaDetail": {
+      "title": "Gebiet"
+    },
+    "about": {
+      "title": "Über uns",
+      "description": "Brigada: ein Team aus Dubai für Klimaanlagen-Reinigung, Reparaturen und die Tiefenreinigung von Sofas, Matratzen und Teppichen. Wie wir arbeiten, unsere Standards und was wir nicht tun."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Brigada in Dubai kontaktieren: WhatsApp, Telefon, Öffnungszeiten und Einsatzgebiet."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung"
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen"
+    },
+    "thankYou": {
+      "title": "Vielen Dank! Wir melden uns in Kürze."
+    }
+  },
+  "NotFound": {
+    "title": "Seite nicht gefunden",
+    "lead": "Die Seite wurde vielleicht verschoben, oder der Link hatte einen Tippfehler. Das Team ist trotzdem da.",
+    "backHome": "Zur Startseite",
+    "services": "Leistungen ansehen"
+  },
+  "Common": {
+    "skipToContent": "Zum Hauptinhalt springen",
+    "close": "Schließen",
+    "breadcrumbLabel": "Brotkrumennavigation",
+    "notifications": "Benachrichtigungen",
+    "opensInNewTab": "(öffnet in einem neuen Tab)"
+  },
+  "Nav": {
+    "label": "Hauptnavigation",
+    "home": "Start",
+    "services": "Leistungen",
+    "pricing": "Preise",
+    "annualContracts": "Jahresverträge",
+    "areas": "Gebiete",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen"
+  },
+  "Header": {
+    "homeLabel": "{brand}, Startseite",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "menuTitle": "Menü",
+    "tagline": "Klimatechnik & Tiefenreinigung · Dubai"
+  },
+  "Cta": {
+    "whatsapp": "Per WhatsApp schreiben",
+    "whatsappShort": "WhatsApp",
+    "telegram": "Per Telegram schreiben",
+    "telegramShort": "Telegram",
+    "call": "Anrufen",
+    "email": "E-Mail schreiben"
+  },
+  "StickyBar": {
+    "label": "Schnellkontakt"
+  },
+  "Footer": {
+    "navLabel": "Fußzeile",
+    "tagline": "Klimaanlagen-Reinigung, Reparatur und Polsterpflege in Dubai.",
+    "contactsTitle": "Kontakt",
+    "phone": "Telefon",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "E-Mail",
+    "contactPage": "Alle Kontaktmöglichkeiten",
+    "socialTitle": "Soziale Netzwerke",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "hoursTitle": "Öffnungszeiten",
+    "emergencyTitle": "Dringende Einsätze",
+    "serviceAreaTitle": "Einsatzgebiet",
+    "linksTitle": "Website",
+    "languageTitle": "Sprache",
+    "legalTitle": "Unternehmen",
+    "legalName": "Firmenname",
+    "licenseNo": "Lizenz-Nr.",
+    "trn": "Steuernummer (TRN)",
+    "address": "Adresse",
+    "photoCredits": "Fotos:",
+    "copyright": "© {brand}"
+  },
+  "LangSwitcher": {
+    "label": "Sprache",
+    "names": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch",
+      "zh": "中文",
+      "hi": "हिन्दी"
+    },
+    "short": {
+      "en": "EN",
+      "ar": "ع",
+      "ru": "RU",
+      "fr": "FR",
+      "de": "DE",
+      "zh": "中",
+      "hi": "हि"
+    }
+  },
+  "PhoneInput": {
+    "placeholder": "+971 5X XXX XXXX",
+    "hint": "Jedes Land. Ohne Ländervorwahl nehmen wir die VAE (+971) an.",
+    "invalid": "Bitte prüfen Sie die Nummer: Sie scheint unvollständig."
+  },
+  "DevUi": {
+    "title": "UI-Kit",
+    "intro": "Interne Seite: alle Komponenten des Designsystems in der aktuellen Sprache und Leserichtung. In der Produktion nicht verfügbar.",
+    "sections": {
+      "buttons": "Buttons",
+      "cards": "Karten",
+      "badges": "Badges und Chips",
+      "accordion": "Akkordeon",
+      "table": "Tabelle (erste Spalte auf dem Handy fixiert)",
+      "forms": "Formularfelder",
+      "phone": "Telefonfeld",
+      "feedback": "Skeleton und Toast",
+      "stickyBar": "Mobile Kontaktleiste (mit Telegram, wie auf /ru, wenn aktiviert)",
+      "marketing": "Marketing-Blöcke",
+      "diagnose": "Ergebnis der KI-Diagnose (Beispiel)",
+      "sheet": "Seitenpanel",
+      "breadcrumbs": "Brotkrumen",
+      "numbers": "Zahlen, Preise, E-Mails, URLs",
+      "longText": "Lange Texte"
+    },
+    "samples": {
+      "primary": "Sofortpreis erhalten",
+      "secondary": "Alle Preise ansehen",
+      "ghost": "Mehr erfahren",
+      "outline": "Alle Leistungen",
+      "destructive": "Löschen",
+      "link": "Bedingungen lesen",
+      "disabled": "Nicht verfügbar",
+      "iconLabel": "Weiter",
+      "cardTitle": "Standardreinigung der Klimaanlage",
+      "cardText": "Filter, Wärmetauscher, Lüfter und Ablauf. Fotobericht per WhatsApp.",
+      "cardFrom": "ab <price>{amount}</price>",
+      "badgeFixed": "Festpreis",
+      "badgeNew": "Neu",
+      "badgeSoon": "Demnächst",
+      "badgeDone": "Erledigt",
+      "badgeWait": "Warten auf Ersatzteile",
+      "badgeDiag": "Erst Diagnose",
+      "chipArea": "Dubai Marina",
+      "chipAll": "Alle Gebiete",
+      "q1": "Wie oft sollte die Klimaanlage gereinigt werden?",
+      "a1": "Alle 4–6 Monate bei einem Gerät, das täglich läuft.",
+      "q2": "Reinigen Sie auch Gebläsekonvektoren in älteren Gebäuden in Dubai, wo das Gerät über einer abgehängten Decke sitzt und nur durch eine kleine Revisionsklappe erreichbar ist?",
+      "a2": "Ja. Der Techniker prüft zuerst die Größe der Klappe; ist das Gerät nicht sicher erreichbar, senden wir Fotos und vereinbaren den nächsten Schritt, bevor Arbeiten beginnen – Sie zahlen also nie für einen Besuch, der nicht abgeschlossen werden kann.",
+      "tableCaption": "Beispielpreise aus der Datendatei",
+      "tableService": "Leistung",
+      "tablePrice": "Preis",
+      "tableNote": "Hinweis",
+      "nameLabel": "Ihr Name",
+      "namePlaceholder": "z. B. Sara",
+      "areaLabel": "Gebiet",
+      "areaPlaceholder": "Gebiet wählen",
+      "messageLabel": "Was ist zu tun?",
+      "messagePlaceholder": "Zwei Split-Geräte, ein Geruch beim Einschalten",
+      "consentLabel": "Erinnern Sie mich an die nächste Reinigung (optional)",
+      "phoneLabel": "Telefon oder WhatsApp",
+      "e164": "Gespeichert als",
+      "valid": "Gültig",
+      "invalid": "Noch nicht gültig",
+      "toastButton": "Toast anzeigen",
+      "toastMessage": "Anfrage erhalten. Wir antworten innerhalb von 15 Minuten.",
+      "sheetEnd": "Vom Ende öffnen",
+      "sheetStart": "Vom Anfang öffnen",
+      "sheetTitle": "Titel des Panels",
+      "sheetText": "Standardmäßig öffnet sich das Panel vom Zeilenende: rechts auf Englisch, links auf Arabisch.",
+      "numbersText": "Preise: <ltr>{a}</ltr>, <ltr>{b}</ltr>, <ltr>{c}</ltr> und <ltr>{d}</ltr>. Eine Zahl: <ltr>{n}</ltr>. E-Mail: <ltr>{email}</ltr>. Link: <ltr>{url}</ltr>. Telefonmuster: <ltr>{phone}</ltr>.",
+      "hoursText": "Öffnungszeiten aus den Einstellungen:",
+      "longParagraph": "Unsere Techniker kommen mit Abdeckplanen, Nasssauger und eigener Leiter – Sie müssen nichts vorbereiten außer freiem Zugang zum Innengerät. Nach der Reinigung erhalten Sie Vorher-Nachher-Fotos per WhatsApp und einen Hinweis auf alles, was später Aufmerksamkeit braucht. Muss ein Teil ersetzt werden, senden wir zuerst den Preis und warten auf Ihre Freigabe.",
+      "longWord": "Klimaanlagenwartungsdienstleistungsunternehmen-Instandhaltung",
+      "longButton": "Tiefenreinigung aller fünf Split-Geräte in der Villa für diesen Samstag buchen",
+      "diagSummary": "Höchstwahrscheinlich sind der Innenwärmetauscher und die Ablaufleitung verschmutzt: Der muffige Geruch und das Tropfen deuten in dieselbe Richtung. Eine Standardreinigung behebt meist beides; der Techniker bestätigt das vor Ort.",
+      "diagCause1Title": "Staub und Schimmel auf dem Wärmetauscher",
+      "diagCause1Text": "Die Luftfeuchte in Dubai verwandelt Staub auf dem Wärmetauscher in einen Film, der beim Anlaufen des Lüfters riecht.",
+      "diagCause2Title": "Verschlammte Ablaufleitung",
+      "diagCause2Text": "Kondenswasser staut sich in der Wanne und tropft aus dem Gerät.",
+      "diagQuestion1": "Wie alt ist das Gerät und wann wurde es zuletzt gereinigt?",
+      "diagQuestion2": "Tritt das Wasser nur beim Kühlen auf oder auch bei ausgeschaltetem Gerät?",
+      "diagSafety": "Erreicht das Wasser eine Steckdose oder die Deckenleuchte, schalten Sie das Gerät bis zum Besuch am Sicherungsautomaten ab."
+    }
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Klimaanlagen & Polster · Dubai",
+      "diagnoseLead": "Nicht sicher, was los ist?",
+      "diagnoseCta": "KI-Diagnose ausprobieren"
+    },
+    "ticker": {
+      "label": "Unsere Leistungen"
+    },
+    "team": {
+      "alt": "Zwei Brigada-Techniker in schwarzen T-Shirts mit Kanalbürste und Sprühflasche vor der nächtlichen Skyline von Dubai (Illustration)",
+      "caption": "Das Brigada-Team (Illustration)"
+    },
+    "book": {
+      "eyebrow": "Online buchen",
+      "title": "Ihr Preis in einer Minute",
+      "lead": "Leistung wählen, exakten Preis sehen, Tag aussuchen. Das Ein-Stunden-Zeitfenster bestätigen wir per WhatsApp.",
+      "talk": "Lieber direkt schreiben? Schreiben Sie uns"
+    },
+    "why": {
+      "eyebrow": "Warum das wichtig ist"
+    },
+    "guarantee": {
+      "eyebrow": "Unsere Garantie",
+      "title": "Kommt es zurück, kommen wir zurück"
+    },
+    "packages": {
+      "eyebrow": "Pakete",
+      "title": "Sparen Sie mit einem Paket oder einem Jahresvertrag",
+      "all": "Jahresverträge vergleichen"
+    },
+    "areas": {
+      "eyebrow": "Wo wir arbeiten",
+      "title": "In ganz Dubai",
+      "all": "Alle Gebiete"
+    },
+    "faq": {
+      "eyebrow": "Fragen",
+      "title": "Vor der Buchung"
+    },
+    "finalCta": {
+      "title": "Bereit, wenn Sie es sind",
+      "lead": "Preis in einer Minute erhalten und einen Tag wählen. Oder schreiben Sie uns – während der Öffnungszeiten antworten wir schnell.",
+      "primary": "Sofortpreis erhalten"
+    }
+  },
+  "Diagnose": {
+    "privacy": "Das Foto wird analysiert, nicht gespeichert. Kein Name, keine Telefonnummer nötig.",
+    "calculatorCta": "Rechner öffnen",
+    "demo": {
+      "smell": {
+        "summary": "Ein muffiger Geruch beim Einschalten kommt fast immer von einem Film aus Staub und Schimmel auf dem Innenwärmetauscher und in der Kondensatwanne. Eine Standardreinigung entfernt ihn; der Techniker bestätigt das vor Ort.",
+        "cause1": "Staub und Schimmel auf dem Wärmetauscher",
+        "cause1Text": "Die Luftfeuchte in Dubai verwandelt Staub auf dem Wärmetauscher in einen Film, der beim Anlaufen des Lüfters riecht.",
+        "cause2": "Stehendes Wasser in der Kondensatwanne",
+        "cause2Text": "Ein träger Ablauf hält Kondenswasser in der Wanne, wo Bakterien wachsen.",
+        "question": "Wann wurde das Gerät zuletzt gereinigt?"
+      },
+      "drip": {
+        "summary": "Wasser aus dem Innengerät bedeutet meist eine verschlammte Ablaufleitung oder einen vereisten Wärmetauscher hinter einem schmutzigen Filter. Eine Standardreinigung macht den Ablauf frei; der Techniker prüft Filter und Gefälle der Leitung.",
+        "cause1": "Verschlammte Ablaufleitung",
+        "cause1Text": "Kondenswasser staut sich in der Wanne und läuft über.",
+        "cause2": "Eis auf dem Wärmetauscher",
+        "cause2Text": "Ein verstopfter Filter drosselt den Luftstrom, der Wärmetauscher vereist und tropft beim Auftauen.",
+        "question": "Tropft es nur beim Kühlen oder auch nach dem Ausschalten?"
+      },
+      "weak": {
+        "summary": "Schwache Kühlung bei einem Gerät, das den ganzen Tag läuft, deutet auf einen staubverkrusteten Wärmetauscher und Lüfter hin; nach Jahren ohne Wartung stellt eine Tiefenreinigung den Luftstrom wieder her. Bleibt sie schwach, prüft der Techniker das Kältemittel.",
+        "cause1": "Wärmetauscher und Lüfter mit Staub verkrustet",
+        "cause1Text": "Der Luftstrom sinkt, und das Gerät erreicht die eingestellte Temperatur nie.",
+        "cause2": "Zu wenig Kältemittel",
+        "cause2Text": "Ein langsames Leck verringert die Kühlung über Monate; wird vor Ort mit Manometern geprüft.",
+        "question": "Wie alt ist das Gerät und wann wurde es zuletzt gewartet?"
+      },
+      "stain": {
+        "summary": "Ein frischer Kaffeefleck auf hellem Stoff geht meist mit Heißwasserextraktion und einer Tanninbehandlung heraus. Der Techniker testet zuerst an einer verdeckten Stelle.",
+        "cause1": "Tannin in den Fasern",
+        "cause1Text": "Kaffeetannine binden schnell an Baumwolle und Leinen; je früher, desto leichter.",
+        "cause2": "Durch ein Hausmittel fixiert",
+        "cause2Text": "Reiben oder heißes Wasser kann den Fleck fixieren; bis zum Besuch nur abtupfen.",
+        "question": "Aus welchem Stoff ist das Sofa, und wie alt ist der Fleck?"
+      }
+    },
+    "form": {
+      "label": "Was ist los?",
+      "placeholder": "Beschreiben Sie das Problem oder stellen Sie eine Frage",
+      "counter": "{count} / {max}",
+      "examples": {
+        "smell": "Muffiger Geruch beim Einschalten der Klimaanlage",
+        "drip": "Wasser tropft aus dem Innengerät",
+        "weak": "Kühlt schwach und läuft den ganzen Tag",
+        "stain": "Kaffeefleck auf einem hellen Sofa"
+      },
+      "photo": "Foto hinzufügen",
+      "photoAlt": "Ihr Foto",
+      "removePhoto": "Foto entfernen",
+      "submitting": "Wird analysiert…",
+      "disclaimer": "Eine KI-Einschätzung, kein Urteil: Der Techniker bestätigt alles vor Ort, bevor Arbeiten beginnen."
+    },
+    "errors": {
+      "empty": "Beschreiben Sie das Problem in wenigen Worten oder fügen Sie ein Foto hinzu.",
+      "photoType": "Diese Datei können wir nicht lesen. Versuchen Sie ein JPEG-, PNG- oder WebP-Foto.",
+      "photoSize": "Das Foto ist selbst nach dem Verkleinern zu groß. Versuchen Sie ein anderes.",
+      "unavailable": "Die KI-Diagnose ist noch nicht freigeschaltet. Wählen Sie eine Leistung im Rechner oder schreiben Sie uns – wir antworten schnell.",
+      "rateLimited": "Das sind viele Fragen in einer Minute. Warten Sie einen Moment und versuchen Sie es erneut.",
+      "refused": "Diese Anfrage konnten wir nicht analysieren. Beschreiben Sie, was die Klimaanlage oder der Stoff tut, und versuchen Sie es erneut.",
+      "failed": "Auf unserer Seite ist etwas schiefgelaufen. Versuchen Sie es gleich noch einmal oder schreiben Sie uns.",
+      "network": "Keine Verbindung. Prüfen Sie das Internet und versuchen Sie es erneut."
+    },
+    "result": {
+      "title": "Wonach es aussieht",
+      "urgency": {
+        "routine": "Keine Eile",
+        "soon": "Bald erledigen",
+        "today": "Braucht heute Aufmerksamkeit"
+      },
+      "confidence": {
+        "label": "Sicherheit: {level}",
+        "low": "niedrig",
+        "medium": "mittel",
+        "high": "hoch"
+      },
+      "safety": "Sicherheit zuerst",
+      "recommended": "Empfohlene Leistung",
+      "comingSoon": "Demnächst – Warteliste offen",
+      "estimate": "Feste Diagnosegebühr, dann schriftlicher Kostenvoranschlag",
+      "book": "Zu diesem Preis buchen",
+      "details": "Details zur Leistung",
+      "waitlist": "Auf die Warteliste",
+      "noService": "Mehrere Leistungen könnten passen",
+      "noServiceText": "Ergänzen Sie ein, zwei Details oder schreiben Sie uns mit einem Foto – wir sagen Ihnen, was Sie buchen sollten.",
+      "outOfScope": "Außerhalb unseres Angebots",
+      "outOfScopeText": "Wir reinigen und reparieren Klimaanlagen und reinigen Polster. Dafür braucht es ein anderes Gewerk – schreiben Sie uns, und wir vermitteln Sie weiter.",
+      "causes": "Wahrscheinliche Ursachen",
+      "likelihood": {
+        "likely": "Wahrscheinlich",
+        "possible": "Möglich",
+        "unlikely": "Weniger wahrscheinlich"
+      },
+      "questions": "Der Techniker wird fragen",
+      "questionsHint": "Schreiben Sie die Antworten in Ihre Buchungsnachricht, dann geht der Besuch schneller.",
+      "again": "Etwas anderes fragen",
+      "contact": "Schreiben Sie uns",
+      "demoBadge": "Beispielantwort – der Live-Assistent wird gerade angebunden"
+    }
+  },
+  "Assistant": {
+    "launcher": "Assistent",
+    "launcherLabel": "Assistenten öffnen: KI-Diagnose und schnelle Antworten",
+    "title": "Brigada-Assistent",
+    "subtitle": "KI-Diagnose und schnelle Antworten",
+    "close": "Assistenten schließen",
+    "greeting": "Hallo! Beschreiben Sie, was die Klimaanlage oder das Sofa tut, senden Sie ein Foto – oder tippen Sie unten auf eine Frage.",
+    "faqGroup": "Häufige Fragen",
+    "examplesGroup": "Oder beschreiben Sie ein Problem",
+    "send": "Senden",
+    "faqNote": "Aus unseren FAQ. Alles andere – einfach eintippen.",
+    "you": "Sie",
+    "assistant": "Assistent"
+  },
+  "Services": {
+    "lead": "Zehn Leistungen zum Festpreis und zwei demnächst. Jeder Besuch endet mit einem Fotobericht per WhatsApp.",
+    "category": {
+      "ac": "Klimaanlagen",
+      "upholstery": "Polster und Teppiche",
+      "comingSoon": "Demnächst"
+    },
+    "summary": {
+      "ac": "Reinigung, Tiefenreinigung, Gebläsekonvektoren, Reparaturen und Kältemittel.",
+      "upholstery": "Sofas, Matratzen, Teppiche, Flecken und Gerüche – in wenigen Stunden trocken.",
+      "comingSoon": "Tragen Sie sich in die Warteliste ein, und wir schreiben Ihnen als Erstes."
+    },
+    "card": {
+      "more": "Details"
+    },
+    "badge": {
+      "sameDay": "Noch heute",
+      "estimate": "Diagnose + Kostenvoranschlag",
+      "comingSoon": "Demnächst",
+      "availableFrom": "Ab {date}"
+    },
+    "contract": {
+      "title": "Jahresvertrag",
+      "text": "Drei Besuche pro Jahr, bevorzugte Terminvergabe und Rabatt auf Reparaturen.",
+      "cta": "Verträge vergleichen"
+    },
+    "notSure": {
+      "title": "Nicht sicher, welche Leistung Sie brauchen?",
+      "text": "Beschreiben Sie das Problem oder senden Sie ein Foto – der Assistent nennt die wahrscheinliche Ursache und die passende Leistung mit ihrem Festpreis. Häufige Fragen beantwortet er gleich mit.",
+      "ask": "Assistenten fragen",
+      "price": "Rechner öffnen"
+    }
+  },
+  "Service": {
+    "included": "Was enthalten ist",
+    "excluded": "Nicht enthalten",
+    "symptoms": "Wann Sie es brauchen",
+    "causes": "Typische Ursachen",
+    "glance": "Auf einen Blick",
+    "prices": "Preise",
+    "visit": "So läuft der Besuch ab",
+    "visitDuration": "Dauer des Besuchs: {duration}",
+    "beforeAfter": "Vorher und nachher",
+    "guarantee": "Garantie",
+    "faq": "Fragen zu dieser Leistung",
+    "related": "Wird oft zusammen gebucht",
+    "book": "Diese Leistung buchen",
+    "fixedChip": "Festpreis",
+    "duration": "Dauer",
+    "unit": "Abrechnung",
+    "note": "Hinweis",
+    "specifics": {
+      "deepVsStandard": "Standard- oder Tiefenreinigung?",
+      "standard": "Standardreinigung",
+      "deep": "Tiefenreinigung",
+      "ageNote": "Ältere Geräte",
+      "sameDay": "Einsätze noch am selben Tag",
+      "callout": "Anfahrt mit Diagnose",
+      "credited": "Wird auf eine Reparatur im selben Besuch angerechnet",
+      "principle": "Erst finden und beheben, dann nachfüllen",
+      "leakTest": "Lecktest",
+      "refill": "Nachfüllen",
+      "repairByEstimate": "Reparatur nach schriftlichem Kostenvoranschlag",
+      "vsSplit": "Der Unterschied zum Split-Gerät"
+    },
+    "comingSoon": {
+      "badge": "Demnächst",
+      "from": "Verfügbar ab {date}",
+      "waitlist": "Auf die Warteliste",
+      "note": "Wir schreiben Ihnen als Erstes, sobald es losgeht. Keine Newsletter."
+    }
+  },
+  "Price": {
+    "from": "ab <price>{amount}</price>",
+    "per": {
+      "unit": "pro Gerät",
+      "fcu": "pro Gebläsekonvektor",
+      "visit": "pro Besuch",
+      "seat": "pro Sitzplatz",
+      "item": "pro Stück",
+      "sqm": "pro m²",
+      "from": "+ Kostenvoranschlag"
+    },
+    "perYear": "{amount} pro Jahr",
+    "save": "Sparen Sie {amount}",
+    "instead": "statt {amount}",
+    "recommended": "Empfohlen",
+    "vatIncluded": "Preise inkl. 5 % MwSt.",
+    "vatAdded": "Zur Summe kommen 5 % MwSt. hinzu.",
+    "minimum": "Mindestens {qty}",
+    "tierPlus": "{n}+",
+    "tierRange": "{from}–{to}",
+    "perYearRich": "<a>{amount}</a> pro Jahr",
+    "insteadRich": "statt <s>{amount}</s>"
+  },
+  "Pricing": {
+    "lead": "Jeder Preis unten steht vor dem Besuch fest und enthält die Anfahrt. Reparaturen beginnen mit einer festen Diagnosegebühr, die auf die Arbeit angerechnet wird.",
+    "jump": {
+      "ac": "Klimaanlagen",
+      "upholstery": "Polster",
+      "packages": "Pakete",
+      "calculator": "Rechner"
+    },
+    "table": {
+      "item": "Leistung",
+      "price": "Preis"
+    },
+    "captions": {
+      "ac": "Preise für Klimaanlagen",
+      "upholstery": "Preise für Polster und Teppiche"
+    },
+    "factors": {
+      "title": "Was den Preis beeinflusst"
+    },
+    "tiers": {
+      "title": "Mengenpreise"
+    }
+  },
+  "Report": {
+    "before": "Vorher",
+    "after": "Nachher",
+    "example": "Beispiel aus einem Bericht",
+    "sent": "Wird nach dem Besuch gesendet"
+  },
+  "Contact": {
+    "lead": "Schreiben Sie, rufen Sie an oder senden Sie eine Anfrage mit dem exakten Preis – was für Sie einfacher ist.",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "telegram": "Telegram"
+    },
+    "actions": {
+      "message": "Schreiben",
+      "call": "Anrufen",
+      "email": "Schreiben"
+    },
+    "pending": "Unsere Telefon- und WhatsApp-Nummer wird gerade eingerichtet und erscheint hier, bevor wir Buchungen annehmen.",
+    "pendingCta": "Preise ansehen und Besuch planen",
+    "hours": "Öffnungszeiten",
+    "emergency": "Dringende Einsätze",
+    "area": "Einsatzgebiet",
+    "legal": "Unternehmensangaben",
+    "getPrice": "Sofortpreis erhalten"
+  },
+  "Contracts": {
+    "lead": "Eine Zahlung pro Jahr, drei Besuche, ein bevorzugter Einsatz bei Störungen und Rabatt auf Reparaturen. Günstiger, als jede Reinigung einzeln zu buchen.",
+    "plans": {
+      "eyebrow": "Drei Verträge",
+      "title": "Wählen Sie den Vertrag für Ihr Zuhause",
+      "lead": "Alle Verträge gelten für Split-Geräte in einem Haushalt in Dubai. Die Anzahl der Geräte bestätigen wir beim ersten Besuch.",
+      "note": "Preise pro Jahr, ohne MwSt., bis wir registriert sind. Mehr Geräte, als der Vertrag vorsieht? Wir berechnen die Differenz pro Gerät."
+    },
+    "includes": {
+      "units": "Bis zu {n} Geräte",
+      "visits": "{n} Besuche pro Jahr",
+      "deep": "davon {n} Tiefenreinigung",
+      "priority": "Bevorzugter Einsatz innerhalb von {n} Stunden",
+      "repairDiscount": "{n} % Rabatt auf Reparaturen"
+    },
+    "card": {
+      "saving": "Besuch für Besuch gebucht: <s>{separate}</s>. Sie sparen <s>{saving}</s> ({pct} %).",
+      "cta": "Zu diesem Vertrag anfragen"
+    },
+    "savings": {
+      "eyebrow": "Die Rechnung",
+      "title": "So kommt die Ersparnis zustande",
+      "lead": "Wir rechnen die Besuche des Vertrags zu den Einzelpreisen der Preisliste, für die maximale Anzahl Split-Geräte des Vertrags.",
+      "caption": "Jahresverträge im Vergleich zu Einzelbuchungen",
+      "cols": {
+        "plan": "Vertrag",
+        "visits": "Das bekommen Sie",
+        "separate": "Einzeln gebucht",
+        "price": "Vertragspreis",
+        "saving": "Sie sparen"
+      },
+      "visitsStd": "{standard} Standardreinigungen × {units} Geräte",
+      "visitsMix": "{standard} Standard + {deep} Tiefenreinigung × {units} Geräte",
+      "note": "Der Vertrag Villa ist hier als Split-Geräte gerechnet; Gebläsekonvektoren kosten pro Besuch mehr, dort ist die Ersparnis also größer."
+    },
+    "visit": {
+      "eyebrow": "Bei jedem Besuch",
+      "title": "Jedes Mal eine komplette Reinigung",
+      "lead": "Ein Vertragsbesuch ist dieselbe Standardreinigung wie eine Einzelbuchung, mit demselben Fotobericht."
+    },
+    "how": {
+      "eyebrow": "So funktioniert es",
+      "title": "Drei Schritte im Jahr",
+      "lead": "Fällt ein Gerät zwischen den Besuchen aus, kommen wir innerhalb der Frist Ihres Vertrags, und der Reparaturrabatt des Vertrags gilt."
+    },
+    "steps": {
+      "one": {
+        "title": "Schreiben Sie uns",
+        "text": "Nennen Sie den Vertrag und die Anzahl Ihrer Geräte. Preis und ersten Termin bestätigen wir per WhatsApp."
+      },
+      "two": {
+        "title": "Erster Besuch",
+        "text": "Wir reinigen jedes Gerät, prüfen die Abläufe und legen mit Ihnen die Termine der nächsten beiden Besuche fest."
+      },
+      "three": {
+        "title": "Wir erinnern Sie",
+        "text": "Vor jedem Besuch schreiben wir Ihnen zur Bestätigung der Uhrzeit. Fotos und Messwerte kommen nach jedem Besuch."
+      }
+    },
+    "faq": {
+      "eyebrow": "Fragen",
+      "title": "Zum Vertrag"
+    },
+    "cta": {
+      "title": "Bereit für ein Jahr ohne Klimaanlagen-Sorgen?",
+      "lead": "Wählen Sie einen Vertrag oder schreiben Sie uns – wir helfen Ihnen, den richtigen für Ihr Zuhause zu finden.",
+      "primary": "Verträge ansehen"
+    }
+  },
+  "About": {
+    "lead": "Ein kleines Team aus Dubai für Klimaanlagen-Reinigung, Reparaturen und die Tiefenreinigung von Sofas, Matratzen und Teppichen. Festpreise, Ein-Stunden-Zeitfenster für die Ankunft und ein Fotobericht nach jedem Besuch.",
+    "story": {
+      "eyebrow": "Wer wir sind",
+      "title": "Warum wir mit Klimaanlagen angefangen haben"
+    },
+    "standards": {
+      "eyebrow": "Unsere Standards",
+      "title": "Was jeder Techniker tut",
+      "lead": "Dieselbe Checkliste in jedem Zuhause, egal welcher Auftrag.",
+      "items": {
+        "one": "Bestätigt den Festpreis vor Beginn der Arbeiten",
+        "two": "Schützt Boden und Möbel mit Abdeckungen",
+        "three": "Misst die Ausblastemperatur vorher und nachher",
+        "four": "Fotografiert Wärmetauscher, Filter und Ablauf vorher und nachher",
+        "five": "Hinterlässt den Raum so sauber wie vorgefunden und sendet den Bericht per WhatsApp"
+      }
+    },
+    "notDoing": {
+      "eyebrow": "Ehrliche Grenzen",
+      "title": "Was wir nicht tun"
+    },
+    "legal": {
+      "title": "Unternehmensangaben"
+    },
+    "areas": {
+      "eyebrow": "Wo wir arbeiten",
+      "title": "In ganz Dubai"
+    }
+  },
+  "Booking": {
+    "progressLabel": "Buchungsschritte",
+    "progress": "Schritt {step} von {total}",
+    "steps": {
+      "category": "Leistung",
+      "details": "Details",
+      "time": "Zeit",
+      "send": "Senden"
+    },
+    "category": {
+      "question": "Was ist zu tun?",
+      "ac": {
+        "title": "Klimaanlagen",
+        "text": "Reinigung, Tiefenreinigung, Gebläsekonvektoren, Reparaturen"
+      },
+      "upholstery": {
+        "title": "Polster und Teppiche",
+        "text": "Sofas, Matratzen, Teppiche, Flecken und Gerüche"
+      }
+    },
+    "details": {
+      "acQuestion": "Welche Leistung?",
+      "upholsteryQuestion": "Was reinigen wir?",
+      "qty": {
+        "unit": "Geräte",
+        "fcu": "Gebläsekonvektoren",
+        "visit": "Besuche",
+        "seat": "Sitzplätze",
+        "item": "Stück",
+        "sqm": "Quadratmeter"
+      },
+      "inc": "Eins mehr: {item}",
+      "dec": "Eins weniger: {item}",
+      "min": "Mindestbetrag: {qty}",
+      "empty": "Wählen Sie mindestens eine Position, um fortzufahren."
+    },
+    "summary": {
+      "subtotal": "Positionen",
+      "total": "Gesamt",
+      "bundle": "Paket {name}",
+      "save": "Sie sparen {amount}",
+      "diagnostics": "Diagnose",
+      "credited": "wird auf die Reparatur angerechnet",
+      "fromLine": "ab {amount}",
+      "repairEstimate": "Arbeit ab {amount}, Ersatzteile nach schriftlichem Kostenvoranschlag",
+      "estimateNote": "Der endgültige Betrag wird vor jeder Reparatur schriftlich bestätigt.",
+      "live": "Gesamt: {total}",
+      "minApplied": "Mindestbetrag",
+      "line": "{qty} × {price}"
+    },
+    "offer": {
+      "text": "Fügen Sie {items} für {add} mehr hinzu – Paket {name}, sparen Sie {savings}",
+      "add": "Hinzufügen"
+    },
+    "time": {
+      "question": "Wann passt es Ihnen?",
+      "day": "Tag",
+      "window": "Tageszeit",
+      "today": "Heute",
+      "tomorrow": "Morgen",
+      "windows": {
+        "morning": "Vormittag",
+        "afternoon": "Nachmittag",
+        "evening": "Abend",
+        "any": "Jederzeit",
+        "asap": "So bald wie möglich"
+      },
+      "tooLate": "Für heute zu spät",
+      "confirmNote": "Das genaue Ein-Stunden-Zeitfenster bestätigen wir per WhatsApp.",
+      "area": "Ihr Gebiet (optional)",
+      "areaOther": "Anderes",
+      "areaNone": "Nicht gewählt"
+    },
+    "send": {
+      "title": "Prüfen und senden",
+      "edit": "Ändern",
+      "service": "Leistung",
+      "time": "Zeit",
+      "area": "Gebiet",
+      "preview": "Ihre Nachricht",
+      "whatsapp": "Per WhatsApp senden",
+      "opened": "WhatsApp wurde in einem neuen Tab geöffnet. Nichts passiert? Kopieren Sie die Nachricht und senden Sie sie selbst.",
+      "copy": "Nachricht kopieren",
+      "copied": "Kopiert",
+      "contact": "Kontaktmöglichkeiten",
+      "pending": "Die Online-Buchung startet in Kürze – unsere WhatsApp-Nummer erscheint hier. Kopieren Sie vorerst die Nachricht oder sehen Sie sich die Kontaktmöglichkeiten an.",
+      "startOver": "Von vorn beginnen"
+    },
+    "nav": {
+      "back": "Zurück",
+      "next": "Weiter",
+      "toTime": "Zeit wählen",
+      "toSend": "Prüfen und senden"
+    },
+    "line": "{name} × {qty}"
+  }
+}

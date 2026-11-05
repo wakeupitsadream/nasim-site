@@ -1,0 +1,726 @@
+{
+  "Meta": {
+    "siteName": "Brigada",
+    "titleTemplate": "%s | Brigada Dubaï",
+    "description": "Nettoyage et réparation de climatiseurs, nettoyage de canapés, matelas et tapis à Dubaï. Prix fixé avant la visite, créneau d’arrivée d’une heure et rapport photo sur WhatsApp."
+  },
+  "Pages": {
+    "home": {
+      "title": "Nettoyage de climatisation et entretien des canapés à Dubaï",
+      "description": "Nettoyage et réparation de climatiseurs, nettoyage de canapés, matelas et tapis à Dubaï. Prix fixé avant la visite, créneau d’arrivée d’une heure, rapport photo sur WhatsApp."
+    },
+    "services": {
+      "title": "Services",
+      "description": "Nettoyage de climatiseurs, nettoyage en profondeur, entretien des ventilo-convecteurs, réparations, fluide frigorigène, nettoyage de canapés, matelas et tapis à Dubaï. Prix fixes, rapports photo."
+    },
+    "serviceDetail": {
+      "title": "Service"
+    },
+    "pricing": {
+      "title": "Tarifs",
+      "description": "Tarifs fixes pour le nettoyage de climatiseurs et de canapés à Dubaï, dégressifs selon la quantité, forfaits et calculateur instantané."
+    },
+    "annualContracts": {
+      "title": "Contrats d’entretien annuels",
+      "description": "Formules d’entretien annuel de climatisation à Dubaï : trois visites par an, interventions prioritaires et remises sur les réparations. Comparez Essential, Comfort et Villa."
+    },
+    "areas": {
+      "title": "Zones desservies"
+    },
+    "areaDetail": {
+      "title": "Zone"
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Brigada : une équipe de Dubaï pour le nettoyage et la réparation de climatiseurs et le nettoyage en profondeur des canapés, matelas et tapis. Notre façon de travailler, nos standards et ce que nous ne faisons pas."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contacter Brigada à Dubaï : WhatsApp, téléphone, horaires et zone d’intervention."
+    },
+    "privacy": {
+      "title": "Politique de confidentialité"
+    },
+    "terms": {
+      "title": "Conditions de service"
+    },
+    "thankYou": {
+      "title": "Merci ! Nous vous recontactons très vite."
+    }
+  },
+  "NotFound": {
+    "title": "Page introuvable",
+    "lead": "La page a peut-être été déplacée, ou le lien contient une faute de frappe. L’équipe, elle, est toujours là.",
+    "backHome": "Retour à l’accueil",
+    "services": "Voir les services"
+  },
+  "Common": {
+    "skipToContent": "Aller au contenu principal",
+    "close": "Fermer",
+    "breadcrumbLabel": "Fil d’Ariane",
+    "notifications": "Notifications",
+    "opensInNewTab": "(s’ouvre dans un nouvel onglet)"
+  },
+  "Nav": {
+    "label": "Principal",
+    "home": "Accueil",
+    "services": "Services",
+    "pricing": "Tarifs",
+    "annualContracts": "Contrats annuels",
+    "areas": "Zones",
+    "about": "À propos",
+    "contact": "Contact",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions de service"
+  },
+  "Header": {
+    "homeLabel": "{brand}, page d’accueil",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "menuTitle": "Menu",
+    "tagline": "Climatisation et nettoyage en profondeur · Dubaï"
+  },
+  "Cta": {
+    "whatsapp": "Nous écrire sur WhatsApp",
+    "whatsappShort": "WhatsApp",
+    "telegram": "Nous écrire sur Telegram",
+    "telegramShort": "Telegram",
+    "call": "Appeler",
+    "email": "Nous écrire par e-mail"
+  },
+  "StickyBar": {
+    "label": "Contact rapide"
+  },
+  "Footer": {
+    "navLabel": "Pied de page",
+    "tagline": "Nettoyage et réparation de climatiseurs, entretien des canapés et tapis à Dubaï.",
+    "contactsTitle": "Contacts",
+    "phone": "Téléphone",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "E-mail",
+    "contactPage": "Tous les moyens de contact",
+    "socialTitle": "Réseaux sociaux",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "hoursTitle": "Horaires",
+    "emergencyTitle": "Interventions urgentes",
+    "serviceAreaTitle": "Zone d’intervention",
+    "linksTitle": "Site",
+    "languageTitle": "Langue",
+    "legalTitle": "Société",
+    "legalName": "Raison sociale",
+    "licenseNo": "Licence n°",
+    "trn": "N° fiscal (TRN)",
+    "address": "Adresse",
+    "photoCredits": "Photos :",
+    "copyright": "© {brand}"
+  },
+  "LangSwitcher": {
+    "label": "Langue",
+    "names": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch",
+      "zh": "中文",
+      "hi": "हिन्दी"
+    },
+    "short": {
+      "en": "EN",
+      "ar": "ع",
+      "ru": "RU",
+      "fr": "FR",
+      "de": "DE",
+      "zh": "中",
+      "hi": "हि"
+    }
+  },
+  "PhoneInput": {
+    "placeholder": "+971 5X XXX XXXX",
+    "hint": "Tous pays. Sans indicatif, nous supposons les Émirats (+971).",
+    "invalid": "Vérifiez le numéro : il semble incomplet."
+  },
+  "DevUi": {
+    "title": "Kit UI",
+    "intro": "Page interne : tous les composants du design system dans la langue et le sens de lecture actuels. Indisponible en production.",
+    "sections": {
+      "buttons": "Boutons",
+      "cards": "Cartes",
+      "badges": "Badges et puces",
+      "accordion": "Accordéon",
+      "table": "Tableau (première colonne fixe sur mobile)",
+      "forms": "Champs de formulaire",
+      "phone": "Champ téléphone",
+      "feedback": "Squelette et notification",
+      "stickyBar": "Barre de contact mobile (avec Telegram, comme sur /ru lorsqu’il est activé)",
+      "marketing": "Blocs marketing",
+      "diagnose": "Résultat du diagnostic IA (exemple)",
+      "sheet": "Panneau latéral",
+      "breadcrumbs": "Fil d’Ariane",
+      "numbers": "Nombres, prix, e-mails, URL",
+      "longText": "Textes longs"
+    },
+    "samples": {
+      "primary": "Obtenir un prix instantané",
+      "secondary": "Voir tous les tarifs",
+      "ghost": "En savoir plus",
+      "outline": "Tous les services",
+      "destructive": "Supprimer",
+      "link": "Lire les conditions",
+      "disabled": "Indisponible",
+      "iconLabel": "Suivant",
+      "cardTitle": "Nettoyage standard de climatiseur",
+      "cardText": "Filtres, échangeur, ventilateur et évacuation. Rapport photo sur WhatsApp.",
+      "cardFrom": "à partir de <price>{amount}</price>",
+      "badgeFixed": "Prix fixe",
+      "badgeNew": "Nouveau",
+      "badgeSoon": "Bientôt",
+      "badgeDone": "Terminé",
+      "badgeWait": "En attente de pièces",
+      "badgeDiag": "Diagnostic d’abord",
+      "chipArea": "Dubai Marina",
+      "chipAll": "Toutes les zones",
+      "q1": "À quelle fréquence faut-il nettoyer le climatiseur ?",
+      "a1": "Tous les 4 à 6 mois pour un appareil qui fonctionne chaque jour.",
+      "q2": "Nettoyez-vous aussi les ventilo-convecteurs des immeubles anciens de Dubaï, où l’unité se trouve au-dessus d’un faux plafond et n’est accessible que par une petite trappe ?",
+      "a2": "Oui. Le technicien vérifie d’abord la taille de la trappe ; si l’unité n’est pas accessible en toute sécurité, nous envoyons des photos et convenons de la suite avant tout travail, pour que vous ne payiez jamais une visite impossible à terminer.",
+      "tableCaption": "Exemples de tarifs du fichier de données",
+      "tableService": "Service",
+      "tablePrice": "Prix",
+      "tableNote": "Remarque",
+      "nameLabel": "Votre nom",
+      "namePlaceholder": "ex. Sara",
+      "areaLabel": "Zone",
+      "areaPlaceholder": "Choisissez une zone",
+      "messageLabel": "Que faut-il faire ?",
+      "messagePlaceholder": "Deux unités split, une odeur au démarrage",
+      "consentLabel": "M’envoyer un rappel pour le prochain nettoyage (facultatif)",
+      "phoneLabel": "Téléphone ou WhatsApp",
+      "e164": "Enregistré sous",
+      "valid": "Valide",
+      "invalid": "Pas encore valide",
+      "toastButton": "Afficher une notification",
+      "toastMessage": "Demande reçue. Nous répondons sous 15 minutes.",
+      "sheetEnd": "Ouvrir depuis la fin",
+      "sheetStart": "Ouvrir depuis le début",
+      "sheetTitle": "Titre du panneau",
+      "sheetText": "Par défaut, le panneau s’ouvre depuis la fin de ligne : à droite en anglais, à gauche en arabe.",
+      "numbersText": "Prix : <ltr>{a}</ltr>, <ltr>{b}</ltr>, <ltr>{c}</ltr> et <ltr>{d}</ltr>. Un nombre : <ltr>{n}</ltr>. E-mail : <ltr>{email}</ltr>. Lien : <ltr>{url}</ltr>. Format de téléphone : <ltr>{phone}</ltr>.",
+      "hoursText": "Horaires issus des paramètres :",
+      "longParagraph": "Nos techniciens arrivent avec des bâches, un aspirateur à eau et leur propre échelle : il n’y a rien à préparer, sinon un accès dégagé à l’unité intérieure. Après le nettoyage, vous recevez des photos avant/après sur WhatsApp et une note sur ce qui méritera une attention plus tard. Si une pièce doit être remplacée, nous envoyons d’abord le prix et attendons votre accord.",
+      "longWord": "Anticonstitutionnellement-entretien-de-climatisation-centralisée",
+      "longButton": "Réserver un nettoyage en profondeur des cinq unités split de la villa ce samedi",
+      "diagSummary": "L’échangeur intérieur et la conduite d’évacuation sont très probablement encrassés : l’odeur de moisi et l’écoulement pointent dans la même direction. Un nettoyage standard règle généralement les deux ; le technicien confirme sur place.",
+      "diagCause1Title": "Poussière et moisissure sur l’échangeur",
+      "diagCause1Text": "L’humidité de Dubaï transforme la poussière de l’échangeur en un film qui sent au démarrage du ventilateur.",
+      "diagCause2Title": "Conduite d’évacuation obstruée",
+      "diagCause2Text": "Les condensats s’accumulent dans le bac et gouttent de l’unité.",
+      "diagQuestion1": "Quel âge a l’unité et à quand remonte son dernier nettoyage ?",
+      "diagQuestion2": "L’eau apparaît-elle seulement pendant le refroidissement, ou aussi quand l’unité est éteinte ?",
+      "diagSafety": "Si l’eau atteint une prise ou le plafonnier, coupez l’unité au disjoncteur jusqu’à la visite."
+    }
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Climatisation et canapés · Dubaï",
+      "diagnoseLead": "Vous ne savez pas ce qui cloche ?",
+      "diagnoseCta": "Essayez le diagnostic IA"
+    },
+    "ticker": {
+      "label": "Nos services"
+    },
+    "team": {
+      "alt": "Deux techniciens Brigada en T-shirt noir avec une brosse à gaines et un pulvérisateur devant Dubaï de nuit (illustration)",
+      "caption": "L’équipe Brigada (illustration)"
+    },
+    "book": {
+      "eyebrow": "Réserver en ligne",
+      "title": "Votre prix en une minute",
+      "lead": "Choisissez un service, voyez le prix exact, choisissez un jour. Nous confirmons le créneau d’une heure sur WhatsApp.",
+      "talk": "Vous préférez échanger ? Écrivez-nous"
+    },
+    "why": {
+      "eyebrow": "Pourquoi c’est important"
+    },
+    "guarantee": {
+      "eyebrow": "Notre garantie",
+      "title": "Si ça revient, nous revenons"
+    },
+    "packages": {
+      "eyebrow": "Forfaits",
+      "title": "Économisez avec un forfait ou une formule annuelle",
+      "all": "Comparer les formules annuelles"
+    },
+    "areas": {
+      "eyebrow": "Où nous intervenons",
+      "title": "Dans tout Dubaï",
+      "all": "Toutes les zones"
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "Avant de réserver"
+    },
+    "finalCta": {
+      "title": "Prêts quand vous l’êtes",
+      "lead": "Obtenez le prix en une minute et choisissez un jour. Ou écrivez-nous : nous répondons vite pendant les heures d’ouverture.",
+      "primary": "Obtenir un prix instantané"
+    }
+  },
+  "Diagnose": {
+    "privacy": "La photo est analysée, pas conservée. Ni nom ni téléphone nécessaires.",
+    "calculatorCta": "Ouvrir le calculateur",
+    "demo": {
+      "smell": {
+        "summary": "Une odeur de moisi au démarrage vient presque toujours d’un film de poussière et de moisissure sur l’échangeur intérieur et dans le bac à condensats. Un nettoyage standard l’élimine ; le technicien confirme sur place.",
+        "cause1": "Poussière et moisissure sur l’échangeur",
+        "cause1Text": "L’humidité de Dubaï transforme la poussière de l’échangeur en un film qui sent au démarrage du ventilateur.",
+        "cause2": "Eau stagnante dans le bac à condensats",
+        "cause2Text": "Une évacuation lente garde les condensats dans le bac, où les bactéries prolifèrent.",
+        "question": "À quand remonte le dernier nettoyage de l’unité ?"
+      },
+      "drip": {
+        "summary": "De l’eau à l’unité intérieure signifie généralement une conduite d’évacuation obstruée ou un échangeur givré derrière un filtre sale. Un nettoyage standard dégage l’évacuation ; le technicien vérifie le filtre et la pente du tuyau.",
+        "cause1": "Conduite d’évacuation obstruée",
+        "cause1Text": "Les condensats refoulent dans le bac et débordent.",
+        "cause2": "Givre sur l’échangeur",
+        "cause2Text": "Un filtre encrassé étouffe le débit d’air, l’échangeur gèle et goutte en dégelant.",
+        "question": "Ça goutte seulement pendant le refroidissement, ou aussi une fois l’unité éteinte ?"
+      },
+      "weak": {
+        "summary": "Un refroidissement faible avec l’unité qui tourne toute la journée indique un échangeur et une turbine encrassés de poussière ; après des années sans entretien, un nettoyage en profondeur rétablit le débit d’air. S’il reste faible, le technicien contrôle le fluide frigorigène.",
+        "cause1": "Échangeur et turbine encrassés",
+        "cause1Text": "Le débit d’air chute et l’unité n’atteint jamais la température réglée.",
+        "cause2": "Manque de fluide frigorigène",
+        "cause2Text": "Une fuite lente réduit le refroidissement au fil des mois ; contrôle au manomètre sur place.",
+        "question": "Quel âge a l’unité et à quand remonte son dernier entretien ?"
+      },
+      "stain": {
+        "summary": "Une tache de café fraîche sur un tissu clair part généralement avec une extraction à l’eau chaude et un traitement anti-tanins. Le technicien fait d’abord un essai sur une zone cachée.",
+        "cause1": "Tanins dans les fibres",
+        "cause1Text": "Les tanins du café se fixent vite sur le coton et le lin ; plus c’est tôt, plus c’est facile.",
+        "cause2": "Tache fixée par un remède maison",
+        "cause2Text": "Frotter ou l’eau chaude peuvent fixer la tache ; jusqu’à la visite, tamponnez seulement.",
+        "question": "Quel est le tissu du canapé, et de quand date la tache ?"
+      }
+    },
+    "form": {
+      "label": "Que se passe-t-il ?",
+      "placeholder": "Décrivez le problème ou posez une question",
+      "counter": "{count} / {max}",
+      "examples": {
+        "smell": "Odeur de moisi au démarrage de la clim",
+        "drip": "De l’eau goutte de l’unité intérieure",
+        "weak": "Refroidit faiblement et tourne toute la journée",
+        "stain": "Tache de café sur un canapé clair"
+      },
+      "photo": "Ajouter une photo",
+      "photoAlt": "Votre photo",
+      "removePhoto": "Retirer la photo",
+      "submitting": "Analyse en cours…",
+      "disclaimer": "Une estimation par IA, pas un verdict : le technicien confirme tout sur place avant de commencer."
+    },
+    "errors": {
+      "empty": "Décrivez le problème en quelques mots ou ajoutez une photo.",
+      "photoType": "Impossible de lire ce fichier. Essayez une photo JPEG, PNG ou WebP.",
+      "photoSize": "La photo reste trop lourde même réduite. Essayez-en une autre.",
+      "unavailable": "Le diagnostic IA n’est pas encore activé. Choisissez un service dans le calculateur ou écrivez-nous : nous répondons vite.",
+      "rateLimited": "Beaucoup de questions en une minute. Patientez un instant et réessayez.",
+      "refused": "Nous n’avons pas pu analyser cette demande. Décrivez ce que fait la clim ou le tissu et réessayez.",
+      "failed": "Un problème est survenu de notre côté. Réessayez dans un instant ou écrivez-nous.",
+      "network": "Pas de connexion. Vérifiez Internet et réessayez."
+    },
+    "result": {
+      "title": "Ce que ça semble être",
+      "urgency": {
+        "routine": "Rien ne presse",
+        "soon": "À faire prochainement",
+        "today": "À traiter aujourd’hui"
+      },
+      "confidence": {
+        "label": "Fiabilité : {level}",
+        "low": "faible",
+        "medium": "moyenne",
+        "high": "élevée"
+      },
+      "safety": "Sécurité d’abord",
+      "recommended": "Service recommandé",
+      "comingSoon": "Bientôt — liste d’attente ouverte",
+      "estimate": "Frais de diagnostic fixes, puis devis écrit",
+      "book": "Réserver à ce prix",
+      "details": "Détails du service",
+      "waitlist": "Rejoindre la liste d’attente",
+      "noService": "Plusieurs services pourraient convenir",
+      "noServiceText": "Ajoutez un détail ou deux, ou écrivez-nous avec une photo : nous vous dirons quoi réserver.",
+      "outOfScope": "Hors de notre domaine",
+      "outOfScopeText": "Nous nettoyons et réparons les climatiseurs et nettoyons les canapés, matelas et tapis. Ce cas relève d’un autre métier : écrivez-nous et nous vous orienterons.",
+      "causes": "Causes probables",
+      "likelihood": {
+        "likely": "Probable",
+        "possible": "Possible",
+        "unlikely": "Peu probable"
+      },
+      "questions": "Le technicien vous demandera",
+      "questionsHint": "Ajoutez les réponses à votre message de réservation et la visite ira plus vite.",
+      "again": "Poser une autre question",
+      "contact": "Nous écrire",
+      "demoBadge": "Réponse d’exemple — l’assistant en direct est en cours de connexion"
+    }
+  },
+  "Assistant": {
+    "launcher": "Assistant",
+    "launcherLabel": "Ouvrir l’assistant : diagnostic IA et réponses rapides",
+    "title": "Assistant Brigada",
+    "subtitle": "Diagnostic IA et réponses rapides",
+    "close": "Fermer l’assistant",
+    "greeting": "Bonjour ! Décrivez ce que fait la clim ou le canapé, envoyez une photo — ou touchez une question ci-dessous.",
+    "faqGroup": "Questions fréquentes",
+    "examplesGroup": "Ou décrivez un problème",
+    "send": "Envoyer",
+    "faqNote": "Tiré de notre FAQ. Pour autre chose, écrivez-le simplement.",
+    "you": "Vous",
+    "assistant": "Assistant"
+  },
+  "Services": {
+    "lead": "Dix services à prix fixe et deux bientôt disponibles. Chaque visite se termine par un rapport photo sur WhatsApp.",
+    "category": {
+      "ac": "Climatisation",
+      "upholstery": "Canapés, matelas et tapis",
+      "comingSoon": "Bientôt"
+    },
+    "summary": {
+      "ac": "Nettoyage, nettoyage en profondeur, ventilo-convecteurs, réparations et fluide frigorigène.",
+      "upholstery": "Canapés, matelas, tapis, taches et odeurs — secs en quelques heures.",
+      "comingSoon": "Rejoignez la liste d’attente et nous vous écrirons en premier."
+    },
+    "card": {
+      "more": "Détails"
+    },
+    "badge": {
+      "sameDay": "Le jour même",
+      "estimate": "Diagnostic + devis",
+      "comingSoon": "Bientôt",
+      "availableFrom": "À partir de {date}"
+    },
+    "contract": {
+      "title": "Contrat annuel",
+      "text": "Trois visites par an, réservation prioritaire et remise sur les réparations.",
+      "cta": "Comparer les formules"
+    },
+    "notSure": {
+      "title": "Vous ne savez pas quel service il vous faut ?",
+      "text": "Décrivez le problème ou envoyez une photo : l’assistant indique la cause probable et le service qui la règle, avec son prix fixe. Il répond aussi aux questions fréquentes.",
+      "ask": "Demander à l’assistant",
+      "price": "Ouvrir le calculateur"
+    }
+  },
+  "Service": {
+    "included": "Ce qui est inclus",
+    "excluded": "Non inclus",
+    "symptoms": "Quand en avez-vous besoin",
+    "causes": "Causes typiques",
+    "glance": "En bref",
+    "prices": "Tarifs",
+    "visit": "Déroulement de la visite",
+    "visitDuration": "Durée de la visite : {duration}",
+    "beforeAfter": "Avant et après",
+    "guarantee": "Garantie",
+    "faq": "Questions sur ce service",
+    "related": "Souvent réservés ensemble",
+    "book": "Réserver ce service",
+    "fixedChip": "Prix fixe",
+    "duration": "Durée",
+    "unit": "Facturation",
+    "note": "Remarque",
+    "specifics": {
+      "deepVsStandard": "Nettoyage standard ou en profondeur ?",
+      "standard": "Nettoyage standard",
+      "deep": "Nettoyage en profondeur",
+      "ageNote": "Unités anciennes",
+      "sameDay": "Interventions le jour même",
+      "callout": "Déplacement avec diagnostic",
+      "credited": "Déduit d’une réparation effectuée lors de la même visite",
+      "principle": "Trouver et réparer d’abord, recharger ensuite",
+      "leakTest": "Test d’étanchéité",
+      "refill": "Recharge",
+      "repairByEstimate": "Réparation sur devis écrit",
+      "vsSplit": "Différence avec un split"
+    },
+    "comingSoon": {
+      "badge": "Bientôt",
+      "from": "Disponible à partir de {date}",
+      "waitlist": "Rejoindre la liste d’attente",
+      "note": "Nous vous écrivons en premier à l’ouverture. Pas de newsletter."
+    }
+  },
+  "Price": {
+    "from": "à partir de <price>{amount}</price>",
+    "per": {
+      "unit": "par unité",
+      "fcu": "par ventilo-convecteur",
+      "visit": "par visite",
+      "seat": "par place",
+      "item": "par pièce",
+      "sqm": "par m²",
+      "from": "+ devis"
+    },
+    "perYear": "{amount} par an",
+    "save": "Économisez {amount}",
+    "instead": "au lieu de {amount}",
+    "recommended": "Recommandé",
+    "vatIncluded": "Prix TVA de 5 % incluse.",
+    "vatAdded": "TVA de 5 % ajoutée au total.",
+    "minimum": "Minimum {qty}",
+    "tierPlus": "{n}+",
+    "tierRange": "{from}–{to}",
+    "perYearRich": "<a>{amount}</a> par an",
+    "insteadRich": "au lieu de <s>{amount}</s>"
+  },
+  "Pricing": {
+    "lead": "Chaque prix ci-dessous est fixé avant la visite et inclut le déplacement. Les réparations commencent par des frais de diagnostic fixes, déduits du montant des travaux.",
+    "jump": {
+      "ac": "Climatisation",
+      "upholstery": "Canapés et tapis",
+      "packages": "Forfaits",
+      "calculator": "Calculateur"
+    },
+    "table": {
+      "item": "Service",
+      "price": "Prix"
+    },
+    "captions": {
+      "ac": "Tarifs climatisation",
+      "upholstery": "Tarifs canapés, matelas et tapis"
+    },
+    "factors": {
+      "title": "Ce qui influence le prix"
+    },
+    "tiers": {
+      "title": "Tarifs dégressifs"
+    }
+  },
+  "Report": {
+    "before": "Avant",
+    "after": "Après",
+    "example": "Exemple tiré d’un rapport",
+    "sent": "Envoyé après la visite"
+  },
+  "Contact": {
+    "lead": "Écrivez, appelez ou envoyez une demande avec le prix exact — comme vous préférez.",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "telegram": "Telegram"
+    },
+    "actions": {
+      "message": "Écrire",
+      "call": "Appeler",
+      "email": "Écrire"
+    },
+    "pending": "Notre téléphone et notre numéro WhatsApp sont en cours d’activation et apparaîtront ici avant l’ouverture des réservations.",
+    "pendingCta": "Voir les tarifs et planifier votre visite",
+    "hours": "Horaires",
+    "emergency": "Interventions urgentes",
+    "area": "Zone d’intervention",
+    "legal": "Coordonnées de la société",
+    "getPrice": "Obtenir un prix instantané"
+  },
+  "Contracts": {
+    "lead": "Un paiement par an, trois visites, une intervention prioritaire en cas de panne et une remise sur les réparations. Moins cher que de réserver chaque nettoyage séparément.",
+    "plans": {
+      "eyebrow": "Trois formules",
+      "title": "Choisissez la formule de votre logement",
+      "lead": "Toutes les formules couvrent les unités split d’un même logement à Dubaï. Le nombre d’unités est confirmé à la première visite.",
+      "note": "Prix par an, hors TVA jusqu’à notre immatriculation. Plus d’unités que la formule ne le prévoit ? Nous chiffrons la différence par unité."
+    },
+    "includes": {
+      "units": "Jusqu’à {n} unités",
+      "visits": "{n} visites par an",
+      "deep": "dont {n} nettoyage en profondeur",
+      "priority": "Intervention prioritaire sous {n} h",
+      "repairDiscount": "{n} % de remise sur les réparations"
+    },
+    "card": {
+      "saving": "Réservé visite par visite : <s>{separate}</s>. Vous économisez <s>{saving}</s> ({pct} %).",
+      "cta": "Demander cette formule"
+    },
+    "savings": {
+      "eyebrow": "Le calcul",
+      "title": "D’où vient l’économie",
+      "lead": "Nous comptons les visites de la formule aux prix unitaires de la grille tarifaire, pour le nombre maximal d’unités split de la formule.",
+      "caption": "Formules annuelles comparées aux réservations séparées",
+      "cols": {
+        "plan": "Formule",
+        "visits": "Ce que vous recevez",
+        "separate": "Réservé séparément",
+        "price": "Prix de la formule",
+        "saving": "Vous économisez"
+      },
+      "visitsStd": "{standard} nettoyages standard × {units} unités",
+      "visitsMix": "{standard} standard + {deep} en profondeur × {units} unités",
+      "note": "La formule Villa est comptée ici en unités split ; les ventilo-convecteurs coûtent plus cher par visite, l’économie y est donc plus grande."
+    },
+    "visit": {
+      "eyebrow": "À chaque visite",
+      "title": "Un nettoyage complet, à chaque fois",
+      "lead": "Une visite sous contrat est le même nettoyage standard qu’une réservation ponctuelle, avec le même rapport photo."
+    },
+    "how": {
+      "eyebrow": "Comment ça marche",
+      "title": "Trois étapes par an",
+      "lead": "Si une unité tombe en panne entre deux visites, vous obtenez une intervention dans le délai de votre formule et sa remise sur la réparation."
+    },
+    "steps": {
+      "one": {
+        "title": "Écrivez-nous",
+        "text": "Indiquez la formule et votre nombre d’unités. Nous confirmons le prix et le premier créneau sur WhatsApp."
+      },
+      "two": {
+        "title": "Première visite",
+        "text": "Nous nettoyons chaque unité, vérifions les évacuations et fixons avec vous les dates des deux visites suivantes."
+      },
+      "three": {
+        "title": "Nous vous rappelons",
+        "text": "Avant chaque visite, nous vous écrivons pour confirmer l’heure. Photos et relevés arrivent après chaque visite."
+      }
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "À propos du contrat"
+    },
+    "cta": {
+      "title": "Prêt pour une année sans souci de clim ?",
+      "lead": "Choisissez une formule ou écrivez-nous : nous vous aiderons à trouver celle qui convient à votre logement.",
+      "primary": "Voir les formules"
+    }
+  },
+  "About": {
+    "lead": "Une petite équipe de Dubaï pour le nettoyage et la réparation de climatiseurs et le nettoyage en profondeur des canapés, matelas et tapis. Prix fixes, créneau d’arrivée d’une heure et rapport photo après chaque visite.",
+    "story": {
+      "eyebrow": "Qui nous sommes",
+      "title": "Pourquoi nous avons commencé par les climatiseurs"
+    },
+    "standards": {
+      "eyebrow": "Nos standards",
+      "title": "Ce que fait chaque technicien",
+      "lead": "La même liste de contrôle dans chaque logement, quel que soit le travail.",
+      "items": {
+        "one": "Confirme le prix fixe avant de commencer",
+        "two": "Protège le sol et les meubles avec des bâches",
+        "three": "Mesure la température de soufflage avant et après",
+        "four": "Photographie l’échangeur, les filtres et l’évacuation avant et après",
+        "five": "Laisse la pièce aussi propre qu’il l’a trouvée et envoie le rapport sur WhatsApp"
+      }
+    },
+    "notDoing": {
+      "eyebrow": "Périmètre honnête",
+      "title": "Ce que nous ne faisons pas"
+    },
+    "legal": {
+      "title": "Coordonnées de la société"
+    },
+    "areas": {
+      "eyebrow": "Où nous intervenons",
+      "title": "Dans tout Dubaï"
+    }
+  },
+  "Booking": {
+    "progressLabel": "Étapes de la réservation",
+    "progress": "Étape {step} sur {total}",
+    "steps": {
+      "category": "Service",
+      "details": "Détails",
+      "time": "Horaire",
+      "send": "Envoi"
+    },
+    "category": {
+      "question": "Que faut-il faire ?",
+      "ac": {
+        "title": "Climatisation",
+        "text": "Nettoyage, nettoyage en profondeur, ventilo-convecteurs, réparations"
+      },
+      "upholstery": {
+        "title": "Canapés, matelas et tapis",
+        "text": "Canapés, matelas, tapis, taches et odeurs"
+      }
+    },
+    "details": {
+      "acQuestion": "Quel service ?",
+      "upholsteryQuestion": "Que nettoyons-nous ?",
+      "qty": {
+        "unit": "Unités",
+        "fcu": "Ventilo-convecteurs",
+        "visit": "Visites",
+        "seat": "Places",
+        "item": "Pièces",
+        "sqm": "Mètres carrés"
+      },
+      "inc": "Ajouter un : {item}",
+      "dec": "Retirer un : {item}",
+      "min": "Facturation minimale : {qty}",
+      "empty": "Choisissez au moins un élément pour continuer."
+    },
+    "summary": {
+      "subtotal": "Éléments",
+      "total": "Total",
+      "bundle": "Forfait {name}",
+      "save": "Vous économisez {amount}",
+      "diagnostics": "Diagnostic",
+      "credited": "déduit de la réparation",
+      "fromLine": "à partir de {amount}",
+      "repairEstimate": "Main-d’œuvre à partir de {amount}, pièces sur devis écrit",
+      "estimateNote": "Le montant final est confirmé par écrit avant toute réparation.",
+      "live": "Total : {total}",
+      "minApplied": "facturation minimale",
+      "line": "{qty} × {price}"
+    },
+    "offer": {
+      "text": "Ajoutez {items} pour {add} de plus — forfait {name}, économisez {savings}",
+      "add": "Ajouter"
+    },
+    "time": {
+      "question": "Quand cela vous convient-il ?",
+      "day": "Jour",
+      "window": "Moment de la journée",
+      "today": "Aujourd’hui",
+      "tomorrow": "Demain",
+      "windows": {
+        "morning": "Matin",
+        "afternoon": "Après-midi",
+        "evening": "Soir",
+        "any": "N’importe quand",
+        "asap": "Dès que possible"
+      },
+      "tooLate": "Trop tard pour aujourd’hui",
+      "confirmNote": "Nous confirmons le créneau exact d’une heure sur WhatsApp.",
+      "area": "Votre zone (facultatif)",
+      "areaOther": "Autre",
+      "areaNone": "Non choisie"
+    },
+    "send": {
+      "title": "Vérifier et envoyer",
+      "edit": "Modifier",
+      "service": "Service",
+      "time": "Horaire",
+      "area": "Zone",
+      "preview": "Votre message",
+      "whatsapp": "Envoyer sur WhatsApp",
+      "opened": "WhatsApp s’est ouvert dans un nouvel onglet. Rien ne s’est ouvert ? Copiez le message et envoyez-le vous-même.",
+      "copy": "Copier le message",
+      "copied": "Copié",
+      "contact": "Moyens de contact",
+      "pending": "La réservation en ligne ouvre bientôt : notre numéro WhatsApp apparaîtra ici. En attendant, copiez le message ou consultez les moyens de contact.",
+      "startOver": "Recommencer"
+    },
+    "nav": {
+      "back": "Retour",
+      "next": "Suivant",
+      "toTime": "Choisir un horaire",
+      "toSend": "Vérifier et envoyer"
+    },
+    "line": "{name} × {qty}"
+  }
+}

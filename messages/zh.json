@@ -1,0 +1,726 @@
+{
+  "Meta": {
+    "siteName": "Brigada",
+    "titleTemplate": "%s | Brigada 迪拜",
+    "description": "迪拜空调清洗与维修、沙发/床垫/地毯清洁。上门前锁定价格，一小时到达时段，WhatsApp 照片报告。"
+  },
+  "Pages": {
+    "home": {
+      "title": "迪拜空调清洗与家居软装护理",
+      "description": "迪拜空调清洗与维修、沙发/床垫/地毯清洁。上门前锁定价格，一小时到达时段，WhatsApp 照片报告。"
+    },
+    "services": {
+      "title": "服务",
+      "description": "迪拜空调清洗、深度清洗、风机盘管保养、维修、制冷剂，以及沙发、床垫和地毯清洁。固定价格，照片报告。"
+    },
+    "serviceDetail": {
+      "title": "服务"
+    },
+    "pricing": {
+      "title": "价格",
+      "description": "迪拜空调与软装清洁的固定价格、数量阶梯价、套餐和即时计算器。"
+    },
+    "annualContracts": {
+      "title": "年度保养合同",
+      "description": "迪拜空调年度保养方案：每年三次上门、优先派单和维修折扣。比较 Essential、Comfort 和 Villa。"
+    },
+    "areas": {
+      "title": "服务区域"
+    },
+    "areaDetail": {
+      "title": "区域"
+    },
+    "about": {
+      "title": "关于我们",
+      "description": "Brigada：迪拜本地团队，提供空调清洗、维修以及沙发、床垫和地毯的深度清洁。我们的工作方式、标准，以及我们不做的事。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "description": "联系迪拜 Brigada：WhatsApp、电话、营业时间和服务区域。"
+    },
+    "privacy": {
+      "title": "隐私政策"
+    },
+    "terms": {
+      "title": "服务条款"
+    },
+    "thankYou": {
+      "title": "谢谢！我们会尽快与您联系。"
+    }
+  },
+  "NotFound": {
+    "title": "找不到页面",
+    "lead": "页面可能已移动，或者链接有拼写错误。我们的团队还在这里。",
+    "backHome": "返回首页",
+    "services": "查看服务"
+  },
+  "Common": {
+    "skipToContent": "跳到主要内容",
+    "close": "关闭",
+    "breadcrumbLabel": "面包屑导航",
+    "notifications": "通知",
+    "opensInNewTab": "（在新标签页中打开）"
+  },
+  "Nav": {
+    "label": "主导航",
+    "home": "首页",
+    "services": "服务",
+    "pricing": "价格",
+    "annualContracts": "年度合同",
+    "areas": "区域",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "Header": {
+    "homeLabel": "{brand}，首页",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "menuTitle": "菜单",
+    "tagline": "空调与深度清洁 · 迪拜"
+  },
+  "Cta": {
+    "whatsapp": "通过 WhatsApp 联系我们",
+    "whatsappShort": "WhatsApp",
+    "telegram": "通过 Telegram 联系我们",
+    "telegramShort": "Telegram",
+    "call": "致电",
+    "email": "发送电子邮件"
+  },
+  "StickyBar": {
+    "label": "快速联系"
+  },
+  "Footer": {
+    "navLabel": "页脚",
+    "tagline": "迪拜空调清洗、维修与家居软装护理。",
+    "contactsTitle": "联系方式",
+    "phone": "电话",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "电子邮件",
+    "contactPage": "所有联系方式",
+    "socialTitle": "社交媒体",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "hoursTitle": "营业时间",
+    "emergencyTitle": "紧急上门",
+    "serviceAreaTitle": "服务区域",
+    "linksTitle": "网站",
+    "languageTitle": "语言",
+    "legalTitle": "公司",
+    "legalName": "法定名称",
+    "licenseNo": "执照编号",
+    "trn": "税号（TRN）",
+    "address": "地址",
+    "photoCredits": "图片：",
+    "copyright": "© {brand}"
+  },
+  "LangSwitcher": {
+    "label": "语言",
+    "names": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch",
+      "zh": "中文",
+      "hi": "हिन्दी"
+    },
+    "short": {
+      "en": "EN",
+      "ar": "ع",
+      "ru": "RU",
+      "fr": "FR",
+      "de": "DE",
+      "zh": "中",
+      "hi": "हि"
+    }
+  },
+  "PhoneInput": {
+    "placeholder": "+971 5X XXX XXXX",
+    "hint": "任何国家均可。未填写国家代码时默认为阿联酋（+971）。",
+    "invalid": "请检查号码：看起来不完整。"
+  },
+  "DevUi": {
+    "title": "UI 组件库",
+    "intro": "内部页面：当前语言和文字方向下的所有设计系统组件。生产环境不可用。",
+    "sections": {
+      "buttons": "按钮",
+      "cards": "卡片",
+      "badges": "标记和标签",
+      "accordion": "折叠面板",
+      "table": "表格（手机端首列固定）",
+      "forms": "表单字段",
+      "phone": "电话输入框",
+      "feedback": "骨架屏和提示",
+      "stickyBar": "手机端联系栏（含 Telegram，与启用后的 /ru 相同）",
+      "marketing": "营销模块",
+      "diagnose": "AI 诊断结果（示例）",
+      "sheet": "侧边面板",
+      "breadcrumbs": "面包屑",
+      "numbers": "数字、价格、邮箱、网址",
+      "longText": "长文本"
+    },
+    "samples": {
+      "primary": "立即获取价格",
+      "secondary": "查看全部价格",
+      "ghost": "了解更多",
+      "outline": "全部服务",
+      "destructive": "删除",
+      "link": "阅读条款",
+      "disabled": "不可用",
+      "iconLabel": "下一步",
+      "cardTitle": "空调标准清洗",
+      "cardText": "滤网、蒸发器、风扇和排水管。WhatsApp 照片报告。",
+      "cardFrom": "<price>{amount}</price> 起",
+      "badgeFixed": "固定价格",
+      "badgeNew": "新",
+      "badgeSoon": "即将推出",
+      "badgeDone": "已完成",
+      "badgeWait": "等待配件",
+      "badgeDiag": "先检测",
+      "chipArea": "迪拜码头",
+      "chipAll": "所有区域",
+      "q1": "空调应该多久清洗一次？",
+      "a1": "每天使用的机器每 4–6 个月清洗一次。",
+      "q2": "迪拜的老式楼宇里，风机盘管藏在吊顶上方，只能通过一个小检修口进入，你们也清洗吗？",
+      "a2": "可以。技师会先检查检修口的大小；如果无法安全触及机器，我们会发送照片并在开工前与您商定下一步，这样您绝不会为一次无法完成的上门付费。",
+      "tableCaption": "数据文件中的示例价格",
+      "tableService": "服务",
+      "tablePrice": "价格",
+      "tableNote": "备注",
+      "nameLabel": "您的姓名",
+      "namePlaceholder": "例如：Sara",
+      "areaLabel": "区域",
+      "areaPlaceholder": "选择区域",
+      "messageLabel": "需要做什么？",
+      "messagePlaceholder": "两台分体式空调，开机时有异味",
+      "consentLabel": "下次清洗到期时提醒我（可选）",
+      "phoneLabel": "电话或 WhatsApp",
+      "e164": "保存为",
+      "valid": "有效",
+      "invalid": "尚未有效",
+      "toastButton": "显示提示",
+      "toastMessage": "已收到您的请求。我们会在 15 分钟内回复。",
+      "sheetEnd": "从末端打开",
+      "sheetStart": "从起始端打开",
+      "sheetTitle": "面板标题",
+      "sheetText": "面板默认从行末端打开：英文为右侧，阿拉伯文为左侧。",
+      "numbersText": "价格：<ltr>{a}</ltr>、<ltr>{b}</ltr>、<ltr>{c}</ltr> 和 <ltr>{d}</ltr>。数字：<ltr>{n}</ltr>。邮箱：<ltr>{email}</ltr>。链接：<ltr>{url}</ltr>。电话格式：<ltr>{phone}</ltr>。",
+      "hoursText": "来自设置的营业时间：",
+      "longParagraph": "我们的技师自带防护布、吸水机和梯子，您只需留出通往室内机的通道即可。清洗完成后，您会通过 WhatsApp 收到前后对比照片，以及日后需要留意事项的说明。如需更换配件，我们会先发送价格，等您确认后再进行。",
+      "longWord": "超长不换行测试文本中央空调分体空调维护保养服务",
+      "longButton": "预约本周六对别墅内全部五台分体式空调进行深度清洗",
+      "diagSummary": "很可能是室内蒸发器和排水管脏了：霉味和滴水指向同一个原因。标准清洗通常能同时解决这两个问题；技师会在现场确认。",
+      "diagCause1Title": "蒸发器上的灰尘和霉菌",
+      "diagCause1Text": "迪拜的湿度会把蒸发器上的灰尘变成一层薄膜，风扇启动时就会发出气味。",
+      "diagCause2Title": "排水管淤塞",
+      "diagCause2Text": "冷凝水积在接水盘里，从机器滴下来。",
+      "diagQuestion1": "机器用了几年，上次清洗是什么时候？",
+      "diagQuestion2": "只在制冷时出水，还是关机后也出水？",
+      "diagSafety": "如果水流到插座或吊灯，请在断路器处关闭机器，直到技师上门。"
+    }
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "空调与软装护理 · 迪拜",
+      "diagnoseLead": "不确定哪里出了问题？",
+      "diagnoseCta": "试试 AI 诊断"
+    },
+    "ticker": {
+      "label": "我们的服务"
+    },
+    "team": {
+      "alt": "两名身穿黑色 T 恤的 Brigada 技师，手持风管刷和喷壶，背景是迪拜夜景（插画）",
+      "caption": "Brigada 团队（插画）"
+    },
+    "book": {
+      "eyebrow": "在线预约",
+      "title": "一分钟得知价格",
+      "lead": "选择服务，查看准确价格，挑选日期。我们会在 WhatsApp 上确认一小时到达时段。",
+      "talk": "想直接聊？给我们发消息"
+    },
+    "why": {
+      "eyebrow": "为什么重要"
+    },
+    "guarantee": {
+      "eyebrow": "我们的保证",
+      "title": "问题再来，我们再来"
+    },
+    "packages": {
+      "eyebrow": "套餐",
+      "title": "组合套餐或年度方案更省钱",
+      "all": "比较年度方案"
+    },
+    "areas": {
+      "eyebrow": "服务范围",
+      "title": "覆盖迪拜全城",
+      "all": "所有区域"
+    },
+    "faq": {
+      "eyebrow": "常见问题",
+      "title": "预约之前"
+    },
+    "finalCta": {
+      "title": "随时为您服务",
+      "lead": "一分钟得知价格并选好日期。或者给我们发消息，营业时间内我们回复很快。",
+      "primary": "立即获取价格"
+    }
+  },
+  "Diagnose": {
+    "privacy": "照片仅用于分析，不会保存。无需姓名或电话。",
+    "calculatorCta": "打开计算器",
+    "demo": {
+      "smell": {
+        "summary": "开机时的霉味几乎总是来自室内蒸发器和接水盘上的灰尘与霉菌薄膜。标准清洗即可去除；技师会在现场确认。",
+        "cause1": "蒸发器上的灰尘和霉菌",
+        "cause1Text": "迪拜的湿度会把蒸发器上的灰尘变成一层薄膜，风扇启动时就会发出气味。",
+        "cause2": "接水盘里的积水",
+        "cause2Text": "排水缓慢会让冷凝水留在接水盘里，滋生细菌。",
+        "question": "机器上次清洗是什么时候？"
+      },
+      "drip": {
+        "summary": "室内机出水通常意味着排水管淤塞，或者脏滤网后面的蒸发器结冰了。标准清洗可以疏通排水；技师会检查滤网和管道的坡度。",
+        "cause1": "排水管淤塞",
+        "cause1Text": "冷凝水在接水盘里倒流并溢出。",
+        "cause2": "蒸发器结冰",
+        "cause2Text": "堵塞的滤网阻碍气流，蒸发器结冰，融化时滴水。",
+        "question": "只在制冷时滴水，还是关机后也滴？"
+      },
+      "weak": {
+        "summary": "机器整天运转却制冷不足，说明蒸发器和风轮积满了灰尘；多年未保养的机器经深度清洗后气流可以恢复。如果仍然制冷不足，技师会检查制冷剂。",
+        "cause1": "蒸发器和风轮积满灰尘",
+        "cause1Text": "气流减弱，机器始终达不到设定温度。",
+        "cause2": "制冷剂不足",
+        "cause2Text": "缓慢泄漏会让制冷效果在几个月内逐渐下降；现场用压力表检测。",
+        "question": "机器用了几年，上次保养是什么时候？"
+      },
+      "stain": {
+        "summary": "浅色面料上的新鲜咖啡渍通常可以通过热水抽洗加单宁处理去除。技师会先在隐蔽处试验。",
+        "cause1": "纤维中的单宁",
+        "cause1Text": "咖啡单宁会很快附着在棉麻上；越早处理越容易。",
+        "cause2": "被家用方法固定",
+        "cause2Text": "揉搓或热水可能让污渍固定；上门前最好只用吸的方式轻按。",
+        "question": "沙发是什么面料，污渍留了多久？"
+      }
+    },
+    "form": {
+      "label": "出了什么问题？",
+      "placeholder": "描述问题或提问",
+      "counter": "{count} / {max}",
+      "examples": {
+        "smell": "空调开机时有霉味",
+        "drip": "室内机滴水",
+        "weak": "制冷弱，整天运转",
+        "stain": "浅色沙发上的咖啡渍"
+      },
+      "photo": "添加照片",
+      "photoAlt": "您的照片",
+      "removePhoto": "移除照片",
+      "submitting": "分析中…",
+      "disclaimer": "这是 AI 的估计，不是结论：技师会在开工前于现场确认一切。"
+    },
+    "errors": {
+      "empty": "请用几句话描述问题，或添加一张照片。",
+      "photoType": "无法读取此文件。请尝试 JPEG、PNG 或 WebP 格式的照片。",
+      "photoSize": "照片压缩后仍然过大。请换一张试试。",
+      "unavailable": "AI 诊断尚未开通。请在计算器中选择服务，或给我们发消息，我们回复很快。",
+      "rateLimited": "一分钟内提问太多了。请稍等片刻再试。",
+      "refused": "我们无法分析这条请求。请描述空调或面料的情况后再试。",
+      "failed": "我们这边出了点问题。请稍后再试，或给我们发消息。",
+      "network": "没有网络连接。请检查网络后再试。"
+    },
+    "result": {
+      "title": "初步判断",
+      "urgency": {
+        "routine": "不着急",
+        "soon": "建议尽快处理",
+        "today": "今天就需要处理"
+      },
+      "confidence": {
+        "label": "可信度：{level}",
+        "low": "低",
+        "medium": "中",
+        "high": "高"
+      },
+      "safety": "安全第一",
+      "recommended": "推荐服务",
+      "comingSoon": "即将推出 — 可加入候补名单",
+      "estimate": "固定检测费，然后出具书面报价",
+      "book": "按此价格预约",
+      "details": "服务详情",
+      "waitlist": "加入候补名单",
+      "noService": "可能有多项服务适用",
+      "noServiceText": "补充一两个细节，或者发一张照片给我们，我们会告诉您该预约什么。",
+      "outOfScope": "不在我们的服务范围",
+      "outOfScopeText": "我们清洗和维修空调，并清洁沙发、床垫和地毯。这个问题需要其他行业的师傅，给我们发消息，我们帮您推荐。",
+      "causes": "可能原因",
+      "likelihood": {
+        "likely": "很可能",
+        "possible": "可能",
+        "unlikely": "可能性较小"
+      },
+      "questions": "技师会问",
+      "questionsHint": "把答案写进预约消息，上门会更快。",
+      "again": "问点别的",
+      "contact": "给我们发消息",
+      "demoBadge": "示例回答 — 在线助手正在接入"
+    }
+  },
+  "Assistant": {
+    "launcher": "助手",
+    "launcherLabel": "打开助手：AI 诊断和快速解答",
+    "title": "Brigada 助手",
+    "subtitle": "AI 诊断和快速解答",
+    "close": "关闭助手",
+    "greeting": "您好！描述一下空调或沙发的情况，发一张照片，或者点击下面的问题。",
+    "faqGroup": "常见问题",
+    "examplesGroup": "或者描述问题",
+    "send": "发送",
+    "faqNote": "来自我们的常见问题。其他问题直接输入即可。",
+    "you": "您",
+    "assistant": "助手"
+  },
+  "Services": {
+    "lead": "十项固定价格的服务，另有两项即将推出。每次上门都以 WhatsApp 照片报告结束。",
+    "category": {
+      "ac": "空调",
+      "upholstery": "软装与地毯",
+      "comingSoon": "即将推出"
+    },
+    "summary": {
+      "ac": "清洗、深度清洗、风机盘管、维修和制冷剂。",
+      "upholstery": "沙发、床垫、地毯、污渍和异味，几小时内干透。",
+      "comingSoon": "加入候补名单，我们会第一时间通知您。"
+    },
+    "card": {
+      "more": "详情"
+    },
+    "badge": {
+      "sameDay": "当天上门",
+      "estimate": "检测 + 报价",
+      "comingSoon": "即将推出",
+      "availableFrom": "{date} 起"
+    },
+    "contract": {
+      "title": "年度合同",
+      "text": "每年三次上门、优先预约和维修折扣。",
+      "cta": "比较方案"
+    },
+    "notSure": {
+      "title": "不确定需要哪项服务？",
+      "text": "描述问题或发一张照片，助手会指出可能的原因和对应的服务及其固定价格。常见问题也能在那里直接得到解答。",
+      "ask": "询问助手",
+      "price": "打开计算器"
+    }
+  },
+  "Service": {
+    "included": "包含内容",
+    "excluded": "不包含",
+    "symptoms": "什么时候需要",
+    "causes": "常见原因",
+    "glance": "一览",
+    "prices": "价格",
+    "visit": "上门流程",
+    "visitDuration": "上门时长：{duration}",
+    "beforeAfter": "前后对比",
+    "guarantee": "保证",
+    "faq": "关于此服务的问题",
+    "related": "通常一起预约",
+    "book": "预约此服务",
+    "fixedChip": "固定价格",
+    "duration": "时长",
+    "unit": "计费方式",
+    "note": "备注",
+    "specifics": {
+      "deepVsStandard": "标准清洗还是深度清洗？",
+      "standard": "标准清洗",
+      "deep": "深度清洗",
+      "ageNote": "老旧机器",
+      "sameDay": "当天上门",
+      "callout": "上门含检测",
+      "credited": "同一次上门维修时抵扣",
+      "principle": "先找到并修好，再加注",
+      "leakTest": "泄漏检测",
+      "refill": "加注",
+      "repairByEstimate": "按书面报价维修",
+      "vsSplit": "与分体式空调的区别"
+    },
+    "comingSoon": {
+      "badge": "即将推出",
+      "from": "{date} 起可用",
+      "waitlist": "加入候补名单",
+      "note": "上线时我们会第一时间通知您。没有营销邮件。"
+    }
+  },
+  "Price": {
+    "from": "<price>{amount}</price> 起",
+    "per": {
+      "unit": "每台",
+      "fcu": "每台风机盘管",
+      "visit": "每次上门",
+      "seat": "每座位",
+      "item": "每件",
+      "sqm": "每平方米",
+      "from": "+ 报价"
+    },
+    "perYear": "{amount} / 年",
+    "save": "节省 {amount}",
+    "instead": "原价 {amount}",
+    "recommended": "推荐",
+    "vatIncluded": "价格含 5% 增值税。",
+    "vatAdded": "总价另加 5% 增值税。",
+    "minimum": "最少 {qty}",
+    "tierPlus": "{n}+",
+    "tierRange": "{from}–{to}",
+    "perYearRich": "<a>{amount}</a> / 年",
+    "insteadRich": "原价 <s>{amount}</s>"
+  },
+  "Pricing": {
+    "lead": "以下每个价格都在上门前锁定，并已包含上门费。维修从固定检测费开始，检测费计入维修费用。",
+    "jump": {
+      "ac": "空调",
+      "upholstery": "软装",
+      "packages": "套餐",
+      "calculator": "计算器"
+    },
+    "table": {
+      "item": "服务",
+      "price": "价格"
+    },
+    "captions": {
+      "ac": "空调价格",
+      "upholstery": "软装和地毯价格"
+    },
+    "factors": {
+      "title": "影响价格的因素"
+    },
+    "tiers": {
+      "title": "数量阶梯价"
+    }
+  },
+  "Report": {
+    "before": "之前",
+    "after": "之后",
+    "example": "报告示例",
+    "sent": "上门后发送"
+  },
+  "Contact": {
+    "lead": "发消息、打电话，或发送带有准确价格的预约请求，怎么方便怎么来。",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "phone": "电话",
+      "email": "电子邮件",
+      "telegram": "Telegram"
+    },
+    "actions": {
+      "message": "发消息",
+      "call": "致电",
+      "email": "写邮件"
+    },
+    "pending": "我们的电话和 WhatsApp 号码正在开通，开始接受预约前会显示在这里。",
+    "pendingCta": "查看价格并安排上门",
+    "hours": "营业时间",
+    "emergency": "紧急上门",
+    "area": "服务区域",
+    "legal": "公司信息",
+    "getPrice": "立即获取价格"
+  },
+  "Contracts": {
+    "lead": "一年一次付款，三次上门，故障时优先派单，维修享折扣。比单独预约每次清洗更划算。",
+    "plans": {
+      "eyebrow": "三种方案",
+      "title": "为您的家选择方案",
+      "lead": "所有方案适用于迪拜同一住所内的分体式空调。机器数量在首次上门时确认。",
+      "note": "价格按年计算，在我们完成税务登记前不含增值税。机器数量超过方案上限？我们按台计算差价。"
+    },
+    "includes": {
+      "units": "最多 {n} 台",
+      "visits": "每年 {n} 次上门",
+      "deep": "其中 {n} 次深度清洗",
+      "priority": "{n} 小时内优先上门",
+      "repairDiscount": "维修 {n}% 折扣"
+    },
+    "card": {
+      "saving": "逐次预约：<s>{separate}</s>。您节省 <s>{saving}</s>（{pct}%）。",
+      "cta": "咨询此方案"
+    },
+    "savings": {
+      "eyebrow": "算一算",
+      "title": "节省是怎么算出来的",
+      "lead": "我们按价目表中的单次价格计算方案内的上门次数，并按方案允许的最大分体式空调台数计算。",
+      "caption": "年度方案与单独预约的对比",
+      "cols": {
+        "plan": "方案",
+        "visits": "您获得",
+        "separate": "单独预约",
+        "price": "方案价格",
+        "saving": "您节省"
+      },
+      "visitsStd": "{standard} 次标准清洗 × {units} 台",
+      "visitsMix": "{standard} 次标准 + {deep} 次深度清洗 × {units} 台",
+      "note": "Villa 方案在此按分体式空调计算；风机盘管每次上门费用更高，因此实际节省更多。"
+    },
+    "visit": {
+      "eyebrow": "每次上门",
+      "title": "每次都是完整清洗",
+      "lead": "合同上门与单次预约的标准清洗完全相同，照片报告也一样。"
+    },
+    "how": {
+      "eyebrow": "如何运作",
+      "title": "一年三步",
+      "lead": "如果两次上门之间有机器出故障，我们会在方案规定的时间内上门，并享受方案的维修折扣。"
+    },
+    "steps": {
+      "one": {
+        "title": "给我们发消息",
+        "text": "告诉我们方案和机器数量。我们在 WhatsApp 上确认价格和首次上门时段。"
+      },
+      "two": {
+        "title": "首次上门",
+        "text": "我们清洗每一台机器，检查排水，并与您约定接下来两次上门的日期。"
+      },
+      "three": {
+        "title": "我们提醒您",
+        "text": "每次上门前我们会发消息确认时间。每次上门后都会发送照片和读数。"
+      }
+    },
+    "faq": {
+      "eyebrow": "常见问题",
+      "title": "关于合同"
+    },
+    "cta": {
+      "title": "准备好一整年不再为空调操心了吗？",
+      "lead": "选择一个方案，或给我们发消息，我们帮您挑选最适合您家的方案。",
+      "primary": "查看方案"
+    }
+  },
+  "About": {
+    "lead": "迪拜本地小团队，提供空调清洗、维修以及沙发、床垫和地毯的深度清洁。固定价格，一小时到达时段，每次上门后都有照片报告。",
+    "story": {
+      "eyebrow": "我们是谁",
+      "title": "我们为什么从空调开始"
+    },
+    "standards": {
+      "eyebrow": "我们的标准",
+      "title": "每位技师都会做的事",
+      "lead": "无论什么任务，在每个家庭都执行同一份检查清单。",
+      "items": {
+        "one": "开工前确认固定价格",
+        "two": "用防护布保护地板和家具",
+        "three": "测量清洗前后的出风温度",
+        "four": "拍摄蒸发器、滤网和排水管的前后照片",
+        "five": "离开时房间和来时一样干净，并通过 WhatsApp 发送报告"
+      }
+    },
+    "notDoing": {
+      "eyebrow": "坦诚的边界",
+      "title": "我们不做的事"
+    },
+    "legal": {
+      "title": "公司信息"
+    },
+    "areas": {
+      "eyebrow": "服务范围",
+      "title": "覆盖迪拜全城"
+    }
+  },
+  "Booking": {
+    "progressLabel": "预约步骤",
+    "progress": "第 {step} 步，共 {total} 步",
+    "steps": {
+      "category": "服务",
+      "details": "详情",
+      "time": "时间",
+      "send": "发送"
+    },
+    "category": {
+      "question": "需要做什么？",
+      "ac": {
+        "title": "空调",
+        "text": "清洗、深度清洗、风机盘管、维修"
+      },
+      "upholstery": {
+        "title": "软装与地毯",
+        "text": "沙发、床垫、地毯、污渍和异味"
+      }
+    },
+    "details": {
+      "acQuestion": "哪项服务？",
+      "upholsteryQuestion": "清洁什么？",
+      "qty": {
+        "unit": "台数",
+        "fcu": "风机盘管",
+        "visit": "上门次数",
+        "seat": "座位数",
+        "item": "件数",
+        "sqm": "平方米"
+      },
+      "inc": "增加一个：{item}",
+      "dec": "减少一个：{item}",
+      "min": "最低消费：{qty}",
+      "empty": "请至少选择一项再继续。"
+    },
+    "summary": {
+      "subtotal": "项目",
+      "total": "合计",
+      "bundle": "{name} 套餐",
+      "save": "您节省 {amount}",
+      "diagnostics": "检测",
+      "credited": "计入维修费用",
+      "fromLine": "{amount} 起",
+      "repairEstimate": "人工 {amount} 起，配件按书面报价",
+      "estimateNote": "最终金额会在维修开始前以书面形式确认。",
+      "live": "合计：{total}",
+      "minApplied": "最低消费",
+      "line": "{qty} × {price}"
+    },
+    "offer": {
+      "text": "再加 {add} 添加 {items} — {name} 套餐，节省 {savings}",
+      "add": "添加"
+    },
+    "time": {
+      "question": "什么时间方便？",
+      "day": "日期",
+      "window": "时段",
+      "today": "今天",
+      "tomorrow": "明天",
+      "windows": {
+        "morning": "上午",
+        "afternoon": "下午",
+        "evening": "傍晚",
+        "any": "任何时间",
+        "asap": "尽快"
+      },
+      "tooLate": "今天来不及了",
+      "confirmNote": "我们会在 WhatsApp 上确认准确的一小时时段。",
+      "area": "您所在的区域（可选）",
+      "areaOther": "其他",
+      "areaNone": "未选择"
+    },
+    "send": {
+      "title": "核对并发送",
+      "edit": "修改",
+      "service": "服务",
+      "time": "时间",
+      "area": "区域",
+      "preview": "您的消息",
+      "whatsapp": "通过 WhatsApp 发送",
+      "opened": "WhatsApp 已在新标签页中打开。没有打开？请复制消息自行发送。",
+      "copy": "复制消息",
+      "copied": "已复制",
+      "contact": "联系方式",
+      "pending": "在线预约即将开放，届时我们的 WhatsApp 号码会显示在这里。您可以先复制消息，或查看联系方式。",
+      "startOver": "重新开始"
+    },
+    "nav": {
+      "back": "返回",
+      "next": "下一步",
+      "toTime": "选择时间",
+      "toSend": "核对并发送"
+    },
+    "line": "{name} × {qty}"
+  }
+}
