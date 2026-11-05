@@ -13,6 +13,4 @@ export function alternatesFor(locale: Locale, href: string): Metadata['alternate
   };
 }
 
-export function siteUrl(): URL {
-  return new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000');
-}
+export { siteUrl } from './env';

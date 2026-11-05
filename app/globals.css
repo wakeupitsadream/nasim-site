@@ -75,7 +75,7 @@
   --destructive: var(--nasim-danger);
   --border: var(--nasim-line);
   --input: var(--nasim-line);
-  --ring: var(--nasim-turquoise);
+  --ring: var(--nasim-teal-deep); /* бирюза на песке ≈ 2.4:1 — мало для фокуса (WCAG 1.4.11) */
   --chart-1: var(--nasim-teal-deep);
   --chart-2: var(--nasim-turquoise);
   --chart-3: var(--nasim-warning);
@@ -89,7 +89,7 @@
   --sidebar-accent: var(--nasim-turquoise-soft);
   --sidebar-accent-foreground: var(--nasim-ink);
   --sidebar-border: var(--nasim-line);
-  --sidebar-ring: var(--nasim-turquoise);
+  --sidebar-ring: var(--nasim-teal-deep);
 }
 
 @layer base {
@@ -99,6 +99,9 @@
   html {
     @apply font-sans;
     -webkit-font-smoothing: antialiased;
+    /* якоря и фокус не прячутся под липкой шапкой и мобильной панелью */
+    scroll-padding-top: calc(var(--nasim-header-h) + 8px);
+    scroll-padding-bottom: calc(var(--nasim-sticky-bar-h) + 8px);
   }
   body {
     @apply bg-background text-body text-foreground;

@@ -1,8 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import { Footer } from '@/components/marketing/footer';
+import { Header } from '@/components/marketing/header';
+import { StickyBar } from '@/components/marketing/sticky-bar';
 import { DirectionProvider } from '@/components/ui/direction';
+import { getSiteSettings } from '@/lib/content/site';
+import { hasCanonicalDomain } from '@/lib/env';
 import { getDirection, routing } from '@/lib/i18n/routing';
 import { siteUrl } from '@/lib/seo';
 import '../globals.css';
@@ -23,17 +28,27 @@ const plexArabic = IBM_Plex_Sans_Arabic({
   preload: false,
 });
 
+/** Namespaces read by client components (LangSwitcher, Sonner). Everything else stays on the server. */
+const CLIENT_NAMESPACES = ['LangSwitcher', 'Common'] as const;
+
+export const viewport: Viewport = { viewportFit: 'cover', themeColor: '#0e3b47' };
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('Meta');
+  const locale = await getLocale();
+  const [t, settings] = await Promise.all([getTranslations('Meta'), getSiteSettings(locale)]);
+  // Out of search until the own domain is set (*.vercel.app must not compete with it), and /ar
+  // while the Arabic texts are drafts (settings flag ar_noindex).
+  const noindex = !hasCanonicalDomain() || (locale === 'ar' && settings.flags.arNoindex);
   return {
     metadataBase: siteUrl(),
     title: { default: t('siteName'), template: t('titleTemplate') },
     description: t('description'),
     applicationName: t('siteName'),
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
@@ -41,12 +56,27 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'>) {
   const locale = await getLocale();
   const dir = getDirection(locale);
+  const [t, messages] = await Promise.all([getTranslations('Common'), getMessages()]);
+  const clientMessages = Object.fromEntries(CLIENT_NAMESPACES.map((ns) => [ns, messages[ns]]));
 
   return (
     <html lang={locale} dir={dir} className={`${plexSans.variable} ${plexArabic.variable}`}>
-      <body>
+      <body className="flex min-h-dvh flex-col pb-[calc(var(--nasim-sticky-bar-h)+env(safe-area-inset-bottom))] md:pb-0">
         <DirectionProvider dir={dir}>
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider messages={clientMessages}>
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:fixed focus:inset-s-3 focus:top-3 focus:z-60 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-3 focus:text-primary-foreground focus:outline-none focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2"
+            >
+              {t('skipToContent')}
+            </a>
+            <Header />
+            <main id="main" tabIndex={-1} className="flex-1 outline-none">
+              {children}
+            </main>
+            <Footer />
+            <StickyBar />
+          </NextIntlClientProvider>
         </DirectionProvider>
       </body>
     </html>
