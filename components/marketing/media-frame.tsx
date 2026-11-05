@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { AcUnitArt, ContourRings, SofaArt } from '@/components/marketing/illustrations';
-import type { MediaItem } from '@/lib/content/queries';
+import type { Photo } from '@/lib/content/queries';
 import { cn } from '@/lib/utils';
 
 type Ratio = '4/5' | '4/3' | '16/9' | '1/1';
@@ -12,7 +12,8 @@ const RATIO: Record<Ratio, string> = {
 };
 
 type Props = {
-  media?: MediaItem | null;
+  /** A picked photo (`getPhoto`); null or undefined renders the placeholder treatment. */
+  media?: Photo | null;
   ratio: Ratio;
   /** Brand line art shown while there is no photo. */
   art?: 'ac' | 'upholstery' | 'none';
@@ -40,7 +41,7 @@ export function MediaFrame({
   className,
 }: Props) {
   const base = cn(
-    'relative overflow-hidden',
+    'relative overflow-clip',
     RATIO[ratio],
     rounded === 'panel' ? 'rounded-panel' : 'rounded-card',
     className,
@@ -48,7 +49,7 @@ export function MediaFrame({
 
   if (media) {
     return (
-      <div className={base}>
+      <div className={cn(base, 'bg-mist shadow-card ring-1 ring-foreground/10')}>
         <Image
           src={media.url}
           alt={media.alt}

@@ -10,6 +10,7 @@ import { PriceFrom } from '@/components/marketing/price-from';
 import { Section } from '@/components/marketing/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import type { Photo } from '@/lib/content/queries';
 import type { CtaTarget } from '@/lib/cta';
 import { formatMinutes } from '@/lib/i18n/format';
 import type { Locale } from '@/lib/i18n/routing';
@@ -24,6 +25,8 @@ type Props = {
   whatsapp: CtaTarget;
   /** Service pages host the wizard; the primary CTA scrolls to it. */
   bookHref?: string;
+  /** The service photo (`getPhoto({ kind: 'service', serviceSlug })`); null keeps the placeholder. */
+  photo?: Photo | null;
 };
 
 /** Service page opener: breadcrumbs, category, name, summary, facts, CTAs, photo slot. */
@@ -33,6 +36,7 @@ export async function ServiceHero({
   priceFrom,
   whatsapp,
   bookHref = '#book',
+  photo,
 }: Props) {
   const [t, tServices, tCta, tCommon] = await Promise.all([
     getTranslations('Service'),
@@ -113,6 +117,7 @@ export async function ServiceHero({
         </div>
         <div className="enter lg:col-span-5" style={stagger(3)}>
           <MediaFrame
+            media={photo}
             ratio="4/5"
             art={category}
             sizes="(min-width: 1024px) 40vw, 100vw"

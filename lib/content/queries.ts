@@ -6,11 +6,14 @@ import {
   seedAreas,
   seedBlock,
   seedFaqs,
+  seedMedia,
   seedPackages,
   seedPriceItems,
   seedPricingRules,
   seedServices,
 } from '@/lib/content/seed';
+import type { Locale } from '@/lib/i18n/routing';
+import { pickLocalized } from '@/lib/i18n/text';
 import { buildPricingConfig, type PricingConfig } from '@/lib/pricing';
 import type {
   Area,
@@ -18,6 +21,8 @@ import type {
   BlockValue,
   Faq,
   FaqScope,
+  MediaKind,
+  MediaRecord,
   Package,
   PriceItem,
   PricingRulesRecord,
@@ -96,15 +101,39 @@ export async function getBlock<K extends BlockKey>(key: K): Promise<BlockValue<K
 }
 
 export type Review = { author: string; source: 'google' | 'whatsapp'; text: string; rating: number };
-export type MediaKind = 'before_after' | 'team' | 'hero' | 'service';
-export type MediaItem = { url: string; alt: string; width: number; height: number; kind: MediaKind };
+export type MediaItem = MediaRecord;
+export type MediaFilter = { kind: MediaKind; serviceSlug?: string; category?: 'ac' | 'upholstery' };
 
 /** No reviews yet: sections that need them render nothing (never invented, BRIEF §6.1). */
 export async function getReviews(): Promise<Review[]> {
   return [];
 }
 
-/** No photos yet (BRIEF §15.6): media frames render their placeholder treatment. */
-export async function getMedia(_filter: { kind: MediaKind; serviceSlug?: string }): Promise<MediaItem[]> {
-  return [];
+/**
+ * Photos of one kind, in order (content/seed/media.json: licensed stock as stand-ins until the
+ * owner's own photos arrive through the admin, DECISIONS №53). Frames without a photo keep their
+ * placeholder treatment (BRIEF §15.6).
+ */
+export async function getMedia(filter: MediaFilter): Promise<MediaItem[]> {
+  return seedMedia().filter(
+    (m) =>
+      m.kind === filter.kind &&
+      (filter.serviceSlug === undefined || m.service_slug === filter.serviceSlug) &&
+      (filter.category === undefined || m.category === filter.category),
+  );
+}
+
+/** A photo as components render it: the locale's alt already picked. */
+export type Photo = { url: string; alt: string; width: number; height: number };
+
+/** The first photo of a kind, picked for the locale, or null. */
+export async function getPhoto(filter: MediaFilter, locale: Locale): Promise<Photo | null> {
+  const [item] = await getMedia(filter);
+  if (!item) return null;
+  return {
+    url: item.url,
+    alt: pickLocalized(item.alt, locale).text,
+    width: item.width,
+    height: item.height,
+  };
 }

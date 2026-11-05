@@ -7,6 +7,9 @@ import type { PriceUnit } from '@/lib/validation/content';
 
 export type BookingCategory = 'ac' | 'upholstery';
 
+/** A photo as the client renders it (same shape as lib/content/queries `Photo`, kept local). */
+export type BookingPhoto = { url: string; alt: string; width: number; height: number };
+
 export type BookingService = {
   slug: string;
   category: BookingCategory;
@@ -31,6 +34,8 @@ export type BookingPayload = {
   /** Bundle names by slug (`Fresh Home`). */
   bundleNames: Record<string, Localized>;
   areas: { slug: string; name: Localized }[];
+  /** Photos of the two category cards; a missing one shows the line art instead. */
+  categoryPhotos: Partial<Record<BookingCategory, BookingPhoto>>;
   /** WhatsApp number in E.164, or '' while the owner has not provided one. */
   whatsapp: string;
   /** `wa.template.quote` in the page locale. */

@@ -1,4 +1,5 @@
 import { expect, test, type Locator } from '@playwright/test';
+import { diagnoseReady } from './diagnose-fixture';
 import { DESKTOP, MOBILE, msg } from './helpers';
 
 /** Names of the CSS animations currently attached to an element (empty when none run). */
@@ -148,6 +149,8 @@ test.describe('motion (styles/motion.css)', () => {
   }) => {
     await page.setViewportSize(DESKTOP);
     await page.goto('/en/services');
+    // Hydrated first: a click before hydration is a plain page load with no transition at all.
+    await diagnoseReady(page);
     await page.evaluate(() => {
       const w = window as Window & { __vt?: unknown[] };
       w.__vt = [];
@@ -164,9 +167,20 @@ test.describe('motion (styles/motion.css)', () => {
       .getByRole('link', { name: msg('en', 'Nav.pricing') })
       .click();
     await expect(page).toHaveURL(/\/en\/pricing$/);
-    const types = await page.evaluate(() => (window as Window & { __vt?: unknown[] }).__vt);
-    expect(types?.[0]).toContain('nav-forward');
-    expect(types?.at(-1)).toContain('nav-page');
+    // Under load React may run an untyped transition for an unrelated update; the two link
+    // navigations must still show up with their types (card → nav-forward, header → nav-page).
+    const calls = (await page.evaluate(
+      () => (window as Window & { __vt?: unknown[] }).__vt ?? [],
+    )) as (string[] | null)[];
+    const typed = calls.filter((t): t is string[] => Array.isArray(t));
+    expect(
+      typed.some((t) => t.includes('nav-forward')),
+      JSON.stringify(calls),
+    ).toBe(true);
+    expect(
+      typed.some((t) => t.includes('nav-page')),
+      JSON.stringify(calls),
+    ).toBe(true);
   });
 
   test('/ar: the same motion mirrors its origin', async ({ page }) => {

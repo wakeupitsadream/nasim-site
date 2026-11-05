@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { BrandMark } from '@/components/marketing/brand-mark';
 import { cn } from '@/lib/utils';
-import crew from '@/public/brand/crew-portrait.jpg';
+import crew from '@/public/brand/crew-night.jpg';
 
 type Props = {
   alt: string;
@@ -15,8 +15,9 @@ type Props = {
 };
 
 /**
- * The two mascots (Misha's illustration, cropped above its own lettering — the wordmark is ours,
- * DECISIONS №52) in a framed panel. Used by the guarantee block and the 404 page.
+ * The two mascots (Misha's emblem of 05.11.2026 — black shirts, night Dubai — cropped above its
+ * own lettering; the wordmark is ours, DECISIONS №52–53) in a framed panel. Used by the
+ * guarantee block and the 404 page.
  */
 export function CrewPortrait({ alt, caption, sizes, badge = true, priority, className }: Props) {
   return (
@@ -40,7 +41,7 @@ export function CrewPortrait({ alt, caption, sizes, badge = true, priority, clas
             aria-hidden="true"
             className="absolute inset-e-4 -bottom-4 inline-flex size-12 items-center justify-center rounded-full bg-background shadow-lift ring-1 ring-foreground/10 [--brand-mark-surface:var(--background)]"
           >
-            <BrandMark className="h-6 w-[1.8rem] text-primary" />
+            <BrandMark className="h-6 w-[1.8rem] text-brand" />
           </span>
         ) : null}
       </div>

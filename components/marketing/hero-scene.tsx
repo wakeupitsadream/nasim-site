@@ -1,23 +1,25 @@
 import Image from 'next/image';
 import type { ComponentProps } from 'react';
+import { AcUnitArt, ContourRings } from '@/components/marketing/illustrations';
 import { ReportMockup } from '@/components/marketing/report-mockup';
+import type { Photo } from '@/lib/content/queries';
 import { stagger } from '@/lib/motion';
-import scene from '@/public/brand/crew-scene.jpg';
 
 type Props = {
-  alt: string;
+  /** The hero photo (`getPhoto({ kind: 'hero' })`); null keeps the brand-art placeholder. */
+  photo: Photo | null;
+  alt?: never;
   caption: string;
   mockup: Omit<ComponentProps<typeof ReportMockup>, 'caption' | 'compact' | 'className' | 'style'>;
   className?: string;
 };
 
 /**
- * The hero visual: the crew at work in a framed panel (Misha's illustration, a stand-in until real
- * photos — DECISIONS №52) with the WhatsApp report card floating over its lower corner. One image
- * for every viewport (4:3 on phones, square from lg), so it is preloaded once. The panel tilts
- * after the pointer (`data-tilt`, components/motion/tilt-layer.tsx).
+ * The hero visual: a photo of a home we would work in, framed, with the WhatsApp report card
+ * floating over its lower corner. One image for every viewport (4:3 on phones, square from lg),
+ * preloaded as the LCP. The panel tilts after the pointer (`data-tilt`, tilt-layer.tsx).
  */
-export function HeroScene({ alt, caption, mockup, className }: Props) {
+export function HeroScene({ photo, caption, mockup, className }: Props) {
   return (
     <figure className={className}>
       <div className="relative lg:pb-6">
@@ -26,16 +28,22 @@ export function HeroScene({ alt, caption, mockup, className }: Props) {
           className="tilt enter relative aspect-4/3 overflow-clip rounded-panel bg-mist shadow-mockup ring-1 ring-foreground/10 lg:aspect-square"
           style={stagger(3)}
         >
-          <Image
-            src={scene}
-            alt={alt}
-            fill
-            priority
-            placeholder="blur"
-            sizes="(min-width: 1024px) 40vw, 100vw"
-            className="object-cover"
-          />
-          {/* A quiet shade along the bottom edge keeps the card legible over the busy scene. */}
+          {photo ? (
+            <Image
+              src={photo.url}
+              alt={photo.alt}
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+          ) : (
+            <div aria-hidden="true" className="nasim-placeholder absolute inset-0">
+              <ContourRings className="absolute -inset-e-1/4 -bottom-1/4 w-3/4" />
+              <AcUnitArt className="absolute inset-s-1/2 top-1/2 w-[46%] -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2" />
+            </div>
+          )}
+          {/* A quiet shade along the bottom edge keeps the card legible over the photo. */}
           <div
             aria-hidden="true"
             className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-teal-ink/60 to-transparent"

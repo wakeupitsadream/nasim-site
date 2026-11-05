@@ -9,7 +9,7 @@ import { HeroScene } from '@/components/marketing/hero-scene';
 import { Section } from '@/components/marketing/section';
 import { TrustStrip } from '@/components/marketing/trust-strip';
 import { Button } from '@/components/ui/button';
-import { getBlock } from '@/lib/content/queries';
+import { getBlock, getPhoto } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
 import type { Locale } from '@/lib/i18n/routing';
@@ -18,7 +18,7 @@ import { stagger } from '@/lib/motion';
 
 /** The promise (BRIEF §4), two CTAs, the trust strip and the report mockup. */
 export async function HomeHero({ locale }: { locale: Locale }) {
-  const [t, tCommon, settings, title, subtitle, ctaPrimary, ctaSecondary, trust, report] =
+  const [t, tCommon, settings, title, subtitle, ctaPrimary, ctaSecondary, trust, report, photo] =
     await Promise.all([
       getTranslations('Home'),
       getTranslations('Common'),
@@ -29,6 +29,7 @@ export async function HomeHero({ locale }: { locale: Locale }) {
       getBlock('home.hero.cta_secondary'),
       getBlock('home.trust.items'),
       getBlock('report.mockup'),
+      getPhoto({ kind: 'hero' }, locale),
     ]);
   const whatsapp = whatsappTarget(settings.contacts);
   const heading = pickLocalized(title, locale);
@@ -114,7 +115,7 @@ export async function HomeHero({ locale }: { locale: Locale }) {
           />
         </div>
         <HeroScene
-          alt={t('hero.sceneAlt')}
+          photo={photo}
           caption={t('hero.reportCaption')}
           mockup={mockup}
           className="lg:col-span-5 lg:ps-4"

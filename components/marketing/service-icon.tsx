@@ -44,7 +44,9 @@ export function ServiceIcon({ slug, tile = true, className }: Props) {
   const glyph = Icon ? (
     <Icon aria-hidden="true" strokeWidth={1.5} className="size-[22px]" />
   ) : (
-    <BrandMark className={cn('h-5 w-6', tile && '[--brand-mark-surface:var(--color-surface-2)]')} />
+    <BrandMark
+      className={cn('h-5 w-6 text-brand', tile && '[--brand-mark-surface:var(--color-surface-2)]')}
+    />
   );
   if (!tile) {
     return (

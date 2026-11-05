@@ -7,10 +7,11 @@ type Props = SVGProps<SVGSVGElement> & {
 };
 
 /**
- * The Brigada mark (DECISIONS №52): a bold italic "B" in the current colour with a red speed
- * streak cutting through its waist and running out to the end — the same drawing as app/icon.svg.
- * Decorative: always aria-hidden. The streak colour follows `--brand-mark-streak` (red by
- * default), so dark bands can keep it red while the letter turns white.
+ * The Brigada mark (DECISIONS №52–53): a bold italic "B" in the current colour (brand red in the
+ * lock-up, as on the crew's shirts) with a speed streak cutting through its waist and running out
+ * to the end — the same drawing as app/icon.svg. Decorative: always aria-hidden. The streak
+ * follows `--brand-mark-streak`: graphite on light surfaces by default, white on dark bands
+ * (`.tone-deep`, `.tone-brand`) and on the red van.
  */
 export function BrandMark({ animated = false, className, ...props }: Props) {
   return (
@@ -37,7 +38,7 @@ export function BrandMark({ animated = false, className, ...props }: Props) {
         />
         <path
           className="brand-mark__streak"
-          fill="var(--brand-mark-streak, var(--nasim-red))"
+          fill="var(--brand-mark-streak, var(--nasim-ink))"
           d="M-2 61c26-5 60-13 114-28l1-4C59 44 24 52-2 57Z"
         />
       </g>

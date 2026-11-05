@@ -176,6 +176,37 @@ export const blockRecordSchema = z.object({
   value: z.unknown(),
 });
 
+/**
+ * Photos (content/seed/media.json until the phase-2 media library). `hero`: the home hero;
+ * `band`: a dimmed backdrop of the closing band; `category`: the two wizard cards; `service`: the
+ * photo slot of one service page; `team` / `before_after`: reserved for real photos later.
+ */
+export const mediaKindSchema = z.enum([
+  'hero',
+  'band',
+  'category',
+  'service',
+  'team',
+  'before_after',
+]);
+export const mediaRecordSchema = z.object({
+  kind: mediaKindSchema,
+  service_slug: z.string().min(1).optional(),
+  category: z.enum(['ac', 'upholstery']).optional(),
+  /** Site-relative path under public/ (DB rows will carry Blob URLs instead). */
+  url: z.string().regex(/^\/[^\s]+\.(jpe?g|png|webp|avif)$/, 'site-relative image path'),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  alt: i18nTextRequired,
+  /** Where the photo came from, for the credits page and for replacing stock with our own. */
+  credit: z.object({
+    author: z.string().min(1),
+    source: z.string().url(),
+    license: z.string().min(1),
+  }),
+  sort: z.number().int(),
+});
+
 // Seed file wrappers. `_comment` is documentation for editors; looseObject lets it through.
 export const servicesFileSchema = z.looseObject({ services: z.array(serviceSchema) });
 export const pricesFileSchema = z.looseObject({
@@ -186,6 +217,7 @@ export const pricesFileSchema = z.looseObject({
 export const areasFileSchema = z.looseObject({ areas: z.array(areaSchema) });
 export const faqsFileSchema = z.looseObject({ faqs: z.array(faqSchema) });
 export const blocksFileSchema = z.looseObject({ blocks: z.array(blockRecordSchema) });
+export const mediaFileSchema = z.looseObject({ media: z.array(mediaRecordSchema) });
 
 export type Service = z.infer<typeof serviceSchema>;
 export type ServiceCategory = z.infer<typeof serviceCategorySchema>;
@@ -200,3 +232,5 @@ export type PricingRulesRecord = z.infer<typeof pricingRulesSchema>;
 export type Area = z.infer<typeof areaSchema>;
 export type Faq = z.infer<typeof faqSchema>;
 export type FaqScope = z.infer<typeof faqScopeSchema>;
+export type MediaKind = z.infer<typeof mediaKindSchema>;
+export type MediaRecord = z.infer<typeof mediaRecordSchema>;

@@ -52,7 +52,7 @@ export async function ReportMockup({
         className="overflow-hidden rounded-panel bg-card shadow-mockup ring-1 ring-foreground/5"
       >
         <div className="flex items-center gap-3 bg-teal-ink px-5 py-3 text-on-deep">
-          <BrandMark className="h-6 w-[1.8rem] [--brand-mark-surface:var(--color-teal-ink)]" />
+          <BrandMark className="h-6 w-[1.8rem] text-brand [--brand-mark-streak:#fff] [--brand-mark-surface:var(--color-teal-ink)]" />
           <span className="text-body font-medium">{brand}</span>
           <WhatsAppIcon className="ms-auto size-4 opacity-70" />
         </div>
