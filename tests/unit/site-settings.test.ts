@@ -56,3 +56,12 @@ describe('hasAny', () => {
     expect(hasAny({ a: '', b: 'x' })).toBe(true);
   });
 });
+
+describe('booking and VAT settings', () => {
+  it('expose the booking windows and the VAT state', () => {
+    const s = readSiteSettings('en');
+    expect(s.booking.windows.map((w) => w.key)).toEqual(['morning', 'afternoon', 'evening']);
+    expect(s.booking.same_day_cutoff).toBe('16:00');
+    expect(s.vat).toEqual({ registered: false, included: false });
+  });
+});

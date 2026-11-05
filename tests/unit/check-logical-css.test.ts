@@ -42,3 +42,25 @@ describe('check-logical-css', () => {
     expect(rulesFor(`import { cn } from '@/lib/utils'`)).toHaveLength(0);
   });
 });
+
+describe('check-logical-css file rules', () => {
+  const clientSource = `'use client';\nimport { seedServices } from '@/lib/content/seed';\nimport seed from '@/content/seed/areas.json';\n`;
+  const serverSource = `import { seedServices } from '@/lib/content/seed';\n`;
+
+  it('forbids server content imports in client components only', () => {
+    expect(rulesFor(clientSource)).toEqual([
+      'client component imports server content',
+      'client component imports server content',
+    ]);
+    expect(rulesFor(serverSource)).toEqual([]);
+  });
+
+  it('forbids reading the wall clock outside the allowlist', () => {
+    const source = `const now = new Date();\nconst t = Date.now();\nconst d = new Date('2026-01-01');\n`;
+    expect(rulesFor(source)).toEqual([
+      'wall clock read during render',
+      'wall clock read during render',
+    ]);
+    expect(checkSource(source, 'components/booking/wizard.tsx')).toEqual([]);
+  });
+});

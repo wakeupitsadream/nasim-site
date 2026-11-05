@@ -15,7 +15,7 @@ const linkClass =
 const headingClass = 'text-small font-semibold tracking-wide text-foreground uppercase';
 
 // Server component; no cookies/headers. Empty settings are hidden, never filled with placeholders.
-// No copyright year: new Date() during prerender is a sync-IO error under Cache Components.
+// No copyright year: reading the clock during prerender is a sync-IO error under Cache Components.
 export async function Footer() {
   const locale = await getLocale();
   const [t, tNav, s] = await Promise.all([
