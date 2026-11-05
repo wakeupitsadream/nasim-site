@@ -11,6 +11,7 @@ import { formatAED } from '@/lib/i18n/format';
 import { Link } from '@/lib/i18n/navigation';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 
 /** Fresh Home bundle plus the three annual plans (seed packages). */
 export async function PackagesTeaser({
@@ -49,7 +50,7 @@ export async function PackagesTeaser({
       />
       <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
         {bundle && bundle.type === 'bundle' ? (
-          <div className="tone-deep flex flex-col gap-5 rounded-panel p-8 lg:col-span-5">
+          <div className="tone-deep reveal flex flex-col gap-5 rounded-panel p-8 lg:col-span-5">
             <div className="flex items-center justify-between gap-3">
               <h3 className="text-h3 text-on-deep">
                 <LocalizedText value={pickLocalized(bundle.name, locale)} locale={locale} />
@@ -82,10 +83,11 @@ export async function PackagesTeaser({
           </div>
         ) : null}
         <ul className="grid gap-4 lg:col-span-7">
-          {annual.map((plan) => (
+          {annual.map((plan, i) => (
             <li
               key={plan.slug}
-              className="flex flex-col gap-3 rounded-card border border-border bg-background p-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+              className="reveal flex flex-col gap-3 rounded-card border border-border bg-background p-5 transition-[border-color,box-shadow] duration-(--nasim-dur) ease-brand hover:border-line-strong hover:shadow-card sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+              style={stagger(i + 1)}
             >
               <div className="flex flex-col gap-1">
                 <h3 className="flex items-center gap-2 text-lead font-medium text-foreground">

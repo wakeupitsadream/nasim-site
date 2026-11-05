@@ -2,6 +2,7 @@ import { ServiceCard, type ServiceBadge } from '@/components/marketing/service-c
 import type { Locale } from '@/lib/i18n/routing';
 import { priceFrom, type PricingConfig } from '@/lib/pricing';
 import type { Service } from '@/lib/validation/content';
+import { stagger } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -23,8 +24,9 @@ export function badgesFor(service: Service, emergencyEnabled: boolean): ServiceB
 export function ServiceGrid({ services, pricing, locale, emergencyEnabled, className }: Props) {
   return (
     <ul className={cn('grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6', className)}>
-      {services.map((service) => (
-        <li key={service.slug} className="h-full">
+      {services.map((service, i) => (
+        // Stagger by column so each row of cards rises together, left to right (mirrored in RTL).
+        <li key={service.slug} className="reveal h-full" style={stagger(i % 3)}>
           <ServiceCard
             service={service}
             priceFrom={priceFrom(pricing, service.slug)}

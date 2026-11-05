@@ -1,0 +1,421 @@
+/*
+ * Движение сайта (DECISIONS №48). Принципы:
+ * - CSS-first: scroll-driven reveals (`animation-timeline: view()`), входные анимации, переходы
+ *   страниц через View Transitions. Без JS-библиотек анимации.
+ * - Всё под `prefers-reduced-motion: no-preference`; scroll-driven — ещё и под `@supports`, так что
+ *   браузер без поддержки просто показывает контент (ничего не скрыто до JS/CSS).
+ * - Только compositor-свойства: opacity, translate, scale, rotate (плюс stroke-dashoffset у SVG).
+ * - Сдержанно: подъём 16–18px, 0.5–0.7 с, одна кривая (--nasim-ease-out), stagger ≤ 90 мс.
+ * Классы — plain CSS (не @utility): они комбинируются с утилитами Tailwind, но не конфликтуют.
+ * Важно: `view()` берёт ближайший scroll-контейнер, а `overflow: hidden` им является — предки
+ * элементов с .reveal обрезают через `overflow-clip`, иначе появление замирает.
+ * Интерактивные контейнеры (формы, чипы, списки ссылок) получают только .reveal-fade: сдвиг
+ * на 18px во время прокрутки уводит тап мимо цели.
+ */
+
+@keyframes nasim-rise {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes nasim-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes nasim-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+@keyframes nasim-pop {
+  0% {
+    scale: 1;
+  }
+  40% {
+    scale: 1.05;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes nasim-grow-x {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+@keyframes nasim-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes nasim-breeze {
+  0%,
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+  50% {
+    translate: 0 5px;
+    opacity: 0.45;
+  }
+}
+@keyframes nasim-ring {
+  0%,
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+  50% {
+    scale: 1.04;
+    opacity: 0.55;
+  }
+}
+@keyframes nasim-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes nasim-wiggle {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  30% {
+    rotate: -10deg;
+  }
+  70% {
+    rotate: 8deg;
+  }
+}
+@keyframes nasim-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -3px;
+  }
+}
+@keyframes nasim-drip {
+  0%,
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+  50% {
+    translate: 0 3px;
+    opacity: 0.7;
+  }
+}
+@keyframes nasim-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+@keyframes nasim-header-solid {
+  from {
+    border-color: transparent;
+    box-shadow: 0 0 0 0 rgb(14 59 71 / 0);
+  }
+  to {
+    border-color: var(--border);
+    box-shadow: var(--nasim-shadow-card);
+  }
+}
+@keyframes nasim-slide-x {
+  from {
+    translate: var(--nasim-vt-slide) 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+@layer components {
+  /* Якорные переходы плавные; Next 16 сам отключает это на SPA-навигации (data-scroll-behavior). */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Шапка при прокрутке получает линию и тень (scroll timeline, без JS). */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      .header-scroll {
+        border-color: transparent;
+        animation: nasim-header-solid linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 96px;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* Появление при входе в экран: scrubbed по позиции (entry 5% → 35%), stagger через --i. */
+    @supports (animation-timeline: view()) {
+      .reveal {
+        animation: nasim-rise var(--nasim-ease-out) both;
+        animation-timeline: view();
+        animation-range: entry calc(5% + var(--i, 0) * 6%) entry calc(35% + var(--i, 0) * 6%);
+      }
+      /* Opacity only: for anything tappable (forms, chips, link lists) targets must never move. */
+      .reveal-fade {
+        animation: nasim-fade var(--nasim-ease-out) both;
+        animation-timeline: view();
+        animation-range: entry calc(0% + var(--i, 0) * 6%) entry calc(30% + var(--i, 0) * 6%);
+      }
+      /* Линия, вырастающая от inline-start (бордеры шагов, разделители). */
+      .reveal-line {
+        transform-origin: 0% 50%;
+        animation: nasim-grow-x var(--nasim-ease-out) both;
+        animation-timeline: view();
+        animation-range: entry calc(10% + var(--i, 0) * 8%) entry calc(60% + var(--i, 0) * 8%);
+      }
+      [dir='rtl'] .reveal-line {
+        transform-origin: 100% 50%;
+      }
+    }
+
+    /* Входная анимация при загрузке (hero): по времени, stagger 90 мс через --i. */
+    .enter {
+      animation: nasim-rise 700ms var(--nasim-ease-out) both;
+      animation-delay: calc(var(--i, 0) * 90ms);
+    }
+    .enter-fade {
+      animation: nasim-fade 600ms var(--nasim-ease-out) both;
+      animation-delay: calc(var(--i, 0) * 90ms);
+    }
+    /* Медленное дыхание крупной панели (мокап отчёта). */
+    .float {
+      animation: nasim-float 7s ease-in-out infinite;
+      animation-delay: 1.2s;
+    }
+    /* Число изменилось: короткий «пульс» (перемонтируется через key). */
+    .pop {
+      animation: nasim-pop 360ms var(--nasim-ease-out);
+    }
+    /* Волны бриза в фирменной графике: медленно опускаются и тают, каждая со своим сдвигом. */
+    .breeze-flow > path {
+      animation: nasim-breeze 4.8s ease-in-out infinite;
+      animation-delay: calc(var(--i, 0) * 0.55s);
+    }
+    /* Контурные кольца эмблемы гарантии: едва заметное дыхание. */
+    .pulse-rings circle {
+      transform-origin: center;
+      transform-box: fill-box;
+      animation: nasim-ring 6s ease-in-out infinite;
+      animation-delay: calc(var(--i, 0) * 1.1s);
+    }
+    /* Галочки доверия «рисуются» после появления hero. */
+    .draw-check path {
+      stroke-dasharray: 24;
+      stroke-dashoffset: 24;
+      animation: nasim-draw 500ms ease-out both;
+      animation-delay: calc(600ms + var(--i, 0) * 120ms);
+    }
+    /* Индикатор ожидания: бегущий блик по мягкой бирюзе. */
+    .shimmer {
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--nasim-turquoise) 50%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      animation: nasim-shimmer 1.6s linear infinite;
+    }
+
+    /* Иконки услуг оживают при наведении на карточку/строку (.group). */
+    .group:hover [data-motion='spin'] > svg,
+    .group:focus-within [data-motion='spin'] > svg {
+      animation: nasim-spin 2.4s linear infinite;
+    }
+    .group:hover [data-motion='wiggle'] > svg,
+    .group:focus-within [data-motion='wiggle'] > svg {
+      animation: nasim-wiggle 700ms var(--nasim-ease-out);
+    }
+    .group:hover [data-motion='bob'] > svg,
+    .group:focus-within [data-motion='bob'] > svg {
+      animation: nasim-bob 1.2s ease-in-out infinite;
+    }
+    .group:hover [data-motion='drip'] > svg,
+    .group:focus-within [data-motion='drip'] > svg {
+      animation: nasim-drip 1.1s ease-in-out infinite;
+    }
+    .group:hover [data-motion='pulse'] > svg,
+    .group:focus-within [data-motion='pulse'] > svg {
+      animation: nasim-pop 900ms ease-in-out infinite;
+    }
+    /* Знак бриза в логотипе оживает при наведении на логотип (.group). */
+    .group:hover .breeze-hover > path,
+    .group:focus-within .breeze-hover > path {
+      animation: nasim-breeze 1.5s ease-in-out infinite;
+      animation-delay: calc(var(--i, 0) * 0.18s);
+    }
+    .underline-grow::after {
+      transition: scale var(--nasim-dur) var(--nasim-ease-out);
+    }
+  }
+
+  /* Полоса прогресса мастера: сегмент растёт от inline-start. */
+  .grow-x {
+    transform-origin: 0% 50%;
+  }
+  [dir='rtl'] .grow-x {
+    transform-origin: 100% 50%;
+  }
+
+  /* Подчёркивание ссылок навигации вырастает от inline-start. */
+  .underline-grow {
+    position: relative;
+  }
+  .underline-grow::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0.75rem;
+    bottom: 0.5rem;
+    height: 1.5px;
+    border-radius: 1px;
+    background: currentColor;
+    scale: 0 1;
+    transform-origin: 0% 50%;
+  }
+  [dir='rtl'] .underline-grow::after {
+    transform-origin: 100% 50%;
+  }
+  .underline-grow:hover::after,
+  .underline-grow:focus-visible::after {
+    scale: 1 1;
+  }
+
+  /* FAQ на <details>: высота анимируется там, где браузер умеет (Chromium); иначе мгновенно. */
+  @supports (interpolate-size: allow-keywords) {
+    details.faq {
+      interpolate-size: allow-keywords;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      details.faq::details-content {
+        block-size: 0;
+        overflow-y: clip;
+        opacity: 0;
+        transition:
+          block-size var(--nasim-dur-slow) var(--nasim-ease-out),
+          opacity var(--nasim-dur) ease,
+          content-visibility var(--nasim-dur-slow) allow-discrete;
+      }
+      details.faq[open]::details-content {
+        block-size: auto;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/*
+ * Переходы страниц (React <ViewTransition>, DECISIONS №49). Классы назначает React по типу
+ * навигации: .page-fade по умолчанию, .nav-forward / .nav-back у ссылок с transitionTypes.
+ * Шапка и мобильная панель закреплены: контент движется, опора остаётся.
+ */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-group(site-header),
+::view-transition-group(site-sticky-bar) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header),
+::view-transition-old(site-sticky-bar) {
+  display: none;
+}
+::view-transition-new(site-header),
+::view-transition-new(site-sticky-bar) {
+  animation: none;
+}
+
+::view-transition-old(.page-fade) {
+  animation: 120ms ease-in both nasim-fade reverse;
+}
+::view-transition-new(.page-fade) {
+  animation:
+    220ms ease-out 60ms both nasim-fade,
+    440ms var(--nasim-ease-out) both nasim-rise;
+}
+
+::view-transition-old(.nav-forward) {
+  --nasim-vt-slide: -40px;
+  animation:
+    140ms ease-in both nasim-fade reverse,
+    360ms var(--nasim-ease-out) both nasim-slide-x reverse;
+}
+::view-transition-new(.nav-forward) {
+  --nasim-vt-slide: 40px;
+  animation:
+    220ms ease-out 100ms both nasim-fade,
+    360ms var(--nasim-ease-out) both nasim-slide-x;
+}
+::view-transition-old(.nav-back) {
+  --nasim-vt-slide: 40px;
+  animation:
+    140ms ease-in both nasim-fade reverse,
+    360ms var(--nasim-ease-out) both nasim-slide-x reverse;
+}
+::view-transition-new(.nav-back) {
+  --nasim-vt-slide: -40px;
+  animation:
+    220ms ease-out 100ms both nasim-fade,
+    360ms var(--nasim-ease-out) both nasim-slide-x;
+}
+/* В RTL «вперёд» — влево. */
+:root[dir='rtl']::view-transition-old(.nav-forward) {
+  --nasim-vt-slide: 40px;
+}
+:root[dir='rtl']::view-transition-new(.nav-forward) {
+  --nasim-vt-slide: -40px;
+}
+:root[dir='rtl']::view-transition-old(.nav-back) {
+  --nasim-vt-slide: -40px;
+}
+:root[dir='rtl']::view-transition-new(.nav-back) {
+  --nasim-vt-slide: 40px;
+}
+
+/* Шаги мастера и карточка диагноза: тот же язык движения внутри страницы. */
+::view-transition-old(.step-out) {
+  animation: 120ms ease-in both nasim-fade reverse;
+}
+::view-transition-new(.step-in) {
+  animation:
+    200ms ease-out 40ms both nasim-fade,
+    400ms var(--nasim-ease-out) both nasim-rise;
+}
+
+/* Псевдоэлементы переходов не попадают под глобальный `*` в design-tokens.css. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

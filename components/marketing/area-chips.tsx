@@ -4,6 +4,7 @@ import { Link } from '@/lib/i18n/navigation';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized } from '@/lib/i18n/text';
 import type { Area } from '@/lib/validation/content';
+import { stagger } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -18,8 +19,8 @@ type Props = {
 export function AreaChips({ areas, locale, all, className, label }: Props) {
   return (
     <ul aria-label={label} className={cn('flex flex-wrap gap-2', className)}>
-      {areas.map((area) => (
-        <li key={area.slug}>
+      {areas.map((area, i) => (
+        <li key={area.slug} className="reveal-fade" style={stagger(Math.min(i, 6))}>
           <Badge variant="chip" asChild>
             <Link href={`/areas/${area.slug}`}>
               <LocalizedText value={pickLocalized(area.name, locale)} locale={locale} />
@@ -28,7 +29,7 @@ export function AreaChips({ areas, locale, all, className, label }: Props) {
         </li>
       ))}
       {all ? (
-        <li>
+        <li className="reveal-fade" style={stagger(6)}>
           <Badge variant="chip" asChild className="bg-transparent ring-1 ring-line-strong">
             <Link href="/areas">{all.label}</Link>
           </Badge>

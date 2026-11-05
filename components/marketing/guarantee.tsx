@@ -14,9 +14,9 @@ export async function Guarantee({ locale, tone = 'sand' }: { locale: Locale; ton
 
   return (
     <Section tone={tone} aria-labelledby="guarantee-title" size="compact">
-      <div className="grid items-center gap-8 overflow-hidden rounded-panel border border-border bg-card p-8 shadow-card lg:grid-cols-[auto_1fr] lg:gap-14 lg:p-12">
+      <div className="reveal grid items-center gap-8 overflow-clip rounded-panel border border-border bg-card p-8 shadow-card lg:grid-cols-[auto_1fr] lg:gap-14 lg:p-12">
         <div aria-hidden="true" className="relative mx-auto size-40 lg:size-48">
-          <ContourRings className="absolute inset-0 size-full text-primary" />
+          <ContourRings className="pulse-rings absolute inset-0 size-full text-primary" />
           <div className="absolute inset-1/4 flex items-center justify-center rounded-full bg-mist">
             <BreezeMark className="size-12 text-primary" />
           </div>

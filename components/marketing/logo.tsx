@@ -46,7 +46,7 @@ export async function Logo({ brandName, className }: { brandName: Localized; cla
   return (
     <div
       className={cn(
-        'relative inline-flex min-h-tap w-fit shrink-0 items-center gap-2 text-primary',
+        'group relative inline-flex min-h-tap w-fit shrink-0 items-center gap-2 text-primary',
         className,
       )}
     >
@@ -55,7 +55,7 @@ export async function Logo({ brandName, className }: { brandName: Localized; cla
         aria-label={t('homeLabel', { brand: brandName.text })}
         className="rounded-lg outline-none after:absolute after:inset-0 after:rounded-lg after:content-[''] focus-visible:after:ring-3 focus-visible:after:ring-ring focus-visible:after:ring-offset-2 focus-visible:after:ring-offset-background"
       >
-        <BreezeMark className="size-8 shrink-0" />
+        <BreezeMark animated className="size-8 shrink-0" />
       </Link>
       <span aria-hidden="true" lang={brandName.lang} className="flex items-baseline gap-1.5">
         <span className="text-logo leading-none font-semibold">

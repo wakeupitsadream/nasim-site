@@ -6,6 +6,7 @@ import { Ltr } from '@/components/ltr';
 import { AcUnitArt, SofaArt } from '@/components/marketing/illustrations';
 import type { BookingCategory, BookingPayload } from '@/components/booking/types';
 import { formatAED } from '@/lib/i18n/format';
+import { stagger } from '@/lib/motion';
 
 type Props = {
   payload: BookingPayload;
@@ -24,14 +25,15 @@ export function StepCategory({ payload, headingId, onChoose }: Props) {
 
   return (
     <div role="group" aria-labelledby={headingId} className="grid gap-4 sm:grid-cols-2">
-      {cards.map(({ key, art: Art }) => {
+      {cards.map(({ key, art: Art }, i) => {
         const flagship = payload.services.find((s) => s.category === key && s.priceFrom);
         return (
           <button
             key={key}
             type="button"
             onClick={() => onChoose(key)}
-            className="group flex flex-col overflow-hidden rounded-panel border border-border bg-card text-start shadow-card transition-[transform,box-shadow] duration-(--nasim-dur) ease-brand outline-none hover:shadow-lift focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
+            style={stagger(i)}
+            className="group reveal-fade flex flex-col overflow-clip rounded-panel border border-border bg-card text-start shadow-card transition-[transform,box-shadow] duration-(--nasim-dur) ease-brand outline-none hover:shadow-lift focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
           >
             <span
               aria-hidden="true"

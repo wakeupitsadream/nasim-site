@@ -9,7 +9,7 @@ export async function ContactsPending() {
   return (
     <div
       data-testid="contacts-pending"
-      className="flex flex-col gap-6 rounded-panel bg-mist p-8 lg:flex-row lg:items-center lg:justify-between lg:p-10"
+      className="reveal-fade flex flex-col gap-6 rounded-panel bg-mist p-8 lg:flex-row lg:items-center lg:justify-between lg:p-10"
     >
       <div className="flex items-start gap-4">
         <span

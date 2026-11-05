@@ -26,7 +26,12 @@ export async function Header() {
   const newTabHint = tCommon('opensInNewTab');
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
+    // header-scroll: hairline and shadow appear only once the page scrolls (styles/motion.css).
+    // viewTransitionName: the header stays put while page content slides underneath it.
+    <header
+      style={{ viewTransitionName: 'site-header' }}
+      className="header-scroll sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80"
+    >
       <div className="mx-auto flex h-header max-w-page items-center gap-2 px-gutter lg:px-gutter-lg">
         <Logo brandName={settings.brandName} />
 
@@ -36,7 +41,7 @@ export async function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex min-h-tap items-center rounded-lg px-3 text-body outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring"
+                  className="underline-grow inline-flex min-h-tap items-center rounded-lg px-3 text-body text-foreground transition-colors duration-(--nasim-dur-fast) outline-none hover:text-primary focus-visible:ring-3 focus-visible:ring-ring"
                 >
                   {item.label}
                 </Link>

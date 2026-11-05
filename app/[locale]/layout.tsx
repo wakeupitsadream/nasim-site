@@ -60,7 +60,14 @@ export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'
   const clientMessages = Object.fromEntries(CLIENT_NAMESPACES.map((ns) => [ns, messages[ns]]));
 
   return (
-    <html lang={locale} dir={dir} className={`${plexSans.variable} ${plexArabic.variable}`}>
+    // data-scroll-behavior: Next 16 then resets the smooth anchor scrolling (styles/motion.css)
+    // to an instant jump during SPA navigations, so page transitions start from the top.
+    <html
+      lang={locale}
+      dir={dir}
+      data-scroll-behavior="smooth"
+      className={`${plexSans.variable} ${plexArabic.variable}`}
+    >
       <body className="flex min-h-dvh flex-col pb-[calc(var(--nasim-sticky-bar-h)+env(safe-area-inset-bottom))] md:pb-0">
         <DirectionProvider dir={dir}>
           <NextIntlClientProvider messages={clientMessages}>

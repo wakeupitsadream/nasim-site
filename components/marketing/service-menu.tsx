@@ -11,6 +11,7 @@ import { formatMinutes } from '@/lib/i18n/format';
 import { Link } from '@/lib/i18n/navigation';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 import { priceFrom } from '@/lib/pricing';
 import type { Service } from '@/lib/validation/content';
 
@@ -23,8 +24,11 @@ export async function ServiceMenu({ locale }: { locale: Locale }) {
     getServices({ status: ['active'], category: 'upholstery' }),
   ]);
 
-  const panel = (key: 'ac' | 'upholstery', services: Service[]) => (
-    <div className="rounded-panel border border-border bg-card p-2 shadow-card">
+  const panel = (key: 'ac' | 'upholstery', services: Service[], index: number) => (
+    <div
+      className="reveal-fade rounded-panel border border-border bg-card p-2 shadow-card"
+      style={stagger(index)}
+    >
       <h3 className="px-4 pt-4 pb-2 text-small font-medium tracking-wide text-muted-foreground uppercase">
         {t(`services.${key}`)}
       </h3>
@@ -35,6 +39,7 @@ export async function ServiceMenu({ locale }: { locale: Locale }) {
             <li key={service.slug}>
               <Link
                 href={`/services/${service.slug}`}
+                transitionTypes={['nav-forward']}
                 className="group flex min-h-tap items-center gap-4 rounded-card px-4 py-3 transition-colors duration-(--nasim-dur-fast) outline-none hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring"
               >
                 <ServiceIcon slug={service.slug} className="size-10 rounded-lg" />
@@ -79,7 +84,7 @@ export async function ServiceMenu({ locale }: { locale: Locale }) {
         lead={t('services.lead')}
         actions={
           <Button variant="outline" size="lg" asChild>
-            <Link href="/services">
+            <Link href="/services" transitionTypes={['nav-forward']}>
               {t('services.all')}
               <ArrowRightIcon className="rtl:-scale-x-100" />
             </Link>
@@ -87,8 +92,8 @@ export async function ServiceMenu({ locale }: { locale: Locale }) {
         }
       />
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
-        {panel('ac', ac)}
-        {panel('upholstery', upholstery)}
+        {panel('ac', ac, 0)}
+        {panel('upholstery', upholstery, 1)}
       </div>
     </Section>
   );

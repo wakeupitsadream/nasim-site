@@ -6,6 +6,7 @@ import { getBlock } from '@/lib/content/queries';
 import { formatNumber } from '@/lib/i18n/format';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized, pickLocalizedValue } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 
 /** "Why every 4–6 months in Dubai": three short facts (blocks `home.why.*`). */
 export async function WhyCadence({ locale }: { locale: Locale }) {
@@ -32,7 +33,11 @@ export async function WhyCadence({ locale }: { locale: Locale }) {
         className="grid gap-8 md:grid-cols-3 md:gap-0 md:divide-x md:divide-border"
       >
         {items.value.map((item, i) => (
-          <li key={item.title} className="flex flex-col gap-3 md:px-8 md:first:ps-0 md:last:pe-0">
+          <li
+            key={item.title}
+            className="reveal flex flex-col gap-3 md:px-8 md:first:ps-0 md:last:pe-0"
+            style={stagger(i)}
+          >
             <span aria-hidden="true" className="text-small text-highlight-ink tabular-nums">
               <Ltr>{formatNumber(i + 1, locale, { minimumIntegerDigits: 2 })}</Ltr>
             </span>

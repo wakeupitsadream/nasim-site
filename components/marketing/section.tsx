@@ -35,7 +35,9 @@ export function Section({
       className={cn(
         'relative scroll-mt-header',
         TONE[tone],
-        decoration && 'isolate overflow-hidden',
+        // `overflow-clip`, not hidden: hidden would make the band a scroll container and freeze the
+        // scroll-driven `.reveal` animations inside it (styles/motion.css).
+        decoration && 'isolate overflow-clip',
         size === 'compact' ? 'py-section-sm' : 'py-section',
         className,
       )}

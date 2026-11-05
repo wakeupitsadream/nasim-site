@@ -62,6 +62,7 @@ export async function ServiceCard({ service, priceFrom, locale, badges = [], cla
         <h3 className="text-lead font-medium">
           <Link
             href={`/services/${service.slug}`}
+            transitionTypes={['nav-forward']}
             className="outline-none after:absolute after:inset-0 after:rounded-card after:content-[''] focus-visible:after:ring-3 focus-visible:after:ring-ring focus-visible:after:ring-offset-2"
           >
             <LocalizedText value={name} locale={locale} />

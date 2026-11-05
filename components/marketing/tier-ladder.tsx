@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { Ltr } from '@/components/ltr';
 import { formatAED, formatNumber } from '@/lib/i18n/format';
 import type { Locale } from '@/lib/i18n/routing';
+import { stagger } from '@/lib/motion';
 import { tierRanges, type PriceLine } from '@/lib/pricing';
 import { cn } from '@/lib/utils';
 
@@ -21,9 +22,10 @@ export async function TierLadder({ line, locale, label, className }: Props) {
           <li
             key={range.from}
             className={cn(
-              'flex min-w-28 flex-1 flex-col gap-1 rounded-card border border-border p-4',
+              'reveal flex min-w-28 flex-1 flex-col gap-1 rounded-card border border-border p-4 transition-[border-color,box-shadow] duration-(--nasim-dur) ease-brand hover:border-line-strong hover:shadow-card',
               i === ranges.length - 1 ? 'bg-mist' : 'bg-card',
             )}
+            style={stagger(i)}
           >
             <span className="text-small text-muted-foreground">
               <Ltr>

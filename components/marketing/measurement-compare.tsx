@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Ltr } from '@/components/ltr';
+import { CountUp } from '@/components/marketing/count-up';
 import { formatNumber } from '@/lib/i18n/format';
 import type { Locale } from '@/lib/i18n/routing';
 import type { BlockValue } from '@/lib/validation/content';
@@ -18,7 +19,7 @@ export async function MeasurementCompare({ readings, locale, className }: Props)
   return (
     <figure
       className={cn(
-        'grid gap-6 rounded-panel border border-border bg-card p-6 shadow-card lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-10 lg:p-10',
+        'reveal grid gap-6 rounded-panel border border-border bg-card p-6 shadow-card lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-10 lg:p-10',
         className,
       )}
     >
@@ -39,12 +40,19 @@ export async function MeasurementCompare({ readings, locale, className }: Props)
       </div>
       <div
         aria-hidden="true"
-        className="h-12 w-1.5 rounded-full bg-linear-to-b from-line-strong via-highlight-soft to-highlight lg:h-32"
+        className="reveal-fade h-12 w-1.5 rounded-full bg-linear-to-b from-line-strong via-highlight-soft to-highlight lg:h-32"
       />
       <div className="flex flex-col gap-1">
         <span className="text-small text-muted-foreground">{t('after')}</span>
+        {/* Counts down from the "before" reading when it comes into view. */}
         <Ltr className="text-display font-light text-primary tabular-nums">
-          {temp(readings.en.after_c)}
+          <CountUp
+            from={readings.en.before_c}
+            to={readings.en.after_c}
+            locale={locale}
+            fractionDigits={1}
+            suffix=" °C"
+          />
         </Ltr>
       </div>
       <figcaption className="text-small text-muted-foreground lg:col-span-3">

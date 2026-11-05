@@ -29,7 +29,7 @@ export async function FinalCta({ id = 'final-cta', title, lead, primary, whatsap
         </div>
       }
     >
-      <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div className="reveal flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
         <div className="flex max-w-[40rem] flex-col gap-4">
           <h2 id={`${id}-title`} className="text-h2 text-balance text-on-deep">
             {title}

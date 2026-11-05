@@ -1,7 +1,15 @@
 'use client';
 
 import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
-import { useEffect, useId, useMemo, useReducer, useRef } from 'react';
+import {
+  startTransition,
+  useEffect,
+  useId,
+  useMemo,
+  useReducer,
+  useRef,
+  ViewTransition,
+} from 'react';
 import { useTranslations } from 'next-intl';
 import { Progress } from '@/components/booking/progress';
 import { StepCategory } from '@/components/booking/step-category';
@@ -27,6 +35,8 @@ export function BookingWizard({ payload }: { payload: BookingPayload }) {
   const { locale, pricing } = payload;
   const initial = useMemo(() => initialState(payload.initial), [payload.initial]);
   const [state, dispatch] = useReducer(reducer, initial);
+  // Step changes run inside a React transition so the <ViewTransition> below animates them.
+  const go = (action: Parameters<typeof dispatch>[0]) => startTransition(() => dispatch(action));
   const headingId = useId();
   const errorId = useId();
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -71,10 +81,10 @@ export function BookingWizard({ payload }: { payload: BookingPayload }) {
       const clock = dubaiClock(new Date());
       const days = dayOptions(clock, payload.booking, { emergency });
       const keep = state.day && days.some((d) => d.date === state.day) ? state.day : null;
-      dispatch({ type: 'next', clock, defaultDay: keep ?? days[0]?.date ?? null });
+      go({ type: 'next', clock, defaultDay: keep ?? days[0]?.date ?? null });
       return;
     }
-    dispatch({ type: 'next' });
+    go({ type: 'next' });
   };
 
   const windowLabel = state.window ? t(`time.windows.${state.window}`) : t('time.windows.any');
@@ -134,80 +144,80 @@ export function BookingWizard({ payload }: { payload: BookingPayload }) {
         </div>
       </div>
 
-      <div
-        key={state.step}
-        className="motion-safe:animate-in motion-safe:duration-(--nasim-dur) motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
-      >
-        {state.step === 'category' ? (
-          <StepCategory
-            payload={payload}
-            headingId={headingId}
-            onChoose={(category) => {
-              const flagship = payload.services.find((s) => s.category === category);
-              dispatch({
-                type: 'chooseCategory',
-                category,
-                service:
-                  category === 'ac' && flagship
-                    ? {
-                        slug: flagship.slug,
-                        defaults: defaultSelection(pricing.lines, flagship.lines),
-                      }
-                    : undefined,
-              });
-            }}
-          />
-        ) : null}
-        {state.step === 'details' ? (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              next();
-            }}
-            aria-describedby={state.error ? errorId : undefined}
-            className="flex flex-col gap-8"
-          >
-            <StepDetails
+      {/* Steps cross-fade through a view transition (styles/motion.css .step-in / .step-out). */}
+      <ViewTransition key={state.step} enter="step-in" exit="step-out" default="none">
+        <div>
+          {state.step === 'category' ? (
+            <StepCategory
               payload={payload}
-              state={state}
-              quote={currentQuote}
-              suggestion={suggestion}
-              errorId={errorId}
-              onChooseService={chooseService}
-              onQty={(lineId, qty) => dispatch({ type: 'setQty', lineId, qty })}
-              onAddLines={(add) => dispatch({ type: 'addLines', add })}
+              headingId={headingId}
+              onChoose={(category) => {
+                const flagship = payload.services.find((s) => s.category === category);
+                go({
+                  type: 'chooseCategory',
+                  category,
+                  service:
+                    category === 'ac' && flagship
+                      ? {
+                          slug: flagship.slug,
+                          defaults: defaultSelection(pricing.lines, flagship.lines),
+                        }
+                      : undefined,
+                });
+              }}
             />
-            <Nav back={() => dispatch({ type: 'back' })} nextLabel={t('nav.toTime')} submit />
-          </form>
-        ) : null}
-        {state.step === 'time' ? (
-          <div className="flex flex-col gap-8">
-            <StepTime
-              payload={payload}
-              state={state}
-              emergency={emergency}
-              onDay={(day) => dispatch({ type: 'chooseDay', day })}
-              onWindow={(window) => dispatch({ type: 'chooseWindow', window })}
-              onArea={(area) => dispatch({ type: 'chooseArea', area })}
-            />
-            <Nav back={() => dispatch({ type: 'back' })} next={next} nextLabel={t('nav.toSend')} />
-          </div>
-        ) : null}
-        {state.step === 'send' ? (
-          <div className="flex flex-col gap-8">
-            <StepSend
-              payload={payload}
-              quote={currentQuote}
-              message={message}
-              timeLabel={timeLabel}
-              areaLabel={areaLabel}
-              onEdit={(step) => dispatch({ type: 'goTo', step })}
-              onReset={() => dispatch({ type: 'reset', initial })}
-            />
-            <Nav back={() => dispatch({ type: 'back' })} />
-          </div>
-        ) : null}
-      </div>
+          ) : null}
+          {state.step === 'details' ? (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                next();
+              }}
+              aria-describedby={state.error ? errorId : undefined}
+              className="flex flex-col gap-8"
+            >
+              <StepDetails
+                payload={payload}
+                state={state}
+                quote={currentQuote}
+                suggestion={suggestion}
+                errorId={errorId}
+                onChooseService={chooseService}
+                onQty={(lineId, qty) => dispatch({ type: 'setQty', lineId, qty })}
+                onAddLines={(add) => dispatch({ type: 'addLines', add })}
+              />
+              <Nav back={() => go({ type: 'back' })} nextLabel={t('nav.toTime')} submit />
+            </form>
+          ) : null}
+          {state.step === 'time' ? (
+            <div className="flex flex-col gap-8">
+              <StepTime
+                payload={payload}
+                state={state}
+                emergency={emergency}
+                onDay={(day) => dispatch({ type: 'chooseDay', day })}
+                onWindow={(window) => dispatch({ type: 'chooseWindow', window })}
+                onArea={(area) => dispatch({ type: 'chooseArea', area })}
+              />
+              <Nav back={() => go({ type: 'back' })} next={next} nextLabel={t('nav.toSend')} />
+            </div>
+          ) : null}
+          {state.step === 'send' ? (
+            <div className="flex flex-col gap-8">
+              <StepSend
+                payload={payload}
+                quote={currentQuote}
+                message={message}
+                timeLabel={timeLabel}
+                areaLabel={areaLabel}
+                onEdit={(step) => go({ type: 'goTo', step })}
+                onReset={() => go({ type: 'reset', initial })}
+              />
+              <Nav back={() => go({ type: 'back' })} />
+            </div>
+          ) : null}
+        </div>
+      </ViewTransition>
     </div>
   );
 }

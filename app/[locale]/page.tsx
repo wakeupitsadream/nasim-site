@@ -15,6 +15,7 @@ import { Section } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
 import { ServiceMenu } from '@/components/marketing/service-menu';
 import { WhyCadence } from '@/components/marketing/why-cadence';
+import { PageTransition } from '@/components/page-transition';
 import { getAreas, getFaqs } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
@@ -44,7 +45,7 @@ export default async function HomePage() {
   const whatsapp = whatsappTarget(settings.contacts);
 
   return (
-    <>
+    <PageTransition>
       <HomeHero locale={locale} />
 
       <DiagnoseSection tone="surface" calculatorHref="#book" />
@@ -105,6 +106,6 @@ export default async function HomePage() {
         primary={{ href: '/pricing#book', label: t('finalCta.primary') }}
         whatsapp={{ target: whatsapp, label: tCta('whatsapp') }}
       />
-    </>
+    </PageTransition>
   );
 }

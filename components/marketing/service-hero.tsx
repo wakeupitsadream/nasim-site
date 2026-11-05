@@ -14,6 +14,7 @@ import type { CtaTarget } from '@/lib/cta';
 import { formatMinutes } from '@/lib/i18n/format';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 import type { PriceUnit, Service } from '@/lib/validation/content';
 
 type Props = {
@@ -55,19 +56,28 @@ export async function ServiceHero({
       />
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         <div className="flex flex-col gap-6 lg:col-span-7 lg:pe-8">
-          <Eyebrow>{tServices(`category.${category}`)}</Eyebrow>
+          <Eyebrow className="enter" style={stagger(0)}>
+            {tServices(`category.${category}`)}
+          </Eyebrow>
           <h1
             id="service-title"
             lang={name.lang !== locale ? name.lang : undefined}
             dir={name.lang !== locale ? 'auto' : undefined}
-            className="text-h1 text-balance text-primary"
+            className="enter text-h1 text-balance text-primary"
+            style={stagger(1)}
           >
             {name.text}
           </h1>
-          <p className="max-w-[38rem] text-lead text-pretty text-muted-foreground">
+          <p
+            className="enter max-w-[38rem] text-lead text-pretty text-muted-foreground"
+            style={stagger(2)}
+          >
             <LocalizedText value={short} locale={locale} />
           </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-y border-border py-4">
+          <div
+            className="enter flex flex-wrap items-center gap-x-6 gap-y-3 border-y border-border py-4"
+            style={stagger(3)}
+          >
             {priceFrom ? (
               <PriceFrom
                 amount={priceFrom.amount}
@@ -86,7 +96,7 @@ export async function ServiceHero({
               {estimate ? tServices('badge.estimate') : t('fixedChip')}
             </Badge>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="enter flex flex-col gap-3 sm:flex-row sm:flex-wrap" style={stagger(4)}>
             <Button size="lg" asChild className="sm:min-w-56">
               <a href={bookHref}>{t('book')}</a>
             </Button>
@@ -101,7 +111,7 @@ export async function ServiceHero({
             </CtaLink>
           </div>
         </div>
-        <div className="lg:col-span-5">
+        <div className="enter lg:col-span-5" style={stagger(3)}>
           <MediaFrame
             ratio="4/5"
             art={category}

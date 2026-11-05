@@ -7,6 +7,7 @@ import { getBlock } from '@/lib/content/queries';
 import { formatNumber } from '@/lib/i18n/format';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalizedValue } from '@/lib/i18n/text';
+import { stagger } from '@/lib/motion';
 
 /** The dark band: four steps that mirror the owner's flow (block `home.how.steps`). */
 export async function HowItWorks({ locale }: { locale: Locale }) {
@@ -31,7 +32,17 @@ export async function HowItWorks({ locale }: { locale: Locale }) {
         className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8"
       >
         {steps.value.map((step, i) => (
-          <li key={step.title} className="flex flex-col gap-3 border-t border-line-on-deep pt-5">
+          <li
+            key={step.title}
+            className="reveal relative flex flex-col gap-3 border-t border-line-on-deep pt-5"
+            style={stagger(i)}
+          >
+            {/* The accent line draws across each step as it scrolls into view. */}
+            <span
+              aria-hidden="true"
+              className="reveal-line absolute inset-x-0 -top-px h-px bg-on-deep-accent/70"
+              style={stagger(i)}
+            />
             <span
               className="text-h2 leading-none font-light text-on-deep-accent tabular-nums"
               aria-hidden="true"
