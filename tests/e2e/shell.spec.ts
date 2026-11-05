@@ -96,10 +96,14 @@ test.describe('no invented contacts', () => {
     });
   }
 
-  test('fallback-EN settings on /ar are marked as English', async ({ page }) => {
+  test('/ar footer shows the Arabic settings and nothing falls back to English', async ({
+    page,
+  }) => {
     await page.goto('/ar');
-    const hours = page.locator('footer [lang="en"]', { hasText: 'Daily 8:00–20:00' });
-    await expect(hours).toHaveAttribute('dir', 'auto');
+    const footer = page.locator('footer');
+    await expect(footer.getByText('يوميًا 8:00–20:00')).toBeVisible();
+    // The language switcher names "English" in English on purpose; nothing else may be English.
+    await expect(footer.locator('[lang="en"]:not([hreflang])')).toHaveCount(0);
   });
 });
 

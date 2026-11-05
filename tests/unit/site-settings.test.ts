@@ -8,11 +8,8 @@ describe('readSiteSettings', () => {
     expect(readSiteSettings('ru').hours).toEqual({ text: 'Ежедневно 8:00–20:00', lang: 'ru' });
   });
 
-  it('falls back to EN and says so', () => {
-    expect(readSiteSettings('ar').hours).toEqual({ text: 'Daily 8:00–20:00', lang: 'en' });
-  });
-
-  it('reads the Arabic brand name', () => {
+  it('reads the Arabic settings (no EN fallback left on /ar)', () => {
+    expect(readSiteSettings('ar').hours).toEqual({ text: 'يوميًا 8:00–20:00', lang: 'ar' });
     expect(readSiteSettings('ar').brandName).toEqual({ text: 'بريجادا', lang: 'ar' });
   });
 
