@@ -11,7 +11,8 @@
         "ar": "تنظيف قياسي، وحدة واحدة",
         "fr": "Nettoyage standard, 1 unité",
         "de": "Standardreinigung, 1 Gerät",
-        "zh": "标准清洗，1 台"
+        "zh": "标准清洗，1 台",
+        "hi": "स्टैंडर्ड सफ़ाई, 1 यूनिट"
       },
       "unit": "unit",
       "price": 199,
@@ -23,7 +24,8 @@
         "ar": "رسوم الزيارة مشمولة",
         "fr": "Déplacement inclus",
         "de": "Anfahrt inklusive",
-        "zh": "含上门费"
+        "zh": "含上门费",
+        "hi": "विज़िट शुल्क शामिल"
       },
       "sort": 1
     },
@@ -37,7 +39,8 @@
         "ar": "تنظيف قياسي، 2–3 وحدات",
         "fr": "Nettoyage standard, 2–3 unités",
         "de": "Standardreinigung, 2–3 Geräte",
-        "zh": "标准清洗，2–3 台"
+        "zh": "标准清洗，2–3 台",
+        "hi": "स्टैंडर्ड सफ़ाई, 2–3 यूनिट"
       },
       "unit": "unit",
       "price": 169,
@@ -49,7 +52,8 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
-        "zh": "每台"
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
       },
       "sort": 2
     },
@@ -63,7 +67,8 @@
         "ar": "تنظيف قياسي، 4 وحدات فأكثر",
         "fr": "Nettoyage standard, 4 unités et plus",
         "de": "Standardreinigung, 4+ Geräte",
-        "zh": "标准清洗，4 台及以上"
+        "zh": "标准清洗，4 台及以上",
+        "hi": "स्टैंडर्ड सफ़ाई, 4+ यूनिट"
       },
       "unit": "unit",
       "price": 149,
@@ -75,7 +80,8 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
-        "zh": "每台"
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
       },
       "sort": 3
     },
@@ -89,7 +95,8 @@
         "ar": "تنظيف عميق، وحدة واحدة",
         "fr": "Nettoyage en profondeur, 1 unité",
         "de": "Tiefenreinigung, 1 Gerät",
-        "zh": "深度清洗，1 台"
+        "zh": "深度清洗，1 台",
+        "hi": "डीप क्लीनिंग, 1 यूनिट"
       },
       "unit": "unit",
       "price": 399,
@@ -101,7 +108,8 @@
         "ar": "تفكيك كامل للوحدة الداخلية",
         "fr": "Démontage complet de l’unité intérieure",
         "de": "Komplette Demontage des Innengeräts",
-        "zh": "室内机完全拆机"
+        "zh": "室内机完全拆机",
+        "hi": "इनडोर यूनिट पूरी तरह खोलकर"
       },
       "sort": 1
     },
@@ -115,7 +123,8 @@
         "ar": "تنظيف عميق، وحدتان فأكثر",
         "fr": "Nettoyage en profondeur, 2 unités et plus",
         "de": "Tiefenreinigung, 2+ Geräte",
-        "zh": "深度清洗，2 台及以上"
+        "zh": "深度清洗，2 台及以上",
+        "hi": "डीप क्लीनिंग, 2+ यूनिट"
       },
       "unit": "unit",
       "price": 349,
@@ -127,7 +136,8 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
-        "zh": "每台"
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
       },
       "sort": 2
     },
@@ -140,7 +150,8 @@
         "ar": "صيانة وحدة فان كويل",
         "fr": "Entretien de ventilo-convecteur",
         "de": "Gebläsekonvektor-Wartung",
-        "zh": "风机盘管保养"
+        "zh": "风机盘管保养",
+        "hi": "फैन कॉइल यूनिट सर्विस"
       },
       "unit": "fcu",
       "price": 249,
@@ -152,7 +163,8 @@
         "ar": "الحد الأدنى وحدتان",
         "fr": "2 FCU minimum",
         "de": "Mindestens 2 FCU",
-        "zh": "最少 2 台风机盘管"
+        "zh": "最少 2 台风机盘管",
+        "hi": "न्यूनतम 2 FCU"
       },
       "sort": 1
     },
@@ -165,7 +177,8 @@
         "ar": "زيارة طوارئ + فحص",
         "fr": "Déplacement d’urgence + diagnostic",
         "de": "Notfalleinsatz + Diagnose",
-        "zh": "紧急上门 + 检测"
+        "zh": "紧急上门 + 检测",
+        "hi": "तत्काल कॉल-आउट + जाँच"
       },
       "unit": "visit",
       "price": 149,
@@ -177,7 +190,8 @@
         "ar": "تُحتسب من قيمة إصلاح يُنجز في الزيارة نفسها",
         "fr": "Déduit d’une réparation effectuée lors de la même visite",
         "de": "Wird auf eine Reparatur im selben Besuch angerechnet",
-        "zh": "同一次上门维修时抵扣"
+        "zh": "同一次上门维修时抵扣",
+        "hi": "उसी विज़िट में की गई मरम्मत में समायोजित"
       },
       "sort": 1
     },
@@ -190,7 +204,8 @@
         "ar": "أجرة الإصلاح",
         "fr": "Main-d’œuvre de réparation",
         "de": "Reparatur, Arbeitslohn",
-        "zh": "维修人工费"
+        "zh": "维修人工费",
+        "hi": "मरम्मत की मज़दूरी"
       },
       "unit": "from",
       "price": 199,
@@ -202,7 +217,8 @@
         "ar": "القطع تُسعَّر على حدة، ضمان 90 يومًا",
         "fr": "Pièces chiffrées à part, garantie 90 jours",
         "de": "Ersatzteile nach Kostenvoranschlag, 90 Tage Garantie",
-        "zh": "配件另行报价，保修 90 天"
+        "zh": "配件另行报价，保修 90 天",
+        "hi": "पुर्ज़ों का अलग कोटेशन, 90 दिन की वारंटी"
       },
       "sort": 1
     },
@@ -215,7 +231,8 @@
         "ar": "اختبار تسرب بالنيتروجين",
         "fr": "Test d’étanchéité à l’azote",
         "de": "Stickstoff-Lecktest",
-        "zh": "氮气泄漏检测"
+        "zh": "氮气泄漏检测",
+        "hi": "नाइट्रोजन लीक टेस्ट"
       },
       "unit": "unit",
       "price": 249,
@@ -227,7 +244,8 @@
         "ar": "للنظام الواحد",
         "fr": "Par circuit",
         "de": "Pro Anlage",
-        "zh": "每套系统"
+        "zh": "每套系统",
+        "hi": "प्रति सिस्टम"
       },
       "sort": 1
     },
@@ -240,7 +258,8 @@
         "ar": "تعبئة بعد إصلاح التسرب",
         "fr": "Recharge après réparation de la fuite",
         "de": "Nachfüllen nach Leckreparatur",
-        "zh": "修漏后加注制冷剂"
+        "zh": "修漏后加注制冷剂",
+        "hi": "लीक की मरम्मत के बाद गैस भरना"
       },
       "unit": "from",
       "price": 349,
@@ -252,7 +271,8 @@
         "ar": "حسب نوع الغاز ووزنه",
         "fr": "Selon le type et le poids de fluide frigorigène",
         "de": "Nach Kältemittelart und Gewicht",
-        "zh": "按制冷剂类型和重量计价"
+        "zh": "按制冷剂类型和重量计价",
+        "hi": "रेफ़्रिजरेंट के प्रकार और वज़न के अनुसार"
       },
       "sort": 2
     },
@@ -265,7 +285,8 @@
         "ar": "أريكة، للمقعد",
         "fr": "Canapé, par place",
         "de": "Sofa, pro Sitzplatz",
-        "zh": "沙发，每座位"
+        "zh": "沙发，每座位",
+        "hi": "सोफ़ा, प्रति सीट"
       },
       "unit": "seat",
       "price": 49,
@@ -277,7 +298,8 @@
         "ar": "الحد الأدنى 3 مقاعد",
         "fr": "Minimum 3 places",
         "de": "Mindestens 3 Sitzplätze",
-        "zh": "最少 3 个座位"
+        "zh": "最少 3 个座位",
+        "hi": "न्यूनतम 3 सीट"
       },
       "sort": 1
     },
@@ -290,7 +312,8 @@
         "ar": "كرسي بذراعين",
         "fr": "Fauteuil",
         "de": "Sessel",
-        "zh": "扶手椅"
+        "zh": "扶手椅",
+        "hi": "आर्मचेयर"
       },
       "unit": "item",
       "price": 69,
@@ -302,7 +325,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       },
       "sort": 2
     },
@@ -315,7 +339,8 @@
         "ar": "مرتبة مفردة (Single)",
         "fr": "Matelas, une place",
         "de": "Matratze, Einzelbett",
-        "zh": "床垫，单人"
+        "zh": "床垫，单人",
+        "hi": "गद्दा, सिंगल"
       },
       "unit": "item",
       "price": 149,
@@ -327,7 +352,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       },
       "sort": 1
     },
@@ -340,7 +366,8 @@
         "ar": "مرتبة مزدوجة (Double / Queen)",
         "fr": "Matelas, deux places / queen",
         "de": "Matratze, Doppelbett / Queen-Size",
-        "zh": "床垫，双人 / Queen"
+        "zh": "床垫，双人 / Queen",
+        "hi": "गद्दा, डबल / क्वीन"
       },
       "unit": "item",
       "price": 199,
@@ -352,7 +379,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       },
       "sort": 2
     },
@@ -365,7 +393,8 @@
         "ar": "مرتبة كينغ (King)",
         "fr": "Matelas, king size",
         "de": "Matratze, King-Size",
-        "zh": "床垫，King"
+        "zh": "床垫，King",
+        "hi": "गद्दा, किंग"
       },
       "unit": "item",
       "price": 249,
@@ -377,7 +406,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       },
       "sort": 3
     },
@@ -390,7 +420,8 @@
         "ar": "سجاد، للمتر المربع",
         "fr": "Tapis, par m²",
         "de": "Teppich, pro m²",
-        "zh": "地毯，每平方米"
+        "zh": "地毯，每平方米",
+        "hi": "कालीन, प्रति वर्ग मीटर"
       },
       "unit": "sqm",
       "price": 25,
@@ -402,7 +433,8 @@
         "ar": "الحد الأدنى 150 درهمًا",
         "fr": "Minimum 150 AED",
         "de": "Mindestens 150 AED",
-        "zh": "最低消费 AED 150"
+        "zh": "最低消费 AED 150",
+        "hi": "न्यूनतम AED 150"
       },
       "sort": 1
     },
@@ -415,7 +447,8 @@
         "ar": "معالجة البقع والروائح، للقطعة",
         "fr": "Traitement taches et odeurs, par pièce",
         "de": "Flecken- & Geruchsbehandlung, pro Stück",
-        "zh": "污渍与异味处理，每件"
+        "zh": "污渍与异味处理，每件",
+        "hi": "दाग़ और बदबू ट्रीटमेंट, प्रति आइटम"
       },
       "unit": "item",
       "price": 79,
@@ -427,7 +460,8 @@
         "ar": "تُضاف إلى أي خدمة تنظيف مفروشات",
         "fr": "En complément de tout nettoyage de canapé, matelas ou tapis",
         "de": "Ergänzung zu jeder Polsterreinigung",
-        "zh": "可加购于任何软装清洁服务"
+        "zh": "可加购于任何软装清洁服务",
+        "hi": "किसी भी सोफ़ा-गद्दे की सेवा के साथ ऐड-ऑन"
       },
       "sort": 1
     }
@@ -445,7 +479,8 @@
         "ar": "Fresh Home",
         "fr": "Fresh Home",
         "de": "Fresh Home",
-        "zh": "Fresh Home"
+        "zh": "Fresh Home",
+        "hi": "Fresh Home"
       },
       "description": {
         "en": "3 split units standard clean + 3-seat sofa cleaning in one visit.",
@@ -453,7 +488,8 @@
         "ar": "تنظيف قياسي لـ 3 وحدات سبليت + تنظيف أريكة بثلاثة مقاعد في زيارة واحدة.",
         "fr": "Nettoyage standard de 3 unités split + nettoyage d’un canapé 3 places en une seule visite.",
         "de": "Standardreinigung von 3 Split-Geräten + Reinigung eines 3-Sitzer-Sofas in einem Besuch.",
-        "zh": "一次上门完成 3 台分体式空调标准清洗 + 3 座沙发清洁。"
+        "zh": "一次上门完成 3 台分体式空调标准清洗 + 3 座沙发清洁。",
+        "hi": "3 स्प्लिट यूनिट की स्टैंडर्ड सफ़ाई + 3 सीट वाले सोफ़े की सफ़ाई, एक ही विज़िट में।"
       },
       "price": 599,
       "compare_price": 654,
@@ -474,7 +510,8 @@
         "ar": "Essential",
         "fr": "Essential",
         "de": "Essential",
-        "zh": "Essential"
+        "zh": "Essential",
+        "hi": "Essential"
       },
       "description": {
         "en": "Up to 3 split units. 3 standard cleans a year, priority booking, 10% off repairs.",
@@ -482,7 +519,8 @@
         "ar": "حتى 3 وحدات سبليت. 3 تنظيفات قياسية في السنة، أولوية في الحجز، وخصم 10% على الإصلاح.",
         "fr": "Jusqu’à 3 unités split. 3 nettoyages standard par an, réservation prioritaire, 10 % de remise sur les réparations.",
         "de": "Bis zu 3 Split-Geräte. 3 Standardreinigungen pro Jahr, bevorzugte Terminvergabe, 10 % Rabatt auf Reparaturen.",
-        "zh": "最多 3 台分体式空调。每年 3 次标准清洗，优先预约，维修享 10% 折扣。"
+        "zh": "最多 3 台分体式空调。每年 3 次标准清洗，优先预约，维修享 10% 折扣。",
+        "hi": "3 स्प्लिट यूनिट तक। साल में 3 स्टैंडर्ड सफ़ाई, प्राथमिकता से बुकिंग, मरम्मत पर 10% छूट।"
       },
       "price": 899,
       "compare_price": null,
@@ -506,7 +544,8 @@
         "ar": "Comfort",
         "fr": "Comfort",
         "de": "Comfort",
-        "zh": "Comfort"
+        "zh": "Comfort",
+        "hi": "Comfort"
       },
       "description": {
         "en": "Up to 5 split units. 3 visits a year, one of them a deep clean, priority booking, 10% off repairs.",
@@ -514,7 +553,8 @@
         "ar": "حتى 5 وحدات سبليت. 3 زيارات في السنة إحداها تنظيف عميق، أولوية في الحجز، وخصم 10% على الإصلاح.",
         "fr": "Jusqu’à 5 unités split. 3 visites par an, dont un nettoyage en profondeur, réservation prioritaire, 10 % de remise sur les réparations.",
         "de": "Bis zu 5 Split-Geräte. 3 Besuche pro Jahr, davon eine Tiefenreinigung, bevorzugte Terminvergabe, 10 % Rabatt auf Reparaturen.",
-        "zh": "最多 5 台分体式空调。每年 3 次上门，其中一次为深度清洗，优先预约，维修享 10% 折扣。"
+        "zh": "最多 5 台分体式空调。每年 3 次上门，其中一次为深度清洗，优先预约，维修享 10% 折扣。",
+        "hi": "5 स्प्लिट यूनिट तक। साल में 3 विज़िट, जिनमें एक डीप क्लीनिंग, प्राथमिकता से बुकिंग, मरम्मत पर 10% छूट।"
       },
       "price": 1499,
       "compare_price": null,
@@ -538,7 +578,8 @@
         "ar": "Villa",
         "fr": "Villa",
         "de": "Villa",
-        "zh": "Villa"
+        "zh": "Villa",
+        "hi": "Villa"
       },
       "description": {
         "en": "Up to 8 FCUs or split units. 3 visits a year, 24-hour priority call-out, 15% off repairs.",
@@ -546,7 +587,8 @@
         "ar": "حتى 8 وحدات فان كويل أو سبليت. 3 زيارات في السنة، زيارة ذات أولوية خلال 24 ساعة، وخصم 15% على الإصلاح.",
         "fr": "Jusqu’à 8 FCU ou unités split. 3 visites par an, intervention prioritaire sous 24 h, 15 % de remise sur les réparations.",
         "de": "Bis zu 8 Gebläsekonvektoren oder Split-Geräte. 3 Besuche pro Jahr, bevorzugter Einsatz innerhalb von 24 Stunden, 15 % Rabatt auf Reparaturen.",
-        "zh": "最多 8 台风机盘管或分体式空调。每年 3 次上门，24 小时内优先上门，维修享 15% 折扣。"
+        "zh": "最多 8 台风机盘管或分体式空调。每年 3 次上门，24 小时内优先上门，维修享 15% 折扣。",
+        "hi": "8 FCU या स्प्लिट यूनिट तक। साल में 3 विज़िट, 24 घंटे में प्राथमिकता से कॉल-आउट, मरम्मत पर 15% छूट।"
       },
       "price": 2499,
       "compare_price": null,

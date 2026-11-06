@@ -13,7 +13,8 @@
         "ar": "دبي مارينا",
         "fr": "Dubaï Marina",
         "de": "Dubai Marina",
-        "zh": "迪拜码头"
+        "zh": "迪拜码头",
+        "hi": "दुबई मरीना"
       },
       "intro_html": {
         "en": "<p>High-rise apartments with wall-mounted split units or fan coil units above the corridor ceiling, sea air and year-round humidity. Marina units clog faster than inland ones and the drain lines in older towers are a frequent source of dripping. We recommend a standard clean every 4 months and a drain check at the start of summer.</p>",
@@ -21,7 +22,8 @@
         "ar": "<p>شقق في أبراج شاهقة بمكيفات سبليت جدارية أو وحدات فان كويل فوق سقف الممر، وهواء بحري ورطوبة على مدار السنة. تنسدّ الوحدات في المارينا أسرع من الوحدات البعيدة عن الساحل، وخطوط التصريف في الأبراج القديمة مصدر متكرر للتقطير. ننصح بتنظيف قياسي كل 4 أشهر وفحص للتصريف في بداية الصيف.</p>",
         "fr": "<p>Des tours d’habitation avec des splits muraux ou des ventilo-convecteurs au-dessus du plafond du couloir, l’air marin et une humidité présente toute l’année. Les unités de la Marina s’encrassent plus vite que celles de l’intérieur des terres, et les conduites d’évacuation des tours anciennes sont une source fréquente d’écoulements. Nous recommandons un nettoyage standard tous les 4 mois et un contrôle de l’évacuation au début de l’été.</p>",
         "de": "<p>Hochhausapartments mit Split-Wandgeräten oder Gebläsekonvektoren über der Flurdecke, Meeresluft und ganzjährige Luftfeuchtigkeit. Geräte in der Marina verschmutzen schneller als im Landesinneren, und die Ablaufleitungen älterer Hochhäuser sind eine häufige Ursache für tropfende Geräte. Wir empfehlen eine Standardreinigung alle 4 Monate und eine Ablaufkontrolle zu Beginn des Sommers.</p>",
-        "zh": "<p>高层公寓，装有壁挂分体式空调或走廊吊顶上方的风机盘管，海风加上全年潮湿。迪拜码头的空调比内陆的更容易堵，老楼的排水管经常是滴水的源头。我们建议每 4 个月做一次标准清洗，并在夏初检查排水。</p>"
+        "zh": "<p>高层公寓，装有壁挂分体式空调或走廊吊顶上方的风机盘管，海风加上全年潮湿。迪拜码头的空调比内陆的更容易堵，老楼的排水管经常是滴水的源头。我们建议每 4 个月做一次标准清洗，并在夏初检查排水。</p>",
+        "hi": "<p>ऊँची इमारतों के अपार्टमेंट, जिनमें दीवार पर लगी स्प्लिट यूनिट या गलियारे की छत के ऊपर फैन कॉइल यूनिट होती हैं, समुद्री हवा और साल भर नमी। मरीना की यूनिट अंदरूनी इलाक़ों की तुलना में तेज़ी से जाम होती हैं, और पुराने टावरों की ड्रेन लाइन टपकने की आम वजह हैं। हमारी सलाह: हर 4 महीने में स्टैंडर्ड सफ़ाई और गर्मी की शुरुआत में ड्रेन की जाँच।</p>"
       }
     },
     {
@@ -36,7 +38,8 @@
         "ar": "جي بي آر (JBR)",
         "fr": "JBR",
         "de": "JBR",
-        "zh": "JBR"
+        "zh": "JBR",
+        "hi": "JBR"
       },
       "intro_html": {
         "en": "<p>Beachfront towers with fan coil units and heavy salt-air exposure on the outdoor side. Many JBR apartments are holiday lets, so we work around check-in schedules and send the report to the owner wherever they are.</p>",
@@ -44,7 +47,8 @@
         "ar": "<p>أبراج على الواجهة البحرية بوحدات فان كويل وتعرّض شديد للهواء المالح على الجهة الخارجية. كثير من شقق JBR مؤجرة للعطلات، لذا نعمل وفق مواعيد تسجيل الوصول ونرسل التقرير إلى المالك أينما كان.</p>",
         "fr": "<p>Des tours en front de mer avec des ventilo-convecteurs et une forte exposition à l’air salin côté extérieur. Beaucoup d’appartements de JBR sont des locations de vacances : nous nous adaptons aux horaires d’arrivée des locataires et envoyons le rapport au propriétaire, où qu’il se trouve.</p>",
         "de": "<p>Hochhäuser direkt am Strand mit Gebläsekonvektoren und starker Salzluft auf der Außenseite. Viele Apartments in JBR sind Ferienwohnungen, deshalb richten wir uns nach den Check-in-Zeiten und senden den Bericht an die Eigentümer, wo immer sie gerade sind.</p>",
-        "zh": "<p>海滨高层公寓，使用风机盘管，室外侧长期受含盐海风侵蚀。JBR 的许多公寓是度假短租，所以我们会配合入住时间安排，无论业主身在何处都会把报告发给他们。</p>"
+        "zh": "<p>海滨高层公寓，使用风机盘管，室外侧长期受含盐海风侵蚀。JBR 的许多公寓是度假短租，所以我们会配合入住时间安排，无论业主身在何处都会把报告发给他们。</p>",
+        "hi": "<p>समुद्र किनारे के टावर, फैन कॉइल यूनिट और बाहरी हिस्से पर नमकीन हवा का भारी असर। JBR के कई अपार्टमेंट हॉलिडे होम हैं, इसलिए हम चेक-इन के समय के हिसाब से काम करते हैं और रिपोर्ट मालिक को भेजते हैं, वे जहाँ भी हों।</p>"
       }
     },
     {
@@ -59,7 +63,8 @@
         "ar": "نخلة جميرا",
         "fr": "Palm Jumeirah",
         "de": "Palm Jumeirah",
-        "zh": "朱美拉棕榈岛"
+        "zh": "朱美拉棕榈岛",
+        "hi": "पाम जुमेराह"
       },
       "intro_html": {
         "en": "<p>Villas and townhouses right on the water with ducted systems and multiple fan coil units, plus the highest humidity in Dubai. Mould under AC units and in wardrobes is the number one complaint here. We service every FCU through its hatch and flag humidity problems early.</p>",
@@ -67,7 +72,8 @@
         "ar": "<p>فلل وبيوت متلاصقة على الماء مباشرة بأنظمة دكت وعدة وحدات فان كويل، إضافة إلى أعلى رطوبة في دبي. العفن تحت وحدات التكييف وفي خزائن الملابس هو الشكوى الأولى هنا. نصون كل وحدة فان كويل عبر فتحتها وننبّه إلى مشاكل الرطوبة مبكرًا.</p>",
         "fr": "<p>Des villas et des maisons de ville au bord de l’eau, avec des systèmes gainables et plusieurs ventilo-convecteurs, plus l’humidité la plus élevée de Dubaï. La moisissure sous les climatiseurs et dans les armoires est la plainte numéro un ici. Nous entretenons chaque FCU par sa trappe et signalons tôt les problèmes d’humidité.</p>",
         "de": "<p>Villen und Reihenhäuser direkt am Wasser mit Kanalsystemen und mehreren Gebläsekonvektoren – dazu die höchste Luftfeuchtigkeit in Dubai. Schimmel unter den Klimageräten und in Kleiderschränken ist hier die Beschwerde Nummer eins. Wir warten jede FCU durch ihre Revisionsklappe und weisen früh auf Feuchtigkeitsprobleme hin.</p>",
-        "zh": "<p>紧邻水边的别墅和联排别墅，使用中央空调和多台风机盘管，加上全迪拜最高的湿度。空调下方和衣柜里发霉是这里的头号投诉。我们通过检修口保养每一台风机盘管，并及早指出湿度问题。</p>"
+        "zh": "<p>紧邻水边的别墅和联排别墅，使用中央空调和多台风机盘管，加上全迪拜最高的湿度。空调下方和衣柜里发霉是这里的头号投诉。我们通过检修口保养每一台风机盘管，并及早指出湿度问题。</p>",
+        "hi": "<p>पानी के ठीक किनारे बने विला और टाउनहाउस, डक्टेड सिस्टम और कई फैन कॉइल यूनिट के साथ, और दुबई की सबसे ज़्यादा नमी। एसी यूनिट के नीचे और अलमारियों में फफूंद यहाँ की सबसे बड़ी शिकायत है। हम हर FCU की सर्विस उसके हैच से करते हैं और नमी की समस्या पर जल्दी चेतावनी देते हैं।</p>"
       }
     },
     {
@@ -82,7 +88,8 @@
         "ar": "داون تاون دبي",
         "fr": "Downtown Dubaï",
         "de": "Downtown Dubai",
-        "zh": "迪拜市中心"
+        "zh": "迪拜市中心",
+        "hi": "डाउनटाउन दुबई"
       },
       "intro_html": {
         "en": "<p>Premium towers with fan coil units and strict building access rules. We register with security in advance, protect floors and finishes, and work within the building's permitted hours.</p>",
@@ -90,7 +97,8 @@
         "ar": "<p>أبراج فاخرة بوحدات فان كويل وقواعد صارمة للدخول إلى المبنى. نسجّل لدى الأمن مسبقًا، ونحمي الأرضيات والتشطيبات، ونعمل ضمن الساعات المسموح بها في المبنى.</p>",
         "fr": "<p>Des tours haut de gamme avec des ventilo-convecteurs et des règles d’accès strictes. Nous nous enregistrons à l’avance auprès de la sécurité, protégeons les sols et les finitions, et travaillons dans les horaires autorisés par l’immeuble.</p>",
         "de": "<p>Premium-Hochhäuser mit Gebläsekonvektoren und strengen Zugangsregeln. Wir melden uns vorab beim Sicherheitsdienst an, schützen Böden und Oberflächen und arbeiten innerhalb der vom Gebäude erlaubten Zeiten.</p>",
-        "zh": "<p>高端公寓楼，使用风机盘管，楼宇出入管理严格。我们会提前向安保登记，保护好地板和装饰面，并在楼宇允许的时间内施工。</p>"
+        "zh": "<p>高端公寓楼，使用风机盘管，楼宇出入管理严格。我们会提前向安保登记，保护好地板和装饰面，并在楼宇允许的时间内施工。</p>",
+        "hi": "<p>फैन कॉइल यूनिट वाले प्रीमियम टावर और बिल्डिंग में प्रवेश के सख़्त नियम। हम पहले से सिक्योरिटी में पंजीकरण करते हैं, फ़र्श और फ़िनिश की सुरक्षा करते हैं, और बिल्डिंग के अनुमत घंटों में काम करते हैं।</p>"
       }
     },
     {
@@ -105,7 +113,8 @@
         "ar": "الخليج التجاري",
         "fr": "Business Bay",
         "de": "Business Bay",
-        "zh": "商业湾"
+        "zh": "商业湾",
+        "hi": "बिज़नेस बे"
       },
       "intro_html": {
         "en": "<p>A mix of apartments and small offices, mostly fan coil units. For offices we offer visits before 9am or after 6pm so the team is not disturbed, and annual contracts covering all units in the suite.</p>",
@@ -113,7 +122,8 @@
         "ar": "<p>مزيج من الشقق والمكاتب الصغيرة، ومعظمها بوحدات فان كويل. للمكاتب نقدّم زيارات قبل 9 صباحًا أو بعد 6 مساءً كي لا نزعج الفريق، وعقودًا سنوية تغطي كل الوحدات في المكتب.</p>",
         "fr": "<p>Un mélange d’appartements et de petits bureaux, surtout équipés de ventilo-convecteurs. Pour les bureaux, nous proposons des visites avant 9 h ou après 18 h pour ne pas déranger l’équipe, ainsi que des contrats annuels couvrant toutes les unités des locaux.</p>",
         "de": "<p>Eine Mischung aus Apartments und kleinen Büros, überwiegend Gebläsekonvektoren. Für Büros bieten wir Besuche vor 9 Uhr oder nach 18 Uhr an, damit das Team nicht gestört wird, sowie Jahresverträge für alle Geräte in der Büroeinheit.</p>",
-        "zh": "<p>公寓和小型办公室混合，以风机盘管为主。对于办公室，我们提供上午 9 点前或下午 6 点后的上门服务，不打扰团队工作，并提供覆盖整个办公单元所有机器的年度合同。</p>"
+        "zh": "<p>公寓和小型办公室混合，以风机盘管为主。对于办公室，我们提供上午 9 点前或下午 6 点后的上门服务，不打扰团队工作，并提供覆盖整个办公单元所有机器的年度合同。</p>",
+        "hi": "<p>अपार्टमेंट और छोटे ऑफ़िस का मिश्रण, ज़्यादातर फैन कॉइल यूनिट। ऑफ़िस के लिए हम सुबह 9 बजे से पहले या शाम 6 बजे के बाद विज़िट देते हैं, ताकि टीम को परेशानी न हो, और सुइट की सभी यूनिट के लिए सालाना कॉन्ट्रैक्ट भी।</p>"
       }
     },
     {
@@ -128,7 +138,8 @@
         "ar": "قرية جميرا الدائرية (JVC)",
         "fr": "JVC",
         "de": "JVC",
-        "zh": "JVC"
+        "zh": "JVC",
+        "hi": "JVC"
       },
       "intro_html": {
         "en": "<p>Mid-rise buildings and townhouses, mostly split units, and a lot of construction dust that gets into filters and coils. A standard clean twice a year keeps JVC units running cold; new tenants often start with a deep clean.</p>",
@@ -136,7 +147,8 @@
         "ar": "<p>مبانٍ متوسطة الارتفاع وبيوت متلاصقة، ومعظمها بمكيفات سبليت، وكثير من غبار البناء الذي يتسلل إلى الفلاتر والملفات. تنظيف قياسي مرتين في السنة يُبقي وحدات JVC باردة؛ وغالبًا ما يبدأ المستأجرون الجدد بتنظيف عميق.</p>",
         "fr": "<p>Des immeubles de taille moyenne et des maisons de ville, surtout avec des splits, et beaucoup de poussière de chantier qui s’infiltre dans les filtres et les échangeurs. Un nettoyage standard deux fois par an garde les unités de JVC bien froides ; les nouveaux locataires commencent souvent par un nettoyage en profondeur.</p>",
         "de": "<p>Mittelhohe Wohngebäude und Reihenhäuser, überwiegend Split-Geräte, und viel Baustaub, der in Filter und Wärmetauscher gelangt. Eine Standardreinigung zweimal im Jahr hält die Geräte in JVC kalt; neue Mieter starten oft mit einer Tiefenreinigung.</p>",
-        "zh": "<p>中层楼宇和联排别墅，以分体式空调为主，大量施工灰尘会钻进滤网和蒸发器。每年两次标准清洗能让 JVC 的空调保持制冷有力；新租户通常先做一次深度清洗。</p>"
+        "zh": "<p>中层楼宇和联排别墅，以分体式空调为主，大量施工灰尘会钻进滤网和蒸发器。每年两次标准清洗能让 JVC 的空调保持制冷有力；新租户通常先做一次深度清洗。</p>",
+        "hi": "<p>मध्यम ऊँचाई की इमारतें और टाउनहाउस, ज़्यादातर स्प्लिट यूनिट, और बहुत सारी निर्माण की धूल जो फ़िल्टर और कॉइल में घुस जाती है। साल में दो बार स्टैंडर्ड सफ़ाई JVC की यूनिट को ठंडा रखती है; नए किरायेदार अक्सर डीप क्लीनिंग से शुरुआत करते हैं।</p>"
       }
     },
     {
@@ -151,7 +163,8 @@
         "ar": "أبراج بحيرات جميرا (JLT)",
         "fr": "JLT",
         "de": "JLT",
-        "zh": "JLT"
+        "zh": "JLT",
+        "hi": "JLT"
       },
       "intro_html": {
         "en": "<p>Towers around the lakes with fan coil units and a large Russian-speaking community. Humidity from the lakes plus older towers means drain lines deserve attention every visit.</p>",
@@ -159,7 +172,8 @@
         "ar": "<p>أبراج حول البحيرات بوحدات فان كويل وجالية كبيرة ناطقة بالروسية. رطوبة البحيرات إضافة إلى عمر الأبراج تعني أن خطوط التصريف تستحق الانتباه في كل زيارة.</p>",
         "fr": "<p>Des tours autour des lacs avec des ventilo-convecteurs et une grande communauté russophone. L’humidité des lacs et l’âge des tours font que les conduites d’évacuation méritent une attention particulière à chaque visite.</p>",
         "de": "<p>Hochhäuser rund um die Seen mit Gebläsekonvektoren und einer großen russischsprachigen Community. Luftfeuchtigkeit von den Seen plus ältere Gebäude – die Ablaufleitungen verdienen deshalb bei jedem Besuch Aufmerksamkeit.</p>",
-        "zh": "<p>环湖高层公寓，使用风机盘管，有庞大的俄语社区。湖面湿气加上楼龄较老，意味着每次上门都值得关注排水管。</p>"
+        "zh": "<p>环湖高层公寓，使用风机盘管，有庞大的俄语社区。湖面湿气加上楼龄较老，意味着每次上门都值得关注排水管。</p>",
+        "hi": "<p>झीलों के आसपास के टावर, फैन कॉइल यूनिट और एक बड़ा रूसी-भाषी समुदाय। झीलों की नमी और पुराने टावरों का मतलब है कि हर विज़िट में ड्रेन लाइन पर ध्यान देना ज़रूरी है।</p>"
       }
     },
     {
@@ -174,7 +188,8 @@
         "ar": "المرابع العربية",
         "fr": "Arabian Ranches",
         "de": "Arabian Ranches",
-        "zh": "阿拉伯牧场"
+        "zh": "阿拉伯牧场",
+        "hi": "अरेबियन रैंचेस"
       },
       "intro_html": {
         "en": "<p>Family villas with ducted systems, 4–8 fan coil units and outdoor condensers exposed to desert dust. We service all units in one visit and most Ranches families move to an annual Villa contract after the first one.</p>",
@@ -182,7 +197,8 @@
         "ar": "<p>فلل عائلية بأنظمة دكت و4–8 وحدات فان كويل ووحدات خارجية معرّضة لغبار الصحراء. نصون كل الوحدات في زيارة واحدة، ومعظم عائلات المرابع تنتقل إلى عقد Villa السنوي بعد الزيارة الأولى.</p>",
         "fr": "<p>Des villas familiales en gainable, avec 4 à 8 ventilo-convecteurs et des condenseurs extérieurs exposés à la poussière du désert. Nous entretenons toutes les unités en une seule visite, et la plupart des familles des Ranches passent à un contrat annuel Villa après la première.</p>",
         "de": "<p>Familienvillen mit Kanalsystemen, 4–8 Gebläsekonvektoren und Außengeräten im Wüstenstaub. Wir warten alle Geräte in einem Besuch, und die meisten Familien in den Ranches wechseln nach dem ersten zu einem Jahresvertrag Villa.</p>",
-        "zh": "<p>家庭别墅，使用中央空调，有 4–8 台风机盘管，室外机暴露在沙漠灰尘中。我们一次上门保养所有机器，阿拉伯牧场的大多数家庭在第一次之后都转为 Villa 年度合同。</p>"
+        "zh": "<p>家庭别墅，使用中央空调，有 4–8 台风机盘管，室外机暴露在沙漠灰尘中。我们一次上门保养所有机器，阿拉伯牧场的大多数家庭在第一次之后都转为 Villa 年度合同。</p>",
+        "hi": "<p>डक्टेड सिस्टम वाले फ़ैमिली विला, 4–8 फैन कॉइल यूनिट और रेगिस्तान की धूल में खुले आउटडोर कंडेनसर। हम सभी यूनिट की सर्विस एक ही विज़िट में करते हैं, और रैंचेस के ज़्यादातर परिवार पहली विज़िट के बाद सालाना Villa कॉन्ट्रैक्ट ले लेते हैं।</p>"
       }
     },
     {
@@ -197,7 +213,8 @@
         "ar": "دبي هيلز",
         "fr": "Dubaï Hills",
         "de": "Dubai Hills",
-        "zh": "迪拜山庄"
+        "zh": "迪拜山庄",
+        "hi": "दुबई हिल्स"
       },
       "intro_html": {
         "en": "<p>Newer villas and apartments with modern ducted systems that are still under developer warranty for parts — we service and clean without voiding it, and tell you when something should go to the developer instead.</p>",
@@ -205,7 +222,8 @@
         "ar": "<p>فلل وشقق أحدث بأنظمة دكت عصرية ما زالت ضمن ضمان المطوّر على القطع — نصونها وننظّفها من دون الإخلال بالضمان، ونخبرك متى ينبغي إحالة أمر ما إلى المطوّر بدلًا منا.</p>",
         "fr": "<p>Des villas et des appartements récents avec des systèmes gainables modernes, dont les pièces sont encore sous garantie du promoteur — nous entretenons et nettoyons sans l’annuler, et vous disons quand quelque chose doit plutôt être adressé au promoteur.</p>",
         "de": "<p>Neuere Villen und Apartments mit modernen Kanalsystemen, für die noch die Gewährleistung des Bauträgers auf Teile gilt – wir warten und reinigen, ohne sie zu gefährden, und sagen Ihnen, wenn etwas stattdessen zum Bauträger gehört.</p>",
-        "zh": "<p>较新的别墅和公寓，使用现代中央空调系统，配件仍在开发商保修期内——我们的保养和清洗不会让保修失效，并会告诉您哪些问题应该转交开发商处理。</p>"
+        "zh": "<p>较新的别墅和公寓，使用现代中央空调系统，配件仍在开发商保修期内——我们的保养和清洗不会让保修失效，并会告诉您哪些问题应该转交开发商处理。</p>",
+        "hi": "<p>आधुनिक डक्टेड सिस्टम वाले नए विला और अपार्टमेंट, जिनके पुर्ज़े अभी डेवलपर की वारंटी में हैं — हम वारंटी पर असर डाले बिना सर्विस और सफ़ाई करते हैं, और बताते हैं कि कौन-सी चीज़ डेवलपर के पास जानी चाहिए।</p>"
       }
     },
     {
@@ -220,7 +238,8 @@
         "ar": "داماك هيلز",
         "fr": "DAMAC Hills",
         "de": "DAMAC Hills",
-        "zh": "达马克山庄"
+        "zh": "达马克山庄",
+        "hi": "डमैक हिल्स"
       },
       "intro_html": {
         "en": "<p>Villas and townhouses on the golf course with ducted systems; irrigation and greenery raise local humidity. We check drain pans carefully — overflowing pans are the usual cause of ceiling stains here.</p>",
@@ -228,7 +247,8 @@
         "ar": "<p>فلل وبيوت متلاصقة على ملعب الغولف بأنظمة دكت؛ الريّ والمساحات الخضراء يرفعان الرطوبة المحلية. نفحص صواني التصريف بعناية — فالصواني الفائضة هي السبب المعتاد لبقع السقف هنا.</p>",
         "fr": "<p>Des villas et des maisons de ville sur le golf, en gainable ; l’arrosage et la verdure augmentent l’humidité locale. Nous contrôlons soigneusement les bacs à condensats — un bac qui déborde est la cause habituelle des taches au plafond ici.</p>",
         "de": "<p>Villen und Reihenhäuser am Golfplatz mit Kanalsystemen; Bewässerung und Grünflächen erhöhen die lokale Luftfeuchtigkeit. Wir prüfen die Kondensatwannen besonders sorgfältig – überlaufende Wannen sind hier die übliche Ursache für Deckenflecken.</p>",
-        "zh": "<p>高尔夫球场旁的别墅和联排别墅，使用中央空调；灌溉和绿化抬高了局部湿度。我们会仔细检查接水盘——接水盘溢水是这里天花板水渍的常见原因。</p>"
+        "zh": "<p>高尔夫球场旁的别墅和联排别墅，使用中央空调；灌溉和绿化抬高了局部湿度。我们会仔细检查接水盘——接水盘溢水是这里天花板水渍的常见原因。</p>",
+        "hi": "<p>गोल्फ़ कोर्स पर बने डक्टेड सिस्टम वाले विला और टाउनहाउस; सिंचाई और हरियाली से यहाँ की नमी बढ़ जाती है। हम ड्रेन ट्रे ध्यान से जाँचते हैं — यहाँ छत के दाग़ की आम वजह ओवरफ़्लो करती ट्रे होती है।</p>"
       }
     },
     {
@@ -243,7 +263,8 @@
         "ar": "البرشاء",
         "fr": "Al Barsha",
         "de": "Al Barsha",
-        "zh": "阿尔巴沙"
+        "zh": "阿尔巴沙",
+        "hi": "अल बरशा"
       },
       "intro_html": {
         "en": "",
@@ -251,7 +272,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       }
     },
     {
@@ -266,7 +288,8 @@
         "ar": "جميرا وأم سقيم",
         "fr": "Jumeirah et Umm Suqeim",
         "de": "Jumeirah und Umm Suqeim",
-        "zh": "朱美拉和乌姆苏盖姆"
+        "zh": "朱美拉和乌姆苏盖姆",
+        "hi": "जुमेराह और उम्म सुक़ैम"
       },
       "intro_html": {
         "en": "",
@@ -274,7 +297,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       }
     },
     {
@@ -289,7 +313,8 @@
         "ar": "ذا سبرينغز وذا ميدوز وذا ليكس",
         "fr": "Springs, Meadows et Lakes",
         "de": "The Springs, The Meadows und The Lakes",
-        "zh": "春天社区、草地社区和湖畔社区"
+        "zh": "春天社区、草地社区和湖畔社区",
+        "hi": "द स्प्रिंग्स, द मीडोज़ और द लेक्स"
       },
       "intro_html": {
         "en": "",
@@ -297,7 +322,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       }
     },
     {
@@ -312,7 +338,8 @@
         "ar": "موتور سيتي وسبورتس سيتي",
         "fr": "Motor City et Sports City",
         "de": "Motor City und Sports City",
-        "zh": "汽车城和体育城"
+        "zh": "汽车城和体育城",
+        "hi": "मोटर सिटी और स्पोर्ट्स सिटी"
       },
       "intro_html": {
         "en": "",
@@ -320,7 +347,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       }
     },
     {
@@ -335,7 +363,8 @@
         "ar": "مردف",
         "fr": "Mirdif",
         "de": "Mirdif",
-        "zh": "米尔迪夫"
+        "zh": "米尔迪夫",
+        "hi": "मिरदिफ़"
       },
       "intro_html": {
         "en": "",
@@ -343,7 +372,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       }
     },
     {
@@ -358,7 +388,8 @@
         "ar": "واحة دبي للسيليكون",
         "fr": "Dubaï Silicon Oasis",
         "de": "Dubai Silicon Oasis",
-        "zh": "迪拜硅谷"
+        "zh": "迪拜硅谷",
+        "hi": "दुबई सिलिकॉन ओएसिस"
       },
       "intro_html": {
         "en": "",
@@ -366,7 +397,8 @@
         "ar": "",
         "fr": "",
         "de": "",
-        "zh": ""
+        "zh": "",
+        "hi": ""
       }
     }
   ]
