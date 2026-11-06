@@ -8,7 +8,10 @@
       "name": {
         "en": "Standard clean, 1 unit",
         "ru": "Стандартная чистка, 1 блок",
-        "ar": "تنظيف قياسي، وحدة واحدة"
+        "ar": "تنظيف قياسي، وحدة واحدة",
+        "fr": "Nettoyage standard, 1 unité",
+        "de": "Standardreinigung, 1 Gerät",
+        "zh": "标准清洗，1 台"
       },
       "unit": "unit",
       "price": 199,
@@ -17,7 +20,10 @@
       "note": {
         "en": "Call-out included",
         "ru": "Выезд включён",
-        "ar": "رسوم الزيارة مشمولة"
+        "ar": "رسوم الزيارة مشمولة",
+        "fr": "Déplacement inclus",
+        "de": "Anfahrt inklusive",
+        "zh": "含上门费"
       },
       "sort": 1
     },
@@ -28,7 +34,10 @@
       "name": {
         "en": "Standard clean, 2–3 units",
         "ru": "Стандартная чистка, 2–3 блока",
-        "ar": "تنظيف قياسي، 2–3 وحدات"
+        "ar": "تنظيف قياسي، 2–3 وحدات",
+        "fr": "Nettoyage standard, 2–3 unités",
+        "de": "Standardreinigung, 2–3 Geräte",
+        "zh": "标准清洗，2–3 台"
       },
       "unit": "unit",
       "price": 169,
@@ -37,7 +46,10 @@
       "note": {
         "en": "Per unit",
         "ru": "За блок",
-        "ar": "للوحدة"
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台"
       },
       "sort": 2
     },
@@ -48,7 +60,10 @@
       "name": {
         "en": "Standard clean, 4+ units",
         "ru": "Стандартная чистка, 4+ блоков",
-        "ar": "تنظيف قياسي، 4 وحدات فأكثر"
+        "ar": "تنظيف قياسي، 4 وحدات فأكثر",
+        "fr": "Nettoyage standard, 4 unités et plus",
+        "de": "Standardreinigung, 4+ Geräte",
+        "zh": "标准清洗，4 台及以上"
       },
       "unit": "unit",
       "price": 149,
@@ -57,7 +72,10 @@
       "note": {
         "en": "Per unit",
         "ru": "За блок",
-        "ar": "للوحدة"
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台"
       },
       "sort": 3
     },
@@ -68,7 +86,10 @@
       "name": {
         "en": "Deep clean, 1 unit",
         "ru": "Глубокая чистка, 1 блок",
-        "ar": "تنظيف عميق، وحدة واحدة"
+        "ar": "تنظيف عميق، وحدة واحدة",
+        "fr": "Nettoyage en profondeur, 1 unité",
+        "de": "Tiefenreinigung, 1 Gerät",
+        "zh": "深度清洗，1 台"
       },
       "unit": "unit",
       "price": 399,
@@ -77,7 +98,10 @@
       "note": {
         "en": "Full indoor unit disassembly",
         "ru": "Разборка внутреннего блока",
-        "ar": "تفكيك كامل للوحدة الداخلية"
+        "ar": "تفكيك كامل للوحدة الداخلية",
+        "fr": "Démontage complet de l’unité intérieure",
+        "de": "Komplette Demontage des Innengeräts",
+        "zh": "室内机完全拆机"
       },
       "sort": 1
     },
@@ -88,7 +112,10 @@
       "name": {
         "en": "Deep clean, 2+ units",
         "ru": "Глубокая чистка, 2+ блоков",
-        "ar": "تنظيف عميق، وحدتان فأكثر"
+        "ar": "تنظيف عميق، وحدتان فأكثر",
+        "fr": "Nettoyage en profondeur, 2 unités et plus",
+        "de": "Tiefenreinigung, 2+ Geräte",
+        "zh": "深度清洗，2 台及以上"
       },
       "unit": "unit",
       "price": 349,
@@ -97,7 +124,10 @@
       "note": {
         "en": "Per unit",
         "ru": "За блок",
-        "ar": "للوحدة"
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台"
       },
       "sort": 2
     },
@@ -107,7 +137,10 @@
       "name": {
         "en": "Fan coil unit service",
         "ru": "Обслуживание фанкойла",
-        "ar": "صيانة وحدة فان كويل"
+        "ar": "صيانة وحدة فان كويل",
+        "fr": "Entretien de ventilo-convecteur",
+        "de": "Gebläsekonvektor-Wartung",
+        "zh": "风机盘管保养"
       },
       "unit": "fcu",
       "price": 249,
@@ -116,7 +149,10 @@
       "note": {
         "en": "Minimum 2 FCU",
         "ru": "Минимум 2 фанкойла",
-        "ar": "الحد الأدنى وحدتان"
+        "ar": "الحد الأدنى وحدتان",
+        "fr": "2 FCU minimum",
+        "de": "Mindestens 2 FCU",
+        "zh": "最少 2 台风机盘管"
       },
       "sort": 1
     },
@@ -126,7 +162,10 @@
       "name": {
         "en": "Emergency call-out + diagnostics",
         "ru": "Срочный выезд + диагностика",
-        "ar": "زيارة طوارئ + فحص"
+        "ar": "زيارة طوارئ + فحص",
+        "fr": "Déplacement d’urgence + diagnostic",
+        "de": "Notfalleinsatz + Diagnose",
+        "zh": "紧急上门 + 检测"
       },
       "unit": "visit",
       "price": 149,
@@ -135,7 +174,10 @@
       "note": {
         "en": "Credited to a repair done in the same visit",
         "ru": "Засчитывается в ремонт в тот же визит",
-        "ar": "تُحتسب من قيمة إصلاح يُنجز في الزيارة نفسها"
+        "ar": "تُحتسب من قيمة إصلاح يُنجز في الزيارة نفسها",
+        "fr": "Déduit d’une réparation effectuée lors de la même visite",
+        "de": "Wird auf eine Reparatur im selben Besuch angerechnet",
+        "zh": "同一次上门维修时抵扣"
       },
       "sort": 1
     },
@@ -145,7 +187,10 @@
       "name": {
         "en": "Repair labour",
         "ru": "Ремонт, работа",
-        "ar": "أجرة الإصلاح"
+        "ar": "أجرة الإصلاح",
+        "fr": "Main-d’œuvre de réparation",
+        "de": "Reparatur, Arbeitslohn",
+        "zh": "维修人工费"
       },
       "unit": "from",
       "price": 199,
@@ -154,7 +199,10 @@
       "note": {
         "en": "Parts quoted separately, 90-day warranty",
         "ru": "Запчасти по смете, гарантия 90 дней",
-        "ar": "القطع تُسعَّر على حدة، ضمان 90 يومًا"
+        "ar": "القطع تُسعَّر على حدة، ضمان 90 يومًا",
+        "fr": "Pièces chiffrées à part, garantie 90 jours",
+        "de": "Ersatzteile nach Kostenvoranschlag, 90 Tage Garantie",
+        "zh": "配件另行报价，保修 90 天"
       },
       "sort": 1
     },
@@ -164,7 +212,10 @@
       "name": {
         "en": "Nitrogen leak test",
         "ru": "Поиск утечки (азот)",
-        "ar": "اختبار تسرب بالنيتروجين"
+        "ar": "اختبار تسرب بالنيتروجين",
+        "fr": "Test d’étanchéité à l’azote",
+        "de": "Stickstoff-Lecktest",
+        "zh": "氮气泄漏检测"
       },
       "unit": "unit",
       "price": 249,
@@ -173,7 +224,10 @@
       "note": {
         "en": "Per system",
         "ru": "За систему",
-        "ar": "للنظام الواحد"
+        "ar": "للنظام الواحد",
+        "fr": "Par circuit",
+        "de": "Pro Anlage",
+        "zh": "每套系统"
       },
       "sort": 1
     },
@@ -183,7 +237,10 @@
       "name": {
         "en": "Refill after leak repair",
         "ru": "Заправка после устранения утечки",
-        "ar": "تعبئة بعد إصلاح التسرب"
+        "ar": "تعبئة بعد إصلاح التسرب",
+        "fr": "Recharge après réparation de la fuite",
+        "de": "Nachfüllen nach Leckreparatur",
+        "zh": "修漏后加注制冷剂"
       },
       "unit": "from",
       "price": 349,
@@ -192,7 +249,10 @@
       "note": {
         "en": "By refrigerant type and weight",
         "ru": "По типу фреона и весу",
-        "ar": "حسب نوع الغاز ووزنه"
+        "ar": "حسب نوع الغاز ووزنه",
+        "fr": "Selon le type et le poids de fluide frigorigène",
+        "de": "Nach Kältemittelart und Gewicht",
+        "zh": "按制冷剂类型和重量计价"
       },
       "sort": 2
     },
@@ -202,7 +262,10 @@
       "name": {
         "en": "Sofa, per seat",
         "ru": "Диван, за место",
-        "ar": "أريكة، للمقعد"
+        "ar": "أريكة، للمقعد",
+        "fr": "Canapé, par place",
+        "de": "Sofa, pro Sitzplatz",
+        "zh": "沙发，每座位"
       },
       "unit": "seat",
       "price": 49,
@@ -211,7 +274,10 @@
       "note": {
         "en": "Minimum 3 seats",
         "ru": "Минимум 3 места",
-        "ar": "الحد الأدنى 3 مقاعد"
+        "ar": "الحد الأدنى 3 مقاعد",
+        "fr": "Minimum 3 places",
+        "de": "Mindestens 3 Sitzplätze",
+        "zh": "最少 3 个座位"
       },
       "sort": 1
     },
@@ -221,7 +287,10 @@
       "name": {
         "en": "Armchair",
         "ru": "Кресло",
-        "ar": "كرسي بذراعين"
+        "ar": "كرسي بذراعين",
+        "fr": "Fauteuil",
+        "de": "Sessel",
+        "zh": "扶手椅"
       },
       "unit": "item",
       "price": 69,
@@ -230,7 +299,10 @@
       "note": {
         "en": "",
         "ru": "",
-        "ar": ""
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": ""
       },
       "sort": 2
     },
@@ -240,7 +312,10 @@
       "name": {
         "en": "Mattress, single",
         "ru": "Матрас single",
-        "ar": "مرتبة مفردة (Single)"
+        "ar": "مرتبة مفردة (Single)",
+        "fr": "Matelas, une place",
+        "de": "Matratze, Einzelbett",
+        "zh": "床垫，单人"
       },
       "unit": "item",
       "price": 149,
@@ -249,7 +324,10 @@
       "note": {
         "en": "",
         "ru": "",
-        "ar": ""
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": ""
       },
       "sort": 1
     },
@@ -259,7 +337,10 @@
       "name": {
         "en": "Mattress, double / queen",
         "ru": "Матрас double / queen",
-        "ar": "مرتبة مزدوجة (Double / Queen)"
+        "ar": "مرتبة مزدوجة (Double / Queen)",
+        "fr": "Matelas, deux places / queen",
+        "de": "Matratze, Doppelbett / Queen-Size",
+        "zh": "床垫，双人 / Queen"
       },
       "unit": "item",
       "price": 199,
@@ -268,7 +349,10 @@
       "note": {
         "en": "",
         "ru": "",
-        "ar": ""
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": ""
       },
       "sort": 2
     },
@@ -278,7 +362,10 @@
       "name": {
         "en": "Mattress, king",
         "ru": "Матрас king",
-        "ar": "مرتبة كينغ (King)"
+        "ar": "مرتبة كينغ (King)",
+        "fr": "Matelas, king size",
+        "de": "Matratze, King-Size",
+        "zh": "床垫，King"
       },
       "unit": "item",
       "price": 249,
@@ -287,7 +374,10 @@
       "note": {
         "en": "",
         "ru": "",
-        "ar": ""
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": ""
       },
       "sort": 3
     },
@@ -297,7 +387,10 @@
       "name": {
         "en": "Carpet, per m²",
         "ru": "Ковёр, за м²",
-        "ar": "سجاد، للمتر المربع"
+        "ar": "سجاد، للمتر المربع",
+        "fr": "Tapis, par m²",
+        "de": "Teppich, pro m²",
+        "zh": "地毯，每平方米"
       },
       "unit": "sqm",
       "price": 25,
@@ -306,7 +399,10 @@
       "note": {
         "en": "Minimum AED 150",
         "ru": "Минимум 150 AED",
-        "ar": "الحد الأدنى 150 درهمًا"
+        "ar": "الحد الأدنى 150 درهمًا",
+        "fr": "Minimum 150 AED",
+        "de": "Mindestens 150 AED",
+        "zh": "最低消费 AED 150"
       },
       "sort": 1
     },
@@ -316,7 +412,10 @@
       "name": {
         "en": "Stain & odour treatment, per item",
         "ru": "Пятна и запах, за предмет",
-        "ar": "معالجة البقع والروائح، للقطعة"
+        "ar": "معالجة البقع والروائح، للقطعة",
+        "fr": "Traitement taches et odeurs, par pièce",
+        "de": "Flecken- & Geruchsbehandlung, pro Stück",
+        "zh": "污渍与异味处理，每件"
       },
       "unit": "item",
       "price": 79,
@@ -325,7 +424,10 @@
       "note": {
         "en": "Add-on to any upholstery service",
         "ru": "Дополнение к любой химчистке",
-        "ar": "تُضاف إلى أي خدمة تنظيف مفروشات"
+        "ar": "تُضاف إلى أي خدمة تنظيف مفروشات",
+        "fr": "En complément de tout nettoyage de canapé, matelas ou tapis",
+        "de": "Ergänzung zu jeder Polsterreinigung",
+        "zh": "可加购于任何软装清洁服务"
       },
       "sort": 1
     }
@@ -340,12 +442,18 @@
       "name": {
         "en": "Fresh Home",
         "ru": "Fresh Home",
-        "ar": "Fresh Home"
+        "ar": "Fresh Home",
+        "fr": "Fresh Home",
+        "de": "Fresh Home",
+        "zh": "Fresh Home"
       },
       "description": {
         "en": "3 split units standard clean + 3-seat sofa cleaning in one visit.",
         "ru": "Стандартная чистка 3 блоков + химчистка 3-местного дивана за один визит.",
-        "ar": "تنظيف قياسي لـ 3 وحدات سبليت + تنظيف أريكة بثلاثة مقاعد في زيارة واحدة."
+        "ar": "تنظيف قياسي لـ 3 وحدات سبليت + تنظيف أريكة بثلاثة مقاعد في زيارة واحدة.",
+        "fr": "Nettoyage standard de 3 unités split + nettoyage d’un canapé 3 places en une seule visite.",
+        "de": "Standardreinigung von 3 Split-Geräten + Reinigung eines 3-Sitzer-Sofas in einem Besuch.",
+        "zh": "一次上门完成 3 台分体式空调标准清洗 + 3 座沙发清洁。"
       },
       "price": 599,
       "compare_price": 654,
@@ -363,12 +471,18 @@
       "name": {
         "en": "Essential",
         "ru": "Essential",
-        "ar": "Essential"
+        "ar": "Essential",
+        "fr": "Essential",
+        "de": "Essential",
+        "zh": "Essential"
       },
       "description": {
         "en": "Up to 3 split units. 3 standard cleans a year, priority booking, 10% off repairs.",
         "ru": "До 3 блоков. 3 стандартные чистки в год, приоритетная запись, −10% на ремонт.",
-        "ar": "حتى 3 وحدات سبليت. 3 تنظيفات قياسية في السنة، أولوية في الحجز، وخصم 10% على الإصلاح."
+        "ar": "حتى 3 وحدات سبليت. 3 تنظيفات قياسية في السنة، أولوية في الحجز، وخصم 10% على الإصلاح.",
+        "fr": "Jusqu’à 3 unités split. 3 nettoyages standard par an, réservation prioritaire, 10 % de remise sur les réparations.",
+        "de": "Bis zu 3 Split-Geräte. 3 Standardreinigungen pro Jahr, bevorzugte Terminvergabe, 10 % Rabatt auf Reparaturen.",
+        "zh": "最多 3 台分体式空调。每年 3 次标准清洗，优先预约，维修享 10% 折扣。"
       },
       "price": 899,
       "compare_price": null,
@@ -389,12 +503,18 @@
       "name": {
         "en": "Comfort",
         "ru": "Comfort",
-        "ar": "Comfort"
+        "ar": "Comfort",
+        "fr": "Comfort",
+        "de": "Comfort",
+        "zh": "Comfort"
       },
       "description": {
         "en": "Up to 5 split units. 3 visits a year, one of them a deep clean, priority booking, 10% off repairs.",
         "ru": "До 5 блоков. 3 визита в год, один из них — глубокая чистка, приоритетная запись, −10% на ремонт.",
-        "ar": "حتى 5 وحدات سبليت. 3 زيارات في السنة إحداها تنظيف عميق، أولوية في الحجز، وخصم 10% على الإصلاح."
+        "ar": "حتى 5 وحدات سبليت. 3 زيارات في السنة إحداها تنظيف عميق، أولوية في الحجز، وخصم 10% على الإصلاح.",
+        "fr": "Jusqu’à 5 unités split. 3 visites par an, dont un nettoyage en profondeur, réservation prioritaire, 10 % de remise sur les réparations.",
+        "de": "Bis zu 5 Split-Geräte. 3 Besuche pro Jahr, davon eine Tiefenreinigung, bevorzugte Terminvergabe, 10 % Rabatt auf Reparaturen.",
+        "zh": "最多 5 台分体式空调。每年 3 次上门，其中一次为深度清洗，优先预约，维修享 10% 折扣。"
       },
       "price": 1499,
       "compare_price": null,
@@ -415,12 +535,18 @@
       "name": {
         "en": "Villa",
         "ru": "Villa",
-        "ar": "Villa"
+        "ar": "Villa",
+        "fr": "Villa",
+        "de": "Villa",
+        "zh": "Villa"
       },
       "description": {
         "en": "Up to 8 FCUs or split units. 3 visits a year, 24-hour priority call-out, 15% off repairs.",
         "ru": "До 8 фанкойлов или блоков. 3 визита в год, приоритетный выезд за 24 часа, −15% на ремонт.",
-        "ar": "حتى 8 وحدات فان كويل أو سبليت. 3 زيارات في السنة، زيارة ذات أولوية خلال 24 ساعة، وخصم 15% على الإصلاح."
+        "ar": "حتى 8 وحدات فان كويل أو سبليت. 3 زيارات في السنة، زيارة ذات أولوية خلال 24 ساعة، وخصم 15% على الإصلاح.",
+        "fr": "Jusqu’à 8 FCU ou unités split. 3 visites par an, intervention prioritaire sous 24 h, 15 % de remise sur les réparations.",
+        "de": "Bis zu 8 Gebläsekonvektoren oder Split-Geräte. 3 Besuche pro Jahr, bevorzugter Einsatz innerhalb von 24 Stunden, 15 % Rabatt auf Reparaturen.",
+        "zh": "最多 8 台风机盘管或分体式空调。每年 3 次上门，24 小时内优先上门，维修享 15% 折扣。"
       },
       "price": 2499,
       "compare_price": null,
