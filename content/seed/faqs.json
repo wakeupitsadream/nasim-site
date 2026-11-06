@@ -7,12 +7,20 @@
       "question": {
         "en": "How often should I clean my AC in Dubai?",
         "ru": "Как часто чистить кондиционер в Дубае?",
-        "ar": "كم مرة يجب تنظيف المكيف في دبي؟"
+        "ar": "كم مرة يجب تنظيف المكيف في دبي؟",
+        "fr": "À quelle fréquence nettoyer sa clim à Dubaï ?",
+        "de": "Wie oft sollte ich meine Klimaanlage in Dubai reinigen lassen?",
+        "zh": "在迪拜，空调应该多久清洗一次？",
+        "hi": "दुबई में एसी की सफ़ाई कितनी बार करानी चाहिए?"
       },
       "answer_html": {
         "en": "<p>Every 4–6 months for a unit that runs daily, and a deep clean once a year for bedrooms or any unit older than five years. Dust and humidity here load a coil much faster than in most climates.</p>",
         "ru": "<p>Раз в 4–6 месяцев для блока, который работает ежедневно, и глубокая чистка раз в год для спален и блоков старше пяти лет. Пыль и влажность здесь забивают радиатор гораздо быстрее, чем в большинстве климатов.</p>",
-        "ar": "<p>كل 4–6 أشهر للوحدة التي تعمل يوميًا، وتنظيف عميق مرة في السنة لغرف النوم ولأي وحدة عمرها أكثر من خمس سنوات. الغبار والرطوبة هنا يُثقلان الملف أسرع بكثير مما في معظم المناخات.</p>"
+        "ar": "<p>كل 4–6 أشهر للوحدة التي تعمل يوميًا، وتنظيف عميق مرة في السنة لغرف النوم ولأي وحدة عمرها أكثر من خمس سنوات. الغبار والرطوبة هنا يُثقلان الملف أسرع بكثير مما في معظم المناخات.</p>",
+        "fr": "<p>Tous les 4 à 6 mois pour une unité qui fonctionne chaque jour, et un nettoyage en profondeur une fois par an pour les chambres ou toute unité de plus de cinq ans. Ici, la poussière et l’humidité encrassent un échangeur bien plus vite que dans la plupart des climats.</p>",
+        "de": "<p>Alle 4–6 Monate bei einem Gerät, das täglich läuft, plus eine Tiefenreinigung einmal im Jahr für Schlafzimmer oder Geräte, die älter als fünf Jahre sind. Staub und Luftfeuchtigkeit setzen einem Wärmetauscher hier viel schneller zu als in den meisten anderen Klimazonen.</p>",
+        "zh": "<p>每天使用的机器每 4–6 个月清洗一次；卧室空调和使用超过五年的机器，每年再做一次深度清洗。这里的灰尘和湿气让蒸发器变脏的速度远快于大多数气候。</p>",
+        "hi": "<p>रोज़ चलने वाली यूनिट के लिए हर 4–6 महीने में, और बेडरूम या पाँच साल से पुरानी किसी भी यूनिट के लिए साल में एक बार डीप क्लीनिंग। यहाँ की धूल और नमी कॉइल को ज़्यादातर जगहों की तुलना में कहीं तेज़ी से गंदा करती है।</p>"
       }
     },
     {
@@ -21,12 +29,20 @@
       "question": {
         "en": "Is the price really fixed?",
         "ru": "Цена правда фиксированная?",
-        "ar": "هل السعر ثابت فعلًا؟"
+        "ar": "هل السعر ثابت فعلًا؟",
+        "fr": "Le prix est-il vraiment fixe ?",
+        "de": "Ist der Preis wirklich fest?",
+        "zh": "价格真的是固定的吗？",
+        "hi": "क्या कीमत सच में तय है?"
       },
       "answer_html": {
         "en": "<p>Yes for cleaning: the price you see is what you pay, call-out included. For repairs the diagnostic fee is fixed and credited to the repair; parts are quoted in writing before any work starts.</p>",
         "ru": "<p>Да, для чистки: цена на сайте — это то, что вы платите, выезд включён. Для ремонта фиксирована цена диагностики, она засчитывается в ремонт; запчасти согласуются письменной сметой до начала работ.</p>",
-        "ar": "<p>نعم للتنظيف: السعر الذي تراه هو ما تدفعه، ورسوم الزيارة مشمولة. أما الإصلاح فرسوم الفحص فيه ثابتة وتُحتسب من قيمة الإصلاح؛ وتُقدَّم أسعار القطع كتابيًا قبل بدء أي عمل.</p>"
+        "ar": "<p>نعم للتنظيف: السعر الذي تراه هو ما تدفعه، ورسوم الزيارة مشمولة. أما الإصلاح فرسوم الفحص فيه ثابتة وتُحتسب من قيمة الإصلاح؛ وتُقدَّم أسعار القطع كتابيًا قبل بدء أي عمل.</p>",
+        "fr": "<p>Oui pour le nettoyage : le prix affiché est celui que vous payez, déplacement compris. Pour les réparations, les frais de diagnostic sont fixes et déduits de la réparation ; les pièces sont chiffrées par écrit avant tout travail.</p>",
+        "de": "<p>Für Reinigungen ja: Der Preis, den Sie sehen, ist der, den Sie zahlen – Anfahrt inklusive. Bei Reparaturen ist die Diagnosegebühr fest und wird auf die Reparatur angerechnet; Ersatzteile werden schriftlich angeboten, bevor Arbeiten beginnen.</p>",
+        "zh": "<p>清洗服务是的：您看到的价格就是最终价格，含上门费。维修则是检测费固定并计入维修费用；配件在开工前以书面形式报价。</p>",
+        "hi": "<p>सफ़ाई के लिए हाँ: जो कीमत आप देखते हैं, वही देते हैं, विज़िट शुल्क शामिल। मरम्मत में जाँच शुल्क तय है और मरम्मत में समायोजित हो जाता है; पुर्ज़ों का कोटेशन कोई भी काम शुरू होने से पहले लिखित में मिलता है।</p>"
       }
     },
     {
@@ -35,12 +51,20 @@
       "question": {
         "en": "Do I need to be at home?",
         "ru": "Нужно ли быть дома?",
-        "ar": "هل يلزم وجودي في المنزل؟"
+        "ar": "هل يلزم وجودي في المنزل؟",
+        "fr": "Dois-je être à la maison ?",
+        "de": "Muss ich zu Hause sein?",
+        "zh": "我需要在家吗？",
+        "hi": "क्या मुझे घर पर होना ज़रूरी है?"
       },
       "answer_html": {
         "en": "<p>Someone needs to let us in and sign off at the end. If you cannot be there, a building concierge or a trusted person works — you still get the photo report in WhatsApp.</p>",
         "ru": "<p>Кто-то должен открыть дверь и принять работу в конце. Если вас не будет — подойдёт консьерж или доверенное лицо, фотоотчёт в WhatsApp вы получите в любом случае.</p>",
-        "ar": "<p>يلزم وجود شخص يفتح لنا الباب ويستلم العمل في النهاية. إذا تعذّر حضورك، يكفي بوّاب المبنى أو شخص تثق به — وستستلم التقرير المصوّر عبر واتساب على أي حال.</p>"
+        "ar": "<p>يلزم وجود شخص يفتح لنا الباب ويستلم العمل في النهاية. إذا تعذّر حضورك، يكفي بوّاب المبنى أو شخص تثق به — وستستلم التقرير المصوّر عبر واتساب على أي حال.</p>",
+        "fr": "<p>Quelqu’un doit nous ouvrir et valider le travail à la fin. Si vous ne pouvez pas être là, le concierge de l’immeuble ou une personne de confiance suffit — vous recevez quand même le rapport photo sur WhatsApp.</p>",
+        "de": "<p>Jemand muss uns hereinlassen und am Ende die Arbeit abnehmen. Wenn Sie nicht da sein können, geht auch der Concierge des Gebäudes oder eine Vertrauensperson – den Fotobericht erhalten Sie trotzdem per WhatsApp.</p>",
+        "zh": "<p>需要有人开门，并在结束时确认验收。如果您无法到场，楼宇礼宾或您信任的人也可以——您照样会在 WhatsApp 上收到照片报告。</p>",
+        "hi": "<p>किसी को हमें अंदर आने देना होता है और अंत में काम की पुष्टि करनी होती है। अगर आप नहीं हो सकते, तो बिल्डिंग का कंसीयर्ज या कोई भरोसेमंद व्यक्ति भी चलेगा — फ़ोटो रिपोर्ट फिर भी आपको WhatsApp पर मिलती है।</p>"
       }
     },
     {
@@ -49,12 +73,20 @@
       "question": {
         "en": "What is in the WhatsApp report?",
         "ru": "Что в отчёте в WhatsApp?",
-        "ar": "ماذا يتضمن تقرير واتساب؟"
+        "ar": "ماذا يتضمن تقرير واتساب؟",
+        "fr": "Que contient le rapport WhatsApp ?",
+        "de": "Was steht im WhatsApp-Bericht?",
+        "zh": "WhatsApp 报告里有什么？",
+        "hi": "WhatsApp रिपोर्ट में क्या होता है?"
       },
       "answer_html": {
         "en": "<p>Photos before and after of each unit, outlet temperature before and after, anything we noticed (worn parts, leaks, mould) and the recommended date for the next visit.</p>",
         "ru": "<p>Фото каждого блока до и после, температура на выходе до и после, что мы заметили (износ, протечки, плесень) и рекомендованная дата следующего визита.</p>",
-        "ar": "<p>صور كل وحدة قبل وبعد، وحرارة الهواء الخارج قبل وبعد، وكل ما لاحظناه (قطع متآكلة، تسربات، عفن)، والتاريخ الموصى به للزيارة التالية.</p>"
+        "ar": "<p>صور كل وحدة قبل وبعد، وحرارة الهواء الخارج قبل وبعد، وكل ما لاحظناه (قطع متآكلة، تسربات، عفن)، والتاريخ الموصى به للزيارة التالية.</p>",
+        "fr": "<p>Des photos avant et après de chaque unité, la température de soufflage avant et après, tout ce que nous avons remarqué (pièces usées, fuites, moisissure) et la date recommandée pour la prochaine visite.</p>",
+        "de": "<p>Vorher-Nachher-Fotos jedes Geräts, die Ausblastemperatur vorher und nachher, alles, was uns aufgefallen ist (verschlissene Teile, Lecks, Schimmel), und der empfohlene Termin für den nächsten Besuch.</p>",
+        "zh": "<p>每台机器清洗前后的照片、清洗前后的出风温度、我们注意到的任何问题（磨损部件、漏水、霉菌），以及建议的下次上门日期。</p>",
+        "hi": "<p>हर यूनिट की पहले और बाद की फ़ोटो, पहले और बाद में आउटलेट का तापमान, जो भी हमें दिखा (घिसे पुर्ज़े, लीक, फफूंद) और अगली विज़िट की सुझाई गई तारीख़।</p>"
       }
     },
     {
@@ -63,12 +95,20 @@
       "question": {
         "en": "What does the guarantee cover?",
         "ru": "Что покрывает гарантия?",
-        "ar": "ماذا يغطي الضمان؟"
+        "ar": "ماذا يغطي الضمان؟",
+        "fr": "Que couvre la garantie ?",
+        "de": "Was deckt die Garantie ab?",
+        "zh": "保证涵盖什么？",
+        "hi": "गारंटी में क्या शामिल है?"
       },
       "answer_html": {
         "en": "<p>Cleaning: 30 days — if the smell or problem we cleaned comes back, we redo it free. Repairs: 90 days on the part and the labour.</p>",
         "ru": "<p>Чистка: 30 дней — если запах или проблема вернулись, переделаем бесплатно. Ремонт: 90 дней на деталь и работу.</p>",
-        "ar": "<p>التنظيف: 30 يومًا — إذا عادت الرائحة أو المشكلة التي عالجناها، نعيد التنظيف مجانًا. الإصلاح: 90 يومًا على القطعة والعمل.</p>"
+        "ar": "<p>التنظيف: 30 يومًا — إذا عادت الرائحة أو المشكلة التي عالجناها، نعيد التنظيف مجانًا. الإصلاح: 90 يومًا على القطعة والعمل.</p>",
+        "fr": "<p>Nettoyage : 30 jours — si l’odeur ou le problème que nous avons traité revient, nous recommençons gratuitement. Réparations : 90 jours sur la pièce et la main-d’œuvre.</p>",
+        "de": "<p>Reinigung: 30 Tage – kommt der Geruch oder das Problem zurück, das wir beseitigt haben, reinigen wir kostenlos nach. Reparaturen: 90 Tage auf Teil und Arbeit.</p>",
+        "zh": "<p>清洗：30 天——如果我们处理过的异味或问题再次出现，免费重做。维修：配件和人工保修 90 天。</p>",
+        "hi": "<p>सफ़ाई: 30 दिन — अगर जिस बदबू या समस्या की हमने सफ़ाई की, वह वापस आ जाए, तो हम उसे मुफ़्त दोबारा करते हैं। मरम्मत: पुर्ज़े और मज़दूरी पर 90 दिन।</p>"
       }
     },
     {
@@ -77,12 +117,20 @@
       "question": {
         "en": "Which services do you not offer?",
         "ru": "Что вы не делаете?",
-        "ar": "ما الخدمات التي لا تقدمونها؟"
+        "ar": "ما الخدمات التي لا تقدمونها؟",
+        "fr": "Quels services ne proposez-vous pas ?",
+        "de": "Welche Leistungen bieten Sie nicht an?",
+        "zh": "你们不提供哪些服务？",
+        "hi": "कौन-सी सेवाएँ आप नहीं देते?"
       },
       "answer_html": {
         "en": "<p>New installations, complex office VRF repairs, duct cleaning and mould removal from walls. The last two need separate Dubai Municipality approvals — we arrange them through a licensed partner.</p>",
         "ru": "<p>Установку новых систем, сложный ремонт офисных VRF, чистку воздуховодов и удаление плесени со стен. Последние два требуют отдельных разрешений Dubai Municipality — организуем через лицензированного партнёра.</p>",
-        "ar": "<p>تركيب الأنظمة الجديدة، والإصلاحات المعقدة لأنظمة VRF المكتبية، وتنظيف مجاري الهواء، وإزالة العفن من الجدران. الأخيران يتطلبان تصاريح منفصلة من بلدية دبي — ننظّمهما عبر شريك مرخّص.</p>"
+        "ar": "<p>تركيب الأنظمة الجديدة، والإصلاحات المعقدة لأنظمة VRF المكتبية، وتنظيف مجاري الهواء، وإزالة العفن من الجدران. الأخيران يتطلبان تصاريح منفصلة من بلدية دبي — ننظّمهما عبر شريك مرخّص.</p>",
+        "fr": "<p>Les installations neuves, les réparations complexes de VRF de bureaux, le nettoyage des gaines et le traitement des moisissures sur les murs. Les deux derniers exigent des agréments distincts de la Municipalité de Dubaï — nous les confions à un partenaire agréé.</p>",
+        "de": "<p>Neuinstallationen, komplexe VRF-Reparaturen in Büros, Kanalreinigung und Schimmelentfernung von Wänden. Die letzten beiden brauchen separate Genehmigungen der Dubai Municipality – wir organisieren sie über einen lizenzierten Partner.</p>",
+        "zh": "<p>新机安装、复杂的办公楼 VRF 维修、风管清洗和墙面除霉。后两项需要迪拜市政局的单独许可——我们通过持牌合作伙伴安排。</p>",
+        "hi": "<p>नए इंस्टॉलेशन, ऑफ़िस के जटिल VRF सिस्टम की मरम्मत, डक्ट की सफ़ाई और दीवारों से फफूंद हटाना। आख़िरी दो के लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए — हम इन्हें लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं।</p>"
       }
     },
     {
@@ -92,12 +140,20 @@
       "question": {
         "en": "How long does one unit take?",
         "ru": "Сколько времени занимает один блок?",
-        "ar": "كم تستغرق الوحدة الواحدة؟"
+        "ar": "كم تستغرق الوحدة الواحدة؟",
+        "fr": "Combien de temps prend une unité ?",
+        "de": "Wie lange dauert die Reinigung eines Geräts?",
+        "zh": "一台机器需要多长时间？",
+        "hi": "एक यूनिट में कितना समय लगता है?"
       },
       "answer_html": {
         "en": "<p>About 45 minutes for a standard clean, including the outdoor unit and the report.</p>",
         "ru": "<p>Около 45 минут на стандартную чистку, включая наружный блок и отчёт.</p>",
-        "ar": "<p>نحو 45 دقيقة للتنظيف القياسي، بما في ذلك الوحدة الخارجية والتقرير.</p>"
+        "ar": "<p>نحو 45 دقيقة للتنظيف القياسي، بما في ذلك الوحدة الخارجية والتقرير.</p>",
+        "fr": "<p>Environ 45 minutes pour un nettoyage standard, unité extérieure et rapport compris.</p>",
+        "de": "<p>Etwa 45 Minuten für eine Standardreinigung, inklusive Außengerät und Bericht.</p>",
+        "zh": "<p>标准清洗大约 45 分钟，包括室外机和报告。</p>",
+        "hi": "<p>स्टैंडर्ड सफ़ाई में लगभग 45 मिनट, आउटडोर यूनिट और रिपोर्ट समेत।</p>"
       }
     },
     {
@@ -107,12 +163,20 @@
       "question": {
         "en": "Will there be water or mess?",
         "ru": "Будет ли вода или грязь?",
-        "ar": "هل سيكون هناك ماء أو فوضى؟"
+        "ar": "هل سيكون هناك ماء أو فوضى؟",
+        "fr": "Y aura-t-il de l’eau ou de la saleté ?",
+        "de": "Wird dabei etwas nass oder schmutzig?",
+        "zh": "会弄得到处是水或很乱吗？",
+        "hi": "क्या पानी या गंदगी फैलेगी?"
       },
       "answer_html": {
         "en": "<p>We hang a wash bag under the indoor unit and cover the floor, so the dirty water goes into a bucket, not on your furniture.</p>",
         "ru": "<p>Под внутренний блок вешаем моечный чехол и закрываем пол — грязная вода уходит в ведро, а не на мебель.</p>",
-        "ar": "<p>نعلّق كيس غسيل تحت الوحدة الداخلية ونغطي الأرضية، فيذهب الماء المتسخ إلى دلو لا إلى أثاثك.</p>"
+        "ar": "<p>نعلّق كيس غسيل تحت الوحدة الداخلية ونغطي الأرضية، فيذهب الماء المتسخ إلى دلو لا إلى أثاثك.</p>",
+        "fr": "<p>Nous suspendons une housse de lavage sous l’unité intérieure et couvrons le sol : l’eau sale part dans un seau, pas sur vos meubles.</p>",
+        "de": "<p>Wir hängen einen Auffangsack unter das Innengerät und decken den Boden ab, sodass das Schmutzwasser in einen Eimer läuft – nicht auf Ihre Möbel.</p>",
+        "zh": "<p>我们会在室内机下方挂上清洗罩，并盖好地板，脏水流进水桶，而不是流到您的家具上。</p>",
+        "hi": "<p>हम इनडोर यूनिट के नीचे वॉश बैग लगाते हैं और फ़र्श ढक देते हैं, इसलिए गंदा पानी बाल्टी में जाता है, आपके फ़र्नीचर पर नहीं।</p>"
       }
     },
     {
@@ -122,12 +186,20 @@
       "question": {
         "en": "Standard or deep clean — how do I choose?",
         "ru": "Стандартная или глубокая — как выбрать?",
-        "ar": "تنظيف قياسي أم عميق — كيف أختار؟"
+        "ar": "تنظيف قياسي أم عميق — كيف أختار؟",
+        "fr": "Standard ou en profondeur — comment choisir ?",
+        "de": "Standard- oder Tiefenreinigung – wie entscheide ich?",
+        "zh": "标准清洗还是深度清洗，怎么选？",
+        "hi": "स्टैंडर्ड या डीप क्लीनिंग — कैसे चुनें?"
       },
       "answer_html": {
         "en": "<p>No smell and the last clean was within a year: standard. Musty smell, black spots on the louvres, or no clean for years: deep. If unsure, book standard — the technician will tell you honestly if deep is needed and you can upgrade on the spot.</p>",
         "ru": "<p>Нет запаха и чистили в течение года — стандартная. Запах сырости, чёрные точки на жалюзи или не чистили годами — глубокая. Сомневаетесь — заказывайте стандартную: техник честно скажет, нужна ли глубокая, и её можно сделать сразу.</p>",
-        "ar": "<p>لا رائحة وآخر تنظيف كان خلال سنة: قياسي. رائحة عفن أو بقع سوداء على ريش توجيه الهواء أو لم تُنظَّف الوحدة منذ سنوات: عميق. إن لم تكن متأكدًا فاحجز القياسي — سيخبرك الفني بصراحة إن كان العميق ضروريًا، ويمكنك الترقية في المكان.</p>"
+        "ar": "<p>لا رائحة وآخر تنظيف كان خلال سنة: قياسي. رائحة عفن أو بقع سوداء على ريش توجيه الهواء أو لم تُنظَّف الوحدة منذ سنوات: عميق. إن لم تكن متأكدًا فاحجز القياسي — سيخبرك الفني بصراحة إن كان العميق ضروريًا، ويمكنك الترقية في المكان.</p>",
+        "fr": "<p>Pas d’odeur et dernier nettoyage il y a moins d’un an : standard. Odeur de moisi, points noirs sur les volets, ou aucun nettoyage depuis des années : en profondeur. En cas de doute, réservez le standard — le technicien vous dira honnêtement si le nettoyage en profondeur est nécessaire, et vous pourrez passer à l’offre supérieure sur place.</p>",
+        "de": "<p>Kein Geruch und die letzte Reinigung liegt weniger als ein Jahr zurück: Standard. Muffiger Geruch, schwarze Punkte auf den Lamellen oder seit Jahren keine Reinigung: Tiefenreinigung. Im Zweifel buchen Sie Standard – der Techniker sagt Ihnen ehrlich, ob eine Tiefenreinigung nötig ist, und Sie können direkt vor Ort wechseln.</p>",
+        "zh": "<p>没有异味，且上次清洗在一年以内：选标准。有霉味、导风板上有黑点，或者多年没洗过：选深度。拿不准就先预约标准清洗——技师会如实告诉您是否需要深度清洗，您可以当场升级。</p>",
+        "hi": "<p>बदबू नहीं है और आख़िरी सफ़ाई एक साल के भीतर हुई थी: स्टैंडर्ड। सीलन की बदबू, लूवर पर काले धब्बे, या सालों से सफ़ाई नहीं हुई: डीप। तय न कर पाएँ, तो स्टैंडर्ड बुक करें — तकनीशियन ईमानदारी से बताएगा कि डीप की ज़रूरत है या नहीं, और आप मौके पर अपग्रेड कर सकते हैं।</p>"
       }
     },
     {
@@ -137,12 +209,20 @@
       "question": {
         "en": "Can every unit be disassembled?",
         "ru": "Любой блок можно разобрать?",
-        "ar": "هل يمكن تفكيك كل وحدة؟"
+        "ar": "هل يمكن تفكيك كل وحدة؟",
+        "fr": "Toutes les unités peuvent-elles être démontées ?",
+        "de": "Kann jedes Gerät zerlegt werden?",
+        "zh": "每台机器都能拆吗？",
+        "hi": "क्या हर यूनिट को खोला जा सकता है?"
       },
       "answer_html": {
         "en": "<p>Most wall-mounted splits, yes. Very old units with brittle plastic are a risk — we check first and tell you if we recommend a standard clean instead.</p>",
         "ru": "<p>Большинство настенных сплитов — да. Очень старые блоки с хрупким пластиком — риск: сначала проверяем и говорим, если лучше ограничиться стандартной чисткой.</p>",
-        "ar": "<p>معظم مكيفات السبليت الجدارية، نعم. الوحدات القديمة جدًا ذات البلاستيك الهش فيها مخاطرة — نفحصها أولًا ونخبرك إن كنا ننصح بتنظيف قياسي بدلًا من ذلك.</p>"
+        "ar": "<p>معظم مكيفات السبليت الجدارية، نعم. الوحدات القديمة جدًا ذات البلاستيك الهش فيها مخاطرة — نفحصها أولًا ونخبرك إن كنا ننصح بتنظيف قياسي بدلًا من ذلك.</p>",
+        "fr": "<p>La plupart des splits muraux, oui. Les unités très anciennes au plastique fragilisé présentent un risque — nous vérifions d’abord et vous disons si nous recommandons plutôt un nettoyage standard.</p>",
+        "de": "<p>Die meisten Split-Wandgeräte ja. Sehr alte Geräte mit sprödem Kunststoff sind ein Risiko – wir prüfen zuerst und sagen Ihnen, wenn wir stattdessen eine Standardreinigung empfehlen.</p>",
+        "zh": "<p>大多数壁挂分体式空调可以。塑料已经变脆的老机器有风险——我们会先检查，如果建议改做标准清洗，会告诉您。</p>",
+        "hi": "<p>ज़्यादातर वॉल-माउंटेड स्प्लिट, हाँ। भुरभुरे प्लास्टिक वाली बहुत पुरानी यूनिट में जोखिम है — हम पहले जाँचते हैं और अगर इसके बजाय स्टैंडर्ड सफ़ाई की सलाह हो, तो आपको बता देते हैं।</p>"
       }
     },
     {
@@ -152,12 +232,20 @@
       "question": {
         "en": "Will the smell definitely go away?",
         "ru": "Запах точно уйдёт?",
-        "ar": "هل ستزول الرائحة بالتأكيد؟"
+        "ar": "هل ستزول الرائحة بالتأكيد؟",
+        "fr": "L’odeur disparaîtra-t-elle vraiment ?",
+        "de": "Verschwindet der Geruch ganz sicher?",
+        "zh": "异味一定会消失吗？",
+        "hi": "क्या बदबू पक्का चली जाएगी?"
       },
       "answer_html": {
         "en": "<p>If the smell comes from the unit — yes, and it is covered by the 30-day guarantee. If the source is the ducts or the wall behind the unit, we will show you on the photos and explain what to do next.</p>",
         "ru": "<p>Если источник запаха — блок, то да, и это покрыто гарантией 30 дней. Если источник — воздуховоды или стена за блоком, покажем на фото и объясним, что делать дальше.</p>",
-        "ar": "<p>إذا كان مصدر الرائحة الوحدة نفسها — نعم، وهذا مشمول بضمان 30 يومًا. وإذا كان المصدر مجاري الهواء أو الجدار خلف الوحدة، نريك ذلك في الصور ونشرح لك الخطوة التالية.</p>"
+        "ar": "<p>إذا كان مصدر الرائحة الوحدة نفسها — نعم، وهذا مشمول بضمان 30 يومًا. وإذا كان المصدر مجاري الهواء أو الجدار خلف الوحدة، نريك ذلك في الصور ونشرح لك الخطوة التالية.</p>",
+        "fr": "<p>Si l’odeur vient de l’unité — oui, et c’est couvert par la garantie de 30 jours. Si la source se trouve dans les gaines ou dans le mur derrière l’unité, nous vous le montrons sur les photos et vous expliquons la marche à suivre.</p>",
+        "de": "<p>Wenn der Geruch aus dem Gerät kommt – ja, und das deckt die 30-Tage-Garantie ab. Liegt die Quelle in den Luftkanälen oder in der Wand hinter dem Gerät, zeigen wir es Ihnen auf den Fotos und erklären, was als Nächstes zu tun ist.</p>",
+        "zh": "<p>如果异味来自机器本身——会的，而且在 30 天保证范围内。如果来源是风管或机器后面的墙，我们会用照片指给您看，并说明下一步该怎么做。</p>",
+        "hi": "<p>अगर बदबू यूनिट से आ रही है — हाँ, और यह 30 दिन की गारंटी में शामिल है। अगर स्रोत डक्ट या यूनिट के पीछे की दीवार है, तो हम आपको फ़ोटो में दिखाएँगे और समझाएँगे कि आगे क्या करना है।</p>"
       }
     },
     {
@@ -167,12 +255,20 @@
       "question": {
         "en": "How fast can you come?",
         "ru": "Как быстро приедете?",
-        "ar": "ما أسرع وقت يمكنكم الحضور فيه؟"
+        "ar": "ما أسرع وقت يمكنكم الحضور فيه؟",
+        "fr": "En combien de temps pouvez-vous venir ?",
+        "de": "Wie schnell können Sie kommen?",
+        "zh": "你们最快多久能来？",
+        "hi": "आप कितनी जल्दी आ सकते हैं?"
       },
       "answer_html": {
         "en": "<p>Same day if you contact us before the cut-off time shown in our emergency hours; otherwise the first slot next morning. We confirm the exact one-hour window in WhatsApp.</p>",
         "ru": "<p>В тот же день, если напишете до времени, указанного в часах срочных вызовов; иначе — первый слот следующим утром. Точный часовой слот подтверждаем в WhatsApp.</p>",
-        "ar": "<p>في اليوم نفسه إذا تواصلت معنا قبل الموعد النهائي المذكور في ساعات الطوارئ؛ وإلا ففي أول موعد صباح اليوم التالي. نؤكد نافذة الساعة الواحدة بدقة عبر واتساب.</p>"
+        "ar": "<p>في اليوم نفسه إذا تواصلت معنا قبل الموعد النهائي المذكور في ساعات الطوارئ؛ وإلا ففي أول موعد صباح اليوم التالي. نؤكد نافذة الساعة الواحدة بدقة عبر واتساب.</p>",
+        "fr": "<p>Le jour même si vous nous contactez avant l’heure limite indiquée dans nos horaires d’urgence ; sinon, au premier créneau le lendemain matin. Nous confirmons la fenêtre exacte d’une heure sur WhatsApp.</p>",
+        "de": "<p>Noch am selben Tag, wenn Sie uns vor der in unseren Notdienstzeiten angegebenen Annahmefrist kontaktieren; sonst im ersten Zeitfenster am nächsten Morgen. Das genaue Ein-Stunden-Zeitfenster bestätigen wir per WhatsApp.</p>",
+        "zh": "<p>如果您在紧急服务时间中标明的截止时间前联系我们，当天就到；否则是次日早上的第一个时段。我们会在 WhatsApp 上确认准确的一小时时段。</p>",
+        "hi": "<p>अगर आप हमारे इमरजेंसी घंटों में दिखाए गए कट-ऑफ़ समय से पहले संपर्क करते हैं, तो उसी दिन; नहीं तो अगली सुबह का पहला स्लॉट। सटीक एक घंटे का स्लॉट हम WhatsApp पर पक्का करते हैं।</p>"
       }
     },
     {
@@ -182,12 +278,20 @@
       "question": {
         "en": "What if it cannot be fixed on the spot?",
         "ru": "А если на месте починить нельзя?",
-        "ar": "ماذا لو تعذّر الإصلاح في المكان؟"
+        "ar": "ماذا لو تعذّر الإصلاح في المكان؟",
+        "fr": "Et si la réparation n’est pas possible sur place ?",
+        "de": "Was, wenn es nicht vor Ort repariert werden kann?",
+        "zh": "如果当场修不好怎么办？",
+        "hi": "अगर मौके पर ठीक न हो सके तो?"
       },
       "answer_html": {
         "en": "<p>You get a written quote with the part and the lead time. You decide. The diagnostic fee is credited if you go ahead with us.</p>",
         "ru": "<p>Вы получаете письменную смету с деталью и сроком. Решаете вы. Плата за диагностику засчитывается, если ремонтируете у нас.</p>",
-        "ar": "<p>تستلم عرض سعر مكتوبًا يتضمن القطعة ومدة التوريد. والقرار لك. وتُحتسب رسوم الفحص من قيمة الإصلاح إذا أكملته معنا.</p>"
+        "ar": "<p>تستلم عرض سعر مكتوبًا يتضمن القطعة ومدة التوريد. والقرار لك. وتُحتسب رسوم الفحص من قيمة الإصلاح إذا أكملته معنا.</p>",
+        "fr": "<p>Vous recevez un devis écrit avec la pièce et le délai. Vous décidez. Les frais de diagnostic sont déduits si vous poursuivez avec nous.</p>",
+        "de": "<p>Sie erhalten einen schriftlichen Kostenvoranschlag mit dem Ersatzteil und der Lieferzeit. Sie entscheiden. Die Diagnosegebühr wird angerechnet, wenn Sie uns den Auftrag geben.</p>",
+        "zh": "<p>您会收到一份书面报价，列明配件和到货时间。由您决定。如果选择让我们维修，检测费会计入维修费用。</p>",
+        "hi": "<p>आपको पुर्ज़े और उसके आने में लगने वाले समय के साथ लिखित कोटेशन मिलता है। फ़ैसला आपका। अगर आप हमसे काम कराते हैं, तो जाँच शुल्क समायोजित हो जाता है।</p>"
       }
     },
     {
@@ -197,12 +301,20 @@
       "question": {
         "en": "Why not just top up the gas?",
         "ru": "Почему просто не дозаправить газ?",
-        "ar": "لماذا لا تكتفون بتعبئة الغاز؟"
+        "ar": "لماذا لا تكتفون بتعبئة الغاز؟",
+        "fr": "Pourquoi ne pas simplement remettre du gaz ?",
+        "de": "Warum nicht einfach Gas nachfüllen?",
+        "zh": "为什么不直接加氟？",
+        "hi": "सिर्फ़ गैस क्यों न भरवा लें?"
       },
       "answer_html": {
         "en": "<p>Refrigerant does not get used up. If it is low, it leaked, and a top-up leaks out again — usually within weeks. Finding and fixing the leak costs more once, but it is the last time you pay for it.</p>",
         "ru": "<p>Фреон не расходуется. Если его мало — он вытек, и дозаправка вытечет снова, обычно за несколько недель. Найти и устранить утечку дороже один раз, но платите вы за это последний раз.</p>",
-        "ar": "<p>غاز التبريد لا يُستهلك. إذا كان ناقصًا فقد تسرّب، والتعبئة ستتسرب مجددًا — خلال أسابيع عادةً. إيجاد التسرب وإصلاحه يكلّف أكثر مرة واحدة، لكنها آخر مرة تدفع فيها ثمنه.</p>"
+        "ar": "<p>غاز التبريد لا يُستهلك. إذا كان ناقصًا فقد تسرّب، والتعبئة ستتسرب مجددًا — خلال أسابيع عادةً. إيجاد التسرب وإصلاحه يكلّف أكثر مرة واحدة، لكنها آخر مرة تدفع فيها ثمنه.</p>",
+        "fr": "<p>Le fluide frigorigène ne se consomme pas. S’il en manque, c’est qu’il a fui, et un appoint s’échappe à nouveau — généralement en quelques semaines. Trouver et réparer la fuite coûte plus cher une fois, mais c’est la dernière fois que vous payez pour ça.</p>",
+        "de": "<p>Kältemittel verbraucht sich nicht. Ist zu wenig da, ist es ausgetreten – und nachgefülltes tritt wieder aus, meist innerhalb von Wochen. Das Leck zu finden und zu beheben kostet einmal mehr, aber dann zahlen Sie zum letzten Mal dafür.</p>",
+        "zh": "<p>制冷剂不会被消耗掉。如果少了，就是漏了，加进去的还会漏出来——通常几周之内。找到并修好漏点一次性花费更高，但这是您最后一次为它花钱。</p>",
+        "hi": "<p>रेफ़्रिजरेंट ख़र्च नहीं होता। अगर वह कम है, तो लीक हुआ है, और टॉप-अप फिर से लीक हो जाता है — आमतौर पर कुछ हफ़्तों में। लीक ढूँढकर ठीक करने में एक बार ज़्यादा ख़र्च होता है, लेकिन उसके लिए आप आख़िरी बार पैसे देते हैं।</p>"
       }
     },
     {
@@ -212,12 +324,20 @@
       "question": {
         "en": "How long until I can sit on it?",
         "ru": "Когда можно будет сесть?",
-        "ar": "متى يمكنني الجلوس عليها؟"
+        "ar": "متى يمكنني الجلوس عليها؟",
+        "fr": "Au bout de combien de temps peut-on s’asseoir dessus ?",
+        "de": "Wann kann ich wieder darauf sitzen?",
+        "zh": "多久以后可以坐？",
+        "hi": "कितने समय बाद उस पर बैठ सकते हैं?"
       },
       "answer_html": {
         "en": "<p>4–6 hours with the AC running. We leave it slightly damp to the touch, not wet.</p>",
         "ru": "<p>4–6 часов при работающем кондиционере. Оставляем слегка влажным на ощупь, не мокрым.</p>",
-        "ar": "<p>بعد 4–6 ساعات مع تشغيل المكيف. نتركها رطبة قليلًا عند اللمس، لا مبللة.</p>"
+        "ar": "<p>بعد 4–6 ساعات مع تشغيل المكيف. نتركها رطبة قليلًا عند اللمس، لا مبللة.</p>",
+        "fr": "<p>4 à 6 heures avec la climatisation en marche. Nous le laissons légèrement humide au toucher, pas mouillé.</p>",
+        "de": "<p>Nach 4–6 Stunden bei laufender Klimaanlage. Der Stoff fühlt sich danach leicht feucht an, nicht nass.</p>",
+        "zh": "<p>开着空调 4–6 小时。我们离开时沙发摸上去只是微微发潮，不会是湿的。</p>",
+        "hi": "<p>एसी चलते हुए 4–6 घंटे। हम उसे छूने पर हल्का नम छोड़ते हैं, गीला नहीं।</p>"
       }
     },
     {
@@ -227,12 +347,20 @@
       "question": {
         "en": "Is it safe for kids and pets?",
         "ru": "Безопасно для детей и животных?",
-        "ar": "هل هو آمن للأطفال والحيوانات الأليفة؟"
+        "ar": "هل هو آمن للأطفال والحيوانات الأليفة؟",
+        "fr": "Est-ce sans danger pour les enfants et les animaux ?",
+        "de": "Ist das unbedenklich für Kinder und Haustiere?",
+        "zh": "对孩子和宠物安全吗？",
+        "hi": "क्या यह बच्चों और पालतू जानवरों के लिए सुरक्षित है?"
       },
       "answer_html": {
         "en": "<p>Yes — the cleaning agents we use are rinsed out during extraction and are safe once the fabric is dry.</p>",
         "ru": "<p>Да — средства вымываются при экстракции и безопасны, как только ткань высохнет.</p>",
-        "ar": "<p>نعم — مواد التنظيف التي نستخدمها تُشطف أثناء الاستخلاص وتصبح آمنة بمجرد أن يجف القماش.</p>"
+        "ar": "<p>نعم — مواد التنظيف التي نستخدمها تُشطف أثناء الاستخلاص وتصبح آمنة بمجرد أن يجف القماش.</p>",
+        "fr": "<p>Oui — les produits que nous utilisons sont rincés pendant l’extraction et sont sans danger une fois le tissu sec.</p>",
+        "de": "<p>Ja – die Reinigungsmittel, die wir verwenden, werden bei der Extraktion ausgespült und sind unbedenklich, sobald der Stoff trocken ist.</p>",
+        "zh": "<p>安全——我们使用的清洁剂在抽洗过程中会被冲洗出来，面料干透后就是安全的。</p>",
+        "hi": "<p>हाँ — हम जो क्लीनिंग एजेंट इस्तेमाल करते हैं, वे एक्सट्रैक्शन के दौरान धुल जाते हैं और कपड़ा सूखने के बाद पूरी तरह सुरक्षित हैं।</p>"
       }
     },
     {
@@ -241,12 +369,20 @@
       "question": {
         "en": "What happens if a unit breaks between visits?",
         "ru": "Что, если блок сломается между визитами?",
-        "ar": "ماذا يحدث إذا تعطلت وحدة بين الزيارات؟"
+        "ar": "ماذا يحدث إذا تعطلت وحدة بين الزيارات؟",
+        "fr": "Que se passe-t-il si une unité tombe en panne entre deux visites ?",
+        "de": "Was passiert, wenn ein Gerät zwischen den Besuchen ausfällt?",
+        "zh": "两次上门之间机器坏了怎么办？",
+        "hi": "अगर दो विज़िट के बीच कोई यूनिट ख़राब हो जाए तो?"
       },
       "answer_html": {
         "en": "<p>You get a priority call-out within the hours of your plan (48 or 24 hours), and the repair discount of your plan applies.</p>",
         "ru": "<p>Приоритетный выезд в сроки вашего тарифа (48 или 24 часа) и скидка на ремонт по тарифу.</p>",
-        "ar": "<p>تحصل على زيارة ذات أولوية خلال المدة المحددة في خطتك (48 أو 24 ساعة)، ويُطبَّق خصم الإصلاح الخاص بخطتك.</p>"
+        "ar": "<p>تحصل على زيارة ذات أولوية خلال المدة المحددة في خطتك (48 أو 24 ساعة)، ويُطبَّق خصم الإصلاح الخاص بخطتك.</p>",
+        "fr": "<p>Vous obtenez une intervention prioritaire dans le délai de votre formule (48 ou 24 heures), et la remise sur les réparations de votre formule s’applique.</p>",
+        "de": "<p>Sie erhalten einen bevorzugten Einsatz innerhalb der Frist Ihres Vertrags (48 oder 24 Stunden), und der Reparaturrabatt Ihres Vertrags gilt.</p>",
+        "zh": "<p>我们会在您方案规定的时间内（48 或 24 小时）优先上门，维修按您方案的折扣计费。</p>",
+        "hi": "<p>आपको अपने प्लान के समय (48 या 24 घंटे) के भीतर प्राथमिकता से कॉल-आउट मिलता है, और आपके प्लान की मरम्मत छूट लागू होती है।</p>"
       }
     },
     {
@@ -255,12 +391,20 @@
       "question": {
         "en": "Can I pay monthly?",
         "ru": "Можно платить помесячно?",
-        "ar": "هل يمكنني الدفع شهريًا؟"
+        "ar": "هل يمكنني الدفع شهريًا؟",
+        "fr": "Puis-je payer mensuellement ?",
+        "de": "Kann ich monatlich zahlen?",
+        "zh": "可以按月付款吗？",
+        "hi": "क्या मासिक भुगतान किया जा सकता है?"
       },
       "answer_html": {
         "en": "<p>The contract is paid per year at the first visit. Payment options are confirmed in WhatsApp when you book.</p>",
         "ru": "<p>Контракт оплачивается за год при первом визите. Способы оплаты подтверждаем в WhatsApp при записи.</p>",
-        "ar": "<p>يُدفع العقد عن السنة كاملة في الزيارة الأولى. نؤكد خيارات الدفع عبر واتساب عند الحجز.</p>"
+        "ar": "<p>يُدفع العقد عن السنة كاملة في الزيارة الأولى. نؤكد خيارات الدفع عبر واتساب عند الحجز.</p>",
+        "fr": "<p>Le contrat se règle à l’année, lors de la première visite. Les modes de paiement sont confirmés sur WhatsApp à la réservation.</p>",
+        "de": "<p>Der Vertrag wird jährlich beim ersten Besuch bezahlt. Die Zahlungsmöglichkeiten bestätigen wir bei der Buchung per WhatsApp.</p>",
+        "zh": "<p>合同费用在首次上门时按年支付。付款方式在您预约时通过 WhatsApp 确认。</p>",
+        "hi": "<p>कॉन्ट्रैक्ट का भुगतान सालाना, पहली विज़िट पर होता है। भुगतान के विकल्प बुकिंग के समय WhatsApp पर पक्के किए जाते हैं।</p>"
       }
     },
     {
@@ -269,12 +413,20 @@
       "question": {
         "en": "What if I move house?",
         "ru": "Что, если я переезжаю?",
-        "ar": "ماذا لو انتقلت إلى منزل آخر؟"
+        "ar": "ماذا لو انتقلت إلى منزل آخر؟",
+        "fr": "Et si je déménage ?",
+        "de": "Was, wenn ich umziehe?",
+        "zh": "如果我搬家了怎么办？",
+        "hi": "अगर मैं घर बदल लूँ तो?"
       },
       "answer_html": {
         "en": "<p>The contract moves with you within Dubai, as long as the number of units stays within your plan.</p>",
         "ru": "<p>Контракт переезжает с вами в пределах Дубая, если число блоков остаётся в рамках тарифа.</p>",
-        "ar": "<p>ينتقل العقد معك داخل دبي ما دام عدد الوحدات ضمن حدود خطتك.</p>"
+        "ar": "<p>ينتقل العقد معك داخل دبي ما دام عدد الوحدات ضمن حدود خطتك.</p>",
+        "fr": "<p>Le contrat vous suit partout dans Dubaï, tant que le nombre d’unités reste dans les limites de votre formule.</p>",
+        "de": "<p>Der Vertrag zieht innerhalb von Dubai mit Ihnen um, solange die Anzahl der Geräte im Rahmen Ihres Vertrags bleibt.</p>",
+        "zh": "<p>只要机器数量仍在方案范围内，合同可以随您在迪拜范围内搬迁。</p>",
+        "hi": "<p>कॉन्ट्रैक्ट दुबई के भीतर आपके साथ चलता है, जब तक यूनिट की संख्या आपके प्लान के भीतर रहे।</p>"
       }
     }
   ]

@@ -6,7 +6,7 @@
 
 ## 1. Контекст
 
-Миша (Дубай) открывает сервисную компанию: чистка, мелкий ремонт и обслуживание кондиционеров в квартирах, виллах и небольших офисах; тем же фургоном и тем же клиентам — химчистка мебели. Нужен сайт на EN / AR / RU, деплой на Vercel, с собственной админкой, через которую Миша сам ведёт контент, цены и входящие заявки.
+Миша (Дубай) открывает сервисную компанию: чистка, мелкий ремонт и обслуживание кондиционеров в квартирах, виллах и небольших офисах; тем же фургоном и тем же клиентам — химчистка мебели. Нужен сайт на EN / AR / RU (05.11.2026 по просьбе Миши добавлены FR / DE / ZH / HI — DECISIONS №57), деплой на Vercel, с собственной админкой, через которую Миша сам ведёт контент, цены и входящие заявки.
 
 **Из голосовых Миши (7 сообщений, расшифровано):**
 1. Параллельно он запускает бренд расходников (таблетки для посудомойки через брата, частная марка из Китая). К сайту не относится, в бриф не идёт.
@@ -197,10 +197,10 @@ Hero (название, 1 абзац, цена «от» и единица, дл�
 
 ## 9. Многоязычность и RTL
 
-1. **next-intl v4**: `lib/i18n/routing.ts` (locales `['en','ar','ru']`, defaultLocale `en`, `localePrefix: 'always'`, `alternateLinks: false`), `lib/i18n/navigation.ts` (`Link`, `useRouter`, `redirect`, `getPathname`), `lib/i18n/request.ts` (локаль из `next/root-params`), `proxy.ts` в корне (Next 16, Node runtime). В server actions и route handlers `next/root-params` недоступен — локаль передаётся явно: `getTranslations({ locale, namespace })`. UI-строки (кнопки, формы, ошибки) — `messages/{en,ar,ru}.json`. Контент — в БД как локализованные поля.
-2. **Локализованные поля**: тип `I18nText = { en: string; ar?: string; ru?: string }` в JSONB; на чтении fallback на EN с пометкой в админке «нет перевода». Валидация zod.
+1. **next-intl v4**: `lib/i18n/routing.ts` (locales `['en','ar','ru','fr','de','zh','hi']` — порядок меню языков, defaultLocale `en`, `localePrefix: 'always'`, `alternateLinks: false`), `lib/i18n/navigation.ts` (`Link`, `useRouter`, `redirect`, `getPathname`), `lib/i18n/request.ts` (локаль из `next/root-params`), `proxy.ts` в корне (Next 16, Node runtime). В server actions и route handlers `next/root-params` недоступен — локаль передаётся явно: `getTranslations({ locale, namespace })`. UI-строки (кнопки, формы, ошибки) — `messages/<locale>.json` для каждой локали. Контент — в БД как локализованные поля.
+2. **Локализованные поля**: тип `I18nText = { en: string } & Partial<Record<Locale, string>>` в JSONB; на чтении fallback на EN с пометкой в админке «нет перевода». Валидация zod.
 3. **RTL**: `<html lang dir>` из локали; только логические CSS-свойства (`ms-/me-/ps-/pe-`, `text-start`), в Tailwind v4 они есть; направленные иконки (стрелки, шевроны) зеркалятся через `rtl:-scale-x-100`; телефоны, цены, email, URL — в `<span dir="ltr">`; слайдер до/после и карусели учитывают направление; тестовый экран в Storybook-подобной странице `/admin/dev/rtl` (только dev) не нужен — проверяем Playwright-скриншотами.
-4. **Шрифты**: IBM Plex Sans (latin + cyrillic) для EN/RU, IBM Plex Sans Arabic для AR, через `next/font/google` с `subsets` по локали, `display: swap`; размеры арабского на 5–10% крупнее на тех же токенах (переменная `--font-scale`).
+4. **Шрифты**: IBM Plex Sans (latin + cyrillic) для EN/RU/FR/DE, IBM Plex Sans Arabic для AR, Noto Sans SC для ZH, IBM Plex Sans Devanagari для HI, через `next/font/google` с `subsets` по локали, `display: swap`; размеры арабского на 5–10% крупнее на тех же токенах (переменная `--font-scale`).
 5. **Числа и даты**: `Intl.NumberFormat` с `nu-latn` для AR; часы работы — `Intl.DateTimeFormat`; дни недели Дубая Пн–Вс, выходные Сб–Вс — просто текст в settings по локалям.
 6. **hreflang**: `generateMetadata` → `alternates: { canonical, languages: { en, ar, ru, 'x-default': en } }` на каждой странице; `sitemap.ts` отдаёт все локали с `alternates`.
 7. **Переключатель языка**: в хедере, сохраняет текущий путь (slug общий), cookie `NEXT_LOCALE` ставит прокси next-intl сам (сессионная, sameSite=lax); подписи на родных языках: English · العربية · Русский.

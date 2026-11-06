@@ -29,7 +29,7 @@ describe('messages', () => {
     expect([...messages[locale]!.keys()].sort()).toEqual([...en.keys()].sort());
   });
 
-  it.each(['en', 'ru'])('%s has no empty values', (locale) => {
+  it.each(routing.locales)('%s has no empty values', (locale) => {
     const empty = [...messages[locale]!].filter(([, v]) => v.trim() === '').map(([k]) => k);
     expect(empty).toEqual([]);
   });

@@ -35,6 +35,10 @@ const LANGUAGE: Record<DiagnoseRequest['locale'], string> = {
   en: 'English',
   ar: 'Arabic (Modern Standard, as used in the UAE)',
   ru: 'Russian',
+  fr: 'French',
+  de: 'German',
+  zh: 'Simplified Chinese',
+  hi: 'Hindi (Devanagari script)',
 };
 
 export function buildDiagnosisSystemPrompt(brand: string, catalogue: CatalogueEntry[]): string {

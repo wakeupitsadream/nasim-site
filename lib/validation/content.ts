@@ -3,21 +3,35 @@ import { z } from 'zod';
 // Shapes of content/seed/*.json (snake_case, as stored). Phase 2 reuses these schemas for the
 // seed script and the admin forms; the DB rows carry the same fields.
 
-/** Localized text as stored: EN is the source, AR/RU may be empty until translated. */
+/**
+ * Localized text as stored: EN is the source, every other locale (lib/i18n/routing.ts, in the
+ * same order) may be empty until translated. Spelled out so the admin forms and the DB rows have
+ * one explicit shape; tests/unit/content.test.ts checks the keys against the routing.
+ */
 export const i18nText = z.object({
   en: z.string(),
   ar: z.string().optional(),
   ru: z.string().optional(),
+  fr: z.string().optional(),
+  de: z.string().optional(),
+  zh: z.string().optional(),
+  hi: z.string().optional(),
 });
 export const i18nTextRequired = i18nText.extend({ en: z.string().min(1) });
 
 /** Localized structured value (array or object). Locale variants may be missing or empty. */
-export const i18nValue = <T extends z.ZodTypeAny>(schema: T) =>
-  z.object({
+export const i18nValue = <T extends z.ZodTypeAny>(schema: T) => {
+  const variant = z.union([schema, z.object({}).strict(), z.array(z.never())]).optional();
+  return z.object({
     en: schema,
-    ar: z.union([schema, z.object({}).strict(), z.array(z.never())]).optional(),
-    ru: z.union([schema, z.object({}).strict(), z.array(z.never())]).optional(),
+    ar: variant,
+    ru: variant,
+    fr: variant,
+    de: variant,
+    zh: variant,
+    hi: variant,
   });
+};
 
 export const serviceCategorySchema = z.enum(['ac', 'upholstery', 'coming_soon']);
 export const serviceStatusSchema = z.enum(['active', 'coming_soon', 'hidden']);
@@ -132,6 +146,8 @@ export const faqSchema = z.discriminatedUnion('scope', [
 export const faqScopeSchema = z.enum(['global', 'contracts', 'service', 'area']);
 
 const titledItem = z.object({ title: z.string(), text: z.string() });
+/** A locale variant of `report.readings`: only the label is translated, the numbers are EN's. */
+const readingsLabel = z.object({ label: z.string() }).partial().optional();
 
 /**
  * Typed content blocks by key. Only blocks the pages read are listed; the seed may hold more
@@ -150,8 +166,12 @@ export const blockSchemas = {
   'report.mockup': i18nValue(z.object({ header: z.string(), lines: z.array(z.string()) })),
   'report.readings': z.object({
     en: z.object({ before_c: z.number(), after_c: z.number(), label: z.string() }),
-    ru: z.object({ label: z.string() }).partial().optional(),
-    ar: z.object({ label: z.string() }).partial().optional(),
+    ru: readingsLabel,
+    ar: readingsLabel,
+    fr: readingsLabel,
+    de: readingsLabel,
+    zh: readingsLabel,
+    hi: readingsLabel,
   }),
   'service.ac-deep-cleaning.age_note': i18nText,
   'service.refrigerant-leak-refill.principle': i18nValue(z.array(titledItem)),
@@ -184,9 +204,12 @@ export const blockRecordSchema = z.object({
  * photo slot of one service page; `team` / `before_after`: reserved for real photos later.
  */
 export const mediaKindSchema = z.enum([
+  'hero',
   'why',
   'band',
   'category',
+  'catalogue',
+  'pricing',
   'service',
   'team',
   'before_after',
@@ -200,12 +223,17 @@ export const mediaRecordSchema = z.object({
   width: z.number().int().positive(),
   height: z.number().int().positive(),
   alt: i18nTextRequired,
-  /** Where the photo came from, for the credits page and for replacing stock with our own. */
-  credit: z.object({
-    author: z.string().min(1),
-    source: z.string().url(),
-    license: z.string().min(1),
-  }),
+  /**
+   * Where a stock photo came from (credits line in the footer when the licence asks for it,
+   * and for replacing stock with our own). Absent on the owner's own pictures.
+   */
+  credit: z
+    .object({
+      author: z.string().min(1),
+      source: z.string().url(),
+      license: z.string().min(1),
+    })
+    .optional(),
   sort: z.number().int(),
 });
 

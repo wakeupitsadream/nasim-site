@@ -1,7 +1,7 @@
 import type { Locale } from './routing';
 
 /** A localized content field as stored in the database (JSONB). EN is always present. */
-export type I18nText = { en: string; ar?: string; ru?: string };
+export type I18nText = { en: string } & Partial<Record<Exclude<Locale, 'en'>, string>>;
 
 /** The value for `locale`, or EN when it is missing or blank. */
 export function pick(field: I18nText | null | undefined, locale: Locale): string {
@@ -29,11 +29,11 @@ export function pickLocalized(field: I18nText | null | undefined, locale: Locale
 export type LocalizedValue<T> = { value: T; lang: Locale };
 
 /**
- * `pickLocalized` for structured content (`{ en: T; ar?: T; ru?: T }`). A missing locale, an empty
- * array or an empty object counts as untranslated and falls back to EN.
+ * `pickLocalized` for structured content (`{ en: T; ar?: T; ru?: T; … }`). A missing locale, an
+ * empty array or an empty object counts as untranslated and falls back to EN.
  */
 export function pickLocalizedValue<T>(
-  field: { en: T; ar?: unknown; ru?: unknown },
+  field: { en: T } & Partial<Record<Exclude<Locale, 'en'>, unknown>>,
   locale: Locale,
 ): LocalizedValue<T> {
   const candidate = locale === 'en' ? field.en : field[locale];

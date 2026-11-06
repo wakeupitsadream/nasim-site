@@ -114,6 +114,7 @@
     "licenseNo": "رقم الرخصة",
     "trn": "الرقم الضريبي (TRN)",
     "address": "العنوان",
+    "photoCredits": "الصور:",
     "copyright": "© {brand}"
   },
   "LangSwitcher": {
@@ -121,12 +122,20 @@
     "names": {
       "en": "English",
       "ar": "العربية",
-      "ru": "Русский"
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch",
+      "zh": "中文",
+      "hi": "हिन्दी"
     },
     "short": {
       "en": "EN",
       "ar": "ع",
-      "ru": "RU"
+      "ru": "RU",
+      "fr": "FR",
+      "de": "DE",
+      "zh": "中",
+      "hi": "हि"
     }
   },
   "PhoneInput": {
@@ -362,7 +371,7 @@
   },
   "Assistant": {
     "launcher": "المساعد",
-    "launcherLabel": "افتح المساعد: تشخيص بالذكاء الاصطناعي وإجابات سريعة",
+    "launcherHint": "تشخيص بالذكاء الاصطناعي وإجابات سريعة",
     "title": "مساعد بريجادا",
     "subtitle": "تشخيص بالذكاء الاصطناعي وإجابات سريعة",
     "close": "إغلاق المساعد",

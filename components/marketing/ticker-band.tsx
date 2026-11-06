@@ -24,7 +24,7 @@ export async function TickerBand({ locale, className }: { locale: Locale; classN
       aria-hidden={hidden || undefined}
       aria-label={hidden ? undefined : t('ticker.label')}
       className={cn(
-        'flex shrink-0 items-center motion-reduce:shrink motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-2',
+        'flex shrink-0 items-center motion-reduce:max-w-full motion-reduce:shrink motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-2',
         hidden && 'motion-reduce:hidden',
       )}
     >
@@ -35,7 +35,8 @@ export async function TickerBand({ locale, className }: { locale: Locale; classN
           className="flex items-center gap-5 pe-5"
         >
           <SpeedGlyph className="h-2 w-4 text-foreground/70" />
-          <span className="font-display text-small font-semibold tracking-wider whitespace-nowrap uppercase">
+          {/* A long name (German compounds) may wrap in the static list; the marquee never wraps. */}
+          <span className="font-display text-small font-semibold tracking-wider whitespace-nowrap uppercase motion-reduce:whitespace-normal">
             {item.text}
           </span>
         </li>

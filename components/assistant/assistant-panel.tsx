@@ -272,7 +272,6 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
         type="button"
         data-testid="assistant-launcher"
         data-ready={ready || undefined}
-        aria-label={t('launcherLabel')}
         aria-haspopup="dialog"
         onClick={() => setOpen(true)}
         style={{ viewTransitionName: 'assistant-launcher' }}
@@ -284,6 +283,9 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
           className="size-5 text-on-deep-accent"
         />
         {t('launcher')}
+        {/* The visible word stays the first token of the accessible name (WCAG 2.5.3) — an
+            aria-label would decline it in German and Russian. */}
+        <span className="sr-only">: {t('launcherHint')}</span>
       </button>
     );
   }

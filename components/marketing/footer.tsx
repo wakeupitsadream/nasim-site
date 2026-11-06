@@ -1,9 +1,10 @@
 import { getLocale, getTranslations } from 'next-intl/server';
-import { Suspense } from 'react';
+import { Fragment, Suspense } from 'react';
 import { LocalizedText } from '@/components/localized-text';
 import { Ltr } from '@/components/ltr';
 import { LangLinks, LangSwitcher } from '@/components/marketing/lang-switcher';
 import { Logo } from '@/components/marketing/logo';
+import { getPhotoCredits } from '@/lib/content/queries';
 import { getSiteSettings, hasAny } from '@/lib/content/site';
 import { callTarget, telegramTarget, whatsappTarget } from '@/lib/cta';
 import { Link } from '@/lib/i18n/navigation';
@@ -14,15 +15,18 @@ import { formatPhoneForDisplay } from '@/lib/validation/phone';
 const linkClass =
   'inline-flex min-h-tap items-center rounded-md underline-offset-4 outline-none hover:text-foreground hover:underline focus-visible:ring-3 focus-visible:ring-ring';
 const headingClass = 'text-eyebrow text-foreground';
+const inlineLinkClass =
+  'rounded-sm underline underline-offset-4 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring';
 
 // Server component; no cookies/headers. Empty settings are hidden, never filled with placeholders.
 // No copyright year: reading the clock during prerender is a sync-IO error under Cache Components.
 export async function Footer() {
   const locale = await getLocale();
-  const [t, tNav, s] = await Promise.all([
+  const [t, tNav, s, credits] = await Promise.all([
     getTranslations('Footer'),
     getTranslations('Nav'),
     getSiteSettings(locale),
+    getPhotoCredits(),
   ]);
   const { contacts, social, legal } = s;
   const wa = whatsappTarget(contacts);
@@ -171,20 +175,39 @@ export async function Footer() {
 
       <div className="border-t">
         <div className="mx-auto flex max-w-page flex-col gap-4 px-gutter py-6 text-small sm:flex-row sm:items-start sm:justify-between lg:px-gutter-lg">
-          {legalRows.length > 0 ? (
-            <section aria-labelledby="footer-legal">
-              <h2 id="footer-legal" className="sr-only">
-                {t('legalTitle')}
-              </h2>
-              <dl className="flex flex-wrap gap-x-6 gap-y-1">
-                {legalRows.map(([key, value]) => (
-                  <div key={key} className="flex gap-1">
-                    <dt>{t(key)}:</dt>
-                    <dd>{key === 'address' ? value : <Ltr>{value}</Ltr>}</dd>
-                  </div>
-                ))}
-              </dl>
-            </section>
+          {legalRows.length > 0 || credits.length > 0 ? (
+            <div className="flex flex-col gap-2">
+              {legalRows.length > 0 ? (
+                <section aria-labelledby="footer-legal">
+                  <h2 id="footer-legal" className="sr-only">
+                    {t('legalTitle')}
+                  </h2>
+                  <dl className="flex flex-wrap gap-x-6 gap-y-1">
+                    {legalRows.map(([key, value]) => (
+                      <div key={key} className="flex gap-1">
+                        <dt>{t(key)}:</dt>
+                        <dd>{key === 'address' ? value : <Ltr>{value}</Ltr>}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
+              ) : null}
+              {/* Creative Commons BY photos oblige us to name the author (DECISIONS №57). */}
+              {credits.length > 0 ? (
+                <p>
+                  {t('photoCredits')}{' '}
+                  {credits.map((c, i) => (
+                    <Fragment key={c.source}>
+                      {i > 0 ? ', ' : null}
+                      <a href={c.source} target="_blank" rel="noopener" className={inlineLinkClass}>
+                        <Ltr>{c.author}</Ltr>
+                      </a>{' '}
+                      <Ltr>({c.license})</Ltr>
+                    </Fragment>
+                  ))}
+                </p>
+              ) : null}
+            </div>
           ) : null}
           <p className="sm:ms-auto">{t('copyright', { brand: s.brandName.text })}</p>
         </div>

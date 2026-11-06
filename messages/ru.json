@@ -114,6 +114,7 @@
     "licenseNo": "Лицензия №",
     "trn": "TRN",
     "address": "Адрес",
+    "photoCredits": "Фото:",
     "copyright": "© {brand}"
   },
   "LangSwitcher": {
@@ -121,12 +122,20 @@
     "names": {
       "en": "English",
       "ar": "العربية",
-      "ru": "Русский"
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch",
+      "zh": "中文",
+      "hi": "हिन्दी"
     },
     "short": {
       "en": "EN",
       "ar": "ع",
-      "ru": "RU"
+      "ru": "RU",
+      "fr": "FR",
+      "de": "DE",
+      "zh": "中",
+      "hi": "हि"
     }
   },
   "PhoneInput": {
@@ -362,7 +371,7 @@
   },
   "Assistant": {
     "launcher": "Ассистент",
-    "launcherLabel": "Открыть ассистента: AI-диагностика и быстрые ответы",
+    "launcherHint": "AI-диагностика и быстрые ответы",
     "title": "Ассистент Brigada",
     "subtitle": "AI-диагностика и быстрые ответы",
     "close": "Закрыть ассистента",

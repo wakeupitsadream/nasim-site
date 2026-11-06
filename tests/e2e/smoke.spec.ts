@@ -5,6 +5,10 @@ const LOCALES = [
   { locale: 'en', dir: 'ltr' },
   { locale: 'ar', dir: 'rtl' },
   { locale: 'ru', dir: 'ltr' },
+  { locale: 'fr', dir: 'ltr' },
+  { locale: 'de', dir: 'ltr' },
+  { locale: 'zh', dir: 'ltr' },
+  { locale: 'hi', dir: 'ltr' },
 ] as const;
 
 const ROUTES = [
@@ -106,8 +110,12 @@ test('/ redirects by Accept-Language', async ({ request }) => {
   expect(ar.status()).toBe(307);
   expect(ar.headers().location).toMatch(/\/ar$/);
 
+  const de = await request.get('/', { headers: { 'Accept-Language': 'de-CH' }, maxRedirects: 0 });
+  expect(de.headers().location).toMatch(/\/de$/);
+
+  // A language the site does not speak falls back to English.
   const fallback = await request.get('/', {
-    headers: { 'Accept-Language': 'de' },
+    headers: { 'Accept-Language': 'it' },
     maxRedirects: 0,
   });
   expect(fallback.headers().location).toMatch(/\/en$/);
