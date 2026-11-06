@@ -204,6 +204,12 @@
     line-height: var(--nasim-leading-h3);
     letter-spacing: var(--nasim-tracking-h3);
   }
+  /* Chinese headings break at punctuation and spaces first (not inside a word such as 空气);
+     overflow-wrap still lets a long heading break anywhere when nothing else fits. */
+  html[lang='zh'] :is(h1, h2, h3) {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
   /* Plex Sans Arabic has no 700: a fixed 600 keeps the browser from synthesising a bold. */
   strong,
   b {
