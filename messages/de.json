@@ -371,7 +371,7 @@
   },
   "Assistant": {
     "launcher": "Assistent",
-    "launcherLabel": "Assistenten öffnen: KI-Diagnose und schnelle Antworten",
+    "launcherHint": "KI-Diagnose und schnelle Antworten",
     "title": "Brigada-Assistent",
     "subtitle": "KI-Diagnose und schnelle Antworten",
     "close": "Assistenten schließen",

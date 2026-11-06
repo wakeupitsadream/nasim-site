@@ -371,7 +371,7 @@
   },
   "Assistant": {
     "launcher": "Assistant",
-    "launcherLabel": "Open the assistant: AI diagnosis and quick answers",
+    "launcherHint": "AI diagnosis and quick answers",
     "title": "Brigada assistant",
     "subtitle": "AI diagnosis and quick answers",
     "close": "Close the assistant",

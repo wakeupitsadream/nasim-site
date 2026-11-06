@@ -371,7 +371,7 @@
   },
   "Assistant": {
     "launcher": "助手",
-    "launcherLabel": "打开助手：AI 诊断和快速解答",
+    "launcherHint": "AI 诊断和快速解答",
     "title": "Brigada 助手",
     "subtitle": "AI 诊断和快速解答",
     "close": "关闭助手",

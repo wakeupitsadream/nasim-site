@@ -371,7 +371,7 @@
   },
   "Assistant": {
     "launcher": "Assistant",
-    "launcherLabel": "Ouvrir l’assistant : diagnostic IA et réponses rapides",
+    "launcherHint": "diagnostic IA et réponses rapides",
     "title": "Assistant Brigada",
     "subtitle": "Diagnostic IA et réponses rapides",
     "close": "Fermer l’assistant",
