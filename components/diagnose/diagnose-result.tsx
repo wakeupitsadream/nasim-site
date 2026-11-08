@@ -82,9 +82,10 @@ export function DiagnoseResult({
       <header className="flex flex-col gap-3">
         <div className="flex flex-wrap items-center gap-2 text-small">
           <span className="text-eyebrow text-highlight-ink">{t('result.title')}</span>
+          {/* Pills grow with their text: a long badge in a narrow window wraps instead of overflowing. */}
           <span
             className={cn(
-              'inline-flex h-7 items-center rounded-full px-3 font-medium',
+              'inline-flex min-h-7 items-center rounded-full px-3 py-1 leading-tight font-medium',
               URGENCY[result.urgency],
             )}
           >
@@ -93,7 +94,7 @@ export function DiagnoseResult({
           {demo ? (
             <span
               data-testid="diagnose-demo"
-              className="inline-flex h-7 items-center rounded-full bg-warning-soft px-3 font-medium text-warning-ink"
+              className="inline-flex min-h-7 items-center rounded-full bg-warning-soft px-3 py-1 leading-tight font-medium text-warning-ink"
             >
               {t('result.demoBadge')}
             </span>
@@ -131,30 +132,32 @@ export function DiagnoseResult({
       ) : null}
 
       {service ? (
-        <div className="group flex flex-col gap-5 rounded-card bg-mist p-5">
+        <div className="group @container flex flex-col gap-5 rounded-card bg-mist p-5">
+          {/* Container queries, not viewport breakpoints: the card lives in the 26rem assistant
+              window on desktop and full-width on phones, and lays out by its own width. */}
           <p className="text-small font-medium text-muted-foreground">{t('result.recommended')}</p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 @lg:flex-row @lg:items-center @lg:justify-between">
             <div className="flex items-center gap-4">
-              <ServiceIcon slug={service.slug} className="bg-card" />
-              <div className="flex flex-col gap-0.5">
-                <p className="text-lead font-medium text-foreground">{service.name}</p>
-                <p className="text-small text-muted-foreground">
-                  {service.comingSoon
-                    ? t('result.comingSoon')
-                    : service.estimate
-                      ? t('result.estimate')
-                      : null}
+              <ServiceIcon slug={service.slug} className="shrink-0 bg-card" />
+              <div className="flex min-w-0 flex-col gap-0.5">
+                <p className="text-body font-medium text-balance text-foreground @sm:text-lead">
+                  {service.name}
                 </p>
+                {service.comingSoon || service.estimate ? (
+                  <p className="text-small text-muted-foreground">
+                    {service.comingSoon ? t('result.comingSoon') : t('result.estimate')}
+                  </p>
+                ) : null}
               </div>
             </div>
             {price ? (
-              <p className="flex flex-wrap items-baseline gap-x-1.5 text-small text-muted-foreground sm:text-end">
+              <p className="flex flex-wrap items-baseline gap-x-1.5 text-small text-muted-foreground @lg:shrink-0 @lg:text-end">
                 <span>{price}</span>
                 <span>{priceUnit}</span>
               </p>
             ) : null}
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="flex flex-col gap-3 @sm:flex-row @sm:flex-wrap">
             <Button size="lg" asChild>
               <Link href={service.comingSoon ? service.href : `${service.href}#book`}>
                 {service.comingSoon ? t('result.waitlist') : t('result.book')}
