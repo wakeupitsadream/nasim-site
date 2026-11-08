@@ -28,13 +28,13 @@ const total = (sel: Selection) => quote(cfg, sel, noVat).total;
 describe('buildPricingConfig', () => {
   it('merges quantity tiers into lines', () => {
     expect(line('ac_clean').tiers.map((t) => [t.fromQty, t.price])).toEqual([
-      [1, 199],
-      [2, 169],
-      [4, 149],
+      [1, 349],
+      [2, 299],
+      [4, 269],
     ]);
     expect(line('ac_deep').tiers.map((t) => [t.fromQty, t.price])).toEqual([
-      [1, 399],
-      [2, 349],
+      [1, 649],
+      [2, 599],
     ]);
     expect(linesForService(cfg, 'mattress-cleaning').map((l) => l.id)).toEqual([
       'mattress_single',
@@ -64,30 +64,30 @@ describe('buildPricingConfig', () => {
 describe('tiers and minimums', () => {
   it('prices every unit at the tier of the total quantity', () => {
     expect([1, 2, 3, 4, 10].map((q) => unitPrice(line('ac_clean'), q))).toEqual([
-      199, 169, 169, 149, 149,
+      349, 299, 299, 269, 269,
     ]);
-    expect(total({ ac_clean: 3 })).toBe(507);
-    expect(total({ ac_clean: 4 })).toBe(596);
-    expect(total({ ac_deep: 2 })).toBe(698);
+    expect(total({ ac_clean: 3 })).toBe(897);
+    expect(total({ ac_clean: 4 })).toBe(1076);
+    expect(total({ ac_deep: 2 })).toBe(1198);
   });
 
   it('bills minimum charges and flags them', () => {
     expect(billableQty(line('fcu_service'), 1)).toBe(2);
     const q = quote(cfg, { fcu_service: 1 }, noVat);
-    expect(q.total).toBe(498);
+    expect(q.total).toBe(698);
     expect(q.lines[0]?.minApplied).toBe(true);
-    expect(total({ sofa_seat: 2 })).toBe(147);
-    expect(total({ sofa_seat: 5 })).toBe(245);
+    expect(total({ sofa_seat: 2 })).toBe(267);
+    expect(total({ sofa_seat: 5 })).toBe(445);
     expect(total({ carpet_sqm: 4 })).toBe(150);
     expect(total({ carpet_sqm: 10 })).toBe(250);
-    expect(total({ mattress_single: 1, mattress_king: 1 })).toBe(398);
+    expect(total({ mattress_single: 1, mattress_king: 1 })).toBe(498);
   });
 
   it('describes tier ranges', () => {
     expect(tierRanges(line('ac_clean'))).toEqual([
-      { from: 1, to: 1, price: 199 },
-      { from: 2, to: 3, price: 169 },
-      { from: 4, to: null, price: 149 },
+      { from: 1, to: 1, price: 349 },
+      { from: 2, to: 3, price: 299 },
+      { from: 4, to: null, price: 269 },
     ]);
   });
 });
@@ -95,26 +95,26 @@ describe('tiers and minimums', () => {
 describe('bundles', () => {
   it('applies Fresh Home when it is cheaper than the items', () => {
     const q = quote(cfg, { ac_clean: 3, sofa_seat: 3 }, noVat);
-    expect(q.subtotal).toBe(654);
-    expect(q.total).toBe(599);
-    expect(q.savings).toBe(55);
+    expect(q.subtotal).toBe(1164);
+    expect(q.total).toBe(1099);
+    expect(q.savings).toBe(65);
     expect(q.bundle?.slug).toBe('fresh-home');
   });
 
   it('keeps à la carte when the bundle path costs more', () => {
     const q = quote(cfg, { ac_clean: 4, sofa_seat: 3 }, noVat);
-    expect(q.total).toBe(743);
+    expect(q.total).toBe(1343);
     expect(q.bundle).toBeNull();
   });
 
   it('prices the remainder at the full-quantity tier', () => {
     const q = quote(cfg, { ac_clean: 3, sofa_seat: 4 }, noVat);
-    expect(q.total).toBe(648);
+    expect(q.total).toBe(1188);
     expect(q.bundle?.slug).toBe('fresh-home');
   });
 
   it('reports the seed savings', () => {
-    expect(bundleSavings(cfg.bundles[0]!)).toBe(55);
+    expect(bundleSavings(cfg.bundles[0]!)).toBe(65);
   });
 });
 
@@ -123,10 +123,10 @@ describe('suggestBundle', () => {
     expect(suggestBundle(cfg, { ac_clean: 3 })).toEqual({
       slug: 'fresh-home',
       add: { sofa_seat: 3 },
-      addCost: 92,
-      savings: 55,
+      addCost: 202,
+      savings: 65,
     });
-    expect(suggestBundle(cfg, { sofa_seat: 3 })?.addCost).toBe(452);
+    expect(suggestBundle(cfg, { sofa_seat: 3 })?.addCost).toBe(832);
   });
 
   it('stays quiet when there is no overlap, no gain, or the bundle already applies', () => {
@@ -145,10 +145,10 @@ describe('estimates', () => {
   it('books a repair as diagnostics plus an estimate', () => {
     const q = quote(cfg, { repair_labour: 1 }, noVat);
     expect(q.kind).toBe('estimate');
-    expect(q.lines.map((l) => [l.role, l.total])).toEqual([['diagnostics', 149]]);
-    expect(q.total).toBe(149);
+    expect(q.lines.map((l) => [l.role, l.total])).toEqual([['diagnostics', 199]]);
+    expect(q.total).toBe(199);
     expect(q.estimate).toEqual({
-      fromLines: [{ lineId: 'repair_labour', from: 199 }],
+      fromLines: [{ lineId: 'repair_labour', from: 249 }],
       credited: true,
     });
   });
@@ -156,15 +156,15 @@ describe('estimates', () => {
   it('keeps fixed refrigerant lines and the refill as "from"', () => {
     const q = quote(cfg, { leak_test: 2, refill: 1 }, noVat);
     expect(q.kind).toBe('estimate');
-    expect(q.total).toBe(498);
+    expect(q.total).toBe(598);
     expect(q.lines.every((l) => l.role === 'item')).toBe(true);
-    expect(q.estimate?.fromLines).toEqual([{ lineId: 'refill', from: 349 }]);
+    expect(q.estimate?.fromLines).toEqual([{ lineId: 'refill', from: 449 }]);
   });
 
   it('prices an emergency call-out as fixed', () => {
     const q = quote(cfg, { emergency_callout: 1 }, noVat);
     expect(q.kind).toBe('fixed');
-    expect(q.total).toBe(149);
+    expect(q.total).toBe(199);
   });
 });
 
@@ -173,7 +173,7 @@ describe('VAT', () => {
     expect(quote(cfg, { ac_clean: 3 }, noVat).vat).toEqual({
       mode: 'none',
       amount: 0,
-      totalWithVat: 507,
+      totalWithVat: 897,
     });
   });
 
@@ -181,19 +181,19 @@ describe('VAT', () => {
     const vat = { registered: true, included: false };
     expect(quote(cfg, { ac_clean: 3 }, vat).vat).toEqual({
       mode: 'added',
-      amount: 25,
-      totalWithVat: 532,
+      amount: 45,
+      totalWithVat: 942,
     });
     expect(quote(cfg, { ac_clean: 3, sofa_seat: 3 }, vat).vat).toEqual({
       mode: 'added',
-      amount: 30,
-      totalWithVat: 629,
+      amount: 55,
+      totalWithVat: 1154,
     });
   });
 
   it('extracts the amount when prices include it', () => {
     const q = quote(cfg, { ac_clean: 3 }, { registered: true, included: true });
-    expect(q.vat).toEqual({ mode: 'included', amount: 24, totalWithVat: 507 });
+    expect(q.vat).toEqual({ mode: 'included', amount: 43, totalWithVat: 897 });
   });
 });
 
@@ -205,7 +205,7 @@ describe('bad input', () => {
   });
 
   it('ignores unknown lines', () => {
-    expect(total({ nope: 3, ac_clean: 1 })).toBe(199);
+    expect(total({ nope: 3, ac_clean: 1 })).toBe(349);
   });
 });
 
@@ -231,32 +231,32 @@ describe('annualPlanComparison', () => {
   };
 
   it('prices the plan visits one by one at the plan maximum of split units', () => {
-    // Essential: 3 units → 3 × 169 = 507 per standard clean, three times a year.
+    // Essential: 3 units → 3 × 299 = 897 per standard clean, three times a year.
     expect(annualPlanComparison(cfg, plan('essential'))).toEqual({
       units: 3,
       standardVisits: 3,
       deepVisits: 0,
-      standardVisit: 507,
+      standardVisit: 897,
       deepVisit: 0,
-      separate: 1521,
-      plan: 899,
-      saving: 622,
+      separate: 2691,
+      plan: 1599,
+      saving: 1092,
       savingPct: 41,
     });
-    // Comfort: 5 units → 2 standard (745 each) + 1 deep (5 × 349 = 1745).
+    // Comfort: 5 units → 2 standard (5 × 269 = 1345 each) + 1 deep (5 × 599 = 2995).
     expect(annualPlanComparison(cfg, plan('comfort'))).toMatchObject({
       standardVisits: 2,
       deepVisits: 1,
-      standardVisit: 745,
-      deepVisit: 1745,
-      separate: 3235,
-      saving: 1736,
-      savingPct: 54,
+      standardVisit: 1345,
+      deepVisit: 2995,
+      separate: 5685,
+      saving: 2986,
+      savingPct: 53,
     });
     // Villa: 8 units at the 4+ tier, counted as split units.
     expect(annualPlanComparison(cfg, plan('villa'))).toMatchObject({
-      separate: 3576,
-      saving: 1077,
+      separate: 6456,
+      saving: 1957,
       savingPct: 30,
     });
   });

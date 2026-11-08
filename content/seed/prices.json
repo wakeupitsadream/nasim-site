@@ -15,7 +15,7 @@
         "hi": "स्टैंडर्ड सफ़ाई, 1 यूनिट"
       },
       "unit": "unit",
-      "price": 199,
+      "price": 349,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -43,7 +43,7 @@
         "hi": "स्टैंडर्ड सफ़ाई, 2–3 यूनिट"
       },
       "unit": "unit",
-      "price": 169,
+      "price": 299,
       "min_qty": 2,
       "tier_from_qty": 2,
       "note": {
@@ -71,7 +71,7 @@
         "hi": "स्टैंडर्ड सफ़ाई, 4+ यूनिट"
       },
       "unit": "unit",
-      "price": 149,
+      "price": 269,
       "min_qty": 4,
       "tier_from_qty": 4,
       "note": {
@@ -99,7 +99,7 @@
         "hi": "डीप क्लीनिंग, 1 यूनिट"
       },
       "unit": "unit",
-      "price": 399,
+      "price": 649,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -127,7 +127,7 @@
         "hi": "डीप क्लीनिंग, 2+ यूनिट"
       },
       "unit": "unit",
-      "price": 349,
+      "price": 599,
       "min_qty": 2,
       "tier_from_qty": 2,
       "note": {
@@ -154,7 +154,7 @@
         "hi": "फैन कॉइल यूनिट सर्विस"
       },
       "unit": "fcu",
-      "price": 249,
+      "price": 349,
       "min_qty": 2,
       "tier_from_qty": 1,
       "note": {
@@ -181,7 +181,7 @@
         "hi": "तत्काल कॉल-आउट + जाँच"
       },
       "unit": "visit",
-      "price": 149,
+      "price": 199,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -208,7 +208,7 @@
         "hi": "मरम्मत की मज़दूरी"
       },
       "unit": "from",
-      "price": 199,
+      "price": 249,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -235,7 +235,7 @@
         "hi": "नाइट्रोजन लीक टेस्ट"
       },
       "unit": "unit",
-      "price": 249,
+      "price": 299,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -262,7 +262,7 @@
         "hi": "लीक की मरम्मत के बाद गैस भरना"
       },
       "unit": "from",
-      "price": 349,
+      "price": 449,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -289,7 +289,7 @@
         "hi": "सोफ़ा, प्रति सीट"
       },
       "unit": "seat",
-      "price": 49,
+      "price": 89,
       "min_qty": 3,
       "tier_from_qty": 1,
       "note": {
@@ -316,7 +316,7 @@
         "hi": "आर्मचेयर"
       },
       "unit": "item",
-      "price": 69,
+      "price": 99,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -343,7 +343,7 @@
         "hi": "गद्दा, सिंगल"
       },
       "unit": "item",
-      "price": 149,
+      "price": 199,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -370,7 +370,7 @@
         "hi": "गद्दा, डबल / क्वीन"
       },
       "unit": "item",
-      "price": 199,
+      "price": 249,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -397,7 +397,7 @@
         "hi": "गद्दा, किंग"
       },
       "unit": "item",
-      "price": 249,
+      "price": 299,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -491,8 +491,8 @@
         "zh": "一次上门完成 3 台分体式空调标准清洗 + 3 座沙发清洁。",
         "hi": "3 स्प्लिट यूनिट की स्टैंडर्ड सफ़ाई + 3 सीट वाले सोफ़े की सफ़ाई, एक ही विज़िट में।"
       },
-      "price": 599,
-      "compare_price": 654,
+      "price": 1099,
+      "compare_price": 1164,
       "includes": {
         "ac_clean": 3,
         "sofa_seat": 3
@@ -522,7 +522,7 @@
         "zh": "最多 3 台分体式空调。每年 3 次标准清洗，优先预约，维修享 10% 折扣。",
         "hi": "3 स्प्लिट यूनिट तक। साल में 3 स्टैंडर्ड सफ़ाई, प्राथमिकता से बुकिंग, मरम्मत पर 10% छूट।"
       },
-      "price": 899,
+      "price": 1599,
       "compare_price": null,
       "includes": {
         "units_max": 3,
@@ -556,7 +556,7 @@
         "zh": "最多 5 台分体式空调。每年 3 次上门，其中一次为深度清洗，优先预约，维修享 10% 折扣。",
         "hi": "5 स्प्लिट यूनिट तक। साल में 3 विज़िट, जिनमें एक डीप क्लीनिंग, प्राथमिकता से बुकिंग, मरम्मत पर 10% छूट।"
       },
-      "price": 1499,
+      "price": 2699,
       "compare_price": null,
       "includes": {
         "units_max": 5,
@@ -590,7 +590,7 @@
         "zh": "最多 8 台风机盘管或分体式空调。每年 3 次上门，24 小时内优先上门，维修享 15% 折扣。",
         "hi": "8 FCU या स्प्लिट यूनिट तक। साल में 3 विज़िट, 24 घंटे में प्राथमिकता से कॉल-आउट, मरम्मत पर 15% छूट।"
       },
-      "price": 2499,
+      "price": 4499,
       "compare_price": null,
       "includes": {
         "units_max": 8,

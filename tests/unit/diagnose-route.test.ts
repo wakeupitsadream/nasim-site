@@ -72,7 +72,7 @@ describe('POST /api/diagnose', () => {
       slug: 'ac-cleaning',
       name: 'Чистка кондиционера',
       href: '/services/ac-cleaning',
-      priceFrom: { amount: 149, unit: 'unit' },
+      priceFrom: { amount: 269, unit: 'unit' },
       estimate: false,
       comingSoon: false,
     });

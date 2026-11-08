@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 
 type Props = { line: PriceLine; locale: Locale; label: string; className?: string };
 
-/** «1 · AED 199 — 2–3 · AED 169 — 4+ · AED 149»: the volume tiers of one price line. */
+/** «1 · AED 349 — 2–3 · AED 299 — 4+ · AED 269»: the volume tiers of one price line. */
 export async function TierLadder({ line, locale, label, className }: Props) {
   const tPrice = await getTranslations('Price');
   const ranges = tierRanges(line);
