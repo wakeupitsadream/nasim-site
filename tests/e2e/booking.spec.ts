@@ -30,7 +30,7 @@ test.describe('booking request wizard', () => {
     const add = book.getByRole('button', { name: /^Add one: AC Cleaning/ });
     await add.click();
     await add.click();
-    await expect(book.getByText('AED 507').first()).toBeVisible();
+    await expect(book.getByText('AED 897').first()).toBeVisible();
     await expect(book.getByText(/Fresh Home/).first()).toBeVisible();
 
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
@@ -42,7 +42,7 @@ test.describe('booking request wizard', () => {
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toSend') }).click();
     const message = book.getByText(/^Hi Brigada!/);
     await expect(message).toContainText('AC Cleaning × 3');
-    await expect(message).toContainText('AED 507');
+    await expect(message).toContainText('AED 897');
     await expect(message).toContainText('Fri, 6 Nov');
     await expect(message).toContainText('Afternoon');
     await expect(
@@ -64,7 +64,7 @@ test.describe('booking request wizard', () => {
     });
     await add.first().click();
     await add.first().click();
-    const total = book.locator('[dir="ltr"]', { hasText: '507' }).first();
+    const total = book.locator('[dir="ltr"]', { hasText: '897' }).first();
     await expect(total).toBeVisible();
     await expect(total).toContainText('د.إ');
 
@@ -103,13 +103,13 @@ test.describe('booking request wizard', () => {
       book.getByRole('heading', { level: 3, name: msg('en', 'Booking.details.acQuestion') }),
     ).toBeVisible();
     await expect(book.getByRole('radio', { name: /^AC Deep Cleaning/ })).toBeChecked();
-    await expect(book.getByText('AED 399').first()).toBeVisible();
+    await expect(book.getByText('AED 649').first()).toBeVisible();
 
     await page.goto('/en/services/ac-repair');
     const repair = page.locator('#book');
     await expect(repair.getByText(msg('en', 'Booking.summary.diagnostics')).first()).toBeVisible();
     await expect(repair.getByText(msg('en', 'Booking.summary.estimateNote'))).toBeVisible();
-    await expect(repair.getByText('AED 149').first()).toBeVisible();
+    await expect(repair.getByText('AED 199').first()).toBeVisible();
   });
 
   test('an empty upholstery selection cannot continue', async ({ page }) => {
@@ -121,7 +121,7 @@ test.describe('booking request wizard', () => {
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
     await expect(book.getByRole('alert')).toHaveText(msg('en', 'Booking.details.empty'));
     await book.getByRole('button', { name: /^Add one: Sofa/ }).click();
-    await expect(book.getByText('AED 147').first()).toBeVisible(); // 3-seat minimum charge
+    await expect(book.getByText('AED 267').first()).toBeVisible(); // 3-seat minimum charge
   });
 
   test('coming-soon services have a waitlist instead of the wizard', async ({ page }) => {
