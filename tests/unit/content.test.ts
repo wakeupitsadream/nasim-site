@@ -152,7 +152,7 @@ describe('content getters', () => {
     expect(credits[0]).toMatchObject({ license: 'CC BY 2.0' });
     expect(credits[0].source.startsWith('https://')).toBe(true);
     // Pexels pictures need no attribution, so they never reach the footer.
-    expect(seedMedia().filter((m) => m.credit?.license.startsWith('CC ')).length).toBe(2);
+    expect(seedMedia().filter((m) => m.credit?.license.startsWith('CC ')).length).toBe(1);
   });
 
   it('return typed blocks', async () => {

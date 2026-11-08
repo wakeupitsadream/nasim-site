@@ -107,22 +107,22 @@
     {
       "kind": "category",
       "category": "ac",
-      "url": "/photos/category-ac.jpg",
-      "width": 1023,
-      "height": 647,
+      "url": "/photos/category-ac-interior.jpg",
+      "width": 1600,
+      "height": 1068,
       "alt": {
-        "en": "Cool, air-conditioned Dubai hotel room with a view of the Burj Khalifa through the window",
-        "ru": "Прохладный кондиционированный номер дубайского отеля с видом на Бурдж-Халифу из окна",
-        "ar": "غرفة فندقية مكيّفة في دبي بإطلالة على برج خليفة من النافذة",
-        "fr": "Chambre d’hôtel fraîche et climatisée à Dubaï, avec vue sur la Burj Khalifa par la fenêtre",
-        "de": "Kühles, klimatisiertes Hotelzimmer in Dubai mit Blick auf den Burj Khalifa durch das Fenster",
-        "zh": "凉爽、开着空调的迪拜酒店客房，窗外可见哈利法塔",
-        "hi": "ठंडा, एयर-कंडीशंड दुबई होटल रूम, खिड़की से बुर्ज ख़लीफ़ा का नज़ारा"
+        "en": "Modern living room with a wall-mounted split air conditioner above a grey sofa and a TV wall",
+        "ru": "Современная гостиная: настенный сплит-кондиционер над серым диваном и стеной с телевизором",
+        "ar": "غرفة معيشة عصرية: مكيف سبليت جداري فوق أريكة رمادية وجدار التلفاز",
+        "fr": "Salon moderne : climatiseur split mural au-dessus d’un canapé gris et d’un mur TV",
+        "de": "Modernes Wohnzimmer: Split-Klimagerät an der Wand über einem grauen Sofa und einer TV-Wand",
+        "zh": "现代客厅：灰色沙发和电视墙上方的壁挂式分体空调",
+        "hi": "आधुनिक लिविंग रूम: ग्रे सोफ़े और टीवी वॉल के ऊपर दीवार पर लगा स्प्लिट एसी"
       },
       "credit": {
-        "author": "Sofitel Dubai Downtown",
-        "source": "https://www.flickr.com/photos/123325273@N07/13867838455",
-        "license": "CC BY 2.0"
+        "author": "Max Vakhtbovych",
+        "source": "https://www.pexels.com/photo/cozy-living-room-with-sofas-and-television-set-6316067/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
       },
       "sort": 10
     },
