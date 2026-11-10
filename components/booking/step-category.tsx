@@ -66,7 +66,7 @@ export function StepCategory({ payload, headingId, onChoose }: Props) {
               </span>
               <span className="text-small text-muted-foreground">{t(`category.${key}.text`)}</span>
               {flagship?.priceFrom ? (
-                <span className="mt-2 text-small text-muted-foreground">
+                <span className="mt-2 text-small text-muted-foreground first-letter:uppercase">
                   {tPrice.rich('from', {
                     amount: formatAED(flagship.priceFrom.amount, payload.locale),
                     price: (chunks) => (

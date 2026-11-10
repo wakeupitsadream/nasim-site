@@ -2,12 +2,12 @@
   "Meta": {
     "siteName": "Brigada",
     "titleTemplate": "%s | Brigada Dubai",
-    "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, a one-hour arrival slot and a photo report via WhatsApp."
+    "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, a one-hour arrival window and a photo report via WhatsApp."
   },
   "Pages": {
     "home": {
       "title": "AC cleaning and upholstery care in Dubai",
-      "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, one-hour arrival slot, photo report via WhatsApp."
+      "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, one-hour arrival window, photo report via WhatsApp."
     },
     "services": {
       "title": "Services",
@@ -238,8 +238,8 @@
     },
     "book": {
       "eyebrow": "Book online",
-      "title": "Your price in a minute",
-      "lead": "Pick a service, see the exact price, choose a day. We confirm the one-hour slot via WhatsApp.",
+      "title": "Get your quote in one minute",
+      "lead": "Select a service to see the exact price, then choose your preferred date. We'll confirm your one-hour arrival window via WhatsApp.",
       "talk": "Prefer to talk? Message us"
     },
     "why": {
@@ -598,7 +598,7 @@
     }
   },
   "About": {
-    "lead": "A small Dubai crew for air-conditioning cleaning, repairs and deep cleaning of upholstery. Fixed prices, a one-hour arrival slot and a photo report after every visit.",
+    "lead": "A small Dubai crew for air-conditioning cleaning, repairs and deep cleaning of upholstery. Fixed prices, a one-hour arrival window and a photo report after every visit.",
     "story": {
       "eyebrow": "Who we are",
       "title": "Why we started with air conditioners"
@@ -637,14 +637,14 @@
       "send": "Send"
     },
     "category": {
-      "question": "What needs doing?",
+      "question": "Choose a service",
       "ac": {
-        "title": "Air conditioning",
-        "text": "Cleaning, deep cleaning, fan coil units, repairs"
+        "title": "Air conditioning services",
+        "text": "AC cleaning, deep cleaning, fan coil unit servicing and repairs."
       },
       "upholstery": {
         "title": "Upholstery and carpets",
-        "text": "Sofas, mattresses, carpets, stains and odours"
+        "text": "Sofas, mattresses, carpets, stains and odours."
       }
     },
     "details": {
@@ -695,7 +695,7 @@
         "asap": "As soon as possible"
       },
       "tooLate": "Too late for today",
-      "confirmNote": "We confirm the exact one-hour slot via WhatsApp.",
+      "confirmNote": "We confirm the exact one-hour window via WhatsApp.",
       "area": "Your area (optional)",
       "areaOther": "Other",
       "areaNone": "Not chosen"
