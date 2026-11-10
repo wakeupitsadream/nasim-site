@@ -246,7 +246,7 @@
       "eyebrow": "Why it matters"
     },
     "guarantee": {
-      "eyebrow": "Our guarantee",
+      "eyebrow": "Our warranty",
       "title": "If it comes back, we come back"
     },
     "packages": {
@@ -426,7 +426,7 @@
     "visit": "How the visit goes",
     "visitDuration": "Visit time: {duration}",
     "beforeAfter": "Before and after",
-    "guarantee": "Guarantee",
+    "guarantee": "Warranty",
     "faq": "Questions about this service",
     "related": "Usually booked together",
     "book": "Book this service",

@@ -93,7 +93,7 @@
       "scope": "global",
       "sort": 5,
       "question": {
-        "en": "What does the guarantee cover?",
+        "en": "What does the warranty cover?",
         "ru": "Что покрывает гарантия?",
         "ar": "ماذا يغطي الضمان؟",
         "fr": "Que couvre la garantie ?",
@@ -239,7 +239,7 @@
         "hi": "क्या बदबू पक्का चली जाएगी?"
       },
       "answer_html": {
-        "en": "<p>If the smell comes from the unit — yes, and it is covered by the 30-day guarantee. If the source is the ducts or the wall behind the unit, we will show you on the photos and explain what to do next.</p>",
+        "en": "<p>If the smell comes from the unit — yes, and it is covered by the 30-day warranty. If the source is the ducts or the wall behind the unit, we will show you on the photos and explain what to do next.</p>",
         "ru": "<p>Если источник запаха — блок, то да, и это покрыто гарантией 30 дней. Если источник — воздуховоды или стена за блоком, покажем на фото и объясним, что делать дальше.</p>",
         "ar": "<p>إذا كان مصدر الرائحة الوحدة نفسها — نعم، وهذا مشمول بضمان 30 يومًا. وإذا كان المصدر مجاري الهواء أو الجدار خلف الوحدة، نريك ذلك في الصور ونشرح لك الخطوة التالية.</p>",
         "fr": "<p>Si l’odeur vient de l’unité — oui, et c’est couvert par la garantie de 30 jours. Si la source se trouve dans les gaines ou dans le mur derrière l’unité, nous vous le montrons sur les photos et vous expliquons la marche à suivre.</p>",
