@@ -226,8 +226,8 @@
   "Home": {
     "hero": {
       "eyebrow": "AC & upholstery care · Dubai",
-      "diagnoseLead": "Not sure what's wrong?",
-      "diagnoseCta": "Try the AI diagnosis"
+      "diagnoseLead": "Need help identifying an AC issue?",
+      "diagnoseCta": "Try our AI diagnostic tool"
     },
     "ticker": {
       "label": "Our services"
@@ -266,7 +266,7 @@
     "finalCta": {
       "title": "Ready when you are",
       "lead": "Get the price in a minute and pick a day. Or message us — we reply fast during working hours.",
-      "primary": "Get an instant price"
+      "primary": "Get an instant quote"
     }
   },
   "Diagnose": {
@@ -526,7 +526,7 @@
     "emergency": "Urgent visits",
     "area": "Service area",
     "legal": "Company details",
-    "getPrice": "Get an instant price"
+    "getPrice": "Get an instant quote"
   },
   "Contracts": {
     "lead": "One payment a year, three visits, a priority call-out when something breaks and a discount on repairs. Cheaper than booking each clean on its own.",

@@ -5,7 +5,7 @@
       "key": "home.hero.title",
       "kind": "text",
       "value": {
-        "en": "Clean, cold air. No surprises.",
+        "en": "Clean, cool air. Upfront pricing.",
         "ru": "Чистый холодный воздух. Без сюрпризов.",
         "ar": "هواء نقي وبارد. بلا مفاجآت.",
         "fr": "De l’air propre et froid. Sans surprise.",
@@ -18,7 +18,7 @@
       "key": "home.hero.subtitle",
       "kind": "text",
       "value": {
-        "en": "AC cleaning, repair and upholstery cleaning in Dubai. The price is fixed before we come, the technician arrives in a one-hour slot, and you get a photo report in WhatsApp.",
+        "en": "Brigada provides AC cleaning, AC repairs and upholstery cleaning in Dubai. We confirm your fixed price before the visit. Your technician arrives within the agreed one-hour window, and we send you a photo report via WhatsApp once the work is complete.",
         "ru": "Чистка и ремонт кондиционеров, химчистка мебели в Дубае. Цена фиксируется до приезда, техник приезжает в часовой слот, отчёт с фото — в WhatsApp.",
         "ar": "تنظيف المكيفات وإصلاحها وتنظيف المفروشات في دبي. السعر ثابت قبل وصولنا، والفني يصل في موعد محدد بساعة واحدة، وتستلم تقريرًا مصوّرًا عبر واتساب.",
         "fr": "Nettoyage et réparation de climatiseurs, nettoyage de canapés, matelas et tapis à Dubaï. Le prix est fixé avant notre venue, le technicien arrive dans un créneau d’une heure, et vous recevez un rapport photo sur WhatsApp.",
@@ -44,7 +44,7 @@
       "key": "home.hero.cta_secondary",
       "kind": "text",
       "value": {
-        "en": "Get an instant price",
+        "en": "Get an instant quote",
         "ru": "Узнать цену сразу",
         "ar": "احصل على السعر فورًا",
         "fr": "Obtenir un prix instantané",
@@ -58,9 +58,9 @@
       "kind": "json",
       "value": {
         "en": [
-          "Fixed price before the visit",
-          "One-hour arrival slot",
-          "Photo report in WhatsApp",
+          "Fixed price confirmed before your visit",
+          "One-hour arrival window",
+          "Photo report sent via WhatsApp",
           "30-day guarantee"
         ],
         "ru": [
