@@ -354,7 +354,7 @@
       "key": "guarantee.text",
       "kind": "html",
       "value": {
-        "en": "<p><strong>Cleaning:</strong> 30 days. If the smell or problem we cleaned comes back, we redo it free.<br><strong>Repairs:</strong> 90 days on parts and labour.</p>",
+        "en": "<p><strong>Cleaning · 30-day warranty</strong><br>If the same odour or cleaning issue returns within 30 days, we'll come back and repeat the cleaning with no extra charge.</p><p><strong>Repairs · 90-day warranty</strong><br>Our repairs are covered for 90 days, including parts and labour.</p>",
         "ru": "<p><strong>Чистка:</strong> 30 дней. Если запах или проблема вернулись — переделаем бесплатно.<br><strong>Ремонт:</strong> 90 дней на детали и работу.</p>",
         "ar": "<p><strong>التنظيف:</strong> 30 يومًا. إذا عادت الرائحة أو المشكلة التي عالجناها، نعيد التنظيف مجانًا.<br><strong>الإصلاح:</strong> 90 يومًا على القطع والعمل.</p>",
         "fr": "<p><strong>Nettoyage :</strong> 30 jours. Si l’odeur ou le problème que nous avons traité revient, nous recommençons gratuitement.<br><strong>Réparations :</strong> 90 jours pièces et main-d’œuvre.</p>",
