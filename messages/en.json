@@ -2,12 +2,12 @@
   "Meta": {
     "siteName": "Brigada",
     "titleTemplate": "%s | Brigada Dubai",
-    "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, a one-hour arrival slot and a photo report in WhatsApp."
+    "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, a one-hour arrival slot and a photo report via WhatsApp."
   },
   "Pages": {
     "home": {
       "title": "AC cleaning and upholstery care in Dubai",
-      "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, one-hour arrival slot, photo report in WhatsApp."
+      "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, one-hour arrival slot, photo report via WhatsApp."
     },
     "services": {
       "title": "Services",
@@ -173,7 +173,7 @@
       "disabled": "Unavailable",
       "iconLabel": "Next",
       "cardTitle": "Standard AC clean",
-      "cardText": "Filters, coil, fan and drain. Photo report in WhatsApp.",
+      "cardText": "Filters, coil, fan and drain. Photo report via WhatsApp.",
       "cardFrom": "from <price>{amount}</price>",
       "badgeFixed": "Fixed price",
       "badgeNew": "New",
@@ -210,7 +210,7 @@
       "sheetText": "The default sheet opens from the inline end: right in English, left in Arabic.",
       "numbersText": "Prices: <ltr>{a}</ltr>, <ltr>{b}</ltr>, <ltr>{c}</ltr> and <ltr>{d}</ltr>. A number: <ltr>{n}</ltr>. Email: <ltr>{email}</ltr>. Link: <ltr>{url}</ltr>. Phone pattern: <ltr>{phone}</ltr>.",
       "hoursText": "Working hours from settings:",
-      "longParagraph": "Our technicians arrive with drop sheets, a wet-vacuum and their own ladder, so there is nothing to prepare except clear access to the indoor unit. After the clean you get before-and-after photos in WhatsApp and a note on anything that needs attention later. If a part has to be replaced, we send the price first and wait for your approval.",
+      "longParagraph": "Our technicians arrive with drop sheets, a wet-vacuum and their own ladder, so there is nothing to prepare except clear access to the indoor unit. After the clean you get before-and-after photos via WhatsApp and a note on anything that needs attention later. If a part has to be replaced, we send the price first and wait for your approval.",
       "longWord": "Supercalifragilisticexpialidocious-air-conditioning-maintenance",
       "longButton": "Book a deep clean for all five split units in the villa this Saturday",
       "diagSummary": "Most likely the indoor coil and the drain line are dirty: the musty smell and the dripping point the same way. A standard clean usually fixes both; the technician confirms on site.",
@@ -239,7 +239,7 @@
     "book": {
       "eyebrow": "Book online",
       "title": "Your price in a minute",
-      "lead": "Pick a service, see the exact price, choose a day. We confirm the one-hour slot in WhatsApp.",
+      "lead": "Pick a service, see the exact price, choose a day. We confirm the one-hour slot via WhatsApp.",
       "talk": "Prefer to talk? Message us"
     },
     "why": {
@@ -384,7 +384,7 @@
     "assistant": "Assistant"
   },
   "Services": {
-    "lead": "Ten services with fixed prices and two coming soon. Every visit ends with a photo report in WhatsApp.",
+    "lead": "Ten services with fixed prices and two coming soon. Every visit ends with a photo report via WhatsApp.",
     "category": {
       "ac": "Air conditioning",
       "upholstery": "Upholstery and carpets",
@@ -576,7 +576,7 @@
     "steps": {
       "one": {
         "title": "Message us",
-        "text": "Tell us the plan and how many units you have. We confirm the price and the first slot in WhatsApp."
+        "text": "Tell us the plan and how many units you have. We confirm the price and the first slot via WhatsApp."
       },
       "two": {
         "title": "First visit",
@@ -612,7 +612,7 @@
         "two": "Protects the floor and furniture with sheeting",
         "three": "Measures the outlet temperature before and after",
         "four": "Photographs the coil, filters and drain before and after",
-        "five": "Leaves the room as clean as it was found and sends the report in WhatsApp"
+        "five": "Leaves the room as clean as it was found and sends the report via WhatsApp"
       }
     },
     "notDoing": {
@@ -695,7 +695,7 @@
         "asap": "As soon as possible"
       },
       "tooLate": "Too late for today",
-      "confirmNote": "We confirm the exact one-hour slot in WhatsApp.",
+      "confirmNote": "We confirm the exact one-hour slot via WhatsApp.",
       "area": "Your area (optional)",
       "areaOther": "Other",
       "areaNone": "Not chosen"
@@ -707,7 +707,7 @@
       "time": "Time",
       "area": "Area",
       "preview": "Your message",
-      "whatsapp": "Send in WhatsApp",
+      "whatsapp": "Send via WhatsApp",
       "opened": "WhatsApp opened in a new tab. Didn't open? Copy the message and send it yourself.",
       "copy": "Copy message",
       "copied": "Copied",

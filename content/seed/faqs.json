@@ -58,7 +58,7 @@
         "hi": "क्या मुझे घर पर होना ज़रूरी है?"
       },
       "answer_html": {
-        "en": "<p>Someone needs to let us in and sign off at the end. If you cannot be there, a building concierge or a trusted person works — you still get the photo report in WhatsApp.</p>",
+        "en": "<p>Someone needs to let us in and sign off at the end. If you cannot be there, a building concierge or a trusted person works — you still get the photo report via WhatsApp.</p>",
         "ru": "<p>Кто-то должен открыть дверь и принять работу в конце. Если вас не будет — подойдёт консьерж или доверенное лицо, фотоотчёт в WhatsApp вы получите в любом случае.</p>",
         "ar": "<p>يلزم وجود شخص يفتح لنا الباب ويستلم العمل في النهاية. إذا تعذّر حضورك، يكفي بوّاب المبنى أو شخص تثق به — وستستلم التقرير المصوّر عبر واتساب على أي حال.</p>",
         "fr": "<p>Quelqu’un doit nous ouvrir et valider le travail à la fin. Si vous ne pouvez pas être là, le concierge de l’immeuble ou une personne de confiance suffit — vous recevez quand même le rapport photo sur WhatsApp.</p>",
@@ -262,7 +262,7 @@
         "hi": "आप कितनी जल्दी आ सकते हैं?"
       },
       "answer_html": {
-        "en": "<p>Same day if you contact us before the cut-off time shown in our emergency hours; otherwise the first slot next morning. We confirm the exact one-hour window in WhatsApp.</p>",
+        "en": "<p>Same day if you contact us before the cut-off time shown in our emergency hours; otherwise the first slot next morning. We confirm the exact one-hour window via WhatsApp.</p>",
         "ru": "<p>В тот же день, если напишете до времени, указанного в часах срочных вызовов; иначе — первый слот следующим утром. Точный часовой слот подтверждаем в WhatsApp.</p>",
         "ar": "<p>في اليوم نفسه إذا تواصلت معنا قبل الموعد النهائي المذكور في ساعات الطوارئ؛ وإلا ففي أول موعد صباح اليوم التالي. نؤكد نافذة الساعة الواحدة بدقة عبر واتساب.</p>",
         "fr": "<p>Le jour même si vous nous contactez avant l’heure limite indiquée dans nos horaires d’urgence ; sinon, au premier créneau le lendemain matin. Nous confirmons la fenêtre exacte d’une heure sur WhatsApp.</p>",
@@ -398,7 +398,7 @@
         "hi": "क्या मासिक भुगतान किया जा सकता है?"
       },
       "answer_html": {
-        "en": "<p>The contract is paid per year at the first visit. Payment options are confirmed in WhatsApp when you book.</p>",
+        "en": "<p>The contract is paid per year at the first visit. Payment options are confirmed via WhatsApp when you book.</p>",
         "ru": "<p>Контракт оплачивается за год при первом визите. Способы оплаты подтверждаем в WhatsApp при записи.</p>",
         "ar": "<p>يُدفع العقد عن السنة كاملة في الزيارة الأولى. نؤكد خيارات الدفع عبر واتساب عند الحجز.</p>",
         "fr": "<p>Le contrat se règle à l’année, lors de la première visite. Les modes de paiement sont confirmés sur WhatsApp à la réservation.</p>",
