@@ -25,7 +25,7 @@
         "hi": "फ़िल्टर, इनडोर कॉइल, ब्लोअर फैन, ड्रेन लाइन और आउटडोर यूनिट। रीडिंग और पहले/बाद की फ़ोटो आपकी WhatsApp रिपोर्ट में।"
       },
       "description_html": {
-        "en": "<p>Dubai dust and humidity load an AC unit fast: filters clog, the indoor coil grows a film of dust and mould, the drain line silts up and starts dripping. A standard clean every 4–6 months keeps the air clean, the unit cold and the DEWA bill where it should be.</p><p>The price is fixed before we come. The technician arrives in the agreed one-hour slot, and you get a report with photos and temperature readings in WhatsApp before he leaves.</p>",
+        "en": "<p>Dubai dust and humidity load an AC unit fast: filters clog, the indoor coil grows a film of dust and mould, the drain line silts up and starts dripping. A standard clean every 4–6 months keeps the air clean, the unit cold and the DEWA bill where it should be.</p><p>The price is fixed before we come. The technician arrives in the agreed one-hour window, and you get a report with photos and temperature readings via WhatsApp before he leaves.</p>",
         "ru": "<p>Пыль и влажность Дубая быстро забивают кондиционер: фильтры засоряются, на внутреннем радиаторе появляется плёнка пыли и плесени, дренаж заиливается и начинает капать. Стандартная чистка раз в 4–6 месяцев держит воздух чистым, блок — холодным, а счёт DEWA — в норме.</p><p>Цена фиксируется до приезда. Техник приезжает в согласованный часовой слот, и вы получаете отчёт с фото и замерами температуры в WhatsApp ещё до его ухода.</p>",
         "ar": "<p>غبار دبي ورطوبتها يُثقلان المكيف بسرعة: تنسدّ الفلاتر، وتتكوّن على الملف الداخلي طبقة من الغبار والعفن، ويترسّب الطمي في خط التصريف فيبدأ بالتقطير. تنظيف قياسي كل 4–6 أشهر يُبقي الهواء نقيًا والوحدة باردة وفاتورة ديوا في حدودها الطبيعية.</p><p>السعر ثابت قبل وصولنا. يصل الفني في الموعد المتفق عليه المحدد بساعة واحدة، وتستلم تقريرًا بالصور وقراءات الحرارة عبر واتساب قبل مغادرته.</p>",
         "fr": "<p>La poussière et l’humidité de Dubaï encrassent vite un climatiseur : les filtres se bouchent, l’échangeur intérieur se couvre d’un film de poussière et de moisissure, la conduite d’évacuation s’envase et commence à goutter. Un nettoyage standard tous les 4 à 6 mois garde l’air sain, l’unité froide et la facture DEWA là où elle doit être.</p><p>Le prix est fixé avant notre venue. Le technicien arrive dans le créneau d’une heure convenu, et vous recevez sur WhatsApp un rapport avec photos et relevés de température avant son départ.</p>",
@@ -89,7 +89,7 @@
           "hi": "पहले और बाद में आउटलेट तापमान की रीडिंग"
         },
         {
-          "en": "Photo report in WhatsApp",
+          "en": "Photo report via WhatsApp",
           "ru": "Фотоотчёт в WhatsApp",
           "ar": "تقرير مصوّر عبر واتساب",
           "fr": "Rapport photo sur WhatsApp",
@@ -208,7 +208,7 @@
         "hi": "दुबई में एसी की सफ़ाई — तय कीमत, फ़ोटो रिपोर्ट"
       },
       "seo_description": {
-        "en": "Split AC cleaning in Dubai from AED 269 per unit. Filters, coil, fan, drain and outdoor unit. Fixed price, one-hour arrival slot, WhatsApp report with photos.",
+        "en": "Split AC cleaning in Dubai from AED 269 per unit. Filters, coil, fan, drain and outdoor unit. Fixed price, one-hour arrival window, WhatsApp report with photos.",
         "ru": "Чистка сплит-систем в Дубае от 269 AED за блок. Фильтры, радиатор, вентилятор, дренаж, наружный блок. Фиксированная цена, часовой слот, отчёт в WhatsApp.",
         "ar": "تنظيف مكيفات السبليت في دبي ابتداءً من 269 درهمًا للوحدة. الفلاتر والملف والمروحة والتصريف والوحدة الخارجية. سعر ثابت، موعد وصول محدد بساعة، وتقرير مصوّر عبر واتساب.",
         "fr": "Nettoyage de climatiseur split à Dubaï dès 269 AED l’unité. Filtres, échangeur, évacuation, unité extérieure. Prix fixe, créneau d’une heure, rapport photo.",
@@ -716,7 +716,7 @@
       ],
       "visit_steps": [
         {
-          "en": "You describe the problem in WhatsApp, we confirm the slot",
+          "en": "You describe the problem on WhatsApp, we confirm the slot",
           "ru": "Вы описываете проблему в WhatsApp, мы подтверждаем слот",
           "ar": "تصف المشكلة عبر واتساب ونؤكد لك الموعد",
           "fr": "Vous décrivez le problème sur WhatsApp, nous confirmons le créneau",

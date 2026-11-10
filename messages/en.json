@@ -2,12 +2,12 @@
   "Meta": {
     "siteName": "Brigada",
     "titleTemplate": "%s | Brigada Dubai",
-    "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, a one-hour arrival slot and a photo report in WhatsApp."
+    "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, a one-hour arrival window and a photo report via WhatsApp."
   },
   "Pages": {
     "home": {
       "title": "AC cleaning and upholstery care in Dubai",
-      "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, one-hour arrival slot, photo report in WhatsApp."
+      "description": "AC cleaning, repair and upholstery cleaning in Dubai. Fixed price before the visit, one-hour arrival window, photo report via WhatsApp."
     },
     "services": {
       "title": "Services",
@@ -68,8 +68,8 @@
     "pricing": "Prices",
     "annualContracts": "Annual contracts",
     "areas": "Areas",
-    "about": "About",
-    "contact": "Contact",
+    "about": "About us",
+    "contact": "Contact us",
     "privacy": "Privacy policy",
     "terms": "Terms of service"
   },
@@ -173,7 +173,7 @@
       "disabled": "Unavailable",
       "iconLabel": "Next",
       "cardTitle": "Standard AC clean",
-      "cardText": "Filters, coil, fan and drain. Photo report in WhatsApp.",
+      "cardText": "Filters, coil, fan and drain. Photo report via WhatsApp.",
       "cardFrom": "from <price>{amount}</price>",
       "badgeFixed": "Fixed price",
       "badgeNew": "New",
@@ -210,7 +210,7 @@
       "sheetText": "The default sheet opens from the inline end: right in English, left in Arabic.",
       "numbersText": "Prices: <ltr>{a}</ltr>, <ltr>{b}</ltr>, <ltr>{c}</ltr> and <ltr>{d}</ltr>. A number: <ltr>{n}</ltr>. Email: <ltr>{email}</ltr>. Link: <ltr>{url}</ltr>. Phone pattern: <ltr>{phone}</ltr>.",
       "hoursText": "Working hours from settings:",
-      "longParagraph": "Our technicians arrive with drop sheets, a wet-vacuum and their own ladder, so there is nothing to prepare except clear access to the indoor unit. After the clean you get before-and-after photos in WhatsApp and a note on anything that needs attention later. If a part has to be replaced, we send the price first and wait for your approval.",
+      "longParagraph": "Our technicians arrive with drop sheets, a wet-vacuum and their own ladder, so there is nothing to prepare except clear access to the indoor unit. After the clean you get before-and-after photos via WhatsApp and a note on anything that needs attention later. If a part has to be replaced, we send the price first and wait for your approval.",
       "longWord": "Supercalifragilisticexpialidocious-air-conditioning-maintenance",
       "longButton": "Book a deep clean for all five split units in the villa this Saturday",
       "diagSummary": "Most likely the indoor coil and the drain line are dirty: the musty smell and the dripping point the same way. A standard clean usually fixes both; the technician confirms on site.",
@@ -226,28 +226,28 @@
   "Home": {
     "hero": {
       "eyebrow": "AC & upholstery care · Dubai",
-      "diagnoseLead": "Not sure what's wrong?",
-      "diagnoseCta": "Try the AI diagnosis"
+      "diagnoseLead": "Need help identifying an AC issue?",
+      "diagnoseCta": "Try our AI diagnostic tool"
     },
     "ticker": {
       "label": "Our services"
     },
     "team": {
       "alt": "Two Brigada technicians in black T-shirts with a duct brush and a spray bottle against the Dubai night skyline (illustration)",
-      "caption": "The Brigada crew (illustration)"
+      "caption": "The Brigada team (illustration)"
     },
     "book": {
       "eyebrow": "Book online",
-      "title": "Your price in a minute",
-      "lead": "Pick a service, see the exact price, choose a day. We confirm the one-hour slot in WhatsApp.",
-      "talk": "Prefer to talk? Message us"
+      "title": "Get your quote in one minute",
+      "lead": "Select a service to see the exact price, then choose your preferred date. We'll confirm your one-hour arrival window via WhatsApp.",
+      "talk": "Prefer to talk to us?"
     },
     "why": {
-      "eyebrow": "Why it matters"
+      "eyebrow": "AC maintenance"
     },
     "guarantee": {
-      "eyebrow": "Our guarantee",
-      "title": "If it comes back, we come back"
+      "eyebrow": "Our warranty",
+      "title": "If the issue returns, we got you!"
     },
     "packages": {
       "eyebrow": "Packages",
@@ -266,7 +266,7 @@
     "finalCta": {
       "title": "Ready when you are",
       "lead": "Get the price in a minute and pick a day. Or message us — we reply fast during working hours.",
-      "primary": "Get an instant price"
+      "primary": "Get an instant quote"
     }
   },
   "Diagnose": {
@@ -384,7 +384,7 @@
     "assistant": "Assistant"
   },
   "Services": {
-    "lead": "Ten services with fixed prices and two coming soon. Every visit ends with a photo report in WhatsApp.",
+    "lead": "Ten services with fixed prices and two coming soon. Every visit ends with a photo report via WhatsApp.",
     "category": {
       "ac": "Air conditioning",
       "upholstery": "Upholstery and carpets",
@@ -426,7 +426,7 @@
     "visit": "How the visit goes",
     "visitDuration": "Visit time: {duration}",
     "beforeAfter": "Before and after",
-    "guarantee": "Guarantee",
+    "guarantee": "Warranty",
     "faq": "Questions about this service",
     "related": "Usually booked together",
     "book": "Book this service",
@@ -526,7 +526,7 @@
     "emergency": "Urgent visits",
     "area": "Service area",
     "legal": "Company details",
-    "getPrice": "Get an instant price"
+    "getPrice": "Get an instant quote"
   },
   "Contracts": {
     "lead": "One payment a year, three visits, a priority call-out when something breaks and a discount on repairs. Cheaper than booking each clean on its own.",
@@ -576,7 +576,7 @@
     "steps": {
       "one": {
         "title": "Message us",
-        "text": "Tell us the plan and how many units you have. We confirm the price and the first slot in WhatsApp."
+        "text": "Tell us the plan and how many units you have. We confirm the price and the first slot via WhatsApp."
       },
       "two": {
         "title": "First visit",
@@ -598,7 +598,7 @@
     }
   },
   "About": {
-    "lead": "A small Dubai crew for air-conditioning cleaning, repairs and deep cleaning of upholstery. Fixed prices, a one-hour arrival slot and a photo report after every visit.",
+    "lead": "A small Dubai crew for air-conditioning cleaning, repairs and deep cleaning of upholstery. Fixed prices, a one-hour arrival window and a photo report after every visit.",
     "story": {
       "eyebrow": "Who we are",
       "title": "Why we started with air conditioners"
@@ -612,7 +612,7 @@
         "two": "Protects the floor and furniture with sheeting",
         "three": "Measures the outlet temperature before and after",
         "four": "Photographs the coil, filters and drain before and after",
-        "five": "Leaves the room as clean as it was found and sends the report in WhatsApp"
+        "five": "Leaves the room as clean as it was found and sends the report via WhatsApp"
       }
     },
     "notDoing": {
@@ -637,14 +637,16 @@
       "send": "Send"
     },
     "category": {
-      "question": "What needs doing?",
+      "question": "Choose a service",
       "ac": {
-        "title": "Air conditioning",
-        "text": "Cleaning, deep cleaning, fan coil units, repairs"
+        "title": "Air conditioning services",
+        "text": "AC cleaning, deep cleaning, fan coil unit servicing and repairs.",
+        "price": "From <price>{amount}</price> {unit}"
       },
       "upholstery": {
-        "title": "Upholstery and carpets",
-        "text": "Sofas, mattresses, carpets, stains and odours"
+        "title": "Upholstery & carpet cleaning",
+        "text": "Deep cleaning for sofas, mattresses and carpets. Stain and odour treatment.",
+        "price": "Sofa cleaning from <price>{amount}</price> {unit}"
       }
     },
     "details": {
@@ -695,7 +697,7 @@
         "asap": "As soon as possible"
       },
       "tooLate": "Too late for today",
-      "confirmNote": "We confirm the exact one-hour slot in WhatsApp.",
+      "confirmNote": "We confirm the exact one-hour window via WhatsApp.",
       "area": "Your area (optional)",
       "areaOther": "Other",
       "areaNone": "Not chosen"
@@ -707,7 +709,7 @@
       "time": "Time",
       "area": "Area",
       "preview": "Your message",
-      "whatsapp": "Send in WhatsApp",
+      "whatsapp": "Send via WhatsApp",
       "opened": "WhatsApp opened in a new tab. Didn't open? Copy the message and send it yourself.",
       "copy": "Copy message",
       "copied": "Copied",

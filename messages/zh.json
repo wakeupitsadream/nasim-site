@@ -240,7 +240,7 @@
       "eyebrow": "在线预约",
       "title": "一分钟得知价格",
       "lead": "选择服务，查看准确价格，挑选日期。我们会在 WhatsApp 上确认一小时到达时段。",
-      "talk": "想直接聊？给我们发消息"
+      "talk": "想直接聊？"
     },
     "why": {
       "eyebrow": "为什么重要"
@@ -640,11 +640,13 @@
       "question": "需要做什么？",
       "ac": {
         "title": "空调",
-        "text": "清洗、深度清洗、风机盘管、维修"
+        "text": "清洗、深度清洗、风机盘管、维修",
+        "price": "{unit} <price>{amount}</price> 起"
       },
       "upholstery": {
         "title": "软装与地毯",
-        "text": "沙发、床垫、地毯、污渍和异味"
+        "text": "沙发、床垫、地毯、污渍和异味",
+        "price": "沙发清洁{unit} <price>{amount}</price> 起"
       }
     },
     "details": {

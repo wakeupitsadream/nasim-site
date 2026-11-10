@@ -5,7 +5,7 @@
       "key": "home.hero.title",
       "kind": "text",
       "value": {
-        "en": "Clean, cold air. No surprises.",
+        "en": "Clean, cool air. Upfront pricing.",
         "ru": "Чистый холодный воздух. Без сюрпризов.",
         "ar": "هواء نقي وبارد. بلا مفاجآت.",
         "fr": "De l’air propre et froid. Sans surprise.",
@@ -18,7 +18,7 @@
       "key": "home.hero.subtitle",
       "kind": "text",
       "value": {
-        "en": "AC cleaning, repair and upholstery cleaning in Dubai. The price is fixed before we come, the technician arrives in a one-hour slot, and you get a photo report in WhatsApp.",
+        "en": "Brigada provides AC cleaning, AC repairs and upholstery cleaning in Dubai. We confirm your fixed price before the visit. Your technician arrives within the agreed one-hour window, and we send you a photo report via WhatsApp once the work is complete.",
         "ru": "Чистка и ремонт кондиционеров, химчистка мебели в Дубае. Цена фиксируется до приезда, техник приезжает в часовой слот, отчёт с фото — в WhatsApp.",
         "ar": "تنظيف المكيفات وإصلاحها وتنظيف المفروشات في دبي. السعر ثابت قبل وصولنا، والفني يصل في موعد محدد بساعة واحدة، وتستلم تقريرًا مصوّرًا عبر واتساب.",
         "fr": "Nettoyage et réparation de climatiseurs, nettoyage de canapés, matelas et tapis à Dubaï. Le prix est fixé avant notre venue, le technicien arrive dans un créneau d’une heure, et vous recevez un rapport photo sur WhatsApp.",
@@ -44,7 +44,7 @@
       "key": "home.hero.cta_secondary",
       "kind": "text",
       "value": {
-        "en": "Get an instant price",
+        "en": "Get an instant quote",
         "ru": "Узнать цену сразу",
         "ar": "احصل على السعر فورًا",
         "fr": "Obtenir un prix instantané",
@@ -58,10 +58,10 @@
       "kind": "json",
       "value": {
         "en": [
-          "Fixed price before the visit",
-          "One-hour arrival slot",
-          "Photo report in WhatsApp",
-          "30-day guarantee"
+          "Fixed price confirmed before your visit",
+          "One-hour arrival window",
+          "Photo report via WhatsApp",
+          "30-day warranty"
         ],
         "ru": [
           "Цена фиксирована до визита",
@@ -120,7 +120,7 @@
           },
           {
             "title": "Report and reminder",
-            "text": "Readings and photos in WhatsApp. We remind you when the next clean is due."
+            "text": "Readings and photos via WhatsApp. We remind you when the next clean is due."
           }
         ],
         "ru": [
@@ -237,7 +237,7 @@
       "key": "home.why.title",
       "kind": "text",
       "value": {
-        "en": "Why every 4–6 months in Dubai",
+        "en": "Why regular AC servicing matters in Dubai",
         "ru": "Почему раз в 4–6 месяцев в Дубае",
         "ar": "لماذا كل 4–6 أشهر في دبي",
         "fr": "Pourquoi tous les 4 à 6 mois à Dubaï",
@@ -252,16 +252,16 @@
       "value": {
         "en": [
           {
-            "title": "Dust",
-            "text": "Desert dust settles on the coil and filters within weeks. Airflow drops, the compressor works longer."
+            "title": "Dust buildup",
+            "text": "Desert dust can build up on your AC filters and coils. This restricts airflow and makes it harder for your AC to cool your home."
           },
           {
-            "title": "Humidity",
-            "text": "A wet coil in a warm room grows mould. That is the smell when the unit starts."
+            "title": "Humidity and musty odours",
+            "text": "Moisture that lingers inside your AC can encourage mould growth. This is one possible reason you might notice a musty smell when starting your AC."
           },
           {
             "title": "Your DEWA bill",
-            "text": "A dirty coil can cost 10–20% more electricity for the same cooling."
+            "text": "A dirty coil can make your AC run longer to reach the temperature you've set, using more electricity. Regular servicing helps keep your system running efficiently."
           }
         ],
         "ru": [
@@ -354,7 +354,7 @@
       "key": "guarantee.text",
       "kind": "html",
       "value": {
-        "en": "<p><strong>Cleaning:</strong> 30 days. If the smell or problem we cleaned comes back, we redo it free.<br><strong>Repairs:</strong> 90 days on parts and labour.</p>",
+        "en": "<p><strong>Cleaning · 30-day warranty</strong><br>If the same odour or cleaning issue returns within 30 days, we'll come back and repeat the cleaning with no extra charge.</p><p><strong>Repairs · 90-day warranty</strong><br>Our repairs are covered for 90 days, including parts and labour.</p>",
         "ru": "<p><strong>Чистка:</strong> 30 дней. Если запах или проблема вернулись — переделаем бесплатно.<br><strong>Ремонт:</strong> 90 дней на детали и работу.</p>",
         "ar": "<p><strong>التنظيف:</strong> 30 يومًا. إذا عادت الرائحة أو المشكلة التي عالجناها، نعيد التنظيف مجانًا.<br><strong>الإصلاح:</strong> 90 يومًا على القطع والعمل.</p>",
         "fr": "<p><strong>Nettoyage :</strong> 30 jours. Si l’odeur ou le problème que nous avons traité revient, nous recommençons gratuitement.<br><strong>Réparations :</strong> 90 jours pièces et main-d’œuvre.</p>",
@@ -727,7 +727,7 @@
       "key": "about.body",
       "kind": "html",
       "value": {
-        "en": "<p>Brigada is a small Dubai crew that cleans and repairs air conditioners and deep-cleans sofas, mattresses and carpets in apartments and villas. We started with the job every home here needs most: a split unit that is cleaned properly twice a year cools faster, uses less electricity and stops smelling.</p><p>We work the way we would want a service to work in our own home. The price is fixed before we come and includes the call-out. You get a one-hour arrival slot, not a day. The technician protects the room, measures the outlet temperature before and after, and sends photos of the coil, filters and drain in WhatsApp, so you see what was done.</p><p>The standard is simple: no surprises on the bill, no “while we are here” upsells, and if the problem comes back within the guarantee, we come back for free.</p>",
+        "en": "<p>Brigada is a small Dubai crew that cleans and repairs air conditioners and deep-cleans sofas, mattresses and carpets in apartments and villas. We started with the job every home here needs most: a split unit that is cleaned properly twice a year cools faster, uses less electricity and stops smelling.</p><p>We work the way we would want a service to work in our own home. The price is fixed before we come and includes the call-out. You get a one-hour arrival window, not a day. The technician protects the room, measures the outlet temperature before and after, and sends photos of the coil, filters and drain via WhatsApp, so you see what was done.</p><p>The standard is simple: no surprises on the bill, no “while we are here” upsells, and if the problem comes back within the warranty period, we come back for free.</p>",
         "ru": "<p>Brigada — небольшая команда в Дубае: чистим и ремонтируем кондиционеры, делаем химчистку диванов, матрасов и ковров в квартирах и виллах. Начали с того, что здесь нужно каждому дому: сплит-система, которую как следует чистят два раза в год, быстрее охлаждает, меньше ест электричества и перестаёт пахнуть.</p><p>Работаем так, как хотели бы, чтобы работали у нас дома. Цена фиксируется до приезда и включает выезд. Вы получаете часовой слот приезда, а не «в течение дня». Техник укрывает комнату, замеряет температуру на выходе до и после и присылает в WhatsApp фото теплообменника, фильтров и дренажа — вы видите, что сделано.</p><p>Стандарт простой: без сюрпризов в счёте, без допродаж «раз уж мы приехали», а если проблема вернулась в срок гарантии — вернёмся и мы, бесплатно.</p>",
         "ar": "<p>بريجادا فريق صغير في دبي ينظّف المكيفات ويصلحها وينظّف الأرائك والمراتب والسجاد تنظيفًا عميقًا في الشقق والفلل. بدأنا بما يحتاجه كل بيت هنا أكثر من غيره: مكيف سبليت يُنظَّف كما ينبغي مرتين في السنة يبرّد أسرع ويستهلك كهرباء أقل ويتوقف عن إصدار الروائح.</p><p>نعمل كما نحب أن تُقدَّم الخدمة في بيوتنا. السعر ثابت قبل وصولنا ويشمل رسوم الزيارة. تحصل على موعد وصول محدد بساعة واحدة، لا بيوم كامل. يحمي الفني الغرفة، ويقيس حرارة الهواء الخارج قبل العمل وبعده، ويرسل صور الملف والفلاتر والتصريف عبر واتساب، فترى ما أُنجز بنفسك.</p><p>المعيار بسيط: لا مفاجآت في الفاتورة، ولا عروض إضافية «ما دمنا هنا»، وإذا عادت المشكلة خلال فترة الضمان نعود نحن مجانًا.</p>",
         "fr": "<p>Brigada est une petite équipe de Dubaï qui nettoie et répare les climatiseurs et nettoie en profondeur les canapés, matelas et tapis dans les appartements et les villas. Nous avons commencé par le travail dont chaque logement ici a le plus besoin : un split nettoyé correctement deux fois par an refroidit plus vite, consomme moins d’électricité et cesse de sentir mauvais.</p><p>Nous travaillons comme nous voudrions qu’un prestataire travaille chez nous. Le prix est fixé avant notre venue et inclut le déplacement. Vous recevez un créneau d’arrivée d’une heure, pas une journée entière. Le technicien protège la pièce, mesure la température de soufflage avant et après, et envoie sur WhatsApp les photos de l’échangeur, des filtres et de l’évacuation, pour que vous voyiez ce qui a été fait.</p><p>Le principe est simple : pas de surprise sur la facture, pas de vente forcée « puisqu’on est là », et si le problème revient pendant la garantie, nous revenons gratuitement.</p>",
@@ -753,7 +753,7 @@
       "key": "contact.response_note",
       "kind": "text",
       "value": {
-        "en": "We reply in WhatsApp within 15 minutes during working hours.",
+        "en": "We reply on WhatsApp within 15 minutes during working hours.",
         "ru": "Отвечаем в WhatsApp в течение 15 минут в рабочее время.",
         "ar": "نرد عبر واتساب خلال 15 دقيقة في ساعات العمل.",
         "fr": "Nous répondons sur WhatsApp sous 15 minutes pendant les heures d’ouverture.",
@@ -779,7 +779,7 @@
       "key": "thankyou.text",
       "kind": "text",
       "value": {
-        "en": "Want it faster? Message us in WhatsApp and we will confirm the price and slot right away.",
+        "en": "Want it faster? Message us on WhatsApp and we will confirm the price and slot right away.",
         "ru": "Хотите быстрее? Напишите в WhatsApp — подтвердим цену и слот сразу.",
         "ar": "تريده أسرع؟ راسلنا عبر واتساب ونؤكد لك السعر والموعد فورًا.",
         "fr": "Encore plus vite ? Écrivez-nous sur WhatsApp : nous confirmons le prix et le créneau tout de suite.",

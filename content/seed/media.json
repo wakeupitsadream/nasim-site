@@ -19,12 +19,12 @@
     },
     {
       "kind": "why",
-      "url": "/brand/dubai-cleaners.jpg",
-      "width": 1290,
-      "height": 684,
+      "url": "/brand/dubai-cleaners-red.jpg",
+      "width": 1280,
+      "height": 678,
       "alt": {
-        "en": "Three cleaners at work in a Dubai high-rise living room with the Burj Khalifa in the window",
-        "ru": "Трое клинеров работают в гостиной дубайской высотки, в окне — Бурдж-Халифа",
+        "en": "Three cleaners in red Brigada T-shirts at work in a Dubai high-rise living room with the Burj Khalifa in the window",
+        "ru": "Трое клинеров в красных футболках Brigada работают в гостиной дубайской высотки, в окне — Бурдж-Халифа",
         "ar": "ثلاثة عمال تنظيف يعملون في غرفة معيشة ببرج شاهق في دبي، وبرج خليفة يظهر من النافذة",
         "fr": "Trois agents de nettoyage au travail dans le salon d’une tour de Dubaï, la Burj Khalifa à la fenêtre",
         "de": "Drei Reinigungskräfte bei der Arbeit im Wohnzimmer eines Hochhauses in Dubai, im Fenster der Burj Khalifa",
@@ -129,22 +129,22 @@
     {
       "kind": "category",
       "category": "upholstery",
-      "url": "/photos/category-upholstery.jpg",
-      "width": 1024,
-      "height": 721,
+      "url": "/photos/category-upholstery-white.jpg",
+      "width": 1280,
+      "height": 901,
       "alt": {
-        "en": "Living area of a Dubai hotel suite: a green sofa and two armchairs with the Burj Khalifa in the window",
-        "ru": "Гостиная сьюта дубайского отеля: зелёный диван и два кресла, в окне — Бурдж-Халифа",
-        "ar": "منطقة المعيشة في جناح فندقي بدبي: أريكة خضراء ومقعدان وبرج خليفة يظهر من النافذة",
-        "fr": "Salon d’une suite d’hôtel à Dubaï : un canapé vert et deux fauteuils, la Burj Khalifa à la fenêtre",
-        "de": "Wohnbereich einer Hotelsuite in Dubai: ein grünes Sofa und zwei Sessel, im Fenster der Burj Khalifa",
-        "zh": "迪拜酒店套房的起居区：一张绿色沙发和两把扶手椅，窗外是哈利法塔",
-        "hi": "दुबई के होटल सुइट का लिविंग एरिया: हरा सोफ़ा और दो आर्मचेयर, खिड़की में बुर्ज ख़लीफ़ा"
+        "en": "Living area of a Dubai hotel suite: a white sofa and two armchairs with the Burj Khalifa in the window",
+        "ru": "Гостиная сьюта дубайского отеля: белый диван и два кресла, в окне — Бурдж-Халифа",
+        "ar": "منطقة المعيشة في جناح فندقي بدبي: أريكة بيضاء ومقعدان وبرج خليفة يظهر من النافذة",
+        "fr": "Salon d’une suite d’hôtel à Dubaï : un canapé blanc et deux fauteuils, la Burj Khalifa à la fenêtre",
+        "de": "Wohnbereich einer Hotelsuite in Dubai: ein weißes Sofa und zwei Sessel, im Fenster der Burj Khalifa",
+        "zh": "迪拜酒店套房的起居区：一张白色沙发和两把扶手椅，窗外是哈利法塔",
+        "hi": "दुबई के होटल सुइट का लिविंग एरिया: सफ़ेद सोफ़ा और दो आर्मचेयर, खिड़की में बुर्ज ख़लीफ़ा"
       },
       "credit": {
         "author": "Sofitel Dubai Downtown",
         "source": "https://www.flickr.com/photos/123325273@N07/13868230784",
-        "license": "CC BY 2.0"
+        "license": "CC BY 2.0, adapted"
       },
       "sort": 20
     },

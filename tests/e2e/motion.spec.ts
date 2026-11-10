@@ -110,6 +110,8 @@ test.describe('motion (styles/motion.css)', () => {
     // track never settles, so Playwright's stability wait would time out.)
     const ticker = page.locator('.ticker');
     expect(await animationNames(ticker)).toContain('nasim-ticker');
+    // The hero can push the band below the fold: bring it into view before pointing at it.
+    await page.locator('.ticker-band').scrollIntoViewIfNeeded();
     const band = (await page.locator('.ticker-band').boundingBox())!;
     await page.mouse.move(band.x + band.width / 2, band.y + band.height / 2);
     await expect
