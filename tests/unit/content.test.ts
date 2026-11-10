@@ -149,7 +149,7 @@ describe('content getters', () => {
   it('list each Creative Commons author once for the footer attribution line', async () => {
     const credits = await getPhotoCredits();
     expect(credits.map((c) => c.author)).toEqual(['Sofitel Dubai Downtown']);
-    expect(credits[0]).toMatchObject({ license: 'CC BY 2.0' });
+    expect(credits[0]).toMatchObject({ license: 'CC BY 2.0, adapted' });
     expect(credits[0].source.startsWith('https://')).toBe(true);
     // Pexels pictures need no attribution, so they never reach the footer.
     expect(seedMedia().filter((m) => m.credit?.license.startsWith('CC ')).length).toBe(1);
