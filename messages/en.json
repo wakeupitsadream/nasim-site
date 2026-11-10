@@ -240,7 +240,7 @@
       "eyebrow": "Book online",
       "title": "Get your quote in one minute",
       "lead": "Select a service to see the exact price, then choose your preferred date. We'll confirm your one-hour arrival window via WhatsApp.",
-      "talk": "Prefer to talk? Message us"
+      "talk": "Prefer to talk to us?"
     },
     "why": {
       "eyebrow": "Why it matters"
@@ -640,11 +640,13 @@
       "question": "Choose a service",
       "ac": {
         "title": "Air conditioning services",
-        "text": "AC cleaning, deep cleaning, fan coil unit servicing and repairs."
+        "text": "AC cleaning, deep cleaning, fan coil unit servicing and repairs.",
+        "price": "From <price>{amount}</price> {unit}"
       },
       "upholstery": {
-        "title": "Upholstery and carpets",
-        "text": "Sofas, mattresses, carpets, stains and odours."
+        "title": "Upholstery & carpet cleaning",
+        "text": "Deep cleaning for sofas, mattresses and carpets. Stain and odour treatment.",
+        "price": "Sofa cleaning from <price>{amount}</price> {unit}"
       }
     },
     "details": {

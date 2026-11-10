@@ -240,7 +240,7 @@
       "eyebrow": "Online buchen",
       "title": "Ihr Preis in einer Minute",
       "lead": "Leistung wählen, exakten Preis sehen, Tag aussuchen. Das Ein-Stunden-Zeitfenster bestätigen wir per WhatsApp.",
-      "talk": "Lieber direkt schreiben? Schreiben Sie uns"
+      "talk": "Lieber direkt schreiben?"
     },
     "why": {
       "eyebrow": "Warum das wichtig ist"
@@ -640,11 +640,13 @@
       "question": "Was ist zu tun?",
       "ac": {
         "title": "Klimaanlagen",
-        "text": "Reinigung, Tiefenreinigung, Gebläsekonvektoren, Reparaturen"
+        "text": "Reinigung, Tiefenreinigung, Gebläsekonvektoren, Reparaturen",
+        "price": "Ab <price>{amount}</price> {unit}"
       },
       "upholstery": {
         "title": "Polster und Teppiche",
-        "text": "Sofas, Matratzen, Teppiche, Flecken und Gerüche"
+        "text": "Sofas, Matratzen, Teppiche, Flecken und Gerüche",
+        "price": "Sofareinigung ab <price>{amount}</price> {unit}"
       }
     },
     "details": {

@@ -240,7 +240,7 @@
       "eyebrow": "Réserver en ligne",
       "title": "Votre prix en une minute",
       "lead": "Choisissez un service, voyez le prix exact, choisissez un jour. Nous confirmons le créneau d’une heure sur WhatsApp.",
-      "talk": "Vous préférez échanger ? Écrivez-nous"
+      "talk": "Vous préférez échanger ?"
     },
     "why": {
       "eyebrow": "Pourquoi c’est important"
@@ -640,11 +640,13 @@
       "question": "Que faut-il faire ?",
       "ac": {
         "title": "Climatisation",
-        "text": "Nettoyage, nettoyage en profondeur, ventilo-convecteurs, réparations"
+        "text": "Nettoyage, nettoyage en profondeur, ventilo-convecteurs, réparations",
+        "price": "À partir de <price>{amount}</price> {unit}"
       },
       "upholstery": {
         "title": "Canapés, matelas et tapis",
-        "text": "Canapés, matelas, tapis, taches et odeurs"
+        "text": "Canapés, matelas, tapis, taches et odeurs",
+        "price": "Nettoyage de canapé à partir de <price>{amount}</price> {unit}"
       }
     },
     "details": {
