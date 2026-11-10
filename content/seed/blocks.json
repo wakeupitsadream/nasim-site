@@ -237,7 +237,7 @@
       "key": "home.why.title",
       "kind": "text",
       "value": {
-        "en": "Why every 4–6 months in Dubai",
+        "en": "Why regular AC servicing matters in Dubai",
         "ru": "Почему раз в 4–6 месяцев в Дубае",
         "ar": "لماذا كل 4–6 أشهر في دبي",
         "fr": "Pourquoi tous les 4 à 6 mois à Dubaï",
@@ -252,16 +252,16 @@
       "value": {
         "en": [
           {
-            "title": "Dust",
-            "text": "Desert dust settles on the coil and filters within weeks. Airflow drops, the compressor works longer."
+            "title": "Dust buildup",
+            "text": "Desert dust can build up on your AC filters and coils. This restricts airflow and makes it harder for your AC to cool your home."
           },
           {
-            "title": "Humidity",
-            "text": "A wet coil in a warm room grows mould. That is the smell when the unit starts."
+            "title": "Humidity and musty odours",
+            "text": "Moisture that lingers inside your AC can encourage mould growth. This is one possible reason you might notice a musty smell when starting your AC."
           },
           {
             "title": "Your DEWA bill",
-            "text": "A dirty coil can cost 10–20% more electricity for the same cooling."
+            "text": "A dirty coil can make your AC run longer to reach the temperature you've set, using more electricity. Regular servicing helps keep your system running efficiently."
           }
         ],
         "ru": [
