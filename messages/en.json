@@ -32,7 +32,7 @@
     },
     "about": {
       "title": "About us",
-      "description": "Brigada: a Dubai crew for AC cleaning, repairs and upholstery deep cleaning. How we work, our standards and what we don't do."
+      "description": "Brigada: a Dubai team for AC cleaning, repairs and upholstery deep cleaning. How we work, our standards and what we don't do."
     },
     "contact": {
       "title": "Contact us",
@@ -50,7 +50,7 @@
   },
   "NotFound": {
     "title": "Page not found",
-    "lead": "The page may have moved, or the link had a typo. The crew is still here.",
+    "lead": "The page may have moved, or the link had a typo. The team is still here.",
     "backHome": "Back to home",
     "services": "See services"
   },
@@ -598,7 +598,7 @@
     }
   },
   "About": {
-    "lead": "A small Dubai crew for air-conditioning cleaning, repairs and deep cleaning of upholstery. Fixed prices, a one-hour arrival window and a photo report after every visit.",
+    "lead": "A small Dubai team for air-conditioning cleaning, repairs and deep cleaning of upholstery. Fixed prices, a one-hour arrival window and a photo report after every visit.",
     "story": {
       "eyebrow": "Who we are",
       "title": "Why we started with air conditioners"
