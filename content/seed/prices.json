@@ -71,7 +71,7 @@
         "hi": "स्टैंडर्ड सफ़ाई, 4+ यूनिट"
       },
       "unit": "unit",
-      "price": 269,
+      "price": 249,
       "min_qty": 4,
       "tier_from_qty": 4,
       "note": {
@@ -711,21 +711,21 @@
         "hi": "Essential"
       },
       "description": {
-        "en": "Up to 3 split units. 3 standard cleans a year, priority booking, 10% off repairs.",
-        "ru": "До 3 блоков. 3 стандартные чистки в год, приоритетная запись, −10% на ремонт.",
-        "ar": "حتى 3 وحدات سبليت. 3 تنظيفات قياسية في السنة، أولوية في الحجز، وخصم 10% على الإصلاح.",
-        "fr": "Jusqu’à 3 unités split. 3 nettoyages standard par an, réservation prioritaire, 10 % de remise sur les réparations.",
-        "de": "Bis zu 3 Split-Geräte. 3 Standardreinigungen pro Jahr, bevorzugte Terminvergabe, 10 % Rabatt auf Reparaturen.",
-        "zh": "最多 3 台分体式空调。每年 3 次标准清洗，优先预约，维修享 10% 折扣。",
-        "hi": "3 स्प्लिट यूनिट तक। साल में 3 स्टैंडर्ड सफ़ाई, प्राथमिकता से बुकिंग, मरम्मत पर 10% छूट।"
+        "en": "2 standard-service visits a year for 3 split units. Priority scheduling and 10% off repair labour.",
+        "ru": "2 стандартных визита в год на 3 сплит-системы. Приоритетная запись и −10% на работы по ремонту.",
+        "ar": "زيارتان للخدمة القياسية في السنة لـ 3 وحدات سبليت. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
+        "fr": "2 visites de nettoyage standard par an pour 3 unités split. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
+        "de": "2 Besuche pro Jahr mit Standardreinigung für 3 Split-Geräte. Bevorzugte Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen.",
+        "zh": "每年 2 次标准清洗上门，适用于 3 台分体式空调。优先预约，维修人工费优惠 10%。",
+        "hi": "3 स्प्लिट यूनिट के लिए साल में स्टैंडर्ड सर्विस की 2 विज़िट। प्राथमिकता से बुकिंग और मरम्मत की मज़दूरी पर 10% छूट।"
       },
-      "price": 1599,
+      "price": 1499,
       "compare_price": null,
       "includes": {
         "units_max": 3,
-        "visits": 3,
-        "deep_cleans": 0,
-        "priority_hours": 48,
+        "visits": 2,
+        "deep_units": 0,
+        "priority": true,
         "repair_discount_pct": 10
       }
     },
@@ -745,21 +745,21 @@
         "hi": "Comfort"
       },
       "description": {
-        "en": "Up to 5 split units. 3 visits a year, one of them a deep clean, priority booking, 10% off repairs.",
-        "ru": "До 5 блоков. 3 визита в год, один из них — глубокая чистка, приоритетная запись, −10% на ремонт.",
-        "ar": "حتى 5 وحدات سبليت. 3 زيارات في السنة إحداها تنظيف عميق، أولوية في الحجز، وخصم 10% على الإصلاح.",
-        "fr": "Jusqu’à 5 unités split. 3 visites par an, dont un nettoyage en profondeur, réservation prioritaire, 10 % de remise sur les réparations.",
-        "de": "Bis zu 5 Split-Geräte. 3 Besuche pro Jahr, davon eine Tiefenreinigung, bevorzugte Terminvergabe, 10 % Rabatt auf Reparaturen.",
-        "zh": "最多 5 台分体式空调。每年 3 次上门，其中一次为深度清洗，优先预约，维修享 10% 折扣。",
-        "hi": "5 स्प्लिट यूनिट तक। साल में 3 विज़िट, जिनमें एक डीप क्लीनिंग, प्राथमिकता से बुकिंग, मरम्मत पर 10% छूट।"
+        "en": "2 visits a year for 5 split units. One selected unit receives a deep clean during one visit, replacing its standard clean. Priority scheduling and 10% off repair labour.",
+        "ru": "2 визита в год на 5 сплит-систем. Один выбранный блок за один из визитов получает глубокую чистку вместо стандартной. Приоритетная запись и −10% на работы по ремонту.",
+        "ar": "زيارتان في السنة لـ 5 وحدات سبليت. تحصل وحدة واحدة مختارة على تنظيف عميق خلال إحدى الزيارتين بدلًا من تنظيفها القياسي. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
+        "fr": "2 visites par an pour 5 unités split. Lors de l’une des visites, une unité choisie reçoit un nettoyage en profondeur à la place de son nettoyage standard. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
+        "de": "2 Besuche pro Jahr für 5 Split-Geräte. Ein ausgewähltes Gerät erhält bei einem der Besuche eine Tiefenreinigung anstelle der Standardreinigung. Bevorzugte Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen.",
+        "zh": "每年 2 次上门，适用于 5 台分体式空调。其中一次上门时，一台选定的机器做深度清洗，以替代该机器当次的标准清洗。优先预约，维修人工费优惠 10%。",
+        "hi": "5 स्प्लिट यूनिट के लिए साल में 2 विज़िट। किसी एक विज़िट में एक चुनी हुई यूनिट की स्टैंडर्ड सफ़ाई की जगह डीप क्लीनिंग होती है। प्राथमिकता से बुकिंग और मरम्मत की मज़दूरी पर 10% छूट।"
       },
-      "price": 2699,
+      "price": 2499,
       "compare_price": null,
       "includes": {
         "units_max": 5,
-        "visits": 3,
-        "deep_cleans": 1,
-        "priority_hours": 48,
+        "visits": 2,
+        "deep_units": 1,
+        "priority": true,
         "repair_discount_pct": 10
       }
     },
@@ -779,22 +779,22 @@
         "hi": "Villa"
       },
       "description": {
-        "en": "Up to 8 FCUs or split units. 3 visits a year, 24-hour priority call-out, 15% off repairs.",
-        "ru": "До 8 фанкойлов или блоков. 3 визита в год, приоритетный выезд за 24 часа, −15% на ремонт.",
-        "ar": "حتى 8 وحدات فان كويل أو سبليت. 3 زيارات في السنة، زيارة ذات أولوية خلال 24 ساعة، وخصم 15% على الإصلاح.",
-        "fr": "Jusqu’à 8 FCU ou unités split. 3 visites par an, intervention prioritaire sous 24 h, 15 % de remise sur les réparations.",
-        "de": "Bis zu 8 Gebläsekonvektoren oder Split-Geräte. 3 Besuche pro Jahr, bevorzugter Einsatz innerhalb von 24 Stunden, 15 % Rabatt auf Reparaturen.",
-        "zh": "最多 8 台风机盘管或分体式空调。每年 3 次上门，24 小时内优先上门，维修享 15% 折扣。",
-        "hi": "8 FCU या स्प्लिट यूनिट तक। साल में 3 विज़िट, 24 घंटे में प्राथमिकता से कॉल-आउट, मरम्मत पर 15% छूट।"
+        "en": "3 planned visits a year, priced by equipment type, unit count and access.",
+        "ru": "3 плановых визита в год; цена зависит от типа оборудования, числа блоков и доступа.",
+        "ar": "3 زيارات مجدولة في السنة، والسعر بحسب نوع المعدات وعدد الوحدات وسهولة الوصول إليها.",
+        "fr": "3 visites planifiées par an ; prix établi selon le type d’équipement, le nombre d’unités et l’accès.",
+        "de": "3 geplante Besuche pro Jahr, Preis nach Gerätetyp, Anzahl der Geräte und Zugänglichkeit.",
+        "zh": "每年 3 次定期上门，按设备类型、机器数量和作业便利程度定价。",
+        "hi": "साल में 3 तय विज़िट; कीमत उपकरण के प्रकार, यूनिट की संख्या और पहुँच के अनुसार।"
       },
-      "price": 4499,
+      "price": null,
       "compare_price": null,
       "includes": {
-        "units_max": 8,
+        "units_max": null,
         "visits": 3,
-        "deep_cleans": 0,
-        "priority_hours": 24,
-        "repair_discount_pct": 15
+        "deep_units": 0,
+        "priority": false,
+        "repair_discount_pct": 0
       }
     }
   ],

@@ -22,7 +22,7 @@
     },
     "annualContracts": {
       "title": "Contrats d’entretien annuels",
-      "description": "Formules d’entretien annuel de climatisation à Dubaï : trois visites par an, interventions prioritaires et remises sur les réparations. Comparez Essential, Comfort et Villa."
+      "description": "Entretien annuel de clim à Dubaï : visites planifiées, réservation prioritaire, −10 % sur la main-d’œuvre de réparation. Comparez Essential, Comfort et Villa."
     },
     "areas": {
       "title": "Zones desservies"
@@ -539,7 +539,7 @@
     "getPrice": "Obtenir un prix instantané"
   },
   "Contracts": {
-    "lead": "Un paiement par an, trois visites, une intervention prioritaire en cas de panne et une remise sur les réparations. Moins cher que de réserver chaque nettoyage séparément.",
+    "lead": "Un paiement par an pour des visites planifiées, avec réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation. Moins cher que de réserver chaque nettoyage séparément.",
     "plans": {
       "eyebrow": "Trois formules",
       "title": "Choisissez la formule de votre logement",
@@ -549,13 +549,15 @@
     "includes": {
       "units": "Jusqu’à {n} unités",
       "visits": "{n} visites par an",
-      "deep": "dont {n} nettoyage en profondeur",
-      "priority": "Intervention prioritaire sous {n} h",
-      "repairDiscount": "{n} % de remise sur les réparations"
+      "deep": "Une unité choisie est nettoyée en profondeur lors de l’une des visites",
+      "priority": "Réservation prioritaire",
+      "repairDiscount": "{n} % de remise sur la main-d’œuvre de réparation",
+      "custom": "Prix selon le type d’équipement, le nombre d’unités et l’accès"
     },
     "card": {
       "saving": "Réservé visite par visite : <s>{separate}</s>. Vous économisez <s>{saving}</s> ({pct} %).",
-      "cta": "Demander cette formule"
+      "cta": "Demander cette formule",
+      "quote": "Devis après inspection"
     },
     "savings": {
       "eyebrow": "Le calcul",
@@ -570,8 +572,8 @@
         "saving": "Vous économisez"
       },
       "visitsStd": "{standard} nettoyages standard × {units} unités",
-      "visitsMix": "{standard} standard + {deep} en profondeur × {units} unités",
-      "note": "La formule Villa est comptée ici en unités split ; les ventilo-convecteurs coûtent plus cher par visite, l’économie y est donc plus grande."
+      "visitsDeep": "{visits} visites × {units} unités, dont une unité nettoyée en profondeur",
+      "note": "La formule Villa fait l’objet d’un devis après inspection ; elle ne figure donc pas dans ce tableau."
     },
     "visit": {
       "eyebrow": "À chaque visite",
@@ -581,7 +583,7 @@
     "how": {
       "eyebrow": "Comment ça marche",
       "title": "Trois étapes par an",
-      "lead": "Si une unité tombe en panne entre deux visites, vous obtenez une intervention dans le délai de votre formule et sa remise sur la réparation."
+      "lead": "Si une unité tombe en panne entre deux visites, vous bénéficiez d’une réservation prioritaire et de la remise de votre formule sur la main-d’œuvre de réparation."
     },
     "steps": {
       "one": {
@@ -590,7 +592,7 @@
       },
       "two": {
         "title": "Première visite",
-        "text": "Nous nettoyons chaque unité, vérifions les évacuations et fixons avec vous les dates des deux visites suivantes."
+        "text": "Nous nettoyons chaque unité, vérifions les évacuations et fixons avec vous les dates des prochaines visites."
       },
       "three": {
         "title": "Nous vous rappelons",

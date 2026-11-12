@@ -72,7 +72,7 @@ describe('POST /api/diagnose', () => {
       slug: 'ac-cleaning',
       name: 'Стандартная чистка и обслуживание сплит-системы',
       href: '/services/ac-cleaning',
-      priceFrom: { amount: 269, unit: 'unit' },
+      priceFrom: { amount: 249, unit: 'unit' },
       estimate: false,
       comingSoon: false,
     });

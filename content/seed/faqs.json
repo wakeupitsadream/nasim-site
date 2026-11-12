@@ -376,13 +376,13 @@
         "hi": "अगर दो विज़िट के बीच कोई यूनिट ख़राब हो जाए तो?"
       },
       "answer_html": {
-        "en": "<p>You get a priority call-out within the hours of your plan (48 or 24 hours), and the repair discount of your plan applies.</p>",
-        "ru": "<p>Приоритетный выезд в сроки вашего тарифа (48 или 24 часа) и скидка на ремонт по тарифу.</p>",
-        "ar": "<p>تحصل على زيارة ذات أولوية خلال المدة المحددة في خطتك (48 أو 24 ساعة)، ويُطبَّق خصم الإصلاح الخاص بخطتك.</p>",
-        "fr": "<p>Vous obtenez une intervention prioritaire dans le délai de votre formule (48 ou 24 heures), et la remise sur les réparations de votre formule s’applique.</p>",
-        "de": "<p>Sie erhalten einen bevorzugten Einsatz innerhalb der Frist Ihres Vertrags (48 oder 24 Stunden), und der Reparaturrabatt Ihres Vertrags gilt.</p>",
-        "zh": "<p>我们会在您方案规定的时间内（48 或 24 小时）优先上门，维修按您方案的折扣计费。</p>",
-        "hi": "<p>आपको अपने प्लान के समय (48 या 24 घंटे) के भीतर प्राथमिकता से कॉल-आउट मिलता है, और आपके प्लान की मरम्मत छूट लागू होती है।</p>"
+        "en": "<p>You get priority scheduling, and your plan's discount on repair labour applies.</p>",
+        "ru": "<p>Вы получаете приоритетную запись, и действует скидка вашего плана на работы по ремонту.</p>",
+        "ar": "<p>تحصل على أولوية في حجز المواعيد، ويُطبَّق خصم خطتك على أجور اليد العاملة في الإصلاح.</p>",
+        "fr": "<p>Vous bénéficiez d’une réservation prioritaire, et la remise de votre formule s’applique à la main-d’œuvre de réparation.</p>",
+        "de": "<p>Sie erhalten einen bevorzugten Termin, und der Rabatt Ihres Vertrags auf die Arbeitskosten der Reparatur gilt.</p>",
+        "zh": "<p>您可享优先预约，维修人工费按您方案的优惠计算。</p>",
+        "hi": "<p>आपको प्राथमिकता से बुकिंग मिलती है, और मरम्मत की मज़दूरी पर आपके प्लान की छूट लागू होती है।</p>"
       }
     },
     {

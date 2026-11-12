@@ -69,7 +69,7 @@ export default async function ServicesPage() {
   const whatsapp = whatsappTarget(settings.contacts);
   const emergencyEnabled = settings.flags.emergencyEnabled;
   const cheapestPlan = annual.reduce<number | null>(
-    (min, p) => (min === null || p.price < min ? p.price : min),
+    (min, p) => (p.price !== null && (min === null || p.price < min) ? p.price : min),
     null,
   );
 

@@ -108,11 +108,17 @@ export const bundlePackageSchema = z.object({
 export const annualPackageSchema = z.object({
   ...packageBase,
   type: z.literal('annual'),
+  /** Null = quoted after an inspection (the Villa plan, DECISIONS №61). */
+  price: z.number().nonnegative().nullable(),
   includes: z.object({
-    units_max: z.number().int().positive(),
+    /** Split units covered; null when the plan is sized at the inspection. */
+    units_max: z.number().int().positive().nullable(),
     visits: z.number().int().positive(),
-    deep_cleans: z.number().int().nonnegative(),
-    priority_hours: z.number().int().positive(),
+    /** Units that get a deep clean during one visit, in place of their standard clean. */
+    deep_units: z.number().int().nonnegative(),
+    /** Priority scheduling (earlier slots, no promised response time). */
+    priority: z.boolean(),
+    /** Discount on repair labour, per cent. */
     repair_discount_pct: z.number().int().nonnegative(),
   }),
 });

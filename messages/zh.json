@@ -22,7 +22,7 @@
     },
     "annualContracts": {
       "title": "年度保养合同",
-      "description": "迪拜空调年度保养方案：每年三次上门、优先派单和维修折扣。比较 Essential、Comfort 和 Villa。"
+      "description": "迪拜空调年度保养方案：定期上门、优先预约、维修人工费优惠 10%。比较 Essential、Comfort 和 Villa。"
     },
     "areas": {
       "title": "服务区域"
@@ -539,7 +539,7 @@
     "getPrice": "立即获取价格"
   },
   "Contracts": {
-    "lead": "一年一次付款，三次上门，故障时优先派单，维修享折扣。比单独预约每次清洗更划算。",
+    "lead": "一年一次付款，涵盖全年定期上门，并享优先预约和维修人工费优惠 10%。比单独预约每次清洗更划算。",
     "plans": {
       "eyebrow": "三种方案",
       "title": "为您的家选择方案",
@@ -549,13 +549,15 @@
     "includes": {
       "units": "最多 {n} 台",
       "visits": "每年 {n} 次上门",
-      "deep": "其中 {n} 次深度清洗",
-      "priority": "{n} 小时内优先上门",
-      "repairDiscount": "维修 {n}% 折扣"
+      "deep": "其中一次上门为一台选定的机器做深度清洗",
+      "priority": "优先预约",
+      "repairDiscount": "维修人工费优惠 {n}%",
+      "custom": "按设备类型、机器数量和作业便利程度定价"
     },
     "card": {
       "saving": "逐次预约：<s>{separate}</s>。您节省 <s>{saving}</s>（{pct}%）。",
-      "cta": "咨询此方案"
+      "cta": "咨询此方案",
+      "quote": "现场勘察后报价"
     },
     "savings": {
       "eyebrow": "算一算",
@@ -570,8 +572,8 @@
         "saving": "您节省"
       },
       "visitsStd": "{standard} 次标准清洗 × {units} 台",
-      "visitsMix": "{standard} 次标准 + {deep} 次深度清洗 × {units} 台",
-      "note": "Villa 方案在此按分体式空调计算；风机盘管每次上门费用更高，因此实际节省更多。"
+      "visitsDeep": "{visits} 次上门 × {units} 台，其中一台做深度清洗",
+      "note": "Villa 方案需现场勘察后报价，因此未列入此表。"
     },
     "visit": {
       "eyebrow": "每次上门",
@@ -581,7 +583,7 @@
     "how": {
       "eyebrow": "如何运作",
       "title": "一年三步",
-      "lead": "如果两次上门之间有机器出故障，我们会在方案规定的时间内上门，并享受方案的维修折扣。"
+      "lead": "如果两次上门之间有机器出故障，您可享优先预约，维修人工费按您方案的优惠计算。"
     },
     "steps": {
       "one": {
@@ -590,7 +592,7 @@
       },
       "two": {
         "title": "首次上门",
-        "text": "我们清洗每一台机器，检查排水，并与您约定接下来两次上门的日期。"
+        "text": "我们清洗每一台机器，检查排水，并与您约定后续上门的日期。"
       },
       "three": {
         "title": "我们提醒您",

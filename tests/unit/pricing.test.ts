@@ -30,7 +30,7 @@ describe('buildPricingConfig', () => {
     expect(line('ac_clean').tiers.map((t) => [t.fromQty, t.price])).toEqual([
       [1, 299],
       [2, 279],
-      [4, 269],
+      [4, 249],
     ]);
     expect(line('ac_deep').tiers.map((t) => [t.fromQty, t.price])).toEqual([
       [1, 549],
@@ -65,10 +65,10 @@ describe('buildPricingConfig', () => {
 describe('tiers and minimums', () => {
   it('prices every unit at the tier of the total quantity', () => {
     expect([1, 2, 3, 4, 10].map((q) => unitPrice(line('ac_clean'), q))).toEqual([
-      299, 279, 279, 269, 269,
+      299, 279, 279, 249, 249,
     ]);
     expect(total({ ac_clean: 3 })).toBe(837);
-    expect(total({ ac_clean: 4 })).toBe(1076);
+    expect(total({ ac_clean: 4 })).toBe(996);
     expect(total({ ac_deep: 2 })).toBe(998);
     // The services that were priced on request until 12.11.2026.
     expect(total({ fcu_service: 1 })).toBe(349);
@@ -94,7 +94,7 @@ describe('tiers and minimums', () => {
     expect(tierRanges(line('ac_clean'))).toEqual([
       { from: 1, to: 1, price: 299 },
       { from: 2, to: 3, price: 279 },
-      { from: 4, to: null, price: 269 },
+      { from: 4, to: null, price: 249 },
     ]);
   });
 });
@@ -110,7 +110,7 @@ describe('bundles', () => {
 
   it('keeps à la carte when the bundle path costs more', () => {
     const q = quote(cfg, { ac_clean: 4, sofa_seat: 3 }, noVat);
-    expect(q.total).toBe(1343);
+    expect(q.total).toBe(1263);
     expect(q.bundle).toBeNull();
   });
 
@@ -251,45 +251,40 @@ describe('annualPlanComparison', () => {
     return p;
   };
 
-  it('prices the plan visits one by one at the plan maximum of split units', () => {
-    // Essential: 3 units → 3 × 279 = 837 per standard clean, three times a year.
+  it('prices the plan visits one by one for the plan number of split units', () => {
+    // Essential: 2 visits × 3 units × 279 = 1674; the owner's stated saving is 175.
     expect(annualPlanComparison(cfg, plan('essential'))).toEqual({
       units: 3,
-      standardVisits: 3,
-      deepVisits: 0,
-      standardVisit: 837,
-      deepVisit: 0,
-      separate: 2511,
-      plan: 1599,
-      saving: 912,
-      savingPct: 36,
+      visits: 2,
+      deepUnits: 0,
+      separate: 1674,
+      plan: 1499,
+      saving: 175,
+      savingPct: 10,
     });
-    // Comfort: 5 units → 2 standard (5 × 269 = 1345 each) + 1 deep (5 × 499 = 2495).
-    expect(annualPlanComparison(cfg, plan('comfort'))).toMatchObject({
-      standardVisits: 2,
-      deepVisits: 1,
-      standardVisit: 1345,
-      deepVisit: 2495,
-      separate: 5185,
-      saving: 2486,
-      savingPct: 48,
-    });
-    // Villa: 8 units at the 4+ tier, counted as split units.
-    expect(annualPlanComparison(cfg, plan('villa'))).toMatchObject({
-      separate: 6456,
-      saving: 1957,
-      savingPct: 30,
+    // Comfort: one visit is 5 × 249 = 1245; in the other, one unit is deep-cleaned (549) and
+    // the four standard ones still get the 4+ rate (996). 1245 + 1545 − 2499 = 291.
+    expect(annualPlanComparison(cfg, plan('comfort'))).toEqual({
+      units: 5,
+      visits: 2,
+      deepUnits: 1,
+      separate: 2790,
+      plan: 2499,
+      saving: 291,
+      savingPct: 10,
     });
   });
 
-  it('returns null when the price list lacks the lines or the plan has no visits', () => {
+  it('returns null for a plan quoted after inspection, without visits or without its lines', () => {
+    expect(plan('villa').price).toBeNull();
+    expect(annualPlanComparison(cfg, plan('villa'))).toBeNull();
     expect(
       annualPlanComparison(cfg, plan('essential'), { standard: 'nope', deep: 'ac_deep' }),
     ).toBeNull();
     expect(
       annualPlanComparison(cfg, {
         price: 100,
-        includes: { units_max: 2, visits: 0, deep_cleans: 0 },
+        includes: { units_max: 2, visits: 0, deep_units: 0 },
       }),
     ).toBeNull();
   });

@@ -22,7 +22,7 @@
     },
     "annualContracts": {
       "title": "Annual maintenance contracts",
-      "description": "Annual AC maintenance plans in Dubai: three visits a year, priority call-outs and repair discounts. Compare Essential, Comfort and Villa."
+      "description": "Annual AC care plans in Dubai: planned visits, priority scheduling and 10% off repair labour. Compare Essential, Comfort and Villa."
     },
     "areas": {
       "title": "Areas we serve"
@@ -539,7 +539,7 @@
     "getPrice": "Get an instant quote"
   },
   "Contracts": {
-    "lead": "One payment a year, three visits, a priority call-out when something breaks and a discount on repairs. Cheaper than booking each clean on its own.",
+    "lead": "One payment a year for planned visits, with priority scheduling and 10% off repair labour. Cheaper than booking each clean on its own.",
     "plans": {
       "eyebrow": "Three plans",
       "title": "Pick the plan for your home",
@@ -549,13 +549,15 @@
     "includes": {
       "units": "Up to {n} units",
       "visits": "{n} visits a year",
-      "deep": "{n} deep clean included",
-      "priority": "Priority call-out within {n} hours",
-      "repairDiscount": "{n}% off repairs"
+      "deep": "One selected unit is deep-cleaned during one visit",
+      "priority": "Priority scheduling",
+      "repairDiscount": "{n}% off repair labour",
+      "custom": "Priced by equipment type, unit count and access"
     },
     "card": {
       "saving": "Booked visit by visit: <s>{separate}</s>. You save <s>{saving}</s> ({pct}%).",
-      "cta": "Ask about this plan"
+      "cta": "Ask about this plan",
+      "quote": "Quotation after inspection"
     },
     "savings": {
       "eyebrow": "The maths",
@@ -570,8 +572,8 @@
         "saving": "You save"
       },
       "visitsStd": "{standard} standard cleans × {units} units",
-      "visitsMix": "{standard} standard + {deep} deep clean × {units} units",
-      "note": "The Villa plan is counted as split units here; fan coil units cost more per visit, so the saving there is larger."
+      "visitsDeep": "{visits} visits × {units} units, one unit deep-cleaned",
+      "note": "The Villa plan is quoted after an inspection, so it is not in this table."
     },
     "visit": {
       "eyebrow": "Every visit",
@@ -581,7 +583,7 @@
     "how": {
       "eyebrow": "How it works",
       "title": "Three steps a year",
-      "lead": "If a unit breaks between visits, you get a call-out within the hours of your plan and the plan's repair discount."
+      "lead": "If a unit breaks between visits, you get priority scheduling and your plan's discount on repair labour."
     },
     "steps": {
       "one": {
@@ -590,7 +592,7 @@
       },
       "two": {
         "title": "First visit",
-        "text": "We clean every unit, check the drains and set the dates of the next two visits with you."
+        "text": "We clean every unit, check the drains and set the dates of the next visits with you."
       },
       "three": {
         "title": "We remind you",
