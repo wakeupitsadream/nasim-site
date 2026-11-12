@@ -161,6 +161,19 @@ describe('estimates', () => {
     expect(q.estimate?.fromLines).toEqual([{ lineId: 'refill', from: 449 }]);
   });
 
+  it('treats a leak test as the diagnosis: a recharge alone adds diagnostics, with a test it does not', () => {
+    const alone = quote(cfg, { refill: 1 }, noVat);
+    expect(alone.lines.map((l) => [l.role, l.total])).toEqual([['diagnostics', 199]]);
+    const withTest = quote(cfg, { leak_test: 1, refill: 1 }, noVat);
+    expect(withTest.lines.map((l) => l.role)).toEqual(['item']);
+    expect(withTest.total).toBe(299);
+    expect(linesForService(cfg, 'refrigerant-leak-detection').map((l) => l.id)).toEqual([
+      'leak_test',
+    ]);
+    expect(linesForService(cfg, 'refrigerant-recharge').map((l) => l.id)).toEqual(['refill']);
+    expect(linesForService(cfg, 'ac-duct-cleaning')).toEqual([]);
+  });
+
   it('prices an emergency call-out as fixed', () => {
     const q = quote(cfg, { emergency_callout: 1 }, noVat);
     expect(q.kind).toBe('fixed');
@@ -212,7 +225,8 @@ describe('bad input', () => {
 describe('seed consistency', () => {
   it('derives the same "from" price the services file states', () => {
     for (const s of seedServices().filter((x) => x.status === 'active')) {
-      expect(priceFrom(cfg, s.slug)?.amount, s.slug).toBe(s.price_from);
+      // Services priced on request have no price lines and no "from" price.
+      expect(priceFrom(cfg, s.slug)?.amount ?? null, s.slug).toBe(s.price_from);
     }
     expect(priceFrom(cfg, 'humidity-mould-check')).toBeNull();
   });

@@ -70,7 +70,7 @@ describe('POST /api/diagnose', () => {
     const json = await response.json();
     expect(json.service).toMatchObject({
       slug: 'ac-cleaning',
-      name: 'Чистка кондиционера',
+      name: 'Стандартная чистка и обслуживание сплит-системы',
       href: '/services/ac-cleaning',
       priceFrom: { amount: 269, unit: 'unit' },
       estimate: false,
@@ -78,7 +78,7 @@ describe('POST /api/diagnose', () => {
     });
     const catalogue = diagnose.mock.calls[0]?.[2] as { slug: string }[];
     expect(catalogue.map((c) => c.slug)).toContain('humidity-mould-check');
-    expect(catalogue.length).toBe(12);
+    expect(catalogue.length).toBe(24);
   });
 
   it('marks estimate-priced and coming-soon services', async () => {
