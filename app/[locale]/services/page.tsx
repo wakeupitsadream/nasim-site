@@ -40,7 +40,9 @@ export default async function ServicesPage() {
     tPrice,
     settings,
     pricing,
-    ac,
+    cleaning,
+    addons,
+    servicing,
     upholstery,
     soon,
     annual,
@@ -55,7 +57,9 @@ export default async function ServicesPage() {
     getTranslations('Price'),
     getSiteSettings(locale),
     getPricingConfig(),
-    getServices({ status: ['active'], category: 'ac' }),
+    getServices({ status: ['active'], category: 'ac', group: 'cleaning' }),
+    getServices({ status: ['active'], category: 'ac', group: 'addon' }),
+    getServices({ status: ['active'], category: 'ac', group: 'service' }),
     getServices({ status: ['active'], category: 'upholstery' }),
     getServices({ status: ['coming_soon'] }),
     getPackages({ type: 'annual' }),
@@ -93,13 +97,15 @@ export default async function ServicesPage() {
         />
       </Section>
 
+      {/* The AC catalogue in the owner's three groups (DECISIONS №61): cleaning, extra cleaning
+          options, servicing and repairs. */}
       <Section id="ac" tone="surface" aria-labelledby="ac-title">
         {/* The crew illustration beside each category header (owner's art, DECISIONS №57). */}
         <div className="mb-stack grid gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeader
             id="ac-title"
-            title={t('category.ac')}
-            lead={t('summary.ac')}
+            eyebrow={t('category.ac')}
+            title={t('group.cleaning')}
             className="mb-0 lg:col-span-8"
           />
           {acArt ? (
@@ -115,12 +121,42 @@ export default async function ServicesPage() {
           ) : null}
         </div>
         <ServiceGrid
-          services={ac}
+          services={cleaning}
           pricing={pricing}
           locale={locale}
           emergencyEnabled={emergencyEnabled}
         />
-        <div className="reveal mt-6 flex flex-col gap-4 rounded-card border border-border bg-background p-6 sm:flex-row sm:items-center sm:justify-between">
+        {addons.length > 0 ? (
+          <>
+            <h3
+              id="ac-addons"
+              className="reveal mt-stack mb-6 scroll-mt-header text-h3 text-primary"
+            >
+              {t('group.addon')}
+            </h3>
+            <ServiceGrid
+              services={addons}
+              pricing={pricing}
+              locale={locale}
+              emergencyEnabled={emergencyEnabled}
+            />
+          </>
+        ) : null}
+      </Section>
+
+      <Section id="ac-service" tone="sand" aria-labelledby="ac-service-title">
+        <SectionHeader
+          id="ac-service-title"
+          eyebrow={t('category.ac')}
+          title={t('group.service')}
+        />
+        <ServiceGrid
+          services={servicing}
+          pricing={pricing}
+          locale={locale}
+          emergencyEnabled={emergencyEnabled}
+        />
+        <div className="reveal mt-6 flex flex-col gap-4 rounded-card border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-4">
             <span
               aria-hidden="true"
@@ -130,7 +166,7 @@ export default async function ServicesPage() {
             </span>
             <div className="flex flex-col gap-1">
               <h3 className="text-lead font-medium text-foreground">{t('contract.title')}</h3>
-              <p className="text-body text-muted-foreground">
+              <p className="text-body text-pretty text-muted-foreground">
                 {t('contract.text')}
                 {cheapestPlan !== null ? (
                   <>
@@ -153,7 +189,7 @@ export default async function ServicesPage() {
         </div>
       </Section>
 
-      <Section id="upholstery" tone="sand" aria-labelledby="upholstery-title">
+      <Section id="upholstery" tone="surface" aria-labelledby="upholstery-title">
         <div className="mb-stack grid gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeader
             id="upholstery-title"
@@ -182,7 +218,7 @@ export default async function ServicesPage() {
       </Section>
 
       {soon.length > 0 ? (
-        <Section id="soon" tone="surface" aria-labelledby="soon-title">
+        <Section id="soon" tone="sand" aria-labelledby="soon-title">
           <SectionHeader
             id="soon-title"
             title={t('category.comingSoon')}
@@ -199,7 +235,7 @@ export default async function ServicesPage() {
 
       {/* "Not sure which one?" — opens the floating assistant; the tone follows the optional #soon band. */}
       <Section
-        tone={soon.length > 0 ? 'sand' : 'surface'}
+        tone={soon.length > 0 ? 'surface' : 'sand'}
         aria-labelledby="not-sure-title"
         size="compact"
       >

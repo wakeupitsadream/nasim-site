@@ -49,9 +49,14 @@ export const priceUnitSchema = z.enum(['unit', 'fcu', 'visit', 'seat', 'item', '
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'YYYY-MM-DD');
 
+export const serviceGroupSchema = z.enum(['cleaning', 'addon', 'service']);
+export type ServiceGroup = z.infer<typeof serviceGroupSchema>;
+
 export const serviceSchema = z.object({
   slug: z.string().min(1),
   category: serviceCategorySchema,
+  /** Sub-section of the AC catalogue (DECISIONS №61); other categories have none. */
+  group: serviceGroupSchema.optional(),
   status: serviceStatusSchema,
   sort: z.number().int(),
   name: i18nTextRequired,
@@ -123,6 +128,8 @@ export const pricingRulesSchema = z.object({
   diagnostics_credited_to_repair: z.boolean(),
   diagnostics_item_key: z.string().min(1),
   quote_only_services: z.array(z.string()),
+  /** Lines that are a diagnosis in themselves: no separate diagnostics fee next to them. */
+  diagnostic_line_ids: z.array(z.string()).default([]),
   suggest_bundle_when_cheaper: z.boolean(),
 });
 

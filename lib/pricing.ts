@@ -40,6 +40,8 @@ export type PricingRules = {
   diagnosticsCreditedToRepair: boolean;
   diagnosticsItemKey: string;
   quoteOnlyServices: string[];
+  /** Lines that already are a diagnosis (a leak test): no diagnostics fee is added next to them. */
+  diagnosticLineIds: string[];
   suggestBundleWhenCheaper: boolean;
 };
 
@@ -160,6 +162,7 @@ export function buildPricingConfig(
       diagnosticsCreditedToRepair: rules.diagnostics_credited_to_repair,
       diagnosticsItemKey: rules.diagnostics_item_key,
       quoteOnlyServices: rules.quote_only_services,
+      diagnosticLineIds: rules.diagnostic_line_ids ?? [],
       suggestBundleWhenCheaper: rules.suggest_bundle_when_cheaper,
     },
   };
@@ -334,9 +337,12 @@ export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState
   const diagnosticsLine = cfg.lines.find((l) =>
     l.tiers.some((t) => t.itemKey === cfg.rules.diagnosticsItemKey),
   );
-  const needsDiagnostics = [...fixedByService].some(
-    ([slug, hasFixed]) => !hasFixed && cfg.rules.quoteOnlyServices.includes(slug),
-  );
+  const alreadyDiagnosed = lines.some((l) => cfg.rules.diagnosticLineIds.includes(l.lineId));
+  const needsDiagnostics =
+    !alreadyDiagnosed &&
+    [...fixedByService].some(
+      ([slug, hasFixed]) => !hasFixed && cfg.rules.quoteOnlyServices.includes(slug),
+    );
   if (needsDiagnostics && diagnosticsLine && !selection[diagnosticsLine.id]) {
     lines.push({ ...lineTotal(diagnosticsLine, 1), role: 'diagnostics' });
   }

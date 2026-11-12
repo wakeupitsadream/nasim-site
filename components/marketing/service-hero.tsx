@@ -47,6 +47,8 @@ export async function ServiceHero({
   const name = pickLocalized(service.name, locale);
   const short = pickLocalized(service.short, locale);
   const estimate = service.pricing_unit === 'from';
+  // Priced on request: no price list yet, the section below asks for a quote (DECISIONS №61).
+  const onRequest = service.pricing_unit === 'quote';
   const category = service.category === 'ac' ? 'ac' : 'upholstery';
 
   return (
@@ -96,13 +98,17 @@ export async function ServiceHero({
                 {formatMinutes(service.duration_min, locale)}
               </span>
             ) : null}
-            <Badge variant={estimate ? 'outline' : 'highlight'} size="lg">
-              {estimate ? tServices('badge.estimate') : t('fixedChip')}
+            <Badge variant={estimate || onRequest ? 'outline' : 'highlight'} size="lg">
+              {onRequest
+                ? tServices('onRequest')
+                : estimate
+                  ? tServices('badge.estimate')
+                  : t('fixedChip')}
             </Badge>
           </div>
           <div className="enter flex flex-col gap-3 sm:flex-row sm:flex-wrap" style={stagger(4)}>
             <Button size="lg" asChild className="sm:min-w-56">
-              <a href={bookHref}>{t('book')}</a>
+              <a href={bookHref}>{onRequest ? t('quote.title') : t('book')}</a>
             </Button>
             <CtaLink
               target={whatsapp}

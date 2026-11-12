@@ -41,7 +41,12 @@ export async function BookingSection({ initialService }: Props) {
     ]);
 
   const bookable: BookingService[] = services
-    .filter((s) => s.category === 'ac' || s.category === 'upholstery')
+    // Services priced on request have no price lines: they are booked by message, not here.
+    .filter(
+      (s) =>
+        (s.category === 'ac' || s.category === 'upholstery') &&
+        linesForService(pricing, s.slug).length > 0,
+    )
     .map((s) => ({
       slug: s.slug,
       category: s.category as BookingService['category'],
