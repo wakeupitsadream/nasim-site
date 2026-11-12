@@ -14,10 +14,15 @@ test.describe('language switcher', () => {
     // getByRole skips hidden nodes: Next keeps the previous locale's tree mounted in a hidden <Activity>.
     const header = page.getByRole('banner');
     // The menu is one button for all seven languages; its items are the same page in each locale.
-    await header.getByTestId('lang-menu').click();
     const menu = page.getByRole('menu');
     const ar = menu.locator('a[hreflang="ar"]');
-    await expect(ar).toHaveAttribute('href', '/ar/pricing');
+    // The button first renders as a Suspense fallback (links to each home page) and is swapped
+    // for the real one once the pathname streams in; a click that lands in between opens a menu
+    // that is then replaced. Reopen until the menu shows the same-page link.
+    await expect(async () => {
+      if (!(await menu.isVisible())) await header.getByTestId('lang-menu').click();
+      await expect(ar).toHaveAttribute('href', '/ar/pricing', { timeout: 1000 });
+    }).toPass();
     await ar.click();
     await expect(page).toHaveURL(/\/ar\/pricing$/);
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');

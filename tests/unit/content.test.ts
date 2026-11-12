@@ -29,7 +29,7 @@ import { blockSchemas } from '@/lib/validation/content';
 describe('seed files', () => {
   it('parse against the content schemas', () => {
     expect(seedServices().length).toBe(24);
-    expect(seedPriceItems().length).toBe(17);
+    expect(seedPriceItems().length).toBe(24);
     expect(seedPackages().length).toBe(4);
     expect(seedAreas().length).toBe(16);
     expect(seedFaqs().length).toBe(19);
@@ -62,7 +62,7 @@ describe('seed files', () => {
     for (const key of Object.keys(blockSchemas)) expect(keys.has(key), key).toBe(true);
   });
 
-  it('media files exist, service photos point at real services, every priced service has one', () => {
+  it('media files exist, service photos point at real services, every described service has one', () => {
     const slugs = new Set(seedServices().map((s) => s.slug));
     const withPhoto = new Set<string>();
     for (const m of seedMedia()) {
@@ -76,8 +76,9 @@ describe('seed files', () => {
       }
       if (m.kind === 'category') expect(m.category, m.url).toBeDefined();
     }
-    // Services priced on request have no photo yet: their pages keep the placeholder art.
-    for (const s of seedServices().filter((x) => x.status === 'active' && x.price_from !== null))
+    // Services that only have the owner's short description so far (no visit steps written)
+    // have no photo yet: their pages keep the placeholder art.
+    for (const s of seedServices().filter((x) => x.status === 'active' && x.visit_steps.length > 0))
       expect(withPhoto.has(s.slug), s.slug).toBe(true);
   });
 });
