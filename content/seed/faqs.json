@@ -124,13 +124,13 @@
         "hi": "कौन-सी सेवाएँ आप नहीं देते?"
       },
       "answer_html": {
-        "en": "<p>New installations, complex office VRF repairs, duct cleaning and mould removal from walls. The last two need separate Dubai Municipality approvals — we arrange them through a licensed partner.</p>",
-        "ru": "<p>Установку новых систем, сложный ремонт офисных VRF, чистку воздуховодов и удаление плесени со стен. Последние два требуют отдельных разрешений Dubai Municipality — организуем через лицензированного партнёра.</p>",
-        "ar": "<p>تركيب الأنظمة الجديدة، والإصلاحات المعقدة لأنظمة VRF المكتبية، وتنظيف مجاري الهواء، وإزالة العفن من الجدران. الأخيران يتطلبان تصاريح منفصلة من بلدية دبي — ننظّمهما عبر شريك مرخّص.</p>",
-        "fr": "<p>Les installations neuves, les réparations complexes de VRF de bureaux, le nettoyage des gaines et le traitement des moisissures sur les murs. Les deux derniers exigent des agréments distincts de la Municipalité de Dubaï — nous les confions à un partenaire agréé.</p>",
-        "de": "<p>Neuinstallationen, komplexe VRF-Reparaturen in Büros, Kanalreinigung und Schimmelentfernung von Wänden. Die letzten beiden brauchen separate Genehmigungen der Dubai Municipality – wir organisieren sie über einen lizenzierten Partner.</p>",
-        "zh": "<p>新机安装、复杂的办公楼 VRF 维修、风管清洗和墙面除霉。后两项需要迪拜市政局的单独许可——我们通过持牌合作伙伴安排。</p>",
-        "hi": "<p>नए इंस्टॉलेशन, ऑफ़िस के जटिल VRF सिस्टम की मरम्मत, डक्ट की सफ़ाई और दीवारों से फफूंद हटाना। आख़िरी दो के लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए — हम इन्हें लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं।</p>"
+        "en": "<p>New installations, complex office VRF repairs and mould removal from walls. Mould removal needs a separate Dubai Municipality approval — we arrange it through a licensed partner.</p>",
+        "ru": "<p>Установку новых систем, сложный ремонт офисных VRF и удаление плесени со стен. Удаление плесени требует отдельного разрешения Dubai Municipality — организуем через лицензированного партнёра.</p>",
+        "ar": "<p>تركيب الأنظمة الجديدة، والإصلاحات المعقدة لأنظمة VRF المكتبية، وإزالة العفن من الجدران. إزالة العفن تتطلب تصريحًا منفصلًا من بلدية دبي — ننظّمها عبر شريك مرخّص.</p>",
+        "fr": "<p>Les installations neuves, les réparations complexes de VRF de bureaux et le traitement des moisissures sur les murs. Le traitement des moisissures exige un agrément distinct de la Municipalité de Dubaï — nous le confions à un partenaire agréé.</p>",
+        "de": "<p>Neuinstallationen, komplexe VRF-Reparaturen in Büros und Schimmelentfernung von Wänden. Die Schimmelentfernung braucht eine separate Genehmigung der Dubai Municipality – wir organisieren sie über einen lizenzierten Partner.</p>",
+        "zh": "<p>新机安装、复杂的办公楼 VRF 维修和墙面除霉。墙面除霉需要迪拜市政局的单独许可——我们通过持牌合作伙伴安排。</p>",
+        "hi": "<p>नए इंस्टॉलेशन, ऑफ़िस के जटिल VRF सिस्टम की मरम्मत और दीवारों से फफूंद हटाना। फफूंद हटाने के लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए — हम इसे लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं।</p>"
       }
     },
     {
@@ -296,7 +296,7 @@
     },
     {
       "scope": "service",
-      "service_slug": "refrigerant-leak-refill",
+      "service_slug": "refrigerant-leak-detection",
       "sort": 1,
       "question": {
         "en": "Why not just top up the gas?",

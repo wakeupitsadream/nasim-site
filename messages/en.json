@@ -384,7 +384,7 @@
     "assistant": "Assistant"
   },
   "Services": {
-    "lead": "Ten services with fixed prices and two coming soon. Every visit ends with a photo report via WhatsApp.",
+    "lead": "Fixed prices where we can name one upfront, a quote for everything else. Every visit ends with a photo report via WhatsApp.",
     "category": {
       "ac": "Air conditioning",
       "upholstery": "Upholstery and carpets",
@@ -405,8 +405,8 @@
       "availableFrom": "From {date}"
     },
     "contract": {
-      "title": "Annual contract",
-      "text": "Three visits a year, priority booking and a repair discount.",
+      "title": "Annual AC Care Plans",
+      "text": "Scheduled cleaning and maintenance throughout the year, with priority booking and the repair benefits specified in your plan. Coverage, unit count and visit frequency are confirmed when you enrol.",
       "cta": "Compare plans"
     },
     "notSure": {
@@ -414,7 +414,13 @@
       "text": "Describe the problem or send a photo — the assistant names the likely cause and the service that fixes it, with its fixed price. Frequent questions are answered right there too.",
       "ask": "Ask the assistant",
       "price": "Open the calculator"
-    }
+    },
+    "group": {
+      "cleaning": "AC cleaning",
+      "addon": "Additional cleaning options",
+      "service": "AC servicing & repairs"
+    },
+    "onRequest": "Price on request"
   },
   "Service": {
     "included": "What's included",
@@ -453,6 +459,10 @@
       "from": "Available from {date}",
       "waitlist": "Join the waitlist",
       "note": "We message you first when it opens. No newsletters."
+    },
+    "quote": {
+      "title": "Get a quote for this service",
+      "text": "Tell us the type of unit and how many you have. We confirm the scope and a fixed price before the visit."
     }
   },
   "Price": {

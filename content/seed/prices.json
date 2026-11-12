@@ -223,7 +223,7 @@
       "sort": 1
     },
     {
-      "service_slug": "refrigerant-leak-refill",
+      "service_slug": "refrigerant-leak-detection",
       "key": "leak_test",
       "name": {
         "en": "Nitrogen leak test",
@@ -250,7 +250,7 @@
       "sort": 1
     },
     {
-      "service_slug": "refrigerant-leak-refill",
+      "service_slug": "refrigerant-recharge",
       "key": "refill",
       "name": {
         "en": "Refill after leak repair",
@@ -609,10 +609,13 @@
     "diagnostics_item_key": "emergency_callout",
     "quote_only_services": [
       "ac-repair",
-      "refrigerant-leak-refill",
+      "refrigerant-recharge",
       "humidity-mould-check",
       "water-tank-cleaning"
     ],
-    "suggest_bundle_when_cheaper": true
+    "suggest_bundle_when_cheaper": true,
+    "diagnostic_line_ids": [
+      "leak_test"
+    ]
   }
 }

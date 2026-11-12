@@ -384,7 +384,7 @@
     "assistant": "Assistant"
   },
   "Services": {
-    "lead": "Dix services à prix fixe et deux bientôt disponibles. Chaque visite se termine par un rapport photo sur WhatsApp.",
+    "lead": "Des prix fixes quand ils peuvent être annoncés d’avance, un devis pour tout le reste. Chaque visite se termine par un rapport photo sur WhatsApp.",
     "category": {
       "ac": "Climatisation",
       "upholstery": "Canapés, matelas et tapis",
@@ -405,8 +405,8 @@
       "availableFrom": "À partir de {date}"
     },
     "contract": {
-      "title": "Contrat annuel",
-      "text": "Trois visites par an, réservation prioritaire et remise sur les réparations.",
+      "title": "Formules annuelles d’entretien de climatisation",
+      "text": "Nettoyage et entretien planifiés tout au long de l’année, avec réservation prioritaire et les avantages sur les réparations prévus par votre formule. La couverture, le nombre d’unités et la fréquence des visites sont confirmés à la souscription.",
       "cta": "Comparer les formules"
     },
     "notSure": {
@@ -414,7 +414,13 @@
       "text": "Décrivez le problème ou envoyez une photo : l’assistant indique la cause probable et le service qui la règle, avec son prix fixe. Il répond aussi aux questions fréquentes.",
       "ask": "Demander à l’assistant",
       "price": "Ouvrir le calculateur"
-    }
+    },
+    "group": {
+      "cleaning": "Nettoyage de climatiseurs",
+      "addon": "Options de nettoyage complémentaires",
+      "service": "Entretien et réparation de climatiseurs"
+    },
+    "onRequest": "Prix sur demande"
   },
   "Service": {
     "included": "Ce qui est inclus",
@@ -453,6 +459,10 @@
       "from": "Disponible à partir de {date}",
       "waitlist": "Rejoindre la liste d’attente",
       "note": "Nous vous écrivons en premier à l’ouverture. Pas de newsletter."
+    },
+    "quote": {
+      "title": "Demandez un devis pour ce service",
+      "text": "Indiquez-nous le type d’unité et combien vous en avez. Nous confirmons le périmètre et un prix fixe avant la visite."
     }
   },
   "Price": {

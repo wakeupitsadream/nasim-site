@@ -384,7 +384,7 @@
     "assistant": "Assistent"
   },
   "Services": {
-    "lead": "Zehn Leistungen zum Festpreis und zwei demnächst. Jeder Besuch endet mit einem Fotobericht per WhatsApp.",
+    "lead": "Festpreise, wo sie sich vorab nennen lassen, ein Angebot für alles andere. Jeder Besuch endet mit einem Fotobericht per WhatsApp.",
     "category": {
       "ac": "Klimaanlagen",
       "upholstery": "Polster und Teppiche",
@@ -405,8 +405,8 @@
       "availableFrom": "Ab {date}"
     },
     "contract": {
-      "title": "Jahresvertrag",
-      "text": "Drei Besuche pro Jahr, bevorzugte Terminvergabe und Rabatt auf Reparaturen.",
+      "title": "Jahresverträge für Ihre Klimaanlage",
+      "text": "Geplante Reinigung und Wartung über das ganze Jahr, mit bevorzugter Terminvergabe und den Reparaturvorteilen, die in Ihrem Vertrag festgelegt sind. Leistungsumfang, Anzahl der Geräte und Häufigkeit der Besuche bestätigen wir bei Vertragsabschluss.",
       "cta": "Verträge vergleichen"
     },
     "notSure": {
@@ -414,7 +414,13 @@
       "text": "Beschreiben Sie das Problem oder senden Sie ein Foto – der Assistent nennt die wahrscheinliche Ursache und die passende Leistung mit ihrem Festpreis. Häufige Fragen beantwortet er gleich mit.",
       "ask": "Assistenten fragen",
       "price": "Rechner öffnen"
-    }
+    },
+    "group": {
+      "cleaning": "Klimaanlagen-Reinigung",
+      "addon": "Zusätzliche Reinigungsoptionen",
+      "service": "Wartung & Reparatur von Klimaanlagen"
+    },
+    "onRequest": "Preis auf Anfrage"
   },
   "Service": {
     "included": "Was enthalten ist",
@@ -453,6 +459,10 @@
       "from": "Verfügbar ab {date}",
       "waitlist": "Auf die Warteliste",
       "note": "Wir schreiben Ihnen als Erstes, sobald es losgeht. Keine Newsletter."
+    },
+    "quote": {
+      "title": "Preis für diese Leistung anfragen",
+      "text": "Nennen Sie uns den Gerätetyp und die Anzahl Ihrer Geräte. Umfang und Festpreis bestätigen wir vor dem Besuch."
     }
   },
   "Price": {

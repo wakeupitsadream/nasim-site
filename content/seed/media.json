@@ -260,7 +260,29 @@
     },
     {
       "kind": "service",
-      "service_slug": "refrigerant-leak-refill",
+      "service_slug": "refrigerant-leak-detection",
+      "url": "/photos/refrigerant-leak-refill.jpg",
+      "width": 1200,
+      "height": 1716,
+      "alt": {
+        "en": "Close-up of refrigerant manifold gauges in a technician’s hands",
+        "ru": "Крупный план манометров для фреона в руках техника",
+        "ar": "لقطة قريبة لعدّادات غاز التبريد في يد الفني",
+        "fr": "Gros plan sur des manomètres de fluide frigorigène dans les mains d’un technicien",
+        "de": "Nahaufnahme einer Kältemittel-Monteurhilfe in den Händen eines Technikers",
+        "zh": "技师手中制冷剂歧管压力表的特写",
+        "hi": "तकनीशियन के हाथों में रेफ़्रिजरेंट मैनिफ़ोल्ड गेज का क्लोज़-अप"
+      },
+      "credit": {
+        "author": "José Andrés Pacheco Cortes",
+        "source": "https://www.pexels.com/photo/6471912/",
+        "license": "Pexels License (free for commercial use, no attribution required)"
+      },
+      "sort": 60
+    },
+    {
+      "kind": "service",
+      "service_slug": "refrigerant-recharge",
       "url": "/photos/refrigerant-leak-refill.jpg",
       "width": 1200,
       "height": 1716,
