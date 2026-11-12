@@ -3,8 +3,10 @@ import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import { BookingSection } from '@/components/booking/booking-section';
+import { WhatsAppIcon } from '@/components/icons/brand';
 import { CheckList } from '@/components/marketing/check-list';
 import { ComingSoonHero } from '@/components/marketing/coming-soon';
+import { CtaLink } from '@/components/marketing/cta-link';
 import { FaqList } from '@/components/marketing/faq-list';
 import { FinalCta } from '@/components/marketing/final-cta';
 import { Guarantee } from '@/components/marketing/guarantee';
@@ -79,6 +81,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     tServices,
     tHome,
     tCta,
+    tCommon,
     settings,
     pricing,
     items,
@@ -92,6 +95,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     getTranslations('Services'),
     getTranslations('Home'),
     getTranslations('Cta'),
+    getTranslations('Common'),
     getSiteSettings(locale),
     getPricingConfig(),
     getPriceItems({ serviceSlug: slug }),
@@ -164,78 +168,95 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
   const tiered = lines.filter((l) => l.tiers.length > 1);
   const faqs = faqsOwn.length > 0 ? faqsOwn : faqsGlobal.slice(0, 4);
   const note = items[0] ? pickLocalized(items[0].note, locale) : null;
+  const description = pickLocalized(service.description_html, locale);
+  // Services priced on request have no price lines: the page asks for a quote instead of
+  // running the wizard, and skips the sections the owner has not written yet (DECISIONS №61).
+  const onRequest = lines.length === 0;
 
   // Sections in order; light tones alternate automatically around the fixed dark bands.
   const blocks: { key: string; deep?: boolean; render: (tone: SectionTone) => ReactNode }[] = [
-    {
-      key: 'description',
-      render: (tone) => (
-        <Section tone={tone} aria-labelledby="description-title">
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-7">
-              <h2 id="description-title" className="sr-only">
-                {name.text}
-              </h2>
-              <RichText
-                value={pickLocalized(service.description_html, locale)}
-                locale={locale}
-                className="text-lead text-muted-foreground"
-              />
-            </div>
-            <div className="flex h-fit flex-col gap-4 rounded-panel border border-border bg-card p-6 shadow-card lg:col-span-5">
-              <p className="text-eyebrow text-highlight-ink">{t('glance')}</p>
-              <dl className="flex flex-col gap-4">
-                {from ? (
-                  <div className="flex flex-col gap-1">
-                    <dt className="text-small text-muted-foreground">{t('prices')}</dt>
-                    <dd>
-                      <PriceFrom amount={from.amount} unit={from.unit} locale={locale} size="lg" />
-                    </dd>
+    ...(description.text.trim()
+      ? [
+          {
+            key: 'description',
+            render: (tone: SectionTone) => (
+              <Section tone={tone} aria-labelledby="description-title">
+                <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+                  <div className="lg:col-span-7">
+                    <h2 id="description-title" className="sr-only">
+                      {name.text}
+                    </h2>
+                    <RichText
+                      value={description}
+                      locale={locale}
+                      className="text-lead text-muted-foreground"
+                    />
                   </div>
-                ) : null}
-                {service.duration_min ? (
-                  <div className="flex flex-col gap-1 border-t border-border pt-4">
-                    <dt className="text-small text-muted-foreground">{t('duration')}</dt>
-                    <dd className="text-body text-foreground">
-                      {formatMinutes(service.duration_min, locale)}
-                    </dd>
+                  <div className="flex h-fit flex-col gap-4 rounded-panel border border-border bg-card p-6 shadow-card lg:col-span-5">
+                    <p className="text-eyebrow text-highlight-ink">{t('glance')}</p>
+                    <dl className="flex flex-col gap-4">
+                      {from ? (
+                        <div className="flex flex-col gap-1">
+                          <dt className="text-small text-muted-foreground">{t('prices')}</dt>
+                          <dd>
+                            <PriceFrom
+                              amount={from.amount}
+                              unit={from.unit}
+                              locale={locale}
+                              size="lg"
+                            />
+                          </dd>
+                        </div>
+                      ) : null}
+                      {service.duration_min ? (
+                        <div className="flex flex-col gap-1 border-t border-border pt-4">
+                          <dt className="text-small text-muted-foreground">{t('duration')}</dt>
+                          <dd className="text-body text-foreground">
+                            {formatMinutes(service.duration_min, locale)}
+                          </dd>
+                        </div>
+                      ) : null}
+                      {note?.text ? (
+                        <div className="flex flex-col gap-1 border-t border-border pt-4">
+                          <dt className="text-small text-muted-foreground">{t('note')}</dt>
+                          <dd className="text-body text-foreground">
+                            <LocalizedText value={note} locale={locale} />
+                          </dd>
+                        </div>
+                      ) : null}
+                    </dl>
                   </div>
-                ) : null}
-                {note?.text ? (
-                  <div className="flex flex-col gap-1 border-t border-border pt-4">
-                    <dt className="text-small text-muted-foreground">{t('note')}</dt>
-                    <dd className="text-body text-foreground">
-                      <LocalizedText value={note} locale={locale} />
-                    </dd>
+                </div>
+              </Section>
+            ),
+          },
+        ]
+      : []),
+    ...(service.includes.length > 0
+      ? [
+          {
+            key: 'included',
+            render: (tone: SectionTone) => (
+              <Section tone={tone} aria-labelledby="included-title">
+                <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
+                  <div className="flex flex-col gap-5">
+                    <h2 id="included-title" className="text-h3 text-primary">
+                      {t('included')}
+                    </h2>
+                    <CheckList items={service.includes} locale={locale} />
                   </div>
-                ) : null}
-              </dl>
-            </div>
-          </div>
-        </Section>
-      ),
-    },
-    {
-      key: 'included',
-      render: (tone) => (
-        <Section tone={tone} aria-labelledby="included-title">
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-            <div className="flex flex-col gap-5">
-              <h2 id="included-title" className="text-h3 text-primary">
-                {t('included')}
-              </h2>
-              <CheckList items={service.includes} locale={locale} />
-            </div>
-            {service.excludes.length > 0 ? (
-              <div className="flex flex-col gap-5">
-                <h2 className="text-h3 text-primary">{t('excluded')}</h2>
-                <CheckList items={service.excludes} locale={locale} variant="exclude" />
-              </div>
-            ) : null}
-          </div>
-        </Section>
-      ),
-    },
+                  {service.excludes.length > 0 ? (
+                    <div className="flex flex-col gap-5">
+                      <h2 className="text-h3 text-primary">{t('excluded')}</h2>
+                      <CheckList items={service.excludes} locale={locale} variant="exclude" />
+                    </div>
+                  ) : null}
+                </div>
+              </Section>
+            ),
+          },
+        ]
+      : []),
     ...(service.symptoms.length > 0
       ? [
           {
@@ -338,13 +359,32 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
       key: 'book',
       render: (tone) => (
         <Section id="book" tone={tone} aria-labelledby="book-title">
-          <SectionHeader
-            id="book-title"
-            eyebrow={tHome('book.eyebrow')}
-            title={t('book')}
-            lead={tHome('book.lead')}
-          />
-          <BookingSection initialService={slug} />
+          {onRequest ? (
+            <>
+              <SectionHeader
+                id="book-title"
+                eyebrow={tServices('onRequest')}
+                title={t('quote.title')}
+                lead={t('quote.text')}
+              />
+              <div className="reveal-fade flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <CtaLink target={whatsapp} newTabHint={tCommon('opensInNewTab')} size="lg">
+                  <WhatsAppIcon />
+                  {tCta('whatsapp')}
+                </CtaLink>
+              </div>
+            </>
+          ) : (
+            <>
+              <SectionHeader
+                id="book-title"
+                eyebrow={tHome('book.eyebrow')}
+                title={t('book')}
+                lead={tHome('book.lead')}
+              />
+              <BookingSection initialService={slug} />
+            </>
+          )}
         </Section>
       ),
     },

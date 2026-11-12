@@ -40,6 +40,8 @@ export type PricingRules = {
   diagnosticsCreditedToRepair: boolean;
   diagnosticsItemKey: string;
   quoteOnlyServices: string[];
+  /** Lines that already are a diagnosis (a leak test): no diagnostics fee is added next to them. */
+  diagnosticLineIds: string[];
   suggestBundleWhenCheaper: boolean;
 };
 
@@ -160,6 +162,7 @@ export function buildPricingConfig(
       diagnosticsCreditedToRepair: rules.diagnostics_credited_to_repair,
       diagnosticsItemKey: rules.diagnostics_item_key,
       quoteOnlyServices: rules.quote_only_services,
+      diagnosticLineIds: rules.diagnostic_line_ids ?? [],
       suggestBundleWhenCheaper: rules.suggest_bundle_when_cheaper,
     },
   };
@@ -211,19 +214,16 @@ export const bundleSavings = (bundle: BundleOffer): number | null =>
 export const ANNUAL_PLAN_LINES = { standard: 'ac_clean', deep: 'ac_deep' } as const;
 
 export type AnnualPlanTerms = {
-  price: number;
-  includes: { units_max: number; visits: number; deep_cleans: number };
+  price: number | null;
+  includes: { units_max: number | null; visits: number; deep_units: number };
 };
 
 export type AnnualComparison = {
   units: number;
-  standardVisits: number;
-  deepVisits: number;
-  /** One standard clean of `units` split units, booked on its own (before VAT). */
-  standardVisit: number;
-  /** One deep clean of `units` split units, booked on its own; 0 when the plan has none. */
-  deepVisit: number;
-  /** All the plan's visits booked one by one. */
+  visits: number;
+  /** Units deep-cleaned during one of the visits, in place of their standard clean. */
+  deepUnits: number;
+  /** All the plan's visits booked one by one (before VAT). */
   separate: number;
   plan: number;
   saving: number;
@@ -233,30 +233,34 @@ export type AnnualComparison = {
 const NO_VAT: VatState = { registered: false, included: false };
 
 /**
- * What an annual plan's visits would cost booked one by one, at the plan's maximum number of
- * split units (the conservative reading for FCU plans, whose per-visit prices are higher).
- * Null when the price list lacks the standard-clean line or the plan has no visits.
+ * What an annual plan's visits would cost booked one by one, for the plan's number of split
+ * units. One visit may deep-clean some of the units instead of their standard clean; the rest of
+ * that visit is priced at the tier of the units that remain standard. Null when the plan is
+ * quoted after an inspection (no price or no unit count), has no visits, or the price list lacks
+ * a line it needs.
  */
 export function annualPlanComparison(
   cfg: PricingConfig,
   plan: AnnualPlanTerms,
   lines: { standard: string; deep: string } = ANNUAL_PLAN_LINES,
 ): AnnualComparison | null {
-  const units = Math.max(1, Math.floor(plan.includes.units_max));
-  const deepVisits = Math.min(Math.max(0, plan.includes.deep_cleans), plan.includes.visits);
-  const standardVisits = plan.includes.visits - deepVisits;
-  if (!findLine(cfg, lines.standard) || plan.includes.visits <= 0) return null;
-  if (deepVisits > 0 && !findLine(cfg, lines.deep)) return null;
+  const { units_max: unitsMax, visits } = plan.includes;
+  if (plan.price === null || unitsMax === null || visits <= 0) return null;
+  const units = Math.max(1, Math.floor(unitsMax));
+  const deepUnits = Math.min(Math.max(0, Math.floor(plan.includes.deep_units)), units);
+  if (!findLine(cfg, lines.standard)) return null;
+  if (deepUnits > 0 && !findLine(cfg, lines.deep)) return null;
   const standardVisit = quote(cfg, { [lines.standard]: units }, NO_VAT).total;
-  const deepVisit = deepVisits > 0 ? quote(cfg, { [lines.deep]: units }, NO_VAT).total : 0;
-  const separate = standardVisits * standardVisit + deepVisits * deepVisit;
+  const mixedVisit =
+    deepUnits > 0
+      ? quote(cfg, { [lines.standard]: units - deepUnits, [lines.deep]: deepUnits }, NO_VAT).total
+      : standardVisit;
+  const separate = (visits - 1) * standardVisit + mixedVisit;
   const saving = separate - plan.price;
   return {
     units,
-    standardVisits,
-    deepVisits,
-    standardVisit,
-    deepVisit,
+    visits,
+    deepUnits,
     separate,
     plan: plan.price,
     saving,
@@ -334,9 +338,12 @@ export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState
   const diagnosticsLine = cfg.lines.find((l) =>
     l.tiers.some((t) => t.itemKey === cfg.rules.diagnosticsItemKey),
   );
-  const needsDiagnostics = [...fixedByService].some(
-    ([slug, hasFixed]) => !hasFixed && cfg.rules.quoteOnlyServices.includes(slug),
-  );
+  const alreadyDiagnosed = lines.some((l) => cfg.rules.diagnosticLineIds.includes(l.lineId));
+  const needsDiagnostics =
+    !alreadyDiagnosed &&
+    [...fixedByService].some(
+      ([slug, hasFixed]) => !hasFixed && cfg.rules.quoteOnlyServices.includes(slug),
+    );
   if (needsDiagnostics && diagnosticsLine && !selection[diagnosticsLine.id]) {
     lines.push({ ...lineTotal(diagnosticsLine, 1), role: 'diagnostics' });
   }

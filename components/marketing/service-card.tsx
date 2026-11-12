@@ -69,7 +69,7 @@ export async function ServiceCard({ service, priceFrom, locale, badges = [], cla
             <LocalizedText value={name} locale={locale} />
           </Link>
         </h3>
-        <p className="line-clamp-3 text-body text-muted-foreground">
+        <p className="text-body text-pretty text-muted-foreground">
           <LocalizedText value={short} locale={locale} />
         </p>
       </div>
@@ -78,6 +78,8 @@ export async function ServiceCard({ service, priceFrom, locale, badges = [], cla
         <div className="flex flex-col gap-1">
           {priceFrom ? (
             <PriceFrom amount={priceFrom.amount} unit={priceFrom.unit} locale={locale} />
+          ) : !comingSoon ? (
+            <span className="text-small font-medium text-foreground">{t('onRequest')}</span>
           ) : null}
           {service.duration_min ? (
             <span className="flex items-center gap-1.5 text-small text-muted-foreground">

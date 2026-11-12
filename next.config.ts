@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
   // Set explicitly: the Nov 2026 shell-cache advisory affects apps with it unset.
   partialPrefetching: true,
   poweredByHeader: false,
+  // The refrigerant service was split in three (DECISIONS №61): the old address leads to detection.
+  async redirects() {
+    return [
+      {
+        source: '/:locale/services/refrigerant-leak-refill',
+        destination: '/:locale/services/refrigerant-leak-detection',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

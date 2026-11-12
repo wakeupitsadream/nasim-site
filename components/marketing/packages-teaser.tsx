@@ -23,9 +23,10 @@ export async function PackagesTeaser({
   tone?: SectionTone;
   id?: string;
 }) {
-  const [t, tPrice, bundles, annual] = await Promise.all([
+  const [t, tPrice, tContracts, bundles, annual] = await Promise.all([
     getTranslations('Home'),
     getTranslations('Price'),
+    getTranslations('Contracts'),
     getPackages({ type: 'bundle' }),
     getPackages({ type: 'annual' }),
   ]);
@@ -104,12 +105,18 @@ export async function PackagesTeaser({
                 </p>
               </div>
               <p className="shrink-0 text-small text-muted-foreground">
-                {tPrice.rich('perYearRich', {
-                  amount: formatAED(plan.price, locale),
-                  a: (chunks) => (
-                    <Ltr className="text-h3 font-light text-primary tabular-nums">{chunks}</Ltr>
-                  ),
-                })}
+                {plan.price !== null ? (
+                  tPrice.rich('perYearRich', {
+                    amount: formatAED(plan.price, locale),
+                    a: (chunks) => (
+                      <Ltr className="text-h3 font-light text-primary tabular-nums">{chunks}</Ltr>
+                    ),
+                  })
+                ) : (
+                  <span className="text-body font-medium text-primary">
+                    {tContracts('card.quote')}
+                  </span>
+                )}
               </p>
             </li>
           ))}

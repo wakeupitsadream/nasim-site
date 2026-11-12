@@ -4,25 +4,26 @@
     {
       "slug": "ac-cleaning",
       "category": "ac",
+      "group": "cleaning",
       "status": "active",
       "sort": 10,
       "name": {
-        "en": "AC Cleaning",
-        "ru": "Чистка кондиционера",
-        "ar": "تنظيف المكيف",
-        "fr": "Nettoyage de climatiseur",
-        "de": "Klimaanlagen-Reinigung",
-        "zh": "空调清洗",
-        "hi": "एसी की सफ़ाई"
+        "en": "Standard Split AC Cleaning & Service",
+        "ru": "Стандартная чистка и обслуживание сплит-системы",
+        "ar": "التنظيف القياسي لمكيف السبليت وصيانته",
+        "fr": "Nettoyage et entretien standard de climatiseur split",
+        "de": "Standardreinigung & Wartung von Split-Geräten",
+        "zh": "分体式空调标准清洗与保养",
+        "hi": "स्प्लिट एसी की स्टैंडर्ड सफ़ाई और सर्विस"
       },
       "short": {
-        "en": "Filters, indoor coil, blower fan, drain line and outdoor unit. Measurements and before/after photos in your WhatsApp report.",
-        "ru": "Фильтры, внутренний радиатор, вентилятор, дренаж и наружный блок. Замеры и фото до/после в отчёте в WhatsApp.",
-        "ar": "الفلاتر والملف الداخلي ومروحة الدفع وخط التصريف والوحدة الخارجية. قياسات وصور قبل وبعد في تقريرك عبر واتساب.",
-        "fr": "Filtres, échangeur intérieur, turbine, conduite d’évacuation et unité extérieure. Relevés et photos avant/après dans votre rapport WhatsApp.",
-        "de": "Filter, Innenwärmetauscher, Lüfter, Ablaufleitung und Außengerät. Messwerte und Vorher-Nachher-Fotos in Ihrem WhatsApp-Bericht.",
-        "zh": "滤网、蒸发器、风扇、排水管和室外机。您的 WhatsApp 报告中附测量读数和前后对比照片。",
-        "hi": "फ़िल्टर, इनडोर कॉइल, ब्लोअर फैन, ड्रेन लाइन और आउटडोर यूनिट। रीडिंग और पहले/बाद की फ़ोटो आपकी WhatsApp रिपोर्ट में।"
+        "en": "Routine cleaning and servicing for wall-mounted split air conditioners. We clean the filters, accessible indoor coil and fan, flush the drainage system, rinse the accessible outdoor unit and check cooling performance.",
+        "ru": "Регулярная чистка и обслуживание настенных кондиционеров. Очищаем фильтры, доступные части теплообменника и вентилятора, промываем дренаж и наружный блок при наличии доступа, затем проверяем качество охлаждения.",
+        "ar": "تنظيف وصيانة دورية لمكيفات السبليت الجدارية. ننظّف الفلاتر وما يمكن الوصول إليه من الملف الداخلي والمروحة، ونغسل نظام التصريف، ونشطف الوحدة الخارجية إذا أمكن الوصول إليها، ثم نفحص أداء التبريد.",
+        "fr": "Nettoyage et entretien courants des climatiseurs split muraux. Nous nettoyons les filtres et les parties accessibles de l’échangeur intérieur et du ventilateur, rinçons le circuit d’évacuation ainsi que l’unité extérieure lorsqu’elle est accessible, puis contrôlons les performances de refroidissement.",
+        "de": "Regelmäßige Reinigung und Wartung für wandmontierte Split-Geräte. Wir reinigen die Filter sowie die zugänglichen Teile von Innenwärmetauscher und Lüfter, spülen den Kondensatablauf durch, reinigen das Außengerät mit Wasser, soweit es zugänglich ist, und prüfen die Kühlleistung.",
+        "zh": "壁挂分体式空调的常规清洗与保养。我们清洗滤网以及室内机可触及的蒸发器盘管和风扇，冲洗排水系统和可触及的室外机，并检查制冷效果。",
+        "hi": "दीवार पर लगे स्प्लिट एसी की नियमित सफ़ाई और सर्विस। हम फ़िल्टर के साथ इनडोर कॉइल और फैन के पहुँच योग्य हिस्से साफ़ करते हैं, ड्रेनेज सिस्टम फ़्लश करते हैं, आउटडोर यूनिट के पहुँच योग्य हिस्से पानी से धोते हैं और कूलिंग परफ़ॉर्मेंस की जाँच करते हैं।"
       },
       "description_html": {
         "en": "<p>Dubai dust and humidity load an AC unit fast: filters clog, the indoor coil grows a film of dust and mould, the drain line silts up and starts dripping. A standard clean every 4–6 months keeps the air clean, the unit cold and the DEWA bill where it should be.</p><p>The price is fixed before we come. The technician arrives in the agreed one-hour window, and you get a report with photos and temperature readings via WhatsApp before he leaves.</p>",
@@ -110,7 +111,7 @@
         },
         {
           "en": "Refrigerant top-up or repairs",
-          "ru": "Заправка фреона и ремонт",
+          "ru": "Заправка хладагента и ремонт",
           "ar": "تعبئة غاز التبريد أو الإصلاحات",
           "fr": "Appoint de fluide frigorigène ou réparations",
           "de": "Kältemittel nachfüllen oder Reparaturen",
@@ -118,13 +119,13 @@
           "hi": "रेफ़्रिजरेंट भरना या मरम्मत"
         },
         {
-          "en": "Duct cleaning (arranged via licensed partner)",
-          "ru": "Чистка воздуховодов (через лицензированного партнёра)",
-          "ar": "تنظيف مجاري الهواء (يُنظَّم عبر شريك مرخّص)",
-          "fr": "Nettoyage des gaines (confié à un partenaire agréé)",
-          "de": "Kanalreinigung (über einen lizenzierten Partner)",
-          "zh": "风管清洗（通过持牌合作伙伴安排）",
-          "hi": "डक्ट की सफ़ाई (लाइसेंस प्राप्त पार्टनर के ज़रिए)"
+          "en": "Air duct cleaning (a separate service)",
+          "ru": "Чистка воздуховодов (отдельная услуга)",
+          "ar": "تنظيف مجاري الهواء (خدمة منفصلة)",
+          "fr": "Nettoyage des gaines (service distinct)",
+          "de": "Luftkanalreinigung (separate Leistung)",
+          "zh": "风管清洗（单独的服务项目）",
+          "hi": "एयर डक्ट की सफ़ाई (अलग सेवा)"
         }
       ],
       "symptoms": [
@@ -195,7 +196,7 @@
         }
       ],
       "duration_min": 45,
-      "price_from": 269,
+      "price_from": 249,
       "pricing_unit": "unit",
       "available_from": null,
       "seo_title": {
@@ -208,235 +209,47 @@
         "hi": "दुबई में एसी की सफ़ाई — तय कीमत, फ़ोटो रिपोर्ट"
       },
       "seo_description": {
-        "en": "Split AC cleaning in Dubai from AED 269 per unit. Filters, coil, fan, drain and outdoor unit. Fixed price, one-hour arrival window, WhatsApp report with photos.",
-        "ru": "Чистка сплит-систем в Дубае от 269 AED за блок. Фильтры, радиатор, вентилятор, дренаж, наружный блок. Фиксированная цена, часовой слот, отчёт в WhatsApp.",
-        "ar": "تنظيف مكيفات السبليت في دبي ابتداءً من 269 درهمًا للوحدة. الفلاتر والملف والمروحة والتصريف والوحدة الخارجية. سعر ثابت، موعد وصول محدد بساعة، وتقرير مصوّر عبر واتساب.",
-        "fr": "Nettoyage de climatiseur split à Dubaï dès 269 AED l’unité. Filtres, échangeur, évacuation, unité extérieure. Prix fixe, créneau d’une heure, rapport photo.",
-        "de": "Split-Klimaanlage reinigen in Dubai ab 269 AED: Filter, Wärmetauscher, Lüfter, Ablauf, Außengerät. Festpreis, Ein-Stunden-Zeitfenster, Fotobericht per WhatsApp.",
-        "zh": "迪拜分体式空调清洗，每台 AED 269 起。滤网、蒸发器、风扇、排水管和室外机。固定价格，一小时到达时段，WhatsApp 照片报告。",
-        "hi": "दुबई में स्प्लिट एसी की सफ़ाई AED 269 प्रति यूनिट से। फ़िल्टर, कॉइल, पंखा, ड्रेन और आउटडोर यूनिट। तय कीमत, एक घंटे का आगमन स्लॉट, फ़ोटो के साथ WhatsApp रिपोर्ट।"
-      }
-    },
-    {
-      "slug": "ac-deep-cleaning",
-      "category": "ac",
-      "status": "active",
-      "sort": 20,
-      "name": {
-        "en": "AC Deep Cleaning",
-        "ru": "Глубокая чистка кондиционера",
-        "ar": "التنظيف العميق للمكيف",
-        "fr": "Nettoyage en profondeur de climatiseur",
-        "de": "Klimaanlagen-Tiefenreinigung",
-        "zh": "空调深度清洗",
-        "hi": "एसी की डीप क्लीनिंग"
-      },
-      "short": {
-        "en": "Near-full disassembly of the indoor unit. For smell, mould or black build-up that a standard clean cannot reach.",
-        "ru": "Почти полная разборка внутреннего блока. Когда есть запах, плесень или чёрный налёт, до которых не достаёт обычная чистка.",
-        "ar": "تفكيك شبه كامل للوحدة الداخلية. للرائحة أو العفن أو التراكمات السوداء التي لا يصل إليها التنظيف القياسي.",
-        "fr": "Démontage quasi complet de l’unité intérieure. Pour les odeurs, la moisissure ou les dépôts noirs qu’un nettoyage standard ne peut pas atteindre.",
-        "de": "Nahezu vollständige Demontage des Innengeräts. Bei Geruch, Schimmel oder schwarzen Ablagerungen, die eine Standardreinigung nicht erreicht.",
-        "zh": "室内机近乎完全拆机。针对标准清洗够不到的异味、霉菌和黑色积垢。",
-        "hi": "इनडोर यूनिट को लगभग पूरी तरह खोलकर सफ़ाई। बदबू, फफूंद या काली परत के लिए, जहाँ स्टैंडर्ड सफ़ाई नहीं पहुँच पाती।"
-      },
-      "description_html": {
-        "en": "<p>When the unit smells musty, you see black spots on the louvres, or someone at home keeps sneezing when the AC runs, the problem sits deep inside: on the blower drum, behind the coil, in the drain pan. We take the indoor unit apart, wash every part with an antibacterial cleaner and reassemble it.</p><p>Recommended once a year for bedrooms and for any unit older than 5 years. For very old units we check the plastic parts first and tell you honestly if disassembly is risky.</p>",
-        "ru": "<p>Если из блока пахнет сыростью, на жалюзи чёрные точки или кто-то дома чихает при включённом кондиционере — проблема глубоко внутри: на барабане вентилятора, за радиатором, в поддоне. Мы разбираем внутренний блок, моем каждую деталь антибактериальным средством и собираем обратно.</p><p>Рекомендуем раз в год для спален и для блоков старше 5 лет. Для очень старых блоков сначала проверяем пластик и честно говорим, если разборка рискованна.</p>",
-        "ar": "<p>عندما تفوح من الوحدة رائحة عفن، أو ترى بقعًا سوداء على ريش توجيه الهواء، أو يستمر أحد أفراد البيت في العطس عند تشغيل المكيف، فالمشكلة في العمق: على أسطوانة المروحة، وخلف الملف، وفي صينية التصريف. نفكّك الوحدة الداخلية ونغسل كل قطعة بمنظّف مضاد للبكتيريا ثم نعيد تركيبها.</p><p>يُنصح به مرة في السنة لغرف النوم ولأي وحدة عمرها أكثر من 5 سنوات. وفي الوحدات القديمة جدًا نفحص القطع البلاستيكية أولًا ونخبرك بصراحة إن كان التفكيك محفوفًا بالمخاطر.</p>",
-        "fr": "<p>Quand l’unité sent le moisi, que vous voyez des points noirs sur les volets, ou que quelqu’un à la maison éternue dès que la clim tourne, le problème est logé en profondeur : sur la turbine, derrière l’échangeur, dans le bac à condensats. Nous démontons l’unité intérieure, lavons chaque pièce avec un nettoyant antibactérien et la remontons.</p><p>Recommandé une fois par an pour les chambres et pour toute unité de plus de 5 ans. Sur les unités très anciennes, nous vérifions d’abord les pièces en plastique et vous disons honnêtement si le démontage présente un risque.</p>",
-        "de": "<p>Wenn das Gerät muffig riecht, Sie schwarze Punkte auf den Lamellen sehen oder jemand zu Hause ständig niest, sobald die Klimaanlage läuft, sitzt das Problem tief im Inneren: auf der Lüfterwalze, hinter dem Wärmetauscher, in der Kondensatwanne. Wir zerlegen das Innengerät, waschen jedes Teil mit einem antibakteriellen Reiniger und bauen es wieder zusammen.</p><p>Empfohlen einmal im Jahr für Schlafzimmer und für jedes Gerät, das älter als 5 Jahre ist. Bei sehr alten Geräten prüfen wir zuerst die Kunststoffteile und sagen Ihnen ehrlich, wenn die Demontage riskant ist.</p>",
-        "zh": "<p>机器有霉味、导风板上出现黑点，或者家里有人一开空调就打喷嚏——问题藏在深处：风轮上、蒸发器后面、接水盘里。我们把室内机拆开，用抗菌清洗剂清洗每个部件，再重新装好。</p><p>建议卧室空调和使用超过 5 年的机器每年做一次。对于很旧的机器，我们会先检查塑料部件，如果拆机有风险会如实告知。</p>",
-        "hi": "<p>जब यूनिट से सीलन की बदबू आती है, लूवर पर काले धब्बे दिखते हैं, या एसी चलते ही घर में कोई लगातार छींकता है, तो समस्या अंदर गहराई में होती है: ब्लोअर ड्रम पर, कॉइल के पीछे, ड्रेन ट्रे में। हम इनडोर यूनिट को खोलते हैं, हर हिस्से को एंटीबैक्टीरियल क्लीनर से धोते हैं और फिर से जोड़ देते हैं।</p><p>बेडरूम और 5 साल से पुरानी हर यूनिट के लिए साल में एक बार की सलाह दी जाती है। बहुत पुरानी यूनिट में हम पहले प्लास्टिक के हिस्से जाँचते हैं और अगर खोलना जोखिम भरा हो, तो आपको ईमानदारी से बता देते हैं।</p>"
-      },
-      "includes": [
-        {
-          "en": "Everything in the standard clean",
-          "ru": "Всё из стандартной чистки",
-          "ar": "كل ما في التنظيف القياسي",
-          "fr": "Tout le contenu du nettoyage standard",
-          "de": "Alles aus der Standardreinigung",
-          "zh": "标准清洗的全部内容",
-          "hi": "स्टैंडर्ड सफ़ाई की हर चीज़"
-        },
-        {
-          "en": "Removal of the front cover, louvres and drain pan",
-          "ru": "Снятие передней крышки, жалюзи и поддона",
-          "ar": "فك الغطاء الأمامي وريش توجيه الهواء وصينية التصريف",
-          "fr": "Dépose de la façade, des volets et du bac à condensats",
-          "de": "Abnahme von Frontabdeckung, Lamellen und Kondensatwanne",
-          "zh": "拆下前面板、导风板和接水盘",
-          "hi": "सामने का कवर, लूवर और ड्रेन ट्रे निकालना"
-        },
-        {
-          "en": "Blower drum removed and washed",
-          "ru": "Снятие и мойка барабана вентилятора",
-          "ar": "فك أسطوانة المروحة وغسلها",
-          "fr": "Turbine déposée et lavée",
-          "de": "Lüfterwalze ausgebaut und gewaschen",
-          "zh": "拆下并清洗风轮",
-          "hi": "ब्लोअर ड्रम निकालकर धोना"
-        },
-        {
-          "en": "Coil high-pressure wash with coil cleaner",
-          "ru": "Мойка радиатора под давлением со спецсредством",
-          "ar": "غسل الملف بالضغط العالي بمنظّف خاص بالملفات",
-          "fr": "Lavage haute pression de l’échangeur avec un nettoyant dédié",
-          "de": "Hochdruckwäsche des Wärmetauschers mit Lamellenreiniger",
-          "zh": "用专用清洗剂高压冲洗蒸发器",
-          "hi": "कॉइल क्लीनर से कॉइल की हाई-प्रेशर धुलाई"
-        },
-        {
-          "en": "Antibacterial and anti-mould treatment",
-          "ru": "Антибактериальная и противогрибковая обработка",
-          "ar": "معالجة مضادة للبكتيريا والعفن",
-          "fr": "Traitement antibactérien et anti-moisissure",
-          "de": "Antibakterielle Behandlung und Schimmelschutz",
-          "zh": "抗菌和防霉处理",
-          "hi": "एंटीबैक्टीरियल और फफूंद-रोधी ट्रीटमेंट"
-        },
-        {
-          "en": "Photo report of every stage",
-          "ru": "Фотоотчёт по каждому этапу",
-          "ar": "تقرير مصوّر لكل مرحلة",
-          "fr": "Rapport photo de chaque étape",
-          "de": "Fotobericht zu jedem Arbeitsschritt",
-          "zh": "每个步骤的照片报告",
-          "hi": "हर चरण की फ़ोटो रिपोर्ट"
-        }
-      ],
-      "excludes": [
-        {
-          "en": "Repairs and refrigerant work",
-          "ru": "Ремонт и работа с фреоном",
-          "ar": "الإصلاحات وأعمال غاز التبريد",
-          "fr": "Réparations et interventions sur le fluide frigorigène",
-          "de": "Reparaturen und Arbeiten am Kältemittelkreislauf",
-          "zh": "维修和制冷剂相关工作",
-          "hi": "मरम्मत और रेफ़्रिजरेंट का काम"
-        }
-      ],
-      "symptoms": [
-        {
-          "en": "Musty or sour smell when the AC runs",
-          "ru": "Запах сырости или кислый запах при работе",
-          "ar": "رائحة عفن أو رائحة حامضة أثناء عمل المكيف",
-          "fr": "Odeur de moisi ou odeur aigre quand la clim tourne",
-          "de": "Muffiger oder säuerlicher Geruch, wenn die Klimaanlage läuft",
-          "zh": "开机时有霉味或酸味",
-          "hi": "एसी चलने पर सीलन या खट्टी बदबू"
-        },
-        {
-          "en": "Black spots on the louvres or air outlet",
-          "ru": "Чёрные точки на жалюзи или решётке",
-          "ar": "بقع سوداء على ريش توجيه الهواء أو مخرج الهواء",
-          "fr": "Points noirs sur les volets ou la bouche de soufflage",
-          "de": "Schwarze Punkte auf den Lamellen oder am Luftauslass",
-          "zh": "导风板或出风口有黑点",
-          "hi": "लूवर या एयर आउटलेट पर काले धब्बे"
-        },
-        {
-          "en": "Allergies or coughing indoors",
-          "ru": "Аллергия или кашель в помещении",
-          "ar": "حساسية أو سعال داخل المنزل",
-          "fr": "Allergies ou toux à l’intérieur",
-          "de": "Allergien oder Husten in den Räumen",
-          "zh": "在室内出现过敏或咳嗽",
-          "hi": "घर के अंदर एलर्जी या खाँसी"
-        }
-      ],
-      "visit_steps": [
-        {
-          "en": "Protective sheeting, readings before",
-          "ru": "Защитная плёнка, замеры до",
-          "ar": "أغطية واقية وقراءات قبل العمل",
-          "fr": "Bâches de protection, relevés avant",
-          "de": "Abdeckplanen, Messwerte vorher",
-          "zh": "铺防护布，记录清洗前读数",
-          "hi": "सुरक्षा शीट बिछाना, पहले की रीडिंग"
-        },
-        {
-          "en": "Indoor unit disassembled, parts washed outside",
-          "ru": "Разборка внутреннего блока, мойка деталей снаружи",
-          "ar": "تفكيك الوحدة الداخلية وغسل القطع في الخارج",
-          "fr": "Unité intérieure démontée, pièces lavées à l’extérieur",
-          "de": "Innengerät zerlegt, Teile draußen gewaschen",
-          "zh": "拆开室内机，部件拿到室外清洗",
-          "hi": "इनडोर यूनिट खोलना, हिस्सों की बाहर धुलाई"
-        },
-        {
-          "en": "Coil washed, treatment applied",
-          "ru": "Мойка радиатора, обработка",
-          "ar": "غسل الملف وتطبيق المعالجة",
-          "fr": "Échangeur lavé, traitement appliqué",
-          "de": "Wärmetauscher gewaschen, Behandlung aufgetragen",
-          "zh": "清洗蒸发器，进行抗菌处理",
-          "hi": "कॉइल की धुलाई, ट्रीटमेंट"
-        },
-        {
-          "en": "Reassembly, test run, report",
-          "ru": "Сборка, тестовый запуск, отчёт",
-          "ar": "إعادة التركيب وتشغيل تجريبي وتقرير",
-          "fr": "Remontage, essai de fonctionnement, rapport",
-          "de": "Zusammenbau, Probelauf, Bericht",
-          "zh": "重新组装，试运行，出报告",
-          "hi": "फिर से जोड़ना, टेस्ट रन, रिपोर्ट"
-        }
-      ],
-      "duration_min": 90,
-      "price_from": 599,
-      "pricing_unit": "unit",
-      "available_from": null,
-      "seo_title": {
-        "en": "AC Deep Cleaning in Dubai — removes smell and mould",
-        "ru": "Глубокая чистка кондиционера в Дубае — убираем запах и плесень",
-        "ar": "التنظيف العميق للمكيفات في دبي — يزيل الرائحة والعفن",
-        "fr": "Nettoyage en profondeur de clim à Dubaï : odeurs, moisissure",
-        "de": "Klimaanlagen-Tiefenreinigung Dubai – gegen Geruch & Schimmel",
-        "zh": "迪拜空调深度清洗：去除异味和霉菌",
-        "hi": "दुबई में एसी की डीप क्लीनिंग — बदबू और फफूंद का सफ़ाया"
-      },
-      "seo_description": {
-        "en": "Deep AC cleaning with full disassembly of the indoor unit from AED 349. Blower drum, coil and drain pan washed, anti-mould treatment, photo report.",
-        "ru": "Глубокая чистка кондиционера с разборкой внутреннего блока от 599 AED. Барабан, радиатор и поддон, противогрибковая обработка, фотоотчёт.",
-        "ar": "تنظيف عميق للمكيف مع تفكيك كامل للوحدة الداخلية ابتداءً من 599 درهمًا. غسل أسطوانة المروحة والملف وصينية التصريف، معالجة مضادة للعفن، وتقرير مصوّر.",
-        "fr": "Nettoyage en profondeur de clim à Dubaï, unité intérieure démontée, dès 599 AED. Turbine, échangeur, bac à condensats lavés, anti-moisissure, rapport photo.",
-        "de": "Klimaanlagen-Tiefenreinigung in Dubai: komplette Demontage des Innengeräts ab 599 AED. Lüfterwalze, Wärmetauscher, Kondensatwanne, Schimmelschutz, Fotobericht.",
-        "zh": "迪拜空调深度清洗，室内机完全拆机，AED 599 起。清洗风轮、蒸发器和接水盘，防霉处理，照片报告。",
-        "hi": "इनडोर यूनिट को पूरी तरह खोलकर एसी की डीप क्लीनिंग AED 599 से। ब्लोअर ड्रम, कॉइल और ड्रेन ट्रे की धुलाई, फफूंद-रोधी ट्रीटमेंट, फ़ोटो रिपोर्ट।"
+        "en": "Split AC cleaning in Dubai from AED 249 per unit. Filters, coil, fan, drain and outdoor unit. Fixed price, one-hour arrival window, WhatsApp report with photos.",
+        "ru": "Чистка сплит-систем в Дубае от 249 AED за блок. Фильтры, радиатор, вентилятор, дренаж, наружный блок. Фиксированная цена, часовой слот, отчёт в WhatsApp.",
+        "ar": "تنظيف مكيفات السبليت في دبي ابتداءً من 249 درهمًا للوحدة. الفلاتر والملف والمروحة والتصريف والوحدة الخارجية. سعر ثابت، موعد وصول محدد بساعة، وتقرير مصوّر عبر واتساب.",
+        "fr": "Nettoyage de climatiseur split à Dubaï dès 249 AED l’unité. Filtres, échangeur, évacuation, unité extérieure. Prix fixe, créneau d’une heure, rapport photo.",
+        "de": "Split-Klimaanlage reinigen in Dubai ab 249 AED: Filter, Wärmetauscher, Lüfter, Ablauf, Außengerät. Festpreis, Ein-Stunden-Zeitfenster, Fotobericht per WhatsApp.",
+        "zh": "迪拜分体式空调清洗，每台 AED 249 起。滤网、蒸发器、风扇、排水管和室外机。固定价格，一小时到达时段，WhatsApp 照片报告。",
+        "hi": "दुबई में स्प्लिट एसी की सफ़ाई AED 249 प्रति यूनिट से। फ़िल्टर, कॉइल, पंखा, ड्रेन और आउटडोर यूनिट। तय कीमत, एक घंटे का आगमन स्लॉट, फ़ोटो के साथ WhatsApp रिपोर्ट।"
       }
     },
     {
       "slug": "ducted-ac-fcu-service",
       "category": "ac",
+      "group": "cleaning",
       "status": "active",
-      "sort": 30,
+      "sort": 20,
       "name": {
-        "en": "Ducted AC & Fan Coil Service",
-        "ru": "Обслуживание канальных систем и фанкойлов",
+        "en": "Ducted AC & Fan Coil Servicing",
+        "ru": "Обслуживание канальных кондиционеров и фанкойлов",
         "ar": "صيانة التكييف المركزي ووحدات الفان كويل",
-        "fr": "Entretien gainable et ventilo-convecteurs",
+        "fr": "Entretien de climatisation gainable et de ventilo-convecteurs",
         "de": "Wartung von Kanalklimaanlagen & Gebläsekonvektoren",
         "zh": "中央空调与风机盘管保养",
         "hi": "डक्टेड एसी और फैन कॉइल सर्विस"
       },
       "short": {
-        "en": "For villas with ducted systems and towers with fan coil units: filters, coils, drain, thermostat check.",
-        "ru": "Для вилл с канальными системами и башен с фанкойлами: фильтры, радиаторы, дренаж, проверка термостатов.",
-        "ar": "للفلل بأنظمة الدكت والأبراج بوحدات الفان كويل: الفلاتر والملفات والتصريف وفحص الثرموستات.",
-        "fr": "Pour les villas en gainable et les tours équipées de ventilo-convecteurs : filtres, échangeurs, évacuation, contrôle du thermostat.",
-        "de": "Für Villen mit Kanalsystem und Hochhäuser mit Gebläsekonvektoren: Filter, Wärmetauscher, Ablauf, Thermostatprüfung.",
-        "zh": "适用于装有中央空调的别墅和使用风机盘管的高层公寓：滤网、盘管、排水、温控器检查。",
-        "hi": "डक्टेड सिस्टम वाले विला और फैन कॉइल यूनिट वाले टावरों के लिए: फ़िल्टर, कॉइल, ड्रेन, थर्मोस्टैट की जाँच।"
+        "en": "Cleaning and routine servicing for indoor AC units concealed above the ceiling. We clean the filters, accessible coil, fan and drainage system, then check airflow and temperature control.",
+        "ru": "Чистим и обслуживаем внутренние блоки, скрытые над потолком. Очищаем фильтры, доступные части теплообменника и вентилятора, поддон и дренаж, затем проверяем подачу воздуха и управление температурой.",
+        "ar": "تنظيف وصيانة دورية لوحدات التكييف الداخلية المخفية فوق السقف. ننظّف الفلاتر وما يمكن الوصول إليه من الملف والمروحة ونظام التصريف، ثم نفحص تدفق الهواء والتحكم في درجة الحرارة.",
+        "fr": "Nettoyage et entretien courants des unités intérieures dissimulées au-dessus du plafond. Nous nettoyons les filtres, les parties accessibles de l’échangeur et du ventilateur ainsi que le circuit d’évacuation, puis contrôlons le débit d’air et la régulation de la température.",
+        "de": "Reinigung und regelmäßige Wartung für Innengeräte, die verdeckt über der Decke sitzen. Wir reinigen die Filter, die zugänglichen Teile von Wärmetauscher und Lüfter sowie den Kondensatablauf und prüfen anschließend Luftstrom und Temperaturregelung.",
+        "zh": "为隐藏在吊顶上方的空调室内机提供清洗和常规保养。我们清洗滤网、可触及的盘管、风扇和排水系统，然后检查风量和温度控制。",
+        "hi": "सीलिंग के ऊपर छिपी इनडोर एसी यूनिट की सफ़ाई और नियमित सर्विस। हम फ़िल्टर, कॉइल के पहुँच योग्य हिस्से, फैन और ड्रेनेज सिस्टम साफ़ करते हैं, फिर हवा के बहाव और तापमान कंट्रोल की जाँच करते हैं।"
       },
       "description_html": {
-        "en": "<p>Villas and most towers run ducted systems: a fan coil unit hidden above a ceiling hatch feeds several rooms. Nobody sees it, so it is cleaned far less often than it should be, and the first sign of trouble is usually a water stain on the ceiling.</p><p>We service each fan coil unit through the access hatch: filters, coil, drain pan and line, thermostat and airflow check. Duct cleaning itself needs a separate Dubai Municipality approval, so we arrange it through a licensed partner when needed.</p>",
-        "ru": "<p>На виллах и в большинстве башен стоят канальные системы: фанкойл спрятан за люком в потолке и обслуживает несколько комнат. Его никто не видит, поэтому чистят его гораздо реже, чем нужно, и первый признак проблемы — обычно пятно воды на потолке.</p><p>Мы обслуживаем каждый фанкойл через люк: фильтры, радиатор, поддон и дренаж, проверка термостата и потока. Сама чистка воздуховодов требует отдельного разрешения Dubai Municipality — при необходимости организуем через лицензированного партнёра.</p>",
-        "ar": "<p>تعمل الفلل ومعظم الأبراج بأنظمة الدكت: وحدة فان كويل مخفية فوق فتحة في السقف تغذّي عدة غرف. لا يراها أحد، لذا تُنظَّف أقل بكثير مما ينبغي، وأول علامة على المشكلة عادةً بقعة ماء على السقف.</p><p>نصون كل وحدة فان كويل عبر فتحة الصيانة: الفلاتر والملف وصينية التصريف وخطه، وفحص الثرموستات وتدفق الهواء. أما تنظيف مجاري الهواء نفسها فيتطلب تصريحًا منفصلًا من بلدية دبي، لذلك ننظّمه عبر شريك مرخّص عند الحاجة.</p>",
-        "fr": "<p>Les villas et la plupart des tours fonctionnent en gainable : un ventilo-convecteur caché au-dessus d’une trappe de plafond alimente plusieurs pièces. Personne ne le voit, il est donc nettoyé bien moins souvent qu’il le faudrait, et le premier signe de problème est généralement une tache d’eau au plafond.</p><p>Nous entretenons chaque ventilo-convecteur par la trappe d’accès : filtres, échangeur, bac et conduite d’évacuation, thermostat et contrôle du débit d’air. Le nettoyage des gaines lui-même exige un agrément distinct de la Municipalité de Dubaï ; nous le confions donc à un partenaire agréé quand c’est nécessaire.</p>",
-        "de": "<p>Villen und die meisten Hochhäuser haben Kanalsysteme: Ein Gebläsekonvektor (FCU), versteckt über einer Revisionsklappe in der Decke, versorgt mehrere Räume. Niemand sieht ihn, deshalb wird er viel seltener gereinigt, als er sollte – und das erste Anzeichen für Probleme ist meist ein Wasserfleck an der Decke.</p><p>Wir warten jeden Gebläsekonvektor durch die Revisionsklappe: Filter, Wärmetauscher, Kondensatwanne und Ablaufleitung, Thermostat- und Luftstromprüfung. Die Reinigung der Luftkanäle selbst braucht eine separate Genehmigung der Dubai Municipality, deshalb organisieren wir sie bei Bedarf über einen lizenzierten Partner.</p>",
-        "zh": "<p>别墅和大多数高层公寓用的是风管式中央空调：一台藏在吊顶检修口上方的风机盘管为几个房间送风。没人看得见它，所以清洗频率远低于应有的水平，出问题的第一个迹象通常是天花板上的水渍。</p><p>我们通过检修口保养每一台风机盘管：滤网、盘管、接水盘和排水管，并检查温控器和风量。风管清洗本身需要迪拜市政局的单独许可，需要时我们会通过持牌合作伙伴安排。</p>",
-        "hi": "<p>विला और ज़्यादातर टावरों में डक्टेड सिस्टम होता है: छत के हैच के ऊपर छिपी एक फैन कॉइल यूनिट कई कमरों में हवा देती है। उसे कोई देखता नहीं, इसलिए उसकी सफ़ाई ज़रूरत से कहीं कम होती है, और परेशानी का पहला संकेत आमतौर पर छत पर पानी का दाग़ होता है।</p><p>हम हर फैन कॉइल यूनिट की सर्विस एक्सेस हैच से करते हैं: फ़िल्टर, कॉइल, ड्रेन ट्रे और लाइन, थर्मोस्टैट और हवा के बहाव की जाँच। डक्ट की सफ़ाई के लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए, इसलिए ज़रूरत पड़ने पर हम इसे लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं।</p>"
+        "en": "<p>Villas and most towers run ducted systems: a fan coil unit hidden above a ceiling hatch feeds several rooms. Nobody sees it, so it is cleaned far less often than it should be, and the first sign of trouble is usually a water stain on the ceiling.</p><p>We service each fan coil unit through the access hatch: filters, coil, drain pan and line, thermostat and airflow check.</p>",
+        "ru": "<p>На виллах и в большинстве башен стоят канальные системы: фанкойл спрятан за люком в потолке и обслуживает несколько комнат. Его никто не видит, поэтому чистят его гораздо реже, чем нужно, и первый признак проблемы — обычно пятно воды на потолке.</p><p>Мы обслуживаем каждый фанкойл через люк: фильтры, радиатор, поддон и дренаж, проверка термостата и потока.</p>",
+        "ar": "<p>تعمل الفلل ومعظم الأبراج بأنظمة الدكت: وحدة فان كويل مخفية فوق فتحة في السقف تغذّي عدة غرف. لا يراها أحد، لذا تُنظَّف أقل بكثير مما ينبغي، وأول علامة على المشكلة عادةً بقعة ماء على السقف.</p><p>نصون كل وحدة فان كويل عبر فتحة الصيانة: الفلاتر والملف وصينية التصريف وخطه، وفحص الثرموستات وتدفق الهواء.</p>",
+        "fr": "<p>Les villas et la plupart des tours fonctionnent en gainable : un ventilo-convecteur caché au-dessus d’une trappe de plafond alimente plusieurs pièces. Personne ne le voit, il est donc nettoyé bien moins souvent qu’il le faudrait, et le premier signe de problème est généralement une tache d’eau au plafond.</p><p>Nous entretenons chaque ventilo-convecteur par la trappe d’accès : filtres, échangeur, bac et conduite d’évacuation, thermostat et contrôle du débit d’air.</p>",
+        "de": "<p>Villen und die meisten Hochhäuser haben Kanalsysteme: Ein Gebläsekonvektor (FCU), versteckt über einer Revisionsklappe in der Decke, versorgt mehrere Räume. Niemand sieht ihn, deshalb wird er viel seltener gereinigt, als er sollte – und das erste Anzeichen für Probleme ist meist ein Wasserfleck an der Decke.</p><p>Wir warten jeden Gebläsekonvektor durch die Revisionsklappe: Filter, Wärmetauscher, Kondensatwanne und Ablaufleitung, Thermostat- und Luftstromprüfung.</p>",
+        "zh": "<p>别墅和大多数高层公寓用的是风管式中央空调：一台藏在吊顶检修口上方的风机盘管为几个房间送风。没人看得见它，所以清洗频率远低于应有的水平，出问题的第一个迹象通常是天花板上的水渍。</p><p>我们通过检修口保养每一台风机盘管：滤网、盘管、接水盘和排水管，并检查温控器和风量。</p>",
+        "hi": "<p>विला और ज़्यादातर टावरों में डक्टेड सिस्टम होता है: छत के हैच के ऊपर छिपी एक फैन कॉइल यूनिट कई कमरों में हवा देती है। उसे कोई देखता नहीं, इसलिए उसकी सफ़ाई ज़रूरत से कहीं कम होती है, और परेशानी का पहला संकेत आमतौर पर छत पर पानी का दाग़ होता है।</p><p>हम हर फैन कॉइल यूनिट की सर्विस एक्सेस हैच से करते हैं: फ़िल्टर, कॉइल, ड्रेन ट्रे और लाइन, थर्मोस्टैट और हवा के बहाव की जाँच।</p>"
       },
       "includes": [
         {
@@ -487,13 +300,13 @@
       ],
       "excludes": [
         {
-          "en": "Duct cleaning (licensed partner)",
-          "ru": "Чистка воздуховодов (лицензированный партнёр)",
-          "ar": "تنظيف مجاري الهواء (شريك مرخّص)",
-          "fr": "Nettoyage des gaines (partenaire agréé)",
-          "de": "Kanalreinigung (lizenzierter Partner)",
-          "zh": "风管清洗（持牌合作伙伴）",
-          "hi": "डक्ट की सफ़ाई (लाइसेंस प्राप्त पार्टनर)"
+          "en": "Air duct cleaning (a separate service)",
+          "ru": "Чистка воздуховодов (отдельная услуга)",
+          "ar": "تنظيف مجاري الهواء (خدمة منفصلة)",
+          "fr": "Nettoyage des gaines (service distinct)",
+          "de": "Luftkanalreinigung (separate Leistung)",
+          "zh": "风管清洗（单独的服务项目）",
+          "hi": "एयर डक्ट की सफ़ाई (अलग सेवा)"
         },
         {
           "en": "Large office VRF systems",
@@ -573,7 +386,7 @@
         }
       ],
       "duration_min": 40,
-      "price_from": 349,
+      "price_from": 329,
       "pricing_unit": "fcu",
       "available_from": null,
       "seo_title": {
@@ -586,208 +399,606 @@
         "hi": "दुबई के विला और टावरों में डक्टेड एसी और FCU सर्विस"
       },
       "seo_description": {
-        "en": "Fan coil unit cleaning and ducted AC service for Dubai villas and apartments from AED 349 per FCU. Filters, coil, drain, thermostat check, photo report.",
-        "ru": "Чистка фанкойлов и обслуживание канальных систем в виллах и квартирах Дубая от 349 AED за фанкойл. Фильтры, радиатор, дренаж, термостаты, фотоотчёт.",
-        "ar": "تنظيف وحدات الفان كويل وصيانة أنظمة الدكت لفلل دبي وشققها ابتداءً من 349 درهمًا لكل وحدة فان كويل. الفلاتر والملف والتصريف وفحص الثرموستات وتقرير مصوّر.",
-        "fr": "Nettoyage de ventilo-convecteurs et entretien de clim gainable à Dubaï dès 349 AED par FCU. Filtres, échangeur, évacuation, thermostat, rapport photo.",
-        "de": "FCU-Reinigung und Wartung von Kanalklimaanlagen in Dubai für Villen und Apartments ab 349 AED pro FCU. Filter, Wärmetauscher, Ablauf, Thermostat, Fotobericht.",
-        "zh": "迪拜别墅和公寓的风机盘管清洗与中央空调保养，每台风机盘管 AED 349 起。滤网、盘管、排水、温控器检查，照片报告。",
-        "hi": "दुबई के विला और अपार्टमेंट के लिए फैन कॉइल यूनिट की सफ़ाई और डक्टेड एसी सर्विस AED 349 प्रति FCU से। फ़िल्टर, कॉइल, ड्रेन, थर्मोस्टैट की जाँच, फ़ोटो रिपोर्ट।"
+        "en": "Fan coil unit cleaning and ducted AC service for Dubai villas and apartments from AED 329 per FCU. Filters, coil, drain, thermostat check, photo report.",
+        "ru": "Чистка фанкойлов и обслуживание канальных систем в виллах и квартирах Дубая от 329 AED за фанкойл. Фильтры, радиатор, дренаж, термостаты, фотоотчёт.",
+        "ar": "تنظيف وحدات الفان كويل وصيانة أنظمة الدكت لفلل دبي وشققها ابتداءً من 329 درهمًا لكل وحدة فان كويل. الفلاتر والملف والتصريف وفحص الثرموستات وتقرير مصوّر.",
+        "fr": "Nettoyage de ventilo-convecteurs et entretien de clim gainable à Dubaï dès 329 AED par FCU. Filtres, échangeur, évacuation, thermostat, rapport photo.",
+        "de": "FCU-Reinigung und Wartung von Kanalklimaanlagen in Dubai für Villen und Apartments ab 329 AED pro FCU. Filter, Wärmetauscher, Ablauf, Thermostat, Fotobericht.",
+        "zh": "迪拜别墅和公寓的风机盘管清洗与中央空调保养，每台风机盘管 AED 329 起。滤网、盘管、排水、温控器检查，照片报告。",
+        "hi": "दुबई के विला और अपार्टमेंट के लिए फैन कॉइल यूनिट की सफ़ाई और डक्टेड एसी सर्विस AED 329 प्रति FCU से। फ़िल्टर, कॉइल, ड्रेन, थर्मोस्टैट की जाँच, फ़ोटो रिपोर्ट।"
       }
     },
     {
-      "slug": "emergency-ac-repair",
+      "slug": "ac-deep-cleaning",
       "category": "ac",
+      "group": "cleaning",
       "status": "active",
-      "sort": 40,
+      "sort": 30,
       "name": {
-        "en": "Emergency AC Call-out",
-        "ru": "Срочный вызов",
-        "ar": "زيارة طوارئ للمكيف",
-        "fr": "Dépannage climatisation en urgence",
-        "de": "Klimaanlagen-Notdienst",
-        "zh": "空调紧急上门",
-        "hi": "तत्काल एसी कॉल-आउट"
+        "en": "Split AC Deep Cleaning",
+        "ru": "Глубокая чистка сплит-системы",
+        "ar": "التنظيف العميق لمكيف السبليت",
+        "fr": "Nettoyage en profondeur de climatiseur split",
+        "de": "Tiefenreinigung von Split-Geräten",
+        "zh": "分体式空调深度清洗",
+        "hi": "स्प्लिट एसी की डीप क्लीनिंग"
       },
       "short": {
-        "en": "Not cooling, leaking water, won't switch on. Same-day visit, fixed diagnostic fee credited to the repair.",
-        "ru": "Не холодит, течёт вода, не включается. Выезд в тот же день, фиксированная диагностика засчитывается в ремонт.",
-        "ar": "لا يبرّد، يسرّب الماء، لا يعمل. زيارة في اليوم نفسه، ورسوم فحص ثابتة تُحتسب من قيمة الإصلاح.",
-        "fr": "Ne refroidit plus, fuit, ne s’allume pas. Visite le jour même, frais de diagnostic fixes déduits de la réparation.",
-        "de": "Kühlt nicht, tropft, geht nicht an. Einsatz noch am selben Tag, feste Diagnosegebühr wird auf die Reparatur angerechnet.",
-        "zh": "不制冷、漏水、开不了机。当天上门，固定检测费计入维修费用。",
-        "hi": "ठंडा नहीं कर रहा, पानी टपक रहा है, चालू नहीं हो रहा। उसी दिन विज़िट, तय जाँच शुल्क जो मरम्मत में समायोजित हो जाता है।"
+        "en": "A thorough internal clean for wall-mounted AC units with heavier dirt build-up. We dismantle components as required, clean the coil, fan, drain tray and internal housing, then reassemble and test the unit.",
+        "ru": "Тщательная внутренняя чистка настенных кондиционеров с сильными загрязнениями. Разбираем необходимые элементы блока, очищаем теплообменник, вентилятор, поддон и внутренний корпус. После сборки проверяем работу кондиционера.",
+        "ar": "تنظيف داخلي دقيق للمكيفات الجدارية التي تراكمت فيها الأوساخ أكثر من المعتاد. نفكّ المكوّنات بحسب الحاجة، وننظّف الملف والمروحة وصينية التصريف والهيكل الداخلي، ثم نعيد تركيب الوحدة ونختبرها.",
+        "fr": "Un nettoyage intérieur minutieux pour les climatiseurs muraux plus fortement encrassés. Nous démontons des éléments selon les besoins, nettoyons l’échangeur, le ventilateur, le bac à condensats et le carter intérieur, puis remontons l’unité et la testons.",
+        "de": "Gründliche Innenreinigung für wandmontierte Klimageräte mit stärkeren Schmutzablagerungen. Wir demontieren Bauteile nach Bedarf, reinigen Wärmetauscher, Lüfter, Kondensatwanne und die Innenseite des Gehäuses, bauen das Gerät wieder zusammen und testen es.",
+        "zh": "针对积垢较重的壁挂式空调进行彻底的内部清洗。我们视需要拆卸部件，清洗蒸发器盘管、风扇、接水盘和机壳内部，然后重新组装并测试机器。",
+        "hi": "दीवार पर लगी उन एसी यूनिट की अंदर तक पूरी सफ़ाई, जिनमें गंदगी ज़्यादा जम चुकी है। हम ज़रूरत के अनुसार पुर्ज़े खोलते हैं, कॉइल, फैन, ड्रेन ट्रे और अंदरूनी बॉडी साफ़ करते हैं, फिर यूनिट को दोबारा जोड़कर टेस्ट करते हैं।"
       },
       "description_html": {
-        "en": "<p>An AC that stops in July is an emergency, and we treat it like one. Call or message before the cut-off time shown in our hours and a technician comes today.</p><p>The call-out includes diagnostics at a fixed price. If we repair on the spot, that fee is credited to the repair. If a part needs ordering, you get a written quote first and decide.</p>",
-        "ru": "<p>Кондиционер, который встал в июле, — это аварийная ситуация, и мы так к ней и относимся. Напишите или позвоните до времени, указанного в часах работы, и техник приедет сегодня.</p><p>Выезд включает диагностику по фиксированной цене. Если ремонтируем на месте — эта сумма засчитывается в ремонт. Если нужно заказать деталь — сначала вы получаете письменную смету и решаете.</p>",
-        "ar": "<p>المكيف الذي يتوقف في يوليو حالة طارئة، ونتعامل معها على هذا الأساس. اتصل أو راسلنا قبل الموعد النهائي المذكور في ساعات عملنا ويصلك فني اليوم.</p><p>تشمل الزيارة الفحص بسعر ثابت. إذا أصلحنا العطل في المكان، تُحتسب هذه الرسوم من قيمة الإصلاح. وإذا لزم طلب قطعة، تستلم عرض سعر مكتوبًا أولًا ثم تقرر.</p>",
-        "fr": "<p>Une clim qui s’arrête en juillet, c’est une urgence, et nous la traitons comme telle. Appelez ou écrivez-nous avant l’heure limite indiquée dans nos horaires et un technicien vient aujourd’hui.</p><p>Le déplacement comprend le diagnostic à prix fixe. Si nous réparons sur place, ces frais sont déduits de la réparation. Si une pièce doit être commandée, vous recevez d’abord un devis écrit et vous décidez.</p>",
-        "de": "<p>Eine Klimaanlage, die im Juli ausfällt, ist ein Notfall – und so behandeln wir ihn auch. Rufen Sie an oder schreiben Sie uns vor der in unseren Öffnungszeiten angegebenen Annahmefrist, und ein Techniker kommt noch heute.</p><p>Der Einsatz umfasst die Diagnose zum Festpreis. Reparieren wir vor Ort, wird diese Gebühr auf die Reparatur angerechnet. Muss ein Teil bestellt werden, erhalten Sie zuerst einen schriftlichen Kostenvoranschlag und entscheiden dann.</p>",
-        "zh": "<p>七月里空调停机就是紧急情况，我们也会当作紧急情况来处理。在营业时间中标明的截止时间前打电话或发消息，技师当天就到。</p><p>上门包含固定价格的检测。如果当场修好，检测费计入维修费用。如果需要订购配件，您会先收到书面报价，再做决定。</p>",
-        "hi": "<p>जुलाई में बंद हो जाने वाला एसी एक इमरजेंसी है, और हम इसे उसी गंभीरता से लेते हैं। हमारे काम के घंटों में दिखाए गए कट-ऑफ़ समय से पहले कॉल या मैसेज करें, और तकनीशियन आज ही आ जाता है।</p><p>कॉल-आउट में तय कीमत पर जाँच शामिल है। अगर हम मौके पर मरम्मत करते हैं, तो यह शुल्क मरम्मत में समायोजित हो जाता है। अगर कोई पुर्ज़ा ऑर्डर करना पड़े, तो आपको पहले लिखित कोटेशन मिलता है और फ़ैसला आपका होता है।</p>"
+        "en": "<p>When the unit smells musty, you see black spots on the louvres, or someone at home keeps sneezing when the AC runs, the problem sits deep inside: on the blower drum, behind the coil, in the drain pan. We take the indoor unit apart, wash every part with an antibacterial cleaner and reassemble it.</p><p>Recommended once a year for bedrooms and for any unit older than 5 years. For very old units we check the plastic parts first and tell you honestly if disassembly is risky.</p>",
+        "ru": "<p>Если из блока пахнет сыростью, на жалюзи чёрные точки или кто-то дома чихает при включённом кондиционере — проблема глубоко внутри: на барабане вентилятора, за радиатором, в поддоне. Мы разбираем внутренний блок, моем каждую деталь антибактериальным средством и собираем обратно.</p><p>Рекомендуем раз в год для спален и для блоков старше 5 лет. Для очень старых блоков сначала проверяем пластик и честно говорим, если разборка рискованна.</p>",
+        "ar": "<p>عندما تفوح من الوحدة رائحة عفن، أو ترى بقعًا سوداء على ريش توجيه الهواء، أو يستمر أحد أفراد البيت في العطس عند تشغيل المكيف، فالمشكلة في العمق: على أسطوانة المروحة، وخلف الملف، وفي صينية التصريف. نفكّك الوحدة الداخلية ونغسل كل قطعة بمنظّف مضاد للبكتيريا ثم نعيد تركيبها.</p><p>يُنصح به مرة في السنة لغرف النوم ولأي وحدة عمرها أكثر من 5 سنوات. وفي الوحدات القديمة جدًا نفحص القطع البلاستيكية أولًا ونخبرك بصراحة إن كان التفكيك محفوفًا بالمخاطر.</p>",
+        "fr": "<p>Quand l’unité sent le moisi, que vous voyez des points noirs sur les volets, ou que quelqu’un à la maison éternue dès que la clim tourne, le problème est logé en profondeur : sur la turbine, derrière l’échangeur, dans le bac à condensats. Nous démontons l’unité intérieure, lavons chaque pièce avec un nettoyant antibactérien et la remontons.</p><p>Recommandé une fois par an pour les chambres et pour toute unité de plus de 5 ans. Sur les unités très anciennes, nous vérifions d’abord les pièces en plastique et vous disons honnêtement si le démontage présente un risque.</p>",
+        "de": "<p>Wenn das Gerät muffig riecht, Sie schwarze Punkte auf den Lamellen sehen oder jemand zu Hause ständig niest, sobald die Klimaanlage läuft, sitzt das Problem tief im Inneren: auf der Lüfterwalze, hinter dem Wärmetauscher, in der Kondensatwanne. Wir zerlegen das Innengerät, waschen jedes Teil mit einem antibakteriellen Reiniger und bauen es wieder zusammen.</p><p>Empfohlen einmal im Jahr für Schlafzimmer und für jedes Gerät, das älter als 5 Jahre ist. Bei sehr alten Geräten prüfen wir zuerst die Kunststoffteile und sagen Ihnen ehrlich, wenn die Demontage riskant ist.</p>",
+        "zh": "<p>机器有霉味、导风板上出现黑点，或者家里有人一开空调就打喷嚏——问题藏在深处：风轮上、蒸发器后面、接水盘里。我们把室内机拆开，用抗菌清洗剂清洗每个部件，再重新装好。</p><p>建议卧室空调和使用超过 5 年的机器每年做一次。对于很旧的机器，我们会先检查塑料部件，如果拆机有风险会如实告知。</p>",
+        "hi": "<p>जब यूनिट से सीलन की बदबू आती है, लूवर पर काले धब्बे दिखते हैं, या एसी चलते ही घर में कोई लगातार छींकता है, तो समस्या अंदर गहराई में होती है: ब्लोअर ड्रम पर, कॉइल के पीछे, ड्रेन ट्रे में। हम इनडोर यूनिट को खोलते हैं, हर हिस्से को एंटीबैक्टीरियल क्लीनर से धोते हैं और फिर से जोड़ देते हैं।</p><p>बेडरूम और 5 साल से पुरानी हर यूनिट के लिए साल में एक बार की सलाह दी जाती है। बहुत पुरानी यूनिट में हम पहले प्लास्टिक के हिस्से जाँचते हैं और अगर खोलना जोखिम भरा हो, तो आपको ईमानदारी से बता देते हैं।</p>"
       },
       "includes": [
         {
-          "en": "Same-day visit within the emergency hours",
-          "ru": "Выезд в тот же день в часы срочных вызовов",
-          "ar": "زيارة في اليوم نفسه ضمن ساعات الطوارئ",
-          "fr": "Visite le jour même dans les horaires d’urgence",
-          "de": "Einsatz noch am selben Tag innerhalb der Notdienstzeiten",
-          "zh": "紧急服务时间内当天上门",
-          "hi": "इमरजेंसी घंटों के भीतर उसी दिन विज़िट"
+          "en": "Everything in the standard clean",
+          "ru": "Всё из стандартной чистки",
+          "ar": "كل ما في التنظيف القياسي",
+          "fr": "Tout le contenu du nettoyage standard",
+          "de": "Alles aus der Standardreinigung",
+          "zh": "标准清洗的全部内容",
+          "hi": "स्टैंडर्ड सफ़ाई की हर चीज़"
         },
         {
-          "en": "Full diagnostics: electrics, refrigerant pressure, drain, sensors",
-          "ru": "Полная диагностика: электрика, давление фреона, дренаж, датчики",
-          "ar": "فحص كامل: الكهرباء وضغط غاز التبريد والتصريف والحساسات",
-          "fr": "Diagnostic complet : électricité, pression du fluide frigorigène, évacuation, sondes",
-          "de": "Komplette Diagnose: Elektrik, Kältemitteldruck, Ablauf, Sensoren",
-          "zh": "全面检测：电路、制冷剂压力、排水、传感器",
-          "hi": "पूरी जाँच: इलेक्ट्रिक, रेफ़्रिजरेंट प्रेशर, ड्रेन, सेंसर"
+          "en": "Removal of the front cover, louvres and drain pan",
+          "ru": "Снятие передней крышки, жалюзи и поддона",
+          "ar": "فك الغطاء الأمامي وريش توجيه الهواء وصينية التصريف",
+          "fr": "Dépose de la façade, des volets et du bac à condensats",
+          "de": "Abnahme von Frontabdeckung, Lamellen und Kondensatwanne",
+          "zh": "拆下前面板、导风板和接水盘",
+          "hi": "सामने का कवर, लूवर और ड्रेन ट्रे निकालना"
         },
         {
-          "en": "Minor fixes on the spot where possible",
-          "ru": "Мелкий ремонт на месте, где возможно",
-          "ar": "إصلاحات بسيطة في المكان حيثما أمكن",
-          "fr": "Petites réparations sur place quand c’est possible",
-          "de": "Kleine Reparaturen sofort vor Ort, wo möglich",
-          "zh": "可行时当场完成小修",
-          "hi": "जहाँ संभव हो, छोटी ख़राबियाँ मौके पर ठीक"
+          "en": "Blower drum removed and washed",
+          "ru": "Снятие и мойка барабана вентилятора",
+          "ar": "فك أسطوانة المروحة وغسلها",
+          "fr": "Turbine déposée et lavée",
+          "de": "Lüfterwalze ausgebaut und gewaschen",
+          "zh": "拆下并清洗风轮",
+          "hi": "ब्लोअर ड्रम निकालकर धोना"
         },
         {
-          "en": "Written quote for anything bigger",
-          "ru": "Письменная смета на всё остальное",
-          "ar": "عرض سعر مكتوب لأي عمل أكبر",
-          "fr": "Devis écrit pour tout travail plus important",
-          "de": "Schriftlicher Kostenvoranschlag für alles Größere",
-          "zh": "较大维修提供书面报价",
-          "hi": "बड़े काम के लिए लिखित कोटेशन"
+          "en": "Coil high-pressure wash with coil cleaner",
+          "ru": "Мойка радиатора под давлением со спецсредством",
+          "ar": "غسل الملف بالضغط العالي بمنظّف خاص بالملفات",
+          "fr": "Lavage haute pression de l’échangeur avec un nettoyant dédié",
+          "de": "Hochdruckwäsche des Wärmetauschers mit Lamellenreiniger",
+          "zh": "用专用清洗剂高压冲洗蒸发器",
+          "hi": "कॉइल क्लीनर से कॉइल की हाई-प्रेशर धुलाई"
+        },
+        {
+          "en": "Antibacterial and anti-mould treatment",
+          "ru": "Антибактериальная и противогрибковая обработка",
+          "ar": "معالجة مضادة للبكتيريا والعفن",
+          "fr": "Traitement antibactérien et anti-moisissure",
+          "de": "Antibakterielle Behandlung und Schimmelschutz",
+          "zh": "抗菌和防霉处理",
+          "hi": "एंटीबैक्टीरियल और फफूंद-रोधी ट्रीटमेंट"
+        },
+        {
+          "en": "Photo report of every stage",
+          "ru": "Фотоотчёт по каждому этапу",
+          "ar": "تقرير مصوّر لكل مرحلة",
+          "fr": "Rapport photo de chaque étape",
+          "de": "Fotobericht zu jedem Arbeitsschritt",
+          "zh": "每个步骤的照片报告",
+          "hi": "हर चरण की फ़ोटो रिपोर्ट"
         }
       ],
       "excludes": [
         {
-          "en": "Parts (quoted separately)",
-          "ru": "Запчасти (по смете)",
-          "ar": "القطع (تُسعَّر على حدة)",
-          "fr": "Pièces (chiffrées à part)",
-          "de": "Ersatzteile (separater Kostenvoranschlag)",
-          "zh": "配件（另行报价）",
-          "hi": "पुर्ज़े (अलग से कोटेशन)"
+          "en": "Repairs and refrigerant work",
+          "ru": "Ремонт и работа с хладагентом",
+          "ar": "الإصلاحات وأعمال غاز التبريد",
+          "fr": "Réparations et interventions sur le fluide frigorigène",
+          "de": "Reparaturen und Arbeiten am Kältemittelkreislauf",
+          "zh": "维修和制冷剂相关工作",
+          "hi": "मरम्मत और रेफ़्रिजरेंट का काम"
         }
       ],
       "symptoms": [
         {
-          "en": "Blowing warm air",
-          "ru": "Дует тёплым воздухом",
-          "ar": "يدفع هواءً دافئًا",
-          "fr": "Souffle de l’air chaud",
-          "de": "Bläst warme Luft",
-          "zh": "吹出热风",
-          "hi": "गर्म हवा आना"
+          "en": "Musty or sour smell when the AC runs",
+          "ru": "Запах сырости или кислый запах при работе",
+          "ar": "رائحة عفن أو رائحة حامضة أثناء عمل المكيف",
+          "fr": "Odeur de moisi ou odeur aigre quand la clim tourne",
+          "de": "Muffiger oder säuerlicher Geruch, wenn die Klimaanlage läuft",
+          "zh": "开机时有霉味或酸味",
+          "hi": "एसी चलने पर सीलन या खट्टी बदबू"
         },
         {
-          "en": "Water dripping from the indoor unit",
-          "ru": "Капает вода из внутреннего блока",
-          "ar": "ماء يتسرب من الوحدة الداخلية",
-          "fr": "De l’eau goutte de l’unité intérieure",
-          "de": "Wasser tropft aus dem Innengerät",
-          "zh": "室内机滴水",
-          "hi": "इनडोर यूनिट से पानी टपकना"
+          "en": "Black spots on the louvres or air outlet",
+          "ru": "Чёрные точки на жалюзи или решётке",
+          "ar": "بقع سوداء على ريش توجيه الهواء أو مخرج الهواء",
+          "fr": "Points noirs sur les volets ou la bouche de soufflage",
+          "de": "Schwarze Punkte auf den Lamellen oder am Luftauslass",
+          "zh": "导风板或出风口有黑点",
+          "hi": "लूवर या एयर आउटलेट पर काले धब्बे"
         },
         {
-          "en": "Unit won't start or trips the breaker",
-          "ru": "Не включается или выбивает автомат",
-          "ar": "الوحدة لا تعمل أو تفصل القاطع",
-          "fr": "L’unité ne démarre pas ou fait sauter le disjoncteur",
-          "de": "Gerät startet nicht oder löst die Sicherung aus",
-          "zh": "无法启动或跳闸",
-          "hi": "यूनिट चालू नहीं होती या ब्रेकर ट्रिप करती है"
-        },
-        {
-          "en": "Loud noise or ice on the pipes",
-          "ru": "Громкий шум или лёд на трубках",
-          "ar": "ضجيج عالٍ أو جليد على الأنابيب",
-          "fr": "Bruit fort ou givre sur les tuyaux",
-          "de": "Lautes Geräusch oder Eis an den Leitungen",
-          "zh": "噪音很大或管路结冰",
-          "hi": "तेज़ आवाज़ या पाइप पर बर्फ़"
+          "en": "Allergies or coughing indoors",
+          "ru": "Аллергия или кашель в помещении",
+          "ar": "حساسية أو سعال داخل المنزل",
+          "fr": "Allergies ou toux à l’intérieur",
+          "de": "Allergien oder Husten in den Räumen",
+          "zh": "在室内出现过敏或咳嗽",
+          "hi": "घर के अंदर एलर्जी या खाँसी"
         }
       ],
       "visit_steps": [
         {
-          "en": "You describe the problem on WhatsApp, we confirm the slot",
-          "ru": "Вы описываете проблему в WhatsApp, мы подтверждаем слот",
-          "ar": "تصف المشكلة عبر واتساب ونؤكد لك الموعد",
-          "fr": "Vous décrivez le problème sur WhatsApp, nous confirmons le créneau",
-          "de": "Sie beschreiben das Problem per WhatsApp, wir bestätigen das Zeitfenster",
-          "zh": "您在 WhatsApp 上描述问题，我们确认时段",
-          "hi": "आप WhatsApp पर समस्या बताते हैं, हम स्लॉट पक्का करते हैं"
+          "en": "Protective sheeting, readings before",
+          "ru": "Защитная плёнка, замеры до",
+          "ar": "أغطية واقية وقراءات قبل العمل",
+          "fr": "Bâches de protection, relevés avant",
+          "de": "Abdeckplanen, Messwerte vorher",
+          "zh": "铺防护布，记录清洗前读数",
+          "hi": "सुरक्षा शीट बिछाना, पहले की रीडिंग"
         },
         {
-          "en": "Diagnostics and explanation in plain words",
-          "ru": "Диагностика и объяснение простыми словами",
-          "ar": "فحص وشرح بكلمات بسيطة",
-          "fr": "Diagnostic et explication en termes simples",
-          "de": "Diagnose und Erklärung in verständlichen Worten",
-          "zh": "检测并用通俗的话解释",
-          "hi": "जाँच और आसान शब्दों में समझाना"
+          "en": "Indoor unit disassembled, parts washed outside",
+          "ru": "Разборка внутреннего блока, мойка деталей снаружи",
+          "ar": "تفكيك الوحدة الداخلية وغسل القطع في الخارج",
+          "fr": "Unité intérieure démontée, pièces lavées à l’extérieur",
+          "de": "Innengerät zerlegt, Teile draußen gewaschen",
+          "zh": "拆开室内机，部件拿到室外清洗",
+          "hi": "इनडोर यूनिट खोलना, हिस्सों की बाहर धुलाई"
         },
         {
-          "en": "Fix on the spot or written quote",
-          "ru": "Ремонт на месте или письменная смета",
-          "ar": "إصلاح في المكان أو عرض سعر مكتوب",
-          "fr": "Réparation sur place ou devis écrit",
-          "de": "Reparatur vor Ort oder schriftlicher Kostenvoranschlag",
-          "zh": "当场修复或提供书面报价",
-          "hi": "मौके पर मरम्मत या लिखित कोटेशन"
+          "en": "Coil washed, treatment applied",
+          "ru": "Мойка радиатора, обработка",
+          "ar": "غسل الملف وتطبيق المعالجة",
+          "fr": "Échangeur lavé, traitement appliqué",
+          "de": "Wärmetauscher gewaschen, Behandlung aufgetragen",
+          "zh": "清洗蒸发器，进行抗菌处理",
+          "hi": "कॉइल की धुलाई, ट्रीटमेंट"
+        },
+        {
+          "en": "Reassembly, test run, report",
+          "ru": "Сборка, тестовый запуск, отчёт",
+          "ar": "إعادة التركيب وتشغيل تجريبي وتقرير",
+          "fr": "Remontage, essai de fonctionnement, rapport",
+          "de": "Zusammenbau, Probelauf, Bericht",
+          "zh": "重新组装，试运行，出报告",
+          "hi": "फिर से जोड़ना, टेस्ट रन, रिपोर्ट"
         }
       ],
-      "duration_min": 60,
-      "price_from": 199,
-      "pricing_unit": "visit",
+      "duration_min": 90,
+      "price_from": 499,
+      "pricing_unit": "unit",
       "available_from": null,
       "seo_title": {
-        "en": "Emergency AC Repair in Dubai — same-day call-out",
-        "ru": "Срочный ремонт кондиционера в Дубае — выезд в тот же день",
-        "ar": "إصلاح طارئ للمكيفات في دبي — زيارة في اليوم نفسه",
-        "fr": "Dépannage clim en urgence à Dubaï — visite le jour même",
-        "de": "Klimaanlagen-Notdienst in Dubai – Einsatz noch heute",
-        "zh": "迪拜空调紧急维修：当天上门",
-        "hi": "दुबई में तत्काल एसी मरम्मत — उसी दिन कॉल-आउट"
+        "en": "AC Deep Cleaning in Dubai — removes smell and mould",
+        "ru": "Глубокая чистка кондиционера в Дубае — убираем запах и плесень",
+        "ar": "التنظيف العميق للمكيفات في دبي — يزيل الرائحة والعفن",
+        "fr": "Nettoyage en profondeur de clim à Dubaï : odeurs, moisissure",
+        "de": "Klimaanlagen-Tiefenreinigung Dubai – gegen Geruch & Schimmel",
+        "zh": "迪拜空调深度清洗：去除异味和霉菌",
+        "hi": "दुबई में एसी की डीप क्लीनिंग — बदबू और फफूंद का सफ़ाया"
       },
       "seo_description": {
-        "en": "AC not cooling or leaking? Same-day emergency call-out in Dubai, AED 199 diagnostics credited to the repair, written quote before any work.",
-        "ru": "Кондиционер не холодит или течёт? Срочный выезд в Дубае в тот же день, диагностика 199 AED засчитывается в ремонт, смета до начала работ.",
-        "ar": "المكيف لا يبرّد أو يسرّب؟ زيارة طوارئ في اليوم نفسه في دبي، رسوم فحص 199 درهمًا تُحتسب من قيمة الإصلاح، وعرض سعر مكتوب قبل أي عمل.",
-        "fr": "Clim en panne ou qui fuit ? Intervention d’urgence le jour même à Dubaï, diagnostic à 199 AED déduit de la réparation, devis écrit avant tout travail.",
-        "de": "Klimaanlage kühlt nicht oder tropft? Notdienst in Dubai noch heute. Diagnose 199 AED, auf die Reparatur angerechnet. Kostenvoranschlag vor jeder Arbeit.",
-        "zh": "空调不制冷或漏水？迪拜当天紧急上门，AED 199 检测费计入维修费用，开工前提供书面报价。",
-        "hi": "एसी ठंडा नहीं कर रहा या पानी टपक रहा है? दुबई में उसी दिन इमरजेंसी कॉल-आउट, AED 199 की जाँच मरम्मत में समायोजित, किसी भी काम से पहले लिखित कोटेशन।"
+        "en": "Deep AC cleaning with full disassembly of the indoor unit from AED 499. Blower drum, coil and drain pan washed, anti-mould treatment, photo report.",
+        "ru": "Глубокая чистка кондиционера с разборкой внутреннего блока от 499 AED. Барабан, радиатор и поддон, противогрибковая обработка, фотоотчёт.",
+        "ar": "تنظيف عميق للمكيف مع تفكيك كامل للوحدة الداخلية ابتداءً من 499 درهمًا. غسل أسطوانة المروحة والملف وصينية التصريف، معالجة مضادة للعفن، وتقرير مصوّر.",
+        "fr": "Nettoyage en profondeur de clim à Dubaï, unité intérieure démontée, dès 499 AED. Turbine, échangeur, bac à condensats lavés, anti-moisissure, rapport photo.",
+        "de": "Klimaanlagen-Tiefenreinigung in Dubai: komplette Demontage des Innengeräts ab 499 AED. Lüfterwalze, Wärmetauscher, Kondensatwanne, Schimmelschutz, Fotobericht.",
+        "zh": "迪拜空调深度清洗，室内机完全拆机，AED 499 起。清洗风轮、蒸发器和接水盘，防霉处理，照片报告。",
+        "hi": "इनडोर यूनिट को पूरी तरह खोलकर एसी की डीप क्लीनिंग AED 499 से। ब्लोअर ड्रम, कॉइल और ड्रेन ट्रे की धुलाई, फफूंद-रोधी ट्रीटमेंट, फ़ोटो रिपोर्ट।"
+      }
+    },
+    {
+      "slug": "fcu-deep-coil-cleaning",
+      "category": "ac",
+      "group": "cleaning",
+      "status": "active",
+      "sort": 40,
+      "name": {
+        "en": "FCU Deep Coil Cleaning",
+        "ru": "Глубокая чистка теплообменника фанкойла",
+        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU)",
+        "fr": "Nettoyage en profondeur de l’échangeur de ventilo-convecteur (FCU)",
+        "de": "Wärmetauscher-Tiefenreinigung am Gebläsekonvektor (FCU)",
+        "zh": "风机盘管（FCU）深度清洗",
+        "hi": "FCU कॉइल की डीप क्लीनिंग"
+      },
+      "short": {
+        "en": "Deep cleaning for concealed indoor AC units. We thoroughly clean the cooling coil, fan and drain tray, flush the drain line and dismantle components where required to reach accumulated dirt.",
+        "ru": "Глубокая чистка скрытых потолочных блоков. Тщательно очищаем охлаждающий теплообменник, вентилятор и поддон, промываем дренаж. При необходимости разбираем отдельные элементы для доступа к скопившимся загрязнениям.",
+        "ar": "تنظيف عميق لوحدات التكييف الداخلية المخفية. ننظّف ملف التبريد والمروحة وصينية التصريف تنظيفًا دقيقًا، ونغسل خط التصريف، ونفكّ المكوّنات حيث يلزم للوصول إلى الأوساخ المتراكمة.",
+        "fr": "Nettoyage en profondeur des unités intérieures de climatisation dissimulées. Nous nettoyons à fond l’échangeur de refroidissement, le ventilateur et le bac à condensats, rinçons la conduite d’évacuation et démontons des éléments lorsque c’est nécessaire pour atteindre les saletés accumulées.",
+        "de": "Tiefenreinigung für verdeckt eingebaute Innengeräte. Wir reinigen Wärmetauscher, Lüfter und Kondensatwanne gründlich, spülen die Ablaufleitung und demontieren Bauteile, wo es erforderlich ist, um an angesammelten Schmutz zu gelangen.",
+        "zh": "针对隐藏式空调室内机的深度清洗。我们彻底清洗冷却盘管、风扇和接水盘，冲洗排水管，并在必要时拆卸部件，以便清除积聚的污垢。",
+        "hi": "छिपी हुई इनडोर एसी यूनिट की डीप क्लीनिंग। हम कूलिंग कॉइल, फैन और ड्रेन ट्रे की अच्छी तरह सफ़ाई करते हैं, ड्रेन लाइन फ़्लश करते हैं और जहाँ ज़रूरी हो, जमी हुई गंदगी तक पहुँचने के लिए पुर्ज़े खोलते हैं।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": 549,
+      "pricing_unit": "fcu",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "ac-duct-cleaning",
+      "category": "ac",
+      "group": "cleaning",
+      "status": "active",
+      "sort": 50,
+      "name": {
+        "en": "AC Duct Cleaning",
+        "ru": "Чистка воздуховодов",
+        "ar": "تنظيف مجاري الهواء",
+        "fr": "Nettoyage des gaines de climatisation",
+        "de": "Luftkanalreinigung",
+        "zh": "空调风管清洗",
+        "hi": "एसी डक्ट की सफ़ाई"
+      },
+      "short": {
+        "en": "We remove dust and debris from the air ducts that carry air to and from your rooms, using mechanical cleaning and vacuum extraction. The service includes the connected grilles and washable filters.",
+        "ru": "Удаляем пыль и загрязнения из каналов, по которым воздух поступает в комнаты и возвращается к кондиционеру. Применяем механическую очистку и вакуумное удаление пыли. Услуга включает чистку подключённых решёток и моющихся фильтров.",
+        "ar": "نزيل الغبار والشوائب من مجاري الهواء التي تنقل الهواء إلى غرفك ومنها، بالتنظيف الميكانيكي والشفط. تشمل الخدمة الشبكات المتصلة بها والفلاتر القابلة للغسل.",
+        "fr": "Nous éliminons la poussière et les débris des gaines qui amènent l’air dans vos pièces et le reprennent, par nettoyage mécanique et extraction par aspiration. Le service comprend les grilles raccordées et les filtres lavables.",
+        "de": "Wir entfernen Staub und Schmutz aus den Luftkanälen, die die Luft in Ihre Räume und wieder zurück führen – durch mechanische Reinigung und Absaugung. Die angeschlossenen Lüftungsgitter und die waschbaren Filter sind in der Leistung enthalten.",
+        "zh": "风管负责为您的房间送风和回风。我们通过机械清洗和真空抽吸，清除风管内的灰尘和杂物。服务包含与风管相连的风口格栅和可水洗滤网。",
+        "hi": "हम उन एयर डक्ट से धूल और कचरा हटाते हैं, जिनसे हवा आपके कमरों तक पहुँचती और वापस लौटती है। इसके लिए हम मैकेनिकल सफ़ाई और वैक्यूम एक्सट्रैक्शन का इस्तेमाल करते हैं। सेवा में डक्ट से जुड़ी ग्रिल और धोने योग्य फ़िल्टर शामिल हैं।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": 599,
+      "pricing_unit": "unit",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "full-ac-system-cleaning",
+      "category": "ac",
+      "group": "cleaning",
+      "status": "active",
+      "sort": 60,
+      "name": {
+        "en": "Full AC System Cleaning",
+        "ru": "Комплексная чистка системы кондиционирования",
+        "ar": "التنظيف الشامل لنظام التكييف",
+        "fr": "Nettoyage complet du système de climatisation",
+        "de": "Komplettreinigung der Klimaanlage",
+        "zh": "空调系统全面清洗",
+        "hi": "पूरे एसी सिस्टम की सफ़ाई"
+      },
+      "short": {
+        "en": "A comprehensive clean for ducted AC systems, combining air duct cleaning with deep cleaning of the indoor unit. Covers the coil, fan, internal housing, filters, grilles, drain tray and drain line.",
+        "ru": "Объединяем чистку воздуховодов с глубокой чисткой внутреннего канального блока. Очищаем теплообменник, вентилятор, внутренний корпус, фильтры, решётки, поддон и дренажную линию.",
+        "ar": "تنظيف شامل لأنظمة الدكت يجمع بين تنظيف مجاري الهواء والتنظيف العميق للوحدة الداخلية. يشمل الملف والمروحة والهيكل الداخلي والفلاتر والشبكات وصينية التصريف وخط التصريف.",
+        "fr": "Un nettoyage d’ensemble pour les climatisations gainables, qui associe le nettoyage des gaines au nettoyage en profondeur de l’unité intérieure. Il couvre l’échangeur, le ventilateur, le carter intérieur, les filtres, les grilles, le bac à condensats et la conduite d’évacuation.",
+        "de": "Die umfassende Reinigung für Kanalklimaanlagen verbindet die Luftkanalreinigung mit der Tiefenreinigung des Innengeräts. Enthalten sind Wärmetauscher, Lüfter, Innenseite des Gehäuses, Filter, Lüftungsgitter, Kondensatwanne und Ablaufleitung.",
+        "zh": "面向风管式中央空调的全面清洗，将风管清洗与室内机深度清洗结合在一起。涵盖盘管、风扇、机壳内部、滤网、风口格栅、接水盘和排水管。",
+        "hi": "डक्टेड एसी सिस्टम की व्यापक सफ़ाई, जिसमें एयर डक्ट की सफ़ाई के साथ इनडोर यूनिट की डीप क्लीनिंग होती है। इसमें कॉइल, फैन, अंदरूनी बॉडी, फ़िल्टर, ग्रिल, ड्रेन ट्रे और ड्रेन लाइन शामिल हैं।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": 849,
+      "pricing_unit": "unit",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "ac-filter-grille-cleaning",
+      "category": "ac",
+      "group": "addon",
+      "status": "active",
+      "sort": 70,
+      "name": {
+        "en": "Filter & Grille Cleaning",
+        "ru": "Чистка фильтров и решёток",
+        "ar": "تنظيف الفلاتر والشبكات",
+        "fr": "Nettoyage des filtres et des grilles",
+        "de": "Reinigung von Filtern & Lüftungsgittern",
+        "zh": "滤网与风口格栅清洗",
+        "hi": "फ़िल्टर और ग्रिल की सफ़ाई"
+      },
+      "short": {
+        "en": "Focused cleaning of washable AC filters and air grilles to remove accumulated dust. Available as a limited-scope booking or within the relevant cleaning package.",
+        "ru": "Очищаем моющиеся фильтры и вентиляционные решётки от скопившейся пыли. Услуга доступна отдельно или в составе соответствующего пакета чистки.",
+        "ar": "تنظيف مركّز لفلاتر المكيف القابلة للغسل وشبكات الهواء لإزالة الغبار المتراكم. يمكن حجزه خدمةً محدودة النطاق أو ضمن باقة التنظيف ذات الصلة.",
+        "fr": "Nettoyage ciblé des filtres lavables et des grilles de ventilation du climatiseur, pour éliminer la poussière accumulée. Disponible en réservation à périmètre limité ou dans le cadre du forfait de nettoyage correspondant.",
+        "de": "Gezielte Reinigung der waschbaren Filter und der Lüftungsgitter Ihrer Klimaanlage, um angesammelten Staub zu entfernen. Buchbar als Einzelleistung mit begrenztem Umfang oder im Rahmen des entsprechenden Reinigungspakets.",
+        "zh": "专门清洗可水洗的空调滤网和风口格栅，清除积聚的灰尘。可单独预约（服务范围仅限此项），也可包含在相应的清洗套餐内。",
+        "hi": "सिर्फ़ धोने योग्य एसी फ़िल्टर और एयर ग्रिल की सफ़ाई, ताकि जमी हुई धूल हट जाए। इसे सीमित दायरे की अलग बुकिंग के रूप में या संबंधित सफ़ाई पैकेज के हिस्से के रूप में लिया जा सकता है।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "ac-outdoor-unit-cleaning",
+      "category": "ac",
+      "group": "addon",
+      "status": "active",
+      "sort": 80,
+      "name": {
+        "en": "Outdoor Unit Cleaning",
+        "ru": "Чистка наружного блока",
+        "ar": "تنظيف الوحدة الخارجية",
+        "fr": "Nettoyage de l’unité extérieure",
+        "de": "Reinigung des Außengeräts",
+        "zh": "室外机清洗",
+        "hi": "आउटडोर यूनिट की सफ़ाई"
+      },
+      "short": {
+        "en": "Cleaning of the accessible outdoor condenser coil, casing and air openings to remove dust and debris. Access requirements and the cleaning scope are confirmed before booking.",
+        "ru": "Удаляем пыль и загрязнения с доступного теплообменника наружного блока, корпуса и воздушных отверстий. Условия доступа и объём работ подтверждаем до бронирования.",
+        "ar": "تنظيف ملف التكثيف في الوحدة الخارجية وهيكلها وفتحات الهواء فيها، في حدود ما يمكن الوصول إليه، لإزالة الغبار والشوائب. نؤكد متطلبات الوصول ونطاق التنظيف قبل الحجز.",
+        "fr": "Nettoyage des parties accessibles de l’échangeur extérieur (condenseur), de la carrosserie et des ouvertures d’air, pour éliminer la poussière et les débris. Les conditions d’accès et le périmètre du nettoyage sont confirmés avant la réservation.",
+        "de": "Wir befreien den zugänglichen Wärmetauscher (Verflüssiger) des Außengeräts, das Gehäuse und die Luftöffnungen von Staub und Schmutz. Den Reinigungsumfang und die Anforderungen an den Zugang bestätigen wir vor der Buchung.",
+        "zh": "清洗室外机可触及的冷凝器盘管、外壳和通风口，清除灰尘和杂物。到达室外机所需的条件和清洗范围，会在预约前确认。",
+        "hi": "धूल और कचरा हटाने के लिए आउटडोर यूनिट की पहुँच योग्य कंडेनसर कॉइल, बॉडी और हवा के खुले रास्तों की सफ़ाई। पहुँच की ज़रूरतें और सफ़ाई का दायरा हम बुकिंग से पहले पक्का करते हैं।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "ac-sanitisation",
+      "category": "ac",
+      "group": "addon",
+      "status": "active",
+      "sort": 90,
+      "name": {
+        "en": "Targeted AC Sanitisation",
+        "ru": "Дезинфицирующая обработка кондиционера",
+        "ar": "التعقيم الموجّه للمكيف",
+        "fr": "Assainissement ciblé de climatiseur",
+        "de": "Gezielte Hygienebehandlung der Klimaanlage",
+        "zh": "空调针对性抗菌处理",
+        "hi": "एसी का लक्षित सैनिटाइज़ेशन"
+      },
+      "short": {
+        "en": "Where recommended after inspection, we apply a suitable treatment to compatible AC surfaces following physical cleaning. The treatment and scope are confirmed before work begins.",
+        "ru": "При необходимости, выявленной во время осмотра, обрабатываем подходящие поверхности кондиционера совместимым средством после физической очистки. Состав обработки и объём работ согласуем заранее.",
+        "ar": "إذا أوصينا بذلك بعد الفحص، نطبّق معالجة مناسبة على أسطح المكيف المتوافقة معها بعد تنظيفها من الأوساخ. نؤكد المعالجة ونطاقها قبل بدء العمل.",
+        "fr": "Lorsque cela est recommandé après inspection, nous appliquons un traitement adapté sur les surfaces compatibles du climatiseur, après le nettoyage physique. Le traitement et le périmètre sont confirmés avant le début des travaux.",
+        "de": "Sofern nach der Inspektion empfohlen, behandeln wir dafür geeignete Oberflächen der Klimaanlage nach der eigentlichen Reinigung mit einem passenden Mittel. Behandlung und Umfang bestätigen wir vor Beginn der Arbeiten.",
+        "zh": "如检查后建议进行，我们会在完成物理清洗后，选用合适的方式处理适用的空调表面。处理方式和范围在开工前确认。",
+        "hi": "जाँच के बाद सलाह दिए जाने पर हम फ़िज़िकल सफ़ाई पूरी करके एसी की उन सतहों पर उपयुक्त ट्रीटमेंट लगाते हैं, जो इसके अनुकूल हों। ट्रीटमेंट और काम का दायरा हम काम शुरू होने से पहले पक्का करते हैं।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "preventive-ac-maintenance",
+      "category": "ac",
+      "group": "service",
+      "status": "active",
+      "sort": 100,
+      "name": {
+        "en": "Preventive AC Maintenance",
+        "ru": "Профилактическое обслуживание",
+        "ar": "الصيانة الوقائية للمكيف",
+        "fr": "Entretien préventif de climatiseur",
+        "de": "Vorbeugende Klimaanlagen-Wartung",
+        "zh": "空调预防性保养",
+        "hi": "एसी का प्रिवेंटिव मेंटेनेंस"
+      },
+      "short": {
+        "en": "Regular checks of cooling performance, airflow, thermostat operation, electrical components and drainage. We complete the cleaning included in your chosen package and report any further maintenance needs.",
+        "ru": "Проверяем качество охлаждения, подачу воздуха, работу термостата, электрических компонентов и дренажа. Выполняем чистку в рамках выбранного пакета и сообщаем о необходимости дополнительных работ.",
+        "ar": "فحوص منتظمة لأداء التبريد وتدفق الهواء وعمل الثرموستات والمكوّنات الكهربائية والتصريف. ننجز التنظيف المشمول في الباقة التي اخترتها ونبلغك بأي احتياجات صيانة إضافية.",
+        "fr": "Contrôles réguliers des performances de refroidissement, du débit d’air, du fonctionnement du thermostat, des composants électriques et de l’évacuation des condensats. Nous réalisons le nettoyage inclus dans le forfait que vous avez choisi et vous signalons tout autre besoin d’entretien.",
+        "de": "Regelmäßige Prüfung von Kühlleistung, Luftstrom, Thermostatfunktion, elektrischen Bauteilen und Kondensatablauf. Wir führen die Reinigung aus, die in Ihrem gewählten Paket enthalten ist, und informieren Sie über weiteren Wartungsbedarf.",
+        "zh": "定期检查制冷效果、风量、温控器运行、电气部件和排水情况。我们完成您所选套餐包含的清洗，并告知您其他需要保养的事项。",
+        "hi": "कूलिंग परफ़ॉर्मेंस, हवा के बहाव, थर्मोस्टैट के काम, इलेक्ट्रिकल पुर्ज़ों और ड्रेनेज की नियमित जाँच। हम आपके चुने हुए पैकेज में शामिल सफ़ाई पूरी करते हैं और आगे किसी मेंटेनेंस की ज़रूरत हो, तो आपको बताते हैं।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "ac-inspection-diagnostics",
+      "category": "ac",
+      "group": "service",
+      "status": "active",
+      "sort": 105,
+      "name": {
+        "en": "AC Inspection & Diagnostics",
+        "ru": "Осмотр и диагностика кондиционера",
+        "ar": "فحص المكيف وتشخيص الأعطال",
+        "fr": "Inspection et diagnostic de climatiseur",
+        "de": "Klimaanlagen-Inspektion & Diagnose",
+        "zh": "空调检查与诊断",
+        "hi": "एसी की जाँच और डायग्नोसिस"
+      },
+      "short": {
+        "en": "We inspect your AC and test its operation to investigate weak cooling, unusual noise, water leaks or starting problems. You receive our findings and a written quotation for any recommended repair.",
+        "ru": "Осматриваем кондиционер и проверяем его работу, чтобы установить причину слабого охлаждения, необычного шума, протечки или проблем с запуском. Объясняем результаты и предоставляем письменную смету рекомендуемого ремонта.",
+        "ar": "نفحص مكيفك ونختبر تشغيله للبحث عن سبب ضعف التبريد أو الضجيج غير المعتاد أو تسرب الماء أو مشكلات بدء التشغيل. تحصل على نتائج الفحص وعلى عرض سعر مكتوب لأي إصلاح نوصي به.",
+        "fr": "Nous inspectons votre climatiseur et testons son fonctionnement pour rechercher la cause d’un refroidissement insuffisant, d’un bruit inhabituel, d’une fuite d’eau ou de difficultés au démarrage. Vous recevez nos conclusions et un devis écrit pour toute réparation recommandée.",
+        "de": "Wir inspizieren Ihre Klimaanlage und testen ihren Betrieb, um der Ursache von schwacher Kühlung, ungewöhnlichen Geräuschen, Wasseraustritt oder Startproblemen nachzugehen. Sie erhalten unseren Befund und einen schriftlichen Kostenvoranschlag für jede empfohlene Reparatur.",
+        "zh": "我们检查您的空调并测试其运行情况，查找制冷不足、异常噪音、漏水或启动故障的原因。您会收到检查结果，以及针对建议维修项目的书面报价。",
+        "hi": "कमज़ोर कूलिंग, असामान्य आवाज़, पानी के लीक या चालू होने की समस्या की वजह जानने के लिए हम आपके एसी की जाँच करते हैं और उसे चलाकर टेस्ट करते हैं। आपको हमारे निष्कर्ष और सुझाई गई किसी भी मरम्मत का लिखित कोटेशन मिलता है।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "ac-water-leak-drain-repair",
+      "category": "ac",
+      "group": "service",
+      "status": "active",
+      "sort": 110,
+      "name": {
+        "en": "AC Water Leak & Drain Repairs",
+        "ru": "Устранение протечек и засоров дренажа",
+        "ar": "إصلاح تسرب ماء المكيف وأعطال التصريف",
+        "fr": "Fuites d’eau et réparation de l’évacuation des condensats",
+        "de": "Reparatur bei Wasseraustritt & Ablaufproblemen",
+        "zh": "空调漏水与排水维修",
+        "hi": "एसी के पानी के लीक और ड्रेन की मरम्मत"
+      },
+      "short": {
+        "en": "We investigate water leaks, clear blocked condensate drains and repair affected drain trays, connections or pumps as required. We then test the system to confirm that water drains correctly.",
+        "ru": "Определяем источник протечки, устраняем засоры отвода конденсата и при необходимости ремонтируем поддон, соединения или дренажную помпу. После работ проверяем правильность отвода воды.",
+        "ar": "نبحث عن سبب تسرب الماء، ونزيل انسداد تصريف ماء التكاثف، ونصلح ما تضرر من صواني التصريف أو الوصلات أو المضخات بحسب الحاجة. ثم نختبر النظام للتأكد من أن الماء يُصرَّف بصورة صحيحة.",
+        "fr": "Nous recherchons l’origine des fuites d’eau, débouchons les évacuations de condensats obstruées et réparons, selon les besoins, les pompes, raccords ou bacs à condensats concernés. Nous testons ensuite le système pour vérifier que l’eau s’évacue correctement.",
+        "de": "Wir gehen der Ursache des Wasseraustritts nach, beseitigen Verstopfungen im Kondensatablauf und reparieren nach Bedarf betroffene Kondensatwannen, Anschlüsse oder Pumpen. Anschließend testen wir die Anlage und stellen sicher, dass das Wasser richtig abläuft.",
+        "zh": "我们排查漏水原因，疏通堵塞的冷凝水排水管，并视需要维修受影响的接水盘、接头或排水泵。随后测试系统，确认排水正常。",
+        "hi": "हम पानी के लीक की वजह ढूँढते हैं, जाम कंडेनसेट ड्रेन खोलते हैं और ज़रूरत के अनुसार प्रभावित ड्रेन ट्रे, कनेक्शन या पंप की मरम्मत करते हैं। फिर हम सिस्टम को टेस्ट करके पक्का करते हैं कि पानी ठीक से निकल रहा है।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
       }
     },
     {
       "slug": "ac-repair",
       "category": "ac",
+      "group": "service",
       "status": "active",
-      "sort": 50,
+      "sort": 115,
       "name": {
-        "en": "AC Repair",
-        "ru": "Ремонт кондиционера",
-        "ar": "إصلاح المكيف",
+        "en": "AC Repairs",
+        "ru": "Ремонт кондиционеров",
+        "ar": "إصلاح المكيفات",
         "fr": "Réparation de climatiseur",
         "de": "Klimaanlagen-Reparatur",
         "zh": "空调维修",
         "hi": "एसी की मरम्मत"
       },
       "short": {
-        "en": "Start capacitors, sensors, fan motors, control boards, drain pumps. Quote before work, 90-day warranty on parts and labour.",
-        "ru": "Пусковые конденсаторы, датчики, моторы, платы, дренажные насосы. Смета до начала работ, гарантия 90 дней.",
-        "ar": "مكثفات التشغيل والحساسات ومحركات المراوح ولوحات التحكم ومضخات التصريف. عرض سعر قبل العمل، وضمان 90 يومًا على القطع والعمل.",
-        "fr": "Condensateurs de démarrage, sondes, moteurs de ventilateur, cartes électroniques, pompes de relevage. Devis avant les travaux, garantie 90 jours pièces et main-d’œuvre.",
-        "de": "Anlaufkondensatoren, Sensoren, Lüftermotoren, Steuerplatinen, Kondensatpumpen. Kostenvoranschlag vor der Arbeit, 90 Tage Garantie auf Teile und Arbeit.",
-        "zh": "启动电容、传感器、风扇电机、主控板、排水泵。开工前报价，配件和人工保修 90 天。",
-        "hi": "स्टार्ट कैपेसिटर, सेंसर, फैन मोटर, कंट्रोल बोर्ड, ड्रेन पंप। काम से पहले कोटेशन, पुर्ज़ों और मज़दूरी पर 90 दिन की वारंटी।"
+        "en": "Repair or replacement of faulty AC components, including fan motors, sensors, capacitors, control boards and condensate pumps. Labour and parts are itemised in a quotation for your approval.",
+        "ru": "Ремонтируем или заменяем неисправные компоненты, включая двигатели вентиляторов, датчики, конденсаторы, платы управления и дренажные помпы. Стоимость работ и деталей указываем в смете для вашего согласования.",
+        "ar": "إصلاح مكوّنات المكيف المعطّلة أو استبدالها، ومنها محركات المراوح والحساسات ومكثفات التشغيل ولوحات التحكم ومضخات التصريف. نفصّل العمل والقطع بندًا بندًا في عرض سعر نقدّمه لك للموافقة عليه.",
+        "fr": "Réparation ou remplacement des composants défectueux du climatiseur, notamment les moteurs de ventilateur, sondes, condensateurs, cartes électroniques et pompes de relevage. La main-d’œuvre et les pièces sont détaillées dans un devis soumis à votre accord.",
+        "de": "Reparatur oder Austausch defekter Bauteile der Klimaanlage, darunter Lüftermotoren, Sensoren, Kondensatoren, Steuerplatinen und Kondensatpumpen. Arbeit und Ersatzteile führen wir einzeln in einem Kostenvoranschlag auf, den wir Ihnen zur Freigabe vorlegen.",
+        "zh": "维修或更换出故障的空调部件，包括风扇电机、传感器、电容、主控板和排水泵。人工和配件在报价中逐项列明，供您确认。",
+        "hi": "एसी के ख़राब पुर्ज़ों की मरम्मत या उन्हें बदलना, जिनमें फैन मोटर, सेंसर, कैपेसिटर, कंट्रोल बोर्ड और ड्रेन पंप शामिल हैं। आपकी मंज़ूरी के लिए दिए गए कोटेशन में मज़दूरी और पुर्ज़े अलग-अलग लिखे होते हैं।"
       },
       "description_html": {
         "en": "<p>Most split-unit failures come down to a handful of parts: a swollen start capacitor, a failed fan motor, a dead temperature sensor, a drain pump that stopped pumping, or a control board after a power surge. We carry the common parts in the van and fix most of them in one visit.</p><p>We do not install new systems and do not take on complex office VRF repairs. If that is what you need, we will say so and point you to the right people.</p>",
@@ -928,7 +1139,7 @@
         "hi": "दुबई में एसी की मरम्मत — पहले कोटेशन, 90 दिन की वारंटी"
       },
       "seo_description": {
-        "en": "Split AC repair in Dubai: capacitors, sensors, motors, boards, drain pumps. Labour from AED 199, parts quoted before work, 90-day warranty.",
+        "en": "Split AC repair in Dubai: capacitors, sensors, motors, boards, drain pumps. Labour from AED 249, parts quoted before work, 90-day warranty.",
         "ru": "Ремонт сплит-систем в Дубае: конденсаторы, датчики, моторы, платы, дренажные насосы. Работа от 249 AED, запчасти по смете, гарантия 90 дней.",
         "ar": "إصلاح مكيفات السبليت في دبي: المكثفات والحساسات والمحركات واللوحات ومضخات التصريف. أجرة العمل ابتداءً من 249 درهمًا، وأسعار القطع قبل العمل، وضمان 90 يومًا.",
         "fr": "Réparation de clim split à Dubaï : condensateurs, sondes, moteurs, cartes, pompes de relevage. Main-d’œuvre dès 249 AED, pièces sur devis, garantie 90 jours.",
@@ -938,31 +1149,74 @@
       }
     },
     {
-      "slug": "refrigerant-leak-refill",
+      "slug": "thermostat-installation",
       "category": "ac",
+      "group": "service",
       "status": "active",
-      "sort": 60,
+      "sort": 120,
       "name": {
-        "en": "Refrigerant Leak Detection & Refill",
-        "ru": "Поиск утечки фреона и заправка",
-        "ar": "كشف تسرب غاز التبريد وتعبئته",
-        "fr": "Recherche de fuite de fluide frigorigène et recharge",
-        "de": "Kältemittel: Lecksuche & Nachfüllen",
-        "zh": "制冷剂泄漏检测与加注",
-        "hi": "रेफ़्रिजरेंट लीक ढूँढना और गैस भरना"
+        "en": "Thermostat Installation & Replacement",
+        "ru": "Установка и замена термостата",
+        "ar": "تركيب الثرموستات واستبداله",
+        "fr": "Installation et remplacement de thermostat",
+        "de": "Einbau & Austausch von Thermostaten",
+        "zh": "温控器安装与更换",
+        "hi": "थर्मोस्टैट लगाना और बदलना"
       },
       "short": {
-        "en": "We find and fix the leak first, then refill. A top-up without fixing the leak is money thrown away.",
-        "ru": "Сначала находим и устраняем утечку, потом заправляем. Дозаправка без ремонта утечки — выброшенные деньги.",
-        "ar": "نجد التسرب ونصلحه أولًا، ثم نعبّئ الغاز. التعبئة من دون إصلاح التسرب مال مهدور.",
-        "fr": "Nous trouvons et réparons d’abord la fuite, puis nous rechargeons. Un appoint sans réparer la fuite, c’est de l’argent jeté par les fenêtres.",
-        "de": "Wir finden und beheben zuerst das Leck, dann füllen wir nach. Nachfüllen ohne Leckreparatur ist zum Fenster hinausgeworfenes Geld.",
-        "zh": "先找到并修好漏点，再加注。不修漏点只加氟，等于白花钱。",
-        "hi": "हम पहले लीक ढूँढकर ठीक करते हैं, फिर गैस भरते हैं। लीक ठीक किए बिना गैस भरना पैसे फेंकना है।"
+        "en": "We install compatible standard or smart thermostats and test temperature control, fan settings and cooling response. Equipment compatibility and installation requirements are confirmed before booking.",
+        "ru": "Устанавливаем совместимые стандартные или умные термостаты. Проверяем управление температурой, режимами вентилятора и охлаждением. Совместимость оборудования и условия установки уточняем до бронирования.",
+        "ar": "نركّب أجهزة ثرموستات متوافقة، عادية أو ذكية، ونختبر التحكم في درجة الحرارة وإعدادات المروحة واستجابة التبريد. نؤكد توافق المعدّات ومتطلبات التركيب قبل الحجز.",
+        "fr": "Nous installons des thermostats compatibles, standard ou connectés, et testons la régulation de la température, les réglages du ventilateur et la réponse du refroidissement. La compatibilité de l’équipement et les conditions d’installation sont confirmées avant la réservation.",
+        "de": "Wir bauen kompatible Standard- oder Smart-Thermostate ein und testen Temperaturregelung, Lüftereinstellungen und das Ansprechen der Kühlung. Die Kompatibilität der Geräte und die Voraussetzungen für den Einbau bestätigen wir vor der Buchung.",
+        "zh": "我们安装兼容的普通或智能温控器，并测试温度控制、风速设置和制冷响应。设备兼容性和安装要求在预约前确认。",
+        "hi": "हम सिस्टम के अनुकूल स्टैंडर्ड या स्मार्ट थर्मोस्टैट लगाते हैं और तापमान कंट्रोल, फैन सेटिंग और कूलिंग रिस्पॉन्स टेस्ट करते हैं। उपकरण की अनुकूलता और इंस्टॉलेशन की ज़रूरतें हम बुकिंग से पहले पक्का करते हैं।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "refrigerant-leak-detection",
+      "category": "ac",
+      "group": "service",
+      "status": "active",
+      "sort": 125,
+      "name": {
+        "en": "Refrigerant Leak Detection",
+        "ru": "Поиск утечки хладагента",
+        "ar": "كشف تسرب غاز التبريد",
+        "fr": "Recherche de fuite de fluide frigorigène",
+        "de": "Kältemittel-Lecksuche",
+        "zh": "制冷剂泄漏检测",
+        "hi": "रेफ़्रिजरेंट लीक की खोज"
+      },
+      "short": {
+        "en": "We inspect refrigerant pipework and components, using appropriate leak-detection equipment and pressure testing where required. The findings identify the affected area and inform the repair quotation.",
+        "ru": "Проверяем трубопроводы и компоненты холодильного контура с помощью оборудования для обнаружения утечек. При необходимости проводим испытание давлением. По результатам определяем место неисправности и составляем смету ремонта.",
+        "ar": "نفحص أنابيب دائرة غاز التبريد ومكوّناتها بأجهزة مناسبة لكشف التسرب، ونجري اختبار الضغط عند الحاجة. تحدّد النتائج الموضع المتضرر ونستند إليها في إعداد عرض سعر الإصلاح.",
+        "fr": "Nous inspectons les tuyauteries et les composants du circuit frigorifique, avec un équipement de détection de fuite adapté et, lorsque c’est nécessaire, un test de pression. Les conclusions identifient la zone touchée et servent de base au devis de réparation.",
+        "de": "Wir prüfen Kältemittelleitungen und Bauteile mit geeigneten Lecksuchgeräten und, wo erforderlich, mit einer Druckprüfung. Der Befund zeigt die betroffene Stelle und ist die Grundlage für den Kostenvoranschlag zur Reparatur.",
+        "zh": "我们检查制冷剂管路和部件，使用合适的检漏设备，必要时进行压力测试。检查结果会指明泄漏部位，并作为维修报价的依据。",
+        "hi": "हम लीक ढूँढने के उपयुक्त उपकरणों और जहाँ ज़रूरी हो, प्रेशर टेस्ट की मदद से रेफ़्रिजरेंट पाइप और पुर्ज़ों की जाँच करते हैं। जाँच के नतीजों से प्रभावित हिस्से का पता चलता है और उन्हीं के आधार पर मरम्मत का कोटेशन बनता है।"
       },
       "description_html": {
         "en": "<p>If your AC needed a “gas top-up” last summer and is warm again, the refrigerant did not evaporate — it leaked. Topping up again buys a few weeks. We pressure-test the system with nitrogen, find the leak, repair it (brazing or fitting replacement), vacuum the lines and charge the correct amount by weight.</p>",
-        "ru": "<p>Если прошлым летом кондиционеру «дозаправили газ», а он снова тёплый — фреон не испарился, он вытек. Повторная дозаправка даст несколько недель. Мы опрессовываем систему азотом, находим утечку, устраняем (пайка или замена соединения), вакуумируем трассу и заправляем нужное количество по весу.</p>",
+        "ru": "<p>Если прошлым летом кондиционеру «дозаправили газ», а он снова тёплый — хладагент не испарился, он вытек. Повторная дозаправка даст несколько недель. Мы опрессовываем систему азотом, находим утечку, устраняем (пайка или замена соединения), вакуумируем трассу и заправляем нужное количество по весу.</p>",
         "ar": "<p>إذا احتاج مكيفك إلى «تعبئة غاز» الصيف الماضي وعاد دافئًا من جديد، فغاز التبريد لم يتبخر — بل تسرّب. والتعبئة مجددًا لا تمنحك سوى أسابيع قليلة. نختبر النظام بضغط النيتروجين، ونجد التسرب، ونصلحه (لحام نحاسي أو استبدال الوصلة)، ونفرّغ الخطوط، ثم نعبّئ الكمية الصحيحة بالوزن.</p>",
         "fr": "<p>Si votre clim a eu besoin d’une « recharge de gaz » l’été dernier et souffle de nouveau chaud, le fluide frigorigène ne s’est pas évaporé : il a fui. Refaire un appoint fait gagner quelques semaines. Nous mettons le circuit sous pression d’azote, localisons la fuite, la réparons (brasure ou remplacement du raccord), tirons au vide les liaisons et chargeons la quantité exacte au poids.</p>",
         "de": "<p>Wenn Ihre Klimaanlage letzten Sommer „Gas nachgefüllt“ bekommen hat und jetzt wieder warm bläst, ist das Kältemittel nicht verdampft – es ist ausgetreten. Erneutes Nachfüllen bringt ein paar Wochen. Wir setzen die Anlage mit Stickstoff unter Druck, finden das Leck, reparieren es (Hartlöten oder Austausch der Verschraubung), evakuieren die Leitungen und füllen die korrekte Menge nach Gewicht ein.</p>",
@@ -980,24 +1234,6 @@
           "hi": "नाइट्रोजन प्रेशर टेस्ट और लीक की खोज"
         },
         {
-          "en": "Leak repair (brazing or fitting) — quoted after detection",
-          "ru": "Устранение утечки (пайка или фитинг) — по смете после поиска",
-          "ar": "إصلاح التسرب (لحام أو وصلة) — يُسعَّر بعد الكشف",
-          "fr": "Réparation de la fuite (brasure ou raccord) — chiffrée après localisation",
-          "de": "Leckreparatur (Hartlöten oder Verschraubung) – Kostenvoranschlag nach der Lecksuche",
-          "zh": "漏点修复（焊接或更换接头）——检测后报价",
-          "hi": "लीक की मरम्मत (ब्रेज़िंग या फ़िटिंग) — लीक मिलने के बाद कोटेशन"
-        },
-        {
-          "en": "Vacuum and charge by weight",
-          "ru": "Вакуумирование и заправка по весу",
-          "ar": "تفريغ وتعبئة بالوزن",
-          "fr": "Tirage au vide et charge au poids",
-          "de": "Evakuieren und Nachfüllen nach Gewicht",
-          "zh": "抽真空并按重量加注",
-          "hi": "वैक्यूम और वज़न के हिसाब से गैस भरना"
-        },
-        {
           "en": "Pressure and temperature readings in the report",
           "ru": "Давление и температура в отчёте",
           "ar": "قراءات الضغط والحرارة في التقرير",
@@ -1007,17 +1243,7 @@
           "hi": "रिपोर्ट में प्रेशर और तापमान की रीडिंग"
         }
       ],
-      "excludes": [
-        {
-          "en": "Top-up without leak repair (we do not offer it)",
-          "ru": "Дозаправка без ремонта утечки (не делаем)",
-          "ar": "التعبئة من دون إصلاح التسرب (لا نقدّمها)",
-          "fr": "Appoint sans réparation de la fuite (nous ne le proposons pas)",
-          "de": "Nachfüllen ohne Leckreparatur (bieten wir nicht an)",
-          "zh": "不修漏点只加氟（我们不提供）",
-          "hi": "लीक ठीक किए बिना टॉप-अप (हम यह नहीं करते)"
-        }
-      ],
+      "excludes": [],
       "symptoms": [
         {
           "en": "Cooling got weaker over weeks",
@@ -1078,11 +1304,11 @@
       ],
       "duration_min": 120,
       "price_from": 299,
-      "pricing_unit": "from",
+      "pricing_unit": "unit",
       "available_from": null,
       "seo_title": {
         "en": "AC Refrigerant Leak Repair & Refill in Dubai",
-        "ru": "Утечка и заправка фреона в Дубае — находим и устраняем",
+        "ru": "Утечка и заправка хладагента в Дубае — находим и устраняем",
         "ar": "إصلاح تسرب غاز التبريد وتعبئته في دبي",
         "fr": "Fuite de fluide frigorigène à Dubaï — réparation et recharge",
         "de": "Kältemittelleck reparieren & nachfüllen – Klimaanlage Dubai",
@@ -1090,7 +1316,7 @@
         "hi": "दुबई में एसी रेफ़्रिजरेंट लीक की मरम्मत और गैस भरना"
       },
       "seo_description": {
-        "en": "Nitrogen leak test from AED 249, repair quoted on site, refill by weight from AED 349. We fix the leak before refilling — no repeat top-ups.",
+        "en": "Nitrogen leak test from AED 299, repair quoted on site, refill by weight from AED 449. We fix the leak before refilling — no repeat top-ups.",
         "ru": "Поиск утечки азотом от 299 AED, ремонт по смете на месте, заправка по весу от 449 AED. Устраняем утечку до заправки — без повторных дозаправок.",
         "ar": "اختبار تسرب بالنيتروجين ابتداءً من 299 درهمًا، تسعير الإصلاح في الموقع، وتعبئة بالوزن ابتداءً من 449 درهمًا. نصلح التسرب قبل التعبئة — بلا تعبئات متكررة.",
         "fr": "Fuite de gaz clim à Dubaï : test à l’azote dès 299 AED, réparation sur devis, recharge au poids dès 449 AED. Fuite réparée avant recharge : fini les appoints.",
@@ -1100,10 +1326,296 @@
       }
     },
     {
+      "slug": "refrigerant-leak-repair",
+      "category": "ac",
+      "group": "service",
+      "status": "active",
+      "sort": 130,
+      "name": {
+        "en": "Refrigerant Leak Repair",
+        "ru": "Устранение утечки хладагента",
+        "ar": "إصلاح تسرب غاز التبريد",
+        "fr": "Réparation de fuite de fluide frigorigène",
+        "de": "Kältemittel-Leckreparatur",
+        "zh": "制冷剂泄漏修复",
+        "hi": "रेफ़्रिजरेंट लीक की मरम्मत"
+      },
+      "short": {
+        "en": "We repair or replace the leaking joint, pipe, valve or component, then test the refrigerant circuit to verify the repair before recharging.",
+        "ru": "Ремонтируем или заменяем негерметичное соединение, трубку, клапан или другой повреждённый компонент. После ремонта проверяем герметичность контура перед заправкой.",
+        "ar": "نصلح الوصلة أو الأنبوب أو الصمام أو المكوّن الذي يتسرب منه الغاز أو نستبدله، ثم نختبر دائرة غاز التبريد للتحقق من الإصلاح قبل التعبئة.",
+        "fr": "Nous réparons ou remplaçons le raccord, le tuyau, la vanne ou le composant qui fuit, puis testons le circuit frigorifique pour vérifier la réparation avant la recharge.",
+        "de": "Wir reparieren oder ersetzen das undichte Teil – Verbindung, Leitung, Ventil oder ein anderes Bauteil. Danach testen wir den Kältemittelkreislauf, um die Reparatur vor dem Nachfüllen zu überprüfen.",
+        "zh": "我们维修或更换泄漏的接头、管路、阀门或部件，然后测试制冷剂回路，确认修复有效后再加注。",
+        "hi": "हम लीक वाले जोड़, पाइप, वाल्व या पुर्ज़े की मरम्मत करते हैं या उसे बदलते हैं, फिर रेफ़्रिजरेंट भरने से पहले रेफ़्रिजरेंट सर्किट को टेस्ट करके मरम्मत की पुष्टि करते हैं।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [
+        {
+          "en": "Leak repair (brazing or fitting) — quoted after detection",
+          "ru": "Устранение утечки (пайка или фитинг) — по смете после поиска",
+          "ar": "إصلاح التسرب (لحام أو وصلة) — يُسعَّر بعد الكشف",
+          "fr": "Réparation de la fuite (brasure ou raccord) — chiffrée après localisation",
+          "de": "Leckreparatur (Hartlöten oder Verschraubung) – Kostenvoranschlag nach der Lecksuche",
+          "zh": "漏点修复（焊接或更换接头）——检测后报价",
+          "hi": "लीक की मरम्मत (ब्रेज़िंग या फ़िटिंग) — लीक मिलने के बाद कोटेशन"
+        }
+      ],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": null,
+      "pricing_unit": "quote",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "refrigerant-recharge",
+      "category": "ac",
+      "group": "service",
+      "status": "active",
+      "sort": 135,
+      "name": {
+        "en": "Refrigerant Recharge",
+        "ru": "Заправка кондиционера хладагентом",
+        "ar": "تعبئة غاز التبريد",
+        "fr": "Recharge en fluide frigorigène",
+        "de": "Kältemittel-Nachfüllung",
+        "zh": "制冷剂加注",
+        "hi": "रेफ़्रिजरेंट गैस भरना"
+      },
+      "short": {
+        "en": "Following diagnosis and any required leak repair, we charge the system with the correct refrigerant type and quantity, then check operation. Pricing is confirmed according to the work and refrigerant required.",
+        "ru": "После диагностики и необходимого ремонта заправляем систему хладагентом подходящего типа в требуемом количестве, затем проверяем её работу. Стоимость подтверждаем с учётом объёма работ и необходимого хладагента.",
+        "ar": "بعد التشخيص وإصلاح أي تسرب يلزم إصلاحه، نعبّئ النظام بغاز التبريد بالنوع والكمية الصحيحين، ثم نفحص التشغيل. نؤكد السعر بحسب العمل المطلوب وغاز التبريد اللازم.",
+        "fr": "Après le diagnostic et, le cas échéant, la réparation de la fuite, nous chargeons le système avec le type et la quantité de fluide frigorigène appropriés, puis contrôlons son fonctionnement. Le prix est confirmé en fonction des travaux et du fluide frigorigène nécessaires.",
+        "de": "Nach der Diagnose und einer gegebenenfalls nötigen Leckreparatur befüllen wir die Anlage mit dem richtigen Kältemittel in der richtigen Menge und prüfen anschließend den Betrieb. Den Preis bestätigen wir je nach Arbeitsaufwand und benötigtem Kältemittel.",
+        "zh": "在完成诊断和必要的泄漏修复后，我们按正确的制冷剂类型和用量为系统加注，然后检查运行情况。价格根据所需的工作和制冷剂确认。",
+        "hi": "डायग्नोसिस और ज़रूरत होने पर लीक की मरम्मत के बाद हम सिस्टम में सही प्रकार और सही मात्रा का रेफ़्रिजरेंट भरते हैं, फिर उसके काम की जाँच करते हैं। कीमत काम और ज़रूरी रेफ़्रिजरेंट के अनुसार पक्की की जाती है।"
+      },
+      "description_html": {
+        "en": ""
+      },
+      "includes": [
+        {
+          "en": "Vacuum and charge by weight",
+          "ru": "Вакуумирование и заправка по весу",
+          "ar": "تفريغ وتعبئة بالوزن",
+          "fr": "Tirage au vide et charge au poids",
+          "de": "Evakuieren und Nachfüllen nach Gewicht",
+          "zh": "抽真空并按重量加注",
+          "hi": "वैक्यूम और वज़न के हिसाब से गैस भरना"
+        }
+      ],
+      "excludes": [
+        {
+          "en": "Top-up without leak repair (we do not offer it)",
+          "ru": "Дозаправка без ремонта утечки (не делаем)",
+          "ar": "التعبئة من دون إصلاح التسرب (لا نقدّمها)",
+          "fr": "Appoint sans réparation de la fuite (nous ne le proposons pas)",
+          "de": "Nachfüllen ohne Leckreparatur (bieten wir nicht an)",
+          "zh": "不修漏点只加氟（我们不提供）",
+          "hi": "लीक ठीक किए बिना टॉप-अप (हम यह नहीं करते)"
+        }
+      ],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": 449,
+      "pricing_unit": "from",
+      "available_from": null,
+      "seo_title": {
+        "en": ""
+      },
+      "seo_description": {
+        "en": ""
+      }
+    },
+    {
+      "slug": "emergency-ac-repair",
+      "category": "ac",
+      "group": "service",
+      "status": "active",
+      "sort": 140,
+      "name": {
+        "en": "Urgent AC Call-out",
+        "ru": "Срочный выезд мастера",
+        "ar": "زيارة عاجلة للمكيف",
+        "fr": "Dépannage urgent de climatisation",
+        "de": "Klimaanlagen-Eileinsatz",
+        "zh": "空调紧急上门",
+        "hi": "तत्काल एसी कॉल-आउट"
+      },
+      "short": {
+        "en": "Priority appointments for AC breakdowns, loss of cooling or water leaks. Contact us to confirm the earliest available visit and call-out fee.",
+        "ru": "Приоритетные записи при поломке кондиционера, отсутствии охлаждения или протечке. Свяжитесь с нами, чтобы уточнить ближайшее доступное время и стоимость выезда.",
+        "ar": "مواعيد ذات أولوية عند تعطل المكيف أو انقطاع التبريد أو تسرب الماء. تواصل معنا لتأكيد أقرب موعد متاح ورسوم الزيارة.",
+        "fr": "Rendez-vous prioritaires en cas de panne de climatiseur, de perte de refroidissement ou de fuite d’eau. Contactez-nous pour confirmer la première visite disponible et les frais de déplacement.",
+        "de": "Bevorzugte Termine bei Ausfall der Klimaanlage, fehlender Kühlung oder Wasseraustritt. Kontaktieren Sie uns, dann bestätigen wir Ihnen den frühestmöglichen Termin und die Einsatzpauschale.",
+        "zh": "空调故障、不制冷或漏水时，可优先安排上门。请联系我们，确认最早可上门的时间和上门费。",
+        "hi": "एसी ख़राब होने, कूलिंग बंद होने या पानी के लीक पर प्राथमिकता से अपॉइंटमेंट। सबसे जल्दी उपलब्ध विज़िट और कॉल-आउट शुल्क पक्का करने के लिए हमसे संपर्क करें।"
+      },
+      "description_html": {
+        "en": "<p>An AC that stops in July is an emergency, and we treat it like one. Call or message before the cut-off time shown in our hours and a technician comes today.</p><p>The call-out includes diagnostics at a fixed price. If we repair on the spot, that fee is credited to the repair. If a part needs ordering, you get a written quote first and decide.</p>",
+        "ru": "<p>Кондиционер, который встал в июле, — это аварийная ситуация, и мы так к ней и относимся. Напишите или позвоните до времени, указанного в часах работы, и техник приедет сегодня.</p><p>Выезд включает диагностику по фиксированной цене. Если ремонтируем на месте — эта сумма засчитывается в ремонт. Если нужно заказать деталь — сначала вы получаете письменную смету и решаете.</p>",
+        "ar": "<p>المكيف الذي يتوقف في يوليو حالة طارئة، ونتعامل معها على هذا الأساس. اتصل أو راسلنا قبل الموعد النهائي المذكور في ساعات عملنا ويصلك فني اليوم.</p><p>تشمل الزيارة الفحص بسعر ثابت. إذا أصلحنا العطل في المكان، تُحتسب هذه الرسوم من قيمة الإصلاح. وإذا لزم طلب قطعة، تستلم عرض سعر مكتوبًا أولًا ثم تقرر.</p>",
+        "fr": "<p>Une clim qui s’arrête en juillet, c’est une urgence, et nous la traitons comme telle. Appelez ou écrivez-nous avant l’heure limite indiquée dans nos horaires et un technicien vient aujourd’hui.</p><p>Le déplacement comprend le diagnostic à prix fixe. Si nous réparons sur place, ces frais sont déduits de la réparation. Si une pièce doit être commandée, vous recevez d’abord un devis écrit et vous décidez.</p>",
+        "de": "<p>Eine Klimaanlage, die im Juli ausfällt, ist ein Notfall – und so behandeln wir ihn auch. Rufen Sie an oder schreiben Sie uns vor der in unseren Öffnungszeiten angegebenen Annahmefrist, und ein Techniker kommt noch heute.</p><p>Der Einsatz umfasst die Diagnose zum Festpreis. Reparieren wir vor Ort, wird diese Gebühr auf die Reparatur angerechnet. Muss ein Teil bestellt werden, erhalten Sie zuerst einen schriftlichen Kostenvoranschlag und entscheiden dann.</p>",
+        "zh": "<p>七月里空调停机就是紧急情况，我们也会当作紧急情况来处理。在营业时间中标明的截止时间前打电话或发消息，技师当天就到。</p><p>上门包含固定价格的检测。如果当场修好，检测费计入维修费用。如果需要订购配件，您会先收到书面报价，再做决定。</p>",
+        "hi": "<p>जुलाई में बंद हो जाने वाला एसी एक इमरजेंसी है, और हम इसे उसी गंभीरता से लेते हैं। हमारे काम के घंटों में दिखाए गए कट-ऑफ़ समय से पहले कॉल या मैसेज करें, और तकनीशियन आज ही आ जाता है।</p><p>कॉल-आउट में तय कीमत पर जाँच शामिल है। अगर हम मौके पर मरम्मत करते हैं, तो यह शुल्क मरम्मत में समायोजित हो जाता है। अगर कोई पुर्ज़ा ऑर्डर करना पड़े, तो आपको पहले लिखित कोटेशन मिलता है और फ़ैसला आपका होता है।</p>"
+      },
+      "includes": [
+        {
+          "en": "Same-day visit within the emergency hours",
+          "ru": "Выезд в тот же день в часы срочных вызовов",
+          "ar": "زيارة في اليوم نفسه ضمن ساعات الطوارئ",
+          "fr": "Visite le jour même dans les horaires d’urgence",
+          "de": "Einsatz noch am selben Tag innerhalb der Notdienstzeiten",
+          "zh": "紧急服务时间内当天上门",
+          "hi": "इमरजेंसी घंटों के भीतर उसी दिन विज़िट"
+        },
+        {
+          "en": "Full diagnostics: electrics, refrigerant pressure, drain, sensors",
+          "ru": "Полная диагностика: электрика, давление хладагента, дренаж, датчики",
+          "ar": "فحص كامل: الكهرباء وضغط غاز التبريد والتصريف والحساسات",
+          "fr": "Diagnostic complet : électricité, pression du fluide frigorigène, évacuation, sondes",
+          "de": "Komplette Diagnose: Elektrik, Kältemitteldruck, Ablauf, Sensoren",
+          "zh": "全面检测：电路、制冷剂压力、排水、传感器",
+          "hi": "पूरी जाँच: इलेक्ट्रिक, रेफ़्रिजरेंट प्रेशर, ड्रेन, सेंसर"
+        },
+        {
+          "en": "Minor fixes on the spot where possible",
+          "ru": "Мелкий ремонт на месте, где возможно",
+          "ar": "إصلاحات بسيطة في المكان حيثما أمكن",
+          "fr": "Petites réparations sur place quand c’est possible",
+          "de": "Kleine Reparaturen sofort vor Ort, wo möglich",
+          "zh": "可行时当场完成小修",
+          "hi": "जहाँ संभव हो, छोटी ख़राबियाँ मौके पर ठीक"
+        },
+        {
+          "en": "Written quote for anything bigger",
+          "ru": "Письменная смета на всё остальное",
+          "ar": "عرض سعر مكتوب لأي عمل أكبر",
+          "fr": "Devis écrit pour tout travail plus important",
+          "de": "Schriftlicher Kostenvoranschlag für alles Größere",
+          "zh": "较大维修提供书面报价",
+          "hi": "बड़े काम के लिए लिखित कोटेशन"
+        }
+      ],
+      "excludes": [
+        {
+          "en": "Parts (quoted separately)",
+          "ru": "Запчасти (по смете)",
+          "ar": "القطع (تُسعَّر على حدة)",
+          "fr": "Pièces (chiffrées à part)",
+          "de": "Ersatzteile (separater Kostenvoranschlag)",
+          "zh": "配件（另行报价）",
+          "hi": "पुर्ज़े (अलग से कोटेशन)"
+        }
+      ],
+      "symptoms": [
+        {
+          "en": "Blowing warm air",
+          "ru": "Дует тёплым воздухом",
+          "ar": "يدفع هواءً دافئًا",
+          "fr": "Souffle de l’air chaud",
+          "de": "Bläst warme Luft",
+          "zh": "吹出热风",
+          "hi": "गर्म हवा आना"
+        },
+        {
+          "en": "Water dripping from the indoor unit",
+          "ru": "Капает вода из внутреннего блока",
+          "ar": "ماء يتسرب من الوحدة الداخلية",
+          "fr": "De l’eau goutte de l’unité intérieure",
+          "de": "Wasser tropft aus dem Innengerät",
+          "zh": "室内机滴水",
+          "hi": "इनडोर यूनिट से पानी टपकना"
+        },
+        {
+          "en": "Unit won't start or trips the breaker",
+          "ru": "Не включается или выбивает автомат",
+          "ar": "الوحدة لا تعمل أو تفصل القاطع",
+          "fr": "L’unité ne démarre pas ou fait sauter le disjoncteur",
+          "de": "Gerät startet nicht oder löst die Sicherung aus",
+          "zh": "无法启动或跳闸",
+          "hi": "यूनिट चालू नहीं होती या ब्रेकर ट्रिप करती है"
+        },
+        {
+          "en": "Loud noise or ice on the pipes",
+          "ru": "Громкий шум или лёд на трубках",
+          "ar": "ضجيج عالٍ أو جليد على الأنابيب",
+          "fr": "Bruit fort ou givre sur les tuyaux",
+          "de": "Lautes Geräusch oder Eis an den Leitungen",
+          "zh": "噪音很大或管路结冰",
+          "hi": "तेज़ आवाज़ या पाइप पर बर्फ़"
+        }
+      ],
+      "visit_steps": [
+        {
+          "en": "You describe the problem on WhatsApp, we confirm the slot",
+          "ru": "Вы описываете проблему в WhatsApp, мы подтверждаем слот",
+          "ar": "تصف المشكلة عبر واتساب ونؤكد لك الموعد",
+          "fr": "Vous décrivez le problème sur WhatsApp, nous confirmons le créneau",
+          "de": "Sie beschreiben das Problem per WhatsApp, wir bestätigen das Zeitfenster",
+          "zh": "您在 WhatsApp 上描述问题，我们确认时段",
+          "hi": "आप WhatsApp पर समस्या बताते हैं, हम स्लॉट पक्का करते हैं"
+        },
+        {
+          "en": "Diagnostics and explanation in plain words",
+          "ru": "Диагностика и объяснение простыми словами",
+          "ar": "فحص وشرح بكلمات بسيطة",
+          "fr": "Diagnostic et explication en termes simples",
+          "de": "Diagnose und Erklärung in verständlichen Worten",
+          "zh": "检测并用通俗的话解释",
+          "hi": "जाँच और आसान शब्दों में समझाना"
+        },
+        {
+          "en": "Fix on the spot or written quote",
+          "ru": "Ремонт на месте или письменная смета",
+          "ar": "إصلاح في المكان أو عرض سعر مكتوب",
+          "fr": "Réparation sur place ou devis écrit",
+          "de": "Reparatur vor Ort oder schriftlicher Kostenvoranschlag",
+          "zh": "当场修复或提供书面报价",
+          "hi": "मौके पर मरम्मत या लिखित कोटेशन"
+        }
+      ],
+      "duration_min": 60,
+      "price_from": 199,
+      "pricing_unit": "visit",
+      "available_from": null,
+      "seo_title": {
+        "en": "Emergency AC Repair in Dubai — same-day call-out",
+        "ru": "Срочный ремонт кондиционера в Дубае — выезд в тот же день",
+        "ar": "إصلاح طارئ للمكيفات في دبي — زيارة في اليوم نفسه",
+        "fr": "Dépannage clim en urgence à Dubaï — visite le jour même",
+        "de": "Klimaanlagen-Notdienst in Dubai – Einsatz noch heute",
+        "zh": "迪拜空调紧急维修：当天上门",
+        "hi": "दुबई में तत्काल एसी मरम्मत — उसी दिन कॉल-आउट"
+      },
+      "seo_description": {
+        "en": "AC not cooling or leaking? Same-day emergency call-out in Dubai, AED 199 diagnostics credited to the repair, written quote before any work.",
+        "ru": "Кондиционер не холодит или течёт? Срочный выезд в Дубае в тот же день, диагностика 199 AED засчитывается в ремонт, смета до начала работ.",
+        "ar": "المكيف لا يبرّد أو يسرّب؟ زيارة طوارئ في اليوم نفسه في دبي، رسوم فحص 199 درهمًا تُحتسب من قيمة الإصلاح، وعرض سعر مكتوب قبل أي عمل.",
+        "fr": "Clim en panne ou qui fuit ? Intervention d’urgence le jour même à Dubaï, diagnostic à 199 AED déduit de la réparation, devis écrit avant tout travail.",
+        "de": "Klimaanlage kühlt nicht oder tropft? Notdienst in Dubai noch heute. Diagnose 199 AED, auf die Reparatur angerechnet. Kostenvoranschlag vor jeder Arbeit.",
+        "zh": "空调不制冷或漏水？迪拜当天紧急上门，AED 199 检测费计入维修费用，开工前提供书面报价。",
+        "hi": "एसी ठंडा नहीं कर रहा या पानी टपक रहा है? दुबई में उसी दिन इमरजेंसी कॉल-आउट, AED 199 की जाँच मरम्मत में समायोजित, किसी भी काम से पहले लिखित कोटेशन।"
+      }
+    },
+    {
       "slug": "sofa-cleaning",
       "category": "upholstery",
       "status": "active",
-      "sort": 110,
+      "sort": 210,
       "name": {
         "en": "Sofa & Armchair Cleaning",
         "ru": "Химчистка диванов и кресел",
@@ -1237,7 +1749,7 @@
       "slug": "mattress-cleaning",
       "category": "upholstery",
       "status": "active",
-      "sort": 120,
+      "sort": 220,
       "name": {
         "en": "Mattress Cleaning",
         "ru": "Химчистка матрасов",
@@ -1339,7 +1851,7 @@
         "hi": "दुबई में गद्दे की सफ़ाई — डस्ट माइट और दाग़"
       },
       "seo_description": {
-        "en": "Mattress deep cleaning in Dubai from AED 149. HEPA vacuum, stain treatment, extraction and antibacterial finish. Dry by bedtime.",
+        "en": "Mattress deep cleaning in Dubai from AED 199. HEPA vacuum, stain treatment, extraction and antibacterial finish. Dry by bedtime.",
         "ru": "Глубокая чистка матраса в Дубае от 199 AED. HEPA-пылесос, обработка пятен, экстракция, антибактериальная обработка. К ночи сухо.",
         "ar": "تنظيف عميق للمراتب في دبي ابتداءً من 199 درهمًا. كنس بجهاز HEPA، معالجة البقع، استخلاص وطبقة نهائية مضادة للبكتيريا. تجف قبل موعد النوم.",
         "fr": "Nettoyage en profondeur de matelas à Dubaï dès 199 AED. Aspiration HEPA, traitement des taches, extraction et finition antibactérienne. Sec le soir même.",
@@ -1352,7 +1864,7 @@
       "slug": "carpet-cleaning",
       "category": "upholstery",
       "status": "active",
-      "sort": 130,
+      "sort": 230,
       "name": {
         "en": "Carpet & Rug Cleaning",
         "ru": "Химчистка ковров",
@@ -1477,7 +1989,7 @@
       "slug": "stain-odour-removal",
       "category": "upholstery",
       "status": "active",
-      "sort": 140,
+      "sort": 240,
       "name": {
         "en": "Stain & Odour Removal",
         "ru": "Выведение пятен и запахов",
@@ -1564,7 +2076,7 @@
       "slug": "humidity-mould-check",
       "category": "coming_soon",
       "status": "coming_soon",
-      "sort": 210,
+      "sort": 310,
       "name": {
         "en": "Humidity & Mould Check",
         "ru": "Диагностика влажности и плесени",
@@ -1623,7 +2135,7 @@
       "slug": "water-tank-cleaning",
       "category": "coming_soon",
       "status": "coming_soon",
-      "sort": 220,
+      "sort": 320,
       "name": {
         "en": "Water Tank Cleaning",
         "ru": "Чистка резервуаров воды",

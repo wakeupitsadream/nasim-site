@@ -15,7 +15,7 @@
         "hi": "स्टैंडर्ड सफ़ाई, 1 यूनिट"
       },
       "unit": "unit",
-      "price": 349,
+      "price": 299,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -43,7 +43,7 @@
         "hi": "स्टैंडर्ड सफ़ाई, 2–3 यूनिट"
       },
       "unit": "unit",
-      "price": 299,
+      "price": 279,
       "min_qty": 2,
       "tier_from_qty": 2,
       "note": {
@@ -71,7 +71,7 @@
         "hi": "स्टैंडर्ड सफ़ाई, 4+ यूनिट"
       },
       "unit": "unit",
-      "price": 269,
+      "price": 249,
       "min_qty": 4,
       "tier_from_qty": 4,
       "note": {
@@ -99,7 +99,7 @@
         "hi": "डीप क्लीनिंग, 1 यूनिट"
       },
       "unit": "unit",
-      "price": 649,
+      "price": 549,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -127,7 +127,7 @@
         "hi": "डीप क्लीनिंग, 2+ यूनिट"
       },
       "unit": "unit",
-      "price": 599,
+      "price": 499,
       "min_qty": 2,
       "tier_from_qty": 2,
       "note": {
@@ -143,30 +143,227 @@
     },
     {
       "service_slug": "ducted-ac-fcu-service",
-      "key": "fcu_service",
+      "key": "fcu_service_1",
+      "tier_group": "fcu_service",
       "name": {
-        "en": "Fan coil unit service",
-        "ru": "Обслуживание фанкойла",
-        "ar": "صيانة وحدة فان كويل",
-        "fr": "Entretien de ventilo-convecteur",
-        "de": "Gebläsekonvektor-Wartung",
-        "zh": "风机盘管保养",
-        "hi": "फैन कॉइल यूनिट सर्विस"
+        "en": "Fan coil unit service, 1 unit",
+        "ru": "Обслуживание фанкойла, 1 блок",
+        "ar": "صيانة وحدة فان كويل، وحدة واحدة",
+        "fr": "Entretien de ventilo-convecteur, 1 unité",
+        "de": "Gebläsekonvektor-Wartung, 1 Gerät",
+        "zh": "风机盘管保养，1 台",
+        "hi": "फैन कॉइल यूनिट सर्विस, 1 यूनिट"
       },
       "unit": "fcu",
       "price": 349,
-      "min_qty": 2,
+      "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "Minimum 2 FCU",
-        "ru": "Минимум 2 фанкойла",
-        "ar": "الحد الأدنى وحدتان",
-        "fr": "2 FCU minimum",
-        "de": "Mindestens 2 FCU",
-        "zh": "最少 2 台风机盘管",
-        "hi": "न्यूनतम 2 FCU"
+        "en": "Call-out included",
+        "ru": "Выезд включён",
+        "ar": "رسوم الزيارة مشمولة",
+        "fr": "Déplacement inclus",
+        "de": "Anfahrt inklusive",
+        "zh": "含上门费",
+        "hi": "विज़िट शुल्क शामिल"
       },
       "sort": 1
+    },
+    {
+      "service_slug": "ducted-ac-fcu-service",
+      "key": "fcu_service_2plus",
+      "tier_group": "fcu_service",
+      "name": {
+        "en": "Fan coil unit service, 2+ units",
+        "ru": "Обслуживание фанкойла, 2+ блоков",
+        "ar": "صيانة وحدة فان كويل، وحدتان فأكثر",
+        "fr": "Entretien de ventilo-convecteur, 2 unités et plus",
+        "de": "Gebläsekonvektor-Wartung, 2+ Geräte",
+        "zh": "风机盘管保养，2 台及以上",
+        "hi": "फैन कॉइल यूनिट सर्विस, 2+ यूनिट"
+      },
+      "unit": "fcu",
+      "price": 329,
+      "min_qty": 2,
+      "tier_from_qty": 2,
+      "note": {
+        "en": "Per unit",
+        "ru": "За блок",
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
+      },
+      "sort": 2
+    },
+    {
+      "service_slug": "fcu-deep-coil-cleaning",
+      "key": "fcu_deep_1",
+      "tier_group": "fcu_deep",
+      "name": {
+        "en": "FCU Deep Coil Cleaning, 1 unit",
+        "ru": "Глубокая чистка теплообменника фанкойла, 1 блок",
+        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU)، وحدة واحدة",
+        "fr": "Nettoyage en profondeur de l’échangeur de ventilo-convecteur (FCU), 1 unité",
+        "de": "Wärmetauscher-Tiefenreinigung am Gebläsekonvektor (FCU), 1 Gerät",
+        "zh": "风机盘管（FCU）深度清洗，1 台",
+        "hi": "FCU कॉइल की डीप क्लीनिंग, 1 यूनिट"
+      },
+      "unit": "fcu",
+      "price": 599,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Call-out included",
+        "ru": "Выезд включён",
+        "ar": "رسوم الزيارة مشمولة",
+        "fr": "Déplacement inclus",
+        "de": "Anfahrt inklusive",
+        "zh": "含上门费",
+        "hi": "विज़िट शुल्क शामिल"
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "fcu-deep-coil-cleaning",
+      "key": "fcu_deep_2plus",
+      "tier_group": "fcu_deep",
+      "name": {
+        "en": "FCU Deep Coil Cleaning, 2+ units",
+        "ru": "Глубокая чистка теплообменника фанкойла, 2+ блоков",
+        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU)، وحدتان فأكثر",
+        "fr": "Nettoyage en profondeur de l’échangeur de ventilo-convecteur (FCU), 2 unités et plus",
+        "de": "Wärmetauscher-Tiefenreinigung am Gebläsekonvektor (FCU), 2+ Geräte",
+        "zh": "风机盘管（FCU）深度清洗，2 台及以上",
+        "hi": "FCU कॉइल की डीप क्लीनिंग, 2+ यूनिट"
+      },
+      "unit": "fcu",
+      "price": 549,
+      "min_qty": 2,
+      "tier_from_qty": 2,
+      "note": {
+        "en": "Per unit",
+        "ru": "За блок",
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
+      },
+      "sort": 2
+    },
+    {
+      "service_slug": "ac-duct-cleaning",
+      "key": "duct_clean_1",
+      "tier_group": "duct_clean",
+      "name": {
+        "en": "AC Duct Cleaning, 1 unit",
+        "ru": "Чистка воздуховодов, 1 блок",
+        "ar": "تنظيف مجاري الهواء، وحدة واحدة",
+        "fr": "Nettoyage des gaines de climatisation, 1 unité",
+        "de": "Luftkanalreinigung, 1 Gerät",
+        "zh": "空调风管清洗，1 台",
+        "hi": "एसी डक्ट की सफ़ाई, 1 यूनिट"
+      },
+      "unit": "unit",
+      "price": 649,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Call-out included",
+        "ru": "Выезд включён",
+        "ar": "رسوم الزيارة مشمولة",
+        "fr": "Déplacement inclus",
+        "de": "Anfahrt inklusive",
+        "zh": "含上门费",
+        "hi": "विज़िट शुल्क शामिल"
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "ac-duct-cleaning",
+      "key": "duct_clean_2plus",
+      "tier_group": "duct_clean",
+      "name": {
+        "en": "AC Duct Cleaning, 2+ units",
+        "ru": "Чистка воздуховодов, 2+ блоков",
+        "ar": "تنظيف مجاري الهواء، وحدتان فأكثر",
+        "fr": "Nettoyage des gaines de climatisation, 2 unités et plus",
+        "de": "Luftkanalreinigung, 2+ Geräte",
+        "zh": "空调风管清洗，2 台及以上",
+        "hi": "एसी डक्ट की सफ़ाई, 2+ यूनिट"
+      },
+      "unit": "unit",
+      "price": 599,
+      "min_qty": 2,
+      "tier_from_qty": 2,
+      "note": {
+        "en": "Per unit",
+        "ru": "За блок",
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
+      },
+      "sort": 2
+    },
+    {
+      "service_slug": "full-ac-system-cleaning",
+      "key": "full_system_1",
+      "tier_group": "full_system",
+      "name": {
+        "en": "Full AC System Cleaning, 1 unit",
+        "ru": "Комплексная чистка системы кондиционирования, 1 блок",
+        "ar": "التنظيف الشامل لنظام التكييف، وحدة واحدة",
+        "fr": "Nettoyage complet du système de climatisation, 1 unité",
+        "de": "Komplettreinigung der Klimaanlage, 1 Gerät",
+        "zh": "空调系统全面清洗，1 台",
+        "hi": "पूरे एसी सिस्टम की सफ़ाई, 1 यूनिट"
+      },
+      "unit": "unit",
+      "price": 899,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Call-out included",
+        "ru": "Выезд включён",
+        "ar": "رسوم الزيارة مشمولة",
+        "fr": "Déplacement inclus",
+        "de": "Anfahrt inklusive",
+        "zh": "含上门费",
+        "hi": "विज़िट शुल्क शामिल"
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "full-ac-system-cleaning",
+      "key": "full_system_2plus",
+      "tier_group": "full_system",
+      "name": {
+        "en": "Full AC System Cleaning, 2+ units",
+        "ru": "Комплексная чистка системы кондиционирования, 2+ блоков",
+        "ar": "التنظيف الشامل لنظام التكييف، وحدتان فأكثر",
+        "fr": "Nettoyage complet du système de climatisation, 2 unités et plus",
+        "de": "Komplettreinigung der Klimaanlage, 2+ Geräte",
+        "zh": "空调系统全面清洗，2 台及以上",
+        "hi": "पूरे एसी सिस्टम की सफ़ाई, 2+ यूनिट"
+      },
+      "unit": "unit",
+      "price": 849,
+      "min_qty": 2,
+      "tier_from_qty": 2,
+      "note": {
+        "en": "Per unit",
+        "ru": "За блок",
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
+      },
+      "sort": 2
     },
     {
       "service_slug": "emergency-ac-repair",
@@ -223,7 +420,7 @@
       "sort": 1
     },
     {
-      "service_slug": "refrigerant-leak-refill",
+      "service_slug": "refrigerant-leak-detection",
       "key": "leak_test",
       "name": {
         "en": "Nitrogen leak test",
@@ -250,7 +447,7 @@
       "sort": 1
     },
     {
-      "service_slug": "refrigerant-leak-refill",
+      "service_slug": "refrigerant-recharge",
       "key": "refill",
       "name": {
         "en": "Refill after leak repair",
@@ -267,7 +464,7 @@
       "tier_from_qty": 1,
       "note": {
         "en": "By refrigerant type and weight",
-        "ru": "По типу фреона и весу",
+        "ru": "По типу хладагента и весу",
         "ar": "حسب نوع الغاز ووزنه",
         "fr": "Selon le type et le poids de fluide frigorigène",
         "de": "Nach Kältemittelart und Gewicht",
@@ -492,7 +689,7 @@
         "hi": "3 स्प्लिट यूनिट की स्टैंडर्ड सफ़ाई + 3 सीट वाले सोफ़े की सफ़ाई, एक ही विज़िट में।"
       },
       "price": 1099,
-      "compare_price": 1164,
+      "compare_price": 1104,
       "includes": {
         "ac_clean": 3,
         "sofa_seat": 3
@@ -514,21 +711,21 @@
         "hi": "Essential"
       },
       "description": {
-        "en": "Up to 3 split units. 3 standard cleans a year, priority booking, 10% off repairs.",
-        "ru": "До 3 блоков. 3 стандартные чистки в год, приоритетная запись, −10% на ремонт.",
-        "ar": "حتى 3 وحدات سبليت. 3 تنظيفات قياسية في السنة، أولوية في الحجز، وخصم 10% على الإصلاح.",
-        "fr": "Jusqu’à 3 unités split. 3 nettoyages standard par an, réservation prioritaire, 10 % de remise sur les réparations.",
-        "de": "Bis zu 3 Split-Geräte. 3 Standardreinigungen pro Jahr, bevorzugte Terminvergabe, 10 % Rabatt auf Reparaturen.",
-        "zh": "最多 3 台分体式空调。每年 3 次标准清洗，优先预约，维修享 10% 折扣。",
-        "hi": "3 स्प्लिट यूनिट तक। साल में 3 स्टैंडर्ड सफ़ाई, प्राथमिकता से बुकिंग, मरम्मत पर 10% छूट।"
+        "en": "2 standard-service visits a year for 3 split units. Priority scheduling and 10% off repair labour.",
+        "ru": "2 стандартных визита в год на 3 сплит-системы. Приоритетная запись и −10% на работы по ремонту.",
+        "ar": "زيارتان للخدمة القياسية في السنة لـ 3 وحدات سبليت. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
+        "fr": "2 visites de nettoyage standard par an pour 3 unités split. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
+        "de": "2 Besuche pro Jahr mit Standardreinigung für 3 Split-Geräte. Bevorzugte Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen.",
+        "zh": "每年 2 次标准清洗上门，适用于 3 台分体式空调。优先预约，维修人工费优惠 10%。",
+        "hi": "3 स्प्लिट यूनिट के लिए साल में स्टैंडर्ड सर्विस की 2 विज़िट। प्राथमिकता से बुकिंग और मरम्मत की मज़दूरी पर 10% छूट।"
       },
-      "price": 1599,
+      "price": 1499,
       "compare_price": null,
       "includes": {
         "units_max": 3,
-        "visits": 3,
-        "deep_cleans": 0,
-        "priority_hours": 48,
+        "visits": 2,
+        "deep_units": 0,
+        "priority": true,
         "repair_discount_pct": 10
       }
     },
@@ -548,21 +745,21 @@
         "hi": "Comfort"
       },
       "description": {
-        "en": "Up to 5 split units. 3 visits a year, one of them a deep clean, priority booking, 10% off repairs.",
-        "ru": "До 5 блоков. 3 визита в год, один из них — глубокая чистка, приоритетная запись, −10% на ремонт.",
-        "ar": "حتى 5 وحدات سبليت. 3 زيارات في السنة إحداها تنظيف عميق، أولوية في الحجز، وخصم 10% على الإصلاح.",
-        "fr": "Jusqu’à 5 unités split. 3 visites par an, dont un nettoyage en profondeur, réservation prioritaire, 10 % de remise sur les réparations.",
-        "de": "Bis zu 5 Split-Geräte. 3 Besuche pro Jahr, davon eine Tiefenreinigung, bevorzugte Terminvergabe, 10 % Rabatt auf Reparaturen.",
-        "zh": "最多 5 台分体式空调。每年 3 次上门，其中一次为深度清洗，优先预约，维修享 10% 折扣。",
-        "hi": "5 स्प्लिट यूनिट तक। साल में 3 विज़िट, जिनमें एक डीप क्लीनिंग, प्राथमिकता से बुकिंग, मरम्मत पर 10% छूट।"
+        "en": "2 visits a year for 5 split units. One selected unit receives a deep clean during one visit, replacing its standard clean. Priority scheduling and 10% off repair labour.",
+        "ru": "2 визита в год на 5 сплит-систем. Один выбранный блок за один из визитов получает глубокую чистку вместо стандартной. Приоритетная запись и −10% на работы по ремонту.",
+        "ar": "زيارتان في السنة لـ 5 وحدات سبليت. تحصل وحدة واحدة مختارة على تنظيف عميق خلال إحدى الزيارتين بدلًا من تنظيفها القياسي. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
+        "fr": "2 visites par an pour 5 unités split. Lors de l’une des visites, une unité choisie reçoit un nettoyage en profondeur à la place de son nettoyage standard. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
+        "de": "2 Besuche pro Jahr für 5 Split-Geräte. Ein ausgewähltes Gerät erhält bei einem der Besuche eine Tiefenreinigung anstelle der Standardreinigung. Bevorzugte Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen.",
+        "zh": "每年 2 次上门，适用于 5 台分体式空调。其中一次上门时，一台选定的机器做深度清洗，以替代该机器当次的标准清洗。优先预约，维修人工费优惠 10%。",
+        "hi": "5 स्प्लिट यूनिट के लिए साल में 2 विज़िट। किसी एक विज़िट में एक चुनी हुई यूनिट की स्टैंडर्ड सफ़ाई की जगह डीप क्लीनिंग होती है। प्राथमिकता से बुकिंग और मरम्मत की मज़दूरी पर 10% छूट।"
       },
-      "price": 2699,
+      "price": 2499,
       "compare_price": null,
       "includes": {
         "units_max": 5,
-        "visits": 3,
-        "deep_cleans": 1,
-        "priority_hours": 48,
+        "visits": 2,
+        "deep_units": 1,
+        "priority": true,
         "repair_discount_pct": 10
       }
     },
@@ -582,22 +779,22 @@
         "hi": "Villa"
       },
       "description": {
-        "en": "Up to 8 FCUs or split units. 3 visits a year, 24-hour priority call-out, 15% off repairs.",
-        "ru": "До 8 фанкойлов или блоков. 3 визита в год, приоритетный выезд за 24 часа, −15% на ремонт.",
-        "ar": "حتى 8 وحدات فان كويل أو سبليت. 3 زيارات في السنة، زيارة ذات أولوية خلال 24 ساعة، وخصم 15% على الإصلاح.",
-        "fr": "Jusqu’à 8 FCU ou unités split. 3 visites par an, intervention prioritaire sous 24 h, 15 % de remise sur les réparations.",
-        "de": "Bis zu 8 Gebläsekonvektoren oder Split-Geräte. 3 Besuche pro Jahr, bevorzugter Einsatz innerhalb von 24 Stunden, 15 % Rabatt auf Reparaturen.",
-        "zh": "最多 8 台风机盘管或分体式空调。每年 3 次上门，24 小时内优先上门，维修享 15% 折扣。",
-        "hi": "8 FCU या स्प्लिट यूनिट तक। साल में 3 विज़िट, 24 घंटे में प्राथमिकता से कॉल-आउट, मरम्मत पर 15% छूट।"
+        "en": "3 planned visits a year, priced by equipment type, unit count and access.",
+        "ru": "3 плановых визита в год; цена зависит от типа оборудования, числа блоков и доступа.",
+        "ar": "3 زيارات مجدولة في السنة، والسعر بحسب نوع المعدات وعدد الوحدات وسهولة الوصول إليها.",
+        "fr": "3 visites planifiées par an ; prix établi selon le type d’équipement, le nombre d’unités et l’accès.",
+        "de": "3 geplante Besuche pro Jahr, Preis nach Gerätetyp, Anzahl der Geräte und Zugänglichkeit.",
+        "zh": "每年 3 次定期上门，按设备类型、机器数量和作业便利程度定价。",
+        "hi": "साल में 3 तय विज़िट; कीमत उपकरण के प्रकार, यूनिट की संख्या और पहुँच के अनुसार।"
       },
-      "price": 4499,
+      "price": null,
       "compare_price": null,
       "includes": {
-        "units_max": 8,
+        "units_max": null,
         "visits": 3,
-        "deep_cleans": 0,
-        "priority_hours": 24,
-        "repair_discount_pct": 15
+        "deep_units": 0,
+        "priority": false,
+        "repair_discount_pct": 0
       }
     }
   ],
@@ -609,10 +806,13 @@
     "diagnostics_item_key": "emergency_callout",
     "quote_only_services": [
       "ac-repair",
-      "refrigerant-leak-refill",
+      "refrigerant-recharge",
       "humidity-mould-check",
       "water-tank-cleaning"
     ],
-    "suggest_bundle_when_cheaper": true
+    "suggest_bundle_when_cheaper": true,
+    "diagnostic_line_ids": [
+      "leak_test"
+    ]
   }
 }

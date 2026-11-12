@@ -25,12 +25,12 @@ test.describe('booking request wizard', () => {
     await expect(
       book.getByRole('heading', { level: 3, name: msg('en', 'Booking.details.acQuestion') }),
     ).toBeFocused();
-    await expect(book.getByRole('radio', { name: /^AC Cleaning/ })).toBeChecked();
+    await expect(book.getByRole('radio', { name: /^Standard Split AC Cleaning/ })).toBeChecked();
 
-    const add = book.getByRole('button', { name: /^Add one: AC Cleaning/ });
+    const add = book.getByRole('button', { name: /^Add one: Standard Split AC Cleaning/ });
     await add.click();
     await add.click();
-    await expect(book.getByText('AED 897').first()).toBeVisible();
+    await expect(book.getByText('AED 837').first()).toBeVisible();
     await expect(book.getByText(/Fresh Home/).first()).toBeVisible();
 
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
@@ -41,8 +41,8 @@ test.describe('booking request wizard', () => {
 
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toSend') }).click();
     const message = book.getByText(/^Hi Brigada!/);
-    await expect(message).toContainText('AC Cleaning × 3');
-    await expect(message).toContainText('AED 897');
+    await expect(message).toContainText('Standard Split AC Cleaning & Service × 3');
+    await expect(message).toContainText('AED 837');
     await expect(message).toContainText('Fri, 6 Nov');
     await expect(message).toContainText('Afternoon');
     await expect(
@@ -64,7 +64,7 @@ test.describe('booking request wizard', () => {
     });
     await add.first().click();
     await add.first().click();
-    const total = book.locator('[dir="ltr"]', { hasText: '897' }).first();
+    const total = book.locator('[dir="ltr"]', { hasText: '837' }).first();
     await expect(total).toBeVisible();
     await expect(total).toContainText('د.إ');
 
@@ -102,8 +102,8 @@ test.describe('booking request wizard', () => {
     await expect(
       book.getByRole('heading', { level: 3, name: msg('en', 'Booking.details.acQuestion') }),
     ).toBeVisible();
-    await expect(book.getByRole('radio', { name: /^AC Deep Cleaning/ })).toBeChecked();
-    await expect(book.getByText('AED 649').first()).toBeVisible();
+    await expect(book.getByRole('radio', { name: /^Split AC Deep Cleaning/ })).toBeChecked();
+    await expect(book.getByText('AED 549').first()).toBeVisible();
 
     await page.goto('/en/services/ac-repair');
     const repair = page.locator('#book');

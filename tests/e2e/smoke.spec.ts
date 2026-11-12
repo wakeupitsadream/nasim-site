@@ -96,7 +96,7 @@ test('every service page answers 200 in every locale', async ({ request }) => {
     services: { slug: string; status: string }[];
   };
   const slugs = seed.services.filter((s) => s.status !== 'hidden').map((s) => s.slug);
-  expect(slugs.length).toBe(12);
+  expect(slugs.length).toBe(24);
   for (const { locale } of LOCALES) {
     for (const slug of slugs) {
       const response = await request.get(`/${locale}/services/${slug}`);

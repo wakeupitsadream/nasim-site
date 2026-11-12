@@ -124,13 +124,13 @@
         "hi": "कौन-सी सेवाएँ आप नहीं देते?"
       },
       "answer_html": {
-        "en": "<p>New installations, complex office VRF repairs, duct cleaning and mould removal from walls. The last two need separate Dubai Municipality approvals — we arrange them through a licensed partner.</p>",
-        "ru": "<p>Установку новых систем, сложный ремонт офисных VRF, чистку воздуховодов и удаление плесени со стен. Последние два требуют отдельных разрешений Dubai Municipality — организуем через лицензированного партнёра.</p>",
-        "ar": "<p>تركيب الأنظمة الجديدة، والإصلاحات المعقدة لأنظمة VRF المكتبية، وتنظيف مجاري الهواء، وإزالة العفن من الجدران. الأخيران يتطلبان تصاريح منفصلة من بلدية دبي — ننظّمهما عبر شريك مرخّص.</p>",
-        "fr": "<p>Les installations neuves, les réparations complexes de VRF de bureaux, le nettoyage des gaines et le traitement des moisissures sur les murs. Les deux derniers exigent des agréments distincts de la Municipalité de Dubaï — nous les confions à un partenaire agréé.</p>",
-        "de": "<p>Neuinstallationen, komplexe VRF-Reparaturen in Büros, Kanalreinigung und Schimmelentfernung von Wänden. Die letzten beiden brauchen separate Genehmigungen der Dubai Municipality – wir organisieren sie über einen lizenzierten Partner.</p>",
-        "zh": "<p>新机安装、复杂的办公楼 VRF 维修、风管清洗和墙面除霉。后两项需要迪拜市政局的单独许可——我们通过持牌合作伙伴安排。</p>",
-        "hi": "<p>नए इंस्टॉलेशन, ऑफ़िस के जटिल VRF सिस्टम की मरम्मत, डक्ट की सफ़ाई और दीवारों से फफूंद हटाना। आख़िरी दो के लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए — हम इन्हें लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं।</p>"
+        "en": "<p>New installations, complex office VRF repairs and mould removal from walls. Mould removal needs a separate Dubai Municipality approval — we arrange it through a licensed partner.</p>",
+        "ru": "<p>Установку новых систем, сложный ремонт офисных VRF и удаление плесени со стен. Удаление плесени требует отдельного разрешения Dubai Municipality — организуем через лицензированного партнёра.</p>",
+        "ar": "<p>تركيب الأنظمة الجديدة، والإصلاحات المعقدة لأنظمة VRF المكتبية، وإزالة العفن من الجدران. إزالة العفن تتطلب تصريحًا منفصلًا من بلدية دبي — ننظّمها عبر شريك مرخّص.</p>",
+        "fr": "<p>Les installations neuves, les réparations complexes de VRF de bureaux et le traitement des moisissures sur les murs. Le traitement des moisissures exige un agrément distinct de la Municipalité de Dubaï — nous le confions à un partenaire agréé.</p>",
+        "de": "<p>Neuinstallationen, komplexe VRF-Reparaturen in Büros und Schimmelentfernung von Wänden. Die Schimmelentfernung braucht eine separate Genehmigung der Dubai Municipality – wir organisieren sie über einen lizenzierten Partner.</p>",
+        "zh": "<p>新机安装、复杂的办公楼 VRF 维修和墙面除霉。墙面除霉需要迪拜市政局的单独许可——我们通过持牌合作伙伴安排。</p>",
+        "hi": "<p>नए इंस्टॉलेशन, ऑफ़िस के जटिल VRF सिस्टम की मरम्मत और दीवारों से फफूंद हटाना। फफूंद हटाने के लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए — हम इसे लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं।</p>"
       }
     },
     {
@@ -296,7 +296,7 @@
     },
     {
       "scope": "service",
-      "service_slug": "refrigerant-leak-refill",
+      "service_slug": "refrigerant-leak-detection",
       "sort": 1,
       "question": {
         "en": "Why not just top up the gas?",
@@ -309,7 +309,7 @@
       },
       "answer_html": {
         "en": "<p>Refrigerant does not get used up. If it is low, it leaked, and a top-up leaks out again — usually within weeks. Finding and fixing the leak costs more once, but it is the last time you pay for it.</p>",
-        "ru": "<p>Фреон не расходуется. Если его мало — он вытек, и дозаправка вытечет снова, обычно за несколько недель. Найти и устранить утечку дороже один раз, но платите вы за это последний раз.</p>",
+        "ru": "<p>Хладагент не расходуется. Если его мало — он вытек, и дозаправка вытечет снова, обычно за несколько недель. Найти и устранить утечку дороже один раз, но платите вы за это последний раз.</p>",
         "ar": "<p>غاز التبريد لا يُستهلك. إذا كان ناقصًا فقد تسرّب، والتعبئة ستتسرب مجددًا — خلال أسابيع عادةً. إيجاد التسرب وإصلاحه يكلّف أكثر مرة واحدة، لكنها آخر مرة تدفع فيها ثمنه.</p>",
         "fr": "<p>Le fluide frigorigène ne se consomme pas. S’il en manque, c’est qu’il a fui, et un appoint s’échappe à nouveau — généralement en quelques semaines. Trouver et réparer la fuite coûte plus cher une fois, mais c’est la dernière fois que vous payez pour ça.</p>",
         "de": "<p>Kältemittel verbraucht sich nicht. Ist zu wenig da, ist es ausgetreten – und nachgefülltes tritt wieder aus, meist innerhalb von Wochen. Das Leck zu finden und zu beheben kostet einmal mehr, aber dann zahlen Sie zum letzten Mal dafür.</p>",
@@ -376,13 +376,13 @@
         "hi": "अगर दो विज़िट के बीच कोई यूनिट ख़राब हो जाए तो?"
       },
       "answer_html": {
-        "en": "<p>You get a priority call-out within the hours of your plan (48 or 24 hours), and the repair discount of your plan applies.</p>",
-        "ru": "<p>Приоритетный выезд в сроки вашего тарифа (48 или 24 часа) и скидка на ремонт по тарифу.</p>",
-        "ar": "<p>تحصل على زيارة ذات أولوية خلال المدة المحددة في خطتك (48 أو 24 ساعة)، ويُطبَّق خصم الإصلاح الخاص بخطتك.</p>",
-        "fr": "<p>Vous obtenez une intervention prioritaire dans le délai de votre formule (48 ou 24 heures), et la remise sur les réparations de votre formule s’applique.</p>",
-        "de": "<p>Sie erhalten einen bevorzugten Einsatz innerhalb der Frist Ihres Vertrags (48 oder 24 Stunden), und der Reparaturrabatt Ihres Vertrags gilt.</p>",
-        "zh": "<p>我们会在您方案规定的时间内（48 或 24 小时）优先上门，维修按您方案的折扣计费。</p>",
-        "hi": "<p>आपको अपने प्लान के समय (48 या 24 घंटे) के भीतर प्राथमिकता से कॉल-आउट मिलता है, और आपके प्लान की मरम्मत छूट लागू होती है।</p>"
+        "en": "<p>You get priority scheduling, and your plan's discount on repair labour applies.</p>",
+        "ru": "<p>Вы получаете приоритетную запись, и действует скидка вашего плана на работы по ремонту.</p>",
+        "ar": "<p>تحصل على أولوية في حجز المواعيد، ويُطبَّق خصم خطتك على أجور اليد العاملة في الإصلاح.</p>",
+        "fr": "<p>Vous bénéficiez d’une réservation prioritaire, et la remise de votre formule s’applique à la main-d’œuvre de réparation.</p>",
+        "de": "<p>Sie erhalten einen bevorzugten Termin, und der Rabatt Ihres Vertrags auf die Arbeitskosten der Reparatur gilt.</p>",
+        "zh": "<p>您可享优先预约，维修人工费按您方案的优惠计算。</p>",
+        "hi": "<p>आपको प्राथमिकता से बुकिंग मिलती है, और मरम्मत की मज़दूरी पर आपके प्लान की छूट लागू होती है।</p>"
       }
     },
     {

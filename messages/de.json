@@ -22,7 +22,7 @@
     },
     "annualContracts": {
       "title": "Jahreswartungsverträge",
-      "description": "Jahreswartung für Klimaanlagen in Dubai: drei Besuche pro Jahr, bevorzugte Einsätze und Rabatt auf Reparaturen. Vergleichen Sie Essential, Comfort und Villa."
+      "description": "Klima-Jahresverträge in Dubai: geplante Besuche, bevorzugte Terminvergabe, 10 % Rabatt auf Reparatur-Arbeitskosten. Essential, Comfort und Villa im Vergleich."
     },
     "areas": {
       "title": "Einsatzgebiete"
@@ -384,7 +384,7 @@
     "assistant": "Assistent"
   },
   "Services": {
-    "lead": "Zehn Leistungen zum Festpreis und zwei demnächst. Jeder Besuch endet mit einem Fotobericht per WhatsApp.",
+    "lead": "Festpreise, wo sie sich vorab nennen lassen, ein Angebot für alles andere. Jeder Besuch endet mit einem Fotobericht per WhatsApp.",
     "category": {
       "ac": "Klimaanlagen",
       "upholstery": "Polster und Teppiche",
@@ -405,8 +405,8 @@
       "availableFrom": "Ab {date}"
     },
     "contract": {
-      "title": "Jahresvertrag",
-      "text": "Drei Besuche pro Jahr, bevorzugte Terminvergabe und Rabatt auf Reparaturen.",
+      "title": "Jahresverträge für Ihre Klimaanlage",
+      "text": "Geplante Reinigung und Wartung über das ganze Jahr, mit bevorzugter Terminvergabe und den Reparaturvorteilen, die in Ihrem Vertrag festgelegt sind. Leistungsumfang, Anzahl der Geräte und Häufigkeit der Besuche bestätigen wir bei Vertragsabschluss.",
       "cta": "Verträge vergleichen"
     },
     "notSure": {
@@ -414,7 +414,13 @@
       "text": "Beschreiben Sie das Problem oder senden Sie ein Foto – der Assistent nennt die wahrscheinliche Ursache und die passende Leistung mit ihrem Festpreis. Häufige Fragen beantwortet er gleich mit.",
       "ask": "Assistenten fragen",
       "price": "Rechner öffnen"
-    }
+    },
+    "group": {
+      "cleaning": "Klimaanlagen-Reinigung",
+      "addon": "Zusätzliche Reinigungsoptionen",
+      "service": "Wartung & Reparatur von Klimaanlagen"
+    },
+    "onRequest": "Preis auf Anfrage"
   },
   "Service": {
     "included": "Was enthalten ist",
@@ -453,6 +459,10 @@
       "from": "Verfügbar ab {date}",
       "waitlist": "Auf die Warteliste",
       "note": "Wir schreiben Ihnen als Erstes, sobald es losgeht. Keine Newsletter."
+    },
+    "quote": {
+      "title": "Preis für diese Leistung anfragen",
+      "text": "Nennen Sie uns den Gerätetyp und die Anzahl Ihrer Geräte. Umfang und Festpreis bestätigen wir vor dem Besuch."
     }
   },
   "Price": {
@@ -529,7 +539,7 @@
     "getPrice": "Sofortpreis erhalten"
   },
   "Contracts": {
-    "lead": "Eine Zahlung pro Jahr, drei Besuche, ein bevorzugter Einsatz bei Störungen und Rabatt auf Reparaturen. Günstiger, als jede Reinigung einzeln zu buchen.",
+    "lead": "Eine Zahlung pro Jahr für geplante Besuche, mit bevorzugter Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen. Günstiger, als jede Reinigung einzeln zu buchen.",
     "plans": {
       "eyebrow": "Drei Verträge",
       "title": "Wählen Sie den Vertrag für Ihr Zuhause",
@@ -539,13 +549,15 @@
     "includes": {
       "units": "Bis zu {n} Geräte",
       "visits": "{n} Besuche pro Jahr",
-      "deep": "davon {n} Tiefenreinigung",
-      "priority": "Bevorzugter Einsatz innerhalb von {n} Stunden",
-      "repairDiscount": "{n} % Rabatt auf Reparaturen"
+      "deep": "Ein ausgewähltes Gerät erhält bei einem der Besuche eine Tiefenreinigung",
+      "priority": "Bevorzugte Terminvergabe",
+      "repairDiscount": "{n} % Rabatt auf die Arbeitskosten bei Reparaturen",
+      "custom": "Preis nach Gerätetyp, Anzahl der Geräte und Zugänglichkeit"
     },
     "card": {
       "saving": "Besuch für Besuch gebucht: <s>{separate}</s>. Sie sparen <s>{saving}</s> ({pct} %).",
-      "cta": "Zu diesem Vertrag anfragen"
+      "cta": "Zu diesem Vertrag anfragen",
+      "quote": "Angebot nach Besichtigung"
     },
     "savings": {
       "eyebrow": "Die Rechnung",
@@ -560,8 +572,8 @@
         "saving": "Sie sparen"
       },
       "visitsStd": "{standard} Standardreinigungen × {units} Geräte",
-      "visitsMix": "{standard} Standard + {deep} Tiefenreinigung × {units} Geräte",
-      "note": "Der Vertrag Villa ist hier als Split-Geräte gerechnet; Gebläsekonvektoren kosten pro Besuch mehr, dort ist die Ersparnis also größer."
+      "visitsDeep": "{visits} Besuche × {units} Geräte, davon ein Gerät mit Tiefenreinigung",
+      "note": "Für den Vertrag Villa erstellen wir das Angebot nach einer Besichtigung, deshalb steht er nicht in dieser Tabelle."
     },
     "visit": {
       "eyebrow": "Bei jedem Besuch",
@@ -571,7 +583,7 @@
     "how": {
       "eyebrow": "So funktioniert es",
       "title": "Drei Schritte im Jahr",
-      "lead": "Fällt ein Gerät zwischen den Besuchen aus, kommen wir innerhalb der Frist Ihres Vertrags, und der Reparaturrabatt des Vertrags gilt."
+      "lead": "Fällt ein Gerät zwischen den Besuchen aus, erhalten Sie einen bevorzugten Termin und den Rabatt Ihres Vertrags auf die Arbeitskosten der Reparatur."
     },
     "steps": {
       "one": {
@@ -580,7 +592,7 @@
       },
       "two": {
         "title": "Erster Besuch",
-        "text": "Wir reinigen jedes Gerät, prüfen die Abläufe und legen mit Ihnen die Termine der nächsten beiden Besuche fest."
+        "text": "Wir reinigen jedes Gerät, prüfen die Abläufe und legen mit Ihnen die Termine der nächsten Besuche fest."
       },
       "three": {
         "title": "Wir erinnern Sie",

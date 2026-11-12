@@ -49,9 +49,14 @@ export const priceUnitSchema = z.enum(['unit', 'fcu', 'visit', 'seat', 'item', '
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'YYYY-MM-DD');
 
+export const serviceGroupSchema = z.enum(['cleaning', 'addon', 'service']);
+export type ServiceGroup = z.infer<typeof serviceGroupSchema>;
+
 export const serviceSchema = z.object({
   slug: z.string().min(1),
   category: serviceCategorySchema,
+  /** Sub-section of the AC catalogue (DECISIONS №61); other categories have none. */
+  group: serviceGroupSchema.optional(),
   status: serviceStatusSchema,
   sort: z.number().int(),
   name: i18nTextRequired,
@@ -103,11 +108,17 @@ export const bundlePackageSchema = z.object({
 export const annualPackageSchema = z.object({
   ...packageBase,
   type: z.literal('annual'),
+  /** Null = quoted after an inspection (the Villa plan, DECISIONS №61). */
+  price: z.number().nonnegative().nullable(),
   includes: z.object({
-    units_max: z.number().int().positive(),
+    /** Split units covered; null when the plan is sized at the inspection. */
+    units_max: z.number().int().positive().nullable(),
     visits: z.number().int().positive(),
-    deep_cleans: z.number().int().nonnegative(),
-    priority_hours: z.number().int().positive(),
+    /** Units that get a deep clean during one visit, in place of their standard clean. */
+    deep_units: z.number().int().nonnegative(),
+    /** Priority scheduling (earlier slots, no promised response time). */
+    priority: z.boolean(),
+    /** Discount on repair labour, per cent. */
     repair_discount_pct: z.number().int().nonnegative(),
   }),
 });
@@ -123,6 +134,8 @@ export const pricingRulesSchema = z.object({
   diagnostics_credited_to_repair: z.boolean(),
   diagnostics_item_key: z.string().min(1),
   quote_only_services: z.array(z.string()),
+  /** Lines that are a diagnosis in themselves: no separate diagnostics fee next to them. */
+  diagnostic_line_ids: z.array(z.string()).default([]),
   suggest_bundle_when_cheaper: z.boolean(),
 });
 

@@ -153,14 +153,13 @@ export default async function AnnualContractsPage() {
                     <LocalizedText value={pickLocalized(plan.name, locale)} locale={locale} />
                   </th>
                   <td className="px-4 py-3 text-muted-foreground">
-                    {cmp.deepVisits > 0
-                      ? t('savings.visitsMix', {
-                          standard: formatNumber(cmp.standardVisits, locale),
-                          deep: formatNumber(cmp.deepVisits, locale),
+                    {cmp.deepUnits > 0
+                      ? t('savings.visitsDeep', {
+                          visits: formatNumber(cmp.visits, locale),
                           units: formatNumber(cmp.units, locale),
                         })
                       : t('savings.visitsStd', {
-                          standard: formatNumber(cmp.standardVisits, locale),
+                          standard: formatNumber(cmp.visits, locale),
                           units: formatNumber(cmp.units, locale),
                         })}
                   </td>
