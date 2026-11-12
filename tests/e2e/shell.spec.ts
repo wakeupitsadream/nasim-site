@@ -159,7 +159,7 @@ test.describe('inner pages', () => {
 
   test('FAQ answers are in the HTML and <details> toggles', async ({ page, request }) => {
     const html = await (await request.get('/en/annual-contracts')).text();
-    expect(html).toContain('priority call-out within the hours of your plan');
+    expect(html).toContain('You get priority scheduling, and your plan');
     await page.goto('/en/annual-contracts');
     const first = page.locator('details').first();
     await expect(first).not.toHaveAttribute('open', '');
