@@ -267,7 +267,7 @@
       "tier_from_qty": 1,
       "note": {
         "en": "By refrigerant type and weight",
-        "ru": "По типу фреона и весу",
+        "ru": "По типу хладагента и весу",
         "ar": "حسب نوع الغاز ووزنه",
         "fr": "Selon le type et le poids de fluide frigorigène",
         "de": "Nach Kältemittelart und Gewicht",

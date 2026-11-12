@@ -111,7 +111,7 @@
         },
         {
           "en": "Refrigerant top-up or repairs",
-          "ru": "Заправка фреона и ремонт",
+          "ru": "Заправка хладагента и ремонт",
           "ar": "تعبئة غاز التبريد أو الإصلاحات",
           "fr": "Appoint de fluide frigorigène ou réparations",
           "de": "Kältemittel nachfüllen oder Reparaturen",
@@ -500,7 +500,7 @@
       "excludes": [
         {
           "en": "Repairs and refrigerant work",
-          "ru": "Ремонт и работа с фреоном",
+          "ru": "Ремонт и работа с хладагентом",
           "ar": "الإصلاحات وأعمال غاز التبريد",
           "fr": "Réparations et interventions sur le fluide frigorigène",
           "de": "Reparaturen und Arbeiten am Kältemittelkreislauf",
@@ -858,7 +858,7 @@
       "sort": 100,
       "name": {
         "en": "Preventive AC Maintenance",
-        "ru": "Профилактическое обслуживание кондиционера",
+        "ru": "Профилактическое обслуживание",
         "ar": "الصيانة الوقائية للمكيف",
         "fr": "Entretien préventif de climatiseur",
         "de": "Vorbeugende Klimaanlagen-Wartung",
@@ -867,7 +867,7 @@
       },
       "short": {
         "en": "Regular checks of cooling performance, airflow, thermostat operation, electrical components and drainage. We complete the cleaning included in your chosen package and report any further maintenance needs.",
-        "ru": "Регулярно проверяем качество охлаждения, поток воздуха, работу термостата, электрические компоненты и дренаж. Выполняем чистку, входящую в выбранный вами пакет, и сообщаем, если требуется дополнительное обслуживание.",
+        "ru": "Проверяем качество охлаждения, подачу воздуха, работу термостата, электрических компонентов и дренажа. Выполняем чистку в рамках выбранного пакета и сообщаем о необходимости дополнительных работ.",
         "ar": "فحوص منتظمة لأداء التبريد وتدفق الهواء وعمل الثرموستات والمكوّنات الكهربائية والتصريف. ننجز التنظيف المشمول في الباقة التي اخترتها ونبلغك بأي احتياجات صيانة إضافية.",
         "fr": "Contrôles réguliers des performances de refroidissement, du débit d’air, du fonctionnement du thermostat, des composants électriques et de l’évacuation des condensats. Nous réalisons le nettoyage inclus dans le forfait que vous avez choisi et vous signalons tout autre besoin d’entretien.",
         "de": "Regelmäßige Prüfung von Kühlleistung, Luftstrom, Thermostatfunktion, elektrischen Bauteilen und Kondensatablauf. Wir führen die Reinigung aus, die in Ihrem gewählten Paket enthalten ist, und informieren Sie über weiteren Wartungsbedarf.",
@@ -909,7 +909,7 @@
       },
       "short": {
         "en": "We inspect your AC and test its operation to investigate weak cooling, unusual noise, water leaks or starting problems. You receive our findings and a written quotation for any recommended repair.",
-        "ru": "Осматриваем кондиционер и проверяем его работу, чтобы найти причину слабого охлаждения, необычного шума, протечки воды или проблем с запуском. Вы получаете наши выводы и письменную смету на рекомендованный ремонт.",
+        "ru": "Осматриваем кондиционер и проверяем его работу, чтобы установить причину слабого охлаждения, необычного шума, протечки или проблем с запуском. Объясняем результаты и предоставляем письменную смету рекомендуемого ремонта.",
         "ar": "نفحص مكيفك ونختبر تشغيله للبحث عن سبب ضعف التبريد أو الضجيج غير المعتاد أو تسرب الماء أو مشكلات بدء التشغيل. تحصل على نتائج الفحص وعلى عرض سعر مكتوب لأي إصلاح نوصي به.",
         "fr": "Nous inspectons votre climatiseur et testons son fonctionnement pour rechercher la cause d’un refroidissement insuffisant, d’un bruit inhabituel, d’une fuite d’eau ou de difficultés au démarrage. Vous recevez nos conclusions et un devis écrit pour toute réparation recommandée.",
         "de": "Wir inspizieren Ihre Klimaanlage und testen ihren Betrieb, um der Ursache von schwacher Kühlung, ungewöhnlichen Geräuschen, Wasseraustritt oder Startproblemen nachzugehen. Sie erhalten unseren Befund und einen schriftlichen Kostenvoranschlag für jede empfohlene Reparatur.",
@@ -942,7 +942,7 @@
       "sort": 110,
       "name": {
         "en": "AC Water Leak & Drain Repairs",
-        "ru": "Устранение протечек воды и ремонт дренажа",
+        "ru": "Устранение протечек и засоров дренажа",
         "ar": "إصلاح تسرب ماء المكيف وأعطال التصريف",
         "fr": "Fuites d’eau et réparation de l’évacuation des condensats",
         "de": "Reparatur bei Wasseraustritt & Ablaufproblemen",
@@ -951,7 +951,7 @@
       },
       "short": {
         "en": "We investigate water leaks, clear blocked condensate drains and repair affected drain trays, connections or pumps as required. We then test the system to confirm that water drains correctly.",
-        "ru": "Находим причину протечки, прочищаем засорившийся дренаж конденсата и при необходимости ремонтируем поддон, соединения или помпу. Затем проверяем систему и убеждаемся, что вода уходит правильно.",
+        "ru": "Определяем источник протечки, устраняем засоры отвода конденсата и при необходимости ремонтируем поддон, соединения или дренажную помпу. После работ проверяем правильность отвода воды.",
         "ar": "نبحث عن سبب تسرب الماء، ونزيل انسداد تصريف ماء التكاثف، ونصلح ما تضرر من صواني التصريف أو الوصلات أو المضخات بحسب الحاجة. ثم نختبر النظام للتأكد من أن الماء يُصرَّف بصورة صحيحة.",
         "fr": "Nous recherchons l’origine des fuites d’eau, débouchons les évacuations de condensats obstruées et réparons, selon les besoins, les pompes, raccords ou bacs à condensats concernés. Nous testons ensuite le système pour vérifier que l’eau s’évacue correctement.",
         "de": "Wir gehen der Ursache des Wasseraustritts nach, beseitigen Verstopfungen im Kondensatablauf und reparieren nach Bedarf betroffene Kondensatwannen, Anschlüsse oder Pumpen. Anschließend testen wir die Anlage und stellen sicher, dass das Wasser richtig abläuft.",
@@ -993,7 +993,7 @@
       },
       "short": {
         "en": "Repair or replacement of faulty AC components, including fan motors, sensors, capacitors, control boards and condensate pumps. Labour and parts are itemised in a quotation for your approval.",
-        "ru": "Ремонтируем или заменяем неисправные компоненты кондиционера: моторы вентиляторов, датчики, конденсаторы, платы управления и дренажные помпы. Работа и запчасти расписаны в смете, которую вы утверждаете заранее.",
+        "ru": "Ремонтируем или заменяем неисправные компоненты, включая двигатели вентиляторов, датчики, конденсаторы, платы управления и дренажные помпы. Стоимость работ и деталей указываем в смете для вашего согласования.",
         "ar": "إصلاح مكوّنات المكيف المعطّلة أو استبدالها، ومنها محركات المراوح والحساسات ومكثفات التشغيل ولوحات التحكم ومضخات التصريف. نفصّل العمل والقطع بندًا بندًا في عرض سعر نقدّمه لك للموافقة عليه.",
         "fr": "Réparation ou remplacement des composants défectueux du climatiseur, notamment les moteurs de ventilateur, sondes, condensateurs, cartes électroniques et pompes de relevage. La main-d’œuvre et les pièces sont détaillées dans un devis soumis à votre accord.",
         "de": "Reparatur oder Austausch defekter Bauteile der Klimaanlage, darunter Lüftermotoren, Sensoren, Kondensatoren, Steuerplatinen und Kondensatpumpen. Arbeit und Ersatzteile führen wir einzeln in einem Kostenvoranschlag auf, den wir Ihnen zur Freigabe vorlegen.",
@@ -1165,7 +1165,7 @@
       },
       "short": {
         "en": "We install compatible standard or smart thermostats and test temperature control, fan settings and cooling response. Equipment compatibility and installation requirements are confirmed before booking.",
-        "ru": "Устанавливаем совместимые обычные или умные термостаты и проверяем управление температурой, режимы вентилятора и отклик охлаждения. Совместимость оборудования и требования к установке подтверждаем до бронирования.",
+        "ru": "Устанавливаем совместимые стандартные или умные термостаты. Проверяем управление температурой, режимами вентилятора и охлаждением. Совместимость оборудования и условия установки уточняем до бронирования.",
         "ar": "نركّب أجهزة ثرموستات متوافقة، عادية أو ذكية، ونختبر التحكم في درجة الحرارة وإعدادات المروحة واستجابة التبريد. نؤكد توافق المعدّات ومتطلبات التركيب قبل الحجز.",
         "fr": "Nous installons des thermostats compatibles, standard ou connectés, et testons la régulation de la température, les réglages du ventilateur et la réponse du refroidissement. La compatibilité de l’équipement et les conditions d’installation sont confirmées avant la réservation.",
         "de": "Wir bauen kompatible Standard- oder Smart-Thermostate ein und testen Temperaturregelung, Lüftereinstellungen und das Ansprechen der Kühlung. Die Kompatibilität der Geräte und die Voraussetzungen für den Einbau bestätigen wir vor der Buchung.",
@@ -1198,7 +1198,7 @@
       "sort": 125,
       "name": {
         "en": "Refrigerant Leak Detection",
-        "ru": "Поиск утечки фреона",
+        "ru": "Поиск утечки хладагента",
         "ar": "كشف تسرب غاز التبريد",
         "fr": "Recherche de fuite de fluide frigorigène",
         "de": "Kältemittel-Lecksuche",
@@ -1207,7 +1207,7 @@
       },
       "short": {
         "en": "We inspect refrigerant pipework and components, using appropriate leak-detection equipment and pressure testing where required. The findings identify the affected area and inform the repair quotation.",
-        "ru": "Осматриваем фреоновые трубопроводы и компоненты, используя подходящее оборудование для поиска утечек и при необходимости опрессовку. По результатам определяем место утечки и составляем смету на ремонт.",
+        "ru": "Проверяем трубопроводы и компоненты холодильного контура с помощью оборудования для обнаружения утечек. При необходимости проводим испытание давлением. По результатам определяем место неисправности и составляем смету ремонта.",
         "ar": "نفحص أنابيب دائرة غاز التبريد ومكوّناتها بأجهزة مناسبة لكشف التسرب، ونجري اختبار الضغط عند الحاجة. تحدّد النتائج الموضع المتضرر ونستند إليها في إعداد عرض سعر الإصلاح.",
         "fr": "Nous inspectons les tuyauteries et les composants du circuit frigorifique, avec un équipement de détection de fuite adapté et, lorsque c’est nécessaire, un test de pression. Les conclusions identifient la zone touchée et servent de base au devis de réparation.",
         "de": "Wir prüfen Kältemittelleitungen und Bauteile mit geeigneten Lecksuchgeräten und, wo erforderlich, mit einer Druckprüfung. Der Befund zeigt die betroffene Stelle und ist die Grundlage für den Kostenvoranschlag zur Reparatur.",
@@ -1216,7 +1216,7 @@
       },
       "description_html": {
         "en": "<p>If your AC needed a “gas top-up” last summer and is warm again, the refrigerant did not evaporate — it leaked. Topping up again buys a few weeks. We pressure-test the system with nitrogen, find the leak, repair it (brazing or fitting replacement), vacuum the lines and charge the correct amount by weight.</p>",
-        "ru": "<p>Если прошлым летом кондиционеру «дозаправили газ», а он снова тёплый — фреон не испарился, он вытек. Повторная дозаправка даст несколько недель. Мы опрессовываем систему азотом, находим утечку, устраняем (пайка или замена соединения), вакуумируем трассу и заправляем нужное количество по весу.</p>",
+        "ru": "<p>Если прошлым летом кондиционеру «дозаправили газ», а он снова тёплый — хладагент не испарился, он вытек. Повторная дозаправка даст несколько недель. Мы опрессовываем систему азотом, находим утечку, устраняем (пайка или замена соединения), вакуумируем трассу и заправляем нужное количество по весу.</p>",
         "ar": "<p>إذا احتاج مكيفك إلى «تعبئة غاز» الصيف الماضي وعاد دافئًا من جديد، فغاز التبريد لم يتبخر — بل تسرّب. والتعبئة مجددًا لا تمنحك سوى أسابيع قليلة. نختبر النظام بضغط النيتروجين، ونجد التسرب، ونصلحه (لحام نحاسي أو استبدال الوصلة)، ونفرّغ الخطوط، ثم نعبّئ الكمية الصحيحة بالوزن.</p>",
         "fr": "<p>Si votre clim a eu besoin d’une « recharge de gaz » l’été dernier et souffle de nouveau chaud, le fluide frigorigène ne s’est pas évaporé : il a fui. Refaire un appoint fait gagner quelques semaines. Nous mettons le circuit sous pression d’azote, localisons la fuite, la réparons (brasure ou remplacement du raccord), tirons au vide les liaisons et chargeons la quantité exacte au poids.</p>",
         "de": "<p>Wenn Ihre Klimaanlage letzten Sommer „Gas nachgefüllt“ bekommen hat und jetzt wieder warm bläst, ist das Kältemittel nicht verdampft – es ist ausgetreten. Erneutes Nachfüllen bringt ein paar Wochen. Wir setzen die Anlage mit Stickstoff unter Druck, finden das Leck, reparieren es (Hartlöten oder Austausch der Verschraubung), evakuieren die Leitungen und füllen die korrekte Menge nach Gewicht ein.</p>",
@@ -1308,7 +1308,7 @@
       "available_from": null,
       "seo_title": {
         "en": "AC Refrigerant Leak Repair & Refill in Dubai",
-        "ru": "Утечка и заправка фреона в Дубае — находим и устраняем",
+        "ru": "Утечка и заправка хладагента в Дубае — находим и устраняем",
         "ar": "إصلاح تسرب غاز التبريد وتعبئته في دبي",
         "fr": "Fuite de fluide frigorigène à Dubaï — réparation et recharge",
         "de": "Kältemittelleck reparieren & nachfüllen – Klimaanlage Dubai",
@@ -1333,7 +1333,7 @@
       "sort": 130,
       "name": {
         "en": "Refrigerant Leak Repair",
-        "ru": "Устранение утечки фреона",
+        "ru": "Устранение утечки хладагента",
         "ar": "إصلاح تسرب غاز التبريد",
         "fr": "Réparation de fuite de fluide frigorigène",
         "de": "Kältemittel-Leckreparatur",
@@ -1342,7 +1342,7 @@
       },
       "short": {
         "en": "We repair or replace the leaking joint, pipe, valve or component, then test the refrigerant circuit to verify the repair before recharging.",
-        "ru": "Ремонтируем или заменяем негерметичное соединение, трубку, вентиль или компонент, затем проверяем фреоновый контур, чтобы убедиться в качестве ремонта перед заправкой.",
+        "ru": "Ремонтируем или заменяем негерметичное соединение, трубку, клапан или другой повреждённый компонент. После ремонта проверяем герметичность контура перед заправкой.",
         "ar": "نصلح الوصلة أو الأنبوب أو الصمام أو المكوّن الذي يتسرب منه الغاز أو نستبدله، ثم نختبر دائرة غاز التبريد للتحقق من الإصلاح قبل التعبئة.",
         "fr": "Nous réparons ou remplaçons le raccord, le tuyau, la vanne ou le composant qui fuit, puis testons le circuit frigorifique pour vérifier la réparation avant la recharge.",
         "de": "Wir reparieren oder ersetzen das undichte Teil – Verbindung, Leitung, Ventil oder ein anderes Bauteil. Danach testen wir den Kältemittelkreislauf, um die Reparatur vor dem Nachfüllen zu überprüfen.",
@@ -1385,7 +1385,7 @@
       "sort": 135,
       "name": {
         "en": "Refrigerant Recharge",
-        "ru": "Заправка фреоном",
+        "ru": "Заправка кондиционера хладагентом",
         "ar": "تعبئة غاز التبريد",
         "fr": "Recharge en fluide frigorigène",
         "de": "Kältemittel-Nachfüllung",
@@ -1394,7 +1394,7 @@
       },
       "short": {
         "en": "Following diagnosis and any required leak repair, we charge the system with the correct refrigerant type and quantity, then check operation. Pricing is confirmed according to the work and refrigerant required.",
-        "ru": "После диагностики и необходимого ремонта утечки заправляем систему фреоном нужного типа и в нужном количестве, затем проверяем работу. Стоимость подтверждаем в зависимости от объёма работ и требуемого фреона.",
+        "ru": "После диагностики и необходимого ремонта заправляем систему хладагентом подходящего типа в требуемом количестве, затем проверяем её работу. Стоимость подтверждаем с учётом объёма работ и необходимого хладагента.",
         "ar": "بعد التشخيص وإصلاح أي تسرب يلزم إصلاحه، نعبّئ النظام بغاز التبريد بالنوع والكمية الصحيحين، ثم نفحص التشغيل. نؤكد السعر بحسب العمل المطلوب وغاز التبريد اللازم.",
         "fr": "Après le diagnostic et, le cas échéant, la réparation de la fuite, nous chargeons le système avec le type et la quantité de fluide frigorigène appropriés, puis contrôlons son fonctionnement. Le prix est confirmé en fonction des travaux et du fluide frigorigène nécessaires.",
         "de": "Nach der Diagnose und einer gegebenenfalls nötigen Leckreparatur befüllen wir die Anlage mit dem richtigen Kältemittel in der richtigen Menge und prüfen anschließend den Betrieb. Den Preis bestätigen wir je nach Arbeitsaufwand und benötigtem Kältemittel.",
@@ -1447,7 +1447,7 @@
       "sort": 140,
       "name": {
         "en": "Urgent AC Call-out",
-        "ru": "Срочный выезд",
+        "ru": "Срочный выезд мастера",
         "ar": "زيارة عاجلة للمكيف",
         "fr": "Dépannage urgent de climatisation",
         "de": "Klimaanlagen-Eileinsatz",
@@ -1456,7 +1456,7 @@
       },
       "short": {
         "en": "Priority appointments for AC breakdowns, loss of cooling or water leaks. Contact us to confirm the earliest available visit and call-out fee.",
-        "ru": "Приоритетные визиты при поломке кондиционера, отсутствии охлаждения или протечке воды. Свяжитесь с нами, чтобы подтвердить ближайшее доступное время и стоимость выезда.",
+        "ru": "Приоритетные записи при поломке кондиционера, отсутствии охлаждения или протечке. Свяжитесь с нами, чтобы уточнить ближайшее доступное время и стоимость выезда.",
         "ar": "مواعيد ذات أولوية عند تعطل المكيف أو انقطاع التبريد أو تسرب الماء. تواصل معنا لتأكيد أقرب موعد متاح ورسوم الزيارة.",
         "fr": "Rendez-vous prioritaires en cas de panne de climatiseur, de perte de refroidissement ou de fuite d’eau. Contactez-nous pour confirmer la première visite disponible et les frais de déplacement.",
         "de": "Bevorzugte Termine bei Ausfall der Klimaanlage, fehlender Kühlung oder Wasseraustritt. Kontaktieren Sie uns, dann bestätigen wir Ihnen den frühestmöglichen Termin und die Einsatzpauschale.",
@@ -1484,7 +1484,7 @@
         },
         {
           "en": "Full diagnostics: electrics, refrigerant pressure, drain, sensors",
-          "ru": "Полная диагностика: электрика, давление фреона, дренаж, датчики",
+          "ru": "Полная диагностика: электрика, давление хладагента, дренаж, датчики",
           "ar": "فحص كامل: الكهرباء وضغط غاز التبريد والتصريف والحساسات",
           "fr": "Diagnostic complet : électricité, pression du fluide frigorigène, évacuation, sondes",
           "de": "Komplette Diagnose: Elektrik, Kältemitteldruck, Ablauf, Sensoren",
