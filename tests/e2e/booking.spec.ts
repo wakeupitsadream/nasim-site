@@ -27,27 +27,31 @@ test.describe('booking request wizard', () => {
     ).toBeFocused();
     await expect(book.getByRole('radio', { name: /^Standard Split AC Service/ })).toBeChecked();
 
-    // The services sit in their catalogue groups, each with its price at every quantity.
+    // The services sit in the three sections of the price list, each with its price at every
+    // quantity before it is chosen.
+    const servicing = book.getByRole('group', { name: msg('en', 'Services.group.service') });
     const cleaning = book.getByRole('group', { name: msg('en', 'Services.group.cleaning') });
-    await expect(cleaning.getByRole('radio')).toHaveCount(6);
-    await expect(cleaning.getByText(msg('en', 'Booking.details.tiersHint'))).toBeVisible();
-    await expect(option(cleaning, 'Standard Split AC Service')).toContainText('4+: AED 249');
-    const ducted = option(cleaning, 'Ducted AC & Fan Coil Service');
+    const other = book.getByRole('group', { name: msg('en', 'Services.group.other') });
+    await expect(servicing.getByRole('radio')).toHaveCount(2);
+    await expect(cleaning.getByRole('radio')).toHaveCount(4);
+    await expect(book.getByText(msg('en', 'Booking.details.tiersHint'))).toHaveCount(1);
+    await expect(option(servicing, 'Standard Split AC Service')).toContainText('4+: AED 249');
+    const ducted = option(servicing, 'Ducted AC & Fan Coil Service');
     await expect(ducted).toContainText('2–3: AED 329');
     await expect(ducted).toContainText('4+: AED 299');
     await expect(option(cleaning, 'Split AC Deep Cleaning')).toContainText('2+: AED 499');
-    await expect(
-      book
-        .getByRole('group', { name: msg('en', 'Services.group.service') })
-        .getByRole('radio', { name: /^AC Repairs/ }),
-    ).toBeVisible();
+    await expect(other.getByRole('radio', { name: /^AC Repairs/ })).toBeVisible();
 
-    // The chosen card holds its own quantity row: the price per unit follows the number of units.
-    await expect(cleaning.getByText('1 × AED 299')).toBeVisible();
+    // The chosen card opens with what the service is…
+    await expect(servicing.getByText(/^For wall-mounted ACs\./)).toBeVisible();
+    await expect(book.getByText(/^For concealed ceiling units\./)).toHaveCount(0);
+
+    // …and holds its own quantity row: the price per unit follows the number of units.
+    await expect(servicing.getByText('1 × AED 299')).toBeVisible();
     const add = book.getByRole('button', { name: /^Add one: Standard Split AC Service/ });
     await add.click();
     await add.click();
-    await expect(cleaning.getByText('3 × AED 279')).toBeVisible();
+    await expect(servicing.getByText('3 × AED 279')).toBeVisible();
     await expect(book.getByText('AED 837').first()).toBeVisible();
     await expect(book.getByText(/Fresh Home/).first()).toBeVisible();
 

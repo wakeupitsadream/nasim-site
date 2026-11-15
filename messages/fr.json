@@ -416,9 +416,9 @@
       "price": "Ouvrir le calculateur"
     },
     "group": {
+      "service": "Entretien de climatiseurs",
       "cleaning": "Nettoyage de climatiseurs",
-      "addon": "Options de nettoyage complémentaires",
-      "service": "Entretien et réparation de climatiseurs"
+      "other": "Autres services de nettoyage et de réparation"
     },
     "onRequest": "Prix sur demande"
   },

@@ -13,9 +13,11 @@ export type BookingPhoto = { url: string; alt: string; width: number; height: nu
 export type BookingService = {
   slug: string;
   category: BookingCategory;
-  /** AC only: the catalogue group the service is listed under (cleaning, servicing & repairs). */
+  /** AC only: the catalogue section the service is listed under (servicing, cleaning, other). */
   group: ServiceGroup | null;
   name: Localized;
+  /** One or two sentences on what the service is: shown once the service is chosen. */
+  short: Localized;
   /** `exact`: one fixed price, shown without "from". */
   priceFrom: { amount: number; unit: PriceUnit; exact: boolean } | null;
   durationMin: number | null;

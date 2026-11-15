@@ -416,9 +416,9 @@
       "price": "Rechner öffnen"
     },
     "group": {
+      "service": "Klimaanlagen-Wartung",
       "cleaning": "Klimaanlagen-Reinigung",
-      "addon": "Zusätzliche Reinigungsoptionen",
-      "service": "Wartung & Reparatur von Klimaanlagen"
+      "other": "Weitere Reinigungs- & Reparaturleistungen"
     },
     "onRequest": "Preis auf Anfrage"
   },

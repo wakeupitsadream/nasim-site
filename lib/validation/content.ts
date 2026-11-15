@@ -49,7 +49,8 @@ export const priceUnitSchema = z.enum(['unit', 'fcu', 'visit', 'seat', 'item', '
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'YYYY-MM-DD');
 
-export const serviceGroupSchema = z.enum(['cleaning', 'addon', 'service']);
+/** The owner's three AC sections: routine servicing, cleaning, everything else. */
+export const serviceGroupSchema = z.enum(['service', 'cleaning', 'other']);
 export type ServiceGroup = z.infer<typeof serviceGroupSchema>;
 
 export const serviceSchema = z.object({

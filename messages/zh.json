@@ -416,9 +416,9 @@
       "price": "打开计算器"
     },
     "group": {
+      "service": "空调保养",
       "cleaning": "空调清洗",
-      "addon": "附加清洗项目",
-      "service": "空调保养与维修"
+      "other": "其他清洗与维修服务"
     },
     "onRequest": "价格另询"
   },

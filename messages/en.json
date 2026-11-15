@@ -416,9 +416,9 @@
       "price": "Open the calculator"
     },
     "group": {
+      "service": "AC servicing",
       "cleaning": "AC cleaning",
-      "addon": "Additional cleaning options",
-      "service": "AC servicing & repairs"
+      "other": "Other cleaning & repair services"
     },
     "onRequest": "Price on request"
   },

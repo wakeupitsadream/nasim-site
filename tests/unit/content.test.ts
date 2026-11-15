@@ -45,23 +45,45 @@ describe('seed files', () => {
       expect(slugs.has(slug), slug).toBe(true);
   });
 
-  it('offers the first-booking discount on every priced cleaning service and on nothing else', () => {
-    const priced = new Set(seedPriceItems().map((p) => p.service_slug));
-    const cleaning = seedServices()
-      .filter(
-        (s) =>
-          priced.has(s.slug) &&
-          (s.category === 'upholstery' || s.group === 'cleaning' || s.group === 'addon'),
-      )
-      .map((s) => s.slug);
+  it('offers the first-booking discount on the cleaning services only', () => {
+    // Routine servicing is cleaning too (filters, coil, drain); repairs and diagnostics are not.
     expect(seedPricingRules().first_booking_offer).toEqual({
       discount: 50,
       min_total: 500,
-      service_slugs: cleaning,
+      service_slugs: [
+        'ac-cleaning',
+        'ducted-ac-fcu-service',
+        'ac-deep-cleaning',
+        'fcu-deep-coil-cleaning',
+        'ac-duct-cleaning',
+        'full-ac-system-cleaning',
+        'ac-filter-grille-cleaning',
+        'ac-outdoor-unit-cleaning',
+        'sofa-cleaning',
+        'mattress-cleaning',
+        'carpet-cleaning',
+        'stain-odour-removal',
+      ],
     });
-    expect(cleaning).toContain('ac-cleaning');
-    expect(cleaning).toContain('sofa-cleaning');
-    expect(cleaning).not.toContain('ac-repair');
+    const priced = new Set(seedPriceItems().map((p) => p.service_slug));
+    for (const slug of seedPricingRules().first_booking_offer!.service_slugs)
+      expect(priced.has(slug), slug).toBe(true);
+  });
+
+  it('files the AC services under the three sections of the price list', () => {
+    const groups = (key: string) =>
+      seedServices()
+        .filter((s) => s.category === 'ac' && s.group === key)
+        .map((s) => s.slug);
+    expect(groups('service')).toEqual(['ac-cleaning', 'ducted-ac-fcu-service']);
+    expect(groups('cleaning')).toEqual([
+      'ac-deep-cleaning',
+      'fcu-deep-coil-cleaning',
+      'ac-duct-cleaning',
+      'full-ac-system-cleaning',
+    ]);
+    expect(groups('other')).toHaveLength(12);
+    expect(seedServices().filter((s) => s.category === 'ac' && !s.group)).toEqual([]);
   });
 
   it('bundle includes refer to price lines and the diagnostics item exists', () => {

@@ -38,7 +38,7 @@ const isCountable = (line: PriceLine | undefined): line is CountableLine =>
 function groupServices(services: BookingService[]) {
   const groups: { key: string; services: BookingService[] }[] = [];
   for (const service of services) {
-    const key = service.group ?? 'service';
+    const key = service.group ?? 'other';
     const group = groups.find((g) => g.key === key);
     if (group) group.services.push(service);
     else groups.push({ key, services: [service] });
@@ -65,6 +65,8 @@ export function StepDetails({
   const groups = groupServices(services);
   const tiered = (service: BookingService) =>
     service.lines.some((id) => (findLine(pricing, id)?.tiers.length ?? 0) > 1);
+  // "The more units, the lower the price" is said once, above the first section it applies to.
+  const hintGroup = groups.find((g) => g.services.some(tiered))?.key;
 
   const upholsteryLines =
     state.category === 'upholstery'
@@ -92,7 +94,7 @@ export function StepDetails({
                       <p id={headingId} className="text-eyebrow text-highlight-ink">
                         {label}
                       </p>
-                      {group.services.some(tiered) ? (
+                      {group.key === hintGroup ? (
                         <p className="text-small text-muted-foreground">{t('details.tiersHint')}</p>
                       ) : null}
                     </div>
@@ -168,8 +170,9 @@ type AcServiceProps = {
 
 /**
  * One AC service: a radio card with its price at every quantity («1: AED 299 · 2–3: AED 279 ·
- * 4+: AED 249»). The chosen card opens its own quantity row, so the number of units and what it
- * does to the price sit next to the choice, not below the whole list.
+ * 4+: AED 249»). The chosen card opens: first what the service is, then its own quantity row,
+ * so the number of units and what it does to the price sit next to the choice, not below the
+ * whole list.
  */
 function AcService({ service, checked, payload, state, quote, onChoose, onQty }: AcServiceProps) {
   const t = useTranslations('Booking');
@@ -253,6 +256,16 @@ function AcService({ service, checked, payload, state, quote, onChoose, onQty }:
           </span>
         </span>
       </label>
+
+      {checked && service.short.text ? (
+        <p
+          lang={service.short.lang !== locale ? service.short.lang : undefined}
+          dir={service.short.lang !== locale ? 'auto' : undefined}
+          className="border-t border-border px-4 py-3 text-small text-pretty text-muted-foreground"
+        >
+          {service.short.text}
+        </p>
+      ) : null}
 
       {checked && line ? (
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 border-t border-border px-4 py-3">
