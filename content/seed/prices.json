@@ -230,13 +230,13 @@
       "key": "fcu_deep_1",
       "tier_group": "fcu_deep",
       "name": {
-        "en": "FCU Deep Coil Cleaning, 1 unit",
-        "ru": "Глубокая чистка теплообменника фанкойла, 1 блок",
-        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU)، وحدة واحدة",
-        "fr": "Nettoyage en profondeur de l’échangeur de ventilo-convecteur (FCU), 1 unité",
-        "de": "Wärmetauscher-Tiefenreinigung am Gebläsekonvektor (FCU), 1 Gerät",
-        "zh": "风机盘管（FCU）深度清洗，1 台",
-        "hi": "FCU कॉइल की डीप क्लीनिंग, 1 यूनिट"
+        "en": "FCU Deep Coil & Blower Cleaning, 1 unit",
+        "ru": "Глубокая чистка теплообменника и вентилятора фанкойла, 1 блок",
+        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU) ومروحتها، وحدة واحدة",
+        "fr": "Nettoyage en profondeur de l’échangeur et du ventilateur de ventilo-convecteur (FCU), 1 unité",
+        "de": "Tiefenreinigung von Wärmetauscher & Lüfter am Gebläsekonvektor (FCU), 1 Gerät",
+        "zh": "风机盘管（FCU）盘管与风机深度清洗，1 台",
+        "hi": "FCU कॉइल और ब्लोअर की डीप क्लीनिंग, 1 यूनिट"
       },
       "unit": "fcu",
       "price": 599,
@@ -258,13 +258,13 @@
       "key": "fcu_deep_2plus",
       "tier_group": "fcu_deep",
       "name": {
-        "en": "FCU Deep Coil Cleaning, 2+ units",
-        "ru": "Глубокая чистка теплообменника фанкойла, 2+ блоков",
-        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU)، وحدتان فأكثر",
-        "fr": "Nettoyage en profondeur de l’échangeur de ventilo-convecteur (FCU), 2 unités et plus",
-        "de": "Wärmetauscher-Tiefenreinigung am Gebläsekonvektor (FCU), 2+ Geräte",
-        "zh": "风机盘管（FCU）深度清洗，2 台及以上",
-        "hi": "FCU कॉइल की डीप क्लीनिंग, 2+ यूनिट"
+        "en": "FCU Deep Coil & Blower Cleaning, 2+ units",
+        "ru": "Глубокая чистка теплообменника и вентилятора фанкойла, 2+ блоков",
+        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU) ومروحتها، وحدتان فأكثر",
+        "fr": "Nettoyage en profondeur de l’échangeur et du ventilateur de ventilo-convecteur (FCU), 2 unités et plus",
+        "de": "Tiefenreinigung von Wärmetauscher & Lüfter am Gebläsekonvektor (FCU), 2+ Geräte",
+        "zh": "风机盘管（FCU）盘管与风机深度清洗，2 台及以上",
+        "hi": "FCU कॉइल और ब्लोअर की डीप क्लीनिंग, 2+ यूनिट"
       },
       "unit": "fcu",
       "price": 549,
@@ -450,10 +450,145 @@
       "sort": 3
     },
     {
+      "service_slug": "ac-filter-grille-cleaning",
+      "key": "filter_grille",
+      "name": {
+        "en": "Filter & grille cleaning",
+        "ru": "Чистка фильтров и решёток",
+        "ar": "تنظيف الفلاتر والشبكات",
+        "de": "Reinigung von Filtern & Lüftungsgittern",
+        "zh": "滤网与风口格栅清洗",
+        "hi": "फ़िल्टर और ग्रिल की सफ़ाई",
+        "fr": "Nettoyage des filtres et des grilles"
+      },
+      "unit": "unit",
+      "price": 199,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Per indoor unit",
+        "ru": "За внутренний блок",
+        "ar": "للوحدة الداخلية",
+        "de": "Pro Innengerät",
+        "zh": "每台室内机",
+        "hi": "प्रति इनडोर यूनिट",
+        "fr": "Par unité intérieure"
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "ac-outdoor-unit-cleaning",
+      "key": "outdoor_unit",
+      "name": {
+        "en": "Outdoor condenser cleaning, booked separately",
+        "ru": "Чистка наружного блока отдельным заказом",
+        "ar": "تنظيف وحدة التكثيف الخارجية، بحجز منفرد",
+        "de": "Reinigung des Außengeräts, separat gebucht",
+        "zh": "室外机冷凝器清洗，单独预约",
+        "hi": "आउटडोर कंडेनसर की सफ़ाई, अलग से बुक करने पर",
+        "fr": "Nettoyage du condenseur extérieur, réservé séparément"
+      },
+      "unit": "unit",
+      "price": 199,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Per outdoor unit",
+        "ru": "За наружный блок",
+        "ar": "للوحدة الخارجية",
+        "de": "Pro Außengerät",
+        "zh": "每台室外机",
+        "hi": "प्रति आउटडोर यूनिट",
+        "fr": "Par unité extérieure"
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "ac-inspection-diagnostics",
+      "key": "diagnostics_visit",
+      "name": {
+        "en": "AC diagnostics",
+        "ru": "Диагностика кондиционера",
+        "ar": "فحص أعطال المكيف",
+        "de": "Klimaanlagen-Diagnose",
+        "zh": "空调检测",
+        "hi": "एसी की जाँच",
+        "fr": "Diagnostic de climatisation"
+      },
+      "unit": "visit",
+      "price": 199,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Credited towards approved testing or repair of the same fault",
+        "ru": "Засчитывается в согласованную проверку или ремонт той же неисправности",
+        "ar": "تُحتسب من قيمة الاختبار أو الإصلاح الموافَق عليه للعطل نفسه",
+        "de": "Wird auf die freigegebene Prüfung oder Reparatur desselben Defekts angerechnet",
+        "zh": "计入经您确认的同一故障后续检测或维修费用",
+        "hi": "उसी ख़राबी की मंज़ूर की गई टेस्टिंग या मरम्मत में समायोजित",
+        "fr": "Déduit de la réparation ou des tests approuvés pour la même panne"
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "ac-water-leak-drain-repair",
+      "key": "drain_unblocking",
+      "name": {
+        "en": "Accessible condensate drain unblocking",
+        "ru": "Прочистка доступного дренажа конденсата",
+        "ar": "إزالة انسداد تصريف ماء التكاثف الذي يمكن الوصول إليه",
+        "de": "Beseitigung von Verstopfungen im zugänglichen Kondensatablauf",
+        "zh": "可触及的冷凝水排水管疏通",
+        "hi": "पहुँच योग्य कंडेनसेट ड्रेन का जाम खोलना",
+        "fr": "Débouchage d’une évacuation de condensats accessible"
+      },
+      "unit": "from",
+      "price": 299,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "",
+        "ru": "",
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": "",
+        "hi": ""
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "thermostat-installation",
+      "key": "thermostat_labour",
+      "name": {
+        "en": "Thermostat installation labour",
+        "ru": "Установка термостата, работа",
+        "ar": "أجرة تركيب الثرموستات",
+        "de": "Thermostat-Einbau, Arbeitslohn",
+        "zh": "温控器安装人工费",
+        "hi": "थर्मोस्टैट लगाने की मज़दूरी",
+        "fr": "Main-d’œuvre d’installation de thermostat"
+      },
+      "unit": "from",
+      "price": 249,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Thermostat priced separately",
+        "ru": "Термостат оплачивается отдельно",
+        "ar": "الثرموستات يُسعَّر على حدة",
+        "de": "Thermostat wird separat berechnet",
+        "zh": "温控器另行计价",
+        "hi": "थर्मोस्टैट की कीमत अलग से",
+        "fr": "Thermostat facturé à part"
+      },
+      "sort": 1
+    },
+    {
       "service_slug": "emergency-ac-repair",
       "key": "emergency_callout",
       "name": {
-        "en": "Emergency call-out + diagnostics",
+        "en": "Urgent call-out + diagnostics",
         "ru": "Срочный выезд + диагностика",
         "ar": "زيارة طوارئ + فحص",
         "fr": "Déplacement d’urgence + diagnostic",
@@ -466,13 +601,13 @@
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "Credited to a repair done in the same visit",
-        "ru": "Засчитывается в ремонт в тот же визит",
-        "ar": "تُحتسب من قيمة إصلاح يُنجز في الزيارة نفسها",
-        "fr": "Déduit d’une réparation effectuée lors de la même visite",
-        "de": "Wird auf eine Reparatur im selben Besuch angerechnet",
-        "zh": "同一次上门维修时抵扣",
-        "hi": "उसी विज़िट में की गई मरम्मत में समायोजित"
+        "en": "Credited towards approved testing or repair of the same fault",
+        "ru": "Засчитывается в согласованную проверку или ремонт той же неисправности",
+        "ar": "تُحتسب من قيمة الاختبار أو الإصلاح الموافَق عليه للعطل نفسه",
+        "fr": "Déduit de la réparation ou des tests approuvés pour la même panne",
+        "de": "Wird auf die freigegebene Prüfung oder Reparatur desselben Defekts angerechnet",
+        "zh": "计入经您确认的同一故障后续检测或维修费用",
+        "hi": "उसी ख़राबी की मंज़ूर की गई टेस्टिंग या मरम्मत में समायोजित"
       },
       "sort": 1
     },
@@ -764,13 +899,13 @@
         "hi": "Fresh Home"
       },
       "description": {
-        "en": "3 split units standard clean + 3-seat sofa cleaning in one visit.",
-        "ru": "Стандартная чистка 3 блоков + химчистка 3-местного дивана за один визит.",
-        "ar": "تنظيف قياسي لـ 3 وحدات سبليت + تنظيف أريكة بثلاثة مقاعد في زيارة واحدة.",
-        "fr": "Nettoyage standard de 3 unités split + nettoyage d’un canapé 3 places en une seule visite.",
-        "de": "Standardreinigung von 3 Split-Geräten + Reinigung eines 3-Sitzer-Sofas in einem Besuch.",
-        "zh": "一次上门完成 3 台分体式空调标准清洗 + 3 座沙发清洁。",
-        "hi": "3 स्प्लिट यूनिट की स्टैंडर्ड सफ़ाई + 3 सीट वाले सोफ़े की सफ़ाई, एक ही विज़िट में।"
+        "en": "Standard service for 3 split ACs + one 3-seat fabric sofa.",
+        "ru": "Стандартное обслуживание 3 сплит-систем + химчистка одного 3-местного тканевого дивана.",
+        "ar": "خدمة قياسية لـ 3 مكيفات سبليت + تنظيف أريكة قماشية واحدة بثلاثة مقاعد.",
+        "fr": "Entretien standard de 3 climatiseurs split + nettoyage d’un canapé 3 places en tissu.",
+        "de": "Standardreinigung & Wartung von 3 Split-Geräten + Reinigung eines 3-Sitzer-Stoffsofas.",
+        "zh": "3 台分体式空调标准清洗与保养 + 一张 3 座布艺沙发清洁。",
+        "hi": "3 स्प्लिट एसी की स्टैंडर्ड सर्विस + 3 सीट वाले एक फ़ैब्रिक सोफ़े की सफ़ाई।"
       },
       "price": 1099,
       "compare_price": 1104,
@@ -896,7 +1031,26 @@
     ],
     "suggest_bundle_when_cheaper": true,
     "diagnostic_line_ids": [
-      "leak_test"
-    ]
+      "leak_test",
+      "diagnostics_visit"
+    ],
+    "first_booking_offer": {
+      "discount": 50,
+      "min_total": 500,
+      "service_slugs": [
+        "ac-cleaning",
+        "ducted-ac-fcu-service",
+        "ac-deep-cleaning",
+        "fcu-deep-coil-cleaning",
+        "ac-duct-cleaning",
+        "full-ac-system-cleaning",
+        "ac-filter-grille-cleaning",
+        "ac-outdoor-unit-cleaning",
+        "sofa-cleaning",
+        "mattress-cleaning",
+        "carpet-cleaning",
+        "stain-odour-removal"
+      ]
+    }
   }
 }

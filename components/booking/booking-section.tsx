@@ -77,7 +77,11 @@ export async function BookingSection({ initialService }: Props) {
     booking: settings.booking,
     services: bookable,
     lineLabels,
-    groupLabels: { cleaning: tServices('group.cleaning'), service: tServices('group.service') },
+    groupLabels: {
+      cleaning: tServices('group.cleaning'),
+      addon: tServices('group.addon'),
+      service: tServices('group.service'),
+    },
     bundleNames: Object.fromEntries(bundles.map((b) => [b.slug, pickLocalized(b.name, locale)])),
     areas: areas.map((a) => ({ slug: a.slug, name: pickLocalized(a.name, locale) })),
     categoryPhotos: {

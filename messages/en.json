@@ -486,7 +486,12 @@
     "tierPlus": "{n}+",
     "tierRange": "{from}–{to}",
     "perYearRich": "<a>{amount}</a> a year",
-    "insteadRich": "instead of <s>{amount}</s>"
+    "insteadRich": "instead of <s>{amount}</s>",
+    "firstBooking": {
+      "title": "First booking offer",
+      "text": "<price>{discount}</price> off your first cleaning booking of <price>{min}</price> or more.",
+      "terms": "Available once per customer on standalone cleaning bookings, including quantity rates. Bundles and annual plans use their displayed final prices."
+    }
   },
   "Pricing": {
     "lead": "Every price below is fixed before the visit and includes the call-out. Repairs start with a fixed diagnostics fee that counts towards the work.",
@@ -504,8 +509,9 @@
       "ac": "Air conditioning prices",
       "upholstery": "Upholstery and carpet prices"
     },
-    "factors": {
-      "title": "What affects the price"
+    "acNote": "Diagnostic fees are credited towards approved testing or repair of the same fault. Urgent visits depend on availability.",
+    "details": {
+      "title": "Pricing details"
     },
     "tiers": {
       "title": "Volume prices"
@@ -552,12 +558,12 @@
       "deep": "One selected unit is deep-cleaned during one visit",
       "priority": "Priority scheduling",
       "repairDiscount": "{n}% off repair labour",
-      "custom": "Priced by equipment type, unit count and access"
+      "custom": "Coverage tailored to your equipment"
     },
     "card": {
       "saving": "Booked visit by visit: <s>{separate}</s>. You save <s>{saving}</s> ({pct}%).",
       "cta": "Ask about this plan",
-      "quote": "Quotation after inspection"
+      "quote": "Request a quote"
     },
     "savings": {
       "eyebrow": "The maths",
@@ -736,6 +742,9 @@
       "toTime": "Choose a time",
       "toSend": "Review and send"
     },
-    "line": "{name} × {qty}"
+    "line": "{name} × {qty}",
+    "firstBooking": {
+      "apply": "This is my first booking"
+    }
   }
 }

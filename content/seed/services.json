@@ -8,7 +8,7 @@
       "status": "active",
       "sort": 10,
       "name": {
-        "en": "Standard Split AC Cleaning & Service",
+        "en": "Standard Split AC Service",
         "ru": "Стандартная чистка и обслуживание сплит-системы",
         "ar": "التنظيف القياسي لمكيف السبليت وصيانته",
         "fr": "Nettoyage et entretien standard de climatiseur split",
@@ -17,22 +17,22 @@
         "hi": "स्प्लिट एसी की स्टैंडर्ड सफ़ाई और सर्विस"
       },
       "short": {
-        "en": "Routine cleaning and servicing for wall-mounted split air conditioners. We clean the filters, accessible indoor coil and fan, flush the drainage system, rinse the accessible outdoor unit and check cooling performance.",
-        "ru": "Регулярная чистка и обслуживание настенных кондиционеров. Очищаем фильтры, доступные части теплообменника и вентилятора, промываем дренаж и наружный блок при наличии доступа, затем проверяем качество охлаждения.",
-        "ar": "تنظيف وصيانة دورية لمكيفات السبليت الجدارية. ننظّف الفلاتر وما يمكن الوصول إليه من الملف الداخلي والمروحة، ونغسل نظام التصريف، ونشطف الوحدة الخارجية إذا أمكن الوصول إليها، ثم نفحص أداء التبريد.",
-        "fr": "Nettoyage et entretien courants des climatiseurs split muraux. Nous nettoyons les filtres et les parties accessibles de l’échangeur intérieur et du ventilateur, rinçons le circuit d’évacuation ainsi que l’unité extérieure lorsqu’elle est accessible, puis contrôlons les performances de refroidissement.",
-        "de": "Regelmäßige Reinigung und Wartung für wandmontierte Split-Geräte. Wir reinigen die Filter sowie die zugänglichen Teile von Innenwärmetauscher und Lüfter, spülen den Kondensatablauf durch, reinigen das Außengerät mit Wasser, soweit es zugänglich ist, und prüfen die Kühlleistung.",
-        "zh": "壁挂分体式空调的常规清洗与保养。我们清洗滤网以及室内机可触及的蒸发器盘管和风扇，冲洗排水系统和可触及的室外机，并检查制冷效果。",
-        "hi": "दीवार पर लगे स्प्लिट एसी की नियमित सफ़ाई और सर्विस। हम फ़िल्टर के साथ इनडोर कॉइल और फैन के पहुँच योग्य हिस्से साफ़ करते हैं, ड्रेनेज सिस्टम फ़्लश करते हैं, आउटडोर यूनिट के पहुँच योग्य हिस्से पानी से धोते हैं और कूलिंग परफ़ॉर्मेंस की जाँच करते हैं।"
+        "en": "For wall-mounted ACs. Filters, accessible coil and fan cleaning, drain flush and outdoor-unit rinse.",
+        "ru": "Для настенных кондиционеров. Чистка фильтров, доступных частей теплообменника и вентилятора, промывка дренажа и ополаскивание наружного блока.",
+        "ar": "للمكيفات الجدارية. تنظيف الفلاتر وما يمكن الوصول إليه من الملف والمروحة، وغسل خط التصريف، وشطف الوحدة الخارجية.",
+        "fr": "Pour les climatiseurs muraux. Nettoyage des filtres et des parties accessibles de l’échangeur et du ventilateur, rinçage du circuit d’évacuation et de l’unité extérieure.",
+        "de": "Für wandmontierte Klimageräte. Reinigung der Filter sowie der zugänglichen Teile von Wärmetauscher und Lüfter, Spülung des Kondensatablaufs und Abspülen des Außengeräts.",
+        "zh": "适用于壁挂式空调。清洗滤网以及可触及的蒸发器盘管和风扇，冲洗排水管和室外机。",
+        "hi": "दीवार पर लगे एसी के लिए। फ़िल्टर के साथ कॉइल और फैन के पहुँच योग्य हिस्सों की सफ़ाई, ड्रेन की फ़्लशिंग और आउटडोर यूनिट की पानी से धुलाई।"
       },
       "description_html": {
-        "en": "<p>Dubai dust and humidity load an AC unit fast: filters clog, the indoor coil grows a film of dust and mould, the drain line silts up and starts dripping. A standard clean every 4–6 months keeps the air clean, the unit cold and the DEWA bill where it should be.</p><p>The price is fixed before we come. The technician arrives in the agreed one-hour window, and you get a report with photos and temperature readings via WhatsApp before he leaves.</p>",
-        "ru": "<p>Пыль и влажность Дубая быстро забивают кондиционер: фильтры засоряются, на внутреннем радиаторе появляется плёнка пыли и плесени, дренаж заиливается и начинает капать. Стандартная чистка раз в 4–6 месяцев держит воздух чистым, блок — холодным, а счёт DEWA — в норме.</p><p>Цена фиксируется до приезда. Техник приезжает в согласованный часовой слот, и вы получаете отчёт с фото и замерами температуры в WhatsApp ещё до его ухода.</p>",
-        "ar": "<p>غبار دبي ورطوبتها يُثقلان المكيف بسرعة: تنسدّ الفلاتر، وتتكوّن على الملف الداخلي طبقة من الغبار والعفن، ويترسّب الطمي في خط التصريف فيبدأ بالتقطير. تنظيف قياسي كل 4–6 أشهر يُبقي الهواء نقيًا والوحدة باردة وفاتورة ديوا في حدودها الطبيعية.</p><p>السعر ثابت قبل وصولنا. يصل الفني في الموعد المتفق عليه المحدد بساعة واحدة، وتستلم تقريرًا بالصور وقراءات الحرارة عبر واتساب قبل مغادرته.</p>",
-        "fr": "<p>La poussière et l’humidité de Dubaï encrassent vite un climatiseur : les filtres se bouchent, l’échangeur intérieur se couvre d’un film de poussière et de moisissure, la conduite d’évacuation s’envase et commence à goutter. Un nettoyage standard tous les 4 à 6 mois garde l’air sain, l’unité froide et la facture DEWA là où elle doit être.</p><p>Le prix est fixé avant notre venue. Le technicien arrive dans le créneau d’une heure convenu, et vous recevez sur WhatsApp un rapport avec photos et relevés de température avant son départ.</p>",
-        "de": "<p>Staub und Luftfeuchtigkeit in Dubai setzen einer Klimaanlage schnell zu: Die Filter verstopfen, auf dem Innenwärmetauscher bildet sich ein Film aus Staub und Schimmel, die Ablaufleitung verschlammt und beginnt zu tropfen. Eine Standardreinigung alle 4–6 Monate hält die Luft sauber, das Gerät kalt und die DEWA-Rechnung dort, wo sie hingehört.</p><p>Der Preis steht fest, bevor wir kommen. Der Techniker kommt im vereinbarten Ein-Stunden-Zeitfenster, und Sie erhalten per WhatsApp einen Bericht mit Fotos und Temperaturmesswerten, noch bevor er geht.</p>",
-        "zh": "<p>迪拜的灰尘和湿气会让空调很快变脏：滤网堵塞，蒸发器上积起一层灰尘和霉菌，排水管淤塞并开始滴水。每 4–6 个月做一次标准清洗，空气干净、机器制冷有力，DEWA 电费也保持在该有的水平。</p><p>价格在上门前就已锁定。技师会在约定的一小时时段内到达，离开前您就能在 WhatsApp 上收到带照片和温度读数的报告。</p>",
-        "hi": "<p>दुबई की धूल और नमी एसी यूनिट पर तेज़ी से असर डालती है: फ़िल्टर जाम हो जाते हैं, इनडोर कॉइल पर धूल और फफूंद की परत जम जाती है, ड्रेन लाइन में गाद भर जाती है और वह टपकने लगती है। हर 4–6 महीने में स्टैंडर्ड सफ़ाई से हवा साफ़, यूनिट ठंडी और DEWA का बिल काबू में रहता है।</p><p>कीमत हमारे आने से पहले तय होती है। तकनीशियन तय किए गए एक घंटे के स्लॉट में आता है, और उसके जाने से पहले आपको WhatsApp पर फ़ोटो और तापमान की रीडिंग के साथ रिपोर्ट मिल जाती है।</p>"
+        "en": "<p>Routine cleaning and servicing for wall-mounted split air conditioners. We clean the filters, accessible indoor coil and fan, flush the drainage system, rinse the accessible outdoor unit and check cooling performance.</p><p>Dubai dust and humidity load an AC unit fast: filters clog, the indoor coil grows a film of dust and mould, the drain line silts up and starts dripping. A standard clean every 4–6 months keeps the air clean, the unit cold and the DEWA bill where it should be.</p><p>The price is fixed before we come. The technician arrives in the agreed one-hour window, and you get a report with photos and temperature readings via WhatsApp before he leaves.</p>",
+        "ru": "<p>Регулярная чистка и обслуживание настенных кондиционеров. Очищаем фильтры, доступные части теплообменника и вентилятора, промываем дренаж и наружный блок при наличии доступа, затем проверяем качество охлаждения.</p><p>Пыль и влажность Дубая быстро забивают кондиционер: фильтры засоряются, на внутреннем радиаторе появляется плёнка пыли и плесени, дренаж заиливается и начинает капать. Стандартная чистка раз в 4–6 месяцев держит воздух чистым, блок — холодным, а счёт DEWA — в норме.</p><p>Цена фиксируется до приезда. Техник приезжает в согласованный часовой слот, и вы получаете отчёт с фото и замерами температуры в WhatsApp ещё до его ухода.</p>",
+        "ar": "<p>تنظيف وصيانة دورية لمكيفات السبليت الجدارية. ننظّف الفلاتر وما يمكن الوصول إليه من الملف الداخلي والمروحة، ونغسل نظام التصريف، ونشطف الوحدة الخارجية إذا أمكن الوصول إليها، ثم نفحص أداء التبريد.</p><p>غبار دبي ورطوبتها يُثقلان المكيف بسرعة: تنسدّ الفلاتر، وتتكوّن على الملف الداخلي طبقة من الغبار والعفن، ويترسّب الطمي في خط التصريف فيبدأ بالتقطير. تنظيف قياسي كل 4–6 أشهر يُبقي الهواء نقيًا والوحدة باردة وفاتورة ديوا في حدودها الطبيعية.</p><p>السعر ثابت قبل وصولنا. يصل الفني في الموعد المتفق عليه المحدد بساعة واحدة، وتستلم تقريرًا بالصور وقراءات الحرارة عبر واتساب قبل مغادرته.</p>",
+        "fr": "<p>Nettoyage et entretien courants des climatiseurs split muraux. Nous nettoyons les filtres et les parties accessibles de l’échangeur intérieur et du ventilateur, rinçons le circuit d’évacuation ainsi que l’unité extérieure lorsqu’elle est accessible, puis contrôlons les performances de refroidissement.</p><p>La poussière et l’humidité de Dubaï encrassent vite un climatiseur : les filtres se bouchent, l’échangeur intérieur se couvre d’un film de poussière et de moisissure, la conduite d’évacuation s’envase et commence à goutter. Un nettoyage standard tous les 4 à 6 mois garde l’air sain, l’unité froide et la facture DEWA là où elle doit être.</p><p>Le prix est fixé avant notre venue. Le technicien arrive dans le créneau d’une heure convenu, et vous recevez sur WhatsApp un rapport avec photos et relevés de température avant son départ.</p>",
+        "de": "<p>Regelmäßige Reinigung und Wartung für wandmontierte Split-Geräte. Wir reinigen die Filter sowie die zugänglichen Teile von Innenwärmetauscher und Lüfter, spülen den Kondensatablauf durch, reinigen das Außengerät mit Wasser, soweit es zugänglich ist, und prüfen die Kühlleistung.</p><p>Staub und Luftfeuchtigkeit in Dubai setzen einer Klimaanlage schnell zu: Die Filter verstopfen, auf dem Innenwärmetauscher bildet sich ein Film aus Staub und Schimmel, die Ablaufleitung verschlammt und beginnt zu tropfen. Eine Standardreinigung alle 4–6 Monate hält die Luft sauber, das Gerät kalt und die DEWA-Rechnung dort, wo sie hingehört.</p><p>Der Preis steht fest, bevor wir kommen. Der Techniker kommt im vereinbarten Ein-Stunden-Zeitfenster, und Sie erhalten per WhatsApp einen Bericht mit Fotos und Temperaturmesswerten, noch bevor er geht.</p>",
+        "zh": "<p>壁挂分体式空调的常规清洗与保养。我们清洗滤网以及室内机可触及的蒸发器盘管和风扇，冲洗排水系统和可触及的室外机，并检查制冷效果。</p><p>迪拜的灰尘和湿气会让空调很快变脏：滤网堵塞，蒸发器上积起一层灰尘和霉菌，排水管淤塞并开始滴水。每 4–6 个月做一次标准清洗，空气干净、机器制冷有力，DEWA 电费也保持在该有的水平。</p><p>价格在上门前就已锁定。技师会在约定的一小时时段内到达，离开前您就能在 WhatsApp 上收到带照片和温度读数的报告。</p>",
+        "hi": "<p>दीवार पर लगे स्प्लिट एसी की नियमित सफ़ाई और सर्विस। हम फ़िल्टर के साथ इनडोर कॉइल और फैन के पहुँच योग्य हिस्से साफ़ करते हैं, ड्रेनेज सिस्टम फ़्लश करते हैं, आउटडोर यूनिट के पहुँच योग्य हिस्से पानी से धोते हैं और कूलिंग परफ़ॉर्मेंस की जाँच करते हैं।</p><p>दुबई की धूल और नमी एसी यूनिट पर तेज़ी से असर डालती है: फ़िल्टर जाम हो जाते हैं, इनडोर कॉइल पर धूल और फफूंद की परत जम जाती है, ड्रेन लाइन में गाद भर जाती है और वह टपकने लगती है। हर 4–6 महीने में स्टैंडर्ड सफ़ाई से हवा साफ़, यूनिट ठंडी और DEWA का बिल काबू में रहता है।</p><p>कीमत हमारे आने से पहले तय होती है। तकनीशियन तय किए गए एक घंटे के स्लॉट में आता है, और उसके जाने से पहले आपको WhatsApp पर फ़ोटो और तापमान की रीडिंग के साथ रिपोर्ट मिल जाती है।</p>"
       },
       "includes": [
         {
@@ -225,7 +225,7 @@
       "status": "active",
       "sort": 20,
       "name": {
-        "en": "Ducted AC & Fan Coil Servicing",
+        "en": "Ducted AC & Fan Coil Service",
         "ru": "Обслуживание канальных кондиционеров и фанкойлов",
         "ar": "صيانة التكييف المركزي ووحدات الفان كويل",
         "fr": "Entretien de climatisation gainable et de ventilo-convecteurs",
@@ -234,22 +234,22 @@
         "hi": "डक्टेड एसी और फैन कॉइल सर्विस"
       },
       "short": {
-        "en": "Cleaning and routine servicing for indoor AC units concealed above the ceiling. We clean the filters, accessible coil, fan and drainage system, then check airflow and temperature control.",
-        "ru": "Чистим и обслуживаем внутренние блоки, скрытые над потолком. Очищаем фильтры, доступные части теплообменника и вентилятора, поддон и дренаж, затем проверяем подачу воздуха и управление температурой.",
-        "ar": "تنظيف وصيانة دورية لوحدات التكييف الداخلية المخفية فوق السقف. ننظّف الفلاتر وما يمكن الوصول إليه من الملف والمروحة ونظام التصريف، ثم نفحص تدفق الهواء والتحكم في درجة الحرارة.",
-        "fr": "Nettoyage et entretien courants des unités intérieures dissimulées au-dessus du plafond. Nous nettoyons les filtres, les parties accessibles de l’échangeur et du ventilateur ainsi que le circuit d’évacuation, puis contrôlons le débit d’air et la régulation de la température.",
-        "de": "Reinigung und regelmäßige Wartung für Innengeräte, die verdeckt über der Decke sitzen. Wir reinigen die Filter, die zugänglichen Teile von Wärmetauscher und Lüfter sowie den Kondensatablauf und prüfen anschließend Luftstrom und Temperaturregelung.",
-        "zh": "为隐藏在吊顶上方的空调室内机提供清洗和常规保养。我们清洗滤网、可触及的盘管、风扇和排水系统，然后检查风量和温度控制。",
-        "hi": "सीलिंग के ऊपर छिपी इनडोर एसी यूनिट की सफ़ाई और नियमित सर्विस। हम फ़िल्टर, कॉइल के पहुँच योग्य हिस्से, फैन और ड्रेनेज सिस्टम साफ़ करते हैं, फिर हवा के बहाव और तापमान कंट्रोल की जाँच करते हैं।"
+        "en": "For concealed ceiling units. Filters, accessible coil and fan cleaning, drain flush and performance checks.",
+        "ru": "Для скрытых потолочных блоков. Чистка фильтров, доступных частей теплообменника и вентилятора, промывка дренажа и проверка работы системы.",
+        "ar": "للوحدات المخفية فوق السقف. تنظيف الفلاتر وما يمكن الوصول إليه من الملف والمروحة، وغسل خط التصريف، وفحص الأداء.",
+        "fr": "Pour les unités dissimulées au-dessus du plafond. Nettoyage des filtres et des parties accessibles de l’échangeur et du ventilateur, rinçage du circuit d’évacuation et contrôle des performances.",
+        "de": "Für verdeckt eingebaute Deckengeräte. Reinigung der Filter sowie der zugänglichen Teile von Wärmetauscher und Lüfter, Spülung des Kondensatablaufs und Funktionsprüfung.",
+        "zh": "适用于隐藏在吊顶上方的空调室内机。清洗滤网以及可触及的盘管和风扇，冲洗排水管，并检查运行情况。",
+        "hi": "सीलिंग के ऊपर छिपी यूनिट के लिए। फ़िल्टर के साथ कॉइल और फैन के पहुँच योग्य हिस्सों की सफ़ाई, ड्रेन की फ़्लशिंग और परफ़ॉर्मेंस की जाँच।"
       },
       "description_html": {
-        "en": "<p>Villas and most towers run ducted systems: a fan coil unit hidden above a ceiling hatch feeds several rooms. Nobody sees it, so it is cleaned far less often than it should be, and the first sign of trouble is usually a water stain on the ceiling.</p><p>We service each fan coil unit through the access hatch: filters, coil, drain pan and line, thermostat and airflow check.</p>",
-        "ru": "<p>На виллах и в большинстве башен стоят канальные системы: фанкойл спрятан за люком в потолке и обслуживает несколько комнат. Его никто не видит, поэтому чистят его гораздо реже, чем нужно, и первый признак проблемы — обычно пятно воды на потолке.</p><p>Мы обслуживаем каждый фанкойл через люк: фильтры, радиатор, поддон и дренаж, проверка термостата и потока.</p>",
-        "ar": "<p>تعمل الفلل ومعظم الأبراج بأنظمة الدكت: وحدة فان كويل مخفية فوق فتحة في السقف تغذّي عدة غرف. لا يراها أحد، لذا تُنظَّف أقل بكثير مما ينبغي، وأول علامة على المشكلة عادةً بقعة ماء على السقف.</p><p>نصون كل وحدة فان كويل عبر فتحة الصيانة: الفلاتر والملف وصينية التصريف وخطه، وفحص الثرموستات وتدفق الهواء.</p>",
-        "fr": "<p>Les villas et la plupart des tours fonctionnent en gainable : un ventilo-convecteur caché au-dessus d’une trappe de plafond alimente plusieurs pièces. Personne ne le voit, il est donc nettoyé bien moins souvent qu’il le faudrait, et le premier signe de problème est généralement une tache d’eau au plafond.</p><p>Nous entretenons chaque ventilo-convecteur par la trappe d’accès : filtres, échangeur, bac et conduite d’évacuation, thermostat et contrôle du débit d’air.</p>",
-        "de": "<p>Villen und die meisten Hochhäuser haben Kanalsysteme: Ein Gebläsekonvektor (FCU), versteckt über einer Revisionsklappe in der Decke, versorgt mehrere Räume. Niemand sieht ihn, deshalb wird er viel seltener gereinigt, als er sollte – und das erste Anzeichen für Probleme ist meist ein Wasserfleck an der Decke.</p><p>Wir warten jeden Gebläsekonvektor durch die Revisionsklappe: Filter, Wärmetauscher, Kondensatwanne und Ablaufleitung, Thermostat- und Luftstromprüfung.</p>",
-        "zh": "<p>别墅和大多数高层公寓用的是风管式中央空调：一台藏在吊顶检修口上方的风机盘管为几个房间送风。没人看得见它，所以清洗频率远低于应有的水平，出问题的第一个迹象通常是天花板上的水渍。</p><p>我们通过检修口保养每一台风机盘管：滤网、盘管、接水盘和排水管，并检查温控器和风量。</p>",
-        "hi": "<p>विला और ज़्यादातर टावरों में डक्टेड सिस्टम होता है: छत के हैच के ऊपर छिपी एक फैन कॉइल यूनिट कई कमरों में हवा देती है। उसे कोई देखता नहीं, इसलिए उसकी सफ़ाई ज़रूरत से कहीं कम होती है, और परेशानी का पहला संकेत आमतौर पर छत पर पानी का दाग़ होता है।</p><p>हम हर फैन कॉइल यूनिट की सर्विस एक्सेस हैच से करते हैं: फ़िल्टर, कॉइल, ड्रेन ट्रे और लाइन, थर्मोस्टैट और हवा के बहाव की जाँच।</p>"
+        "en": "<p>Cleaning and routine servicing for indoor AC units concealed above the ceiling. We clean the filters, accessible coil, fan and drainage system, then check airflow and temperature control.</p><p>Villas and most towers run ducted systems: a fan coil unit hidden above a ceiling hatch feeds several rooms. Nobody sees it, so it is cleaned far less often than it should be, and the first sign of trouble is usually a water stain on the ceiling.</p><p>We service each fan coil unit through the access hatch: filters, coil, drain pan and line, thermostat and airflow check.</p>",
+        "ru": "<p>Чистим и обслуживаем внутренние блоки, скрытые над потолком. Очищаем фильтры, доступные части теплообменника и вентилятора, поддон и дренаж, затем проверяем подачу воздуха и управление температурой.</p><p>На виллах и в большинстве башен стоят канальные системы: фанкойл спрятан за люком в потолке и обслуживает несколько комнат. Его никто не видит, поэтому чистят его гораздо реже, чем нужно, и первый признак проблемы — обычно пятно воды на потолке.</p><p>Мы обслуживаем каждый фанкойл через люк: фильтры, радиатор, поддон и дренаж, проверка термостата и потока.</p>",
+        "ar": "<p>تنظيف وصيانة دورية لوحدات التكييف الداخلية المخفية فوق السقف. ننظّف الفلاتر وما يمكن الوصول إليه من الملف والمروحة ونظام التصريف، ثم نفحص تدفق الهواء والتحكم في درجة الحرارة.</p><p>تعمل الفلل ومعظم الأبراج بأنظمة الدكت: وحدة فان كويل مخفية فوق فتحة في السقف تغذّي عدة غرف. لا يراها أحد، لذا تُنظَّف أقل بكثير مما ينبغي، وأول علامة على المشكلة عادةً بقعة ماء على السقف.</p><p>نصون كل وحدة فان كويل عبر فتحة الصيانة: الفلاتر والملف وصينية التصريف وخطه، وفحص الثرموستات وتدفق الهواء.</p>",
+        "fr": "<p>Nettoyage et entretien courants des unités intérieures dissimulées au-dessus du plafond. Nous nettoyons les filtres, les parties accessibles de l’échangeur et du ventilateur ainsi que le circuit d’évacuation, puis contrôlons le débit d’air et la régulation de la température.</p><p>Les villas et la plupart des tours fonctionnent en gainable : un ventilo-convecteur caché au-dessus d’une trappe de plafond alimente plusieurs pièces. Personne ne le voit, il est donc nettoyé bien moins souvent qu’il le faudrait, et le premier signe de problème est généralement une tache d’eau au plafond.</p><p>Nous entretenons chaque ventilo-convecteur par la trappe d’accès : filtres, échangeur, bac et conduite d’évacuation, thermostat et contrôle du débit d’air.</p>",
+        "de": "<p>Reinigung und regelmäßige Wartung für Innengeräte, die verdeckt über der Decke sitzen. Wir reinigen die Filter, die zugänglichen Teile von Wärmetauscher und Lüfter sowie den Kondensatablauf und prüfen anschließend Luftstrom und Temperaturregelung.</p><p>Villen und die meisten Hochhäuser haben Kanalsysteme: Ein Gebläsekonvektor (FCU), versteckt über einer Revisionsklappe in der Decke, versorgt mehrere Räume. Niemand sieht ihn, deshalb wird er viel seltener gereinigt, als er sollte – und das erste Anzeichen für Probleme ist meist ein Wasserfleck an der Decke.</p><p>Wir warten jeden Gebläsekonvektor durch die Revisionsklappe: Filter, Wärmetauscher, Kondensatwanne und Ablaufleitung, Thermostat- und Luftstromprüfung.</p>",
+        "zh": "<p>为隐藏在吊顶上方的空调室内机提供清洗和常规保养。我们清洗滤网、可触及的盘管、风扇和排水系统，然后检查风量和温度控制。</p><p>别墅和大多数高层公寓用的是风管式中央空调：一台藏在吊顶检修口上方的风机盘管为几个房间送风。没人看得见它，所以清洗频率远低于应有的水平，出问题的第一个迹象通常是天花板上的水渍。</p><p>我们通过检修口保养每一台风机盘管：滤网、盘管、接水盘和排水管，并检查温控器和风量。</p>",
+        "hi": "<p>सीलिंग के ऊपर छिपी इनडोर एसी यूनिट की सफ़ाई और नियमित सर्विस। हम फ़िल्टर, कॉइल के पहुँच योग्य हिस्से, फैन और ड्रेनेज सिस्टम साफ़ करते हैं, फिर हवा के बहाव और तापमान कंट्रोल की जाँच करते हैं।</p><p>विला और ज़्यादातर टावरों में डक्टेड सिस्टम होता है: छत के हैच के ऊपर छिपी एक फैन कॉइल यूनिट कई कमरों में हवा देती है। उसे कोई देखता नहीं, इसलिए उसकी सफ़ाई ज़रूरत से कहीं कम होती है, और परेशानी का पहला संकेत आमतौर पर छत पर पानी का दाग़ होता है।</p><p>हम हर फैन कॉइल यूनिट की सर्विस एक्सेस हैच से करते हैं: फ़िल्टर, कॉइल, ड्रेन ट्रे और लाइन, थर्मोस्टैट और हवा के बहाव की जाँच।</p>"
       },
       "includes": [
         {
@@ -424,22 +424,22 @@
         "hi": "स्प्लिट एसी की डीप क्लीनिंग"
       },
       "short": {
-        "en": "A thorough internal clean for wall-mounted AC units with heavier dirt build-up. We dismantle components as required, clean the coil, fan, drain tray and internal housing, then reassemble and test the unit.",
-        "ru": "Тщательная внутренняя чистка настенных кондиционеров с сильными загрязнениями. Разбираем необходимые элементы блока, очищаем теплообменник, вентилятор, поддон и внутренний корпус. После сборки проверяем работу кондиционера.",
-        "ar": "تنظيف داخلي دقيق للمكيفات الجدارية التي تراكمت فيها الأوساخ أكثر من المعتاد. نفكّ المكوّنات بحسب الحاجة، وننظّف الملف والمروحة وصينية التصريف والهيكل الداخلي، ثم نعيد تركيب الوحدة ونختبرها.",
-        "fr": "Un nettoyage intérieur minutieux pour les climatiseurs muraux plus fortement encrassés. Nous démontons des éléments selon les besoins, nettoyons l’échangeur, le ventilateur, le bac à condensats et le carter intérieur, puis remontons l’unité et la testons.",
-        "de": "Gründliche Innenreinigung für wandmontierte Klimageräte mit stärkeren Schmutzablagerungen. Wir demontieren Bauteile nach Bedarf, reinigen Wärmetauscher, Lüfter, Kondensatwanne und die Innenseite des Gehäuses, bauen das Gerät wieder zusammen und testen es.",
-        "zh": "针对积垢较重的壁挂式空调进行彻底的内部清洗。我们视需要拆卸部件，清洗蒸发器盘管、风扇、接水盘和机壳内部，然后重新组装并测试机器。",
-        "hi": "दीवार पर लगी उन एसी यूनिट की अंदर तक पूरी सफ़ाई, जिनमें गंदगी ज़्यादा जम चुकी है। हम ज़रूरत के अनुसार पुर्ज़े खोलते हैं, कॉइल, फैन, ड्रेन ट्रे और अंदरूनी बॉडी साफ़ करते हैं, फिर यूनिट को दोबारा जोड़कर टेस्ट करते हैं।"
+        "en": "Thorough cleaning of the indoor coil, fan, housing and drain tray, with dismantling as required.",
+        "ru": "Тщательная чистка теплообменника, вентилятора, корпуса и поддона внутреннего блока — с разборкой, если она нужна.",
+        "ar": "تنظيف دقيق للملف الداخلي والمروحة والهيكل وصينية التصريف، مع فكّ المكوّنات بحسب الحاجة.",
+        "fr": "Nettoyage minutieux de l’échangeur, du ventilateur, du carter et du bac à condensats de l’unité intérieure, avec démontage selon les besoins.",
+        "de": "Gründliche Reinigung von Wärmetauscher, Lüfter, Gehäuse und Kondensatwanne des Innengeräts – mit Demontage nach Bedarf.",
+        "zh": "彻底清洗室内机的蒸发器盘管、风扇、机壳和接水盘，视需要拆卸部件。",
+        "hi": "इनडोर यूनिट की कॉइल, फैन, बॉडी और ड्रेन ट्रे की पूरी सफ़ाई, ज़रूरत के अनुसार पुर्ज़े खोलकर।"
       },
       "description_html": {
-        "en": "<p>When the unit smells musty, you see black spots on the louvres, or someone at home keeps sneezing when the AC runs, the problem sits deep inside: on the blower drum, behind the coil, in the drain pan. We take the indoor unit apart, wash every part with an antibacterial cleaner and reassemble it.</p><p>Recommended once a year for bedrooms and for any unit older than 5 years. For very old units we check the plastic parts first and tell you honestly if disassembly is risky.</p>",
-        "ru": "<p>Если из блока пахнет сыростью, на жалюзи чёрные точки или кто-то дома чихает при включённом кондиционере — проблема глубоко внутри: на барабане вентилятора, за радиатором, в поддоне. Мы разбираем внутренний блок, моем каждую деталь антибактериальным средством и собираем обратно.</p><p>Рекомендуем раз в год для спален и для блоков старше 5 лет. Для очень старых блоков сначала проверяем пластик и честно говорим, если разборка рискованна.</p>",
-        "ar": "<p>عندما تفوح من الوحدة رائحة عفن، أو ترى بقعًا سوداء على ريش توجيه الهواء، أو يستمر أحد أفراد البيت في العطس عند تشغيل المكيف، فالمشكلة في العمق: على أسطوانة المروحة، وخلف الملف، وفي صينية التصريف. نفكّك الوحدة الداخلية ونغسل كل قطعة بمنظّف مضاد للبكتيريا ثم نعيد تركيبها.</p><p>يُنصح به مرة في السنة لغرف النوم ولأي وحدة عمرها أكثر من 5 سنوات. وفي الوحدات القديمة جدًا نفحص القطع البلاستيكية أولًا ونخبرك بصراحة إن كان التفكيك محفوفًا بالمخاطر.</p>",
-        "fr": "<p>Quand l’unité sent le moisi, que vous voyez des points noirs sur les volets, ou que quelqu’un à la maison éternue dès que la clim tourne, le problème est logé en profondeur : sur la turbine, derrière l’échangeur, dans le bac à condensats. Nous démontons l’unité intérieure, lavons chaque pièce avec un nettoyant antibactérien et la remontons.</p><p>Recommandé une fois par an pour les chambres et pour toute unité de plus de 5 ans. Sur les unités très anciennes, nous vérifions d’abord les pièces en plastique et vous disons honnêtement si le démontage présente un risque.</p>",
-        "de": "<p>Wenn das Gerät muffig riecht, Sie schwarze Punkte auf den Lamellen sehen oder jemand zu Hause ständig niest, sobald die Klimaanlage läuft, sitzt das Problem tief im Inneren: auf der Lüfterwalze, hinter dem Wärmetauscher, in der Kondensatwanne. Wir zerlegen das Innengerät, waschen jedes Teil mit einem antibakteriellen Reiniger und bauen es wieder zusammen.</p><p>Empfohlen einmal im Jahr für Schlafzimmer und für jedes Gerät, das älter als 5 Jahre ist. Bei sehr alten Geräten prüfen wir zuerst die Kunststoffteile und sagen Ihnen ehrlich, wenn die Demontage riskant ist.</p>",
-        "zh": "<p>机器有霉味、导风板上出现黑点，或者家里有人一开空调就打喷嚏——问题藏在深处：风轮上、蒸发器后面、接水盘里。我们把室内机拆开，用抗菌清洗剂清洗每个部件，再重新装好。</p><p>建议卧室空调和使用超过 5 年的机器每年做一次。对于很旧的机器，我们会先检查塑料部件，如果拆机有风险会如实告知。</p>",
-        "hi": "<p>जब यूनिट से सीलन की बदबू आती है, लूवर पर काले धब्बे दिखते हैं, या एसी चलते ही घर में कोई लगातार छींकता है, तो समस्या अंदर गहराई में होती है: ब्लोअर ड्रम पर, कॉइल के पीछे, ड्रेन ट्रे में। हम इनडोर यूनिट को खोलते हैं, हर हिस्से को एंटीबैक्टीरियल क्लीनर से धोते हैं और फिर से जोड़ देते हैं।</p><p>बेडरूम और 5 साल से पुरानी हर यूनिट के लिए साल में एक बार की सलाह दी जाती है। बहुत पुरानी यूनिट में हम पहले प्लास्टिक के हिस्से जाँचते हैं और अगर खोलना जोखिम भरा हो, तो आपको ईमानदारी से बता देते हैं।</p>"
+        "en": "<p>A thorough internal clean for wall-mounted AC units with heavier dirt build-up. We dismantle components as required, clean the coil, fan, drain tray and internal housing, then reassemble and test the unit.</p><p>When the unit smells musty, you see black spots on the louvres, or someone at home keeps sneezing when the AC runs, the problem sits deep inside: on the blower drum, behind the coil, in the drain pan. We take the indoor unit apart, wash every part with an antibacterial cleaner and reassemble it.</p><p>Recommended once a year for bedrooms and for any unit older than 5 years. For very old units we check the plastic parts first and tell you honestly if disassembly is risky.</p>",
+        "ru": "<p>Тщательная внутренняя чистка настенных кондиционеров с сильными загрязнениями. Разбираем необходимые элементы блока, очищаем теплообменник, вентилятор, поддон и внутренний корпус. После сборки проверяем работу кондиционера.</p><p>Если из блока пахнет сыростью, на жалюзи чёрные точки или кто-то дома чихает при включённом кондиционере — проблема глубоко внутри: на барабане вентилятора, за радиатором, в поддоне. Мы разбираем внутренний блок, моем каждую деталь антибактериальным средством и собираем обратно.</p><p>Рекомендуем раз в год для спален и для блоков старше 5 лет. Для очень старых блоков сначала проверяем пластик и честно говорим, если разборка рискованна.</p>",
+        "ar": "<p>تنظيف داخلي دقيق للمكيفات الجدارية التي تراكمت فيها الأوساخ أكثر من المعتاد. نفكّ المكوّنات بحسب الحاجة، وننظّف الملف والمروحة وصينية التصريف والهيكل الداخلي، ثم نعيد تركيب الوحدة ونختبرها.</p><p>عندما تفوح من الوحدة رائحة عفن، أو ترى بقعًا سوداء على ريش توجيه الهواء، أو يستمر أحد أفراد البيت في العطس عند تشغيل المكيف، فالمشكلة في العمق: على أسطوانة المروحة، وخلف الملف، وفي صينية التصريف. نفكّك الوحدة الداخلية ونغسل كل قطعة بمنظّف مضاد للبكتيريا ثم نعيد تركيبها.</p><p>يُنصح به مرة في السنة لغرف النوم ولأي وحدة عمرها أكثر من 5 سنوات. وفي الوحدات القديمة جدًا نفحص القطع البلاستيكية أولًا ونخبرك بصراحة إن كان التفكيك محفوفًا بالمخاطر.</p>",
+        "fr": "<p>Un nettoyage intérieur minutieux pour les climatiseurs muraux plus fortement encrassés. Nous démontons des éléments selon les besoins, nettoyons l’échangeur, le ventilateur, le bac à condensats et le carter intérieur, puis remontons l’unité et la testons.</p><p>Quand l’unité sent le moisi, que vous voyez des points noirs sur les volets, ou que quelqu’un à la maison éternue dès que la clim tourne, le problème est logé en profondeur : sur la turbine, derrière l’échangeur, dans le bac à condensats. Nous démontons l’unité intérieure, lavons chaque pièce avec un nettoyant antibactérien et la remontons.</p><p>Recommandé une fois par an pour les chambres et pour toute unité de plus de 5 ans. Sur les unités très anciennes, nous vérifions d’abord les pièces en plastique et vous disons honnêtement si le démontage présente un risque.</p>",
+        "de": "<p>Gründliche Innenreinigung für wandmontierte Klimageräte mit stärkeren Schmutzablagerungen. Wir demontieren Bauteile nach Bedarf, reinigen Wärmetauscher, Lüfter, Kondensatwanne und die Innenseite des Gehäuses, bauen das Gerät wieder zusammen und testen es.</p><p>Wenn das Gerät muffig riecht, Sie schwarze Punkte auf den Lamellen sehen oder jemand zu Hause ständig niest, sobald die Klimaanlage läuft, sitzt das Problem tief im Inneren: auf der Lüfterwalze, hinter dem Wärmetauscher, in der Kondensatwanne. Wir zerlegen das Innengerät, waschen jedes Teil mit einem antibakteriellen Reiniger und bauen es wieder zusammen.</p><p>Empfohlen einmal im Jahr für Schlafzimmer und für jedes Gerät, das älter als 5 Jahre ist. Bei sehr alten Geräten prüfen wir zuerst die Kunststoffteile und sagen Ihnen ehrlich, wenn die Demontage riskant ist.</p>",
+        "zh": "<p>针对积垢较重的壁挂式空调进行彻底的内部清洗。我们视需要拆卸部件，清洗蒸发器盘管、风扇、接水盘和机壳内部，然后重新组装并测试机器。</p><p>机器有霉味、导风板上出现黑点，或者家里有人一开空调就打喷嚏——问题藏在深处：风轮上、蒸发器后面、接水盘里。我们把室内机拆开，用抗菌清洗剂清洗每个部件，再重新装好。</p><p>建议卧室空调和使用超过 5 年的机器每年做一次。对于很旧的机器，我们会先检查塑料部件，如果拆机有风险会如实告知。</p>",
+        "hi": "<p>दीवार पर लगी उन एसी यूनिट की अंदर तक पूरी सफ़ाई, जिनमें गंदगी ज़्यादा जम चुकी है। हम ज़रूरत के अनुसार पुर्ज़े खोलते हैं, कॉइल, फैन, ड्रेन ट्रे और अंदरूनी बॉडी साफ़ करते हैं, फिर यूनिट को दोबारा जोड़कर टेस्ट करते हैं।</p><p>जब यूनिट से सीलन की बदबू आती है, लूवर पर काले धब्बे दिखते हैं, या एसी चलते ही घर में कोई लगातार छींकता है, तो समस्या अंदर गहराई में होती है: ब्लोअर ड्रम पर, कॉइल के पीछे, ड्रेन ट्रे में। हम इनडोर यूनिट को खोलते हैं, हर हिस्से को एंटीबैक्टीरियल क्लीनर से धोते हैं और फिर से जोड़ देते हैं।</p><p>बेडरूम और 5 साल से पुरानी हर यूनिट के लिए साल में एक बार की सलाह दी जाती है। बहुत पुरानी यूनिट में हम पहले प्लास्टिक के हिस्से जाँचते हैं और अगर खोलना जोखिम भरा हो, तो आपको ईमानदारी से बता देते हैं।</p>"
       },
       "includes": [
         {
@@ -605,25 +605,31 @@
       "status": "active",
       "sort": 40,
       "name": {
-        "en": "FCU Deep Coil Cleaning",
-        "ru": "Глубокая чистка теплообменника фанкойла",
-        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU)",
-        "fr": "Nettoyage en profondeur de l’échangeur de ventilo-convecteur (FCU)",
-        "de": "Wärmetauscher-Tiefenreinigung am Gebläsekonvektor (FCU)",
-        "zh": "风机盘管（FCU）深度清洗",
-        "hi": "FCU कॉइल की डीप क्लीनिंग"
+        "en": "FCU Deep Coil & Blower Cleaning",
+        "ru": "Глубокая чистка теплообменника и вентилятора фанкойла",
+        "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU) ومروحتها",
+        "fr": "Nettoyage en profondeur de l’échangeur et du ventilateur de ventilo-convecteur (FCU)",
+        "de": "Tiefenreinigung von Wärmetauscher & Lüfter am Gebläsekonvektor (FCU)",
+        "zh": "风机盘管（FCU）盘管与风机深度清洗",
+        "hi": "FCU कॉइल और ब्लोअर की डीप क्लीनिंग"
       },
       "short": {
-        "en": "Deep cleaning for concealed indoor AC units. We thoroughly clean the cooling coil, fan and drain tray, flush the drain line and dismantle components where required to reach accumulated dirt.",
-        "ru": "Глубокая чистка скрытых потолочных блоков. Тщательно очищаем охлаждающий теплообменник, вентилятор и поддон, промываем дренаж. При необходимости разбираем отдельные элементы для доступа к скопившимся загрязнениям.",
-        "ar": "تنظيف عميق لوحدات التكييف الداخلية المخفية. ننظّف ملف التبريد والمروحة وصينية التصريف تنظيفًا دقيقًا، ونغسل خط التصريف، ونفكّ المكوّنات حيث يلزم للوصول إلى الأوساخ المتراكمة.",
-        "fr": "Nettoyage en profondeur des unités intérieures de climatisation dissimulées. Nous nettoyons à fond l’échangeur de refroidissement, le ventilateur et le bac à condensats, rinçons la conduite d’évacuation et démontons des éléments lorsque c’est nécessaire pour atteindre les saletés accumulées.",
-        "de": "Tiefenreinigung für verdeckt eingebaute Innengeräte. Wir reinigen Wärmetauscher, Lüfter und Kondensatwanne gründlich, spülen die Ablaufleitung und demontieren Bauteile, wo es erforderlich ist, um an angesammelten Schmutz zu gelangen.",
-        "zh": "针对隐藏式空调室内机的深度清洗。我们彻底清洗冷却盘管、风扇和接水盘，冲洗排水管，并在必要时拆卸部件，以便清除积聚的污垢。",
-        "hi": "छिपी हुई इनडोर एसी यूनिट की डीप क्लीनिंग। हम कूलिंग कॉइल, फैन और ड्रेन ट्रे की अच्छी तरह सफ़ाई करते हैं, ड्रेन लाइन फ़्लश करते हैं और जहाँ ज़रूरी हो, जमी हुई गंदगी तक पहुँचने के लिए पुर्ज़े खोलते हैं।"
+        "en": "Deep cleaning of the concealed unit's cooling coil, fan and drain tray, plus a drain flush.",
+        "ru": "Глубокая чистка охлаждающего теплообменника, вентилятора и поддона скрытого блока, плюс промывка дренажа.",
+        "ar": "تنظيف عميق لملف التبريد والمروحة وصينية التصريف في الوحدة المخفية، مع غسل خط التصريف.",
+        "fr": "Nettoyage en profondeur de l’échangeur de refroidissement, du ventilateur et du bac à condensats de l’unité dissimulée, avec rinçage du circuit d’évacuation.",
+        "de": "Tiefenreinigung von Wärmetauscher, Lüfter und Kondensatwanne des verdeckt eingebauten Geräts, dazu Spülung des Kondensatablaufs.",
+        "zh": "深度清洗隐藏式空调室内机的冷却盘管、风扇和接水盘，并冲洗排水管。",
+        "hi": "छिपी हुई यूनिट की कूलिंग कॉइल, फैन और ड्रेन ट्रे की डीप क्लीनिंग, साथ में ड्रेन की फ़्लशिंग।"
       },
       "description_html": {
-        "en": ""
+        "en": "<p>Deep cleaning for concealed indoor AC units. We thoroughly clean the cooling coil, fan and drain tray, flush the drain line and dismantle components where required to reach accumulated dirt.</p>",
+        "ru": "<p>Глубокая чистка скрытых потолочных блоков. Тщательно очищаем охлаждающий теплообменник, вентилятор и поддон, промываем дренаж. При необходимости разбираем отдельные элементы для доступа к скопившимся загрязнениям.</p>",
+        "ar": "<p>تنظيف عميق لوحدات التكييف الداخلية المخفية. ننظّف ملف التبريد والمروحة وصينية التصريف تنظيفًا دقيقًا، ونغسل خط التصريف، ونفكّ المكوّنات حيث يلزم للوصول إلى الأوساخ المتراكمة.</p>",
+        "fr": "<p>Nettoyage en profondeur des unités intérieures de climatisation dissimulées. Nous nettoyons à fond l’échangeur de refroidissement, le ventilateur et le bac à condensats, rinçons la conduite d’évacuation et démontons des éléments lorsque c’est nécessaire pour atteindre les saletés accumulées.</p>",
+        "de": "<p>Tiefenreinigung für verdeckt eingebaute Innengeräte. Wir reinigen Wärmetauscher, Lüfter und Kondensatwanne gründlich, spülen die Ablaufleitung und demontieren Bauteile, wo es erforderlich ist, um an angesammelten Schmutz zu gelangen.</p>",
+        "zh": "<p>针对隐藏式空调室内机的深度清洗。我们彻底清洗冷却盘管、风扇和接水盘，冲洗排水管，并在必要时拆卸部件，以便清除积聚的污垢。</p>",
+        "hi": "<p>छिपी हुई इनडोर एसी यूनिट की डीप क्लीनिंग। हम कूलिंग कॉइल, फैन और ड्रेन ट्रे की अच्छी तरह सफ़ाई करते हैं, ड्रेन लाइन फ़्लश करते हैं और जहाँ ज़रूरी हो, जमी हुई गंदगी तक पहुँचने के लिए पुर्ज़े खोलते हैं।</p>"
       },
       "includes": [],
       "excludes": [],
@@ -656,16 +662,22 @@
         "hi": "एसी डक्ट की सफ़ाई"
       },
       "short": {
-        "en": "We remove dust and debris from the air ducts that carry air to and from your rooms, using mechanical cleaning and vacuum extraction. The service includes the connected grilles and washable filters.",
-        "ru": "Удаляем пыль и загрязнения из каналов, по которым воздух поступает в комнаты и возвращается к кондиционеру. Применяем механическую очистку и вакуумное удаление пыли. Услуга включает чистку подключённых решёток и моющихся фильтров.",
-        "ar": "نزيل الغبار والشوائب من مجاري الهواء التي تنقل الهواء إلى غرفك ومنها، بالتنظيف الميكانيكي والشفط. تشمل الخدمة الشبكات المتصلة بها والفلاتر القابلة للغسل.",
-        "fr": "Nous éliminons la poussière et les débris des gaines qui amènent l’air dans vos pièces et le reprennent, par nettoyage mécanique et extraction par aspiration. Le service comprend les grilles raccordées et les filtres lavables.",
-        "de": "Wir entfernen Staub und Schmutz aus den Luftkanälen, die die Luft in Ihre Räume und wieder zurück führen – durch mechanische Reinigung und Absaugung. Die angeschlossenen Lüftungsgitter und die waschbaren Filter sind in der Leistung enthalten.",
-        "zh": "风管负责为您的房间送风和回风。我们通过机械清洗和真空抽吸，清除风管内的灰尘和杂物。服务包含与风管相连的风口格栅和可水洗滤网。",
-        "hi": "हम उन एयर डक्ट से धूल और कचरा हटाते हैं, जिनसे हवा आपके कमरों तक पहुँचती और वापस लौटती है। इसके लिए हम मैकेनिकल सफ़ाई और वैक्यूम एक्सट्रैक्शन का इस्तेमाल करते हैं। सेवा में डक्ट से जुड़ी ग्रिल और धोने योग्य फ़िल्टर शामिल हैं।"
+        "en": "Dust and debris removal from supply and return air ducts, including connected grilles and washable filters.",
+        "ru": "Удаление пыли и мусора из приточных и обратных воздуховодов, включая подключённые решётки и моющиеся фильтры.",
+        "ar": "إزالة الغبار والشوائب من مجاري هواء التغذية والهواء الراجع، بما يشمل الشبكات المتصلة بها والفلاتر القابلة للغسل.",
+        "fr": "Élimination de la poussière et des débris dans les gaines de soufflage et de reprise, y compris les grilles raccordées et les filtres lavables.",
+        "de": "Entfernung von Staub und Schmutz aus Zuluft- und Rückluftkanälen, einschließlich der angeschlossenen Lüftungsgitter und der waschbaren Filter.",
+        "zh": "清除送风管和回风管内的灰尘和杂物，包括相连的风口格栅和可水洗滤网。",
+        "hi": "सप्लाई और रिटर्न एयर डक्ट से धूल और कचरा हटाना, डक्ट से जुड़ी ग्रिल और धोने योग्य फ़िल्टर सहित।"
       },
       "description_html": {
-        "en": ""
+        "en": "<p>We remove dust and debris from the air ducts that carry air to and from your rooms, using mechanical cleaning and vacuum extraction. The service includes the connected grilles and washable filters.</p>",
+        "ru": "<p>Удаляем пыль и загрязнения из каналов, по которым воздух поступает в комнаты и возвращается к кондиционеру. Применяем механическую очистку и вакуумное удаление пыли. Услуга включает чистку подключённых решёток и моющихся фильтров.</p>",
+        "ar": "<p>نزيل الغبار والشوائب من مجاري الهواء التي تنقل الهواء إلى غرفك ومنها، بالتنظيف الميكانيكي والشفط. تشمل الخدمة الشبكات المتصلة بها والفلاتر القابلة للغسل.</p>",
+        "fr": "<p>Nous éliminons la poussière et les débris des gaines qui amènent l’air dans vos pièces et le reprennent, par nettoyage mécanique et extraction par aspiration. Le service comprend les grilles raccordées et les filtres lavables.</p>",
+        "de": "<p>Wir entfernen Staub und Schmutz aus den Luftkanälen, die die Luft in Ihre Räume und wieder zurück führen – durch mechanische Reinigung und Absaugung. Die angeschlossenen Lüftungsgitter und die waschbaren Filter sind in der Leistung enthalten.</p>",
+        "zh": "<p>风管负责为您的房间送风和回风。我们通过机械清洗和真空抽吸，清除风管内的灰尘和杂物。服务包含与风管相连的风口格栅和可水洗滤网。</p>",
+        "hi": "<p>हम उन एयर डक्ट से धूल और कचरा हटाते हैं, जिनसे हवा आपके कमरों तक पहुँचती और वापस लौटती है। इसके लिए हम मैकेनिकल सफ़ाई और वैक्यूम एक्सट्रैक्शन का इस्तेमाल करते हैं। सेवा में डक्ट से जुड़ी ग्रिल और धोने योग्य फ़िल्टर शामिल हैं।</p>"
       },
       "includes": [],
       "excludes": [],
@@ -698,16 +710,22 @@
         "hi": "पूरे एसी सिस्टम की सफ़ाई"
       },
       "short": {
-        "en": "A comprehensive clean for ducted AC systems, combining air duct cleaning with deep cleaning of the indoor unit. Covers the coil, fan, internal housing, filters, grilles, drain tray and drain line.",
-        "ru": "Объединяем чистку воздуховодов с глубокой чисткой внутреннего канального блока. Очищаем теплообменник, вентилятор, внутренний корпус, фильтры, решётки, поддон и дренажную линию.",
-        "ar": "تنظيف شامل لأنظمة الدكت يجمع بين تنظيف مجاري الهواء والتنظيف العميق للوحدة الداخلية. يشمل الملف والمروحة والهيكل الداخلي والفلاتر والشبكات وصينية التصريف وخط التصريف.",
-        "fr": "Un nettoyage d’ensemble pour les climatisations gainables, qui associe le nettoyage des gaines au nettoyage en profondeur de l’unité intérieure. Il couvre l’échangeur, le ventilateur, le carter intérieur, les filtres, les grilles, le bac à condensats et la conduite d’évacuation.",
-        "de": "Die umfassende Reinigung für Kanalklimaanlagen verbindet die Luftkanalreinigung mit der Tiefenreinigung des Innengeräts. Enthalten sind Wärmetauscher, Lüfter, Innenseite des Gehäuses, Filter, Lüftungsgitter, Kondensatwanne und Ablaufleitung.",
-        "zh": "面向风管式中央空调的全面清洗，将风管清洗与室内机深度清洗结合在一起。涵盖盘管、风扇、机壳内部、滤网、风口格栅、接水盘和排水管。",
-        "hi": "डक्टेड एसी सिस्टम की व्यापक सफ़ाई, जिसमें एयर डक्ट की सफ़ाई के साथ इनडोर यूनिट की डीप क्लीनिंग होती है। इसमें कॉइल, फैन, अंदरूनी बॉडी, फ़िल्टर, ग्रिल, ड्रेन ट्रे और ड्रेन लाइन शामिल हैं।"
+        "en": "Air duct cleaning combined with deep cleaning of the indoor coil, fan, housing and drainage system.",
+        "ru": "Чистка воздуховодов вместе с глубокой чисткой теплообменника, вентилятора, корпуса и дренажной системы внутреннего блока.",
+        "ar": "تنظيف مجاري الهواء مع التنظيف العميق للملف الداخلي والمروحة والهيكل ونظام التصريف.",
+        "fr": "Nettoyage des gaines associé au nettoyage en profondeur de l’échangeur, du ventilateur, du carter et du circuit d’évacuation de l’unité intérieure.",
+        "de": "Luftkanalreinigung, kombiniert mit der Tiefenreinigung von Wärmetauscher, Lüfter, Gehäuse und Kondensatablauf des Innengeräts.",
+        "zh": "风管清洗，结合室内机盘管、风扇、机壳和排水系统的深度清洗。",
+        "hi": "एयर डक्ट की सफ़ाई के साथ इनडोर यूनिट की कॉइल, फैन, बॉडी और ड्रेनेज सिस्टम की डीप क्लीनिंग।"
       },
       "description_html": {
-        "en": ""
+        "en": "<p>A comprehensive clean for ducted AC systems, combining air duct cleaning with deep cleaning of the indoor unit. Covers the coil, fan, internal housing, filters, grilles, drain tray and drain line.</p>",
+        "ru": "<p>Объединяем чистку воздуховодов с глубокой чисткой внутреннего канального блока. Очищаем теплообменник, вентилятор, внутренний корпус, фильтры, решётки, поддон и дренажную линию.</p>",
+        "ar": "<p>تنظيف شامل لأنظمة الدكت يجمع بين تنظيف مجاري الهواء والتنظيف العميق للوحدة الداخلية. يشمل الملف والمروحة والهيكل الداخلي والفلاتر والشبكات وصينية التصريف وخط التصريف.</p>",
+        "fr": "<p>Un nettoyage d’ensemble pour les climatisations gainables, qui associe le nettoyage des gaines au nettoyage en profondeur de l’unité intérieure. Il couvre l’échangeur, le ventilateur, le carter intérieur, les filtres, les grilles, le bac à condensats et la conduite d’évacuation.</p>",
+        "de": "<p>Die umfassende Reinigung für Kanalklimaanlagen verbindet die Luftkanalreinigung mit der Tiefenreinigung des Innengeräts. Enthalten sind Wärmetauscher, Lüfter, Innenseite des Gehäuses, Filter, Lüftungsgitter, Kondensatwanne und Ablaufleitung.</p>",
+        "zh": "<p>面向风管式中央空调的全面清洗，将风管清洗与室内机深度清洗结合在一起。涵盖盘管、风扇、机壳内部、滤网、风口格栅、接水盘和排水管。</p>",
+        "hi": "<p>डक्टेड एसी सिस्टम की व्यापक सफ़ाई, जिसमें एयर डक्ट की सफ़ाई के साथ इनडोर यूनिट की डीप क्लीनिंग होती है। इसमें कॉइल, फैन, अंदरूनी बॉडी, फ़िल्टर, ग्रिल, ड्रेन ट्रे और ड्रेन लाइन शामिल हैं।</p>"
       },
       "includes": [],
       "excludes": [],
@@ -756,8 +774,8 @@
       "symptoms": [],
       "visit_steps": [],
       "duration_min": null,
-      "price_from": null,
-      "pricing_unit": "quote",
+      "price_from": 199,
+      "pricing_unit": "unit",
       "available_from": null,
       "seo_title": {
         "en": ""
@@ -798,8 +816,8 @@
       "symptoms": [],
       "visit_steps": [],
       "duration_min": null,
-      "price_from": null,
-      "pricing_unit": "quote",
+      "price_from": 199,
+      "pricing_unit": "unit",
       "available_from": null,
       "seo_title": {
         "en": ""
@@ -924,8 +942,8 @@
       "symptoms": [],
       "visit_steps": [],
       "duration_min": null,
-      "price_from": null,
-      "pricing_unit": "quote",
+      "price_from": 199,
+      "pricing_unit": "visit",
       "available_from": null,
       "seo_title": {
         "en": ""
@@ -966,8 +984,8 @@
       "symptoms": [],
       "visit_steps": [],
       "duration_min": null,
-      "price_from": null,
-      "pricing_unit": "quote",
+      "price_from": 299,
+      "pricing_unit": "from",
       "available_from": null,
       "seo_title": {
         "en": ""
@@ -1180,8 +1198,8 @@
       "symptoms": [],
       "visit_steps": [],
       "duration_min": null,
-      "price_from": null,
-      "pricing_unit": "quote",
+      "price_from": 249,
+      "pricing_unit": "from",
       "available_from": null,
       "seo_title": {
         "en": ""

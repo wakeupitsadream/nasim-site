@@ -486,7 +486,12 @@
     "tierPlus": "{n}+",
     "tierRange": "{from}–{to}",
     "perYearRich": "<a>{amount}</a> / 年",
-    "insteadRich": "原价 <s>{amount}</s>"
+    "insteadRich": "原价 <s>{amount}</s>",
+    "firstBooking": {
+      "title": "首次预约优惠",
+      "text": "首次预约清洁服务满 <price>{min}</price>，立减 <price>{discount}</price>。",
+      "terms": "每位客户限用一次，适用于单独预约的清洁服务（含数量阶梯价）。组合套餐和年度方案按所示最终价格计算。"
+    }
   },
   "Pricing": {
     "lead": "以下每个价格都在上门前锁定，并已包含上门费。维修从固定检测费开始，检测费计入维修费用。",
@@ -504,8 +509,9 @@
       "ac": "空调价格",
       "upholstery": "软装和地毯价格"
     },
-    "factors": {
-      "title": "影响价格的因素"
+    "acNote": "检测费计入经您确认的同一故障后续检测或维修费用。紧急上门视技师空档而定。",
+    "details": {
+      "title": "价格说明"
     },
     "tiers": {
       "title": "数量阶梯价"
@@ -552,12 +558,12 @@
       "deep": "其中一次上门为一台选定的机器做深度清洗",
       "priority": "优先预约",
       "repairDiscount": "维修人工费优惠 {n}%",
-      "custom": "按设备类型、机器数量和作业便利程度定价"
+      "custom": "保障范围按您的设备量身定制"
     },
     "card": {
       "saving": "逐次预约：<s>{separate}</s>。您节省 <s>{saving}</s>（{pct}%）。",
       "cta": "咨询此方案",
-      "quote": "现场勘察后报价"
+      "quote": "按需报价"
     },
     "savings": {
       "eyebrow": "算一算",
@@ -736,6 +742,9 @@
       "toTime": "选择时间",
       "toSend": "核对并发送"
     },
-    "line": "{name} × {qty}"
+    "line": "{name} × {qty}",
+    "firstBooking": {
+      "apply": "这是我的首次预约"
+    }
   }
 }

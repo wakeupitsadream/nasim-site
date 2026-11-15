@@ -486,7 +486,12 @@
     "tierPlus": "{n}+",
     "tierRange": "{from}–{to}",
     "perYearRich": "<a>{amount}</a> pro Jahr",
-    "insteadRich": "statt <s>{amount}</s>"
+    "insteadRich": "statt <s>{amount}</s>",
+    "firstBooking": {
+      "title": "Rabatt auf Ihre erste Buchung",
+      "text": "<price>{discount}</price> Rabatt auf Ihre erste Reinigung ab einem Buchungswert von <price>{min}</price>.",
+      "terms": "Gilt einmal pro Kunde für einzeln gebuchte Reinigungen, auch zu Mengenpreisen. Pakete und Jahresverträge werden zu den angezeigten Endpreisen berechnet."
+    }
   },
   "Pricing": {
     "lead": "Jeder Preis unten steht vor dem Besuch fest und enthält die Anfahrt. Reparaturen beginnen mit einer festen Diagnosegebühr, die auf die Arbeit angerechnet wird.",
@@ -504,8 +509,9 @@
       "ac": "Preise für Klimaanlagen",
       "upholstery": "Preise für Polster und Teppiche"
     },
-    "factors": {
-      "title": "Was den Preis beeinflusst"
+    "acNote": "Diagnosegebühren werden auf die freigegebene Prüfung oder Reparatur desselben Defekts angerechnet. Dringende Einsätze sind je nach Verfügbarkeit möglich.",
+    "details": {
+      "title": "Hinweise zu den Preisen"
     },
     "tiers": {
       "title": "Mengenpreise"
@@ -552,12 +558,12 @@
       "deep": "Ein ausgewähltes Gerät erhält bei einem der Besuche eine Tiefenreinigung",
       "priority": "Bevorzugte Terminvergabe",
       "repairDiscount": "{n} % Rabatt auf die Arbeitskosten bei Reparaturen",
-      "custom": "Preis nach Gerätetyp, Anzahl der Geräte und Zugänglichkeit"
+      "custom": "Leistungsumfang auf Ihre Geräte abgestimmt"
     },
     "card": {
       "saving": "Besuch für Besuch gebucht: <s>{separate}</s>. Sie sparen <s>{saving}</s> ({pct} %).",
       "cta": "Zu diesem Vertrag anfragen",
-      "quote": "Angebot nach Besichtigung"
+      "quote": "Preis auf Anfrage"
     },
     "savings": {
       "eyebrow": "Die Rechnung",
@@ -736,6 +742,9 @@
       "toTime": "Zeit wählen",
       "toSend": "Prüfen und senden"
     },
-    "line": "{name} × {qty}"
+    "line": "{name} × {qty}",
+    "firstBooking": {
+      "apply": "Das ist meine erste Buchung"
+    }
   }
 }

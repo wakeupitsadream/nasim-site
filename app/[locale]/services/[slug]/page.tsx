@@ -202,6 +202,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
                             <PriceFrom
                               amount={from.amount}
                               unit={from.unit}
+                              exact={from.exact}
                               locale={locale}
                               size="lg"
                             />

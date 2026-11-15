@@ -26,6 +26,7 @@ type Props = {
   onChooseService: (service: BookingService) => void;
   onQty: (lineId: string, qty: number) => void;
   onAddLines: (add: Record<string, number>) => void;
+  onFirstBooking: (value: boolean) => void;
 };
 
 /** A line the customer sets a quantity for; estimates ("from") have none. */
@@ -55,6 +56,7 @@ export function StepDetails({
   onChooseService,
   onQty,
   onAddLines,
+  onFirstBooking,
 }: Props) {
   const t = useTranslations('Booking');
   const groupId = useId();
@@ -146,6 +148,8 @@ export function StepDetails({
           quote={quote}
           suggestion={suggestion}
           onAddSuggestion={onAddLines}
+          firstBooking={state.firstBooking}
+          onFirstBooking={onFirstBooking}
         />
       </aside>
     </div>
@@ -230,10 +234,16 @@ function AcService({ service, checked, payload, state, quote, onChoose, onQty }:
               <span>
                 {service.priceFrom ? (
                   <>
-                    {tPrice.rich('from', {
-                      amount: formatAED(service.priceFrom.amount, locale),
-                      price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
-                    })}{' '}
+                    {service.priceFrom.exact ? (
+                      <Ltr className="tabular-nums">
+                        {formatAED(service.priceFrom.amount, locale)}
+                      </Ltr>
+                    ) : (
+                      tPrice.rich('from', {
+                        amount: formatAED(service.priceFrom.amount, locale),
+                        price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
+                      })
+                    )}{' '}
                     {tPrice(`per.${service.priceFrom.unit}`)}
                   </>
                 ) : null}

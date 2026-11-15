@@ -3,6 +3,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { BookingSection } from '@/components/booking/booking-section';
 import { Ltr } from '@/components/ltr';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { CheckList } from '@/components/marketing/check-list';
 import { FinalCta } from '@/components/marketing/final-cta';
 import { MediaFrame } from '@/components/marketing/media-frame';
 import { PackagesTeaser } from '@/components/marketing/packages-teaser';
@@ -21,7 +22,7 @@ import {
 } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
-import { formatNumber } from '@/lib/i18n/format';
+import { formatAED } from '@/lib/i18n/format';
 import { pick, pickLocalizedValue } from '@/lib/i18n/text';
 import { stagger } from '@/lib/motion';
 import { alternatesFor } from '@/lib/seo';
@@ -56,7 +57,7 @@ export default async function PricingPage() {
     items,
     ac,
     upholstery,
-    factors,
+    details,
     art,
   ] = await Promise.all([
     getTranslations('Pricing'),
@@ -70,12 +71,13 @@ export default async function PricingPage() {
     getPriceItems(),
     getServices({ status: ['active'], category: 'ac' }),
     getServices({ status: ['active'], category: 'upholstery' }),
-    getBlock('pricing.factors'),
+    getBlock('pricing.details'),
     getPhoto({ kind: 'pricing' }, locale),
   ]);
   const whatsapp = whatsappTarget(settings.contacts);
   const tiered = pricing.lines.filter((l) => l.tiers.length > 1);
-  const factorList = pickLocalizedValue(factors, locale);
+  const detailList = pickLocalizedValue(details, locale);
+  const offer = pricing.rules.firstBookingOffer;
   const vatNote = settings.vat.registered
     ? settings.vat.included
       ? tPrice('vatIncluded')
@@ -156,7 +158,8 @@ export default async function PricingPage() {
             })}
           </div>
         </div>
-        {vatNote ? <p className="mt-6 text-small text-muted-foreground">{vatNote}</p> : null}
+        <p className="mt-8 max-w-3xl text-small text-pretty text-muted-foreground">{t('acNote')}</p>
+        {vatNote ? <p className="mt-2 text-small text-muted-foreground">{vatNote}</p> : null}
       </Section>
 
       <Section id="upholstery" tone="sand" aria-labelledby="upholstery-title">
@@ -171,32 +174,37 @@ export default async function PricingPage() {
         {vatNote ? <p className="mt-6 text-small text-muted-foreground">{vatNote}</p> : null}
       </Section>
 
-      <Section tone="surface" aria-labelledby="factors-title">
-        <SectionHeader id="factors-title" title={t('factors.title')} />
-        <ol
-          lang={factorList.lang !== locale ? factorList.lang : undefined}
-          dir={factorList.lang !== locale ? 'auto' : undefined}
-          className="grid gap-8 sm:grid-cols-2 lg:gap-x-12"
-        >
-          {factorList.value.map((factor, i) => (
-            <li
-              key={factor.title}
-              className="reveal flex gap-5 border-t border-border pt-5"
-              style={stagger(i % 2)}
+      <Section id="details" tone="surface" aria-labelledby="details-title">
+        <SectionHeader id="details-title" title={t('details.title')} />
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div
+            lang={detailList.lang !== locale ? detailList.lang : undefined}
+            dir={detailList.lang !== locale ? 'auto' : undefined}
+            className="lg:col-span-7"
+          >
+            <CheckList items={detailList.value} locale={locale} />
+          </div>
+          {offer ? (
+            <aside
+              aria-labelledby="first-booking-title"
+              className="reveal-fade flex h-fit flex-col gap-3 rounded-panel border border-border bg-mist p-6 lg:col-span-5 lg:p-8"
             >
-              <span
-                aria-hidden="true"
-                className="text-h2 leading-none font-light text-highlight-ink tabular-nums"
-              >
-                <Ltr>{formatNumber(i + 1, locale, { minimumIntegerDigits: 2 })}</Ltr>
-              </span>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-lead font-medium text-foreground">{factor.title}</h3>
-                <p className="text-body text-pretty text-muted-foreground">{factor.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+              <h3 id="first-booking-title" className="text-eyebrow text-highlight-ink">
+                {tPrice('firstBooking.title')}
+              </h3>
+              <p className="text-h3 text-balance text-foreground">
+                {tPrice.rich('firstBooking.text', {
+                  discount: formatAED(offer.discount, locale),
+                  min: formatAED(offer.minTotal, locale),
+                  price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
+                })}
+              </p>
+              <p className="text-small text-pretty text-muted-foreground">
+                {tPrice('firstBooking.terms')}
+              </p>
+            </aside>
+          ) : null}
+        </div>
       </Section>
 
       <PackagesTeaser locale={locale} tone="sand" id="packages" />

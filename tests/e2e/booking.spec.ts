@@ -25,14 +25,14 @@ test.describe('booking request wizard', () => {
     await expect(
       book.getByRole('heading', { level: 3, name: msg('en', 'Booking.details.acQuestion') }),
     ).toBeFocused();
-    await expect(book.getByRole('radio', { name: /^Standard Split AC Cleaning/ })).toBeChecked();
+    await expect(book.getByRole('radio', { name: /^Standard Split AC Service/ })).toBeChecked();
 
     // The services sit in their catalogue groups, each with its price at every quantity.
     const cleaning = book.getByRole('group', { name: msg('en', 'Services.group.cleaning') });
     await expect(cleaning.getByRole('radio')).toHaveCount(6);
     await expect(cleaning.getByText(msg('en', 'Booking.details.tiersHint'))).toBeVisible();
-    await expect(option(cleaning, 'Standard Split AC Cleaning')).toContainText('4+: AED 249');
-    const ducted = option(cleaning, 'Ducted AC & Fan Coil Servicing');
+    await expect(option(cleaning, 'Standard Split AC Service')).toContainText('4+: AED 249');
+    const ducted = option(cleaning, 'Ducted AC & Fan Coil Service');
     await expect(ducted).toContainText('2–3: AED 329');
     await expect(ducted).toContainText('4+: AED 299');
     await expect(option(cleaning, 'Split AC Deep Cleaning')).toContainText('2+: AED 499');
@@ -44,12 +44,20 @@ test.describe('booking request wizard', () => {
 
     // The chosen card holds its own quantity row: the price per unit follows the number of units.
     await expect(cleaning.getByText('1 × AED 299')).toBeVisible();
-    const add = book.getByRole('button', { name: /^Add one: Standard Split AC Cleaning/ });
+    const add = book.getByRole('button', { name: /^Add one: Standard Split AC Service/ });
     await add.click();
     await add.click();
     await expect(cleaning.getByText('3 × AED 279')).toBeVisible();
     await expect(book.getByText('AED 837').first()).toBeVisible();
     await expect(book.getByText(/Fresh Home/).first()).toBeVisible();
+
+    // First-booking offer: AED 50 off cleaning from AED 500, once the customer ticks the box.
+    await book.getByRole('checkbox', { name: msg('en', 'Booking.firstBooking.apply') }).check();
+    await expect(book.getByText('AED 787').first()).toBeVisible();
+    // A package is sold at its own price, so the "add a sofa" suggestion steps aside.
+    await expect(
+      book.getByRole('button', { name: msg('en', 'Booking.offer.add'), exact: true }),
+    ).toHaveCount(0);
 
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
     await expect(option(book, msg('en', 'Booking.time.today'))).toBeVisible();
@@ -59,8 +67,9 @@ test.describe('booking request wizard', () => {
 
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toSend') }).click();
     const message = book.getByText(/^Hi Brigada!/);
-    await expect(message).toContainText('Standard Split AC Cleaning & Service × 3');
-    await expect(message).toContainText('AED 837');
+    await expect(message).toContainText('Standard Split AC Service × 3');
+    await expect(message).toContainText('First booking offer −AED 50');
+    await expect(message).toContainText('AED 787');
     await expect(message).toContainText('Fri, 6 Nov');
     await expect(message).toContainText('Afternoon');
     await expect(
@@ -128,6 +137,15 @@ test.describe('booking request wizard', () => {
     await expect(repair.getByText(msg('en', 'Booking.summary.diagnostics')).first()).toBeVisible();
     await expect(repair.getByText(msg('en', 'Booking.summary.estimateNote'))).toBeVisible();
     await expect(repair.getByText('AED 199').first()).toBeVisible();
+
+    // A job with nothing fixed up front totals "from …", never "AED 0".
+    await page.goto('/en/services/ac-water-leak-drain-repair');
+    const drain = page.locator('#book');
+    await expect(
+      drain.getByRole('radio', { name: /^AC Water Leak & Drain Repairs/ }),
+    ).toBeChecked();
+    await expect(drain.getByText('from AED 299').first()).toBeVisible();
+    await expect(drain.getByText('AED 0')).toHaveCount(0);
   });
 
   test('an empty upholstery selection cannot continue', async ({ page }) => {

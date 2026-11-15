@@ -43,6 +43,8 @@ export type PricingRules = {
   /** Lines that already are a diagnosis (a leak test): no diagnostics fee is added next to them. */
   diagnosticLineIds: string[];
   suggestBundleWhenCheaper: boolean;
+  /** A fixed discount on a first booking of the listed (cleaning) services, from a minimum total. */
+  firstBookingOffer: { discount: number; minTotal: number; serviceSlugs: string[] } | null;
 };
 
 export type PricingConfig = { lines: PriceLine[]; bundles: BundleOffer[]; rules: PricingRules };
@@ -75,6 +77,12 @@ export type Quote = {
   total: number;
   savings: number;
   estimate: { fromLines: { lineId: string; from: number }[]; credited: boolean } | null;
+  /**
+   * The first-booking offer for this selection; null when the rule is off or nothing eligible
+   * is selected. `eligible`: the cleaning total reaches the minimum and the offer beats any
+   * bundle; `applied`: eligible and the customer said it is their first booking.
+   */
+  offer: { discount: number; minTotal: number; eligible: boolean; applied: boolean } | null;
   vat: { mode: 'none' | 'included' | 'added'; amount: number; totalWithVat: number };
 };
 
@@ -163,6 +171,13 @@ export function buildPricingConfig(
       diagnosticsItemKey: rules.diagnostics_item_key,
       quoteOnlyServices: rules.quote_only_services,
       diagnosticLineIds: rules.diagnostic_line_ids ?? [],
+      firstBookingOffer: rules.first_booking_offer
+        ? {
+            discount: rules.first_booking_offer.discount,
+            minTotal: rules.first_booking_offer.min_total,
+            serviceSlugs: rules.first_booking_offer.service_slugs,
+          }
+        : null,
       suggestBundleWhenCheaper: rules.suggest_bundle_when_cheaper,
     },
   };
@@ -193,18 +208,24 @@ export function tierRanges(line: PriceLine): { from: number; to: number | null; 
   }));
 }
 
-/** Lowest price among a service's lines (what "from AED …" shows). */
+/**
+ * Lowest price among a service's lines (what "from AED …" shows). `exact`: the service has one
+ * fixed price and nothing else, so it reads "AED 199 per visit", without "from".
+ */
 export function priceFrom(
   cfg: PricingConfig,
   slug: string,
-): { amount: number; unit: PriceUnit } | null {
+): { amount: number; unit: PriceUnit; exact: boolean } | null {
+  const lines = linesForService(cfg, slug);
   let best: { amount: number; unit: PriceUnit } | null = null;
-  for (const line of linesForService(cfg, slug)) {
+  for (const line of lines) {
     for (const tier of line.tiers) {
       if (!best || tier.price < best.amount) best = { amount: tier.price, unit: line.unit };
     }
   }
-  return best;
+  if (!best) return null;
+  const only = lines.length === 1 ? lines[0]! : null;
+  return { ...best, exact: only !== null && only.tiers.length === 1 && only.unit !== 'from' };
 }
 
 export const bundleSavings = (bundle: BundleOffer): number | null =>
@@ -317,7 +338,17 @@ function bundlePath(
   return { total, covers: { ...bundle.includes } };
 }
 
-export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState): Quote {
+export type QuoteOptions = {
+  /** The customer says this is their first booking (the wizard's checkbox). */
+  firstBooking?: boolean;
+};
+
+export function quote(
+  cfg: PricingConfig,
+  rawSelection: Selection,
+  vat: VatState,
+  options: QuoteOptions = {},
+): Quote {
   const selection = cleanSelection(cfg, rawSelection);
   const lines: QuoteLine[] = [];
   const fromLines: { lineId: string; from: number }[] = [];
@@ -367,6 +398,25 @@ export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState
     }
   }
 
+  // First-booking offer: a fixed amount off standalone cleaning. A bundle keeps its displayed
+  // price, so the two never stack: the customer gets whichever path is cheaper.
+  const rule = cfg.rules.firstBookingOffer;
+  let offer: Quote['offer'] = null;
+  if (rule) {
+    const cleaning = lines
+      .filter((l) => l.role === 'item' && rule.serviceSlugs.includes(l.serviceSlug))
+      .reduce((sum, l) => sum + l.total, 0);
+    if (cleaning > 0) {
+      const eligible = cleaning >= rule.minTotal && subtotal - rule.discount < total;
+      const applied = eligible && options.firstBooking === true;
+      offer = { discount: rule.discount, minTotal: rule.minTotal, eligible, applied };
+      if (applied) {
+        total = subtotal - rule.discount;
+        bundle = null;
+      }
+    }
+  }
+
   total = round(cfg, total);
   const roundedSubtotal = round(cfg, subtotal);
   const rate = cfg.rules.vatRate;
@@ -389,8 +439,18 @@ export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState
     savings: roundedSubtotal - total,
     estimate:
       fromLines.length > 0 ? { fromLines, credited: cfg.rules.diagnosticsCreditedToRepair } : null,
+    offer,
     vat: vatOut,
   };
+}
+
+/**
+ * What an estimate starts from when nothing fixed is charged up front (drain unblocking,
+ * thermostat installation): the sum of its "from" lines. Null when the quote has a fixed part.
+ */
+export function estimateFloor(q: Quote): number | null {
+  if (!q.estimate || q.lines.length > 0) return null;
+  return q.estimate.fromLines.reduce((sum, l) => sum + l.from, 0);
 }
 
 /** Offer the bundle when the selection already overlaps it and completing it is cheaper. */

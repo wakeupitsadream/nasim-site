@@ -5,6 +5,7 @@ import {
   billableQty,
   buildPricingConfig,
   bundleSavings,
+  estimateFloor,
   findLine,
   linesForService,
   priceFrom,
@@ -199,6 +200,90 @@ describe('estimates', () => {
     expect(q.kind).toBe('fixed');
     expect(q.total).toBe(199);
   });
+
+  it('prices the services that were on request until the price list of 16.11.2026', () => {
+    expect(total({ filter_grille: 2 })).toBe(398);
+    expect(total({ outdoor_unit: 1 })).toBe(199);
+    expect(total({ diagnostics_visit: 1 })).toBe(199);
+    expect(quote(cfg, { diagnostics_visit: 1 }, noVat).kind).toBe('fixed');
+  });
+
+  it('starts a drain or thermostat job at its "from" price, with nothing fixed up front', () => {
+    const drain = quote(cfg, { drain_unblocking: 1 }, noVat);
+    expect(drain.kind).toBe('estimate');
+    expect(drain.lines).toEqual([]);
+    expect(drain.total).toBe(0);
+    expect(estimateFloor(drain)).toBe(299);
+    expect(estimateFloor(quote(cfg, { thermostat_labour: 1 }, noVat))).toBe(249);
+    // A repair is booked with a fixed diagnostics fee, so its total is that fee, not a floor.
+    expect(estimateFloor(quote(cfg, { repair_labour: 1 }, noVat))).toBeNull();
+    expect(estimateFloor(quote(cfg, { ac_clean: 1 }, noVat))).toBeNull();
+  });
+});
+
+describe('first-booking offer', () => {
+  const first = (sel: Selection) => quote(cfg, sel, noVat, { firstBooking: true });
+
+  it('takes AED 50 off a cleaning booking of AED 500 or more once the customer says it is their first', () => {
+    const plain = quote(cfg, { ac_clean: 2 }, noVat);
+    expect(plain.total).toBe(558);
+    expect(plain.offer).toEqual({ discount: 50, minTotal: 500, eligible: true, applied: false });
+    const q = first({ ac_clean: 2 });
+    expect(q.offer?.applied).toBe(true);
+    expect(q.total).toBe(508);
+    expect(q.savings).toBe(50);
+  });
+
+  it('works on top of quantity rates and for upholstery', () => {
+    expect(first({ ac_clean: 4 }).total).toBe(946); // 4 × 249 − 50
+    expect(first({ full_system: 1 }).total).toBe(849);
+    expect(first({ sofa_seat: 6 }).total).toBe(484); // 6 × 89 − 50
+  });
+
+  it('stays out below the minimum and for servicing and repairs', () => {
+    const small = first({ ac_clean: 1 });
+    expect(small.offer).toEqual({ discount: 50, minTotal: 500, eligible: false, applied: false });
+    expect(small.total).toBe(299);
+    // Two leak tests cost 598, but testing is not cleaning: no offer at all.
+    expect(first({ leak_test: 2 }).offer).toBeNull();
+    expect(first({ leak_test: 2 }).total).toBe(598);
+    expect(first({ repair_labour: 1 }).offer).toBeNull();
+    // Only the cleaning part counts towards the minimum: 299 of 598 here.
+    expect(first({ ac_clean: 1, leak_test: 1 }).total).toBe(598);
+  });
+
+  it('never stacks with a bundle: the customer gets the cheaper of the two', () => {
+    const sel = { ac_clean: 3, sofa_seat: 3 };
+    expect(quote(cfg, sel, noVat).bundle?.slug).toBe('fresh-home');
+    // À la carte 1104 − 50 beats the package at 1099, so the package steps aside.
+    const q = first(sel);
+    expect(q.bundle).toBeNull();
+    expect(q.total).toBe(1054);
+    // With a package that really is cheaper, the package stays and the offer is not available.
+    const cheaper = buildPricingConfig(
+      items,
+      packages.map((p) => (p.slug === 'fresh-home' ? { ...p, price: 999 } : p)),
+      rules,
+    );
+    const kept = quote(cheaper, sel, noVat, { firstBooking: true });
+    expect(kept.bundle?.slug).toBe('fresh-home');
+    expect(kept.total).toBe(999);
+    expect(kept.offer).toEqual({ discount: 50, minTotal: 500, eligible: false, applied: false });
+  });
+
+  it('charges VAT on the discounted total and is off without the rule', () => {
+    const q = quote(
+      cfg,
+      { ac_clean: 2 },
+      { registered: true, included: false },
+      { firstBooking: true },
+    );
+    expect(q.vat).toEqual({ mode: 'added', amount: 25, totalWithVat: 533 });
+    const off = buildPricingConfig(items, packages, { ...rules, first_booking_offer: null });
+    const none = quote(off, { ac_clean: 2 }, noVat, { firstBooking: true });
+    expect(none.offer).toBeNull();
+    expect(none.total).toBe(558);
+  });
 });
 
 describe('VAT', () => {
@@ -249,6 +334,18 @@ describe('seed consistency', () => {
       expect(priceFrom(cfg, s.slug)?.amount ?? null, s.slug).toBe(s.price_from);
     }
     expect(priceFrom(cfg, 'humidity-mould-check')).toBeNull();
+  });
+
+  it('marks one fixed price as exact; tiers, several lines and estimates stay "from"', () => {
+    expect(priceFrom(cfg, 'emergency-ac-repair')).toEqual({
+      amount: 199,
+      unit: 'visit',
+      exact: true,
+    });
+    expect(priceFrom(cfg, 'ac-filter-grille-cleaning')?.exact).toBe(true);
+    expect(priceFrom(cfg, 'ac-cleaning')).toEqual({ amount: 249, unit: 'unit', exact: false });
+    expect(priceFrom(cfg, 'ac-repair')).toEqual({ amount: 249, unit: 'from', exact: false });
+    expect(priceFrom(cfg, 'sofa-cleaning')?.exact).toBe(false);
   });
 
   it('keeps the bundle compare price equal to the à-la-carte sum', () => {

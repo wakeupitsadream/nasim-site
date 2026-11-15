@@ -137,6 +137,18 @@ export const pricingRulesSchema = z.object({
   /** Lines that are a diagnosis in themselves: no separate diagnostics fee next to them. */
   diagnostic_line_ids: z.array(z.string()).default([]),
   suggest_bundle_when_cheaper: z.boolean(),
+  /**
+   * A fixed discount on a customer's first cleaning booking: counts the listed services only,
+   * from a minimum total. Bundles and annual plans are sold at their own prices.
+   */
+  first_booking_offer: z
+    .object({
+      discount: z.number().positive(),
+      min_total: z.number().positive(),
+      service_slugs: z.array(z.string().min(1)).min(1),
+    })
+    .nullable()
+    .default(null),
 });
 
 export const areaSchema = z.object({
@@ -189,7 +201,7 @@ export const blockSchemas = {
   'service.ac-deep-cleaning.age_note': i18nText,
   'service.refrigerant-leak-refill.principle': i18nValue(z.array(titledItem)),
   'service.ducted-ac-fcu-service.vs_split': i18nText,
-  'pricing.factors': i18nValue(z.array(titledItem)),
+  'pricing.details': i18nValue(z.array(z.string().min(1))),
   'about.body': i18nText,
   'about.not_doing': i18nText,
   'contact.response_note': i18nText,

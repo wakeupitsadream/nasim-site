@@ -16,7 +16,8 @@ export type BookingService = {
   /** AC only: the catalogue group the service is listed under (cleaning, servicing & repairs). */
   group: ServiceGroup | null;
   name: Localized;
-  priceFrom: { amount: number; unit: PriceUnit } | null;
+  /** `exact`: one fixed price, shown without "from". */
+  priceFrom: { amount: number; unit: PriceUnit; exact: boolean } | null;
   durationMin: number | null;
   /** Price line ids of this service, in display order. */
   lines: string[];

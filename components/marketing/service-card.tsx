@@ -15,7 +15,7 @@ export type ServiceBadge = 'sameDay' | 'estimate' | 'comingSoon';
 
 type Props = {
   service: Service;
-  priceFrom: { amount: number; unit: PriceUnit } | null;
+  priceFrom: { amount: number; unit: PriceUnit; exact?: boolean } | null;
   locale: Locale;
   badges?: ServiceBadge[];
   className?: string;
@@ -77,7 +77,12 @@ export async function ServiceCard({ service, priceFrom, locale, badges = [], cla
       <div className="flex items-end justify-between gap-3 border-t border-border pt-4">
         <div className="flex flex-col gap-1">
           {priceFrom ? (
-            <PriceFrom amount={priceFrom.amount} unit={priceFrom.unit} locale={locale} />
+            <PriceFrom
+              amount={priceFrom.amount}
+              unit={priceFrom.unit}
+              exact={priceFrom.exact}
+              locale={locale}
+            />
           ) : !comingSoon ? (
             <span className="text-small font-medium text-foreground">{t('onRequest')}</span>
           ) : null}

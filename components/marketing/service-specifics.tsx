@@ -92,6 +92,7 @@ export async function ServiceSpecifics({ service, locale, tone, settings, pricin
                 <PriceFrom
                   amount={callout.tiers[0]!.price}
                   unit={callout.unit}
+                  exact
                   locale={locale}
                   size="lg"
                 />

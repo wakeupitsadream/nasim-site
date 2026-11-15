@@ -55,6 +55,15 @@ describe('reducer', () => {
     expect(s.selection).toEqual({ ac_deep: 1 });
   });
 
+  it('remembers the first-booking tick across steps', () => {
+    let state = reducer(initialState(), { type: 'setFirstBooking', value: true });
+    expect(state.firstBooking).toBe(true);
+    state = reducer(state, { type: 'chooseArea', area: 'dubai-marina' });
+    expect(state.firstBooking).toBe(true);
+    expect(reducer(state, { type: 'setFirstBooking', value: false }).firstBooking).toBe(false);
+    expect(initialState().firstBooking).toBe(false);
+  });
+
   it('removes a line at zero and merges added lines', () => {
     const s = run(
       initialState({ category: 'upholstery' }),

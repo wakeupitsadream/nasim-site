@@ -486,7 +486,12 @@
     "tierPlus": "{n}+",
     "tierRange": "{from}–{to}",
     "perYearRich": "<a>{amount}</a> par an",
-    "insteadRich": "au lieu de <s>{amount}</s>"
+    "insteadRich": "au lieu de <s>{amount}</s>",
+    "firstBooking": {
+      "title": "Offre première réservation",
+      "text": "<price>{discount}</price> de remise sur votre première réservation de nettoyage d’au moins <price>{min}</price>.",
+      "terms": "Valable une seule fois par client, sur les nettoyages réservés séparément, y compris aux tarifs dégressifs. Les forfaits et les formules annuelles sont proposés à leur prix final affiché."
+    }
   },
   "Pricing": {
     "lead": "Chaque prix ci-dessous est fixé avant la visite et inclut le déplacement. Les réparations commencent par des frais de diagnostic fixes, déduits du montant des travaux.",
@@ -504,8 +509,9 @@
       "ac": "Tarifs climatisation",
       "upholstery": "Tarifs canapés, matelas et tapis"
     },
-    "factors": {
-      "title": "Ce qui influence le prix"
+    "acNote": "Les frais de diagnostic sont déduits de la réparation ou des tests approuvés pour la même panne. Les interventions urgentes dépendent des disponibilités.",
+    "details": {
+      "title": "Conditions tarifaires"
     },
     "tiers": {
       "title": "Tarifs dégressifs"
@@ -552,12 +558,12 @@
       "deep": "Une unité choisie est nettoyée en profondeur lors de l’une des visites",
       "priority": "Réservation prioritaire",
       "repairDiscount": "{n} % de remise sur la main-d’œuvre de réparation",
-      "custom": "Prix selon le type d’équipement, le nombre d’unités et l’accès"
+      "custom": "Couverture adaptée à votre équipement"
     },
     "card": {
       "saving": "Réservé visite par visite : <s>{separate}</s>. Vous économisez <s>{saving}</s> ({pct} %).",
       "cta": "Demander cette formule",
-      "quote": "Devis après inspection"
+      "quote": "Sur devis"
     },
     "savings": {
       "eyebrow": "Le calcul",
@@ -736,6 +742,9 @@
       "toTime": "Choisir un horaire",
       "toSend": "Vérifier et envoyer"
     },
-    "line": "{name} × {qty}"
+    "line": "{name} × {qty}",
+    "firstBooking": {
+      "apply": "C’est ma première réservation"
+    }
   }
 }

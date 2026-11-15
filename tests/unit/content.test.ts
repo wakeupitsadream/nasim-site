@@ -29,7 +29,7 @@ import { blockSchemas } from '@/lib/validation/content';
 describe('seed files', () => {
   it('parse against the content schemas', () => {
     expect(seedServices().length).toBe(24);
-    expect(seedPriceItems().length).toBe(27);
+    expect(seedPriceItems().length).toBe(32);
     expect(seedPackages().length).toBe(4);
     expect(seedAreas().length).toBe(16);
     expect(seedFaqs().length).toBe(19);
@@ -43,6 +43,25 @@ describe('seed files', () => {
     }
     for (const slug of seedPricingRules().quote_only_services)
       expect(slugs.has(slug), slug).toBe(true);
+  });
+
+  it('offers the first-booking discount on every priced cleaning service and on nothing else', () => {
+    const priced = new Set(seedPriceItems().map((p) => p.service_slug));
+    const cleaning = seedServices()
+      .filter(
+        (s) =>
+          priced.has(s.slug) &&
+          (s.category === 'upholstery' || s.group === 'cleaning' || s.group === 'addon'),
+      )
+      .map((s) => s.slug);
+    expect(seedPricingRules().first_booking_offer).toEqual({
+      discount: 50,
+      min_total: 500,
+      service_slugs: cleaning,
+    });
+    expect(cleaning).toContain('ac-cleaning');
+    expect(cleaning).toContain('sofa-cleaning');
+    expect(cleaning).not.toContain('ac-repair');
   });
 
   it('bundle includes refer to price lines and the diagnostics item exists', () => {
@@ -98,9 +117,7 @@ describe('content getters', () => {
   });
 
   it('find a service by slug and return null for unknown ones', async () => {
-    expect((await getServiceBySlug('ac-cleaning'))?.name.en).toBe(
-      'Standard Split AC Cleaning & Service',
-    );
+    expect((await getServiceBySlug('ac-cleaning'))?.name.en).toBe('Standard Split AC Service');
     expect(await getServiceBySlug('no-such-service')).toBeNull();
   });
 

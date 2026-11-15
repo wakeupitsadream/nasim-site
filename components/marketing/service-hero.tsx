@@ -21,7 +21,7 @@ import type { PriceUnit, Service } from '@/lib/validation/content';
 type Props = {
   service: Service;
   locale: Locale;
-  priceFrom: { amount: number; unit: PriceUnit } | null;
+  priceFrom: { amount: number; unit: PriceUnit; exact?: boolean } | null;
   whatsapp: CtaTarget;
   /** Service pages host the wizard; the primary CTA scrolls to it. */
   bookHref?: string;
@@ -88,6 +88,7 @@ export async function ServiceHero({
               <PriceFrom
                 amount={priceFrom.amount}
                 unit={priceFrom.unit}
+                exact={priceFrom.exact}
                 locale={locale}
                 size="lg"
               />

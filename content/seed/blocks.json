@@ -494,134 +494,50 @@
       }
     },
     {
-      "key": "pricing.factors",
+      "key": "pricing.details",
       "kind": "json",
       "value": {
         "en": [
-          {
-            "title": "How many units",
-            "text": "The price per unit drops from the second and the fourth unit. The call-out is always included."
-          },
-          {
-            "title": "Access to the outdoor unit",
-            "text": "A condenser on a balcony or roof is included. One that needs a ladder on a facade or a lift is quoted after a photo."
-          },
-          {
-            "title": "Villa or apartment",
-            "text": "Villas with ducted systems are priced per fan coil unit; apartments with splits — per unit."
-          },
-          {
-            "title": "Age and condition",
-            "text": "Units older than 8–10 years may need a deep clean or parts. We say so after the first look and never start extra work without your yes."
-          }
+          "Prices include the visit and VAT where applicable.",
+          "Quantity rates apply to the same service at one address during one visit.",
+          "Rates assume standard residential equipment and suitable existing access.",
+          "Any additional access work or specialist dismantling is quoted before booking."
         ],
         "ru": [
-          {
-            "title": "Сколько блоков",
-            "text": "Цена за блок снижается со второго и с четвёртого блока. Выезд всегда включён."
-          },
-          {
-            "title": "Доступ к наружному блоку",
-            "text": "Наружный блок на балконе или крыше — включено. Если нужен подъёмник или работа на фасаде — считаем по фото."
-          },
-          {
-            "title": "Вилла или квартира",
-            "text": "Виллы с канальными системами считаем по числу фанкойлов, квартиры со сплитами — по блокам."
-          },
-          {
-            "title": "Возраст и состояние",
-            "text": "Блокам старше 8–10 лет может понадобиться глубокая чистка или запчасти. Скажем после первого осмотра и не начнём лишнего без вашего согласия."
-          }
+          "Цены включают выезд и НДС, где он применяется.",
+          "Ставки за количество действуют на одну и ту же услугу по одному адресу за один визит.",
+          "Цены рассчитаны на стандартное бытовое оборудование и обычный доступ к нему.",
+          "Дополнительные работы по доступу и специальную разборку оцениваем до бронирования."
         ],
         "ar": [
-          {
-            "title": "عدد الوحدات",
-            "text": "ينخفض سعر الوحدة ابتداءً من الوحدة الثانية ثم الرابعة. رسوم الزيارة مشمولة دائمًا."
-          },
-          {
-            "title": "الوصول إلى الوحدة الخارجية",
-            "text": "الوحدة الخارجية على الشرفة أو السطح مشمولة. أما التي تحتاج إلى سلّم على الواجهة أو رافعة فنقدّم سعرها بعد صورة."
-          },
-          {
-            "title": "فيلا أم شقة",
-            "text": "الفلل بأنظمة الدكت تُحسب لكل وحدة فان كويل؛ والشقق بمكيفات السبليت لكل وحدة."
-          },
-          {
-            "title": "العمر والحالة",
-            "text": "الوحدات الأقدم من 8–10 سنوات قد تحتاج إلى تنظيف عميق أو قطع. نخبرك بذلك بعد النظرة الأولى ولا نبدأ أي عمل إضافي من دون موافقتك."
-          }
-        ],
-        "fr": [
-          {
-            "title": "Nombre d’unités",
-            "text": "Le prix par unité baisse à partir de la deuxième et de la quatrième unité. Le déplacement est toujours inclus."
-          },
-          {
-            "title": "Accès à l’unité extérieure",
-            "text": "Un condenseur sur un balcon ou un toit est inclus. S’il faut une échelle sur une façade ou une nacelle, nous chiffrons après une photo."
-          },
-          {
-            "title": "Villa ou appartement",
-            "text": "Les villas en gainable sont facturées par ventilo-convecteur ; les appartements avec splits — par unité."
-          },
-          {
-            "title": "Âge et état",
-            "text": "Les unités de plus de 8 à 10 ans peuvent nécessiter un nettoyage en profondeur ou des pièces. Nous le disons après un premier coup d’œil et ne commençons jamais de travail supplémentaire sans votre accord."
-          }
+          "الأسعار تشمل رسوم الزيارة وضريبة القيمة المضافة حيثما تنطبق.",
+          "الأسعار حسب الكمية تنطبق على الخدمة نفسها في عنوان واحد وخلال زيارة واحدة.",
+          "تفترض الأسعار أن المعدات سكنية قياسية وأن الوصول المتاح إليها حاليًا مناسب.",
+          "نقدّم عرض سعر لأي أعمال إضافية لتأمين الوصول أو فكّ متخصص قبل الحجز."
         ],
         "de": [
-          {
-            "title": "Wie viele Geräte",
-            "text": "Der Preis pro Gerät sinkt ab dem zweiten und ab dem vierten Gerät. Die Anfahrt ist immer inklusive."
-          },
-          {
-            "title": "Zugang zum Außengerät",
-            "text": "Ein Außengerät auf Balkon oder Dach ist inklusive. Eines, das eine Leiter an der Fassade oder einen Hubsteiger braucht, wird nach einem Foto angeboten."
-          },
-          {
-            "title": "Villa oder Apartment",
-            "text": "Villen mit Kanalsystem berechnen wir pro Gebläsekonvektor, Apartments mit Split-Geräten pro Gerät."
-          },
-          {
-            "title": "Alter und Zustand",
-            "text": "Geräte, die älter als 8–10 Jahre sind, brauchen eventuell eine Tiefenreinigung oder Ersatzteile. Wir sagen es nach dem ersten Blick und beginnen zusätzliche Arbeiten nie ohne Ihr Ja."
-          }
+          "Die Preise enthalten die Anfahrt und die MwSt., sofern sie anfällt.",
+          "Mengenpreise gelten für dieselbe Leistung an derselben Adresse im selben Besuch.",
+          "Die Preise setzen Standardgeräte für Wohnräume und einen geeigneten, bereits vorhandenen Zugang voraus.",
+          "Für zusätzliche Zugangsarbeiten oder eine Spezialdemontage erhalten Sie vor der Buchung ein Angebot."
         ],
         "zh": [
-          {
-            "title": "机器数量",
-            "text": "从第二台和第四台起，每台价格递减。上门费始终包含在内。"
-          },
-          {
-            "title": "室外机位置",
-            "text": "阳台或屋顶上的室外机已包含在内。需要在外墙架梯子或使用升降设备的，看照片后报价。"
-          },
-          {
-            "title": "别墅还是公寓",
-            "text": "装有中央空调的别墅按每台风机盘管计价；使用分体式空调的公寓按每台机器计价。"
-          },
-          {
-            "title": "机龄和状况",
-            "text": "使用 8–10 年以上的机器可能需要深度清洗或更换配件。我们看过第一眼后就会告诉您，未经您同意绝不开始额外的工作。"
-          }
+          "价格已包含上门费和增值税（如适用）。",
+          "数量阶梯价适用于同一地址、同一次上门的同一项服务。",
+          "价格按标准家用设备计算，并以现有条件下可正常触及设备为前提。",
+          "如需额外作业才能触及设备，或需要专业拆卸，均在预约前报价。"
         ],
         "hi": [
-          {
-            "title": "कितनी यूनिट",
-            "text": "प्रति यूनिट कीमत दूसरी और चौथी यूनिट से कम होती जाती है। विज़िट शुल्क हमेशा शामिल है।"
-          },
-          {
-            "title": "आउटडोर यूनिट तक पहुँच",
-            "text": "बालकनी या छत पर लगा कंडेनसर शामिल है। जिसके लिए बाहरी दीवार पर सीढ़ी या लिफ़्ट चाहिए, उसका कोटेशन फ़ोटो देखने के बाद दिया जाता है।"
-          },
-          {
-            "title": "विला या अपार्टमेंट",
-            "text": "डक्टेड सिस्टम वाले विला की कीमत प्रति फैन कॉइल यूनिट; स्प्लिट वाले अपार्टमेंट की — प्रति यूनिट।"
-          },
-          {
-            "title": "उम्र और हालत",
-            "text": "8–10 साल से पुरानी यूनिट को डीप क्लीनिंग या पुर्ज़ों की ज़रूरत हो सकती है। हम पहली नज़र के बाद बता देते हैं और आपकी हाँ के बिना कोई अतिरिक्त काम कभी शुरू नहीं करते।"
-          }
+          "कीमतों में विज़िट शुल्क और, जहाँ लागू हो, VAT शामिल है।",
+          "मात्रा के अनुसार कीमतें तब लागू होती हैं, जब एक ही सेवा एक ही पते पर एक ही विज़िट में ली जाए।",
+          "कीमतें यह मानकर तय की गई हैं कि उपकरण घरों में लगने वाले स्टैंडर्ड प्रकार के हैं और उन तक उपयुक्त पहुँच पहले से मौजूद है।",
+          "पहुँच बनाने के किसी भी अतिरिक्त काम या पुर्ज़े खोलने के विशेष काम का कोटेशन बुकिंग से पहले दिया जाता है।"
+        ],
+        "fr": [
+          "Les prix incluent le déplacement et la TVA lorsqu’elle s’applique.",
+          "Les tarifs dégressifs s’appliquent à un même service, à une même adresse, lors d’une même visite.",
+          "Les tarifs s’entendent pour des équipements résidentiels standard et un accès existant adapté.",
+          "Les travaux d’accès supplémentaires et tout démontage spécialisé font l’objet d’un devis avant la réservation."
         ]
       }
     },

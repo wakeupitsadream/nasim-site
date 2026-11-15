@@ -13,6 +13,8 @@ export type BookingState = {
   /** Selected AC service slug (AC is one service at a time; upholstery mixes lines). */
   acService: string | null;
   selection: Selection;
+  /** The customer ticked "this is my first booking" (the first-booking offer, lib/pricing). */
+  firstBooking: boolean;
   clock: DubaiClock | null;
   day: string | null;
   window: WindowKey | null;
@@ -27,6 +29,7 @@ export type BookingAction =
   | { type: 'chooseAcService'; service: ServiceChoice }
   | { type: 'setQty'; lineId: string; qty: number }
   | { type: 'addLines'; add: Selection }
+  | { type: 'setFirstBooking'; value: boolean }
   | { type: 'next'; clock?: DubaiClock; defaultDay?: string | null }
   | { type: 'back' }
   | { type: 'goTo'; step: Step }
@@ -56,6 +59,7 @@ export function initialState(init?: InitialBooking): BookingState {
     category: null,
     acService: null,
     selection: {},
+    firstBooking: false,
     clock: null,
     day: null,
     window: null,
@@ -101,6 +105,8 @@ export function reducer(state: BookingState, action: BookingAction): BookingStat
       else delete selection[action.lineId];
       return { ...state, selection, error: null };
     }
+    case 'setFirstBooking':
+      return { ...state, firstBooking: action.value };
     case 'addLines': {
       const selection = { ...state.selection };
       for (const [id, qty] of Object.entries(action.add))
