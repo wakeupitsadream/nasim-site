@@ -171,16 +171,16 @@
     },
     {
       "service_slug": "ducted-ac-fcu-service",
-      "key": "fcu_service_2plus",
+      "key": "fcu_service_2_3",
       "tier_group": "fcu_service",
       "name": {
-        "en": "Fan coil unit service, 2+ units",
-        "ru": "Обслуживание фанкойла, 2+ блоков",
-        "ar": "صيانة وحدة فان كويل، وحدتان فأكثر",
-        "fr": "Entretien de ventilo-convecteur, 2 unités et plus",
-        "de": "Gebläsekonvektor-Wartung, 2+ Geräte",
-        "zh": "风机盘管保养，2 台及以上",
-        "hi": "फैन कॉइल यूनिट सर्विस, 2+ यूनिट"
+        "en": "Fan coil unit service, 2–3 units",
+        "ru": "Обслуживание фанкойла, 2–3 блока",
+        "ar": "صيانة وحدة فان كويل، 2–3 وحدات",
+        "fr": "Entretien de ventilo-convecteur, 2–3 unités",
+        "de": "Gebläsekonvektor-Wartung, 2–3 Geräte",
+        "zh": "风机盘管保养，2–3 台",
+        "hi": "फैन कॉइल यूनिट सर्विस, 2–3 यूनिट"
       },
       "unit": "fcu",
       "price": 329,
@@ -196,6 +196,34 @@
         "hi": "प्रति यूनिट"
       },
       "sort": 2
+    },
+    {
+      "service_slug": "ducted-ac-fcu-service",
+      "key": "fcu_service_4plus",
+      "tier_group": "fcu_service",
+      "name": {
+        "en": "Fan coil unit service, 4+ units",
+        "ru": "Обслуживание фанкойла, 4+ блоков",
+        "ar": "صيانة وحدة فان كويل، 4 وحدات فأكثر",
+        "fr": "Entretien de ventilo-convecteur, 4 unités et plus",
+        "de": "Gebläsekonvektor-Wartung, 4+ Geräte",
+        "zh": "风机盘管保养，4 台及以上",
+        "hi": "फैन कॉइल यूनिट सर्विस, 4+ यूनिट"
+      },
+      "unit": "fcu",
+      "price": 299,
+      "min_qty": 4,
+      "tier_from_qty": 4,
+      "note": {
+        "en": "Per unit",
+        "ru": "За блок",
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
+      },
+      "sort": 3
     },
     {
       "service_slug": "fcu-deep-coil-cleaning",
@@ -283,16 +311,16 @@
     },
     {
       "service_slug": "ac-duct-cleaning",
-      "key": "duct_clean_2plus",
+      "key": "duct_clean_2_3",
       "tier_group": "duct_clean",
       "name": {
-        "en": "AC Duct Cleaning, 2+ units",
-        "ru": "Чистка воздуховодов, 2+ блоков",
-        "ar": "تنظيف مجاري الهواء، وحدتان فأكثر",
-        "fr": "Nettoyage des gaines de climatisation, 2 unités et plus",
-        "de": "Luftkanalreinigung, 2+ Geräte",
-        "zh": "空调风管清洗，2 台及以上",
-        "hi": "एसी डक्ट की सफ़ाई, 2+ यूनिट"
+        "en": "AC Duct Cleaning, 2–3 units",
+        "ru": "Чистка воздуховодов, 2–3 блока",
+        "ar": "تنظيف مجاري الهواء، 2–3 وحدات",
+        "fr": "Nettoyage des gaines de climatisation, 2–3 unités",
+        "de": "Luftkanalreinigung, 2–3 Geräte",
+        "zh": "空调风管清洗，2–3 台",
+        "hi": "एसी डक्ट की सफ़ाई, 2–3 यूनिट"
       },
       "unit": "unit",
       "price": 599,
@@ -308,6 +336,34 @@
         "hi": "प्रति यूनिट"
       },
       "sort": 2
+    },
+    {
+      "service_slug": "ac-duct-cleaning",
+      "key": "duct_clean_4plus",
+      "tier_group": "duct_clean",
+      "name": {
+        "en": "AC Duct Cleaning, 4+ units",
+        "ru": "Чистка воздуховодов, 4+ блоков",
+        "ar": "تنظيف مجاري الهواء، 4 وحدات فأكثر",
+        "fr": "Nettoyage des gaines de climatisation, 4 unités et plus",
+        "de": "Luftkanalreinigung, 4+ Geräte",
+        "zh": "空调风管清洗，4 台及以上",
+        "hi": "एसी डक्ट की सफ़ाई, 4+ यूनिट"
+      },
+      "unit": "unit",
+      "price": 549,
+      "min_qty": 4,
+      "tier_from_qty": 4,
+      "note": {
+        "en": "Per unit",
+        "ru": "За блок",
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
+      },
+      "sort": 3
     },
     {
       "service_slug": "full-ac-system-cleaning",
@@ -339,16 +395,16 @@
     },
     {
       "service_slug": "full-ac-system-cleaning",
-      "key": "full_system_2plus",
+      "key": "full_system_2_3",
       "tier_group": "full_system",
       "name": {
-        "en": "Full AC System Cleaning, 2+ units",
-        "ru": "Комплексная чистка системы кондиционирования, 2+ блоков",
-        "ar": "التنظيف الشامل لنظام التكييف، وحدتان فأكثر",
-        "fr": "Nettoyage complet du système de climatisation, 2 unités et plus",
-        "de": "Komplettreinigung der Klimaanlage, 2+ Geräte",
-        "zh": "空调系统全面清洗，2 台及以上",
-        "hi": "पूरे एसी सिस्टम की सफ़ाई, 2+ यूनिट"
+        "en": "Full AC System Cleaning, 2–3 units",
+        "ru": "Комплексная чистка системы кондиционирования, 2–3 блока",
+        "ar": "التنظيف الشامل لنظام التكييف، 2–3 وحدات",
+        "fr": "Nettoyage complet du système de climatisation, 2–3 unités",
+        "de": "Komplettreinigung der Klimaanlage, 2–3 Geräte",
+        "zh": "空调系统全面清洗，2–3 台",
+        "hi": "पूरे एसी सिस्टम की सफ़ाई, 2–3 यूनिट"
       },
       "unit": "unit",
       "price": 849,
@@ -364,6 +420,34 @@
         "hi": "प्रति यूनिट"
       },
       "sort": 2
+    },
+    {
+      "service_slug": "full-ac-system-cleaning",
+      "key": "full_system_4plus",
+      "tier_group": "full_system",
+      "name": {
+        "en": "Full AC System Cleaning, 4+ units",
+        "ru": "Комплексная чистка системы кондиционирования, 4+ блоков",
+        "ar": "التنظيف الشامل لنظام التكييف، 4 وحدات فأكثر",
+        "fr": "Nettoyage complet du système de climatisation, 4 unités et plus",
+        "de": "Komplettreinigung der Klimaanlage, 4+ Geräte",
+        "zh": "空调系统全面清洗，4 台及以上",
+        "hi": "पूरे एसी सिस्टम की सफ़ाई, 4+ यूनिट"
+      },
+      "unit": "unit",
+      "price": 799,
+      "min_qty": 4,
+      "tier_from_qty": 4,
+      "note": {
+        "en": "Per unit",
+        "ru": "За блок",
+        "ar": "للوحدة",
+        "fr": "Par unité",
+        "de": "Pro Gerät",
+        "zh": "每台",
+        "hi": "प्रति यूनिट"
+      },
+      "sort": 3
     },
     {
       "service_slug": "emergency-ac-repair",

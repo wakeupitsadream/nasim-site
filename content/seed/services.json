@@ -386,7 +386,7 @@
         }
       ],
       "duration_min": 40,
-      "price_from": 329,
+      "price_from": 299,
       "pricing_unit": "fcu",
       "available_from": null,
       "seo_title": {
@@ -399,13 +399,13 @@
         "hi": "दुबई के विला और टावरों में डक्टेड एसी और FCU सर्विस"
       },
       "seo_description": {
-        "en": "Fan coil unit cleaning and ducted AC service for Dubai villas and apartments from AED 329 per FCU. Filters, coil, drain, thermostat check, photo report.",
-        "ru": "Чистка фанкойлов и обслуживание канальных систем в виллах и квартирах Дубая от 329 AED за фанкойл. Фильтры, радиатор, дренаж, термостаты, фотоотчёт.",
-        "ar": "تنظيف وحدات الفان كويل وصيانة أنظمة الدكت لفلل دبي وشققها ابتداءً من 329 درهمًا لكل وحدة فان كويل. الفلاتر والملف والتصريف وفحص الثرموستات وتقرير مصوّر.",
-        "fr": "Nettoyage de ventilo-convecteurs et entretien de clim gainable à Dubaï dès 329 AED par FCU. Filtres, échangeur, évacuation, thermostat, rapport photo.",
-        "de": "FCU-Reinigung und Wartung von Kanalklimaanlagen in Dubai für Villen und Apartments ab 329 AED pro FCU. Filter, Wärmetauscher, Ablauf, Thermostat, Fotobericht.",
-        "zh": "迪拜别墅和公寓的风机盘管清洗与中央空调保养，每台风机盘管 AED 329 起。滤网、盘管、排水、温控器检查，照片报告。",
-        "hi": "दुबई के विला और अपार्टमेंट के लिए फैन कॉइल यूनिट की सफ़ाई और डक्टेड एसी सर्विस AED 329 प्रति FCU से। फ़िल्टर, कॉइल, ड्रेन, थर्मोस्टैट की जाँच, फ़ोटो रिपोर्ट।"
+        "en": "Fan coil unit cleaning and ducted AC service for Dubai villas and apartments from AED 299 per FCU. Filters, coil, drain, thermostat check, photo report.",
+        "ru": "Чистка фанкойлов и обслуживание канальных систем в виллах и квартирах Дубая от 299 AED за фанкойл. Фильтры, радиатор, дренаж, термостаты, фотоотчёт.",
+        "ar": "تنظيف وحدات الفان كويل وصيانة أنظمة الدكت لفلل دبي وشققها ابتداءً من 299 درهمًا لكل وحدة فان كويل. الفلاتر والملف والتصريف وفحص الثرموستات وتقرير مصوّر.",
+        "fr": "Nettoyage de ventilo-convecteurs et entretien de clim gainable à Dubaï dès 299 AED par FCU. Filtres, échangeur, évacuation, thermostat, rapport photo.",
+        "de": "FCU-Reinigung und Wartung von Kanalklimaanlagen in Dubai für Villen und Apartments ab 299 AED pro FCU. Filter, Wärmetauscher, Ablauf, Thermostat, Fotobericht.",
+        "zh": "迪拜别墅和公寓的风机盘管清洗与中央空调保养，每台风机盘管 AED 299 起。滤网、盘管、排水、温控器检查，照片报告。",
+        "hi": "दुबई के विला और अपार्टमेंट के लिए फैन कॉइल यूनिट की सफ़ाई और डक्टेड एसी सर्विस AED 299 प्रति FCU से। फ़िल्टर, कॉइल, ड्रेन, थर्मोस्टैट की जाँच, फ़ोटो रिपोर्ट।"
       }
     },
     {
@@ -672,7 +672,7 @@
       "symptoms": [],
       "visit_steps": [],
       "duration_min": null,
-      "price_from": 599,
+      "price_from": 549,
       "pricing_unit": "unit",
       "available_from": null,
       "seo_title": {
@@ -714,7 +714,7 @@
       "symptoms": [],
       "visit_steps": [],
       "duration_min": null,
-      "price_from": 849,
+      "price_from": 799,
       "pricing_unit": "unit",
       "available_from": null,
       "seo_title": {

@@ -41,7 +41,16 @@ describe('buildPricingConfig', () => {
       'mattress_double',
       'mattress_king',
     ]);
-    expect(line('fcu_service').tiers.map((t) => t.price)).toEqual([349, 329]);
+    // Misha's table of 15.11.2026: three services have a third rate from the fourth unit.
+    expect(line('fcu_service').tiers.map((t) => [t.fromQty, t.price])).toEqual([
+      [1, 349],
+      [2, 329],
+      [4, 299],
+    ]);
+    expect(line('duct_clean').tiers.map((t) => t.price)).toEqual([649, 599, 549]);
+    expect(line('full_system').tiers.map((t) => t.price)).toEqual([899, 849, 799]);
+    // Fan coil deep cleaning costs the same from the second unit on, like the split deep clean.
+    expect(line('fcu_deep').tiers.map((t) => t.price)).toEqual([599, 549]);
     expect(line('fcu_service').minQty).toBe(1);
   });
 
@@ -73,9 +82,13 @@ describe('tiers and minimums', () => {
     // The services that were priced on request until 12.11.2026.
     expect(total({ fcu_service: 1 })).toBe(349);
     expect(total({ fcu_service: 3 })).toBe(987);
+    expect(total({ fcu_service: 4 })).toBe(1196);
     expect(total({ fcu_deep: 2 })).toBe(1098);
+    expect(total({ fcu_deep: 5 })).toBe(2745);
     expect(total({ duct_clean: 1 })).toBe(649);
+    expect(total({ duct_clean: 4 })).toBe(2196);
     expect(total({ full_system: 2 })).toBe(1698);
+    expect(total({ full_system: 4 })).toBe(3196);
   });
 
   it('bills minimum charges and flags them', () => {

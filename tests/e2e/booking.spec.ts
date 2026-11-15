@@ -32,7 +32,10 @@ test.describe('booking request wizard', () => {
     await expect(cleaning.getByRole('radio')).toHaveCount(6);
     await expect(cleaning.getByText(msg('en', 'Booking.details.tiersHint'))).toBeVisible();
     await expect(option(cleaning, 'Standard Split AC Cleaning')).toContainText('4+: AED 249');
-    await expect(option(cleaning, 'Ducted AC & Fan Coil Servicing')).toContainText('2+: AED 329');
+    const ducted = option(cleaning, 'Ducted AC & Fan Coil Servicing');
+    await expect(ducted).toContainText('2–3: AED 329');
+    await expect(ducted).toContainText('4+: AED 299');
+    await expect(option(cleaning, 'Split AC Deep Cleaning')).toContainText('2+: AED 499');
     await expect(
       book
         .getByRole('group', { name: msg('en', 'Services.group.service') })

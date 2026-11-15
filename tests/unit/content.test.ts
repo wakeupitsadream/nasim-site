@@ -29,7 +29,7 @@ import { blockSchemas } from '@/lib/validation/content';
 describe('seed files', () => {
   it('parse against the content schemas', () => {
     expect(seedServices().length).toBe(24);
-    expect(seedPriceItems().length).toBe(24);
+    expect(seedPriceItems().length).toBe(27);
     expect(seedPackages().length).toBe(4);
     expect(seedAreas().length).toBe(16);
     expect(seedFaqs().length).toBe(19);
