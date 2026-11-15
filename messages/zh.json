@@ -663,6 +663,7 @@
     },
     "details": {
       "acQuestion": "哪项服务？",
+      "tiersHint": "预订的台数越多，每台的价格越低。",
       "upholsteryQuestion": "清洁什么？",
       "qty": {
         "unit": "台数",

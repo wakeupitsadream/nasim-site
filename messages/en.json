@@ -663,6 +663,7 @@
     },
     "details": {
       "acQuestion": "Which service?",
+      "tiersHint": "The more units you book, the lower the price per unit.",
       "upholsteryQuestion": "What are we cleaning?",
       "qty": {
         "unit": "Units",

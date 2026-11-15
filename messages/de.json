@@ -663,6 +663,7 @@
     },
     "details": {
       "acQuestion": "Welche Leistung?",
+      "tiersHint": "Je mehr Geräte Sie buchen, desto niedriger ist der Preis pro Gerät.",
       "upholsteryQuestion": "Was reinigen wir?",
       "qty": {
         "unit": "Geräte",

@@ -27,9 +27,24 @@ test.describe('booking request wizard', () => {
     ).toBeFocused();
     await expect(book.getByRole('radio', { name: /^Standard Split AC Cleaning/ })).toBeChecked();
 
+    // The services sit in their catalogue groups, each with its price at every quantity.
+    const cleaning = book.getByRole('group', { name: msg('en', 'Services.group.cleaning') });
+    await expect(cleaning.getByRole('radio')).toHaveCount(6);
+    await expect(cleaning.getByText(msg('en', 'Booking.details.tiersHint'))).toBeVisible();
+    await expect(option(cleaning, 'Standard Split AC Cleaning')).toContainText('4+: AED 249');
+    await expect(option(cleaning, 'Ducted AC & Fan Coil Servicing')).toContainText('2+: AED 329');
+    await expect(
+      book
+        .getByRole('group', { name: msg('en', 'Services.group.service') })
+        .getByRole('radio', { name: /^AC Repairs/ }),
+    ).toBeVisible();
+
+    // The chosen card holds its own quantity row: the price per unit follows the number of units.
+    await expect(cleaning.getByText('1 × AED 299')).toBeVisible();
     const add = book.getByRole('button', { name: /^Add one: Standard Split AC Cleaning/ });
     await add.click();
     await add.click();
+    await expect(cleaning.getByText('3 × AED 279')).toBeVisible();
     await expect(book.getByText('AED 837').first()).toBeVisible();
     await expect(book.getByText(/Fresh Home/).first()).toBeVisible();
 

@@ -3,7 +3,7 @@ import type { Locale } from '@/lib/i18n/routing';
 import type { Localized } from '@/lib/i18n/text';
 import type { PricingConfig, VatState } from '@/lib/pricing';
 import type { BookingSettings } from '@/lib/validation/settings';
-import type { PriceUnit } from '@/lib/validation/content';
+import type { PriceUnit, ServiceGroup } from '@/lib/validation/content';
 
 export type BookingCategory = 'ac' | 'upholstery';
 
@@ -13,6 +13,8 @@ export type BookingPhoto = { url: string; alt: string; width: number; height: nu
 export type BookingService = {
   slug: string;
   category: BookingCategory;
+  /** AC only: the catalogue group the service is listed under (cleaning, servicing & repairs). */
+  group: ServiceGroup | null;
   name: Localized;
   priceFrom: { amount: number; unit: PriceUnit } | null;
   durationMin: number | null;
@@ -31,6 +33,8 @@ export type BookingPayload = {
   services: BookingService[];
   /** Human label per price line: the service name for single-line services, else the item name. */
   lineLabels: Record<string, Localized>;
+  /** Headings of the AC groups, as the catalogue titles them. */
+  groupLabels: Partial<Record<ServiceGroup, string>>;
   /** Bundle names by slug (`Fresh Home`). */
   bundleNames: Record<string, Localized>;
   areas: { slug: string; name: Localized }[];

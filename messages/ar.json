@@ -663,6 +663,7 @@
     },
     "details": {
       "acQuestion": "أي خدمة؟",
+      "tiersHint": "كلما زاد عدد الوحدات، انخفض سعر الوحدة.",
       "upholsteryQuestion": "ماذا ننظف؟",
       "qty": {
         "unit": "الوحدات",

@@ -663,6 +663,7 @@
     },
     "details": {
       "acQuestion": "Quel service ?",
+      "tiersHint": "Plus vous réservez d’unités, plus le prix par unité baisse.",
       "upholsteryQuestion": "Que nettoyons-nous ?",
       "qty": {
         "unit": "Unités",
