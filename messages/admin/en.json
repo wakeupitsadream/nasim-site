@@ -1,0 +1,145 @@
+{
+  "app": {
+    "title": "Brigada — admin",
+    "nav": {
+      "home": "Overview",
+      "settings": "Settings",
+      "prices": "Prices",
+      "services": "Services"
+    },
+    "signOut": "Sign out",
+    "viewSite": "Open the site",
+    "switchLanguage": "Русский",
+    "signedInAs": "Signed in as {email}"
+  },
+  "login": {
+    "title": "Admin sign-in",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "pending": "Signing in…",
+    "invalid": "Wrong email or password.",
+    "tooMany": "Too many attempts. Try again in 15 minutes.",
+    "notConfigured": "The admin is not connected yet: it needs a database and AUTH_SECRET."
+  },
+  "form": {
+    "save": "Save and publish",
+    "saving": "Saving…",
+    "saved": "Saved. The site is updated.",
+    "unchanged": "Nothing changed.",
+    "invalid": "Not saved. Check this field: {fields}.",
+    "failed": "Could not save. Please try again."
+  },
+  "home": {
+    "title": "Overview",
+    "lead": "Whatever you save here appears on the site at once.",
+    "contacts": {
+      "title": "Contacts",
+      "ready": "Phone and WhatsApp are set — the site takes bookings.",
+      "missing": "Phone or WhatsApp is missing: the site's buttons lead to the contact page.",
+      "action": "Fill in the contacts"
+    },
+    "prices": {
+      "title": "Prices",
+      "text": "Price rows: {items}. Bundles and plans: {packages}.",
+      "action": "Change prices"
+    },
+    "services": {
+      "title": "Services",
+      "text": "On the site: {active}. Hidden: {hidden}.",
+      "action": "Open services"
+    },
+    "log": {
+      "title": "Latest changes",
+      "empty": "No changes yet.",
+      "when": "When",
+      "who": "Who",
+      "what": "What"
+    }
+  },
+  "kinds": {
+    "settings": "Settings",
+    "service": "Service",
+    "price_item": "Price",
+    "package": "Bundle or plan"
+  },
+  "settings": {
+    "title": "Settings",
+    "lead": "An empty field is not shown on the site.",
+    "contacts": {
+      "title": "Contacts",
+      "phone": "Phone for calls",
+      "whatsapp": "WhatsApp number",
+      "phoneHint": "International format: +971 50 123 4567",
+      "telegram": "Telegram (handle without @)",
+      "email": "Email"
+    },
+    "social": {
+      "title": "Social media",
+      "hint": "A full link starting with https://",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tiktok": "TikTok"
+    },
+    "legal": {
+      "title": "Legal details",
+      "hint": "Shown in the site footer.",
+      "legalName": "Legal name",
+      "licenseNo": "Trade license number",
+      "trn": "TRN (VAT registration number)",
+      "address": "Address"
+    },
+    "vat": {
+      "title": "VAT",
+      "registered": "The company is registered for VAT",
+      "included": "Prices on the site already include 5% VAT",
+      "hint": "If the company is not registered, the site shows no VAT note."
+    },
+    "flags": {
+      "title": "What to show",
+      "emergencyEnabled": "Urgent call-outs are available",
+      "showReviews": "Show reviews once there are some",
+      "telegramCtaRu": "Telegram button on the Russian site"
+    }
+  },
+  "prices": {
+    "title": "Prices",
+    "lead": "Prices in AED. Saving recalculates the calculator, the \"from …\" on cards and the \"instead of …\" of bundles.",
+    "item": "Row",
+    "price": "Price, AED",
+    "onRequest": "on request",
+    "tier": "from {n} pcs",
+    "estimate": "a \"from\" price",
+    "packages": "Bundles and annual plans",
+    "bundle": "Bundle",
+    "annual": "Annual plan",
+    "quoteOnly": "on request",
+    "seoNote": "Prices written out in the services' meta titles and meta descriptions (what search shows) do not change here."
+  },
+  "services": {
+    "title": "Services",
+    "lead": "A hidden service leaves the site, the price list and the calculator; its page answers 404.",
+    "name": "Service",
+    "section": "Section",
+    "status": "Status",
+    "edit": "Edit",
+    "statuses": {
+      "active": "On the site",
+      "coming_soon": "Coming soon",
+      "hidden": "Hidden"
+    },
+    "sections": {
+      "ac:service": "Air conditioning · servicing",
+      "ac:cleaning": "Air conditioning · cleaning",
+      "ac:other": "Air conditioning · other",
+      "upholstery": "Deep cleaning",
+      "coming_soon": "Coming soon"
+    },
+    "editTitle": "Service: {name}",
+    "back": "All services",
+    "nameField": "Name",
+    "shortField": "Short description",
+    "localesHint": "English is required. An empty translation shows the English text.",
+    "viewPage": "Page on the site"
+  }
+}
