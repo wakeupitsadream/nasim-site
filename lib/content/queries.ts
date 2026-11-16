@@ -204,7 +204,14 @@ export async function getPhotoCredits(): Promise<PhotoCredit[]> {
 }
 
 /** A photo as components render it: the locale's alt already picked. */
-export type Photo = { url: string; alt: string; width: number; height: number };
+export type Photo = {
+  url: string;
+  alt: string;
+  width: number;
+  height: number;
+  /** The frame the picture asks for on a service page (media.json `frame`). */
+  frame?: MediaRecord['frame'];
+};
 
 /** The first photo of a kind, picked for the locale, or null. */
 export async function getPhoto(filter: MediaFilter, locale: Locale): Promise<Photo | null> {
@@ -215,5 +222,6 @@ export async function getPhoto(filter: MediaFilter, locale: Locale): Promise<Pho
     alt: pickLocalized(item.alt, locale).text,
     width: item.width,
     height: item.height,
+    frame: item.frame,
   };
 }

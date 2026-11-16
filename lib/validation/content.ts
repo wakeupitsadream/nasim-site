@@ -285,6 +285,11 @@ export const mediaRecordSchema = z.object({
   height: z.number().int().positive(),
   alt: i18nTextRequired,
   /**
+   * The frame a service photo is shown in when the default portrait crop would cut what matters
+   * (a wide shot with the work at both edges). Absent: 4:5, or a square for a square picture.
+   */
+  frame: z.enum(['4/5', '4/3', '1/1']).optional(),
+  /**
    * Where a stock photo came from (credits line in the footer when the licence asks for it,
    * and for replacing stock with our own). Absent on the owner's own pictures.
    */

@@ -168,22 +168,18 @@
     {
       "kind": "service",
       "service_slug": "ac-deep-cleaning",
-      "url": "/photos/ac-deep-cleaning.jpg",
-      "width": 1200,
-      "height": 1800,
+      "url": "/brand/deep-cleaning.jpg",
+      "width": 1280,
+      "height": 706,
+      "frame": "4/3",
       "alt": {
-        "en": "Technician checking the coil fins of an air conditioner with an instrument",
-        "ru": "Техник проверяет ламели теплообменника кондиционера прибором",
-        "ar": "فني يفحص زعانف مبادل مكيف الهواء بجهاز قياس",
-        "fr": "Technicien contrôlant les ailettes de l’échangeur d’un climatiseur avec un instrument",
-        "de": "Techniker prüft die Lamellen des Wärmetauschers einer Klimaanlage mit einem Messgerät",
-        "zh": "技师用仪器检查空调翅片",
-        "hi": "एक उपकरण से एयर कंडीशनर के कॉइल फ़िन जाँचता तकनीशियन"
-      },
-      "credit": {
-        "author": "José Andrés Pacheco Cortes",
-        "source": "https://www.pexels.com/photo/man-repairing-an-aircon-5463580/",
-        "license": "Pexels License (free for commercial use, no attribution required)"
+        "en": "Hands in red gloves taking the mesh filter out of an opened wall-mounted split air conditioner",
+        "ar": "يدان بقفازين أحمرين تُخرجان الفلتر الشبكي من مكيف سبليت جداري مفتوح",
+        "ru": "Руки в красных перчатках вынимают сетчатый фильтр из открытого настенного сплит-кондиционера",
+        "fr": "Des mains gantées de rouge retirent le filtre à mailles d’un climatiseur split mural ouvert",
+        "de": "Hände in roten Handschuhen nehmen den Netzfilter aus einer geöffneten Split-Klimaanlage an der Wand",
+        "zh": "戴红色手套的双手从打开的壁挂分体空调中取出滤网",
+        "hi": "लाल दस्ताने पहने हाथ दीवार पर लगे खुले स्प्लिट एयर कंडीशनर से जालीदार फ़िल्टर निकाल रहे हैं"
       },
       "sort": 20
     },
