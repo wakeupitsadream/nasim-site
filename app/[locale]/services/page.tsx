@@ -33,9 +33,9 @@ export default async function ServicesPage() {
   const locale = await getLocale();
   const [
     t,
+    tPricing,
     tPages,
     tNav,
-    tCta,
     tHome,
     tPrice,
     settings,
@@ -50,9 +50,9 @@ export default async function ServicesPage() {
     upholsteryArt,
   ] = await Promise.all([
     getTranslations('Services'),
+    getTranslations('Pricing'),
     getTranslations('Pages'),
     getTranslations('Nav'),
-    getTranslations('Cta'),
     getTranslations('Home'),
     getTranslations('Price'),
     getSiteSettings(locale),
@@ -265,8 +265,8 @@ export default async function ServicesPage() {
       <FinalCta
         title={tHome('finalCta.title')}
         lead={tHome('finalCta.lead')}
-        primary={{ href: '/pricing#book', label: tHome('finalCta.primary') }}
-        whatsapp={{ target: whatsapp, label: tCta('whatsapp') }}
+        primary={{ href: '/pricing#book', label: tPricing('cta.quote') }}
+        whatsapp={{ target: whatsapp, label: tPricing('cta.book') }}
       />
     </PageTransition>
   );

@@ -78,7 +78,8 @@ describe('POST /api/diagnose', () => {
     });
     const catalogue = diagnose.mock.calls[0]?.[2] as { slug: string }[];
     expect(catalogue.map((c) => c.slug)).toContain('humidity-mould-check');
-    expect(catalogue.length).toBe(25);
+    // Preventive maintenance is hidden until the owner prices it: 24 of 25 are offered.
+    expect(catalogue.length).toBe(24);
   });
 
   it('marks estimate-priced and coming-soon services', async () => {

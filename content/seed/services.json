@@ -884,13 +884,13 @@
         "hi": "तत्काल एसी कॉल-आउट"
       },
       "short": {
-        "en": "Priority appointments for AC breakdowns, loss of cooling or water leaks. Contact us to confirm the earliest available visit and call-out fee.",
-        "ru": "Приоритетные записи при поломке кондиционера, отсутствии охлаждения или протечке. Свяжитесь с нами, чтобы уточнить ближайшее доступное время и стоимость выезда.",
-        "ar": "مواعيد ذات أولوية عند تعطل المكيف أو انقطاع التبريد أو تسرب الماء. تواصل معنا لتأكيد أقرب موعد متاح ورسوم الزيارة.",
-        "fr": "Rendez-vous prioritaires en cas de panne de climatiseur, de perte de refroidissement ou de fuite d’eau. Contactez-nous pour confirmer la première visite disponible et les frais de déplacement.",
-        "de": "Bevorzugte Termine bei Ausfall der Klimaanlage, fehlender Kühlung oder Wasseraustritt. Kontaktieren Sie uns, dann bestätigen wir Ihnen den frühestmöglichen Termin und die Einsatzpauschale.",
-        "zh": "空调故障、不制冷或漏水时，可优先安排上门。请联系我们，确认最早可上门的时间和上门费。",
-        "hi": "एसी ख़राब होने, कूलिंग बंद होने या पानी के लीक पर प्राथमिकता से अपॉइंटमेंट। सबसे जल्दी उपलब्ध विज़िट और कॉल-आउट शुल्क पक्का करने के लिए हमसे संपर्क करें।"
+        "en": "Priority appointments for AC breakdowns, loss of cooling or water leaks. Contact us to confirm the earliest available visit.",
+        "ru": "Приоритетные записи при поломке кондиционера, отсутствии охлаждения или протечке. Свяжитесь с нами, чтобы уточнить ближайшее доступное время.",
+        "ar": "مواعيد ذات أولوية عند تعطل المكيف أو انقطاع التبريد أو تسرب الماء. تواصل معنا لتأكيد أقرب موعد متاح.",
+        "fr": "Rendez-vous prioritaires en cas de panne de climatiseur, de perte de refroidissement ou de fuite d’eau. Contactez-nous pour confirmer la première visite disponible.",
+        "de": "Bevorzugte Termine bei Ausfall der Klimaanlage, fehlender Kühlung oder Wasseraustritt. Kontaktieren Sie uns, dann bestätigen wir Ihnen den frühestmöglichen Termin.",
+        "zh": "空调故障、不制冷或漏水时，可优先安排上门。请联系我们，确认最早可上门的时间。",
+        "hi": "एसी ख़राब होने, कूलिंग बंद होने या पानी के लीक पर प्राथमिकता से अपॉइंटमेंट। सबसे जल्दी उपलब्ध विज़िट पक्की करने के लिए हमसे संपर्क करें।"
       },
       "description_html": {
         "en": "<p>An AC that stops in July is an emergency, and we treat it like one. Call or message before the cut-off time shown in our hours and a technician comes today.</p><p>The call-out includes diagnostics at a fixed price. If we repair on the spot, that fee is credited to the repair. If a part needs ordering, you get a written quote first and decide.</p>",
@@ -1410,7 +1410,7 @@
       ],
       "duration_min": 120,
       "price_from": 299,
-      "pricing_unit": "unit",
+      "pricing_unit": "system",
       "available_from": null,
       "seo_title": {
         "en": "AC Refrigerant Leak Repair & Refill in Dubai",
@@ -1481,6 +1481,9 @@
       },
       "seo_description": {
         "en": ""
+      },
+      "on_request_label": {
+        "ru": "По результатам диагностики"
       }
     },
     {
@@ -1591,7 +1594,7 @@
       "slug": "preventive-ac-maintenance",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 139,
       "name": {
         "en": "Preventive AC Maintenance",

@@ -53,7 +53,6 @@ export default async function PricingPage() {
     tNav,
     tPrice,
     tHome,
-    tCta,
     settings,
     pricing,
     items,
@@ -69,7 +68,6 @@ export default async function PricingPage() {
     getTranslations('Nav'),
     getTranslations('Price'),
     getTranslations('Home'),
-    getTranslations('Cta'),
     getSiteSettings(locale),
     getPricingConfig(),
     getPriceItems(),
@@ -87,6 +85,7 @@ export default async function PricingPage() {
   const detailList = pickLocalizedValue(details, locale);
   const beforeList = pickLocalizedValue(before, locale);
   const offer = pricing.rules.firstBookingOffer;
+  const minimumOrder = pricing.rules.minimumOrder;
   const vatNote = settings.vat.registered
     ? settings.vat.included
       ? tPrice('vatIncluded')
@@ -196,6 +195,14 @@ export default async function PricingPage() {
           title={t('jump.upholstery')}
           lead={tServices('summary.upholstery')}
         />
+        {minimumOrder ? (
+          <p className="-mt-4 mb-8 text-body font-medium text-foreground">
+            {t.rich('upholsteryNote', {
+              amount: formatAED(minimumOrder.amount, locale),
+              price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
+            })}
+          </p>
+        ) : null}
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <PriceTable
             groups={groupsFor(upholstery, items)}
@@ -273,8 +280,8 @@ export default async function PricingPage() {
       <FinalCta
         title={tHome('finalCta.title')}
         lead={tHome('finalCta.lead')}
-        primary={{ href: '#book', label: tHome('finalCta.primary') }}
-        whatsapp={{ target: whatsapp, label: tCta('whatsapp') }}
+        primary={{ href: '#book', label: t('cta.quote') }}
+        whatsapp={{ target: whatsapp, label: t('cta.book') }}
       />
     </PageTransition>
   );

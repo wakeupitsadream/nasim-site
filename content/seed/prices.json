@@ -480,7 +480,7 @@
       "service_slug": "ac-outdoor-unit-cleaning",
       "key": "outdoor_unit",
       "name": {
-        "en": "Outdoor condenser cleaning, booked separately",
+        "en": "Separately booked outdoor condenser cleaning",
         "ru": "Отдельная чистка наружного блока",
         "ar": "تنظيف وحدة التكثيف الخارجية، بحجز منفرد",
         "de": "Reinigung des Außengeräts, separat gebucht",
@@ -615,7 +615,7 @@
       "service_slug": "ac-repair",
       "key": "repair_labour",
       "name": {
-        "en": "Repair labour",
+        "en": "AC repair labour",
         "ru": "Ремонт кондиционера: работа",
         "ar": "أجرة الإصلاح",
         "fr": "Main-d’œuvre de réparation",
@@ -642,7 +642,7 @@
       "service_slug": "refrigerant-leak-detection",
       "key": "leak_test",
       "name": {
-        "en": "Nitrogen leak test",
+        "en": "Refrigerant leak testing",
         "ru": "Проверка на утечку хладагента",
         "ar": "اختبار تسرب بالنيتروجين",
         "fr": "Test d’étanchéité à l’azote",
@@ -650,18 +650,18 @@
         "zh": "氮气泄漏检测",
         "hi": "नाइट्रोजन लीक टेस्ट"
       },
-      "unit": "unit",
+      "unit": "system",
       "price": 299,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "Per system",
-        "ru": "За систему",
-        "ar": "للنظام الواحد",
-        "fr": "Par circuit",
-        "de": "Pro Anlage",
-        "zh": "每套系统",
-        "hi": "प्रति सिस्टम"
+        "en": "",
+        "ru": "",
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": "",
+        "hi": ""
       },
       "sort": 1
     },
@@ -669,7 +669,7 @@
       "service_slug": "refrigerant-recharge",
       "key": "refill",
       "name": {
-        "en": "Refill after leak repair",
+        "en": "Refrigerant recharge",
         "ru": "Заправка хладагентом",
         "ar": "تعبئة بعد إصلاح التسرب",
         "fr": "Recharge après réparation de la fuite",
@@ -1342,8 +1342,8 @@
         "hi": "Essential"
       },
       "description": {
-        "en": "2 standard-service visits a year for 3 split units. Priority booking and 10% off repair labour.",
-        "ru": "2 стандартных визита в год на 3 сплит-системы. Приоритетная запись и −10% на работы по ремонту.",
+        "en": "3 split ACs · 2 standard-service visits",
+        "ru": "3 сплит-системы · 2 визита со стандартным обслуживанием",
         "ar": "زيارتان للخدمة القياسية في السنة لـ 3 وحدات سبليت. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
         "fr": "2 visites de nettoyage standard par an pour 3 unités split. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
         "de": "2 Besuche pro Jahr mit Standardreinigung für 3 Split-Geräte. Bevorzugte Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen.",
@@ -1376,8 +1376,8 @@
         "hi": "Comfort"
       },
       "description": {
-        "en": "2 visits a year for 5 split units. One selected unit receives a deep clean during one visit, replacing its standard clean. Priority booking and 10% off repair labour.",
-        "ru": "2 визита в год на 5 сплит-систем. Один выбранный блок за один из визитов получает глубокую чистку вместо стандартной. Приоритетная запись и −10% на работы по ремонту.",
+        "en": "5 split ACs · 2 visits · one unit receives a deep-clean upgrade during one visit",
+        "ru": "5 сплит-систем · 2 визита · во время одного визита один выбранный блок получает глубокую чистку вместо стандартной",
         "ar": "زيارتان في السنة لـ 5 وحدات سبليت. تحصل وحدة واحدة مختارة على تنظيف عميق خلال إحدى الزيارتين بدلًا من تنظيفها القياسي. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
         "fr": "2 visites par an pour 5 unités split. Lors de l’une des visites, une unité choisie reçoit un nettoyage en profondeur à la place de son nettoyage standard. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
         "de": "2 Besuche pro Jahr für 5 Split-Geräte. Ein ausgewähltes Gerät erhält bei einem der Besuche eine Tiefenreinigung anstelle der Standardreinigung. Bevorzugte Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen.",
@@ -1410,8 +1410,8 @@
         "hi": "Villa"
       },
       "description": {
-        "en": "3 planned visits a year, priced by equipment type, unit count and access.",
-        "ru": "3 плановых визита в год; цена зависит от типа оборудования, числа блоков и доступа.",
+        "en": "3 planned visits · coverage tailored to your equipment",
+        "ru": "3 плановых визита · состав обслуживания подбирается под ваше оборудование",
         "ar": "3 زيارات مجدولة في السنة، والسعر بحسب نوع المعدات وعدد الوحدات وسهولة الوصول إليها.",
         "fr": "3 visites planifiées par an ; prix établi selon le type d’équipement, le nombre d’unités et l’accès.",
         "de": "3 geplante Besuche pro Jahr, Preis nach Gerätetyp, Anzahl der Geräte und Zugänglichkeit.",

@@ -32,7 +32,7 @@ describe('seed files', () => {
     expect(seedPriceItems().length).toBe(48);
     expect(seedPackages().length).toBe(7);
     expect(seedAreas().length).toBe(16);
-    expect(seedFaqs().length).toBe(19);
+    expect(seedFaqs().length).toBe(17);
   });
 
   it('price items and FAQs point at existing services', () => {

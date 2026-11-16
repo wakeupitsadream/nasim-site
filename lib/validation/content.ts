@@ -42,10 +42,20 @@ export const pricingUnitSchema = z.enum([
   'seat',
   'item',
   'sqm',
+  'system',
   'from',
   'quote',
 ]);
-export const priceUnitSchema = z.enum(['unit', 'fcu', 'visit', 'seat', 'item', 'sqm', 'from']);
+export const priceUnitSchema = z.enum([
+  'unit',
+  'fcu',
+  'visit',
+  'seat',
+  'item',
+  'sqm',
+  'system',
+  'from',
+]);
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'YYYY-MM-DD');
 
@@ -75,6 +85,9 @@ export const serviceSchema = z.object({
   seo_description: i18nText,
   /** A note under the service's price rows (how curtains are measured, what photos confirm). */
   price_note: i18nText.optional(),
+  /** The owner's own wording in the price slot of a service priced on request, per locale;
+   * locales without one show the general "request a quote". */
+  on_request_label: z.record(z.string(), z.string().min(1)).optional(),
 });
 
 export const priceItemSchema = z.object({

@@ -318,52 +318,6 @@
       }
     },
     {
-      "scope": "service",
-      "service_slug": "sofa-cleaning",
-      "sort": 1,
-      "question": {
-        "en": "How long until I can sit on it?",
-        "ru": "Когда можно будет сесть?",
-        "ar": "متى يمكنني الجلوس عليها؟",
-        "fr": "Au bout de combien de temps peut-on s’asseoir dessus ?",
-        "de": "Wann kann ich wieder darauf sitzen?",
-        "zh": "多久以后可以坐？",
-        "hi": "कितने समय बाद उस पर बैठ सकते हैं?"
-      },
-      "answer_html": {
-        "en": "<p>4–6 hours with the AC running. We leave it slightly damp to the touch, not wet.</p>",
-        "ru": "<p>4–6 часов при работающем кондиционере. Оставляем слегка влажным на ощупь, не мокрым.</p>",
-        "ar": "<p>بعد 4–6 ساعات مع تشغيل المكيف. نتركها رطبة قليلًا عند اللمس، لا مبللة.</p>",
-        "fr": "<p>4 à 6 heures avec la climatisation en marche. Nous le laissons légèrement humide au toucher, pas mouillé.</p>",
-        "de": "<p>Nach 4–6 Stunden bei laufender Klimaanlage. Der Stoff fühlt sich danach leicht feucht an, nicht nass.</p>",
-        "zh": "<p>开着空调 4–6 小时。我们离开时沙发摸上去只是微微发潮，不会是湿的。</p>",
-        "hi": "<p>एसी चलते हुए 4–6 घंटे। हम उसे छूने पर हल्का नम छोड़ते हैं, गीला नहीं।</p>"
-      }
-    },
-    {
-      "scope": "service",
-      "service_slug": "sofa-cleaning",
-      "sort": 2,
-      "question": {
-        "en": "Is it safe for kids and pets?",
-        "ru": "Безопасно для детей и животных?",
-        "ar": "هل هو آمن للأطفال والحيوانات الأليفة؟",
-        "fr": "Est-ce sans danger pour les enfants et les animaux ?",
-        "de": "Ist das unbedenklich für Kinder und Haustiere?",
-        "zh": "对孩子和宠物安全吗？",
-        "hi": "क्या यह बच्चों और पालतू जानवरों के लिए सुरक्षित है?"
-      },
-      "answer_html": {
-        "en": "<p>Yes — the cleaning agents we use are rinsed out during extraction and are safe once the fabric is dry.</p>",
-        "ru": "<p>Да — средства вымываются при экстракции и безопасны, как только ткань высохнет.</p>",
-        "ar": "<p>نعم — مواد التنظيف التي نستخدمها تُشطف أثناء الاستخلاص وتصبح آمنة بمجرد أن يجف القماش.</p>",
-        "fr": "<p>Oui — les produits que nous utilisons sont rincés pendant l’extraction et sont sans danger une fois le tissu sec.</p>",
-        "de": "<p>Ja – die Reinigungsmittel, die wir verwenden, werden bei der Extraktion ausgespült und sind unbedenklich, sobald der Stoff trocken ist.</p>",
-        "zh": "<p>安全——我们使用的清洁剂在抽洗过程中会被冲洗出来，面料干透后就是安全的。</p>",
-        "hi": "<p>हाँ — हम जो क्लीनिंग एजेंट इस्तेमाल करते हैं, वे एक्सट्रैक्शन के दौरान धुल जाते हैं और कपड़ा सूखने के बाद पूरी तरह सुरक्षित हैं।</p>"
-      }
-    },
-    {
       "scope": "contracts",
       "sort": 1,
       "question": {
