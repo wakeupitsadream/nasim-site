@@ -108,6 +108,9 @@ export function BookingWizard({ payload }: { payload: BookingPayload }) {
       ...(currentQuote.estimate?.fromLines ?? []).map(
         (l) => payload.lineLabels[l.lineId]?.text ?? l.lineId,
       ),
+      ...(currentQuote.minimum
+        ? [`${t('summary.minimumRow')} ${formatAED(currentQuote.minimum.amount, locale)}`]
+        : []),
       ...(currentQuote.offer?.applied
         ? [`${tPrice('firstBooking.title')} −${formatAED(currentQuote.offer.discount, locale)}`]
         : []),

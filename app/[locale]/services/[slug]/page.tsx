@@ -37,7 +37,7 @@ import {
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
 import { formatMinutes } from '@/lib/i18n/format';
-import { pick, pickLocalized } from '@/lib/i18n/text';
+import { pick, pickLocalized, pickLocalizedValue } from '@/lib/i18n/text';
 import { linesForService, priceFrom } from '@/lib/pricing';
 import { alternatesFor } from '@/lib/seo';
 import { fillTemplate } from '@/lib/whatsapp';
@@ -82,6 +82,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     tHome,
     tCta,
     tCommon,
+    tPricing,
     settings,
     pricing,
     items,
@@ -89,6 +90,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     faqsGlobal,
     related,
     readings,
+    before,
     photo,
   ] = await Promise.all([
     getTranslations('Service'),
@@ -96,6 +98,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     getTranslations('Home'),
     getTranslations('Cta'),
     getTranslations('Common'),
+    getTranslations('Pricing'),
     getSiteSettings(locale),
     getPricingConfig(),
     getPriceItems({ serviceSlug: slug }),
@@ -103,9 +106,11 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     getFaqs('global'),
     getRelatedServices(slug),
     getBlock('report.readings'),
+    getBlock('pricing.before_you_book'),
     getPhoto({ kind: 'service', serviceSlug: slug }, locale),
   ]);
   const name = pickLocalized(service.name, locale);
+  const beforeList = pickLocalizedValue(before, locale);
   const templateKey =
     slug === 'emergency-ac-repair' ? 'wa.template.emergency' : 'wa.template.generic';
   const template = pickLocalized(await getBlock(templateKey), locale).text;
@@ -312,6 +317,24 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
                         <TierLadder key={line.id} line={line} locale={locale} label={name.text} />
                       ))}
                     </div>
+                  ) : null}
+                  {/* Upholstery, rugs and curtains: the owner's conditions sit by the prices. */}
+                  {service.category === 'upholstery' ? (
+                    <aside
+                      aria-labelledby="before-title"
+                      lang={beforeList.lang !== locale ? beforeList.lang : undefined}
+                      dir={beforeList.lang !== locale ? 'auto' : undefined}
+                      className="reveal-fade flex h-fit flex-col gap-4 rounded-panel border border-border bg-card p-6 lg:col-span-5 lg:p-8"
+                    >
+                      <h3 id="before-title" className="text-eyebrow text-highlight-ink">
+                        {tPricing('beforeYouBook.title')}
+                      </h3>
+                      <ul className="flex list-disc flex-col gap-3 ps-5 text-body text-pretty marker:text-highlight-ink">
+                        {beforeList.value.map((line) => (
+                          <li key={line}>{line}</li>
+                        ))}
+                      </ul>
+                    </aside>
                   ) : null}
                 </div>
               </Section>

@@ -93,6 +93,14 @@ export function PriceSummary({
             </dd>
           </div>
         ) : null}
+        {quote.minimum ? (
+          <div className="flex items-baseline justify-between gap-4">
+            <dt className="text-muted-foreground">{t('summary.minimumRow')}</dt>
+            <dd className="shrink-0 tabular-nums">
+              <Ltr>+{money(quote.minimum.topUp)}</Ltr>
+            </dd>
+          </div>
+        ) : null}
         {quote.offer?.applied ? (
           <div className="flex items-baseline justify-between gap-4 text-highlight-ink">
             <dt>{tPrice('firstBooking.title')}</dt>
@@ -124,6 +132,14 @@ export function PriceSummary({
       ) : null}
       {quote.kind === 'estimate' ? (
         <p className="text-small text-muted-foreground">{t('summary.estimateNote')}</p>
+      ) : null}
+      {quote.minimum ? (
+        <p className="text-small text-muted-foreground">
+          {t.rich('summary.minimumNote', {
+            amount: money(quote.minimum.amount),
+            price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
+          })}
+        </p>
       ) : null}
       {quote.bundle ? (
         <p className="text-small text-highlight-ink">

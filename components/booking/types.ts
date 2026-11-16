@@ -36,6 +36,8 @@ export type BookingPayload = {
   services: BookingService[];
   /** Human label per price line: the service name for single-line services, else the item name. */
   lineLabels: Record<string, Localized>;
+  /** The note of a price line, where it has one («Where suitable and accessible»). */
+  lineNotes: Record<string, string>;
   /** Headings of the AC groups, as the catalogue titles them. */
   groupLabels: Partial<Record<ServiceGroup, string>>;
   /** Bundle names by slug (`Fresh Home`). */

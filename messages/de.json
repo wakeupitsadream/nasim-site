@@ -392,7 +392,7 @@
     },
     "summary": {
       "ac": "Reinigung, Tiefenreinigung, Gebläsekonvektoren, Reparaturen und Kältemittel.",
-      "upholstery": "Sofas, Matratzen, Teppiche, Flecken und Gerüche – in wenigen Stunden trocken.",
+      "upholstery": "Professionelle Reinigung von Stoffsofas, Matratzen, Teppichen und Vorhängen. Senden Sie uns Fotos, und wir bestätigen Ihren Festpreis vor der Buchung.",
       "comingSoon": "Tragen Sie sich in die Warteliste ein, und wir schreiben Ihnen als Erstes."
     },
     "card": {
@@ -515,6 +515,9 @@
     },
     "tiers": {
       "title": "Mengenpreise"
+    },
+    "beforeYouBook": {
+      "title": "Vor der Buchung"
     }
   },
   "Report": {
@@ -693,10 +696,12 @@
       "credited": "wird auf die Reparatur angerechnet",
       "fromLine": "ab {amount}",
       "repairEstimate": "Arbeit ab {amount}, Ersatzteile nach schriftlichem Kostenvoranschlag",
-      "estimateNote": "Der endgültige Betrag wird vor jeder Reparatur schriftlich bestätigt.",
+      "estimateNote": "Der endgültige Betrag wird vor Beginn der Arbeiten schriftlich bestätigt.",
       "live": "Gesamt: {total}",
       "minApplied": "Mindestbetrag",
-      "line": "{qty} × {price}"
+      "line": "{qty} × {price}",
+      "minimumRow": "Mindestbestellwert",
+      "minimumNote": "Mindestbestellwert <price>{amount}</price> pro Adresse und Besuch. Kombinieren Sie mehrere Positionen, um den Mindestbestellwert zu erreichen."
     },
     "offer": {
       "text": "Fügen Sie {items} für {add} mehr hinzu – Paket {name}, sparen Sie {savings}",

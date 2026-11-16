@@ -15,6 +15,8 @@ type Props = {
   label: Localized;
   qty: number;
   locale: Locale;
+  /** The line's note, shown after its price («Where suitable and accessible»). */
+  note?: string;
   onChange: (qty: number) => void;
 };
 
@@ -22,7 +24,7 @@ type Props = {
  * −/+ with a typed number in the middle. The first + jumps to the minimum charge; − below it
  * removes the line. Tier prices are shown as a ladder with the current step highlighted.
  */
-export function QuantityStepper({ line, label, qty, locale, onChange }: Props) {
+export function QuantityStepper({ line, label, qty, locale, note, onChange }: Props) {
   const tPrice = useTranslations('Price');
   const id = useId();
   const fallback = label.lang !== locale;
@@ -51,6 +53,7 @@ export function QuantityStepper({ line, label, qty, locale, onChange }: Props) {
                   {tPrice('minimum', { qty: formatNumber(line.minQty, locale) })}
                 </>
               ) : null}
+              {note ? ` · ${note}` : null}
             </>
           )}
         </p>

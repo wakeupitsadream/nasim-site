@@ -392,7 +392,7 @@
     },
     "summary": {
       "ac": "清洗、深度清洗、风机盘管、维修和制冷剂。",
-      "upholstery": "沙发、床垫、地毯、污渍和异味，几小时内干透。",
+      "upholstery": "布艺沙发、床垫、地毯和窗帘的专业清洁。请把照片发给我们，以便在预约前确认您的固定价格。",
       "comingSoon": "加入候补名单，我们会第一时间通知您。"
     },
     "card": {
@@ -515,6 +515,9 @@
     },
     "tiers": {
       "title": "数量阶梯价"
+    },
+    "beforeYouBook": {
+      "title": "预约前须知"
     }
   },
   "Report": {
@@ -693,10 +696,12 @@
       "credited": "计入维修费用",
       "fromLine": "{amount} 起",
       "repairEstimate": "人工 {amount} 起，配件按书面报价",
-      "estimateNote": "最终金额会在维修开始前以书面形式确认。",
+      "estimateNote": "最终金额会在开工前以书面形式确认。",
       "live": "合计：{total}",
       "minApplied": "最低消费",
-      "line": "{qty} × {price}"
+      "line": "{qty} × {price}",
+      "minimumRow": "最低消费",
+      "minimumNote": "每个地址每次上门最低消费 <price>{amount}</price>。可组合多个项目以达到最低消费。"
     },
     "offer": {
       "text": "再加 {add} 添加 {items} — {name} 套餐，节省 {savings}",

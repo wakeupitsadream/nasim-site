@@ -160,8 +160,32 @@ test.describe('booking request wizard', () => {
       .click();
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
     await expect(book.getByRole('alert')).toHaveText(msg('en', 'Booking.details.empty'));
-    await book.getByRole('button', { name: /^Add one: Sofa/ }).click();
-    await expect(book.getByText('AED 267').first()).toBeVisible(); // 3-seat minimum charge
+
+    // Items sit under their services; one chair alone is billed at the minimum order.
+    // Each service opens on a tap; the first one is open on arrival.
+    const extras = book.getByRole('group', { name: 'Additional Items & Treatments' });
+    await expect(extras.getByRole('button', { name: 'Add one: Fabric dining chair' })).toBeHidden();
+    await extras.locator('summary').click();
+    await extras.getByRole('button', { name: 'Add one: Fabric dining chair' }).click();
+    const minimumRow = book.getByText(msg('en', 'Booking.summary.minimumRow'), { exact: true });
+    await expect(minimumRow).toBeVisible();
+    await expect(book.getByText('AED 229').first()).toBeVisible();
+    await extras.getByRole('button', { name: 'Remove one: Fabric dining chair' }).click();
+
+    // A 3-seat sofa and a King mattress make the Sofa and Mattress package: 678 → 599.
+    const sofas = book.getByRole('group', { name: 'Sofa & Armchair Cleaning' });
+    await sofas.getByRole('button', { name: 'Add one: 3-seat sofa' }).click();
+    await expect(book.getByText('AED 349').first()).toBeVisible();
+    await expect(minimumRow).toHaveCount(0);
+    const mattresses = book.getByRole('group', { name: 'Mattress Cleaning' });
+    await mattresses.locator('summary').click();
+    await mattresses.getByRole('button', { name: 'Add one: King mattress' }).click();
+    await expect(book.getByText(/Sofa and Mattress package/)).toBeVisible();
+    await expect(book.getByText('AED 599').first()).toBeVisible();
+
+    // Specialist stain treatment is ticked, not counted: the booking becomes an estimate.
+    await extras.getByRole('checkbox', { name: /^Specialist stain or odour treatment/ }).check();
+    await expect(book.getByText(msg('en', 'Booking.summary.estimateNote'))).toBeVisible();
   });
 
   test('coming-soon services have a waitlist instead of the wizard', async ({ page }) => {

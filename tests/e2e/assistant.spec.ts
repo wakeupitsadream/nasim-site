@@ -118,10 +118,10 @@ test.describe('floating assistant', () => {
       msg('en', 'Diagnose.result.demoBadge'),
     );
     await expect(result.getByText(msg('en', 'Diagnose.demo.stain.summary'))).toBeVisible();
-    await expect(result.getByText('Stain & Odour Removal')).toBeVisible();
+    await expect(result.getByText('Additional Items & Treatments')).toBeVisible();
     await expect(
       result.getByRole('link', { name: msg('en', 'Diagnose.result.book') }),
-    ).toHaveAttribute('href', '/en/services/stain-odour-removal#book');
+    ).toHaveAttribute('href', '/en/services/upholstery-extras#book');
     // Typed text never gets a canned answer: the honest error comes back again.
     await dialog.getByRole('textbox').fill('Coffee stain on a light sofa, but typed differently');
     await dialog.getByRole('button', { name: msg('en', 'Assistant.send') }).click();

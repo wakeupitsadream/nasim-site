@@ -376,7 +376,7 @@
         "hi": "अगर दो विज़िट के बीच कोई यूनिट ख़राब हो जाए तो?"
       },
       "answer_html": {
-        "en": "<p>You get priority scheduling, and your plan's discount on repair labour applies.</p>",
+        "en": "<p>You get priority booking, and your plan's discount on repair labour applies.</p>",
         "ru": "<p>Вы получаете приоритетную запись, и действует скидка вашего плана на работы по ремонту.</p>",
         "ar": "<p>تحصل على أولوية في حجز المواعيد، ويُطبَّق خصم خطتك على أجور اليد العاملة في الإصلاح.</p>",
         "fr": "<p>Vous bénéficiez d’une réservation prioritaire, et la remise de votre formule s’applique à la main-d’œuvre de réparation.</p>",

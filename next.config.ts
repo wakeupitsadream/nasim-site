@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
         destination: '/:locale/services/refrigerant-leak-detection',
         permanent: true,
       },
+      // Stain treatment became a row of "Additional items and treatments" (DECISIONS №66).
+      {
+        source: '/:locale/services/stain-odour-removal',
+        destination: '/:locale/services/upholstery-extras',
+        permanent: true,
+      },
     ];
   },
 };

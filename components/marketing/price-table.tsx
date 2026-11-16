@@ -74,6 +74,7 @@ export async function PriceTable({
         </TableHeader>
         {groups.map(({ service, items }) => {
           const short = descriptions ? pickLocalized(service.short, locale) : null;
+          const priceNote = service.price_note ? pickLocalized(service.price_note, locale) : null;
           return (
             <TableBody key={service.slug} className="border-b border-border last:border-0">
               <TableRow className={cn('hover:bg-transparent', short?.text && 'border-0')}>
@@ -134,32 +135,48 @@ export async function PriceTable({
                       ) : null}
                     </TableCell>
                     <TableCell className="text-end align-top">
-                      <span className="flex flex-col items-end gap-0.5">
-                        {/* An estimate starts "from": «from AED 249» over «+ estimate». */}
-                        {item.unit === 'from' ? (
-                          <span className="text-muted-foreground">
-                            {tPrice.rich('from', {
-                              amount: formatAED(item.price, locale),
-                              price: (chunks) => (
-                                <Ltr className="font-medium text-foreground tabular-nums">
-                                  {chunks}
-                                </Ltr>
-                              ),
-                            })}
-                          </span>
-                        ) : (
-                          <Ltr className="font-medium text-foreground tabular-nums">
-                            {formatAED(item.price, locale)}
-                          </Ltr>
-                        )}
-                        <span className="text-small text-muted-foreground">
-                          {tPrice(`per.${item.unit}`)}
+                      {item.on_request ? (
+                        <span className="font-medium text-foreground">
+                          {tServices('onRequest')}
                         </span>
-                      </span>
+                      ) : (
+                        <span className="flex flex-col items-end gap-0.5">
+                          {/* An estimate starts "from": «from AED 249» over «+ estimate». */}
+                          {item.unit === 'from' ? (
+                            <span className="text-muted-foreground">
+                              {tPrice.rich('from', {
+                                amount: formatAED(item.price, locale),
+                                price: (chunks) => (
+                                  <Ltr className="font-medium text-foreground tabular-nums">
+                                    {chunks}
+                                  </Ltr>
+                                ),
+                              })}
+                            </span>
+                          ) : (
+                            <Ltr className="font-medium text-foreground tabular-nums">
+                              {formatAED(item.price, locale)}
+                            </Ltr>
+                          )}
+                          <span className="text-small text-muted-foreground">
+                            {tPrice(`per.${item.unit}`)}
+                          </span>
+                        </span>
+                      )}
                     </TableCell>
                   </TableRow>
                 );
               })}
+              {priceNote?.text ? (
+                <TableRow className="hover:bg-transparent">
+                  <TableCell
+                    colSpan={2}
+                    className="pt-3 text-small text-pretty whitespace-normal text-muted-foreground"
+                  >
+                    <LocalizedText value={priceNote} locale={locale} />
+                  </TableCell>
+                </TableRow>
+              ) : null}
             </TableBody>
           );
         })}

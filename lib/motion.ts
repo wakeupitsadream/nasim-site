@@ -29,7 +29,8 @@ export const ICON_MOTION: Record<string, 'spin' | 'wiggle' | 'bob' | 'drip' | 'p
   'sofa-cleaning': 'bob',
   'mattress-cleaning': 'bob',
   'carpet-cleaning': 'bob',
-  'stain-odour-removal': 'drip',
+  'curtain-cleaning': 'bob',
+  'upholstery-extras': 'bob',
   'humidity-mould-check': 'drip',
   'water-tank-cleaning': 'bob',
 };

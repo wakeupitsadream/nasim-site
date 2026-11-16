@@ -62,10 +62,13 @@ export async function BookingSection({ initialService }: Props) {
     }));
 
   const lineLabels: BookingPayload['lineLabels'] = {};
+  const lineNotes: BookingPayload['lineNotes'] = {};
   for (const service of bookable) {
     for (const id of service.lines) {
       const line = pricing.lines.find((l) => l.id === id)!;
       lineLabels[id] = service.lines.length === 1 ? service.name : pickLocalized(line.name, locale);
+      const note = pickLocalized(line.note, locale).text;
+      if (note) lineNotes[id] = note;
     }
   }
 
@@ -78,6 +81,7 @@ export async function BookingSection({ initialService }: Props) {
     booking: settings.booking,
     services: bookable,
     lineLabels,
+    lineNotes,
     groupLabels: {
       service: tServices('group.service'),
       cleaning: tServices('group.cleaning'),

@@ -1,7 +1,7 @@
 'use client';
 
-import { CheckIcon } from 'lucide-react';
-import { useId } from 'react';
+import { CheckIcon, ChevronDownIcon } from 'lucide-react';
+import { useId, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Ltr } from '@/components/ltr';
 import { PriceSummary } from '@/components/booking/price-summary';
@@ -11,6 +11,8 @@ import {
   TierPrices,
 } from '@/components/booking/quantity-stepper';
 import type { BookingPayload, BookingService } from '@/components/booking/types';
+import type { Locale } from '@/lib/i18n/routing';
+import type { Localized } from '@/lib/i18n/text';
 import type { BookingState } from '@/lib/booking/state';
 import { formatAED, formatMinutes, formatNumber } from '@/lib/i18n/format';
 import { findLine, type BundleSuggestion, type PriceLine, type Quote } from '@/lib/pricing';
@@ -59,6 +61,7 @@ export function StepDetails({
   onFirstBooking,
 }: Props) {
   const t = useTranslations('Booking');
+  const tPrice = useTranslations('Price');
   const groupId = useId();
   const { locale, pricing } = payload;
   const services = payload.services.filter((s) => s.category === state.category);
@@ -67,11 +70,15 @@ export function StepDetails({
     service.lines.some((id) => (findLine(pricing, id)?.tiers.length ?? 0) > 1);
   // "The more units, the lower the price" is said once, above the first section it applies to.
   const hintGroup = groups.find((g) => g.services.some(tiered))?.key;
-
-  const upholsteryLines =
-    state.category === 'upholstery'
-      ? services.flatMap((s) => s.lines).filter((id, i, arr) => arr.indexOf(id) === i)
-      : [];
+  // Upholstery services open on a tap; on arrival the first one and those with a choice are open.
+  const [openAtMount] = useState(
+    () =>
+      new Set(
+        services
+          .filter((s, i) => i === 0 || s.lines.some((id) => (state.selection[id] ?? 0) > 0))
+          .map((s) => s.slug),
+      ),
+  );
 
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-12">
@@ -117,21 +124,99 @@ export function StepDetails({
           </fieldset>
         ) : null}
 
-        {upholsteryLines.length > 0 ? (
-          <div className="flex flex-col divide-y divide-border rounded-card border border-border bg-card px-5">
+        {state.category === 'upholstery' ? (
+          <div className="flex flex-col gap-3">
             <p className="sr-only">{t('details.upholsteryQuestion')}</p>
-            {upholsteryLines.map((id) => {
-              const line = findLine(pricing, id)!;
-              if (line.unit === 'from') return null;
+            {services.map((service) => {
+              const headingId = `${groupId}-${service.slug}`;
+              const foreign = service.name.lang !== locale;
+              const chosen = service.lines.reduce((n, id) => n + (state.selection[id] ?? 0), 0);
               return (
-                <QuantityStepper
-                  key={id}
-                  line={line}
-                  label={payload.lineLabels[id] ?? { text: id, lang: locale }}
-                  qty={state.selection[id] ?? 0}
-                  locale={locale}
-                  onChange={(qty) => onQty(id, qty)}
-                />
+                // Twenty rows in one list is a long scroll on a phone: each service opens on a
+                // tap. Open/closed belongs to the browser after the first render.
+                <details
+                  key={service.slug}
+                  open={openAtMount.has(service.slug)}
+                  aria-labelledby={headingId}
+                  className="group rounded-card border border-border bg-card"
+                >
+                  <summary className="flex min-h-tap cursor-pointer list-none items-center justify-between gap-4 rounded-card p-4 outline-none focus-visible:ring-3 focus-visible:ring-ring focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
+                    <span className="flex min-w-0 flex-col gap-0.5">
+                      <span
+                        id={headingId}
+                        lang={foreign ? service.name.lang : undefined}
+                        className="text-body font-medium text-foreground"
+                      >
+                        {service.name.text}
+                      </span>
+                      {service.priceFrom ? (
+                        <span className="text-small text-muted-foreground">
+                          {service.priceFrom.exact ? (
+                            <Ltr className="tabular-nums">
+                              {formatAED(service.priceFrom.amount, locale)}
+                            </Ltr>
+                          ) : (
+                            tPrice.rich('from', {
+                              amount: formatAED(service.priceFrom.amount, locale),
+                              price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
+                            })
+                          )}{' '}
+                          {tPrice(`per.${service.priceFrom.unit}`)}
+                        </span>
+                      ) : null}
+                    </span>
+                    <span className="flex shrink-0 items-center gap-3">
+                      {chosen > 0 ? (
+                        <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-primary px-1.5 text-small font-medium text-primary-foreground tabular-nums">
+                          <Ltr>{formatNumber(chosen, locale)}</Ltr>
+                        </span>
+                      ) : null}
+                      <ChevronDownIcon
+                        aria-hidden="true"
+                        strokeWidth={1.5}
+                        className="size-5 text-muted-foreground transition-transform duration-(--nasim-dur) ease-brand group-open:rotate-180"
+                      />
+                    </span>
+                  </summary>
+                  <div className="border-t border-border px-4">
+                    {service.short.text ? (
+                      <p
+                        lang={service.short.lang !== locale ? service.short.lang : undefined}
+                        dir={service.short.lang !== locale ? 'auto' : undefined}
+                        className="pt-3 text-small text-pretty text-muted-foreground"
+                      >
+                        {service.short.text}
+                      </p>
+                    ) : null}
+                    <div className="flex flex-col divide-y divide-border">
+                      {service.lines.map((id) => {
+                        const line = findLine(pricing, id)!;
+                        const label = payload.lineLabels[id] ?? { text: id, lang: locale };
+                        return line.unit === 'from' ? (
+                          <EstimateToggle
+                            key={id}
+                            line={line}
+                            label={label}
+                            note={payload.lineNotes[id]}
+                            checked={(state.selection[id] ?? 0) > 0}
+                            locale={locale}
+                            onChange={(on) => onQty(id, on ? 1 : 0)}
+                          />
+                        ) : (
+                          <QuantityStepper
+                            key={id}
+                            line={line}
+                            label={label}
+                            note={payload.lineNotes[id]}
+                            qty={state.selection[id] ?? 0}
+                            locale={locale}
+                            onChange={(qty) => onQty(id, qty)}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
+                </details>
               );
             })}
           </div>
@@ -299,5 +384,50 @@ function AcService({ service, checked, payload, state, quote, onChoose, onQty }:
         </div>
       ) : null}
     </div>
+  );
+}
+
+type EstimateToggleProps = {
+  line: PriceLine;
+  label: Localized;
+  note?: string;
+  checked: boolean;
+  locale: Locale;
+  onChange: (checked: boolean) => void;
+};
+
+/**
+ * A line priced "from" (specialist stain treatment) has no quantity: the customer ticks it, and
+ * the booking becomes an estimate confirmed before the visit.
+ */
+function EstimateToggle({ line, label, note, checked, locale, onChange }: EstimateToggleProps) {
+  const tPrice = useTranslations('Price');
+  const foreign = label.lang !== locale;
+  return (
+    <label className="flex min-h-tap cursor-pointer items-center justify-between gap-4 py-4">
+      <span className="flex min-w-0 flex-col gap-0.5">
+        <span
+          lang={foreign ? label.lang : undefined}
+          dir={foreign ? 'auto' : undefined}
+          className="text-body font-medium text-foreground"
+        >
+          {label.text}
+        </span>
+        <span className="text-small text-muted-foreground">
+          {tPrice.rich('from', {
+            amount: formatAED(line.tiers[0]!.price, locale),
+            price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
+          })}{' '}
+          {tPrice('per.from')}
+          {note ? ` · ${note}` : null}
+        </span>
+      </span>
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(event) => onChange(event.target.checked)}
+        className="size-5 shrink-0 accent-primary"
+      />
+    </label>
   );
 }

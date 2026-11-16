@@ -9,7 +9,7 @@
       "sort": 10,
       "name": {
         "en": "Standard Split AC Service",
-        "ru": "Стандартная чистка и обслуживание сплит-системы",
+        "ru": "Стандартное обслуживание сплит-системы",
         "ar": "التنظيف القياسي لمكيف السبليت وصيانته",
         "fr": "Nettoyage et entretien standard de climatiseur split",
         "de": "Standardreinigung & Wartung von Split-Geräten",
@@ -18,7 +18,7 @@
       },
       "short": {
         "en": "For wall-mounted ACs. Filters, accessible coil and fan cleaning, drain flush and outdoor-unit rinse.",
-        "ru": "Для настенных кондиционеров. Чистка фильтров, доступных частей теплообменника и вентилятора, промывка дренажа и ополаскивание наружного блока.",
+        "ru": "Для настенных кондиционеров. Чистка фильтров, доступных частей теплообменника и вентилятора, промывка дренажа и доступного наружного блока.",
         "ar": "للمكيفات الجدارية. تنظيف الفلاتر وما يمكن الوصول إليه من الملف والمروحة، وغسل خط التصريف، وشطف الوحدة الخارجية.",
         "fr": "Pour les climatiseurs muraux. Nettoyage des filtres et des parties accessibles de l’échangeur et du ventilateur, rinçage du circuit d’évacuation et de l’unité extérieure.",
         "de": "Für wandmontierte Klimageräte. Reinigung der Filter sowie der zugänglichen Teile von Wärmetauscher und Lüfter, Spülung des Kondensatablaufs und Abspülen des Außengeräts.",
@@ -235,7 +235,7 @@
       },
       "short": {
         "en": "For concealed ceiling units. Filters, accessible coil and fan cleaning, drain flush and performance checks.",
-        "ru": "Для скрытых потолочных блоков. Чистка фильтров, доступных частей теплообменника и вентилятора, промывка дренажа и проверка работы системы.",
+        "ru": "Для блоков, скрытых над потолком. Чистка фильтров, доступных частей теплообменника и вентилятора, промывка дренажа и проверка работы.",
         "ar": "للوحدات المخفية فوق السقف. تنظيف الفلاتر وما يمكن الوصول إليه من الملف والمروحة، وغسل خط التصريف، وفحص الأداء.",
         "fr": "Pour les unités dissimulées au-dessus du plafond. Nettoyage des filtres et des parties accessibles de l’échangeur et du ventilateur, rinçage du circuit d’évacuation et contrôle des performances.",
         "de": "Für verdeckt eingebaute Deckengeräte. Reinigung der Filter sowie der zugänglichen Teile von Wärmetauscher und Lüfter, Spülung des Kondensatablaufs und Funktionsprüfung.",
@@ -425,7 +425,7 @@
       },
       "short": {
         "en": "Thorough cleaning of the indoor coil, fan, housing and drain tray, with dismantling as required.",
-        "ru": "Тщательная чистка теплообменника, вентилятора, корпуса и поддона внутреннего блока — с разборкой, если она нужна.",
+        "ru": "Тщательная чистка теплообменника, вентилятора, внутреннего корпуса и поддона с разборкой необходимых элементов.",
         "ar": "تنظيف دقيق للملف الداخلي والمروحة والهيكل وصينية التصريف، مع فكّ المكوّنات بحسب الحاجة.",
         "fr": "Nettoyage minutieux de l’échangeur, du ventilateur, du carter et du bac à condensats de l’unité intérieure, avec démontage selon les besoins.",
         "de": "Gründliche Reinigung von Wärmetauscher, Lüfter, Gehäuse und Kondensatwanne des Innengeräts – mit Demontage nach Bedarf.",
@@ -606,7 +606,7 @@
       "sort": 40,
       "name": {
         "en": "FCU Deep Coil & Blower Cleaning",
-        "ru": "Глубокая чистка теплообменника и вентилятора фанкойла",
+        "ru": "Глубокая чистка фанкойла",
         "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU) ومروحتها",
         "fr": "Nettoyage en profondeur de l’échangeur et du ventilateur de ventilo-convecteur (FCU)",
         "de": "Tiefenreinigung von Wärmetauscher & Lüfter am Gebläsekonvektor (FCU)",
@@ -615,7 +615,7 @@
       },
       "short": {
         "en": "Deep cleaning of the concealed unit's cooling coil, fan and drain tray, plus a drain flush.",
-        "ru": "Глубокая чистка охлаждающего теплообменника, вентилятора и поддона скрытого блока, плюс промывка дренажа.",
+        "ru": "Глубокая чистка охлаждающего теплообменника, вентилятора и поддона скрытого потолочного блока, включая промывку дренажа.",
         "ar": "تنظيف عميق لملف التبريد والمروحة وصينية التصريف في الوحدة المخفية، مع غسل خط التصريف.",
         "fr": "Nettoyage en profondeur de l’échangeur de refroidissement, du ventilateur et du bac à condensats de l’unité dissimulée, avec rinçage du circuit d’évacuation.",
         "de": "Tiefenreinigung von Wärmetauscher, Lüfter und Kondensatwanne des verdeckt eingebauten Geräts, dazu Spülung des Kondensatablaufs.",
@@ -663,7 +663,7 @@
       },
       "short": {
         "en": "Dust and debris removal from supply and return air ducts, including connected grilles and washable filters.",
-        "ru": "Удаление пыли и мусора из приточных и обратных воздуховодов, включая подключённые решётки и моющиеся фильтры.",
+        "ru": "Удаление пыли и загрязнений из воздуховодов подачи и возврата воздуха. Включает подключённые решётки и моющиеся фильтры.",
         "ar": "إزالة الغبار والشوائب من مجاري هواء التغذية والهواء الراجع، بما يشمل الشبكات المتصلة بها والفلاتر القابلة للغسل.",
         "fr": "Élimination de la poussière et des débris dans les gaines de soufflage et de reprise, y compris les grilles raccordées et les filtres lavables.",
         "de": "Entfernung von Staub und Schmutz aus Zuluft- und Rückluftkanälen, einschließlich der angeschlossenen Lüftungsgitter und der waschbaren Filter.",
@@ -711,7 +711,7 @@
       },
       "short": {
         "en": "Air duct cleaning combined with deep cleaning of the indoor coil, fan, housing and drainage system.",
-        "ru": "Чистка воздуховодов вместе с глубокой чисткой теплообменника, вентилятора, корпуса и дренажной системы внутреннего блока.",
+        "ru": "Чистка воздуховодов вместе с глубокой чисткой теплообменника, вентилятора, внутреннего корпуса и дренажной системы канального блока.",
         "ar": "تنظيف مجاري الهواء مع التنظيف العميق للملف الداخلي والمروحة والهيكل ونظام التصريف.",
         "fr": "Nettoyage des gaines associé au nettoyage en profondeur de l’échangeur, du ventilateur, du carter et du circuit d’évacuation de l’unité intérieure.",
         "de": "Luftkanalreinigung, kombiniert mit der Tiefenreinigung von Wärmetauscher, Lüfter, Gehäuse und Kondensatablauf des Innengeräts.",
@@ -1644,72 +1644,25 @@
         "hi": "सोफ़ा और आर्मचेयर की सफ़ाई"
       },
       "short": {
-        "en": "Hot-water extraction or dry foam depending on fabric. Dries in 4–6 hours, safe for kids and pets.",
-        "ru": "Экстракция горячей водой или сухая пена в зависимости от ткани. Высыхает за 4–6 часов, безопасно для детей и животных.",
-        "ar": "استخلاص بالماء الساخن أو رغوة جافة حسب القماش. يجف خلال 4–6 ساعات، وآمن للأطفال والحيوانات الأليفة.",
-        "fr": "Extraction à l’eau chaude ou mousse sèche selon le tissu. Sec en 4 à 6 heures, sans danger pour les enfants et les animaux.",
-        "de": "Heißwasserextraktion oder Trockenschaum, je nach Stoff. Trocken in 4–6 Stunden, unbedenklich für Kinder und Haustiere.",
-        "zh": "根据面料选用热水抽洗或干泡清洁。4–6 小时干透，对孩子和宠物安全。",
-        "hi": "कपड़े के हिसाब से गर्म पानी का एक्सट्रैक्शन या ड्राई फ़ोम। 4–6 घंटे में सूखता है, बच्चों और पालतू जानवरों के लिए सुरक्षित।"
+        "en": "Vacuuming, stain pretreatment and deep cleaning of accessible seats, backrests and armrests.",
+        "ru": "Удаление пыли, обработка пятен и глубокая чистка доступных сидений, спинки и подлокотников.",
+        "ar": "شفط الغبار والمعالجة المسبقة للبقع والتنظيف العميق لما يمكن الوصول إليه من المقاعد ومساند الظهر والذراعين.",
+        "fr": "Aspiration, prétraitement des taches et nettoyage en profondeur des assises, dossiers et accoudoirs accessibles.",
+        "de": "Absaugen, Fleckenvorbehandlung und Tiefenreinigung der zugänglichen Sitzflächen, Rückenlehnen und Armlehnen.",
+        "zh": "对可触及的座面、靠背和扶手进行吸尘、污渍预处理和深度清洁。",
+        "hi": "पहुँच योग्य सीट, बैकरेस्ट और आर्मरेस्ट का वैक्यूम, दाग़ों का प्री-ट्रीटमेंट और डीप क्लीनिंग।"
       },
       "description_html": {
-        "en": "<p>We test the fabric first, then pick the method: hot-water extraction for most fabrics, low-moisture foam for delicate ones, a leather-specific routine for leather. Stains are pre-treated, the sofa is vacuumed and extracted, and the result is dry enough to sit on the same evening.</p>",
-        "ru": "<p>Сначала тестируем ткань, потом выбираем метод: экстракция горячей водой для большинства тканей, малоувлажняющая пена для деликатных, отдельная процедура для кожи. Пятна обрабатываем заранее, диван пылесосим и экстрагируем — вечером на нём уже можно сидеть.</p>",
-        "ar": "<p>نختبر القماش أولًا ثم نختار الطريقة: الاستخلاص بالماء الساخن لمعظم الأقمشة، ورغوة قليلة الرطوبة للأقمشة الحساسة، وإجراء خاص بالجلد. نعالج البقع مسبقًا، ثم نكنس الأريكة ونستخلص الأوساخ، والنتيجة جافة بما يكفي للجلوس عليها في المساء نفسه.</p>",
-        "fr": "<p>Nous testons d’abord le tissu, puis choisissons la méthode : extraction à l’eau chaude pour la plupart des tissus, mousse à faible humidité pour les plus délicats, un protocole spécifique pour le cuir. Les taches sont prétraitées, le canapé est aspiré puis nettoyé par extraction, et le résultat est assez sec pour s’y asseoir le soir même.</p>",
-        "de": "<p>Wir testen zuerst den Stoff und wählen dann die Methode: Heißwasserextraktion für die meisten Stoffe, feuchtigkeitsarmen Schaum für empfindliche, ein eigenes Verfahren für Leder. Flecken werden vorbehandelt, das Sofa wird abgesaugt und per Sprühextraktion gereinigt – und ist am selben Abend trocken genug, um darauf zu sitzen.</p>",
-        "zh": "<p>我们先测试面料，再选择方法：大多数面料用热水抽洗，娇贵面料用低湿泡沫，皮质沙发用专门的皮革护理流程。先对污渍做预处理，再对沙发吸尘和抽洗，当天晚上就干到可以坐了。</p>",
-        "hi": "<p>हम पहले कपड़े की जाँच करते हैं, फिर तरीक़ा चुनते हैं: ज़्यादातर कपड़ों के लिए गर्म पानी का एक्सट्रैक्शन, नाज़ुक कपड़ों के लिए कम नमी वाला फ़ोम, और लेदर के लिए उसकी अपनी अलग प्रक्रिया। दाग़ों का प्री-ट्रीटमेंट होता है, सोफ़े को वैक्यूम और एक्सट्रैक्ट किया जाता है, और नतीजा इतना सूखा होता है कि उसी शाम उस पर बैठा जा सके।</p>"
+        "en": "",
+        "ru": "",
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": "",
+        "hi": ""
       },
-      "includes": [
-        {
-          "en": "Fabric test and method choice",
-          "ru": "Тест ткани и выбор метода",
-          "ar": "اختبار القماش واختيار الطريقة",
-          "fr": "Test du tissu et choix de la méthode",
-          "de": "Stofftest und Wahl der Methode",
-          "zh": "面料测试并选择方法",
-          "hi": "कपड़े की जाँच और तरीक़े का चुनाव"
-        },
-        {
-          "en": "Pre-treatment of visible stains",
-          "ru": "Предобработка видимых пятен",
-          "ar": "معالجة مسبقة للبقع الظاهرة",
-          "fr": "Prétraitement des taches visibles",
-          "de": "Vorbehandlung sichtbarer Flecken",
-          "zh": "可见污渍预处理",
-          "hi": "दिखने वाले दाग़ों का प्री-ट्रीटमेंट"
-        },
-        {
-          "en": "Deep vacuum and extraction",
-          "ru": "Глубокое пылесошение и экстракция",
-          "ar": "كنس عميق واستخلاص",
-          "fr": "Aspiration en profondeur et extraction",
-          "de": "Gründliches Absaugen und Sprühextraktion",
-          "zh": "深度吸尘和抽洗",
-          "hi": "डीप वैक्यूम और एक्सट्रैक्शन"
-        },
-        {
-          "en": "Deodorising",
-          "ru": "Нейтрализация запахов",
-          "ar": "إزالة الروائح",
-          "fr": "Désodorisation",
-          "de": "Geruchsneutralisation",
-          "zh": "除味",
-          "hi": "बदबू हटाना"
-        }
-      ],
-      "excludes": [
-        {
-          "en": "Guaranteed removal of old set-in stains (we tell you honestly before starting)",
-          "ru": "Гарантия удаления старых въевшихся пятен (честно скажем до начала)",
-          "ar": "ضمان إزالة البقع القديمة المتغلغلة (نخبرك بصراحة قبل البدء)",
-          "fr": "Disparition garantie des vieilles taches incrustées (nous vous le disons honnêtement avant de commencer)",
-          "de": "Garantierte Entfernung alter, tief eingezogener Flecken (wir sagen es Ihnen ehrlich vor Beginn)",
-          "zh": "保证去除陈旧顽固污渍（开工前我们会如实告知）",
-          "hi": "पुराने, पक्के दाग़ों के निकलने की गारंटी (हम शुरू करने से पहले ईमानदारी से बता देते हैं)"
-        }
-      ],
+      "includes": [],
+      "excludes": [],
       "symptoms": [],
       "visit_steps": [
         {
@@ -1741,26 +1694,35 @@
         }
       ],
       "duration_min": 60,
-      "price_from": 89,
-      "pricing_unit": "seat",
+      "price_from": 129,
+      "pricing_unit": "item",
       "available_from": null,
       "seo_title": {
-        "en": "Sofa Cleaning in Dubai — from AED 89 per seat",
-        "ru": "Химчистка дивана в Дубае — от 89 AED за место",
-        "ar": "تنظيف الأرائك في دبي — ابتداءً من 89 درهمًا للمقعد",
-        "fr": "Nettoyage de canapé à Dubaï — dès 89 AED la place",
-        "de": "Sofareinigung in Dubai – ab 89 AED pro Sitzplatz",
-        "zh": "迪拜沙发清洁：每座位 AED 89 起",
-        "hi": "दुबई में सोफ़े की सफ़ाई — AED 89 प्रति सीट से"
+        "en": "Sofa & Armchair Cleaning in Dubai — from AED 129",
+        "ru": "Химчистка диванов и кресел в Дубае — от 129 AED",
+        "ar": "تنظيف الأرائك والكراسي في دبي — ابتداءً من 129 درهمًا",
+        "fr": "Nettoyage de canapés et fauteuils à Dubaï — dès 129 AED",
+        "de": "Sofa- & Sesselreinigung in Dubai – ab 129 AED",
+        "zh": "迪拜沙发与扶手椅清洁：AED 129 起",
+        "hi": "दुबई में सोफ़ा और आर्मचेयर की सफ़ाई — AED 129 से"
       },
       "seo_description": {
-        "en": "Professional sofa and armchair cleaning in Dubai from AED 89 per seat. Fabric-safe methods, stain pre-treatment, dry in 4–6 hours. Book on WhatsApp.",
-        "ru": "Профессиональная химчистка диванов и кресел в Дубае от 89 AED за место. Безопасные методы, обработка пятен, сухо через 4–6 часов. Заказ в WhatsApp.",
-        "ar": "تنظيف احترافي للأرائك والكراسي في دبي ابتداءً من 89 درهمًا للمقعد. طرق آمنة للقماش، معالجة مسبقة للبقع، وجفاف خلال 4–6 ساعات. احجز عبر واتساب.",
-        "fr": "Nettoyage de canapés et fauteuils à Dubaï dès 89 AED la place. Méthode adaptée au tissu, taches prétraitées, sec en 4 à 6 heures. Réservez sur WhatsApp.",
-        "de": "Sofa- und Sesselreinigung in Dubai ab 89 AED pro Sitzplatz. Stoffschonende Methoden, Fleckenvorbehandlung, trocken in 4–6 Stunden. Per WhatsApp buchen.",
-        "zh": "迪拜专业沙发与扶手椅清洁，每座位 AED 89 起。面料安全的清洁方法，污渍预处理，4–6 小时干透。WhatsApp 预约。",
-        "hi": "दुबई में सोफ़ा और आर्मचेयर की सफ़ाई AED 89 प्रति सीट से। कपड़े के लिए सुरक्षित तरीक़े, दाग़ों का प्री-ट्रीटमेंट, 4–6 घंटे में सूखता है। WhatsApp पर बुक करें।"
+        "en": "Fabric sofa and armchair cleaning in Dubai from AED 129. Vacuuming, stain pretreatment and deep cleaning of seats, backrests and armrests.",
+        "ru": "Химчистка тканевых диванов и кресел в Дубае от 129 AED. Удаление пыли, обработка пятен и глубокая чистка сидений, спинки и подлокотников.",
+        "ar": "تنظيف الأرائك والكراسي القماشية في دبي ابتداءً من 129 درهمًا. شفط الغبار ومعالجة مسبقة للبقع وتنظيف عميق للمقاعد ومساند الظهر والذراعين.",
+        "fr": "Nettoyage de canapés et fauteuils en tissu à Dubaï dès 129 AED. Aspiration, prétraitement des taches et nettoyage en profondeur des assises, dossiers et accoudoirs.",
+        "de": "Reinigung von Stoffsofas und -sesseln in Dubai ab 129 AED. Absaugen, Fleckenvorbehandlung und Tiefenreinigung von Sitzflächen, Rücken- und Armlehnen.",
+        "zh": "迪拜布艺沙发与扶手椅清洁，AED 129 起。对座面、靠背和扶手进行吸尘、污渍预处理和深度清洁。",
+        "hi": "दुबई में फ़ैब्रिक सोफ़ा और आर्मचेयर की सफ़ाई AED 129 से। सीट, बैकरेस्ट और आर्मरेस्ट का वैक्यूम, दाग़ों का प्री-ट्रीटमेंट और डीप क्लीनिंग।"
+      },
+      "price_note": {
+        "en": "L-shaped and modular sofas: seat count and chaise sections confirmed from photos.",
+        "ru": "Для угловых и модульных диванов количество мест и стоимость секции с шезлонгом подтверждаем по фото.",
+        "zh": "L 形沙发和模块沙发：座位数和贵妃位根据照片确认。",
+        "de": "Bei Ecksofas und modularen Sofas werden die Anzahl der Sitzplätze und die Longchair-Elemente anhand von Fotos bestätigt.",
+        "fr": "Canapés d’angle et modulables : le nombre de places et les méridiennes sont confirmés d’après photos.",
+        "hi": "L-शेप और मॉड्यूलर सोफ़ों के लिए सीटों की संख्या और शेज़ लाउंज वाले हिस्सों की पुष्टि फ़ोटो देखकर की जाती है।",
+        "ar": "الأرائك الزاوية (على شكل L) والأرائك المكوّنة من وحدات: نؤكد عدد المقاعد وأقسام الشيزلونغ من الصور."
       }
     },
     {
@@ -1778,52 +1740,24 @@
         "hi": "गद्दे की सफ़ाई"
       },
       "short": {
-        "en": "Dust mites, sweat and stains removed with extraction and UV-free antibacterial treatment. Single to king.",
-        "ru": "Пылевые клещи, пот и пятна — экстракция и антибактериальная обработка. От single до king.",
-        "ar": "إزالة عث الغبار والعرق والبقع بالاستخلاص ومعالجة مضادة للبكتيريا من دون أشعة فوق بنفسجية. من المفردة إلى الكينغ.",
-        "fr": "Acariens, transpiration et taches éliminés par extraction et traitement antibactérien sans UV. Du matelas simple au king size.",
-        "de": "Hausstaubmilben, Schweiß und Flecken entfernt – mit Extraktion und antibakterieller Behandlung ohne UV-Licht. Vom Einzelbett bis King-Size.",
-        "zh": "通过抽洗和无紫外线抗菌处理去除尘螨、汗渍和污渍。从单人到 King 尺寸。",
-        "hi": "एक्सट्रैक्शन और बिना UV वाले एंटीबैक्टीरियल ट्रीटमेंट से डस्ट माइट, पसीना और दाग़ हटाए जाते हैं। सिंगल से किंग साइज़ तक।"
+        "en": "Vacuuming and deep cleaning of one sleeping surface and the mattress edges.",
+        "ru": "Удаление пыли и глубокая чистка одной спальной поверхности и боковых сторон с учётом материала.",
+        "ar": "شفط الغبار والتنظيف العميق لسطح نوم واحد ولجوانب المرتبة.",
+        "fr": "Aspiration et nettoyage en profondeur d’une seule face de couchage et des bords du matelas.",
+        "de": "Absaugen und Tiefenreinigung einer Liegefläche und der Seitenflächen der Matratze.",
+        "zh": "对床垫的一个睡眠面和侧边进行吸尘和深度清洁。",
+        "hi": "गद्दे की सोने वाली एक सतह और किनारों का वैक्यूम और डीप क्लीनिंग।"
       },
       "description_html": {
-        "en": "<p>A mattress collects what you would rather not think about: skin flakes, dust mites, sweat. In Dubai humidity it also grows mould faster than you expect. We vacuum with a HEPA machine, treat stains, extract and apply an antibacterial finish. Dry by bedtime.</p>",
-        "ru": "<p>Матрас собирает то, о чём лучше не думать: частицы кожи, пылевых клещей, пот. Во влажности Дубая на нём ещё и быстрее появляется плесень. Мы пылесосим HEPA-машиной, обрабатываем пятна, экстрагируем и наносим антибактериальное средство. К ночи сухо.</p>",
-        "ar": "<p>تجمع المرتبة ما لا تحب التفكير فيه: قشور الجلد وعث الغبار والعرق. وفي رطوبة دبي ينمو عليها العفن أيضًا أسرع مما تتوقع. نكنسها بجهاز HEPA، ونعالج البقع، ونستخلص الأوساخ، ثم نطبّق طبقة نهائية مضادة للبكتيريا. تجف قبل موعد النوم.</p>",
-        "fr": "<p>Un matelas accumule ce à quoi vous préférez ne pas penser : squames, acariens, transpiration. Avec l’humidité de Dubaï, il moisit aussi plus vite qu’on ne l’imagine. Nous aspirons avec une machine HEPA, traitons les taches, nettoyons par extraction et appliquons une finition antibactérienne. Sec avant l’heure du coucher.</p>",
-        "de": "<p>Eine Matratze sammelt, woran Sie lieber nicht denken: Hautschüppchen, Hausstaubmilben, Schweiß. Bei der Luftfeuchtigkeit in Dubai bildet sich außerdem schneller Schimmel, als Sie erwarten. Wir saugen mit einem HEPA-Gerät, behandeln Flecken, extrahieren und tragen eine antibakterielle Abschlussbehandlung auf. Bis zum Schlafengehen trocken.</p>",
-        "zh": "<p>床垫里积的都是您不愿细想的东西：皮屑、尘螨、汗液。在迪拜的湿度下，它长霉的速度也比您想的快。我们用 HEPA 吸尘机吸尘，处理污渍，抽洗，再做抗菌处理。睡前就能干透。</p>",
-        "hi": "<p>गद्दे में वह सब जमा होता है जिसके बारे में आप सोचना भी नहीं चाहेंगे: त्वचा के कण, डस्ट माइट, पसीना। दुबई की नमी में उसमें फफूंद भी उम्मीद से जल्दी लगती है। हम HEPA मशीन से वैक्यूम करते हैं, दाग़ों का ट्रीटमेंट करते हैं, एक्सट्रैक्ट करते हैं और एंटीबैक्टीरियल फ़िनिश लगाते हैं। सोने के समय तक सूख जाता है।</p>"
+        "en": "",
+        "ru": "",
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": "",
+        "hi": ""
       },
-      "includes": [
-        {
-          "en": "HEPA vacuum both sides",
-          "ru": "HEPA-пылесос с обеих сторон",
-          "ar": "كنس بجهاز HEPA من الجهتين",
-          "fr": "Aspiration HEPA des deux faces",
-          "de": "HEPA-Absaugung beider Seiten",
-          "zh": "双面 HEPA 吸尘",
-          "hi": "दोनों तरफ़ HEPA वैक्यूम"
-        },
-        {
-          "en": "Stain treatment",
-          "ru": "Обработка пятен",
-          "ar": "معالجة البقع",
-          "fr": "Traitement des taches",
-          "de": "Fleckenbehandlung",
-          "zh": "污渍处理",
-          "hi": "दाग़ों का ट्रीटमेंट"
-        },
-        {
-          "en": "Extraction and antibacterial finish",
-          "ru": "Экстракция и антибактериальная обработка",
-          "ar": "استخلاص وطبقة نهائية مضادة للبكتيريا",
-          "fr": "Extraction et finition antibactérienne",
-          "de": "Extraktion und antibakterielle Abschlussbehandlung",
-          "zh": "抽洗和抗菌处理",
-          "hi": "एक्सट्रैक्शन और एंटीबैक्टीरियल फ़िनिश"
-        }
-      ],
+      "includes": [],
       "excludes": [],
       "symptoms": [],
       "visit_steps": [
@@ -1846,36 +1780,36 @@
           "hi": "दाग़ों का ट्रीटमेंट और एक्सट्रैक्शन"
         },
         {
-          "en": "Antibacterial finish, photos after",
-          "ru": "Антибактериальная обработка, фото после",
-          "ar": "طبقة نهائية مضادة للبكتيريا وصور بعد العمل",
-          "fr": "Finition antibactérienne, photos après",
-          "de": "Antibakterielle Abschlussbehandlung, Fotos nachher",
-          "zh": "抗菌处理，拍清洁后照片",
-          "hi": "एंटीबैक्टीरियल फ़िनिश, बाद की फ़ोटो"
+          "en": "Drying advice, photos after",
+          "ru": "Рекомендации по сушке, фото после",
+          "ar": "نصائح للتجفيف وصور بعد العمل",
+          "fr": "Conseils de séchage, photos après",
+          "de": "Trocknungshinweise, Fotos nachher",
+          "zh": "晾干建议，拍清洁后照片",
+          "hi": "सुखाने की सलाह, बाद की फ़ोटो"
         }
       ],
       "duration_min": 40,
-      "price_from": 199,
+      "price_from": 229,
       "pricing_unit": "item",
       "available_from": null,
       "seo_title": {
-        "en": "Mattress Cleaning in Dubai — dust mites and stains",
-        "ru": "Химчистка матраса в Дубае — клещи, пятна, запах",
-        "ar": "تنظيف المراتب في دبي — عث الغبار والبقع",
-        "fr": "Nettoyage de matelas à Dubaï — acariens et taches",
-        "de": "Matratzenreinigung in Dubai – Milben und Flecken",
-        "zh": "迪拜床垫清洁：去除尘螨和污渍",
-        "hi": "दुबई में गद्दे की सफ़ाई — डस्ट माइट और दाग़"
+        "en": "Mattress Cleaning in Dubai — from AED 229",
+        "ru": "Химчистка матрасов в Дубае — от 229 AED",
+        "ar": "تنظيف المراتب في دبي — ابتداءً من 229 درهمًا",
+        "fr": "Nettoyage de matelas à Dubaï — dès 229 AED",
+        "de": "Matratzenreinigung in Dubai – ab 229 AED",
+        "zh": "迪拜床垫清洁：AED 229 起",
+        "hi": "दुबई में गद्दे की सफ़ाई — AED 229 से"
       },
       "seo_description": {
-        "en": "Mattress deep cleaning in Dubai from AED 199. HEPA vacuum, stain treatment, extraction and antibacterial finish. Dry by bedtime.",
-        "ru": "Глубокая чистка матраса в Дубае от 199 AED. HEPA-пылесос, обработка пятен, экстракция, антибактериальная обработка. К ночи сухо.",
-        "ar": "تنظيف عميق للمراتب في دبي ابتداءً من 199 درهمًا. كنس بجهاز HEPA، معالجة البقع، استخلاص وطبقة نهائية مضادة للبكتيريا. تجف قبل موعد النوم.",
-        "fr": "Nettoyage en profondeur de matelas à Dubaï dès 199 AED. Aspiration HEPA, traitement des taches, extraction et finition antibactérienne. Sec le soir même.",
-        "de": "Matratzen-Tiefenreinigung in Dubai ab 199 AED. HEPA-Absaugung, Fleckenbehandlung, Extraktion und antibakterielle Abschlussbehandlung. Bis zum Abend trocken.",
-        "zh": "迪拜床垫深度清洁，AED 199 起。HEPA 吸尘、污渍处理、抽洗和抗菌处理。睡前干透。",
-        "hi": "दुबई में गद्दे की डीप क्लीनिंग AED 199 से। HEPA वैक्यूम, दाग़ों का ट्रीटमेंट, एक्सट्रैक्शन और एंटीबैक्टीरियल फ़िनिश। सोने के समय तक सूख जाता है।"
+        "en": "Mattress deep cleaning in Dubai from AED 229, Single to Super King. Vacuuming and deep cleaning of the sleeping surface and the mattress edges.",
+        "ru": "Глубокая чистка матрасов в Дубае от 229 AED, от Single до Super King. Удаление пыли и глубокая чистка спальной поверхности и боковых сторон.",
+        "ar": "تنظيف عميق للمراتب في دبي ابتداءً من 229 درهمًا، من مقاس Single إلى Super King. شفط الغبار وتنظيف عميق لسطح النوم وجوانب المرتبة.",
+        "fr": "Nettoyage en profondeur de matelas à Dubaï dès 229 AED, du Single au Super King. Aspiration et nettoyage en profondeur de la face de couchage et des bords.",
+        "de": "Matratzen-Tiefenreinigung in Dubai ab 229 AED, von Single bis Super King. Absaugen und Tiefenreinigung der Liegefläche und der Seitenflächen der Matratze.",
+        "zh": "迪拜床垫深度清洁，AED 229 起，Single 至 Super King 尺寸均可。对睡眠面和床垫侧边进行吸尘和深度清洁。",
+        "hi": "दुबई में गद्दे की डीप क्लीनिंग AED 229 से, Single से Super King तक। सोने वाली सतह और गद्दे के किनारों का वैक्यूम और डीप क्लीनिंग।"
       }
     },
     {
@@ -1884,72 +1818,34 @@
       "status": "active",
       "sort": 230,
       "name": {
-        "en": "Carpet & Rug Cleaning",
-        "ru": "Химчистка ковров",
+        "en": "Rug & Fitted Carpet Cleaning",
+        "ru": "Чистка ковров и ковролина",
         "ar": "تنظيف السجاد والموكيت",
         "fr": "Nettoyage de tapis et moquettes",
-        "de": "Teppichreinigung",
-        "zh": "地毯清洁",
-        "hi": "कालीन और रग की सफ़ाई"
+        "de": "Teppich- & Teppichbodenreinigung",
+        "zh": "块毯与满铺地毯清洁",
+        "hi": "रग और वॉल-टू-वॉल कालीन की सफ़ाई"
       },
       "short": {
-        "en": "Fitted carpets and rugs cleaned in place. Priced per square metre, minimum order applies.",
-        "ru": "Ковролин и ковры чистим на месте. Цена за м², действует минимальный заказ.",
-        "ar": "ننظّف الموكيت والسجاد في مكانه. السعر لكل متر مربع، مع حد أدنى للطلب.",
-        "fr": "Moquettes et tapis nettoyés sur place. Tarif au mètre carré, avec un minimum de commande.",
-        "de": "Teppichböden und lose Teppiche reinigen wir vor Ort. Preis pro Quadratmeter, es gilt ein Mindestbestellwert.",
-        "zh": "满铺地毯和块毯均可原地清洁。按平方米计价，有最低消费。",
-        "hi": "वॉल-टू-वॉल कालीन और रग की सफ़ाई बिना उठाए, वहीं पर। कीमत प्रति वर्ग मीटर, न्यूनतम ऑर्डर लागू।"
+        "en": "Vacuuming, stain pretreatment and deep cleaning for suitable synthetic fibres.",
+        "ru": "Удаление пыли, обработка пятен и глубокая чистка ковров из подходящих синтетических волокон.",
+        "ar": "شفط الغبار والمعالجة المسبقة للبقع والتنظيف العميق للألياف الصناعية المناسبة.",
+        "fr": "Aspiration, prétraitement des taches et nettoyage en profondeur pour les fibres synthétiques qui s’y prêtent.",
+        "de": "Absaugen, Fleckenvorbehandlung und Tiefenreinigung für geeignete Synthetikfasern.",
+        "zh": "对适用的合成纤维地毯进行吸尘、污渍预处理和深度清洁。",
+        "hi": "उपयुक्त सिंथेटिक रेशों के लिए वैक्यूम, दाग़ों का प्री-ट्रीटमेंट और डीप क्लीनिंग।"
       },
       "description_html": {
-        "en": "<p>Sand gets into carpet pile and works like sandpaper on the fibres; spills and pet marks add smell. We vacuum, pre-spray, agitate and extract in place, then speed-dry. For delicate wool or silk rugs we test a corner first and may recommend specialist off-site cleaning.</p>",
-        "ru": "<p>Песок попадает в ворс и работает как наждак; пролитое и следы животных добавляют запах. Мы пылесосим, наносим состав, прочёсываем и экстрагируем на месте, затем ускоряем сушку. Для деликатных шерстяных и шёлковых ковров сначала тестируем уголок и можем посоветовать специализированную чистку вне дома.</p>",
-        "ar": "<p>يتسلل الرمل إلى وبر السجاد ويعمل كورق الصنفرة على الألياف؛ وتضيف السوائل المنسكبة وآثار الحيوانات الأليفة الروائح. نكنس، ونرش محلولًا مسبقًا، ونحرّك الألياف، ونستخلص الأوساخ في المكان، ثم نسرّع التجفيف. أما السجاد الحساس من الصوف أو الحرير فنختبر زاوية منه أولًا وقد ننصح بتنظيف متخصص خارج المنزل.</p>",
-        "fr": "<p>Le sable s’incruste dans les fibres et agit comme du papier de verre ; les liquides renversés et les marques d’animaux ajoutent les odeurs. Nous aspirons, pré-pulvérisons, brossons et extrayons sur place, puis accélérons le séchage. Pour les tapis délicats en laine ou en soie, nous testons d’abord un coin et pouvons recommander un nettoyage spécialisé en atelier.</p>",
-        "de": "<p>Sand dringt in den Teppichflor ein und wirkt auf die Fasern wie Schleifpapier; verschüttete Getränke und Haustierspuren bringen Geruch dazu. Wir saugen, sprühen vor, bürsten ein und extrahieren vor Ort, dann folgt die Schnelltrocknung. Bei empfindlichen Woll- oder Seidenteppichen testen wir zuerst eine Ecke und empfehlen gegebenenfalls eine Spezialreinigung außer Haus.</p>",
-        "zh": "<p>沙子钻进地毯绒毛里，像砂纸一样磨损纤维；洒落的饮料和宠物留下的痕迹还会带来异味。我们在原地吸尘、预喷清洗剂、刷洗、抽洗，然后快速烘干。对于娇贵的羊毛或真丝块毯，我们会先在一角测试，并可能建议送到专业场所清洁。</p>",
-        "hi": "<p>रेत कालीन के रेशों में घुसकर उन पर रेगमाल की तरह काम करती है; गिरी हुई चीज़ें और पालतू जानवरों के निशान बदबू जोड़ देते हैं। हम वहीं पर वैक्यूम, प्री-स्प्रे, एजिटेशन और एक्सट्रैक्शन करते हैं, फिर तेज़ी से सुखाते हैं। नाज़ुक ऊनी या रेशमी रग के लिए हम पहले एक कोना जाँचते हैं और ज़रूरत हो तो ऑफ़-साइट विशेषज्ञ सफ़ाई की सलाह दे सकते हैं।</p>"
+        "en": "",
+        "ru": "",
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": "",
+        "hi": ""
       },
-      "includes": [
-        {
-          "en": "Vacuum and pre-spray",
-          "ru": "Пылесос и предобработка",
-          "ar": "كنس ورش مسبق",
-          "fr": "Aspiration et pré-pulvérisation",
-          "de": "Absaugen und Vorsprühen",
-          "zh": "吸尘和预喷清洗剂",
-          "hi": "वैक्यूम और प्री-स्प्रे"
-        },
-        {
-          "en": "Agitation and hot-water extraction",
-          "ru": "Прочёсывание и экстракция",
-          "ar": "تحريك الألياف واستخلاص بالماء الساخن",
-          "fr": "Brossage et extraction à l’eau chaude",
-          "de": "Einbürsten und Heißwasserextraktion",
-          "zh": "刷洗和热水抽洗",
-          "hi": "एजिटेशन और गर्म पानी का एक्सट्रैक्शन"
-        },
-        {
-          "en": "Speed drying",
-          "ru": "Ускоренная сушка",
-          "ar": "تجفيف سريع",
-          "fr": "Séchage accéléré",
-          "de": "Schnelltrocknung",
-          "zh": "快速烘干",
-          "hi": "तेज़ी से सुखाना"
-        }
-      ],
-      "excludes": [
-        {
-          "en": "Off-site cleaning of antique or silk rugs",
-          "ru": "Чистка антикварных и шёлковых ковров вне дома",
-          "ar": "التنظيف خارج المنزل للسجاد العتيق أو الحريري",
-          "fr": "Nettoyage en atelier des tapis anciens ou en soie",
-          "de": "Reinigung antiker Teppiche oder Seidenteppiche außer Haus",
-          "zh": "古董或真丝块毯的送洗服务",
-          "hi": "एंटीक या रेशमी रग की ऑफ़-साइट सफ़ाई"
-        }
-      ],
+      "includes": [],
+      "excludes": [],
       "symptoms": [],
       "visit_steps": [
         {
@@ -1971,123 +1867,172 @@
           "hi": "सफ़ाई और एक्सट्रैक्शन"
         },
         {
-          "en": "Dry, photos after",
-          "ru": "Сушка, фото после",
-          "ar": "تجفيف وصور بعد العمل",
-          "fr": "Séchage, photos après",
-          "de": "Trocknen, Fotos nachher",
-          "zh": "烘干，拍清洁后照片",
-          "hi": "सुखाना, बाद की फ़ोटो"
+          "en": "Drying advice, photos after",
+          "ru": "Рекомендации по сушке, фото после",
+          "ar": "نصائح للتجفيف وصور بعد العمل",
+          "fr": "Conseils de séchage, photos après",
+          "de": "Trocknungshinweise, Fotos nachher",
+          "zh": "晾干建议，拍清洁后照片",
+          "hi": "सुखाने की सलाह, बाद की फ़ोटो"
         }
       ],
       "duration_min": 60,
-      "price_from": 25,
+      "price_from": 29,
       "pricing_unit": "sqm",
       "available_from": null,
       "seo_title": {
-        "en": "Carpet Cleaning in Dubai — per m², cleaned in place",
-        "ru": "Химчистка ковров в Дубае — за м², на месте",
-        "ar": "تنظيف السجاد في دبي — لكل متر مربع، في مكانه",
-        "fr": "Nettoyage de tapis et moquettes à Dubaï — au m², sur place",
-        "de": "Teppichreinigung in Dubai – pro m², vor Ort gereinigt",
-        "zh": "迪拜地毯清洁：按平方米计价，原地清洁",
-        "hi": "दुबई में कालीन की सफ़ाई — प्रति वर्ग मीटर, आपके घर पर"
+        "en": "Rug & Carpet Cleaning in Dubai — from AED 159",
+        "ru": "Чистка ковров и ковролина в Дубае — от 159 AED",
+        "ar": "تنظيف السجاد والموكيت في دبي — ابتداءً من 159 درهمًا",
+        "fr": "Nettoyage de tapis et moquettes à Dubaï — dès 159 AED",
+        "de": "Teppich- & Teppichbodenreinigung in Dubai – ab 159 AED",
+        "zh": "迪拜块毯与满铺地毯清洁：AED 159 起",
+        "hi": "दुबई में रग और कालीन की सफ़ाई — AED 159 से"
       },
       "seo_description": {
-        "en": "Carpet and rug cleaning in Dubai from AED 25 per m² (minimum AED 150). Hot-water extraction in place, speed drying, photo report.",
-        "ru": "Химчистка ковров и ковролина в Дубае от 25 AED за м² (минимум 150 AED). Экстракция на месте, ускоренная сушка, фотоотчёт.",
-        "ar": "تنظيف السجاد والموكيت في دبي ابتداءً من 25 درهمًا للمتر المربع (حد أدنى 150 درهمًا). استخلاص بالماء الساخن في المكان، تجفيف سريع، وتقرير مصوّر.",
-        "fr": "Nettoyage de tapis et moquettes à Dubaï dès 25 AED le m² (minimum 150 AED). Extraction à l’eau chaude sur place, séchage accéléré, rapport photo.",
-        "de": "Teppich- und Teppichbodenreinigung in Dubai ab 25 AED pro m² (mindestens 150 AED). Heißwasserextraktion vor Ort, Schnelltrocknung, Fotobericht.",
-        "zh": "迪拜地毯与块毯清洁，每平方米 AED 25 起（最低消费 AED 150）。原地热水抽洗，快速烘干，照片报告。",
-        "hi": "दुबई में कालीन और रग की सफ़ाई AED 25 प्रति वर्ग मीटर से (न्यूनतम AED 150)। वहीं पर गर्म पानी का एक्सट्रैक्शन, तेज़ी से सुखाना, फ़ोटो रिपोर्ट।"
+        "en": "Rug and fitted carpet cleaning in Dubai: rugs from AED 159, fitted carpet AED 29 per m². Vacuuming, stain pretreatment and deep cleaning.",
+        "ru": "Чистка ковров и ковролина в Дубае: ковры от 159 AED, ковролин 29 AED за м². Удаление пыли, обработка пятен и глубокая чистка.",
+        "ar": "تنظيف السجاد والموكيت في دبي: السجاد ابتداءً من 159 درهمًا، والموكيت 29 درهمًا لكل متر مربع. شفط الغبار ومعالجة مسبقة للبقع وتنظيف عميق.",
+        "fr": "Nettoyage de tapis et moquettes à Dubaï : tapis dès 159 AED, moquette 29 AED le m². Aspiration, prétraitement des taches et nettoyage en profondeur.",
+        "de": "Teppich- und Teppichbodenreinigung in Dubai: Teppiche ab 159 AED, Teppichboden 29 AED pro m². Absaugen, Fleckenvorbehandlung und Tiefenreinigung.",
+        "zh": "迪拜块毯与满铺地毯清洁：块毯 AED 159 起，满铺地毯每平方米 AED 29。吸尘、污渍预处理和深度清洁。",
+        "hi": "दुबई में रग और वॉल-टू-वॉल कालीन की सफ़ाई: रग AED 159 से, वॉल-टू-वॉल कालीन AED 29 प्रति वर्ग मीटर। वैक्यूम, दाग़ों का प्री-ट्रीटमेंट और डीप क्लीनिंग।"
       }
     },
     {
-      "slug": "stain-odour-removal",
+      "slug": "curtain-cleaning",
+      "category": "upholstery",
+      "status": "active",
+      "sort": 235,
+      "name": {
+        "en": "On-Site Curtain Cleaning",
+        "ru": "Чистка штор на дому",
+        "zh": "窗帘上门清洁",
+        "de": "Vorhangreinigung vor Ort",
+        "fr": "Nettoyage de rideaux sur place",
+        "hi": "पर्दों की ऑन-साइट सफ़ाई",
+        "ar": "تنظيف الستائر في مكانها"
+      },
+      "short": {
+        "en": "Vacuuming and steam treatment for suitable fabrics, with curtains left hanging.",
+        "ru": "Удаление пыли и обработка паром без снятия штор. Для материалов, допускающих такую обработку.",
+        "zh": "对适用的面料进行吸尘和蒸汽处理，窗帘保持悬挂、无需拆下。",
+        "de": "Absaugen und Dampfbehandlung für geeignete Stoffe, direkt am hängenden Vorhang.",
+        "fr": "Aspiration et traitement à la vapeur des tissus qui s’y prêtent, sans décrocher les rideaux.",
+        "hi": "उपयुक्त कपड़ों के लिए वैक्यूम और स्टीम ट्रीटमेंट, टँगे हुए पर्दों पर ही।",
+        "ar": "شفط الغبار والمعالجة بالبخار للأقمشة المناسبة، مع بقاء الستائر معلّقة."
+      },
+      "description_html": {
+        "en": "",
+        "ru": "",
+        "zh": "",
+        "de": "",
+        "fr": "",
+        "hi": "",
+        "ar": ""
+      },
+      "includes": [],
+      "excludes": [],
+      "symptoms": [],
+      "visit_steps": [],
+      "duration_min": null,
+      "price_from": 15,
+      "pricing_unit": "sqm",
+      "available_from": null,
+      "seo_title": {
+        "en": "On-Site Curtain Cleaning in Dubai — AED 15 per m²",
+        "ru": "Чистка штор на дому в Дубае — 15 AED за м²",
+        "zh": "迪拜窗帘上门清洁：每平方米 AED 15",
+        "de": "Vorhangreinigung vor Ort in Dubai – 15 AED pro m²",
+        "fr": "Nettoyage de rideaux sur place à Dubaï — 15 AED le m²",
+        "hi": "दुबई में पर्दों की ऑन-साइट सफ़ाई — AED 15 प्रति वर्ग मीटर",
+        "ar": "تنظيف الستائر في مكانها في دبي — 15 درهمًا لكل متر مربع"
+      },
+      "seo_description": {
+        "en": "Curtains vacuumed and steam-treated in Dubai without taking them down: AED 15 per m² of fabric. Removal and off-site washing are quoted separately.",
+        "ru": "Чистка штор в Дубае без снятия: удаление пыли и обработка паром, 15 AED за м² ткани. Стирка, снятие и навешивание — по отдельной смете.",
+        "zh": "迪拜窗帘上门清洁，无需拆下即可吸尘和蒸汽处理：每平方米面料 AED 15。拆卸和送洗另行报价。",
+        "de": "Vorhangreinigung in Dubai ohne Abnehmen: Absaugen und Dampfbehandlung für 15 AED pro m² Stoff. Abnehmen und Waschen außer Haus nach separatem Angebot.",
+        "fr": "Rideaux aspirés et traités à la vapeur à Dubaï sans les décrocher : 15 AED le m² de tissu. Dépose et lavage en atelier sur devis séparé.",
+        "hi": "दुबई में पर्दे उतारे बिना उनका वैक्यूम और स्टीम ट्रीटमेंट: कपड़े के प्रति वर्ग मीटर AED 15। पर्दे उतारने और ऑफ़-साइट धुलाई का कोटेशन अलग से।",
+        "ar": "شفط الغبار من الستائر ومعالجتها بالبخار في دبي دون فكّها: 15 درهمًا لكل متر مربع من القماش. الفكّ والغسل خارج الموقع يُسعَّران على حدة."
+      },
+      "price_note": {
+        "en": "Measured by full fabric width × height for each panel. Sheers and blackout layers are counted separately. Removal and off-site washing require a separate quote.",
+        "ru": "Расчёт: полная ширина ткани × высота каждого полотна. Тюль и плотные шторы считаются отдельно. Стирка, снятие и навешивание — по отдельной смете.",
+        "zh": "按每幅窗帘的面料全宽 × 高度计算。纱帘和遮光层分别计算。拆卸和送洗需另行报价。",
+        "de": "Gemessen wird die volle Stoffbreite × Höhe jedes Vorhangschals. Transparente Gardinen und Verdunkelungslagen werden jeweils separat gezählt. Abnehmen und Waschen außer Haus erfordern ein separates Angebot.",
+        "fr": "La surface se mesure pour chaque pan : largeur totale du tissu × hauteur. Les voilages et les rideaux occultants sont comptés séparément. La dépose et le lavage en atelier font l’objet d’un devis séparé.",
+        "hi": "माप हर पैनल के कपड़े की पूरी चौड़ाई × ऊँचाई से लिया जाता है। शीयर पर्दे और ब्लैकआउट परतें अलग से गिनी जाती हैं। पर्दे उतारने और ऑफ़-साइट धुलाई के लिए अलग कोटेशन ज़रूरी है।",
+        "ar": "يُحتسب القياس بالعرض الكامل للقماش × الارتفاع لكل قطعة ستارة. الستائر الشفافة والطبقات المعتمة تُحتسب على حدة. فكّ الستائر وغسلها خارج الموقع يتطلبان عرض سعر منفصلًا."
+      }
+    },
+    {
+      "slug": "upholstery-extras",
       "category": "upholstery",
       "status": "active",
       "sort": 240,
       "name": {
-        "en": "Stain & Odour Removal",
-        "ru": "Выведение пятен и запахов",
-        "ar": "إزالة البقع والروائح",
-        "fr": "Détachage et élimination des odeurs",
-        "de": "Flecken- & Geruchsentfernung",
-        "zh": "污渍与异味去除",
-        "hi": "दाग़ और बदबू हटाना"
+        "en": "Additional Items & Treatments",
+        "ru": "Дополнительные услуги",
+        "ar": "قطع ومعالجات إضافية",
+        "fr": "Meubles et traitements complémentaires",
+        "de": "Weitere Polstermöbel & Behandlungen",
+        "zh": "其他物品与专项处理",
+        "hi": "अतिरिक्त आइटम और ट्रीटमेंट"
       },
       "short": {
-        "en": "Targeted treatment for coffee, wine, pet accidents, smoke and damp smell. Add-on to any upholstery service or on its own.",
-        "ru": "Точечная обработка: кофе, вино, следы животных, табак и запах сырости. Дополнение к химчистке или отдельно.",
-        "ar": "معالجة موجّهة لبقع القهوة والنبيذ وآثار الحيوانات الأليفة ورائحة الدخان والرطوبة. تُضاف إلى أي خدمة تنظيف مفروشات أو تُطلب وحدها.",
-        "fr": "Traitement ciblé pour le café, le vin, les accidents d’animaux, la fumée et l’odeur d’humidité. En complément de tout nettoyage de canapé, matelas ou tapis, ou seul.",
-        "de": "Gezielte Behandlung bei Kaffee, Wein, Haustier-Malheuren, Rauch und muffigem Geruch. Als Ergänzung zu jeder Polsterreinigung oder einzeln.",
-        "zh": "针对咖啡、红酒、宠物尿渍、烟味和潮味的专项处理。可作为任何软装清洁服务的附加项，也可单独预约。",
-        "hi": "कॉफ़ी, वाइन, पालतू जानवरों की गंदगी, धुएँ और सीलन की बदबू के लिए लक्षित ट्रीटमेंट। किसी भी सोफ़ा-गद्दे की सेवा के साथ या अलग से।"
+        "en": "Fabric dining and office chairs, footstools, ottomans and upholstered headboards, plus specialist stain or odour treatment.",
+        "ru": "Обеденные стулья и офисные кресла с тканевой обивкой, пуфы, банкетки и мягкие изголовья, а также специальная обработка пятен и запаха.",
+        "ar": "كراسي الطعام وكراسي المكتب القماشية ومساند الأقدام والأوتومان وألواح رأس السرير المنجّدة، إضافةً إلى المعالجة المتخصصة للبقع أو الروائح.",
+        "fr": "Chaises de salle à manger et de bureau en tissu, repose-pieds, poufs et têtes de lit rembourrées, ainsi que le traitement spécialisé des taches ou des odeurs.",
+        "de": "Esszimmer- und Bürostühle mit Stoffbezug, Fußhocker, Polsterhocker und gepolsterte Bettkopfteile sowie spezielle Flecken- oder Geruchsbehandlung.",
+        "zh": "布艺餐椅和办公椅、脚凳、沙发凳和软包床头板，以及污渍或异味专项处理。",
+        "hi": "फ़ैब्रिक डाइनिंग और ऑफ़िस चेयर, फ़ुटस्टूल, ऑटोमन और गद्देदार हेडबोर्ड, साथ ही दाग़ या बदबू का विशेष ट्रीटमेंट।"
       },
       "description_html": {
-        "en": "<p>Different stains need different chemistry, and the wrong one sets the stain for good. We identify the stain, treat it with the right agent and neutralise the smell at the source rather than masking it. We tell you honestly before starting if an old stain is unlikely to come out.</p>",
-        "ru": "<p>Разным пятнам нужна разная химия, и неправильная закрепляет пятно навсегда. Мы определяем природу пятна, обрабатываем нужным средством и нейтрализуем запах у источника, а не маскируем. Если старое пятно вряд ли выйдет — честно скажем до начала.</p>",
-        "ar": "<p>تحتاج البقع المختلفة إلى مواد كيميائية مختلفة، والمادة الخاطئة تثبّت البقعة إلى الأبد. نحدد نوع البقعة ونعالجها بالمادة المناسبة ونحيّد الرائحة من مصدرها بدل إخفائها. وإذا كان من المستبعد زوال بقعة قديمة فنخبرك بصراحة قبل البدء.</p>",
-        "fr": "<p>Chaque tache demande une chimie différente, et la mauvaise fixe la tache pour de bon. Nous identifions la tache, la traitons avec le bon agent et neutralisons l’odeur à la source plutôt que de la masquer. Nous vous disons honnêtement avant de commencer si une vieille tache a peu de chances de partir.</p>",
-        "de": "<p>Unterschiedliche Flecken brauchen unterschiedliche Chemie, und die falsche fixiert den Fleck für immer. Wir bestimmen den Fleck, behandeln ihn mit dem richtigen Mittel und neutralisieren den Geruch an der Quelle, statt ihn zu überdecken. Ist ein alter Fleck voraussichtlich nicht mehr zu entfernen, sagen wir es Ihnen ehrlich, bevor wir anfangen.</p>",
-        "zh": "<p>不同的污渍需要不同的化学药剂，用错了会让污渍永久固定。我们先判断污渍类型，用对应的药剂处理，并从源头中和异味，而不是用香味掩盖。如果陈旧污渍不太可能去除，我们会在开工前如实告知。</p>",
-        "hi": "<p>अलग-अलग दाग़ों को अलग-अलग केमिस्ट्री चाहिए, और ग़लत केमिकल दाग़ को हमेशा के लिए पक्का कर देता है। हम दाग़ की पहचान करते हैं, सही एजेंट से उसका ट्रीटमेंट करते हैं और बदबू को ढकने के बजाय उसकी जड़ से ख़त्म करते हैं। अगर किसी पुराने दाग़ के निकलने की संभावना कम है, तो हम शुरू करने से पहले ईमानदारी से बता देते हैं।</p>"
+        "en": "",
+        "ru": "",
+        "ar": "",
+        "fr": "",
+        "de": "",
+        "zh": "",
+        "hi": ""
       },
-      "includes": [
-        {
-          "en": "Stain identification and spot test",
-          "ru": "Определение пятна и тест",
-          "ar": "تحديد نوع البقعة واختبار موضعي",
-          "fr": "Identification de la tache et essai sur une zone cachée",
-          "de": "Fleckenbestimmung und Test an verdeckter Stelle",
-          "zh": "污渍判断和局部测试",
-          "hi": "दाग़ की पहचान और स्पॉट टेस्ट"
-        },
-        {
-          "en": "Targeted treatment",
-          "ru": "Целевая обработка",
-          "ar": "معالجة موجّهة",
-          "fr": "Traitement ciblé",
-          "de": "Gezielte Behandlung",
-          "zh": "专项处理",
-          "hi": "लक्षित ट्रीटमेंट"
-        },
-        {
-          "en": "Enzyme or oxidising odour neutraliser",
-          "ru": "Ферментный или окислительный нейтрализатор запаха",
-          "ar": "معادل روائح إنزيمي أو مؤكسد",
-          "fr": "Neutralisant d’odeurs enzymatique ou oxydant",
-          "de": "Enzymatischer oder oxidativer Geruchsneutralisierer",
-          "zh": "酵素或氧化型异味中和剂",
-          "hi": "एंज़ाइम या ऑक्सीडाइज़िंग बदबू न्यूट्रलाइज़र"
-        }
-      ],
+      "includes": [],
       "excludes": [],
       "symptoms": [],
       "visit_steps": [],
-      "duration_min": 20,
-      "price_from": 79,
+      "duration_min": null,
+      "price_from": 59,
       "pricing_unit": "item",
       "available_from": null,
       "seo_title": {
-        "en": "Stain and Odour Removal from Upholstery in Dubai",
-        "ru": "Выведение пятен и запахов с мебели в Дубае",
-        "ar": "إزالة البقع والروائح من المفروشات في دبي",
-        "fr": "Détachage et désodorisation de canapés et tapis à Dubaï",
-        "de": "Flecken- und Geruchsentfernung aus Polstern in Dubai",
-        "zh": "迪拜软装污渍与异味去除",
-        "hi": "दुबई में सोफ़ा-गद्दों से दाग़ और बदबू हटाना"
+        "en": "Chair, Ottoman & Headboard Cleaning in Dubai",
+        "ru": "Чистка стульев, пуфов и изголовий в Дубае",
+        "ar": "تنظيف الكراسي والأوتومان وألواح رأس السرير في دبي",
+        "fr": "Nettoyage de chaises, poufs et têtes de lit à Dubaï",
+        "de": "Reinigung von Stühlen, Hockern & Bettkopfteilen in Dubai",
+        "zh": "迪拜椅子、沙发凳与床头板清洁",
+        "hi": "दुबई में चेयर, ऑटोमन और हेडबोर्ड की सफ़ाई"
       },
       "seo_description": {
-        "en": "Targeted stain and odour treatment for sofas, mattresses and carpets in Dubai from AED 79 per item. Honest assessment before we start.",
-        "ru": "Точечное выведение пятен и запахов с диванов, матрасов и ковров в Дубае от 79 AED за предмет. Честная оценка до начала.",
-        "ar": "معالجة موجّهة للبقع والروائح في الأرائك والمراتب والسجاد في دبي ابتداءً من 79 درهمًا للقطعة. تقييم صادق قبل البدء.",
-        "fr": "Traitement ciblé des taches et odeurs sur canapés, matelas et tapis à Dubaï dès 79 AED par pièce. Évaluation honnête avant de commencer.",
-        "de": "Gezielte Flecken- und Geruchsbehandlung für Sofas, Matratzen und Teppiche in Dubai ab 79 AED pro Stück. Ehrliche Einschätzung, bevor wir beginnen.",
-        "zh": "迪拜沙发、床垫和地毯的污渍与异味专项处理，每件 AED 79 起。开工前如实评估。",
-        "hi": "दुबई में सोफ़ा, गद्दे और कालीन के लिए लक्षित दाग़ और बदबू ट्रीटमेंट AED 79 प्रति आइटम से। शुरू करने से पहले ईमानदार आकलन।"
+        "en": "Fabric chairs, footstools, ottomans and upholstered headboards cleaned in Dubai from AED 59. Specialist stain or odour treatment from AED 79 per item.",
+        "ru": "Чистка стульев, офисных кресел, пуфов и мягких изголовий в Дубае от 59 AED. Специальная обработка пятен или запаха — от 79 AED за предмет.",
+        "ar": "تنظيف الكراسي القماشية ومساند الأقدام والأوتومان وألواح رأس السرير المنجّدة في دبي ابتداءً من 59 درهمًا. معالجة متخصصة للبقع أو الروائح ابتداءً من 79 درهمًا للقطعة.",
+        "fr": "Nettoyage de chaises en tissu, repose-pieds, poufs et têtes de lit rembourrées à Dubaï dès 59 AED. Traitement spécialisé des taches ou odeurs dès 79 AED par pièce.",
+        "de": "Stoffstühle, Fuß- und Polsterhocker sowie gepolsterte Bettkopfteile reinigen in Dubai ab 59 AED. Spezielle Flecken- oder Geruchsbehandlung ab 79 AED pro Stück.",
+        "zh": "迪拜布艺椅子、脚凳、沙发凳和软包床头板清洁，AED 59 起。污渍或异味专项处理，每件 AED 79 起。",
+        "hi": "दुबई में फ़ैब्रिक चेयर, फ़ुटस्टूल, ऑटोमन और गद्देदार हेडबोर्ड की सफ़ाई AED 59 से। दाग़ या बदबू का विशेष ट्रीटमेंट AED 79 प्रति आइटम से।"
+      },
+      "price_note": {
+        "en": "Routine stain pretreatment is included. Specialist treatment is assessed and priced before booking.",
+        "ru": "Базовая обработка пятен включена. Необходимость и стоимость специальной обработки согласуем заранее.",
+        "zh": "常规污渍预处理已包含在内。专项处理会在预约前评估并报价。",
+        "de": "Die übliche Fleckenvorbehandlung ist inklusive. Eine spezielle Behandlung prüfen wir vorab und nennen Ihnen den Preis vor der Buchung.",
+        "fr": "Le prétraitement courant des taches est inclus. Le traitement spécialisé est évalué et chiffré avant la réservation.",
+        "hi": "दाग़ों का सामान्य प्री-ट्रीटमेंट शामिल है। विशेष ट्रीटमेंट का आकलन करके उसकी कीमत बुकिंग से पहले तय की जाती है।",
+        "ar": "المعالجة المسبقة الاعتيادية للبقع مشمولة. أما المعالجة المتخصصة فتُقيَّم وتُسعَّر قبل الحجز."
       }
     },
     {

@@ -73,6 +73,8 @@ export const serviceSchema = z.object({
   available_from: isoDate.nullable(),
   seo_title: i18nText,
   seo_description: i18nText,
+  /** A note under the service's price rows (how curtains are measured, what photos confirm). */
+  price_note: i18nText.optional(),
 });
 
 export const priceItemSchema = z.object({
@@ -88,6 +90,14 @@ export const priceItemSchema = z.object({
   tier_from_qty: z.number().int().positive(),
   note: i18nText,
   sort: z.number().int(),
+  /**
+   * A row that is quoted individually (a rug over 10 m²): shown in price tables as "price on
+   * request", never part of a quote or of the calculator. Its `price` is ignored.
+   */
+  on_request: z.boolean().optional(),
+  /** An extra on top of another row (an extra seat, the second side of a mattress): it is
+   * never the service's "from" price. */
+  addon: z.boolean().optional(),
 });
 
 const packageBase = {
@@ -150,6 +160,17 @@ export const pricingRulesSchema = z.object({
     })
     .nullable()
     .default(null),
+  /**
+   * Minimum order per address and visit: applies when everything booked belongs to the listed
+   * services (upholstery, rugs, curtains) and the fixed total is below the amount.
+   */
+  minimum_order: z
+    .object({
+      amount: z.number().positive(),
+      service_slugs: z.array(z.string().min(1)).min(1),
+    })
+    .nullable()
+    .default(null),
 });
 
 export const areaSchema = z.object({
@@ -203,6 +224,7 @@ export const blockSchemas = {
   'service.refrigerant-leak-refill.principle': i18nValue(z.array(titledItem)),
   'service.ducted-ac-fcu-service.vs_split': i18nText,
   'pricing.details': i18nValue(z.array(z.string().min(1))),
+  'pricing.before_you_book': i18nValue(z.array(z.string().min(1))),
   'about.body': i18nText,
   'about.not_doing': i18nText,
   'contact.response_note': i18nText,

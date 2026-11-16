@@ -28,9 +28,9 @@ import { blockSchemas } from '@/lib/validation/content';
 
 describe('seed files', () => {
   it('parse against the content schemas', () => {
-    expect(seedServices().length).toBe(24);
-    expect(seedPriceItems().length).toBe(32);
-    expect(seedPackages().length).toBe(4);
+    expect(seedServices().length).toBe(25);
+    expect(seedPriceItems().length).toBe(48);
+    expect(seedPackages().length).toBe(7);
     expect(seedAreas().length).toBe(16);
     expect(seedFaqs().length).toBe(19);
   });
@@ -62,8 +62,16 @@ describe('seed files', () => {
         'sofa-cleaning',
         'mattress-cleaning',
         'carpet-cleaning',
-        'stain-odour-removal',
+        'curtain-cleaning',
+        'upholstery-extras',
       ],
+    });
+    // The minimum order is a rule of exactly the deep-cleaning services.
+    expect(seedPricingRules().minimum_order).toEqual({
+      amount: 229,
+      service_slugs: seedServices()
+        .filter((s) => s.category === 'upholstery')
+        .map((s) => s.slug),
     });
     const priced = new Set(seedPriceItems().map((p) => p.service_slug));
     for (const slug of seedPricingRules().first_booking_offer!.service_slugs)
@@ -133,7 +141,8 @@ describe('content getters', () => {
       'sofa-cleaning',
       'mattress-cleaning',
       'carpet-cleaning',
-      'stain-odour-removal',
+      'curtain-cleaning',
+      'upholstery-extras',
     ]);
     expect((await getServices({ status: ['coming_soon'] })).length).toBe(2);
   });
@@ -159,7 +168,12 @@ describe('content getters', () => {
 
   it('filter price items by service and packages by type', async () => {
     expect((await getPriceItems({ serviceSlug: 'ac-cleaning' })).length).toBe(3);
-    expect((await getPackages({ type: 'bundle' })).map((p) => p.slug)).toEqual(['fresh-home']);
+    expect((await getPackages({ type: 'bundle' })).map((p) => p.slug)).toEqual([
+      'fresh-home',
+      'sofa-and-mattress',
+      'furniture-refresh',
+      'full-home',
+    ]);
     expect((await getPackages({ type: 'annual' })).length).toBe(3);
   });
 

@@ -12,8 +12,9 @@ import { Link } from '@/lib/i18n/navigation';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized } from '@/lib/i18n/text';
 import { stagger } from '@/lib/motion';
+import { cn } from '@/lib/utils';
 
-/** Fresh Home bundle plus the three annual plans (seed packages). */
+/** The cleaning bundles (the highlighted one on the dark tone) and the three annual plans. */
 export async function PackagesTeaser({
   locale,
   tone = 'surface',
@@ -30,9 +31,7 @@ export async function PackagesTeaser({
     getPackages({ type: 'bundle' }),
     getPackages({ type: 'annual' }),
   ]);
-  const bundle = bundles[0];
-  const savings =
-    bundle?.type === 'bundle' && bundle.compare_price ? bundle.compare_price - bundle.price : null;
+  const bundleCards = bundles.filter((b) => b.type === 'bundle');
 
   return (
     <Section id={id} tone={tone} aria-labelledby="packages-title">
@@ -49,62 +48,97 @@ export async function PackagesTeaser({
           </Button>
         }
       />
-      <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
-        {bundle && bundle.type === 'bundle' ? (
-          <div
-            data-tilt=""
-            className="tone-deep tilt reveal flex flex-col gap-5 rounded-panel p-8 lg:col-span-5"
-          >
-            <div className="flex items-center justify-between gap-3">
-              <h3 className="text-h3 text-on-deep">
-                <LocalizedText value={pickLocalized(bundle.name, locale)} locale={locale} />
-              </h3>
-              {savings ? (
-                <Badge variant="highlight">
-                  {tPrice('save', { amount: formatAED(savings, locale) })}
-                </Badge>
-              ) : null}
-            </div>
-            <p className="text-body text-on-deep-muted">
-              <LocalizedText value={pickLocalized(bundle.description, locale)} locale={locale} />
-            </p>
-            <p className="mt-auto flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <Ltr className="text-h1 font-light text-on-deep tabular-nums">
-                {formatAED(bundle.price, locale)}
-              </Ltr>
-              {bundle.compare_price ? (
-                <span className="text-body text-on-deep-muted">
-                  {tPrice.rich('insteadRich', {
-                    amount: formatAED(bundle.compare_price, locale),
-                    s: (chunks) => <Ltr className="tabular-nums line-through">{chunks}</Ltr>,
-                  })}
-                </span>
-              ) : null}
-            </p>
-            <Button variant="inverse" size="lg" asChild className="self-start">
+      <div className="flex flex-col gap-8">
+        {bundleCards.length > 0 ? (
+          <div className="flex flex-col gap-5">
+            <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+              {bundleCards.map((bundle, i) => {
+                const savings = bundle.compare_price ? bundle.compare_price - bundle.price : null;
+                const deep = bundle.highlighted;
+                return (
+                  <li
+                    key={bundle.slug}
+                    data-tilt=""
+                    className={cn(
+                      'tilt reveal flex flex-col gap-4 rounded-panel p-6',
+                      deep ? 'tone-deep' : 'border border-border bg-background',
+                    )}
+                    style={stagger(i)}
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <h3 className={cn('text-h3', deep ? 'text-on-deep' : 'text-foreground')}>
+                        <LocalizedText value={pickLocalized(bundle.name, locale)} locale={locale} />
+                      </h3>
+                      {savings ? (
+                        <Badge variant="highlight">
+                          {tPrice('save', { amount: formatAED(savings, locale) })}
+                        </Badge>
+                      ) : null}
+                    </div>
+                    <p
+                      className={cn(
+                        'text-body text-pretty',
+                        deep ? 'text-on-deep-muted' : 'text-muted-foreground',
+                      )}
+                    >
+                      <LocalizedText
+                        value={pickLocalized(bundle.description, locale)}
+                        locale={locale}
+                      />
+                    </p>
+                    <p className="mt-auto flex flex-col gap-1">
+                      <Ltr
+                        className={cn(
+                          'text-h2 font-light tabular-nums',
+                          deep ? 'text-on-deep' : 'text-primary',
+                        )}
+                      >
+                        {formatAED(bundle.price, locale)}
+                      </Ltr>
+                      {bundle.compare_price ? (
+                        <span
+                          className={cn(
+                            'text-small',
+                            deep ? 'text-on-deep-muted' : 'text-muted-foreground',
+                          )}
+                        >
+                          {tPrice.rich('insteadRich', {
+                            amount: formatAED(bundle.compare_price, locale),
+                            s: (chunks) => (
+                              <Ltr className="tabular-nums line-through">{chunks}</Ltr>
+                            ),
+                          })}
+                        </span>
+                      ) : null}
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+            <Button size="lg" asChild className="self-start">
               <Link href="/pricing#book">{t('finalCta.primary')}</Link>
             </Button>
           </div>
         ) : null}
-        <ul className="grid gap-4 lg:col-span-7">
+        <ul className="grid gap-4 lg:grid-cols-3">
           {annual.map((plan, i) => (
             <li
               key={plan.slug}
-              className="reveal flex flex-col gap-3 rounded-card border border-border bg-background p-5 transition-[border-color,box-shadow] duration-(--nasim-dur) ease-brand hover:border-line-strong hover:shadow-card sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+              className="reveal flex flex-col gap-3 rounded-card border border-border bg-background p-5 transition-[border-color,box-shadow] duration-(--nasim-dur) ease-brand hover:border-line-strong hover:shadow-card"
               style={stagger(i + 1)}
             >
               <div className="flex flex-col gap-1">
-                <h3 className="flex items-center gap-2 text-lead font-medium text-foreground">
+                <h3 className="flex flex-wrap items-center gap-2 text-lead font-medium text-foreground">
                   <LocalizedText value={pickLocalized(plan.name, locale)} locale={locale} />
                   {plan.highlighted ? (
                     <Badge variant="highlight">{tPrice('recommended')}</Badge>
                   ) : null}
                 </h3>
-                <p className="text-small text-muted-foreground">
+                <p className="text-small text-pretty text-muted-foreground">
                   <LocalizedText value={pickLocalized(plan.description, locale)} locale={locale} />
                 </p>
               </div>
-              <p className="shrink-0 text-small text-muted-foreground">
+              <p className="mt-auto text-small text-muted-foreground">
                 {plan.price !== null ? (
                   tPrice.rich('perYearRich', {
                     amount: formatAED(plan.price, locale),

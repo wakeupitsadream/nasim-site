@@ -40,8 +40,15 @@ describe('buildPricingConfig', () => {
     expect(linesForService(cfg, 'mattress-cleaning').map((l) => l.id)).toEqual([
       'mattress_single',
       'mattress_double',
+      'mattress_queen',
       'mattress_king',
+      'mattress_super_king',
+      'mattress_second_side',
     ]);
+    // Rows quoted individually (a rug over 10 m², a bed frame) never become lines.
+    expect(items.filter((i) => i.on_request).map((i) => i.key)).toEqual(['rug_xl', 'bed_frame']);
+    expect(findLine(cfg, 'rug_xl')).toBeUndefined();
+    expect(findLine(cfg, 'bed_frame')).toBeUndefined();
     // Misha's table of 15.11.2026: three services have a third rate from the fourth unit.
     expect(line('fcu_service').tiers.map((t) => [t.fromQty, t.price])).toEqual([
       [1, 349],
@@ -92,16 +99,57 @@ describe('tiers and minimums', () => {
     expect(total({ full_system: 4 })).toBe(3196);
   });
 
-  it('bills minimum charges and flags them', () => {
-    expect(billableQty(line('sofa_seat'), 1)).toBe(3);
-    const q = quote(cfg, { sofa_seat: 1 }, noVat);
-    expect(q.total).toBe(267);
+  it('bills a line minimum and flags it', () => {
+    // No seed line has a minimum quantity since the price list of 16.11.2026; the rule stays.
+    const withMin = buildPricingConfig(
+      items.map((i) => (i.key === 'carpet_sqm' ? { ...i, min_qty: 10 } : i)),
+      packages,
+      rules,
+    );
+    const carpet = findLine(withMin, 'carpet_sqm')!;
+    expect(billableQty(carpet, 4)).toBe(10);
+    const q = quote(withMin, { carpet_sqm: 4 }, noVat);
+    expect(q.total).toBe(290);
     expect(q.lines[0]?.minApplied).toBe(true);
-    expect(total({ sofa_seat: 2 })).toBe(267);
-    expect(total({ sofa_seat: 5 })).toBe(445);
-    expect(total({ carpet_sqm: 4 })).toBe(150);
-    expect(total({ carpet_sqm: 10 })).toBe(250);
-    expect(total({ mattress_single: 1, mattress_king: 1 })).toBe(498);
+  });
+
+  it('prices sofas by size, mattresses by size and rugs by area band', () => {
+    expect(total({ sofa_1: 2 })).toBe(258); // two armchairs
+    expect(total({ sofa_3: 1 })).toBe(349);
+    expect(total({ sofa_4: 1, sofa_extra_seat: 2 })).toBe(679);
+    expect(total({ mattress_single: 1, mattress_king: 1 })).toBe(558);
+    expect(total({ mattress_super_king: 1, mattress_second_side: 1 })).toBe(448);
+    expect(total({ rug_medium: 1, rug_large: 1 })).toBe(518);
+    expect(total({ carpet_sqm: 10 })).toBe(290);
+    expect(total({ curtain_sqm: 20 })).toBe(300);
+    expect(total({ chair_dining: 6 })).toBe(354);
+  });
+
+  it('bills a deep-cleaning visit at the minimum order of AED 229', () => {
+    const chair = quote(cfg, { chair_dining: 1 }, noVat);
+    expect(chair.subtotal).toBe(59);
+    expect(chair.total).toBe(229);
+    expect(chair.minimum).toEqual({ amount: 229, topUp: 170 });
+    expect(chair.savings).toBe(0);
+    expect(total({ rug_small: 1 })).toBe(229);
+    expect(total({ carpet_sqm: 4 })).toBe(229);
+    // At or above the minimum nothing is added.
+    expect(quote(cfg, { mattress_single: 1 }, noVat).minimum).toBeNull();
+    expect(quote(cfg, { rug_small: 1, chair_dining: 2 }, noVat).minimum).toBeNull();
+    expect(total({ rug_small: 1, chair_dining: 2 })).toBe(277);
+    // It is a rule of upholstery visits: AC work alone, or together with it, has none.
+    expect(total({ filter_grille: 1 })).toBe(199);
+    expect(quote(cfg, { filter_grille: 1, chair_dining: 1 }, noVat).minimum).toBeNull();
+    expect(total({ filter_grille: 1, chair_dining: 1 })).toBe(258);
+    // An estimate with nothing fixed has no minimum to apply; with a fixed item it does.
+    const stain = quote(cfg, { stain_treatment: 1 }, noVat);
+    expect(stain.minimum).toBeNull();
+    expect(estimateFloor(stain)).toBe(79);
+    const both = quote(cfg, { chair_dining: 1, stain_treatment: 1 }, noVat);
+    expect(both.kind).toBe('estimate');
+    expect(both.total).toBe(229);
+    const off = buildPricingConfig(items, packages, { ...rules, minimum_order: null });
+    expect(quote(off, { chair_dining: 1 }, noVat).total).toBe(59);
   });
 
   it('describes tier ranges', () => {
@@ -115,27 +163,43 @@ describe('tiers and minimums', () => {
 
 describe('bundles', () => {
   it('applies Fresh Home when it is cheaper than the items', () => {
-    const q = quote(cfg, { ac_clean: 3, sofa_seat: 3 }, noVat);
-    expect(q.subtotal).toBe(1104);
+    const q = quote(cfg, { ac_clean: 3, sofa_3: 1 }, noVat);
+    expect(q.subtotal).toBe(1186);
     expect(q.total).toBe(1099);
-    expect(q.savings).toBe(5);
+    expect(q.savings).toBe(87);
     expect(q.bundle?.slug).toBe('fresh-home');
   });
 
   it('keeps à la carte when the bundle path costs more', () => {
-    const q = quote(cfg, { ac_clean: 4, sofa_seat: 3 }, noVat);
-    expect(q.total).toBe(1263);
+    // Four units fall to AED 249 each: 996 + 349 beats the package plus a fourth unit.
+    const q = quote(cfg, { ac_clean: 4, sofa_3: 1 }, noVat);
+    expect(q.total).toBe(1345);
     expect(q.bundle).toBeNull();
   });
 
-  it('prices the remainder at the full-quantity tier', () => {
-    const q = quote(cfg, { ac_clean: 3, sofa_seat: 4 }, noVat);
-    expect(q.total).toBe(1188);
+  it('charges what the bundle does not cover on top of it', () => {
+    const q = quote(cfg, { ac_clean: 3, sofa_3: 2 }, noVat);
+    expect(q.total).toBe(1448);
     expect(q.bundle?.slug).toBe('fresh-home');
   });
 
-  it('reports the seed savings', () => {
-    expect(bundleSavings(cfg.bundles[0]!)).toBe(5);
+  it('picks the bundle that makes the whole selection cheapest', () => {
+    const pair = quote(cfg, { sofa_3: 1, mattress_king: 1 }, noVat);
+    expect([pair.bundle?.slug, pair.total]).toEqual(['sofa-and-mattress', 599]);
+    // With the rug, Furniture Refresh (749) beats Sofa and Mattress plus a rug (758).
+    const trio = quote(cfg, { sofa_3: 1, mattress_king: 1, rug_small: 1 }, noVat);
+    expect([trio.bundle?.slug, trio.total]).toEqual(['furniture-refresh', 749]);
+    const home = quote(cfg, { full_system: 1, sofa_3: 1, mattress_king: 1, rug_small: 1 }, noVat);
+    expect([home.bundle?.slug, home.total, home.savings]).toEqual(['full-home', 1599, 137]);
+  });
+
+  it('reports the savings the price list states', () => {
+    expect(cfg.bundles.map((b) => [b.slug, bundleSavings(b)])).toEqual([
+      ['fresh-home', 87],
+      ['sofa-and-mattress', 79],
+      ['furniture-refresh', 88],
+      ['full-home', 137],
+    ]);
   });
 });
 
@@ -143,17 +207,26 @@ describe('suggestBundle', () => {
   it('offers the missing part when it makes the bundle cheaper', () => {
     expect(suggestBundle(cfg, { ac_clean: 3 })).toEqual({
       slug: 'fresh-home',
-      add: { sofa_seat: 3 },
+      add: { sofa_3: 1 },
       addCost: 262,
-      savings: 5,
+      savings: 87,
     });
-    expect(suggestBundle(cfg, { sofa_seat: 3 })?.addCost).toBe(832);
+  });
+
+  it('offers the bundle that costs least to complete', () => {
+    // A 3-seat sofa is part of all four bundles: a King mattress (+250) is the nearest step.
+    expect(suggestBundle(cfg, { sofa_3: 1 })).toEqual({
+      slug: 'sofa-and-mattress',
+      add: { mattress_king: 1 },
+      addCost: 250,
+      savings: 79,
+    });
   });
 
   it('stays quiet when there is no overlap, no gain, or the bundle already applies', () => {
     expect(suggestBundle(cfg, { ac_deep: 2 })).toBeNull();
     expect(suggestBundle(cfg, { ac_clean: 5 })).toBeNull();
-    expect(suggestBundle(cfg, { ac_clean: 3, sofa_seat: 3 })).toBeNull();
+    expect(suggestBundle(cfg, { ac_clean: 3, sofa_3: 1 })).toBeNull();
     const off = buildPricingConfig(items, packages, {
       ...rules,
       suggest_bundle_when_cheaper: false,
@@ -237,7 +310,7 @@ describe('first-booking offer', () => {
   it('works on top of quantity rates and for upholstery', () => {
     expect(first({ ac_clean: 4 }).total).toBe(946); // 4 × 249 − 50
     expect(first({ full_system: 1 }).total).toBe(849);
-    expect(first({ sofa_seat: 6 }).total).toBe(484); // 6 × 89 − 50
+    expect(first({ sofa_3: 1, mattress_single: 1 }).total).toBe(528); // 349 + 229 − 50
   });
 
   it('stays out below the minimum and for servicing and repairs', () => {
@@ -253,22 +326,22 @@ describe('first-booking offer', () => {
   });
 
   it('never stacks with a bundle: the customer gets the cheaper of the two', () => {
-    const sel = { ac_clean: 3, sofa_seat: 3 };
-    expect(quote(cfg, sel, noVat).bundle?.slug).toBe('fresh-home');
-    // À la carte 1104 − 50 beats the package at 1099, so the package steps aside.
-    const q = first(sel);
-    expect(q.bundle).toBeNull();
-    expect(q.total).toBe(1054);
-    // With a package that really is cheaper, the package stays and the offer is not available.
-    const cheaper = buildPricingConfig(
+    const sel = { ac_clean: 3, sofa_3: 1 };
+    // À la carte 1186 − 50 is still above the package at 1099: the package stays.
+    const kept = first(sel);
+    expect(kept.bundle?.slug).toBe('fresh-home');
+    expect(kept.total).toBe(1099);
+    expect(kept.offer).toEqual({ discount: 50, minTotal: 500, eligible: false, applied: false });
+    // If a package were dearer than the items with the offer, the package would step aside.
+    const dearer = buildPricingConfig(
       items,
-      packages.map((p) => (p.slug === 'fresh-home' ? { ...p, price: 999 } : p)),
+      packages.map((p) => (p.slug === 'fresh-home' ? { ...p, price: 1150 } : p)),
       rules,
     );
-    const kept = quote(cheaper, sel, noVat, { firstBooking: true });
-    expect(kept.bundle?.slug).toBe('fresh-home');
-    expect(kept.total).toBe(999);
-    expect(kept.offer).toEqual({ discount: 50, minTotal: 500, eligible: false, applied: false });
+    expect(quote(dearer, sel, noVat).bundle?.slug).toBe('fresh-home');
+    const q = quote(dearer, sel, noVat, { firstBooking: true });
+    expect(q.bundle).toBeNull();
+    expect(q.total).toBe(1136);
   });
 
   it('charges VAT on the discounted total and is off without the rule', () => {
@@ -302,7 +375,7 @@ describe('VAT', () => {
       amount: 42,
       totalWithVat: 879,
     });
-    expect(quote(cfg, { ac_clean: 3, sofa_seat: 3 }, vat).vat).toEqual({
+    expect(quote(cfg, { ac_clean: 3, sofa_3: 1 }, vat).vat).toEqual({
       mode: 'added',
       amount: 55,
       totalWithVat: 1154,
@@ -345,12 +418,16 @@ describe('seed consistency', () => {
     expect(priceFrom(cfg, 'ac-filter-grille-cleaning')?.exact).toBe(true);
     expect(priceFrom(cfg, 'ac-cleaning')).toEqual({ amount: 249, unit: 'unit', exact: false });
     expect(priceFrom(cfg, 'ac-repair')).toEqual({ amount: 249, unit: 'from', exact: false });
-    expect(priceFrom(cfg, 'sofa-cleaning')?.exact).toBe(false);
+    // An extra seat (110) and the second side of a mattress (79) are add-ons, not a "from".
+    expect(priceFrom(cfg, 'sofa-cleaning')).toEqual({ amount: 129, unit: 'item', exact: false });
+    expect(priceFrom(cfg, 'mattress-cleaning')?.amount).toBe(229);
+    expect(priceFrom(cfg, 'curtain-cleaning')).toEqual({ amount: 15, unit: 'sqm', exact: true });
   });
 
   it('keeps the bundle compare price equal to the à-la-carte sum', () => {
-    const bundle = cfg.bundles[0]!;
-    expect(quote(cfg, bundle.includes, noVat).subtotal).toBe(bundle.comparePrice);
+    expect(cfg.bundles).toHaveLength(4);
+    for (const bundle of cfg.bundles)
+      expect(quote(cfg, bundle.includes, noVat).subtotal, bundle.slug).toBe(bundle.comparePrice);
   });
 });
 

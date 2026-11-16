@@ -26,7 +26,7 @@ const DEMO: Record<
   smell: { service: 'ac-cleaning', urgency: 'soon', confidence: 'high' },
   drip: { service: 'ac-cleaning', urgency: 'soon', confidence: 'medium' },
   weak: { service: 'ac-deep-cleaning', urgency: 'soon', confidence: 'medium' },
-  stain: { service: 'stain-odour-removal', urgency: 'routine', confidence: 'high' },
+  stain: { service: 'upholstery-extras', urgency: 'routine', confidence: 'high' },
 };
 
 /**

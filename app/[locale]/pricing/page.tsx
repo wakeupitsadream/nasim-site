@@ -60,6 +60,7 @@ export default async function PricingPage() {
     ac,
     upholstery,
     details,
+    before,
     art,
   ] = await Promise.all([
     getTranslations('Pricing'),
@@ -75,6 +76,7 @@ export default async function PricingPage() {
     getServices({ status: ['active'], category: 'ac' }),
     getServices({ status: ['active'], category: 'upholstery' }),
     getBlock('pricing.details'),
+    getBlock('pricing.before_you_book'),
     getPhoto({ kind: 'pricing' }, locale),
   ]);
   const whatsapp = whatsappTarget(settings.contacts);
@@ -83,6 +85,7 @@ export default async function PricingPage() {
     .map((key) => ({ key, services: ac.filter((s) => s.group === key) }))
     .filter((g) => g.services.length > 0);
   const detailList = pickLocalizedValue(details, locale);
+  const beforeList = pickLocalizedValue(before, locale);
   const offer = pricing.rules.firstBookingOffer;
   const vatNote = settings.vat.registered
     ? settings.vat.included
@@ -188,14 +191,37 @@ export default async function PricingPage() {
       </Section>
 
       <Section id="upholstery" tone="sand" aria-labelledby="upholstery-title">
-        <SectionHeader id="upholstery-title" title={t('jump.upholstery')} />
-        <PriceTable
-          groups={groupsFor(upholstery, items)}
-          locale={locale}
-          caption={t('captions.upholstery')}
-          captionId="upholstery-caption"
-          className="lg:max-w-3xl"
+        <SectionHeader
+          id="upholstery-title"
+          title={t('jump.upholstery')}
+          lead={tServices('summary.upholstery')}
         />
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <PriceTable
+            groups={groupsFor(upholstery, items)}
+            locale={locale}
+            caption={t('captions.upholstery')}
+            captionId="upholstery-caption"
+            descriptions
+            className="lg:col-span-7"
+          />
+          {/* The owner's "Before you book": the minimum order and what needs its own quote. */}
+          <aside
+            aria-labelledby="before-title"
+            lang={beforeList.lang !== locale ? beforeList.lang : undefined}
+            dir={beforeList.lang !== locale ? 'auto' : undefined}
+            className="reveal-fade flex h-fit flex-col gap-4 rounded-panel border border-border bg-card p-6 lg:col-span-5 lg:p-8"
+          >
+            <h3 id="before-title" className="text-eyebrow text-highlight-ink">
+              {t('beforeYouBook.title')}
+            </h3>
+            <ul className="flex list-disc flex-col gap-3 ps-5 text-body text-pretty marker:text-highlight-ink">
+              {beforeList.value.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+          </aside>
+        </div>
         {vatNote ? <p className="mt-6 text-small text-muted-foreground">{vatNote}</p> : null}
       </Section>
 

@@ -22,7 +22,7 @@
     },
     "annualContracts": {
       "title": "Annual maintenance contracts",
-      "description": "Annual AC care plans in Dubai: planned visits, priority scheduling and 10% off repair labour. Compare Essential, Comfort and Villa."
+      "description": "Annual AC care plans in Dubai: planned visits, priority booking and 10% off repair labour. Compare Essential, Comfort and Villa."
     },
     "areas": {
       "title": "Areas we serve"
@@ -392,7 +392,7 @@
     },
     "summary": {
       "ac": "Cleaning, deep cleaning, fan coil units, repairs and refrigerant.",
-      "upholstery": "Sofas, mattresses, carpets, stains and odours — dry within hours.",
+      "upholstery": "Professional cleaning for fabric sofas, mattresses, rugs and curtains. Send us photos to confirm your fixed price before booking.",
       "comingSoon": "Join the waitlist and we will message you first."
     },
     "card": {
@@ -418,7 +418,7 @@
     "group": {
       "service": "AC servicing",
       "cleaning": "AC cleaning",
-      "other": "Other cleaning & repair services"
+      "other": "Other cleaning and repair services"
     },
     "onRequest": "Price on request"
   },
@@ -515,6 +515,9 @@
     },
     "tiers": {
       "title": "Volume prices"
+    },
+    "beforeYouBook": {
+      "title": "Before you book"
     }
   },
   "Report": {
@@ -545,7 +548,7 @@
     "getPrice": "Get an instant quote"
   },
   "Contracts": {
-    "lead": "One payment a year for planned visits, with priority scheduling and 10% off repair labour. Cheaper than booking each clean on its own.",
+    "lead": "One payment a year for planned visits, with priority booking and 10% off repair labour. Cheaper than booking each clean on its own.",
     "plans": {
       "eyebrow": "Three plans",
       "title": "Pick the plan for your home",
@@ -556,7 +559,7 @@
       "units": "Up to {n} units",
       "visits": "{n} visits a year",
       "deep": "One selected unit is deep-cleaned during one visit",
-      "priority": "Priority scheduling",
+      "priority": "Priority booking",
       "repairDiscount": "{n}% off repair labour",
       "custom": "Coverage tailored to your equipment"
     },
@@ -589,7 +592,7 @@
     "how": {
       "eyebrow": "How it works",
       "title": "Three steps a year",
-      "lead": "If a unit breaks between visits, you get priority scheduling and your plan's discount on repair labour."
+      "lead": "If a unit breaks between visits, you get priority booking and your plan's discount on repair labour."
     },
     "steps": {
       "one": {
@@ -693,10 +696,12 @@
       "credited": "credited to the repair",
       "fromLine": "from {amount}",
       "repairEstimate": "Labour from {amount}, parts by written estimate",
-      "estimateNote": "The final amount is confirmed in writing before any repair starts.",
+      "estimateNote": "The final amount is confirmed in writing before any work starts.",
       "live": "Total: {total}",
       "minApplied": "minimum charge",
-      "line": "{qty} × {price}"
+      "line": "{qty} × {price}",
+      "minimumRow": "Minimum order",
+      "minimumNote": "Minimum order <price>{amount}</price> per address and visit. Combine items to reach the minimum."
     },
     "offer": {
       "text": "Add {items} for {add} more — {name} package, save {savings}",

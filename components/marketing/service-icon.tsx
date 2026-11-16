@@ -1,11 +1,12 @@
 import {
   AirVent,
+  Armchair,
   BedDouble,
+  Blinds,
   ClipboardCheck,
   CloudFog,
   Cylinder,
   Droplet,
-  Droplets,
   Fan,
   Gauge,
   Grid3x3,
@@ -50,7 +51,8 @@ const ICONS: Record<string, LucideIcon> = {
   'sofa-cleaning': Sofa,
   'mattress-cleaning': BedDouble,
   'carpet-cleaning': RectangleHorizontal,
-  'stain-odour-removal': Droplets,
+  'curtain-cleaning': Blinds,
+  'upholstery-extras': Armchair,
   'humidity-mould-check': CloudFog,
   'water-tank-cleaning': Cylinder,
 };

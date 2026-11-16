@@ -231,7 +231,7 @@
       "tier_group": "fcu_deep",
       "name": {
         "en": "FCU Deep Coil & Blower Cleaning, 1 unit",
-        "ru": "Глубокая чистка теплообменника и вентилятора фанкойла, 1 блок",
+        "ru": "Глубокая чистка фанкойла, 1 блок",
         "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU) ومروحتها، وحدة واحدة",
         "fr": "Nettoyage en profondeur de l’échangeur et du ventilateur de ventilo-convecteur (FCU), 1 unité",
         "de": "Tiefenreinigung von Wärmetauscher & Lüfter am Gebläsekonvektor (FCU), 1 Gerät",
@@ -259,7 +259,7 @@
       "tier_group": "fcu_deep",
       "name": {
         "en": "FCU Deep Coil & Blower Cleaning, 2+ units",
-        "ru": "Глубокая чистка теплообменника и вентилятора фанкойла, 2+ блоков",
+        "ru": "Глубокая чистка фанкойла, 2+ блоков",
         "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU) ومروحتها، وحدتان فأكثر",
         "fr": "Nettoyage en profondeur de l’échangeur et du ventilateur de ventilo-convecteur (FCU), 2 unités et plus",
         "de": "Tiefenreinigung von Wärmetauscher & Lüfter am Gebläsekonvektor (FCU), 2+ Geräte",
@@ -481,7 +481,7 @@
       "key": "outdoor_unit",
       "name": {
         "en": "Outdoor condenser cleaning, booked separately",
-        "ru": "Чистка наружного блока отдельным заказом",
+        "ru": "Отдельная чистка наружного блока",
         "ar": "تنظيف وحدة التكثيف الخارجية، بحجز منفرد",
         "de": "Reinigung des Außengeräts, separat gebucht",
         "zh": "室外机冷凝器清洗，单独预约",
@@ -508,7 +508,7 @@
       "key": "diagnostics_visit",
       "name": {
         "en": "AC diagnostics",
-        "ru": "Диагностика кондиционера",
+        "ru": "Диагностика",
         "ar": "فحص أعطال المكيف",
         "de": "Klimaanlagen-Diagnose",
         "zh": "空调检测",
@@ -521,7 +521,7 @@
       "tier_from_qty": 1,
       "note": {
         "en": "Credited towards approved testing or repair of the same fault",
-        "ru": "Засчитывается в согласованную проверку или ремонт той же неисправности",
+        "ru": "Засчитывается в оплату согласованной дополнительной проверки или ремонта той же неисправности",
         "ar": "تُحتسب من قيمة الاختبار أو الإصلاح الموافَق عليه للعطل نفسه",
         "de": "Wird auf die freigegebene Prüfung oder Reparatur desselben Defekts angerechnet",
         "zh": "计入经您确认的同一故障后续检测或维修费用",
@@ -535,7 +535,7 @@
       "key": "drain_unblocking",
       "name": {
         "en": "Accessible condensate drain unblocking",
-        "ru": "Прочистка доступного дренажа конденсата",
+        "ru": "Устранение засора доступного дренажа",
         "ar": "إزالة انسداد تصريف ماء التكاثف الذي يمكن الوصول إليه",
         "de": "Beseitigung von Verstopfungen im zugänglichen Kondensatablauf",
         "zh": "可触及的冷凝水排水管疏通",
@@ -562,7 +562,7 @@
       "key": "thermostat_labour",
       "name": {
         "en": "Thermostat installation labour",
-        "ru": "Установка термостата, работа",
+        "ru": "Установка термостата: работа",
         "ar": "أجرة تركيب الثرموستات",
         "de": "Thermostat-Einbau, Arbeitslohn",
         "zh": "温控器安装人工费",
@@ -575,7 +575,7 @@
       "tier_from_qty": 1,
       "note": {
         "en": "Thermostat priced separately",
-        "ru": "Термостат оплачивается отдельно",
+        "ru": "Стоимость термостата оплачивается отдельно",
         "ar": "الثرموستات يُسعَّر على حدة",
         "de": "Thermostat wird separat berechnet",
         "zh": "温控器另行计价",
@@ -602,7 +602,7 @@
       "tier_from_qty": 1,
       "note": {
         "en": "Credited towards approved testing or repair of the same fault",
-        "ru": "Засчитывается в согласованную проверку или ремонт той же неисправности",
+        "ru": "Засчитывается в оплату согласованной дополнительной проверки или ремонта той же неисправности",
         "ar": "تُحتسب من قيمة الاختبار أو الإصلاح الموافَق عليه للعطل نفسه",
         "fr": "Déduit de la réparation ou des tests approuvés pour la même panne",
         "de": "Wird auf die freigegebene Prüfung oder Reparatur desselben Defekts angerechnet",
@@ -616,7 +616,7 @@
       "key": "repair_labour",
       "name": {
         "en": "Repair labour",
-        "ru": "Ремонт, работа",
+        "ru": "Ремонт кондиционера: работа",
         "ar": "أجرة الإصلاح",
         "fr": "Main-d’œuvre de réparation",
         "de": "Reparatur, Arbeitslohn",
@@ -629,7 +629,7 @@
       "tier_from_qty": 1,
       "note": {
         "en": "Parts quoted separately, 90-day warranty",
-        "ru": "Запчасти по смете, гарантия 90 дней",
+        "ru": "Детали по смете, гарантия 90 дней",
         "ar": "القطع تُسعَّر على حدة، ضمان 90 يومًا",
         "fr": "Pièces chiffrées à part, garantie 90 jours",
         "de": "Ersatzteile nach Kostenvoranschlag, 90 Tage Garantie",
@@ -643,7 +643,7 @@
       "key": "leak_test",
       "name": {
         "en": "Nitrogen leak test",
-        "ru": "Поиск утечки (азот)",
+        "ru": "Проверка на утечку хладагента",
         "ar": "اختبار تسرب بالنيتروجين",
         "fr": "Test d’étanchéité à l’azote",
         "de": "Stickstoff-Lecktest",
@@ -670,7 +670,7 @@
       "key": "refill",
       "name": {
         "en": "Refill after leak repair",
-        "ru": "Заправка после устранения утечки",
+        "ru": "Заправка хладагентом",
         "ar": "تعبئة بعد إصلاح التسرب",
         "fr": "Recharge après réparation de la fuite",
         "de": "Nachfüllen nach Leckreparatur",
@@ -694,82 +694,128 @@
     },
     {
       "service_slug": "sofa-cleaning",
-      "key": "sofa_seat",
+      "key": "sofa_1",
       "name": {
-        "en": "Sofa, per seat",
-        "ru": "Диван, за место",
-        "ar": "أريكة، للمقعد",
-        "fr": "Canapé, par place",
-        "de": "Sofa, pro Sitzplatz",
-        "zh": "沙发，每座位",
-        "hi": "सोफ़ा, प्रति सीट"
+        "en": "1 seat or armchair",
+        "ru": "1 место или кресло",
+        "zh": "1 座沙发或扶手椅",
+        "de": "1 Sitzplatz oder Sessel",
+        "fr": "1 place ou fauteuil",
+        "hi": "1 सीट या आर्मचेयर",
+        "ar": "مقعد واحد أو كرسي بذراعين"
       },
-      "unit": "seat",
-      "price": 89,
-      "min_qty": 3,
+      "unit": "item",
+      "price": 129,
+      "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "Minimum 3 seats",
-        "ru": "Минимум 3 места",
-        "ar": "الحد الأدنى 3 مقاعد",
-        "fr": "Minimum 3 places",
-        "de": "Mindestens 3 Sitzplätze",
-        "zh": "最少 3 个座位",
-        "hi": "न्यूनतम 3 सीट"
+        "en": ""
       },
       "sort": 1
     },
     {
       "service_slug": "sofa-cleaning",
-      "key": "armchair",
+      "key": "sofa_2",
       "name": {
-        "en": "Armchair",
-        "ru": "Кресло",
-        "ar": "كرسي بذراعين",
-        "fr": "Fauteuil",
-        "de": "Sessel",
-        "zh": "扶手椅",
-        "hi": "आर्मचेयर"
+        "en": "2-seat sofa",
+        "ru": "Двухместный диван",
+        "zh": "2 座沙发",
+        "de": "2-Sitzer-Sofa",
+        "fr": "Canapé 2 places",
+        "hi": "2 सीट वाला सोफ़ा",
+        "ar": "أريكة بمقعدين"
       },
       "unit": "item",
-      "price": 99,
+      "price": 239,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "",
-        "ru": "",
-        "ar": "",
-        "fr": "",
-        "de": "",
-        "zh": "",
-        "hi": ""
+        "en": ""
       },
       "sort": 2
+    },
+    {
+      "service_slug": "sofa-cleaning",
+      "key": "sofa_3",
+      "name": {
+        "en": "3-seat sofa",
+        "ru": "Трёхместный диван",
+        "zh": "3 座沙发",
+        "de": "3-Sitzer-Sofa",
+        "fr": "Canapé 3 places",
+        "hi": "3 सीट वाला सोफ़ा",
+        "ar": "أريكة بثلاثة مقاعد"
+      },
+      "unit": "item",
+      "price": 349,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 3
+    },
+    {
+      "service_slug": "sofa-cleaning",
+      "key": "sofa_4",
+      "name": {
+        "en": "4-seat sofa",
+        "ru": "Четырёхместный диван",
+        "zh": "4 座沙发",
+        "de": "4-Sitzer-Sofa",
+        "fr": "Canapé 4 places",
+        "hi": "4 सीट वाला सोफ़ा",
+        "ar": "أريكة بأربعة مقاعد"
+      },
+      "unit": "item",
+      "price": 459,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 4
+    },
+    {
+      "service_slug": "sofa-cleaning",
+      "key": "sofa_extra_seat",
+      "name": {
+        "en": "Each extra standard seat",
+        "ru": "Каждое дополнительное место",
+        "zh": "每增加一个标准座位",
+        "de": "Jeder weitere Standard-Sitzplatz",
+        "fr": "Chaque place standard supplémentaire",
+        "hi": "हर अतिरिक्त स्टैंडर्ड सीट",
+        "ar": "كل مقعد قياسي إضافي"
+      },
+      "unit": "seat",
+      "price": 110,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 5,
+      "addon": true
     },
     {
       "service_slug": "mattress-cleaning",
       "key": "mattress_single",
       "name": {
-        "en": "Mattress, single",
-        "ru": "Матрас single",
-        "ar": "مرتبة مفردة (Single)",
-        "fr": "Matelas, une place",
-        "de": "Matratze, Einzelbett",
-        "zh": "床垫，单人",
-        "hi": "गद्दा, सिंगल"
+        "en": "Single mattress",
+        "ru": "Матрас Single",
+        "zh": "Single 床垫",
+        "de": "Matratze Single",
+        "fr": "Matelas Single",
+        "hi": "Single साइज़ गद्दा",
+        "ar": "مرتبة مقاس Single"
       },
       "unit": "item",
-      "price": 199,
+      "price": 229,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "",
-        "ru": "",
-        "ar": "",
-        "fr": "",
-        "de": "",
-        "zh": "",
-        "hi": ""
+        "en": ""
       },
       "sort": 1
     },
@@ -777,109 +823,379 @@
       "service_slug": "mattress-cleaning",
       "key": "mattress_double",
       "name": {
-        "en": "Mattress, double / queen",
-        "ru": "Матрас double / queen",
-        "ar": "مرتبة مزدوجة (Double / Queen)",
-        "fr": "Matelas, deux places / queen",
-        "de": "Matratze, Doppelbett / Queen-Size",
-        "zh": "床垫，双人 / Queen",
-        "hi": "गद्दा, डबल / क्वीन"
+        "en": "Double mattress",
+        "ru": "Матрас Double",
+        "zh": "Double 床垫",
+        "de": "Matratze Double",
+        "fr": "Matelas Double",
+        "hi": "Double साइज़ गद्दा",
+        "ar": "مرتبة مقاس Double"
       },
       "unit": "item",
-      "price": 249,
+      "price": 259,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "",
-        "ru": "",
-        "ar": "",
-        "fr": "",
-        "de": "",
-        "zh": "",
-        "hi": ""
+        "en": ""
       },
       "sort": 2
     },
     {
       "service_slug": "mattress-cleaning",
-      "key": "mattress_king",
+      "key": "mattress_queen",
       "name": {
-        "en": "Mattress, king",
-        "ru": "Матрас king",
-        "ar": "مرتبة كينغ (King)",
-        "fr": "Matelas, king size",
-        "de": "Matratze, King-Size",
-        "zh": "床垫，King",
-        "hi": "गद्दा, किंग"
+        "en": "Queen mattress",
+        "ru": "Матрас Queen",
+        "zh": "Queen 床垫",
+        "de": "Matratze Queen",
+        "fr": "Matelas Queen",
+        "hi": "Queen साइज़ गद्दा",
+        "ar": "مرتبة مقاس Queen"
       },
       "unit": "item",
-      "price": 299,
+      "price": 279,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "",
-        "ru": "",
-        "ar": "",
-        "fr": "",
-        "de": "",
-        "zh": "",
-        "hi": ""
+        "en": ""
       },
       "sort": 3
     },
     {
-      "service_slug": "carpet-cleaning",
-      "key": "carpet_sqm",
+      "service_slug": "mattress-cleaning",
+      "key": "mattress_king",
       "name": {
-        "en": "Carpet, per m²",
-        "ru": "Ковёр, за м²",
-        "ar": "سجاد، للمتر المربع",
-        "fr": "Tapis, par m²",
-        "de": "Teppich, pro m²",
-        "zh": "地毯，每平方米",
-        "hi": "कालीन, प्रति वर्ग मीटर"
+        "en": "King mattress",
+        "ru": "Матрас King",
+        "zh": "King 床垫",
+        "de": "Matratze King",
+        "fr": "Matelas King",
+        "hi": "King साइज़ गद्दा",
+        "ar": "مرتبة مقاس King"
       },
-      "unit": "sqm",
-      "price": 25,
-      "min_qty": 6,
+      "unit": "item",
+      "price": 329,
+      "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "Minimum AED 150",
-        "ru": "Минимум 150 AED",
-        "ar": "الحد الأدنى 150 درهمًا",
-        "fr": "Minimum 150 AED",
-        "de": "Mindestens 150 AED",
-        "zh": "最低消费 AED 150",
-        "hi": "न्यूनतम AED 150"
+        "en": ""
       },
-      "sort": 1
+      "sort": 4
     },
     {
-      "service_slug": "stain-odour-removal",
-      "key": "stain_item",
+      "service_slug": "mattress-cleaning",
+      "key": "mattress_super_king",
       "name": {
-        "en": "Stain & odour treatment, per item",
-        "ru": "Пятна и запах, за предмет",
-        "ar": "معالجة البقع والروائح، للقطعة",
-        "fr": "Traitement taches et odeurs, par pièce",
-        "de": "Flecken- & Geruchsbehandlung, pro Stück",
-        "zh": "污渍与异味处理，每件",
-        "hi": "दाग़ और बदबू ट्रीटमेंट, प्रति आइटम"
+        "en": "Super King mattress",
+        "ru": "Матрас Super King",
+        "zh": "Super King 床垫",
+        "de": "Matratze Super King",
+        "fr": "Matelas Super King",
+        "hi": "Super King साइज़ गद्दा",
+        "ar": "مرتبة مقاس Super King"
+      },
+      "unit": "item",
+      "price": 369,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 5
+    },
+    {
+      "service_slug": "mattress-cleaning",
+      "key": "mattress_second_side",
+      "name": {
+        "en": "Second sleeping surface",
+        "ru": "Вторая спальная поверхность",
+        "zh": "床垫第二个睡眠面",
+        "de": "Zweite Liegefläche",
+        "fr": "Seconde face de couchage",
+        "hi": "गद्दे की दूसरी सोने वाली सतह",
+        "ar": "سطح النوم الثاني للمرتبة"
       },
       "unit": "item",
       "price": 79,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
-        "en": "Add-on to any upholstery service",
-        "ru": "Дополнение к любой химчистке",
-        "ar": "تُضاف إلى أي خدمة تنظيف مفروشات",
-        "fr": "En complément de tout nettoyage de canapé, matelas ou tapis",
-        "de": "Ergänzung zu jeder Polsterreinigung",
-        "zh": "可加购于任何软装清洁服务",
-        "hi": "किसी भी सोफ़ा-गद्दे की सेवा के साथ ऐड-ऑन"
+        "en": "Where suitable and accessible",
+        "ru": "Если материал и доступ позволяют",
+        "zh": "在适合清洁且可触及的情况下",
+        "de": "Sofern geeignet und zugänglich",
+        "fr": "Si la face s’y prête et qu’elle est accessible",
+        "hi": "जहाँ उपयुक्त और पहुँच योग्य हो",
+        "ar": "إذا كان مناسبًا وأمكن الوصول إليه"
+      },
+      "sort": 6,
+      "addon": true
+    },
+    {
+      "service_slug": "carpet-cleaning",
+      "key": "rug_small",
+      "name": {
+        "en": "Rug up to 3 m²",
+        "ru": "Ковёр до 3 м²",
+        "zh": "块毯，不超过 3 平方米",
+        "de": "Teppich bis 3 m²",
+        "fr": "Tapis jusqu’à 3 m²",
+        "hi": "3 वर्ग मीटर तक का रग",
+        "ar": "سجادة حتى 3 م²"
+      },
+      "unit": "item",
+      "price": 159,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
       },
       "sort": 1
+    },
+    {
+      "service_slug": "carpet-cleaning",
+      "key": "rug_medium",
+      "name": {
+        "en": "Rug over 3 to 6 m²",
+        "ru": "Ковёр свыше 3 до 6 м²",
+        "zh": "块毯，超过 3 至 6 平方米",
+        "de": "Teppich über 3 bis 6 m²",
+        "fr": "Tapis de plus de 3 et jusqu’à 6 m²",
+        "hi": "3 से ज़्यादा और 6 वर्ग मीटर तक का रग",
+        "ar": "سجادة أكبر من 3 وحتى 6 م²"
+      },
+      "unit": "item",
+      "price": 219,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 2
+    },
+    {
+      "service_slug": "carpet-cleaning",
+      "key": "rug_large",
+      "name": {
+        "en": "Rug over 6 to 10 m²",
+        "ru": "Ковёр свыше 6 до 10 м²",
+        "zh": "块毯，超过 6 至 10 平方米",
+        "de": "Teppich über 6 bis 10 m²",
+        "fr": "Tapis de plus de 6 et jusqu’à 10 m²",
+        "hi": "6 से ज़्यादा और 10 वर्ग मीटर तक का रग",
+        "ar": "سجادة أكبر من 6 وحتى 10 م²"
+      },
+      "unit": "item",
+      "price": 299,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 3
+    },
+    {
+      "service_slug": "carpet-cleaning",
+      "key": "rug_xl",
+      "name": {
+        "en": "Rug over 10 m²",
+        "ru": "Ковёр свыше 10 м²",
+        "zh": "块毯，超过 10 平方米",
+        "de": "Teppich über 10 m²",
+        "fr": "Tapis de plus de 10 m²",
+        "hi": "10 वर्ग मीटर से ज़्यादा का रग",
+        "ar": "سجادة أكبر من 10 م²"
+      },
+      "unit": "item",
+      "price": 0,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 4,
+      "on_request": true
+    },
+    {
+      "service_slug": "carpet-cleaning",
+      "key": "carpet_sqm",
+      "name": {
+        "en": "Fitted carpet",
+        "ru": "Ковролин",
+        "zh": "满铺地毯",
+        "de": "Teppichboden",
+        "fr": "Moquette",
+        "hi": "वॉल-टू-वॉल कालीन",
+        "ar": "موكيت"
+      },
+      "unit": "sqm",
+      "price": 29,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 5
+    },
+    {
+      "service_slug": "curtain-cleaning",
+      "key": "curtain_sqm",
+      "name": {
+        "en": "On-site curtain cleaning",
+        "ru": "Чистка штор на дому",
+        "zh": "窗帘上门清洁",
+        "de": "Vorhangreinigung vor Ort",
+        "fr": "Nettoyage de rideaux sur place",
+        "hi": "पर्दों की ऑन-साइट सफ़ाई",
+        "ar": "تنظيف الستائر في مكانها"
+      },
+      "unit": "sqm",
+      "price": 15,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Per m² of fabric",
+        "ru": "За м² ткани",
+        "zh": "每平方米面料",
+        "de": "Pro m² Stoff",
+        "fr": "Par m² de tissu",
+        "hi": "कपड़े के प्रति वर्ग मीटर",
+        "ar": "لكل متر مربع من القماش"
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "upholstery-extras",
+      "key": "chair_dining",
+      "name": {
+        "en": "Fabric dining chair",
+        "ru": "Обеденный стул с тканевой обивкой",
+        "zh": "布艺餐椅",
+        "de": "Esszimmerstuhl mit Stoffbezug",
+        "fr": "Chaise de salle à manger en tissu",
+        "hi": "फ़ैब्रिक डाइनिंग चेयर",
+        "ar": "كرسي طعام قماشي"
+      },
+      "unit": "item",
+      "price": 59,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 1
+    },
+    {
+      "service_slug": "upholstery-extras",
+      "key": "chair_office",
+      "name": {
+        "en": "Fabric office chair",
+        "ru": "Офисное кресло с тканевой обивкой",
+        "zh": "布艺办公椅",
+        "de": "Bürostuhl mit Stoffbezug",
+        "fr": "Chaise de bureau en tissu",
+        "hi": "फ़ैब्रिक ऑफ़िस चेयर",
+        "ar": "كرسي مكتب قماشي"
+      },
+      "unit": "item",
+      "price": 79,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 2
+    },
+    {
+      "service_slug": "upholstery-extras",
+      "key": "footstool",
+      "name": {
+        "en": "Footstool or ottoman",
+        "ru": "Пуф или банкетка",
+        "zh": "脚凳或沙发凳",
+        "de": "Fußhocker oder Polsterhocker",
+        "fr": "Repose-pieds ou pouf",
+        "hi": "फ़ुटस्टूल या ऑटोमन",
+        "ar": "مسند قدمين أو أوتومان"
+      },
+      "unit": "item",
+      "price": 89,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 3
+    },
+    {
+      "service_slug": "upholstery-extras",
+      "key": "headboard",
+      "name": {
+        "en": "Upholstered headboard",
+        "ru": "Мягкое изголовье кровати",
+        "zh": "软包床头板",
+        "de": "Gepolstertes Bettkopfteil",
+        "fr": "Tête de lit rembourrée",
+        "hi": "गद्देदार हेडबोर्ड",
+        "ar": "لوح رأس سرير منجّد"
+      },
+      "unit": "item",
+      "price": 149,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 4
+    },
+    {
+      "service_slug": "upholstery-extras",
+      "key": "bed_frame",
+      "name": {
+        "en": "Upholstered bed frame",
+        "ru": "Мягкий каркас кровати",
+        "zh": "软包床架",
+        "de": "Gepolstertes Bettgestell",
+        "fr": "Cadre de lit rembourré",
+        "hi": "गद्देदार बेड फ़्रेम",
+        "ar": "هيكل سرير منجّد"
+      },
+      "unit": "item",
+      "price": 0,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 5,
+      "on_request": true
+    },
+    {
+      "service_slug": "upholstery-extras",
+      "key": "stain_treatment",
+      "name": {
+        "en": "Specialist stain or odour treatment",
+        "ru": "Специальная обработка пятен или запаха",
+        "zh": "污渍或异味专项处理",
+        "de": "Spezielle Flecken- oder Geruchsbehandlung",
+        "fr": "Traitement spécialisé des taches ou des odeurs",
+        "hi": "दाग़ या बदबू का विशेष ट्रीटमेंट",
+        "ar": "معالجة متخصصة للبقع أو الروائح"
+      },
+      "unit": "from",
+      "price": 79,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": "Per item",
+        "ru": "За предмет",
+        "zh": "每件",
+        "de": "Pro Stück",
+        "fr": "Par pièce",
+        "hi": "प्रति आइटम",
+        "ar": "للقطعة"
+      },
+      "sort": 6
     }
   ],
   "packages": [
@@ -900,7 +1216,7 @@
       },
       "description": {
         "en": "Standard service for 3 split ACs + one 3-seat fabric sofa.",
-        "ru": "Стандартное обслуживание 3 сплит-систем + химчистка одного 3-местного тканевого дивана.",
+        "ru": "Стандартное обслуживание 3 сплит-систем + чистка одного трёхместного тканевого дивана.",
         "ar": "خدمة قياسية لـ 3 مكيفات سبليت + تنظيف أريكة قماشية واحدة بثلاثة مقاعد.",
         "fr": "Entretien standard de 3 climatiseurs split + nettoyage d’un canapé 3 places en tissu.",
         "de": "Standardreinigung & Wartung von 3 Split-Geräten + Reinigung eines 3-Sitzer-Stoffsofas.",
@@ -908,10 +1224,106 @@
         "hi": "3 स्प्लिट एसी की स्टैंडर्ड सर्विस + 3 सीट वाले एक फ़ैब्रिक सोफ़े की सफ़ाई।"
       },
       "price": 1099,
-      "compare_price": 1104,
+      "compare_price": 1186,
       "includes": {
         "ac_clean": 3,
-        "sofa_seat": 3
+        "sofa_3": 1
+      }
+    },
+    {
+      "type": "bundle",
+      "slug": "sofa-and-mattress",
+      "sort": 2,
+      "highlighted": false,
+      "published": true,
+      "name": {
+        "en": "Sofa and Mattress",
+        "ar": "Sofa and Mattress",
+        "ru": "Sofa and Mattress",
+        "fr": "Sofa and Mattress",
+        "de": "Sofa and Mattress",
+        "zh": "Sofa and Mattress",
+        "hi": "Sofa and Mattress"
+      },
+      "description": {
+        "en": "3-seat fabric sofa + King mattress.",
+        "ru": "Трёхместный тканевый диван + матрас King.",
+        "zh": "3 座布艺沙发 + King 床垫。",
+        "de": "3-Sitzer-Stoffsofa + Matratze King.",
+        "fr": "Canapé 3 places en tissu + matelas King.",
+        "hi": "3 सीट वाला फ़ैब्रिक सोफ़ा + King साइज़ गद्दा।",
+        "ar": "أريكة قماشية بثلاثة مقاعد + مرتبة مقاس King."
+      },
+      "price": 599,
+      "compare_price": 678,
+      "includes": {
+        "sofa_3": 1,
+        "mattress_king": 1
+      }
+    },
+    {
+      "type": "bundle",
+      "slug": "furniture-refresh",
+      "sort": 3,
+      "highlighted": false,
+      "published": true,
+      "name": {
+        "en": "Furniture Refresh",
+        "ar": "Furniture Refresh",
+        "ru": "Furniture Refresh",
+        "fr": "Furniture Refresh",
+        "de": "Furniture Refresh",
+        "zh": "Furniture Refresh",
+        "hi": "Furniture Refresh"
+      },
+      "description": {
+        "en": "3-seat sofa + King mattress + rug up to 3 m².",
+        "ru": "Трёхместный диван + матрас King + ковёр до 3 м².",
+        "zh": "3 座沙发 + King 床垫 + 不超过 3 平方米的块毯。",
+        "de": "3-Sitzer-Sofa + Matratze King + Teppich bis 3 m².",
+        "fr": "Canapé 3 places + matelas King + tapis jusqu’à 3 m².",
+        "hi": "3 सीट वाला सोफ़ा + King साइज़ गद्दा + 3 वर्ग मीटर तक का रग।",
+        "ar": "أريكة بثلاثة مقاعد + مرتبة مقاس King + سجادة حتى 3 م²."
+      },
+      "price": 749,
+      "compare_price": 837,
+      "includes": {
+        "sofa_3": 1,
+        "mattress_king": 1,
+        "rug_small": 1
+      }
+    },
+    {
+      "type": "bundle",
+      "slug": "full-home",
+      "sort": 4,
+      "highlighted": false,
+      "published": true,
+      "name": {
+        "en": "Full Home",
+        "ar": "Full Home",
+        "ru": "Full Home",
+        "fr": "Full Home",
+        "de": "Full Home",
+        "zh": "Full Home",
+        "hi": "Full Home"
+      },
+      "description": {
+        "en": "Full-system cleaning for 1 ducted AC + 3-seat sofa + King mattress + rug up to 3 m².",
+        "ru": "Комплексная чистка 1 канального блока кондиционера + трёхместный диван + матрас King + ковёр до 3 м².",
+        "zh": "空调系统全面清洗（1 台风管式中央空调）+ 3 座沙发 + King 床垫 + 不超过 3 平方米的块毯。",
+        "de": "Komplettreinigung der Klimaanlage für 1 Kanalgerät + 3-Sitzer-Sofa + Matratze King + Teppich bis 3 m².",
+        "fr": "Nettoyage complet du système de climatisation pour 1 climatiseur gainable + canapé 3 places + matelas King + tapis jusqu’à 3 m².",
+        "hi": "1 डक्टेड एसी के लिए पूरे एसी सिस्टम की सफ़ाई + 3 सीट वाला सोफ़ा + King साइज़ गद्दा + 3 वर्ग मीटर तक का रग।",
+        "ar": "التنظيف الشامل لنظام التكييف لمكيف دكت واحد + أريكة بثلاثة مقاعد + مرتبة مقاس King + سجادة حتى 3 م²."
+      },
+      "price": 1599,
+      "compare_price": 1736,
+      "includes": {
+        "full_system": 1,
+        "sofa_3": 1,
+        "mattress_king": 1,
+        "rug_small": 1
       }
     },
     {
@@ -930,7 +1342,7 @@
         "hi": "Essential"
       },
       "description": {
-        "en": "2 standard-service visits a year for 3 split units. Priority scheduling and 10% off repair labour.",
+        "en": "2 standard-service visits a year for 3 split units. Priority booking and 10% off repair labour.",
         "ru": "2 стандартных визита в год на 3 сплит-системы. Приоритетная запись и −10% на работы по ремонту.",
         "ar": "زيارتان للخدمة القياسية في السنة لـ 3 وحدات سبليت. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
         "fr": "2 visites de nettoyage standard par an pour 3 unités split. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
@@ -964,7 +1376,7 @@
         "hi": "Comfort"
       },
       "description": {
-        "en": "2 visits a year for 5 split units. One selected unit receives a deep clean during one visit, replacing its standard clean. Priority scheduling and 10% off repair labour.",
+        "en": "2 visits a year for 5 split units. One selected unit receives a deep clean during one visit, replacing its standard clean. Priority booking and 10% off repair labour.",
         "ru": "2 визита в год на 5 сплит-систем. Один выбранный блок за один из визитов получает глубокую чистку вместо стандартной. Приоритетная запись и −10% на работы по ремонту.",
         "ar": "زيارتان في السنة لـ 5 وحدات سبليت. تحصل وحدة واحدة مختارة على تنظيف عميق خلال إحدى الزيارتين بدلًا من تنظيفها القياسي. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
         "fr": "2 visites par an pour 5 unités split. Lors de l’une des visites, une unité choisie reçoit un nettoyage en profondeur à la place de son nettoyage standard. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
@@ -1049,7 +1461,18 @@
         "sofa-cleaning",
         "mattress-cleaning",
         "carpet-cleaning",
-        "stain-odour-removal"
+        "curtain-cleaning",
+        "upholstery-extras"
+      ]
+    },
+    "minimum_order": {
+      "amount": 229,
+      "service_slugs": [
+        "sofa-cleaning",
+        "mattress-cleaning",
+        "carpet-cleaning",
+        "curtain-cleaning",
+        "upholstery-extras"
       ]
     }
   }

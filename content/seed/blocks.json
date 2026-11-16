@@ -504,10 +504,10 @@
           "Any additional access work or specialist dismantling is quoted before booking."
         ],
         "ru": [
-          "Цены включают выезд и НДС, где он применяется.",
-          "Ставки за количество действуют на одну и ту же услугу по одному адресу за один визит.",
-          "Цены рассчитаны на стандартное бытовое оборудование и обычный доступ к нему.",
-          "Дополнительные работы по доступу и специальную разборку оцениваем до бронирования."
+          "Цены включают выезд и НДС (VAT), если он применяется.",
+          "Тарифы для нескольких блоков действуют при заказе одной и той же услуги по одному адресу за один визит.",
+          "Цены рассчитаны для стандартного оборудования жилых помещений с подходящим доступом.",
+          "Дополнительные работы для доступа к оборудованию и сложную разборку оцениваем до бронирования."
         ],
         "ar": [
           "الأسعار تشمل رسوم الزيارة وضريبة القيمة المضافة حيثما تنطبق.",
@@ -538,6 +538,54 @@
           "Les tarifs dégressifs s’appliquent à un même service, à une même adresse, lors d’une même visite.",
           "Les tarifs s’entendent pour des équipements résidentiels standard et un accès existant adapté.",
           "Les travaux d’accès supplémentaires et tout démontage spécialisé font l’objet d’un devis avant la réservation."
+        ]
+      }
+    },
+    {
+      "key": "pricing.before_you_book",
+      "kind": "json",
+      "value": {
+        "en": [
+          "Minimum order AED 229 per address and visit. Combine items to reach the minimum.",
+          "Leather, delicate fabrics, handmade rugs and oversized items require a separate quote.",
+          "Stain and odour removal depends on the fabric and condition; complete removal is not guaranteed.",
+          "Drying time varies. We confirm any additional work and charges before booking."
+        ],
+        "ru": [
+          "Минимум 229 AED за один визит по одному адресу. Можно объединить несколько предметов.",
+          "Кожу, деликатные ткани, ковры ручной работы и крупные нестандартные предметы оцениваем отдельно.",
+          "Результат зависит от материала и состояния. Полное удаление пятен и запахов не гарантируется.",
+          "Время высыхания может различаться. Дополнительные работы и доплаты согласуем до бронирования."
+        ],
+        "zh": [
+          "每个地址每次上门最低消费 AED 229。可组合多个项目以达到最低消费。",
+          "皮革、娇贵面料、手工块毯和超大件物品需另行报价。",
+          "污渍和异味的去除效果取决于面料和状况；不保证完全去除。",
+          "晾干时间因情况而异。任何额外工作和费用，我们都会在预约前与您确认。"
+        ],
+        "de": [
+          "Mindestbestellwert 229 AED pro Adresse und Besuch. Kombinieren Sie mehrere Positionen, um den Mindestbestellwert zu erreichen.",
+          "Für Leder, empfindliche Stoffe, handgefertigte Teppiche und übergroße Stücke ist ein separates Angebot erforderlich.",
+          "Die Flecken- und Geruchsentfernung hängt von Stoff und Zustand ab; eine vollständige Entfernung ist nicht garantiert.",
+          "Die Trocknungszeit variiert. Etwaige zusätzliche Arbeiten und Kosten bestätigen wir vor der Buchung."
+        ],
+        "fr": [
+          "Commande minimale de 229 AED par adresse et par visite. Combinez plusieurs éléments pour atteindre le minimum.",
+          "Le cuir, les tissus délicats, les tapis faits main et les éléments de très grande taille font l’objet d’un devis séparé.",
+          "L’élimination des taches et des odeurs dépend du tissu et de son état ; leur disparition complète n’est pas garantie.",
+          "Le temps de séchage varie. Nous confirmons les éventuels travaux et frais supplémentaires avant la réservation."
+        ],
+        "hi": [
+          "न्यूनतम ऑर्डर AED 229, प्रति पता और प्रति विज़िट। न्यूनतम राशि पूरी करने के लिए अलग-अलग आइटम मिलाकर बुक करें।",
+          "लेदर, नाज़ुक कपड़ों, हाथ से बने रग और बहुत बड़े आइटम के लिए अलग कोटेशन ज़रूरी है।",
+          "दाग़ और बदबू का हटना कपड़े और उसकी हालत पर निर्भर करता है; इनके पूरी तरह हटने की गारंटी नहीं है।",
+          "सूखने में लगने वाला समय अलग-अलग होता है। किसी भी अतिरिक्त काम और शुल्क की पुष्टि हम बुकिंग से पहले करते हैं।"
+        ],
+        "ar": [
+          "الحد الأدنى للطلب 229 درهمًا لكل عنوان وزيارة. يمكن الجمع بين عدة قطع لبلوغ الحد الأدنى.",
+          "الجلد والأقمشة الحساسة والسجاد اليدوي الصنع والقطع الأكبر من الحجم القياسي تتطلب عرض سعر منفصلًا.",
+          "تعتمد إزالة البقع والروائح على القماش وحالته؛ والإزالة الكاملة غير مضمونة.",
+          "تتفاوت مدة الجفاف. نؤكد أي أعمال ورسوم إضافية قبل الحجز."
         ]
       }
     },

@@ -23,6 +23,8 @@ export type PriceLine = {
   name: I18nText;
   note: I18nText;
   sort: number;
+  /** An extra on top of another line: it never sets the service's "from" price. */
+  addon: boolean;
 };
 
 export type BundleOffer = {
@@ -45,6 +47,8 @@ export type PricingRules = {
   suggestBundleWhenCheaper: boolean;
   /** A fixed discount on a first booking of the listed (cleaning) services, from a minimum total. */
   firstBookingOffer: { discount: number; minTotal: number; serviceSlugs: string[] } | null;
+  /** Minimum order when only the listed services are booked (upholstery, rugs, curtains). */
+  minimumOrder: { amount: number; serviceSlugs: string[] } | null;
 };
 
 export type PricingConfig = { lines: PriceLine[]; bundles: BundleOffer[]; rules: PricingRules };
@@ -83,6 +87,8 @@ export type Quote = {
    * bundle; `applied`: eligible and the customer said it is their first booking.
    */
   offer: { discount: number; minTotal: number; eligible: boolean; applied: boolean } | null;
+  /** Set when the minimum order raised the total: `topUp` is what was added to reach `amount`. */
+  minimum: { amount: number; topUp: number } | null;
   vat: { mode: 'none' | 'included' | 'added'; amount: number; totalWithVat: number };
 };
 
@@ -109,6 +115,8 @@ export function buildPricingConfig(
 ): PricingConfig {
   const groups = new Map<string, PriceItem[]>();
   for (const item of items) {
+    // Rows quoted individually are for the price tables only.
+    if (item.on_request) continue;
     const id = item.tier_group ?? item.key;
     groups.set(id, [...(groups.get(id) ?? []), item]);
   }
@@ -136,6 +144,7 @@ export function buildPricingConfig(
       name: base.name,
       note: base.note,
       sort: base.sort,
+      addon: base.addon ?? false,
     });
   }
   lines.sort((a, b) => a.sort - b.sort);
@@ -178,6 +187,9 @@ export function buildPricingConfig(
             serviceSlugs: rules.first_booking_offer.service_slugs,
           }
         : null,
+      minimumOrder: rules.minimum_order
+        ? { amount: rules.minimum_order.amount, serviceSlugs: rules.minimum_order.service_slugs }
+        : null,
       suggestBundleWhenCheaper: rules.suggest_bundle_when_cheaper,
     },
   };
@@ -216,7 +228,7 @@ export function priceFrom(
   cfg: PricingConfig,
   slug: string,
 ): { amount: number; unit: PriceUnit; exact: boolean } | null {
-  const lines = linesForService(cfg, slug);
+  const lines = linesForService(cfg, slug).filter((l) => !l.addon);
   let best: { amount: number; unit: PriceUnit } | null = null;
   for (const line of lines) {
     for (const tier of line.tiers) {
@@ -417,6 +429,19 @@ export function quote(
     }
   }
 
+  // Minimum order: a visit for upholstery, rugs or curtains alone is billed at least this much.
+  const floorRule = cfg.rules.minimumOrder;
+  let minimum: Quote['minimum'] = null;
+  if (
+    floorRule &&
+    lines.length > 0 &&
+    lines.every((l) => floorRule.serviceSlugs.includes(l.serviceSlug)) &&
+    total < floorRule.amount
+  ) {
+    minimum = { amount: floorRule.amount, topUp: round(cfg, floorRule.amount - total) };
+    total = floorRule.amount;
+  }
+
   total = round(cfg, total);
   const roundedSubtotal = round(cfg, subtotal);
   const rate = cfg.rules.vatRate;
@@ -436,10 +461,11 @@ export function quote(
     bundle,
     subtotal: roundedSubtotal,
     total,
-    savings: roundedSubtotal - total,
+    savings: Math.max(0, roundedSubtotal - total),
     estimate:
       fromLines.length > 0 ? { fromLines, credited: cfg.rules.diagnosticsCreditedToRepair } : null,
     offer,
+    minimum,
     vat: vatOut,
   };
 }
@@ -464,6 +490,8 @@ export function suggestBundle(
   const before = quote(cfg, selection, noVat);
   if (before.bundle) return null;
 
+  // With several bundles the one that costs least to complete is the natural next step.
+  let best: BundleSuggestion | null = null;
   for (const offer of cfg.bundles) {
     const overlaps = Object.keys(offer.includes).some((id) => (selection[id] ?? 0) > 0);
     if (!overlaps) continue;
@@ -476,9 +504,10 @@ export function suggestBundle(
     const merged: Selection = { ...selection };
     for (const [id, qty] of Object.entries(add)) merged[id] = (merged[id] ?? 0) + qty;
     const after = quote(cfg, merged, noVat);
-    if (after.bundle?.slug === offer.slug && after.savings > 0) {
-      return { slug: offer.slug, add, addCost: after.total - before.total, savings: after.savings };
-    }
+    if (after.bundle?.slug !== offer.slug || after.savings <= 0) continue;
+    const addCost = after.total - before.total;
+    if (!best || addCost < best.addCost)
+      best = { slug: offer.slug, add, addCost, savings: after.savings };
   }
-  return null;
+  return best;
 }
