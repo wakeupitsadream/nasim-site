@@ -26,7 +26,7 @@ const PAGES = [
   '/ar/services',
   '/en/services/ac-cleaning',
   '/ar/services/ac-cleaning',
-  '/en/services/emergency-ac-repair',
+  '/en/services/full-ac-system-cleaning',
   '/ar/services/humidity-mould-check',
   '/en/pricing',
   '/ar/pricing',

@@ -78,15 +78,18 @@ describe('POST /api/diagnose', () => {
     });
     const catalogue = diagnose.mock.calls[0]?.[2] as { slug: string }[];
     expect(catalogue.map((c) => c.slug)).toContain('humidity-mould-check');
-    // Preventive maintenance is hidden until the owner prices it: 24 of 25 are offered.
-    expect(catalogue.length).toBe(24);
+    // Hidden services are never offered to the model: the eleven "other" AC services
+    // (DECISIONS №79) and preventive maintenance. 13 of 25 remain.
+    expect(catalogue.length).toBe(13);
+    expect(catalogue.map((c) => c.slug)).not.toContain('ac-repair');
   });
 
-  it('marks estimate-priced and coming-soon services', async () => {
+  it('never links to a hidden service, and marks coming-soon ones', async () => {
+    // A slug the model was not offered (repairs are off the site) yields no service card.
     diagnose.mockResolvedValueOnce({ ...diagnosis, service: 'ac-repair' });
     expect(
-      (await (await post({ locale: 'en', text: 'does not start' })).json()).service.estimate,
-    ).toBe(true);
+      (await (await post({ locale: 'en', text: 'does not start' })).json()).service,
+    ).toBeNull();
     diagnose.mockResolvedValueOnce({ ...diagnosis, service: 'humidity-mould-check' });
     const soon = (await (await post({ locale: 'en', text: 'mould in wardrobe' })).json()).service;
     expect(soon.comingSoon).toBe(true);

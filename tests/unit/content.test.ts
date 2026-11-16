@@ -91,6 +91,9 @@ describe('seed files', () => {
       'full-ac-system-cleaning',
     ]);
     expect(groups('other')).toHaveLength(12);
+    // The owner took the whole "other" section off the site on 17.11.2026 (DECISIONS №79): the
+    // records and prices stay, every one of them is hidden. Bringing one back is its status.
+    expect(seedServices().filter((s) => s.group === 'other' && s.status !== 'hidden')).toEqual([]);
     expect(seedServices().filter((s) => s.category === 'ac' && !s.group)).toEqual([]);
   });
 

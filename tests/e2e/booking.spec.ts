@@ -31,7 +31,10 @@ test.describe('booking request wizard', () => {
     // quantity before it is chosen.
     const servicing = book.getByRole('group', { name: msg('en', 'Services.group.service') });
     const cleaning = book.getByRole('group', { name: msg('en', 'Services.group.cleaning') });
-    const other = book.getByRole('group', { name: msg('en', 'Services.group.other') });
+    // The third section (repairs, diagnostics, one-off jobs) is off the site (DECISIONS №79).
+    await expect(book.getByRole('group', { name: msg('en', 'Services.group.other') })).toHaveCount(
+      0,
+    );
     await expect(servicing.getByRole('radio')).toHaveCount(2);
     await expect(cleaning.getByRole('radio')).toHaveCount(4);
     await expect(book.getByText(msg('en', 'Booking.details.tiersHint'))).toHaveCount(1);
@@ -43,7 +46,6 @@ test.describe('booking request wizard', () => {
     await expect(option(cleaning, 'Split AC Deep Cleaning')).toContainText('AED 349');
     await expect(option(cleaning, 'Split AC Deep Cleaning')).not.toContainText('2+');
     await expect(option(cleaning, 'FCU Deep Coil & Blower Cleaning')).toContainText('2+: AED 549');
-    await expect(other.getByRole('radio', { name: /^AC Repairs/ })).toBeVisible();
 
     // The chosen card opens with what the service is…
     await expect(servicing.getByText(/^For wall-mounted ACs\./)).toBeVisible();
@@ -122,12 +124,6 @@ test.describe('booking request wizard', () => {
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
     await expect(option(book, msg('en', 'Booking.time.today'))).toHaveCount(0);
     await expect(option(book, msg('en', 'Booking.time.tomorrow'))).toBeVisible();
-
-    await page.goto('/en/services/emergency-ac-repair');
-    const emergency = page.locator('#book');
-    await emergency.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
-    await expect(option(emergency, msg('en', 'Booking.time.windows.asap'))).toBeVisible();
-    await expect(option(emergency, msg('en', 'Booking.time.today'))).toBeVisible();
   });
 
   test('service pages preselect their service', async ({ page }) => {
@@ -139,20 +135,9 @@ test.describe('booking request wizard', () => {
     await expect(book.getByRole('radio', { name: /^Split AC Deep Cleaning/ })).toBeChecked();
     await expect(book.getByText('AED 349').first()).toBeVisible();
 
-    await page.goto('/en/services/ac-repair');
-    const repair = page.locator('#book');
-    await expect(repair.getByText(msg('en', 'Booking.summary.diagnostics')).first()).toBeVisible();
-    await expect(repair.getByText(msg('en', 'Booking.summary.estimateNote'))).toBeVisible();
-    await expect(repair.getByText('AED 199').first()).toBeVisible();
-
-    // A job with nothing fixed up front totals "from …", never "AED 0".
-    await page.goto('/en/services/ac-water-leak-drain-repair');
-    const drain = page.locator('#book');
-    await expect(
-      drain.getByRole('radio', { name: /^AC Water Leak & Drain Repairs/ }),
-    ).toBeChecked();
-    await expect(drain.getByText('from AED 299').first()).toBeVisible();
-    await expect(drain.getByText('AED 0')).toHaveCount(0);
+    // Repairs and the other one-off AC jobs have no page while they are off the site.
+    for (const slug of ['ac-repair', 'emergency-ac-repair', 'ac-water-leak-drain-repair'])
+      expect((await page.request.get(`/en/services/${slug}`)).status()).toBe(404);
   });
 
   test('an empty upholstery selection cannot continue', async ({ page }) => {

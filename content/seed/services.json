@@ -746,7 +746,7 @@
       "slug": "ac-filter-grille-cleaning",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 70,
       "name": {
         "en": "Filter & Grille Cleaning",
@@ -788,7 +788,7 @@
       "slug": "ac-outdoor-unit-cleaning",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 80,
       "name": {
         "en": "Outdoor Unit Cleaning",
@@ -830,7 +830,7 @@
       "slug": "ac-inspection-diagnostics",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 105,
       "name": {
         "en": "AC Inspection & Diagnostics",
@@ -872,7 +872,7 @@
       "slug": "emergency-ac-repair",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 107,
       "name": {
         "en": "Urgent AC Call-out",
@@ -1044,7 +1044,7 @@
       "slug": "ac-water-leak-drain-repair",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 110,
       "name": {
         "en": "AC Water Leak & Drain Repairs",
@@ -1086,7 +1086,7 @@
       "slug": "ac-repair",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 115,
       "name": {
         "en": "AC Repairs",
@@ -1258,7 +1258,7 @@
       "slug": "thermostat-installation",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 120,
       "name": {
         "en": "Thermostat Installation & Replacement",
@@ -1300,7 +1300,7 @@
       "slug": "refrigerant-leak-detection",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 125,
       "name": {
         "en": "Refrigerant Leak Detection",
@@ -1435,7 +1435,7 @@
       "slug": "refrigerant-leak-repair",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 130,
       "name": {
         "en": "Refrigerant Leak Repair",
@@ -1490,7 +1490,7 @@
       "slug": "refrigerant-recharge",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 135,
       "name": {
         "en": "Refrigerant Recharge",
@@ -1552,7 +1552,7 @@
       "slug": "ac-sanitisation",
       "category": "ac",
       "group": "other",
-      "status": "active",
+      "status": "hidden",
       "sort": 137,
       "name": {
         "en": "Targeted AC Sanitisation",

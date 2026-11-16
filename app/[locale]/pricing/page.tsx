@@ -22,6 +22,7 @@ import {
 } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
+import { cn } from '@/lib/utils';
 import { formatAED } from '@/lib/i18n/format';
 import { pick, pickLocalizedValue } from '@/lib/i18n/text';
 import { stagger } from '@/lib/motion';
@@ -82,6 +83,9 @@ export default async function PricingPage() {
   const acGroups = (['service', 'cleaning', 'other'] as const)
     .map((key) => ({ key, services: ac.filter((s) => s.group === key) }))
     .filter((g) => g.services.length > 0);
+  // Repairs, diagnostics and urgent visits are the "other" group: with none of them on the site
+  // (DECISIONS №79) the lines about diagnostic fees say nothing true, so they go with it.
+  const hasRepairs = acGroups.some((g) => g.key === 'other');
   const detailList = pickLocalizedValue(details, locale);
   const beforeList = pickLocalizedValue(before, locale);
   const offer = pricing.rules.firstBookingOffer;
@@ -109,7 +113,7 @@ export default async function PricingPage() {
               as="h1"
               eyebrow={tNav('pricing')}
               title={tPages('pricing.title')}
-              lead={t('lead')}
+              lead={hasRepairs ? `${t('lead')} ${t('leadRepairs')}` : t('lead')}
               className="mb-8"
             />
             <ul className="flex flex-wrap gap-2">
@@ -185,8 +189,16 @@ export default async function PricingPage() {
             );
           })}
         </div>
-        <p className="mt-8 max-w-3xl text-small text-pretty text-muted-foreground">{t('acNote')}</p>
-        {vatNote ? <p className="mt-2 text-small text-muted-foreground">{vatNote}</p> : null}
+        {hasRepairs ? (
+          <p className="mt-8 max-w-3xl text-small text-pretty text-muted-foreground">
+            {t('acNote')}
+          </p>
+        ) : null}
+        {vatNote ? (
+          <p className={cn('text-small text-muted-foreground', hasRepairs ? 'mt-2' : 'mt-8')}>
+            {vatNote}
+          </p>
+        ) : null}
       </Section>
 
       <Section id="upholstery" tone="sand" aria-labelledby="upholstery-title">
