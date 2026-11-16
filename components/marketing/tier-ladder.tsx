@@ -22,7 +22,7 @@ export async function TierLadder({ line, locale, label, className }: Props) {
           <li
             key={range.from}
             className={cn(
-              'reveal flex min-w-28 flex-1 flex-col gap-1 rounded-card border border-border p-4 transition-[border-color,box-shadow] duration-(--nasim-dur) ease-brand hover:border-line-strong hover:shadow-card',
+              'reveal flex min-w-36 flex-1 flex-col gap-1 rounded-card border border-border p-4 transition-[border-color,box-shadow] duration-(--nasim-dur) ease-brand hover:border-line-strong hover:shadow-card',
               i === ranges.length - 1 ? 'bg-mist' : 'bg-card',
             )}
             style={stagger(i)}

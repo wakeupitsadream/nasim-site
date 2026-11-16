@@ -213,3 +213,29 @@ for (const [path, home] of [
     }
   });
 }
+
+// A page never scrolls sideways on a phone (DECISIONS №76). The pages that did: a long word in a
+// display heading (ru, de), a long button label (fr, de), the header row at 360px.
+test.describe('no horizontal scroll on a 360px phone', () => {
+  for (const path of [
+    '/en',
+    '/ru/services/full-ac-system-cleaning',
+    '/ru/services/ac-sanitisation',
+    '/de/annual-contracts',
+    '/de/services/carpet-cleaning',
+    '/de/services/ducted-ac-fcu-service',
+    '/fr/services/ac-sanitisation',
+    '/fr/pricing',
+    '/ar/services/ducted-ac-fcu-service',
+  ]) {
+    test(path, async ({ page }) => {
+      await page.setViewportSize({ width: 360, height: 760 });
+      await page.goto(path);
+      const [content, viewport] = await page.evaluate(() => [
+        document.documentElement.scrollWidth,
+        document.documentElement.clientWidth,
+      ]);
+      expect(content).toBeLessThanOrEqual(viewport);
+    });
+  }
+});

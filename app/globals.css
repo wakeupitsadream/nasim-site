@@ -185,6 +185,22 @@
     @apply bg-background text-body text-foreground;
     line-height: var(--nasim-leading-body);
   }
+  /* A heading never widens the page: a word longer than the line («кондиционирования»,
+     «Jahreswartungsverträge» in the wide display face on a phone) breaks instead of pushing the
+     layout past the viewport. Russian and German, where such words are ordinary, hyphenate
+     properly; elsewhere the break is the last resort only (DECISIONS №76). */
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: anywhere;
+  }
+  :lang(ru) :is(h1, h2, h3),
+  :lang(de) :is(h1, h2, h3) {
+    hyphens: auto;
+    hyphenate-limit-chars: 12 5 5;
+    -webkit-hyphenate-limit-before: 5;
+    -webkit-hyphenate-limit-after: 5;
+  }
   /* h1/h2 in the display face (Unbounded; Plex Arabic on /ar); h3 and body stay in Plex. */
   h1 {
     font-family: var(--font-display);

@@ -242,6 +242,24 @@
     },
     {
       "kind": "service",
+      "service_slug": "full-ac-system-cleaning",
+      "url": "/brand/full-system-cleaning.jpg",
+      "width": 1280,
+      "height": 720,
+      "frame": "16/9",
+      "alt": {
+        "en": "Two Brigada technicians in red polo shirts: one sprays a removed AC grille on a covered table, the other wipes an opened ceiling cassette unit",
+        "ar": "فنيان من Brigada بقميصي بولو أحمرين: أحدهما يرشّ شبكة مكيف منزوعة على طاولة مغطاة، والآخر يمسح وحدة كاسيت سقفية مفتوحة",
+        "ru": "Два техника Brigada в красных поло: один обрабатывает снятую решётку кондиционера на застеленном столе, другой протирает открытый потолочный кассетный блок",
+        "fr": "Deux techniciens Brigada en polo rouge : l’un pulvérise une grille de climatiseur démontée sur une table protégée, l’autre essuie une cassette de plafond ouverte",
+        "de": "Zwei Brigada-Techniker in roten Poloshirts: Einer besprüht ein ausgebautes Klimagitter auf einem abgedeckten Tisch, der andere wischt ein geöffnetes Deckenkassettengerät aus",
+        "zh": "两名身穿红色 Polo 衫的 Brigada 技师：一人在铺好防护膜的桌上喷洗拆下的空调格栅，另一人擦拭打开的吊顶嵌入式空调",
+        "hi": "लाल पोलो शर्ट में Brigada के दो तकनीशियन: एक ढकी हुई मेज़ पर निकाली गई एसी ग्रिल पर स्प्रे कर रहा है, दूसरा खुली सीलिंग कैसेट यूनिट पोंछ रहा है"
+      },
+      "sort": 37
+    },
+    {
+      "kind": "service",
       "service_slug": "emergency-ac-repair",
       "url": "/photos/emergency-ac-repair.jpg",
       "width": 1200,

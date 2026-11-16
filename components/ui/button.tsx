@@ -35,9 +35,11 @@ const buttonVariants = cva(
         link: "text-primary underline underline-offset-4 hover:no-underline",
       },
       size: {
+        // On a phone a long label (French, German) wraps inside the button instead of pushing the
+        // page wider than the screen: the height becomes a minimum there (DECISIONS №76).
         default:
-          "h-tap gap-2 px-5 has-data-[icon=inline-end]:pe-4 has-data-[icon=inline-start]:ps-4",
-        lg: "h-12 gap-2 px-6 text-lead has-data-[icon=inline-end]:pe-5 has-data-[icon=inline-start]:ps-5",
+          "h-tap gap-2 px-5 has-data-[icon=inline-end]:pe-4 has-data-[icon=inline-start]:ps-4 max-sm:h-auto max-sm:min-h-tap max-sm:max-w-full max-sm:py-2 max-sm:text-center max-sm:whitespace-normal",
+        lg: "h-12 gap-2 px-6 text-lead has-data-[icon=inline-end]:pe-5 has-data-[icon=inline-start]:ps-5 max-sm:h-auto max-sm:min-h-12 max-sm:max-w-full max-sm:py-2 max-sm:text-center max-sm:whitespace-normal",
         sm: "h-9 gap-1.5 px-3 text-small has-data-[icon=inline-end]:pe-2.5 has-data-[icon=inline-start]:ps-2.5 [&_svg:not([class*='size-'])]:size-4",
         xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs has-data-[icon=inline-end]:pe-1.5 has-data-[icon=inline-start]:ps-1.5 [&_svg:not([class*='size-'])]:size-3",
         icon: "size-tap",
