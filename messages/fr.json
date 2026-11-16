@@ -328,7 +328,8 @@
       "photoType": "Impossible de lire ce fichier. Essayez une photo JPEG, PNG ou WebP.",
       "photoSize": "La photo reste trop lourde même réduite. Essayez-en une autre.",
       "unavailable": "Le diagnostic IA n’est pas encore activé. Choisissez un service dans le calculateur ou écrivez-nous : nous répondons vite.",
-      "rateLimited": "Beaucoup de questions en une minute. Patientez un instant et réessayez.",
+      "rateLimited": "Beaucoup de questions en une minute. Patientez un instant et réessayez — ou demandez directement à un technicien.",
+      "quota": "Je ne peux pas aller plus loin pour aujourd’hui. Un technicien prend le relais — écrivez-nous ou appelez pour une réponse précise et un prix.",
       "refused": "Nous n’avons pas pu analyser cette demande. Décrivez ce que fait la clim ou le tissu et réessayez.",
       "failed": "Un problème est survenu de notre côté. Réessayez dans un instant ou écrivez-nous.",
       "network": "Pas de connexion. Vérifiez Internet et réessayez."
@@ -367,6 +368,7 @@
       "questionsHint": "Ajoutez les réponses à votre message de réservation et la visite ira plus vite.",
       "again": "Poser une autre question",
       "contact": "Nous écrire",
+      "person": "Vous préférez d’abord demander à quelqu’un ?",
       "demoBadge": "Réponse d’exemple — l’assistant en direct est en cours de connexion"
     }
   },
@@ -382,7 +384,12 @@
     "send": "Envoyer",
     "faqNote": "Tiré de notre FAQ. Pour autre chose, écrivez-le simplement.",
     "you": "Vous",
-    "assistant": "Assistant"
+    "assistant": "Assistant",
+    "handoff": {
+      "nudge": "Si c’est plus simple, un technicien peut prendre le relais — écrivez-nous ou appelez.",
+      "message": "Bonjour {brand} ! J’ai demandé à l’assistant de votre site : « {question} »",
+      "messageService": "Bonjour {brand} ! J’ai demandé à l’assistant de votre site : « {question} ». Il a suggéré : {service}."
+    }
   },
   "Services": {
     "lead": "Des prix fixes quand ils peuvent être annoncés d’avance, un devis pour tout le reste. Chaque visite se termine par un rapport photo sur WhatsApp.",

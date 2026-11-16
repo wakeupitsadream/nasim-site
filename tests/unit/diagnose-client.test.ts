@@ -55,6 +55,8 @@ describe('requestDiagnosis()', () => {
       error: 'unavailable',
     });
     expect(await ask(reply(429, null))).toEqual({ ok: false, error: 'rate_limited' });
+    // A spent allowance is its own answer: the window hands over to a person (DECISIONS №84).
+    expect(await ask(reply(429, { error: 'quota' }))).toEqual({ ok: false, error: 'quota' });
     expect(await ask(reply(422, { error: 'refused' }))).toEqual({ ok: false, error: 'refused' });
     expect(await ask(reply(500, 'oops'))).toEqual({ ok: false, error: 'failed' });
     expect(await ask(reply(200, { summary: 'half a body' }))).toEqual({

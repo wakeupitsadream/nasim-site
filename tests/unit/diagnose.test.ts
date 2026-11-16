@@ -6,7 +6,16 @@ import {
   type CatalogueEntry,
 } from '@/lib/ai/diagnose-prompt';
 import { seedServices } from '@/lib/content/seed';
-import { allow, clientIp, hashIp, resetRateLimits } from '@/lib/ratelimit';
+import { DIAGNOSE_LIMITS, consumeDiagnoseQuota, siteDayLimit } from '@/lib/diagnose/guard';
+import {
+  allow,
+  clientIp,
+  consumeQuotas,
+  hashIp,
+  memoryStore,
+  resetRateLimits,
+  type CounterStore,
+} from '@/lib/ratelimit';
 import { priceUnitSchema } from '@/lib/validation/content';
 import {
   DIAGNOSE_MAX_TEXT,
@@ -141,6 +150,61 @@ describe('rate limit', () => {
     expect(allow('k', rule, 200)).toBe(false);
     expect(allow('other', rule, 200)).toBe(true);
     expect(allow('k', rule, 1101)).toBe(true);
+  });
+
+  it('counts fixed windows in a shared store and names the exhausted quota', async () => {
+    const store = memoryStore(() => 0);
+    const rules = [
+      { name: 'hour', key: 'v:a', limit: 2, windowMs: 3_600_000 },
+      { name: 'day', key: 'v:a', limit: 3, windowMs: 86_400_000 },
+    ];
+    expect(await consumeQuotas(store, rules, 1_000)).toBeNull();
+    expect(await consumeQuotas(store, rules, 2_000)).toBeNull();
+    expect(await consumeQuotas(store, rules, 3_000)).toBe('hour');
+    // A refused hit is not counted: the day counter still has one left in the next hour.
+    expect(await consumeQuotas(store, rules, 3_600_000 + 1)).toBeNull();
+    expect(await consumeQuotas(store, rules, 3_600_000 + 2)).toBe('day');
+    // Another key has its own counters.
+    expect(await consumeQuotas(store, [{ ...rules[0]!, key: 'v:b' }], 3_000)).toBeNull();
+  });
+
+  it('expires a memory entry after its TTL', async () => {
+    let now = 0;
+    const store = memoryStore(() => now);
+    await store.set('k', 1, { ttl: 10 });
+    expect(await store.get('k')).toBe(1);
+    now = 10_001;
+    expect(await store.get('k')).toBeNull();
+  });
+
+  it('keeps the gate closed when the shared store fails: the limits fall back to memory', async () => {
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const broken: CounterStore = {
+      get: async () => {
+        throw new Error('down');
+      },
+      set: async () => {},
+    };
+    const rules = [{ name: 'hour', key: 'v:c', limit: 1, windowMs: 3_600_000 }];
+    expect(await consumeQuotas(broken, rules, 1_000)).toBeNull();
+    expect(await consumeQuotas(broken, rules, 2_000)).toBe('hour');
+    expect(error).toHaveBeenCalledWith('[ratelimit] shared store', 'Error');
+    error.mockRestore();
+  });
+
+  it('applies the diagnose quotas per visitor and reads AI_DAILY_LIMIT', async () => {
+    const store = memoryStore(() => 0);
+    for (let i = 0; i < DIAGNOSE_LIMITS.visitorHour.limit; i += 1)
+      expect(await consumeDiagnoseQuota('visitor', store, 1_000 + i)).toBeNull();
+    expect(await consumeDiagnoseQuota('visitor', store, 5_000)).toBe('visitor_hour');
+    expect(await consumeDiagnoseQuota('someone-else', store, 5_000)).toBeNull();
+
+    expect(siteDayLimit({} as NodeJS.ProcessEnv)).toBe(DIAGNOSE_LIMITS.siteDay.limit);
+    expect(siteDayLimit({ AI_DAILY_LIMIT: '50' } as unknown as NodeJS.ProcessEnv)).toBe(50);
+    for (const bad of ['0', '-5', 'many', '1.5'])
+      expect(siteDayLimit({ AI_DAILY_LIMIT: bad } as unknown as NodeJS.ProcessEnv)).toBe(
+        DIAGNOSE_LIMITS.siteDay.limit,
+      );
   });
 
   it('hashes IPs with the salt and reads the first forwarded address', () => {

@@ -12,7 +12,8 @@ import { getPricingConfig, getServices } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { pick } from '@/lib/i18n/text';
 import { priceFrom } from '@/lib/pricing';
-import { allow, clientIp, hashIp } from '@/lib/ratelimit';
+import { allowBurst, consumeDiagnoseQuota } from '@/lib/diagnose/guard';
+import { clientIp, hashIp } from '@/lib/ratelimit';
 import {
   diagnoseRequestSchema,
   type DiagnoseError,
@@ -21,25 +22,39 @@ import {
 
 // POST /api/diagnose — AI triage of a customer's description and optional photo.
 // No PII is logged (rule 7): only error class names reach the logs. Dynamic route (rule 5).
+// Limits live in lib/diagnose/guard.ts: a burst gets `rate_limited` (wait a minute), a spent hour
+// or day quota gets `quota` — the window then hands the visitor over to WhatsApp or a call.
 
-const PER_VISITOR = { limit: 6, windowMs: 60_000 };
-const PER_INSTANCE = { limit: 60, windowMs: 60_000 };
 // Gateway answers that are ours to fix (key, Polza balance, rate), not the visitor's to retry.
 const UNAVAILABLE_UPSTREAM = new Set([401, 402, 403, 429]);
 
-const fail = (error: DiagnoseError, status: number) =>
-  NextResponse.json({ error }, { status, headers: { 'Cache-Control': 'no-store' } });
+const fail = (error: DiagnoseError, status: number, retryAfter?: number) =>
+  NextResponse.json(
+    { error },
+    {
+      status,
+      headers: {
+        'Cache-Control': 'no-store',
+        ...(retryAfter ? { 'Retry-After': String(retryAfter) } : {}),
+      },
+    },
+  );
 
 export async function POST(request: Request) {
-  const ipKey = hashIp(clientIp(request.headers));
-  if (!allow(`diagnose:${ipKey}`, PER_VISITOR) || !allow('diagnose:all', PER_INSTANCE)) {
-    return fail('rate_limited', 429);
-  }
+  const visitor = hashIp(clientIp(request.headers));
+  if (!allowBurst(visitor)) return fail('rate_limited', 429, 60);
 
   const body: unknown = await request.json().catch(() => null);
   const parsed = diagnoseRequestSchema.safeParse(body);
   if (!parsed.success) return fail('invalid', 400);
   const input = parsed.data;
+
+  // Counted last, right before the paid call: a malformed request never spends anyone's quota.
+  const exhausted = await consumeDiagnoseQuota(visitor);
+  if (exhausted) {
+    console.warn(`[diagnose] quota ${exhausted}`);
+    return fail('quota', 429, 3600);
+  }
 
   const [settings, services, pricing] = await Promise.all([
     getSiteSettings(input.locale),

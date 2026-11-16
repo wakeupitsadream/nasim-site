@@ -328,7 +328,8 @@
       "photoType": "Diese Datei können wir nicht lesen. Versuchen Sie ein JPEG-, PNG- oder WebP-Foto.",
       "photoSize": "Das Foto ist selbst nach dem Verkleinern zu groß. Versuchen Sie ein anderes.",
       "unavailable": "Die KI-Diagnose ist noch nicht freigeschaltet. Wählen Sie eine Leistung im Rechner oder schreiben Sie uns – wir antworten schnell.",
-      "rateLimited": "Das sind viele Fragen in einer Minute. Warten Sie einen Moment und versuchen Sie es erneut.",
+      "rateLimited": "Das sind viele Fragen in einer Minute. Warten Sie einen Moment und versuchen Sie es erneut – oder fragen Sie direkt einen Techniker.",
+      "quota": "Mehr kann ich für heute nicht beantworten. Ab hier übernimmt ein Techniker – schreiben Sie uns oder rufen Sie an und Sie erhalten eine genaue Antwort mit Preis.",
       "refused": "Diese Anfrage konnten wir nicht analysieren. Beschreiben Sie, was die Klimaanlage oder der Stoff tut, und versuchen Sie es erneut.",
       "failed": "Auf unserer Seite ist etwas schiefgelaufen. Versuchen Sie es gleich noch einmal oder schreiben Sie uns.",
       "network": "Keine Verbindung. Prüfen Sie das Internet und versuchen Sie es erneut."
@@ -367,6 +368,7 @@
       "questionsHint": "Schreiben Sie die Antworten in Ihre Buchungsnachricht, dann geht der Besuch schneller.",
       "again": "Etwas anderes fragen",
       "contact": "Schreiben Sie uns",
+      "person": "Lieber zuerst einen Menschen fragen?",
       "demoBadge": "Beispielantwort – der Live-Assistent wird gerade angebunden"
     }
   },
@@ -382,7 +384,12 @@
     "send": "Senden",
     "faqNote": "Aus unseren FAQ. Alles andere – einfach eintippen.",
     "you": "Sie",
-    "assistant": "Assistent"
+    "assistant": "Assistent",
+    "handoff": {
+      "nudge": "Wenn es einfacher ist, übernimmt ab hier ein Techniker – schreiben Sie uns oder rufen Sie an.",
+      "message": "Hallo {brand}! Ich habe den Assistenten auf Ihrer Website gefragt: „{question}“",
+      "messageService": "Hallo {brand}! Ich habe den Assistenten auf Ihrer Website gefragt: „{question}“. Er hat vorgeschlagen: {service}."
+    }
   },
   "Services": {
     "lead": "Festpreise, wo sie sich vorab nennen lassen, ein Angebot für alles andere. Jeder Besuch endet mit einem Fotobericht per WhatsApp.",
