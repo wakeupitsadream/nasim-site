@@ -417,7 +417,7 @@
       "price": "Rechner öffnen"
     },
     "group": {
-      "service": "Klimaanlagen-Wartung",
+      "service": "Klimaanlagen-Wartung & -Reparatur",
       "cleaning": "Klimaanlagen-Reinigung",
       "other": "Weitere Reinigungs- & Reparaturleistungen"
     },
@@ -496,7 +496,8 @@
     }
   },
   "Pricing": {
-    "lead": "Jeder Preis unten steht vor dem Besuch fest und enthält die Anfahrt. Reparaturen beginnen mit einer festen Diagnosegebühr, die auf die Arbeit angerechnet wird.",
+    "lead": "Jeder Preis unten steht vor dem Besuch fest und enthält die Anfahrt.",
+    "leadRepairs": "Reparaturen beginnen mit einer festen Diagnosegebühr, die auf die Arbeit angerechnet wird.",
     "jump": {
       "ac": "Klimaanlagen",
       "upholstery": "Polster",
@@ -668,7 +669,8 @@
       "question": "Was ist zu tun?",
       "ac": {
         "title": "Klimaanlagen",
-        "text": "Reinigung, Tiefenreinigung, Gebläsekonvektoren, Reparaturen",
+        "text": "Reinigung, Tiefenreinigung, Gebläsekonvektoren",
+        "textRepairs": "Reinigung, Tiefenreinigung, Gebläsekonvektoren, Reparaturen",
         "price": "Ab <price>{amount}</price> {unit}"
       },
       "upholstery": {

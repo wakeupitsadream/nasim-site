@@ -64,7 +64,17 @@ export function StepCategory({ payload, headingId, onChoose }: Props) {
                   className="size-5 shrink-0 text-primary transition-transform duration-(--nasim-dur) group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5"
                 />
               </span>
-              <span className="text-small text-muted-foreground">{t(`category.${key}.text`)}</span>
+              <span className="text-small text-muted-foreground">
+                {/* "…and repairs" only while a repair or call-out service is bookable (DECISIONS №79, №81). */}
+                {key === 'ac' &&
+                payload.services.some(
+                  (s) =>
+                    s.category === 'ac' &&
+                    (s.priceFrom?.unit === 'from' || s.priceFrom?.unit === 'visit'),
+                )
+                  ? t('category.ac.textRepairs')
+                  : t(`category.${key}.text`)}
+              </span>
               {flagship?.priceFrom ? (
                 <span className="mt-2 text-small text-muted-foreground">
                   {t.rich(`category.${key}.price`, {

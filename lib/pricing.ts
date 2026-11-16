@@ -224,8 +224,8 @@ export function tierRanges(line: PriceLine): { from: number; to: number | null; 
  * The price a service is advertised at: the lowest one-unit price among its lines. Quantity
  * rates are never the headline — "from AED 499" read as the starting price when 499 was the rate
  * from the second unit, so a tiered line counts at its price for one (the owner, DECISIONS №70).
- * `exact`: the service has one fixed price line and nothing else, so it reads "AED 549 per
- * unit", without "from"; several sizes (a sofa) or an estimate still read "from".
+ * `exact`: the service has one fixed price line, so it reads "AED 549 per unit", without "from";
+ * several sizes (a sofa) or an estimate alone still read "from".
  */
 export function priceFrom(
   cfg: PricingConfig,
@@ -238,8 +238,12 @@ export function priceFrom(
     if (!best || one < best.amount) best = { amount: one, unit: line.unit };
   }
   if (!best) return null;
-  const only = lines.length === 1 ? lines[0]! : null;
-  return { ...best, exact: only !== null && only.unit !== 'from' };
+  // One fixed price is exact. Estimate lines beside it do not blur it when the fixed one is the
+  // headline: «AED 199 per diagnostic visit», repairs quoted separately (DECISIONS №82).
+  const fixed = lines.filter((l) => l.unit !== 'from');
+  const exact =
+    fixed.length === 1 && unitPrice(fixed[0]!, 1) === best.amount && best.unit !== 'from';
+  return { ...best, exact };
 }
 
 export const bundleSavings = (bundle: BundleOffer): number | null =>

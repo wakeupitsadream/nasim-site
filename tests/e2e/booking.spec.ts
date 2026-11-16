@@ -31,8 +31,14 @@ test.describe('booking request wizard', () => {
     // quantity before it is chosen.
     const servicing = book.getByRole('group', { name: msg('en', 'Services.group.service') });
     const cleaning = book.getByRole('group', { name: msg('en', 'Services.group.cleaning') });
-    const other = book.getByRole('group', { name: msg('en', 'Services.group.other') });
-    await expect(servicing.getByRole('radio')).toHaveCount(2);
+    // The third section is off the site (DECISIONS №79); repairs and the urgent call-out sit in
+    // the first one (№81).
+    await expect(book.getByRole('group', { name: msg('en', 'Services.group.other') })).toHaveCount(
+      0,
+    );
+    await expect(servicing.getByRole('radio')).toHaveCount(4);
+    await expect(servicing.getByRole('radio', { name: /^AC Repairs & Diagnostics/ })).toBeVisible();
+    await expect(servicing.getByRole('radio', { name: /^Urgent AC Call-Out/ })).toBeVisible();
     await expect(cleaning.getByRole('radio')).toHaveCount(4);
     await expect(book.getByText(msg('en', 'Booking.details.tiersHint'))).toHaveCount(1);
     await expect(option(servicing, 'Standard Split AC Service')).toContainText('4+: AED 249');
@@ -43,7 +49,6 @@ test.describe('booking request wizard', () => {
     await expect(option(cleaning, 'Split AC Deep Cleaning')).toContainText('AED 349');
     await expect(option(cleaning, 'Split AC Deep Cleaning')).not.toContainText('2+');
     await expect(option(cleaning, 'FCU Deep Coil & Blower Cleaning')).toContainText('2+: AED 549');
-    await expect(other.getByRole('radio', { name: /^AC Repairs/ })).toBeVisible();
 
     // The chosen card opens with what the service is…
     await expect(servicing.getByText(/^For wall-mounted ACs\./)).toBeVisible();
@@ -139,20 +144,44 @@ test.describe('booking request wizard', () => {
     await expect(book.getByRole('radio', { name: /^Split AC Deep Cleaning/ })).toBeChecked();
     await expect(book.getByText('AED 349').first()).toBeVisible();
 
+    // Repairs and diagnostics are one card (DECISIONS №81): booked as the diagnostics visit plus
+    // labour by estimate, with one diagnostics fee.
     await page.goto('/en/services/ac-repair');
     const repair = page.locator('#book');
-    await expect(repair.getByText(msg('en', 'Booking.summary.diagnostics')).first()).toBeVisible();
+    await expect(repair.getByRole('radio', { name: /^AC Repairs & Diagnostics/ })).toBeChecked();
     await expect(repair.getByText(msg('en', 'Booking.summary.estimateNote'))).toBeVisible();
     await expect(repair.getByText('AED 199').first()).toBeVisible();
+    await expect(repair.getByText('AED 398')).toHaveCount(0);
+    await expect(repair.getByText('AED 0')).toHaveCount(0);
 
-    // A job with nothing fixed up front totals "from …", never "AED 0".
-    await page.goto('/en/services/ac-water-leak-drain-repair');
-    const drain = page.locator('#book');
+    // The small services folded into it have no page of their own.
+    for (const slug of ['thermostat-installation', 'ac-water-leak-drain-repair'])
+      expect((await page.request.get(`/en/services/${slug}`)).status()).toBe(404);
+  });
+
+  test('the repairs and urgent call-out cards book from the catalogue', async ({ page }) => {
+    await page.goto('/en/services');
+    const repairs = page.locator('article', { hasText: 'AC Repairs & Diagnostics' });
+    await expect(repairs).toContainText('AED 199');
+    await expect(repairs).toContainText('per diagnostic visit');
+    await expect(repairs).toContainText('Repairs and parts quoted separately.');
+    await expect(repairs).not.toContainText('from');
+    await repairs.getByRole('link', { name: 'Book a diagnostic visit' }).click();
+    await expect(page).toHaveURL(/\/en\/services\/ac-repair#book$/);
     await expect(
-      drain.getByRole('radio', { name: /^AC Water Leak & Drain Repairs/ }),
+      page.locator('#book').getByRole('radio', { name: /^AC Repairs & Diagnostics/ }),
     ).toBeChecked();
-    await expect(drain.getByText('from AED 299').first()).toBeVisible();
-    await expect(drain.getByText('AED 0')).toHaveCount(0);
+
+    await page.goto('/en/services');
+    await page.getByRole('link', { name: 'View repair services and prices' }).click();
+    await expect(page).toHaveURL(/\/en\/services\/ac-repair#prices$/);
+    await expect(page.locator('#prices')).toContainText('Refrigerant leak testing');
+
+    await page.goto('/en/services');
+    const urgent = page.locator('article', { hasText: 'Urgent AC Call-Out' });
+    await expect(urgent).toContainText('per visit');
+    await urgent.getByRole('link', { name: 'Check availability' }).click();
+    await expect(page).toHaveURL(/\/en\/services\/emergency-ac-repair#book$/);
   });
 
   test('an empty upholstery selection cannot continue', async ({ page }) => {

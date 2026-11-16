@@ -30,6 +30,7 @@ import {
   getFaqs,
   getPhoto,
   getPriceItems,
+  getPriceRows,
   getPricingConfig,
   getRelatedServices,
   getServiceBySlug,
@@ -169,6 +170,8 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
     );
   }
 
+  // The price table also lists the rows of the small services folded into this one.
+  const rows = await getPriceRows(slug);
   const from = priceFrom(pricing, slug);
   const lines = linesForService(pricing, slug);
   const tiered = lines.filter((l) => l.tiers.length > 1);
@@ -306,11 +309,11 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
           {
             key: 'prices',
             render: (tone: SectionTone) => (
-              <Section tone={tone} aria-labelledby="prices-title">
+              <Section id="prices" tone={tone} aria-labelledby="prices-title">
                 <SectionHeader id="prices-title" title={t('prices')} />
                 <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
                   <PriceTable
-                    groups={[{ service, items }]}
+                    groups={[{ service, items: rows }]}
                     locale={locale}
                     caption={name.text}
                     captionId="prices-caption"

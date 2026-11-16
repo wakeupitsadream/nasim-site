@@ -73,6 +73,47 @@ export default async function ServicesPage() {
     null,
   );
 
+  // Light tones alternate down the page; without the "other" section the rest shift by one.
+  const flip = (tone: 'sand' | 'surface') => (tone === 'sand' ? 'surface' : 'sand');
+  const upholsteryTone = other.length > 0 ? 'sand' : 'surface';
+  const soonTone = flip(upholsteryTone);
+  const notSureTone = soon.length > 0 ? flip(soonTone) : soonTone;
+
+  // Annual plans: one card under the last air-conditioning section.
+  const contractCard = (
+    <div className="reveal mt-6 flex flex-col gap-4 rounded-card border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex items-start gap-4">
+        <span
+          aria-hidden="true"
+          className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-mist text-highlight-ink"
+        >
+          <CalendarCheckIcon strokeWidth={1.5} className="size-6" />
+        </span>
+        <div className="flex flex-col gap-1">
+          <h3 className="text-lead font-medium text-foreground">{t('contract.title')}</h3>
+          <p className="text-body text-pretty text-muted-foreground">
+            {t('contract.text')}
+            {cheapestPlan !== null ? (
+              <>
+                {' '}
+                {tPrice.rich('perYearRich', {
+                  amount: formatAED(cheapestPlan, locale),
+                  a: (chunks) => <Ltr className="font-medium text-foreground">{chunks}</Ltr>,
+                })}
+              </>
+            ) : null}
+          </p>
+        </div>
+      </div>
+      <Button variant="outline" asChild className="shrink-0">
+        <Link href="/annual-contracts">
+          {t('contract.cta')}
+          <ArrowRightIcon className="rtl:-scale-x-100" />
+        </Link>
+      </Button>
+    </div>
+  );
+
   return (
     <PageTransition>
       <Section
@@ -140,50 +181,25 @@ export default async function ServicesPage() {
           locale={locale}
           emergencyEnabled={emergencyEnabled}
         />
+        {other.length === 0 ? contractCard : null}
       </Section>
 
-      <Section id="ac-other" tone="surface" aria-labelledby="ac-other-title">
-        <SectionHeader id="ac-other-title" eyebrow={t('category.ac')} title={t('group.other')} />
-        <ServiceGrid
-          services={other}
-          pricing={pricing}
-          locale={locale}
-          emergencyEnabled={emergencyEnabled}
-        />
-        <div className="reveal mt-6 flex flex-col gap-4 rounded-card border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-start gap-4">
-            <span
-              aria-hidden="true"
-              className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-mist text-highlight-ink"
-            >
-              <CalendarCheckIcon strokeWidth={1.5} className="size-6" />
-            </span>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-lead font-medium text-foreground">{t('contract.title')}</h3>
-              <p className="text-body text-pretty text-muted-foreground">
-                {t('contract.text')}
-                {cheapestPlan !== null ? (
-                  <>
-                    {' '}
-                    {tPrice.rich('perYearRich', {
-                      amount: formatAED(cheapestPlan, locale),
-                      a: (chunks) => <Ltr className="font-medium text-foreground">{chunks}</Ltr>,
-                    })}
-                  </>
-                ) : null}
-              </p>
-            </div>
-          </div>
-          <Button variant="outline" asChild className="shrink-0">
-            <Link href="/annual-contracts">
-              {t('contract.cta')}
-              <ArrowRightIcon className="rtl:-scale-x-100" />
-            </Link>
-          </Button>
-        </div>
-      </Section>
+      {/* Repairs, diagnostics and one-off jobs. Empty since 17.11.2026 (DECISIONS №79): the
+          section then disappears and the annual plans card closes the cleaning section. */}
+      {other.length > 0 ? (
+        <Section id="ac-other" tone="surface" aria-labelledby="ac-other-title">
+          <SectionHeader id="ac-other-title" eyebrow={t('category.ac')} title={t('group.other')} />
+          <ServiceGrid
+            services={other}
+            pricing={pricing}
+            locale={locale}
+            emergencyEnabled={emergencyEnabled}
+          />
+          {contractCard}
+        </Section>
+      ) : null}
 
-      <Section id="upholstery" tone="sand" aria-labelledby="upholstery-title">
+      <Section id="upholstery" tone={upholsteryTone} aria-labelledby="upholstery-title">
         <div className="mb-stack grid gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeader
             id="upholstery-title"
@@ -212,7 +228,7 @@ export default async function ServicesPage() {
       </Section>
 
       {soon.length > 0 ? (
-        <Section id="soon" tone="surface" aria-labelledby="soon-title">
+        <Section id="soon" tone={soonTone} aria-labelledby="soon-title">
           <SectionHeader
             id="soon-title"
             title={t('category.comingSoon')}
@@ -228,11 +244,7 @@ export default async function ServicesPage() {
       ) : null}
 
       {/* "Not sure which one?" — opens the floating assistant; the tone follows the optional #soon band. */}
-      <Section
-        tone={soon.length > 0 ? 'sand' : 'surface'}
-        aria-labelledby="not-sure-title"
-        size="compact"
-      >
+      <Section tone={notSureTone} aria-labelledby="not-sure-title" size="compact">
         <div className="reveal-fade flex flex-col gap-6 rounded-panel border border-border bg-card p-6 shadow-card sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           <div className="flex items-start gap-4">
             <span

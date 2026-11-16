@@ -417,7 +417,7 @@
       "price": "Ouvrir le calculateur"
     },
     "group": {
-      "service": "Entretien de climatiseurs",
+      "service": "Entretien et réparation de climatiseurs",
       "cleaning": "Nettoyage de climatiseurs",
       "other": "Autres services de nettoyage et de réparation"
     },
@@ -496,7 +496,8 @@
     }
   },
   "Pricing": {
-    "lead": "Chaque prix ci-dessous est fixé avant la visite et inclut le déplacement. Les réparations commencent par des frais de diagnostic fixes, déduits du montant des travaux.",
+    "lead": "Chaque prix ci-dessous est fixé avant la visite et inclut le déplacement.",
+    "leadRepairs": "Les réparations commencent par des frais de diagnostic fixes, déduits du montant des travaux.",
     "jump": {
       "ac": "Climatisation",
       "upholstery": "Canapés et tapis",
@@ -668,7 +669,8 @@
       "question": "Que faut-il faire ?",
       "ac": {
         "title": "Climatisation",
-        "text": "Nettoyage, nettoyage en profondeur, ventilo-convecteurs, réparations",
+        "text": "Nettoyage, nettoyage en profondeur, ventilo-convecteurs",
+        "textRepairs": "Nettoyage, nettoyage en profondeur, ventilo-convecteurs, réparations",
         "price": "À partir de <price>{amount}</price> {unit}"
       },
       "upholstery": {

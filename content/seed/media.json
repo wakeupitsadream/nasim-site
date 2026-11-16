@@ -182,22 +182,22 @@
     {
       "kind": "service",
       "service_slug": "ducted-ac-fcu-service",
-      "url": "/photos/ducted-ac-fcu-service.jpg",
-      "width": 1200,
-      "height": 2134,
+      "url": "/photos/ducted-fcu-service-red.jpg",
+      "width": 720,
+      "height": 1280,
       "alt": {
-        "en": "Technician in gloves servicing a built-in air-conditioning unit",
-        "ru": "Техник в перчатках обслуживает встроенный блок кондиционирования",
-        "ar": "فني يرتدي قفازات يصون وحدة تكييف مدمجة",
-        "fr": "Technicien ganté entretenant un climatiseur encastré",
-        "de": "Techniker mit Handschuhen wartet ein eingebautes Klimagerät",
-        "zh": "戴手套的技师在保养一台嵌入式空调机组",
-        "hi": "दस्ताने पहने तकनीशियन बिल्ट-इन एयर कंडीशनिंग यूनिट की सर्विस कर रहा है"
+        "en": "A technician in a red cap and polo checking a built-in air-conditioning unit with a pressure gauge",
+        "ar": "فني بقبعة وقميص بولو أحمرين يفحص وحدة تكييف مدمجة بمقياس ضغط",
+        "ru": "Техник в красной кепке и поло проверяет встроенный блок кондиционирования манометром",
+        "fr": "Un technicien en casquette et polo rouges contrôle un climatiseur encastré avec un manomètre",
+        "de": "Ein Techniker mit roter Kappe und rotem Poloshirt prüft ein eingebautes Klimagerät mit einem Manometer",
+        "zh": "头戴红帽、身穿红色 Polo 衫的技师用压力表检查嵌入式空调机组",
+        "hi": "लाल टोपी और पोलो शर्ट में तकनीशियन प्रेशर गेज से बिल्ट-इन एयर कंडीशनिंग यूनिट की जाँच कर रहा है"
       },
       "credit": {
         "author": "bulat843",
         "source": "https://www.pexels.com/photo/32588555/",
-        "license": "Pexels License (free for commercial use, no attribution required)"
+        "license": "Pexels License (free for commercial use, no attribution required), adapted"
       },
       "sort": 30
     },

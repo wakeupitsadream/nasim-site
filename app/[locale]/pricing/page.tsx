@@ -16,12 +16,13 @@ import { Badge } from '@/components/ui/badge';
 import {
   getBlock,
   getPhoto,
-  getPriceItems,
+  getPriceRows,
   getPricingConfig,
   getServices,
 } from '@/lib/content/queries';
 import { getSiteSettings } from '@/lib/content/site';
 import { whatsappTarget } from '@/lib/cta';
+import { cn } from '@/lib/utils';
 import { formatAED } from '@/lib/i18n/format';
 import { pick, pickLocalizedValue } from '@/lib/i18n/text';
 import { stagger } from '@/lib/motion';
@@ -39,9 +40,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /** `keepUnpriced`: services without price rows stay in the table as "price on request". */
-const groupsFor = (services: Service[], items: PriceItem[], keepUnpriced = false): PriceGroup[] =>
+const groupsFor = (
+  services: Service[],
+  rows: Map<string, PriceItem[]>,
+  keepUnpriced = false,
+): PriceGroup[] =>
   services
-    .map((service) => ({ service, items: items.filter((i) => i.service_slug === service.slug) }))
+    .map((service) => ({ service, items: rows.get(service.slug) ?? [] }))
     .filter((g) => keepUnpriced || g.items.length > 0);
 
 export default async function PricingPage() {
@@ -55,7 +60,6 @@ export default async function PricingPage() {
     tHome,
     settings,
     pricing,
-    items,
     ac,
     upholstery,
     details,
@@ -70,18 +74,27 @@ export default async function PricingPage() {
     getTranslations('Home'),
     getSiteSettings(locale),
     getPricingConfig(),
-    getPriceItems(),
     getServices({ status: ['active'], category: 'ac' }),
     getServices({ status: ['active'], category: 'upholstery' }),
     getBlock('pricing.details'),
     getBlock('pricing.before_you_book'),
     getPhoto({ kind: 'pricing' }, locale),
   ]);
+  // Price rows per service: its own plus those of the small services folded into it.
+  const listed = [...ac, ...upholstery];
+  const rows = new Map(
+    (await Promise.all(listed.map((s) => getPriceRows(s.slug)))).map(
+      (items, i) => [listed[i]!.slug, items] as const,
+    ),
+  );
   const whatsapp = whatsappTarget(settings.contacts);
   const tiered = pricing.lines.filter((l) => l.tiers.length > 1);
   const acGroups = (['service', 'cleaning', 'other'] as const)
     .map((key) => ({ key, services: ac.filter((s) => s.group === key) }))
     .filter((g) => g.services.length > 0);
+  // The lines about diagnostic fees and urgent visits are true only while a repair, diagnostics
+  // or call-out service is on the site (priced "from" or per visit; DECISIONS №79, №81).
+  const hasRepairs = ac.some((s) => s.pricing_unit === 'from' || s.pricing_unit === 'visit');
   const detailList = pickLocalizedValue(details, locale);
   const beforeList = pickLocalizedValue(before, locale);
   const offer = pricing.rules.firstBookingOffer;
@@ -109,7 +122,7 @@ export default async function PricingPage() {
               as="h1"
               eyebrow={tNav('pricing')}
               title={tPages('pricing.title')}
-              lead={t('lead')}
+              lead={hasRepairs ? `${t('lead')} ${t('leadRepairs')}` : t('lead')}
               className="mb-8"
             />
             <ul className="flex flex-wrap gap-2">
@@ -159,7 +172,7 @@ export default async function PricingPage() {
                   {tServices(`group.${group.key}`)}
                 </h3>
                 <PriceTable
-                  groups={groupsFor(group.services, items, true)}
+                  groups={groupsFor(group.services, rows, true)}
                   locale={locale}
                   captionId={`ac-${group.key}`}
                   descriptions
@@ -185,8 +198,16 @@ export default async function PricingPage() {
             );
           })}
         </div>
-        <p className="mt-8 max-w-3xl text-small text-pretty text-muted-foreground">{t('acNote')}</p>
-        {vatNote ? <p className="mt-2 text-small text-muted-foreground">{vatNote}</p> : null}
+        {hasRepairs ? (
+          <p className="mt-8 max-w-3xl text-small text-pretty text-muted-foreground">
+            {t('acNote')}
+          </p>
+        ) : null}
+        {vatNote ? (
+          <p className={cn('text-small text-muted-foreground', hasRepairs ? 'mt-2' : 'mt-8')}>
+            {vatNote}
+          </p>
+        ) : null}
       </Section>
 
       <Section id="upholstery" tone="sand" aria-labelledby="upholstery-title">
@@ -205,7 +226,7 @@ export default async function PricingPage() {
         ) : null}
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <PriceTable
-            groups={groupsFor(upholstery, items)}
+            groups={groupsFor(upholstery, rows)}
             locale={locale}
             caption={t('captions.upholstery')}
             captionId="upholstery-caption"

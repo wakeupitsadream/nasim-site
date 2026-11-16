@@ -13,11 +13,21 @@ type Props = {
   /** One fixed price: «AED 199 per visit», without "from". */
   exact?: boolean;
   size?: 'sm' | 'lg';
+  /** The owner's own wording of the unit («per diagnostic visit») in place of the standard one. */
+  unitLabel?: string;
   className?: string;
 };
 
 /** «from AED 149 per unit», the amount in tabular figures and always LTR. */
-export async function PriceFrom({ amount, unit, locale, exact, size = 'sm', className }: Props) {
+export async function PriceFrom({
+  amount,
+  unit,
+  locale,
+  exact,
+  size = 'sm',
+  unitLabel,
+  className,
+}: Props) {
   const t = await getTranslations('Price');
   const figure = (chunks: ReactNode) => (
     <Ltr
@@ -37,7 +47,7 @@ export async function PriceFrom({ amount, unit, locale, exact, size = 'sm', clas
           : t.rich('from', { amount: formatAED(amount, locale), price: figure })}
       </span>
       <span className={cn('text-muted-foreground', size === 'lg' ? 'text-body' : 'text-small')}>
-        {t(`per.${unit}`)}
+        {unitLabel ?? t(`per.${unit}`)}
       </span>
     </span>
   );

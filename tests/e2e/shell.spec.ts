@@ -220,11 +220,11 @@ test.describe('no horizontal scroll on a 360px phone', () => {
   for (const path of [
     '/en',
     '/ru/services/full-ac-system-cleaning',
-    '/ru/services/ac-sanitisation',
+    '/de/services/water-tank-cleaning',
     '/de/annual-contracts',
     '/de/services/carpet-cleaning',
     '/de/services/ducted-ac-fcu-service',
-    '/fr/services/ac-sanitisation',
+    '/fr/services/upholstery-extras',
     '/fr/pricing',
     '/ar/services/ducted-ac-fcu-service',
   ]) {

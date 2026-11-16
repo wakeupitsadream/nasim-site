@@ -476,7 +476,7 @@
       "sort": 1
     },
     {
-      "service_slug": "ac-inspection-diagnostics",
+      "service_slug": "ac-repair",
       "key": "diagnostics_visit",
       "name": {
         "en": "AC diagnostics",
@@ -608,7 +608,7 @@
         "zh": "配件另行报价，保修 90 天",
         "hi": "पुर्ज़ों का अलग कोटेशन, 90 दिन की वारंटी"
       },
-      "sort": 1
+      "sort": 2
     },
     {
       "service_slug": "refrigerant-leak-detection",
@@ -638,6 +638,28 @@
       "sort": 1
     },
     {
+      "service_slug": "refrigerant-leak-repair",
+      "key": "leak_repair",
+      "name": {
+        "en": "Refrigerant leak repair",
+        "ru": "Устранение утечки хладагента",
+        "ar": "إصلاح تسرب غاز التبريد",
+        "fr": "Réparation de fuite de fluide frigorigène",
+        "de": "Kältemittel-Leckreparatur",
+        "zh": "制冷剂泄漏修复",
+        "hi": "रेफ़्रिजरेंट लीक की मरम्मत"
+      },
+      "unit": "visit",
+      "price": 0,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 1,
+      "on_request": true
+    },
+    {
       "service_slug": "refrigerant-recharge",
       "key": "refill",
       "name": {
@@ -663,6 +685,28 @@
         "hi": "रेफ़्रिजरेंट के प्रकार और वज़न के अनुसार"
       },
       "sort": 2
+    },
+    {
+      "service_slug": "ac-sanitisation",
+      "key": "ac_sanitisation",
+      "name": {
+        "en": "Targeted AC sanitisation",
+        "ru": "Дезинфицирующая обработка",
+        "ar": "التعقيم الموجّه للمكيف",
+        "fr": "Assainissement ciblé de climatiseur",
+        "de": "Gezielte Hygienebehandlung der Klimaanlage",
+        "zh": "空调针对性抗菌处理",
+        "hi": "एसी का लक्षित सैनिटाइज़ेशन"
+      },
+      "unit": "visit",
+      "price": 0,
+      "min_qty": 1,
+      "tier_from_qty": 1,
+      "note": {
+        "en": ""
+      },
+      "sort": 1,
+      "on_request": true
     },
     {
       "service_slug": "sofa-cleaning",

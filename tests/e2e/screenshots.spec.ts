@@ -18,6 +18,7 @@ const SHOTS: { path: string; name: string; widths: number[] }[] = [
   { path: '/en/services/ac-cleaning', name: 'service-ac-cleaning-en', widths: [390, 1280] },
   { path: '/ar/services/ac-cleaning', name: 'service-ac-cleaning-ar', widths: [390, 1280] },
   { path: '/en/services/emergency-ac-repair', name: 'service-emergency-en', widths: [1280] },
+  { path: '/en/services/ac-repair', name: 'service-repairs-en', widths: [1280] },
   { path: '/en/services/humidity-mould-check', name: 'service-coming-soon-en', widths: [390] },
   { path: '/en/pricing', name: 'pricing-en', widths: [390, 1280] },
   { path: '/ar/pricing', name: 'pricing-ar', widths: [390, 1280] },

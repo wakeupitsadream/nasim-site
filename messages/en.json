@@ -417,7 +417,7 @@
       "price": "Open the calculator"
     },
     "group": {
-      "service": "AC servicing",
+      "service": "AC Servicing & Repairs",
       "cleaning": "AC cleaning",
       "other": "Other cleaning and repair services"
     },
@@ -496,7 +496,8 @@
     }
   },
   "Pricing": {
-    "lead": "Every price below is fixed before the visit and includes the call-out. Repairs start with a fixed diagnostics fee that counts towards the work.",
+    "lead": "Every price below is fixed before the visit and includes the call-out.",
+    "leadRepairs": "Repairs start with a fixed diagnostics fee that counts towards the work.",
     "jump": {
       "ac": "Air conditioning",
       "upholstery": "Upholstery",
@@ -668,7 +669,8 @@
       "question": "Choose a service",
       "ac": {
         "title": "Air conditioning services",
-        "text": "AC cleaning, deep cleaning, fan coil unit servicing and repairs.",
+        "text": "AC cleaning, deep cleaning and fan coil unit servicing.",
+        "textRepairs": "AC cleaning, deep cleaning, fan coil unit servicing and repairs.",
         "price": "From <price>{amount}</price> {unit}"
       },
       "upholstery": {

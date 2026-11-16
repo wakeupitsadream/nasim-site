@@ -29,7 +29,7 @@ import { blockSchemas } from '@/lib/validation/content';
 describe('seed files', () => {
   it('parse against the content schemas', () => {
     expect(seedServices().length).toBe(25);
-    expect(seedPriceItems().length).toBe(47);
+    expect(seedPriceItems().length).toBe(49);
     expect(seedPackages().length).toBe(7);
     expect(seedAreas().length).toBe(16);
     expect(seedFaqs().length).toBe(16);
@@ -83,14 +83,23 @@ describe('seed files', () => {
       seedServices()
         .filter((s) => s.category === 'ac' && s.group === key)
         .map((s) => s.slug);
-    expect(groups('service')).toEqual(['ac-cleaning', 'ducted-ac-fcu-service']);
+    expect(groups('service')).toEqual([
+      'ac-cleaning',
+      'ducted-ac-fcu-service',
+      'ac-repair',
+      'emergency-ac-repair',
+    ]);
     expect(groups('cleaning')).toEqual([
       'ac-deep-cleaning',
       'fcu-deep-coil-cleaning',
       'ac-duct-cleaning',
       'full-ac-system-cleaning',
     ]);
-    expect(groups('other')).toHaveLength(12);
+    expect(groups('other')).toHaveLength(10);
+    // The owner took the "other" section off the site on 17.11.2026 (DECISIONS №79, №81): repairs
+    // and the urgent call-out moved to the servicing section, the small services are hidden and
+    // folded into the repairs card. Records and prices stay; bringing one back is its status.
+    expect(seedServices().filter((s) => s.group === 'other' && s.status !== 'hidden')).toEqual([]);
     expect(seedServices().filter((s) => s.category === 'ac' && !s.group)).toEqual([]);
   });
 
@@ -227,5 +236,71 @@ describe('content getters', () => {
 describe('job durations', () => {
   it('are not stated for any service yet', () => {
     expect(seedServices().filter((s) => s.duration_min !== null)).toEqual([]);
+  });
+});
+
+// One "Repairs and Diagnostics" card instead of eleven small ones (DECISIONS №81).
+describe('services folded into one card', () => {
+  const services = seedServices();
+  const repairs = services.find((s) => s.slug === 'ac-repair')!;
+
+  it('are existing hidden services, each folded once', () => {
+    const covered = services.flatMap((s) => s.covers ?? []);
+    expect(new Set(covered).size).toBe(covered.length);
+    for (const slug of covered)
+      expect(services.find((s) => s.slug === slug)?.status, slug).toBe('hidden');
+    expect(repairs.covers).toHaveLength(8);
+  });
+
+  it('list their price rows under the card: its own first, on-request ones by name', async () => {
+    const { getPriceRows } = await import('@/lib/content/queries');
+    const rows = await getPriceRows('ac-repair');
+    expect(rows.map((r) => r.key)).toEqual([
+      'diagnostics_visit',
+      'repair_labour',
+      'filter_grille',
+      'outdoor_unit',
+      'drain_unblocking',
+      'thermostat_labour',
+      'leak_test',
+      'leak_repair',
+      'refill',
+      'ac_sanitisation',
+    ]);
+    const onRequest = rows.filter((r) => r.on_request);
+    expect(onRequest.map((r) => r.name.en)).toEqual([
+      'Refrigerant leak repair',
+      'Targeted AC sanitisation',
+    ]);
+    // A service that folds nothing keeps exactly its own rows.
+    expect((await getPriceRows('ac-cleaning')).map((r) => r.key)).toEqual([
+      'ac_clean_1',
+      'ac_clean_2_3',
+      'ac_clean_4plus',
+    ]);
+  });
+});
+
+// The owner's wording for the two visit cards (DECISIONS №82).
+describe('catalogue cards with their own wording', () => {
+  const card = (slug: string) => seedServices().find((s) => s.slug === slug)!.card!;
+
+  it('carry the price unit, the note, the button and the link as he wrote them', () => {
+    expect(seedServices().find((s) => s.slug === 'ac-repair')!.name.en).toBe(
+      'AC Repairs & Diagnostics',
+    );
+    expect(card('ac-repair').unit?.en).toBe('per diagnostic visit');
+    expect(card('ac-repair').note?.en).toBe('Repairs and parts quoted separately.');
+    expect(card('ac-repair').cta.en).toBe('Book a diagnostic visit');
+    expect(card('ac-repair').link?.en).toBe('View repair services and prices');
+    expect(card('emergency-ac-repair').cta.en).toBe('Check availability');
+    expect(card('emergency-ac-repair').note?.en).toBe('Repairs and parts quoted separately.');
+    expect(card('emergency-ac-repair').link).toBeUndefined();
+  });
+
+  it('are translated into every locale', () => {
+    for (const slug of ['ac-repair', 'emergency-ac-repair'])
+      for (const field of Object.values(card(slug)))
+        expect(Object.values(field).filter(Boolean)).toHaveLength(7);
   });
 });
