@@ -88,6 +88,12 @@ export const serviceSchema = z.object({
   /** The owner's own wording in the price slot of a service priced on request, per locale;
    * locales without one show the general "request a quote". */
   on_request_label: z.record(z.string(), z.string().min(1)).optional(),
+  /**
+   * Hidden services folded into this one (the owner: one "Repairs and Diagnostics" card instead
+   * of eleven small ones, DECISIONS №81). Their price rows are listed under this service in
+   * price tables; they have no card, no page and no line in the calculator.
+   */
+  covers: z.array(z.string().min(1)).optional(),
 });
 
 export const priceItemSchema = z.object({

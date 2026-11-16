@@ -31,11 +31,16 @@ test.describe('booking request wizard', () => {
     // quantity before it is chosen.
     const servicing = book.getByRole('group', { name: msg('en', 'Services.group.service') });
     const cleaning = book.getByRole('group', { name: msg('en', 'Services.group.cleaning') });
-    // The third section (repairs, diagnostics, one-off jobs) is off the site (DECISIONS №79).
+    // The third section is off the site (DECISIONS №79); repairs and the urgent call-out sit in
+    // the first one (№81).
     await expect(book.getByRole('group', { name: msg('en', 'Services.group.other') })).toHaveCount(
       0,
     );
-    await expect(servicing.getByRole('radio')).toHaveCount(2);
+    await expect(servicing.getByRole('radio')).toHaveCount(4);
+    await expect(
+      servicing.getByRole('radio', { name: /^AC Repairs and Diagnostics/ }),
+    ).toBeVisible();
+    await expect(servicing.getByRole('radio', { name: /^Urgent AC Call-Out/ })).toBeVisible();
     await expect(cleaning.getByRole('radio')).toHaveCount(4);
     await expect(book.getByText(msg('en', 'Booking.details.tiersHint'))).toHaveCount(1);
     await expect(option(servicing, 'Standard Split AC Service')).toContainText('4+: AED 249');
@@ -124,6 +129,12 @@ test.describe('booking request wizard', () => {
     await book.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
     await expect(option(book, msg('en', 'Booking.time.today'))).toHaveCount(0);
     await expect(option(book, msg('en', 'Booking.time.tomorrow'))).toBeVisible();
+
+    await page.goto('/en/services/emergency-ac-repair');
+    const emergency = page.locator('#book');
+    await emergency.getByRole('button', { name: msg('en', 'Booking.nav.toTime') }).click();
+    await expect(option(emergency, msg('en', 'Booking.time.windows.asap'))).toBeVisible();
+    await expect(option(emergency, msg('en', 'Booking.time.today'))).toBeVisible();
   });
 
   test('service pages preselect their service', async ({ page }) => {
@@ -135,8 +146,18 @@ test.describe('booking request wizard', () => {
     await expect(book.getByRole('radio', { name: /^Split AC Deep Cleaning/ })).toBeChecked();
     await expect(book.getByText('AED 349').first()).toBeVisible();
 
-    // Repairs and the other one-off AC jobs have no page while they are off the site.
-    for (const slug of ['ac-repair', 'emergency-ac-repair', 'ac-water-leak-drain-repair'])
+    // Repairs and diagnostics are one card (DECISIONS №81): booked as the diagnostics visit plus
+    // labour by estimate, with one diagnostics fee.
+    await page.goto('/en/services/ac-repair');
+    const repair = page.locator('#book');
+    await expect(repair.getByRole('radio', { name: /^AC Repairs and Diagnostics/ })).toBeChecked();
+    await expect(repair.getByText(msg('en', 'Booking.summary.estimateNote'))).toBeVisible();
+    await expect(repair.getByText('AED 199').first()).toBeVisible();
+    await expect(repair.getByText('AED 398')).toHaveCount(0);
+    await expect(repair.getByText('AED 0')).toHaveCount(0);
+
+    // The small services folded into it have no page of their own.
+    for (const slug of ['thermostat-installation', 'ac-water-leak-drain-repair'])
       expect((await page.request.get(`/en/services/${slug}`)).status()).toBe(404);
   });
 

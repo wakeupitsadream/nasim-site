@@ -871,11 +871,11 @@
     {
       "slug": "emergency-ac-repair",
       "category": "ac",
-      "group": "other",
-      "status": "hidden",
-      "sort": 107,
+      "group": "service",
+      "status": "active",
+      "sort": 40,
       "name": {
-        "en": "Urgent AC Call-out",
+        "en": "Urgent AC Call-Out",
         "ru": "Срочный выезд мастера",
         "ar": "زيارة عاجلة للمكيف",
         "fr": "Dépannage urgent de climatisation",
@@ -1085,26 +1085,26 @@
     {
       "slug": "ac-repair",
       "category": "ac",
-      "group": "other",
-      "status": "hidden",
-      "sort": 115,
+      "group": "service",
+      "status": "active",
+      "sort": 30,
       "name": {
-        "en": "AC Repairs",
-        "ru": "Ремонт кондиционеров",
-        "ar": "إصلاح المكيفات",
-        "fr": "Réparation de climatiseur",
-        "de": "Klimaanlagen-Reparatur",
-        "zh": "空调维修",
-        "hi": "एसी की मरम्मत"
+        "en": "AC Repairs and Diagnostics",
+        "ar": "إصلاح وتشخيص المكيفات",
+        "ru": "Ремонт и диагностика кондиционеров",
+        "fr": "Réparation et diagnostic de climatiseurs",
+        "de": "Klimaanlagen-Reparatur & -Diagnose",
+        "zh": "空调维修与检测",
+        "hi": "एसी की मरम्मत और जाँच"
       },
       "short": {
-        "en": "Repair or replacement of faulty AC components, including fan motors, sensors, capacitors, control boards and condensate pumps. Labour and parts are itemised in a quotation for your approval.",
-        "ru": "Ремонтируем или заменяем неисправные компоненты, включая двигатели вентиляторов, датчики, конденсаторы, платы управления и дренажные помпы. Стоимость работ и деталей указываем в смете для вашего согласования.",
-        "ar": "إصلاح مكوّنات المكيف المعطّلة أو استبدالها، ومنها محركات المراوح والحساسات ومكثفات التشغيل ولوحات التحكم ومضخات التصريف. نفصّل العمل والقطع بندًا بندًا في عرض سعر نقدّمه لك للموافقة عليه.",
-        "fr": "Réparation ou remplacement des composants défectueux du climatiseur, notamment les moteurs de ventilateur, sondes, condensateurs, cartes électroniques et pompes de relevage. La main-d’œuvre et les pièces sont détaillées dans un devis soumis à votre accord.",
-        "de": "Reparatur oder Austausch defekter Bauteile der Klimaanlage, darunter Lüftermotoren, Sensoren, Kondensatoren, Steuerplatinen und Kondensatpumpen. Arbeit und Ersatzteile führen wir einzeln in einem Kostenvoranschlag auf, den wir Ihnen zur Freigabe vorlegen.",
-        "zh": "维修或更换出故障的空调部件，包括风扇电机、传感器、电容、主控板和排水泵。人工和配件在报价中逐项列明，供您确认。",
-        "hi": "एसी के ख़राब पुर्ज़ों की मरम्मत या उन्हें बदलना, जिनमें फैन मोटर, सेंसर, कैपेसिटर, कंट्रोल बोर्ड और ड्रेन पंप शामिल हैं। आपकी मंज़ूरी के लिए दिए गए कोटेशन में मज़दूरी और पुर्ज़े अलग-अलग लिखे होते हैं।"
+        "en": "We inspect your AC, find the fault and fix it: weak cooling, water leaks and blocked drains, thermostats, refrigerant leaks and recharge, faulty parts. You get our findings and a written quotation before any repair.",
+        "ar": "نفحص مكيفك ونحدد العطل ونصلحه: ضعف التبريد، تسرب الماء وانسداد التصريف، الثرموستات، تسرب غاز التبريد وإعادة تعبئته، والقطع المعطلة. تحصل على نتائج الفحص وعرض سعر مكتوب قبل أي إصلاح.",
+        "ru": "Осматриваем кондиционер, находим неисправность и устраняем её: слабое охлаждение, протечки и засоры дренажа, термостаты, утечки и заправка хладагента, неисправные детали. До ремонта вы получаете результаты диагностики и письменную смету.",
+        "fr": "Nous inspectons votre climatiseur, identifions la panne et la réparons : manque de froid, fuites d’eau et évacuations bouchées, thermostats, fuites et recharge de fluide frigorigène, pièces défectueuses. Vous recevez notre diagnostic et un devis écrit avant toute réparation.",
+        "de": "Wir prüfen Ihre Klimaanlage, finden den Fehler und beheben ihn: schwache Kühlleistung, Wasseraustritt und verstopfte Abläufe, Thermostate, Kältemittellecks und Nachfüllung, defekte Bauteile. Vor jeder Reparatur erhalten Sie unseren Befund und ein schriftliches Angebot.",
+        "zh": "我们检查您的空调，找出故障并修复：制冷不足、漏水和排水堵塞、温控器、制冷剂泄漏与加注、损坏的部件。维修前您会收到检测结果和书面报价。",
+        "hi": "हम आपके एसी की जाँच करते हैं, ख़राबी ढूँढ़ते हैं और उसे ठीक करते हैं: कम कूलिंग, पानी का रिसाव और ड्रेन की रुकावट, थर्मोस्टैट, रेफ़्रिजरेंट का रिसाव और रीचार्ज, ख़राब पुर्ज़े। किसी भी मरम्मत से पहले आपको हमारी जाँच के नतीजे और लिखित कोटेशन मिलता है।"
       },
       "description_html": {
         "en": "<p>Most split-unit failures come down to a handful of parts: a swollen start capacitor, a failed fan motor, a dead temperature sensor, a drain pump that stopped pumping, or a control board after a power surge. We carry the common parts in the van and fix most of them in one visit.</p><p>We do not install new systems and do not take on complex office VRF repairs. If that is what you need, we will say so and point you to the right people.</p>",
@@ -1232,7 +1232,7 @@
         }
       ],
       "duration_min": null,
-      "price_from": 249,
+      "price_from": 199,
       "pricing_unit": "from",
       "available_from": null,
       "seo_title": {
@@ -1252,7 +1252,17 @@
         "de": "Split-Klimaanlagen-Reparatur in Dubai: Kondensatoren, Sensoren, Motoren, Platinen, Kondensatpumpen. Arbeit ab 249 AED, Teile vorab angeboten, 90 Tage Garantie.",
         "zh": "迪拜分体式空调维修：电容、传感器、电机、主控板、排水泵。人工费 AED 249 起，配件开工前报价，保修 90 天。",
         "hi": "दुबई में स्प्लिट एसी की मरम्मत: कैपेसिटर, सेंसर, मोटर, बोर्ड, ड्रेन पंप। मज़दूरी AED 249 से, पुर्ज़ों का कोटेशन काम से पहले, 90 दिन की वारंटी।"
-      }
+      },
+      "covers": [
+        "ac-filter-grille-cleaning",
+        "ac-outdoor-unit-cleaning",
+        "ac-water-leak-drain-repair",
+        "thermostat-installation",
+        "refrigerant-leak-detection",
+        "refrigerant-leak-repair",
+        "refrigerant-recharge",
+        "ac-sanitisation"
+      ]
     },
     {
       "slug": "thermostat-installation",

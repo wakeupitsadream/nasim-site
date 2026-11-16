@@ -65,8 +65,13 @@ export function StepCategory({ payload, headingId, onChoose }: Props) {
                 />
               </span>
               <span className="text-small text-muted-foreground">
-                {/* "…and repairs" only while repair services are in the catalogue (DECISIONS №79). */}
-                {key === 'ac' && payload.services.some((s) => s.group === 'other')
+                {/* "…and repairs" only while a repair or call-out service is bookable (DECISIONS №79, №81). */}
+                {key === 'ac' &&
+                payload.services.some(
+                  (s) =>
+                    s.category === 'ac' &&
+                    (s.priceFrom?.unit === 'from' || s.priceFrom?.unit === 'visit'),
+                )
                   ? t('category.ac.textRepairs')
                   : t(`category.${key}.text`)}
               </span>

@@ -128,6 +128,38 @@ export async function getPriceItems(filter: { serviceSlug?: string } = {}): Prom
   );
 }
 
+/**
+ * A service's rows in price tables: its own, then those of the hidden services folded into it
+ * (`covers`). A folded service priced on request gets one "on request" row under its own name.
+ */
+export async function getPriceRows(serviceSlug: string): Promise<PriceItem[]> {
+  const [services, items] = await Promise.all([allServices(), allPriceItems()]);
+  const service = services.find((s) => s.slug === serviceSlug);
+  if (!service) return [];
+  const own = items.filter((i) => i.service_slug === serviceSlug);
+  const folded = (service.covers ?? []).flatMap((slug): PriceItem[] => {
+    const covered = services.find((s) => s.slug === slug);
+    if (!covered) return [];
+    const rows = items.filter((i) => i.service_slug === slug);
+    if (rows.length > 0) return rows;
+    return [
+      {
+        service_slug: slug,
+        key: `on-request:${slug}`,
+        name: covered.name,
+        unit: 'visit',
+        price: 0,
+        min_qty: 1,
+        tier_from_qty: 1,
+        note: { en: '' },
+        sort: 0,
+        on_request: true,
+      },
+    ];
+  });
+  return [...own, ...folded];
+}
+
 export async function getPackages(filter: { type?: Package['type'] } = {}): Promise<Package[]> {
   return (await allPackages()).filter((p) => p.published && (!filter.type || p.type === filter.type));
 }

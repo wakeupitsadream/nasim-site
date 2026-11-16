@@ -47,8 +47,15 @@ describe('buildPricingConfig', () => {
       'mattress_super_king',
       'mattress_second_side',
     ]);
-    // Rows quoted individually (a rug over 10 m², a bed frame) never become lines.
-    expect(items.filter((i) => i.on_request).map((i) => i.key)).toEqual(['rug_xl', 'bed_frame']);
+    // Rows quoted individually (a refrigerant leak repair, a rug over 10 m², a bed frame) never
+    // become lines.
+    expect(items.filter((i) => i.on_request).map((i) => i.key)).toEqual([
+      'leak_repair',
+      'ac_sanitisation',
+      'rug_xl',
+      'bed_frame',
+    ]);
+    expect(findLine(cfg, 'leak_repair')).toBeUndefined();
     expect(findLine(cfg, 'rug_xl')).toBeUndefined();
     expect(findLine(cfg, 'bed_frame')).toBeUndefined();
     // Misha's table of 15.11.2026: three services have a third rate from the fourth unit.
@@ -271,6 +278,16 @@ describe('estimates', () => {
     expect(linesForService(cfg, 'ac-sanitisation')).toEqual([]);
   });
 
+  it('books repairs as the diagnostics visit plus labour by estimate, without a second fee', () => {
+    const q = quote(cfg, { diagnostics_visit: 1, repair_labour: 1 }, noVat);
+    expect(q.kind).toBe('estimate');
+    expect(q.lines.map((l) => [l.lineId, l.role, l.total])).toEqual([
+      ['diagnostics_visit', 'item', 199],
+    ]);
+    expect(q.total).toBe(199);
+    expect(q.estimate?.fromLines).toEqual([{ lineId: 'repair_labour', from: 249 }]);
+  });
+
   it('prices an emergency call-out as fixed', () => {
     const q = quote(cfg, { emergency_callout: 1 }, noVat);
     expect(q.kind).toBe('fixed');
@@ -426,7 +443,8 @@ describe('seed consistency', () => {
       exact: true,
     });
     expect(priceFrom(cfg, 'ac-filter-grille-cleaning')?.exact).toBe(true);
-    expect(priceFrom(cfg, 'ac-repair')).toEqual({ amount: 249, unit: 'from', exact: false });
+    // Repairs and diagnostics are one service: the visit is the first thing paid (DECISIONS №81).
+    expect(priceFrom(cfg, 'ac-repair')).toEqual({ amount: 199, unit: 'visit', exact: false });
     // An extra seat (110) and the second side of a mattress (79) are add-ons, not a "from".
     expect(priceFrom(cfg, 'sofa-cleaning')).toEqual({ amount: 129, unit: 'item', exact: false });
     expect(priceFrom(cfg, 'mattress-cleaning')?.amount).toBe(229);
