@@ -84,14 +84,14 @@ test.describe('admin, signed in', () => {
   test('the interface switches between Russian and English', async ({ page }) => {
     const heading = page.getByRole('heading', { level: 1 });
     const before = await heading.innerText();
-    await page.locator('header form:has(input[name="locale"]) button').click();
+    await page.locator('[data-action="language"]:visible').click();
     await expect(heading).not.toHaveText(before);
-    await page.locator('header form:has(input[name="locale"]) button').click();
+    await page.locator('[data-action="language"]:visible').click();
     await expect(heading).toHaveText(before);
   });
 
   test('signing out closes the admin', async ({ page }) => {
-    await page.locator('header form:not(:has(input)) button').click();
+    await page.locator('[data-action="sign-out"]:visible').click();
     await expect(page).toHaveURL(/\/admin\/login$/);
     // The sign-in page is the one kept from before: the password typed then is gone.
     await expect(page.locator('input[name="password"]:visible')).toHaveValue('');

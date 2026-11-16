@@ -1,56 +1,65 @@
+import { LayoutDashboard, ListChecks, Settings, Tags } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { signOut, switchLanguage } from '@/app/admin/actions';
-import { AdminNav } from '@/components/admin/admin-nav';
+import { AccountActions } from '@/components/admin/account-actions';
+import { AdminBrand } from '@/components/admin/admin-brand';
+import { AdminNav, type NavItem } from '@/components/admin/admin-nav';
 import { Ltr } from '@/components/ltr';
 import { adminI18n } from '@/lib/admin/i18n';
 import { requireRole } from '@/lib/auth';
 
-const quiet =
-  'rounded-sm text-small text-muted-foreground underline underline-offset-4 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring';
-
 export default async function PanelLayout({ children }: { children: ReactNode }) {
   const user = await requireRole();
   const { locale, m } = await adminI18n();
-  const nav = [
-    { href: '/admin', label: m.app.nav.home },
-    { href: '/admin/prices', label: m.app.nav.prices },
-    { href: '/admin/services', label: m.app.nav.services },
+  const nav: NavItem[] = [
+    { href: '/admin', label: m.app.nav.home, icon: <LayoutDashboard aria-hidden="true" /> },
+    { href: '/admin/prices', label: m.app.nav.prices, icon: <Tags aria-hidden="true" /> },
+    { href: '/admin/services', label: m.app.nav.services, icon: <ListChecks aria-hidden="true" /> },
     // Contacts, legal details and VAT are the owner's (BRIEF §10).
-    ...(user.role === 'owner' ? [{ href: '/admin/settings', label: m.app.nav.settings }] : []),
+    ...(user.role === 'owner'
+      ? [
+          {
+            href: '/admin/settings',
+            label: m.app.nav.settings,
+            icon: <Settings aria-hidden="true" />,
+          },
+        ]
+      : []),
   ];
-  const [before, after] = m.app.signedInAs.split('{email}');
   return (
-    <div lang={locale} className="min-h-dvh">
-      <header className="border-b border-border bg-card">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3">
-          <p className="font-wordmark text-logo font-bold">{m.app.title}</p>
-          <div className="flex flex-1 flex-wrap items-center justify-end gap-x-4 gap-y-1 text-small text-muted-foreground">
-            <span>
-              {before}
-              <Ltr>{user.email}</Ltr>
-              {after}
+    <div lang={locale} className="min-h-dvh lg:ps-64">
+      {/* Desktop: the graphite sidebar. */}
+      <aside className="tone-deep fixed inset-y-0 inset-s-0 z-30 hidden w-64 flex-col lg:flex">
+        <div className="px-6 pt-7 pb-6">
+          <AdminBrand label={m.app.adminLabel} title={m.app.title} onDark />
+        </div>
+        <AdminNav variant="side" items={nav} label={m.app.menu} className="px-3" />
+        <div className="mt-auto grid gap-3 border-t border-border p-3">
+          <p className="grid gap-0.5 px-3 pt-1">
+            <span className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
+              {m.app.roles[user.role]}
             </span>
-            <a href={`/${locale}`} target="_blank" rel="noopener" className={quiet}>
-              {m.app.viewSite}
-            </a>
-            <form action={switchLanguage}>
-              <input type="hidden" name="locale" value={locale === 'ru' ? 'en' : 'ru'} />
-              <button type="submit" className={quiet}>
-                {m.app.switchLanguage}
-              </button>
-            </form>
-            <form action={signOut}>
-              <button type="submit" className={quiet}>
-                {m.app.signOut}
-              </button>
-            </form>
-          </div>
+            <Ltr className="truncate text-small font-medium">{user.email}</Ltr>
+          </p>
+          <AccountActions locale={locale} m={m} />
         </div>
-        <div className="mx-auto max-w-5xl px-4 pb-3">
-          <AdminNav items={nav} label={m.app.title} />
-        </div>
+      </aside>
+
+      {/* Phone and tablet: a slim header, the sections are tabs at the bottom. */}
+      <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-3 border-b border-border bg-card/95 px-4 backdrop-blur lg:hidden">
+        <AdminBrand label={m.app.adminLabel} title={m.app.title} />
+        <AccountActions locale={locale} m={m} compact />
       </header>
-      <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+
+      <main className="mx-auto max-w-5xl px-4 pt-6 pb-28 lg:px-10 lg:pt-10 lg:pb-16">
+        {children}
+      </main>
+
+      <AdminNav
+        variant="tabs"
+        items={nav}
+        label={m.app.menu}
+        className="fixed inset-x-0 bottom-0 z-30 lg:hidden"
+      />
     </div>
   );
 }

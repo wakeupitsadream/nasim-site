@@ -1,5 +1,6 @@
 import { ActionForm } from '@/components/admin/action-form';
-import { CheckField, PageHeader, Panel, TextField } from '@/components/admin/fields';
+import { BadgePercent, Eye, Phone, Scale, Share2 } from 'lucide-react';
+import { formLabels, PageHeader, Panel, TextField, ToggleField } from '@/components/admin/fields';
 import { adminI18n } from '@/lib/admin/i18n';
 import { requireRole } from '@/lib/auth';
 import { getEditableSettings } from '@/lib/content/site';
@@ -14,9 +15,13 @@ export default async function SettingsPage() {
   return (
     <>
       <PageHeader title={t.title} lead={t.lead} />
-      <ActionForm action={saveSettings} labels={{ save: m.form.save, saving: m.form.saving }}>
-        <div className="grid gap-5 md:grid-cols-2">
-          <Panel title={t.contacts.title} hint={t.contacts.phoneHint}>
+      <ActionForm action={saveSettings} labels={formLabels(m)}>
+        <div className="grid items-start gap-5 md:grid-cols-2">
+          <Panel
+            title={t.contacts.title}
+            hint={t.contacts.phoneHint}
+            icon={<Phone aria-hidden="true" />}
+          >
             <TextField
               label={t.contacts.phone}
               name="contacts.phone"
@@ -49,7 +54,7 @@ export default async function SettingsPage() {
               defaultValue={s.contacts.email}
             />
           </Panel>
-          <Panel title={t.social.title} hint={t.social.hint}>
+          <Panel title={t.social.title} hint={t.social.hint} icon={<Share2 aria-hidden="true" />}>
             {(['instagram', 'facebook', 'tiktok'] as const).map((key) => (
               <TextField
                 key={key}
@@ -62,7 +67,7 @@ export default async function SettingsPage() {
               />
             ))}
           </Panel>
-          <Panel title={t.legal.title} hint={t.legal.hint}>
+          <Panel title={t.legal.title} hint={t.legal.hint} icon={<Scale aria-hidden="true" />}>
             <TextField
               label={t.legal.legalName}
               name="legal.legalName"
@@ -82,21 +87,21 @@ export default async function SettingsPage() {
             />
           </Panel>
           <div className="grid content-start gap-5">
-            <Panel title={t.vat.title} hint={t.vat.hint}>
-              <CheckField
+            <Panel title={t.vat.title} hint={t.vat.hint} icon={<BadgePercent aria-hidden="true" />}>
+              <ToggleField
                 label={t.vat.registered}
                 name="vat.registered"
                 defaultChecked={s.vat.registered}
               />
-              <CheckField
+              <ToggleField
                 label={t.vat.included}
                 name="vat.included"
                 defaultChecked={s.vat.included}
               />
             </Panel>
-            <Panel title={t.flags.title}>
+            <Panel title={t.flags.title} icon={<Eye aria-hidden="true" />}>
               {(['emergencyEnabled', 'showReviews', 'telegramCtaRu'] as const).map((key) => (
-                <CheckField
+                <ToggleField
                   key={key}
                   label={t.flags[key]}
                   name={`flags.${key}`}

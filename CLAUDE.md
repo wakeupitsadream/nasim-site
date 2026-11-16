@@ -52,8 +52,8 @@ pnpm admin:user     # <email> [пароль] [--role owner|staff] — созда
 app/[locale]/…            публичные страницы (см. BRIEF §5)
 app/[locale]/layout.tsx   корневой layout сайта (app/layout.tsx нет — иначе ломается next/root-params)
 app/admin/…               админка (без локали в URL, UI RU/EN по cookie; свой корневой layout с <html>): login, (panel)/{page,settings,prices,services}; actions.ts рядом со страницами
-lib/auth/{index,session,password}.ts  сессия и пароли админки   lib/admin/{forms,i18n,form-state,sections}.ts   lib/db/{mutations.ts,queries/{overrides,audit}.ts}
-components/admin          форма с панелью сохранения, поля, навигация, форма входа   messages/admin/{ru,en}.json  строки админки
+lib/auth/{index,session,password}.ts  сессия и пароли админки   lib/admin/{forms,i18n,form-state,sections,changes}.ts   lib/db/{mutations.ts,queries/{overrides,audit}.ts}
+components/admin          оболочка (лок-ап, боковая панель / нижние вкладки, действия аккаунта), форма с плавающей панелью сохранения и подсветкой изменённых полей, поля, форма входа   messages/admin/{ru,en}.json  строки админки
 app/api/leads|track|auth|admin  app/api/diagnose  AI-диагностика (zod → lib/ai → цены из lib/pricing)
 proxy.ts                  next-intl; на /admin и /api/admin — оптимистичная проверка cookie сессии
 components/marketing|admin|ui|icons  components/ltr.tsx  components/localized-text.tsx

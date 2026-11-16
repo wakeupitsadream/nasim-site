@@ -8,6 +8,7 @@ import {
   serviceFromForm,
   settingsFromForm,
 } from '@/lib/admin/forms';
+import { describeChange } from '@/lib/admin/changes';
 import { dictionary, fill } from '@/lib/admin/i18n';
 import { seedPackages, seedPriceItems, seedPricingRules, seedServices } from '@/lib/content/seed';
 import { formFieldsSchema, loginSchema } from '@/lib/validation/admin';
@@ -175,5 +176,36 @@ describe('service form', () => {
       ok: false,
       fields: ['short.de'],
     });
+  });
+});
+
+describe('audit entries in words', () => {
+  const m = dictionary('ru');
+
+  it('shows a price change against the seed, then against the previous edit', () => {
+    const first = { kind: 'price_item', before: null, after: { price: 305 } };
+    expect(describeChange(m, first, () => 299)).toBe('299 → 305');
+    const second = { kind: 'price_item', before: { price: 305 }, after: { price: 299 } };
+    expect(describeChange(m, second, () => 299)).toBe('305 → 299');
+  });
+
+  it('names statuses and changed texts, and only what changed in this edit', () => {
+    const entry = {
+      kind: 'service',
+      before: { status: 'hidden' },
+      after: { status: 'active', name: { en: 'New name' } },
+    };
+    expect(describeChange(m, entry, () => 'x')).toBe('Скрыта → На сайте · Название');
+    const untouched = {
+      kind: 'service',
+      before: { status: 'active' },
+      after: { status: 'active' },
+    };
+    expect(describeChange(m, untouched, () => 'x')).toBe('');
+  });
+
+  it('lists the groups of settings that were saved', () => {
+    const entry = { kind: 'settings', before: null, after: { contacts: {}, vat: {} } };
+    expect(describeChange(m, entry, () => undefined)).toBe('Контакты · VAT');
   });
 });

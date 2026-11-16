@@ -28,7 +28,7 @@ export default function AdminRootLayout({ children }: { children: ReactNode }) {
     // The language cookie is read below the boundary, so the document itself stays static; the
     // panel sets `lang` on its own wrapper.
     <html lang="ru" className={`${plexSans.variable} ${unbounded.variable}`}>
-      <body className="min-h-dvh bg-surface-2">
+      <body className="min-h-dvh bg-background">
         {/* Every admin page reads the session cookie: request data lives under <Suspense>. */}
         <Suspense>{children}</Suspense>
       </body>

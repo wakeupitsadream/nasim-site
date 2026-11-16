@@ -1,5 +1,6 @@
 'use client';
 
+import { CircleAlert } from 'lucide-react';
 import { useActionState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,6 +13,7 @@ type Props = {
 
 export function LoginForm({ action, labels }: Props) {
   const [state, formAction, pending] = useActionState(action, IDLE);
+  const failed = !pending && state.message !== '';
   return (
     // Next keeps a page it navigated away from, hidden, with its DOM: the typed password must not
     // stay there after signing in, so the fields are cleared when the page is hidden.
@@ -38,10 +40,18 @@ export function LoginForm({ action, labels }: Props) {
           aria-invalid={state.status === 'error' || undefined}
         />
       </label>
-      <p role="alert" className="min-h-5 text-small text-danger-ink">
-        {pending ? '' : state.message}
+      <p
+        role="alert"
+        className={
+          failed
+            ? 'flex items-start gap-2 rounded-lg bg-danger-soft px-3 py-2.5 text-small text-pretty text-danger-ink'
+            : 'sr-only'
+        }
+      >
+        {failed ? <CircleAlert aria-hidden="true" className="mt-0.5 size-4 shrink-0" /> : null}
+        {failed ? state.message : ''}
       </p>
-      <Button type="submit" variant="ink" disabled={pending}>
+      <Button type="submit" size="lg" disabled={pending} className="mt-1">
         {pending ? labels.pending : labels.submit}
       </Button>
     </form>

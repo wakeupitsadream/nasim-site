@@ -13,6 +13,26 @@ type Props = {
 };
 
 /**
+ * The word itself: a drawing, not copy (the one string in code outside rule 1). Decorative —
+ * whoever places it supplies the accessible name. Brand red by default; pass a colour for dark
+ * surfaces.
+ */
+export function Wordmark({ className }: { className?: string }) {
+  return (
+    <span
+      dir="ltr"
+      aria-hidden="true"
+      className={cn(
+        '-skew-x-6 font-wordmark text-logo font-extrabold tracking-tight text-brand uppercase',
+        className,
+      )}
+    >
+      Brigada
+    </span>
+  );
+}
+
+/**
  * Brigada lock-up: the mark plus the wordmark in the display face (DECISIONS №52). The wordmark
  * is a drawing, not copy: always Latin, always LTR and in Unbounded whatever the locale, and
  * hidden from assistive tech — the accessible name is the localized brand name from settings.
@@ -43,12 +63,7 @@ export async function Logo({ brandName, tagline = false, className }: Props) {
         aria-hidden="true"
         className="pointer-events-none flex flex-col leading-none select-none"
       >
-        <span
-          dir="ltr"
-          className="-skew-x-6 font-wordmark text-logo font-extrabold tracking-tight text-brand uppercase"
-        >
-          Brigada
-        </span>
+        <Wordmark />
         {tagline ? (
           <span className="mt-1.5 text-xs tracking-wide text-muted-foreground uppercase">
             {t('tagline')}

@@ -10,7 +10,13 @@
     "signOut": "Sign out",
     "viewSite": "Open the site",
     "switchLanguage": "Русский",
-    "signedInAs": "Signed in as {email}"
+    "signedInAs": "Signed in as {email}",
+    "adminLabel": "Admin",
+    "roles": {
+      "owner": "Owner",
+      "staff": "Staff"
+    },
+    "menu": "Sections"
   },
   "login": {
     "title": "Admin sign-in",
@@ -20,7 +26,8 @@
     "pending": "Signing in…",
     "invalid": "Wrong email or password.",
     "tooMany": "Too many attempts. Try again in 15 minutes.",
-    "notConfigured": "The admin is not connected yet: it needs a database and AUTH_SECRET."
+    "notConfigured": "The admin is not connected yet: it needs a database and AUTH_SECRET.",
+    "lead": "The site's prices, services and contacts — no developer, no waiting."
   },
   "form": {
     "save": "Save and publish",
@@ -28,7 +35,9 @@
     "saved": "Saved. The site is updated.",
     "unchanged": "Nothing changed.",
     "invalid": "Not saved. Check this field: {fields}.",
-    "failed": "Could not save. Please try again."
+    "failed": "Could not save. Please try again.",
+    "dirty": "Fields changed: {n}",
+    "reset": "Discard"
   },
   "home": {
     "title": "Overview",
@@ -54,7 +63,16 @@
       "empty": "No changes yet.",
       "when": "When",
       "who": "Who",
-      "what": "What"
+      "what": "What",
+      "change": "{before} → {after}",
+      "set": "filled in",
+      "cleared": "cleared"
+    },
+    "stats": {
+      "items": "price rows",
+      "packages": "bundles and plans",
+      "active": "services on the site",
+      "hidden": "hidden: {n}"
     }
   },
   "kinds": {
@@ -114,7 +132,9 @@
     "bundle": "Bundle",
     "annual": "Annual plan",
     "quoteOnly": "on request",
-    "seoNote": "Prices written out in the services' meta titles and meta descriptions (what search shows) do not change here."
+    "seoNote": "Prices written out in the services' meta titles and meta descriptions (what search shows) do not change here.",
+    "jump": "Price list sections",
+    "tiers": "The price depends on the quantity"
   },
   "services": {
     "title": "Services",
@@ -140,6 +160,14 @@
     "nameField": "Name",
     "shortField": "Short description",
     "localesHint": "English is required. An empty translation shows the English text.",
-    "viewPage": "Page on the site"
+    "viewPage": "Page on the site",
+    "noTranslation": "no translation",
+    "from": "from {price}",
+    "statusHints": {
+      "active": "Shown in the catalogue, the price list and the calculator.",
+      "coming_soon": "A page marked \"Coming soon\", without prices or booking.",
+      "hidden": "Not on the site; its page answers 404."
+    },
+    "texts": "Texts by language"
   }
 }
