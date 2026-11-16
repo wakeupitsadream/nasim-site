@@ -136,29 +136,6 @@
     {
       "scope": "service",
       "service_slug": "ac-cleaning",
-      "sort": 1,
-      "question": {
-        "en": "How long does one unit take?",
-        "ru": "Сколько времени занимает один блок?",
-        "ar": "كم تستغرق الوحدة الواحدة؟",
-        "fr": "Combien de temps prend une unité ?",
-        "de": "Wie lange dauert die Reinigung eines Geräts?",
-        "zh": "一台机器需要多长时间？",
-        "hi": "एक यूनिट में कितना समय लगता है?"
-      },
-      "answer_html": {
-        "en": "<p>About 45 minutes for a standard clean, including the outdoor unit and the report.</p>",
-        "ru": "<p>Около 45 минут на стандартную чистку, включая наружный блок и отчёт.</p>",
-        "ar": "<p>نحو 45 دقيقة للتنظيف القياسي، بما في ذلك الوحدة الخارجية والتقرير.</p>",
-        "fr": "<p>Environ 45 minutes pour un nettoyage standard, unité extérieure et rapport compris.</p>",
-        "de": "<p>Etwa 45 Minuten für eine Standardreinigung, inklusive Außengerät und Bericht.</p>",
-        "zh": "<p>标准清洗大约 45 分钟，包括室外机和报告。</p>",
-        "hi": "<p>स्टैंडर्ड सफ़ाई में लगभग 45 मिनट, आउटडोर यूनिट और रिपोर्ट समेत।</p>"
-      }
-    },
-    {
-      "scope": "service",
-      "service_slug": "ac-cleaning",
       "sort": 2,
       "question": {
         "en": "Will there be water or mess?",
