@@ -75,10 +75,12 @@ export function LangMenuFor({ pathname, className }: Props & { pathname: string 
         <span className="sr-only">{t('label')}: </span>
         <span lang={locale}>{t(`short.${locale}`)}</span>
         <span className="sr-only"> — {t(`names.${locale}`)}</span>
+        {/* On a 360px phone the lock-up, this button, WhatsApp and the menu do not fit in one
+            row: the chevron goes first, the code and the icon still say what the button is. */}
         <ChevronDownIcon
           aria-hidden="true"
           strokeWidth={1.75}
-          className="size-4 text-muted-foreground"
+          className="size-4 text-muted-foreground max-[380px]:hidden"
         />
       </DropdownMenuTrigger>
       {/* Radix writes the root `dir` onto the portalled content element (rule 2). */}

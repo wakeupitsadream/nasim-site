@@ -29,10 +29,10 @@ import { blockSchemas } from '@/lib/validation/content';
 describe('seed files', () => {
   it('parse against the content schemas', () => {
     expect(seedServices().length).toBe(25);
-    expect(seedPriceItems().length).toBe(48);
+    expect(seedPriceItems().length).toBe(47);
     expect(seedPackages().length).toBe(7);
     expect(seedAreas().length).toBe(16);
-    expect(seedFaqs().length).toBe(17);
+    expect(seedFaqs().length).toBe(16);
   });
 
   it('price items and FAQs point at existing services', () => {
@@ -187,7 +187,7 @@ describe('content getters', () => {
 
   it('scope FAQs', async () => {
     expect((await getFaqs('global')).length).toBe(6);
-    expect((await getFaqs('service', 'ac-cleaning')).length).toBe(3);
+    expect((await getFaqs('service', 'ac-cleaning')).length).toBe(2);
     expect((await getFaqs('service', 'carpet-cleaning')).length).toBe(0);
     expect((await getFaqs('contracts')).length).toBe(3);
   });
@@ -219,5 +219,13 @@ describe('content getters', () => {
     expect(readings.en.before_c).toBeGreaterThan(readings.en.after_c);
     const template = await getBlock('wa.template.waitlist');
     expect(template.en).toContain('{service}');
+  });
+});
+
+// The owner, 17.11.2026 (DECISIONS №78): no job durations on the site until the first orders
+// are timed. Filling `duration_min` back in is all it takes to show them again.
+describe('job durations', () => {
+  it('are not stated for any service yet', () => {
+    expect(seedServices().filter((s) => s.duration_min !== null)).toEqual([]);
   });
 });

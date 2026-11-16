@@ -39,7 +39,10 @@ test.describe('booking request wizard', () => {
     const ducted = option(servicing, 'Ducted AC & Fan Coil Service');
     await expect(ducted).toContainText('2–3: AED 329');
     await expect(ducted).toContainText('4+: AED 299');
-    await expect(option(cleaning, 'Split AC Deep Cleaning')).toContainText('2+: AED 499');
+    // One flat price, no quantity rate (DECISIONS №73); the concealed-unit deep clean keeps its own.
+    await expect(option(cleaning, 'Split AC Deep Cleaning')).toContainText('AED 349');
+    await expect(option(cleaning, 'Split AC Deep Cleaning')).not.toContainText('2+');
+    await expect(option(cleaning, 'FCU Deep Coil & Blower Cleaning')).toContainText('2+: AED 549');
     await expect(other.getByRole('radio', { name: /^AC Repairs/ })).toBeVisible();
 
     // The chosen card opens with what the service is…
@@ -134,7 +137,7 @@ test.describe('booking request wizard', () => {
       book.getByRole('heading', { level: 3, name: msg('en', 'Booking.details.acQuestion') }),
     ).toBeVisible();
     await expect(book.getByRole('radio', { name: /^Split AC Deep Cleaning/ })).toBeChecked();
-    await expect(book.getByText('AED 549').first()).toBeVisible();
+    await expect(book.getByText('AED 349').first()).toBeVisible();
 
     await page.goto('/en/services/ac-repair');
     const repair = page.locator('#book');

@@ -33,9 +33,11 @@ describe('buildPricingConfig', () => {
       [2, 279],
       [4, 249],
     ]);
-    expect(line('ac_deep').tiers.map((t) => [t.fromQty, t.price])).toEqual([
-      [1, 549],
-      [2, 499],
+    // One flat price since 17.11.2026 (DECISIONS №73): no quantity rate.
+    expect(line('ac_deep').tiers.map((t) => [t.fromQty, t.price])).toEqual([[1, 349]]);
+    expect(line('fcu_deep').tiers.map((t) => [t.fromQty, t.price])).toEqual([
+      [1, 599],
+      [2, 549],
     ]);
     expect(linesForService(cfg, 'mattress-cleaning').map((l) => l.id)).toEqual([
       'mattress_single',
@@ -86,7 +88,8 @@ describe('tiers and minimums', () => {
     ]);
     expect(total({ ac_clean: 3 })).toBe(837);
     expect(total({ ac_clean: 4 })).toBe(996);
-    expect(total({ ac_deep: 2 })).toBe(998);
+    expect(total({ ac_deep: 2 })).toBe(698);
+    expect(total({ fcu_deep: 2 })).toBe(1098);
     // The services that were priced on request until 12.11.2026.
     expect(total({ fcu_service: 1 })).toBe(349);
     expect(total({ fcu_service: 3 })).toBe(987);
@@ -411,7 +414,8 @@ describe('seed consistency', () => {
 
   it('advertises the price for one unit: quantity rates are never the headline', () => {
     expect(priceFrom(cfg, 'ac-cleaning')).toEqual({ amount: 299, unit: 'unit', exact: true });
-    expect(priceFrom(cfg, 'ac-deep-cleaning')).toEqual({ amount: 549, unit: 'unit', exact: true });
+    expect(priceFrom(cfg, 'ac-deep-cleaning')).toEqual({ amount: 349, unit: 'unit', exact: true });
+    expect(priceFrom(cfg, 'fcu-deep-coil-cleaning')?.amount).toBe(599);
     expect(priceFrom(cfg, 'full-ac-system-cleaning')?.amount).toBe(899);
   });
 
@@ -454,16 +458,16 @@ describe('annualPlanComparison', () => {
       saving: 175,
       savingPct: 10,
     });
-    // Comfort: one visit is 5 × 249 = 1245; in the other, one unit is deep-cleaned (549) and
-    // the four standard ones still get the 4+ rate (996). 1245 + 1545 − 2499 = 291.
+    // Comfort: one visit is 5 × 249 = 1245; in the other, one unit is deep-cleaned (349) and
+    // the four standard ones still get the 4+ rate (996). 1245 + 1345 − 2499 = 91.
     expect(annualPlanComparison(cfg, plan('comfort'))).toEqual({
       units: 5,
       visits: 2,
       deepUnits: 1,
-      separate: 2790,
+      separate: 2590,
       plan: 2499,
-      saving: 291,
-      savingPct: 10,
+      saving: 91,
+      savingPct: 4,
     });
   });
 

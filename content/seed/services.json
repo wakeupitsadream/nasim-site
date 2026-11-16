@@ -195,7 +195,7 @@
           "hi": "बाद की रीडिंग, फ़ोटो आपके WhatsApp पर"
         }
       ],
-      "duration_min": 45,
+      "duration_min": null,
       "price_from": 299,
       "pricing_unit": "unit",
       "available_from": null,
@@ -385,7 +385,7 @@
           "hi": "हर यूनिट की रिपोर्ट"
         }
       ],
-      "duration_min": 40,
+      "duration_min": null,
       "price_from": 349,
       "pricing_unit": "fcu",
       "available_from": null,
@@ -575,8 +575,8 @@
           "hi": "फिर से जोड़ना, टेस्ट रन, रिपोर्ट"
         }
       ],
-      "duration_min": 90,
-      "price_from": 549,
+      "duration_min": null,
+      "price_from": 349,
       "pricing_unit": "unit",
       "available_from": null,
       "seo_title": {
@@ -589,13 +589,13 @@
         "hi": "दुबई में एसी की डीप क्लीनिंग — बदबू और फफूंद का सफ़ाया"
       },
       "seo_description": {
-        "en": "Deep AC cleaning with full disassembly of the indoor unit for AED 549 per unit. Blower drum, coil and drain pan washed, anti-mould treatment, photo report.",
-        "ru": "Глубокая чистка кондиционера с разборкой внутреннего блока за 549 AED. Барабан, радиатор и поддон, противогрибковая обработка, фотоотчёт.",
-        "ar": "تنظيف عميق للمكيف مع تفكيك كامل للوحدة الداخلية بسعر 549 درهمًا للوحدة. غسل أسطوانة المروحة والملف وصينية التصريف، معالجة مضادة للعفن، وتقرير مصوّر.",
-        "fr": "Nettoyage en profondeur de clim à Dubaï, unité intérieure démontée, à 549 AED. Turbine, échangeur, bac à condensats lavés, anti-moisissure, rapport photo.",
-        "de": "Klimaanlagen-Tiefenreinigung in Dubai: komplette Demontage des Innengeräts für 549 AED. Lüfterwalze, Wärmetauscher, Kondensatwanne, Schimmelschutz, Fotobericht.",
-        "zh": "迪拜空调深度清洗，室内机完全拆机，每台 AED 549。清洗风轮、蒸发器和接水盘，防霉处理，照片报告。",
-        "hi": "इनडोर यूनिट को पूरी तरह खोलकर एसी की डीप क्लीनिंग AED 549 में। ब्लोअर ड्रम, कॉइल और ड्रेन ट्रे की धुलाई, फफूंद-रोधी ट्रीटमेंट, फ़ोटो रिपोर्ट।"
+        "en": "Deep AC cleaning with full disassembly of the indoor unit for AED 349 per unit. Blower drum, coil and drain pan washed, anti-mould treatment, photo report.",
+        "ru": "Глубокая чистка кондиционера с разборкой внутреннего блока за 349 AED. Барабан, радиатор и поддон, противогрибковая обработка, фотоотчёт.",
+        "ar": "تنظيف عميق للمكيف مع تفكيك كامل للوحدة الداخلية بسعر 349 درهمًا للوحدة. غسل أسطوانة المروحة والملف وصينية التصريف، معالجة مضادة للعفن، وتقرير مصوّر.",
+        "fr": "Nettoyage en profondeur de clim à Dubaï, unité intérieure démontée, à 349 AED. Turbine, échangeur, bac à condensats lavés, anti-moisissure, rapport photo.",
+        "de": "Klimaanlagen-Tiefenreinigung in Dubai: komplette Demontage des Innengeräts für 349 AED. Lüfterwalze, Wärmetauscher, Kondensatwanne, Schimmelschutz, Fotobericht.",
+        "zh": "迪拜空调深度清洗，室内机完全拆机，每台 AED 349。清洗风轮、蒸发器和接水盘，防霉处理，照片报告。",
+        "hi": "इनडोर यूनिट को पूरी तरह खोलकर एसी की डीप क्लीनिंग AED 349 में। ब्लोअर ड्रम, कॉइल और ड्रेन ट्रे की धुलाई, फफूंद-रोधी ट्रीटमेंट, फ़ोटो रिपोर्ट।"
       }
     },
     {
@@ -1017,7 +1017,7 @@
           "hi": "मौके पर मरम्मत या लिखित कोटेशन"
         }
       ],
-      "duration_min": 60,
+      "duration_min": null,
       "price_from": 199,
       "pricing_unit": "visit",
       "available_from": null,
@@ -1231,7 +1231,7 @@
           "hi": "मरम्मत, टेस्ट, रिपोर्ट"
         }
       ],
-      "duration_min": 60,
+      "duration_min": null,
       "price_from": 249,
       "pricing_unit": "from",
       "available_from": null,
@@ -1408,7 +1408,7 @@
           "hi": "मरम्मत, वैक्यूम, गैस भरना, रीडिंग"
         }
       ],
-      "duration_min": 120,
+      "duration_min": null,
       "price_from": 299,
       "pricing_unit": "system",
       "available_from": null,
@@ -1696,7 +1696,7 @@
           "hi": "सुखाने की सलाह, बाद की फ़ोटो"
         }
       ],
-      "duration_min": 60,
+      "duration_min": null,
       "price_from": 129,
       "pricing_unit": "item",
       "available_from": null,
@@ -1792,7 +1792,7 @@
           "hi": "सुखाने की सलाह, बाद की फ़ोटो"
         }
       ],
-      "duration_min": 40,
+      "duration_min": null,
       "price_from": 229,
       "pricing_unit": "item",
       "available_from": null,
@@ -1879,7 +1879,7 @@
           "hi": "सुखाने की सलाह, बाद की फ़ोटो"
         }
       ],
-      "duration_min": 60,
+      "duration_min": null,
       "price_from": 29,
       "pricing_unit": "sqm",
       "available_from": null,

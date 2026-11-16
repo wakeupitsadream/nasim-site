@@ -90,16 +90,16 @@
       "key": "ac_deep_1",
       "tier_group": "ac_deep",
       "name": {
-        "en": "Deep clean, 1 unit",
-        "ru": "Глубокая чистка, 1 блок",
-        "ar": "تنظيف عميق، وحدة واحدة",
-        "fr": "Nettoyage en profondeur, 1 unité",
-        "de": "Tiefenreinigung, 1 Gerät",
-        "zh": "深度清洗，1 台",
-        "hi": "डीप क्लीनिंग, 1 यूनिट"
+        "en": "Deep clean",
+        "ru": "Глубокая чистка",
+        "ar": "تنظيف عميق",
+        "fr": "Nettoyage en profondeur",
+        "de": "Tiefenreinigung",
+        "zh": "深度清洗",
+        "hi": "डीप क्लीनिंग"
       },
       "unit": "unit",
-      "price": 549,
+      "price": 349,
       "min_qty": 1,
       "tier_from_qty": 1,
       "note": {
@@ -112,34 +112,6 @@
         "hi": "इनडोर यूनिट पूरी तरह खोलकर"
       },
       "sort": 1
-    },
-    {
-      "service_slug": "ac-deep-cleaning",
-      "key": "ac_deep_2plus",
-      "tier_group": "ac_deep",
-      "name": {
-        "en": "Deep clean, 2+ units",
-        "ru": "Глубокая чистка, 2+ блоков",
-        "ar": "تنظيف عميق، وحدتان فأكثر",
-        "fr": "Nettoyage en profondeur, 2 unités et plus",
-        "de": "Tiefenreinigung, 2+ Geräte",
-        "zh": "深度清洗，2 台及以上",
-        "hi": "डीप क्लीनिंग, 2+ यूनिट"
-      },
-      "unit": "unit",
-      "price": 499,
-      "min_qty": 2,
-      "tier_from_qty": 2,
-      "note": {
-        "en": "Per unit",
-        "ru": "За блок",
-        "ar": "للوحدة",
-        "fr": "Par unité",
-        "de": "Pro Gerät",
-        "zh": "每台",
-        "hi": "प्रति यूनिट"
-      },
-      "sort": 2
     },
     {
       "service_slug": "ducted-ac-fcu-service",
