@@ -123,9 +123,11 @@ export async function ServiceHero({
           </div>
         </div>
         <div className="enter lg:col-span-5" style={stagger(3)}>
+          {/* A square picture keeps its square: the owner's illustrations carry detail to the
+              edges (a before/after inset, the tool), which a 4:5 crop would cut. */}
           <MediaFrame
             media={photo}
-            ratio="4/5"
+            ratio={photo && photo.width === photo.height ? '1/1' : '4/5'}
             art={category}
             sizes="(min-width: 1024px) 40vw, 100vw"
             mobile="hideWhenEmpty"

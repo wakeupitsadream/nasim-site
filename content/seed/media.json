@@ -216,6 +216,23 @@
     },
     {
       "kind": "service",
+      "service_slug": "ac-duct-cleaning",
+      "url": "/brand/duct-cleaning.jpg",
+      "width": 1254,
+      "height": 1254,
+      "alt": {
+        "en": "A Brigada technician in a red uniform cleaning an air duct through a ceiling opening with a rotary brush and a vacuum hose; inset: the duct before and after cleaning (illustration)",
+        "ar": "فني من Brigada بزي أحمر ينظف مجرى الهواء عبر فتحة في السقف بفرشاة دوّارة وخرطوم شفط؛ في الإطار: المجرى قبل التنظيف وبعده (رسم توضيحي)",
+        "ru": "Техник Brigada в красной форме чистит воздуховод через проём в потолке вращающейся щёткой и вакуумным шлангом; во врезке — воздуховод до и после чистки (иллюстрация)",
+        "fr": "Un technicien Brigada en tenue rouge nettoie une gaine d’air par une ouverture au plafond, avec une brosse rotative et un tuyau d’aspiration ; en médaillon : la gaine avant et après nettoyage (illustration)",
+        "de": "Ein Brigada-Techniker in roter Arbeitskleidung reinigt einen Luftkanal durch eine Deckenöffnung mit Rotationsbürste und Saugschlauch; im Ausschnitt: der Kanal vor und nach der Reinigung (Illustration)",
+        "zh": "身穿红色工作服的 Brigada 技师通过天花板开口，用旋转毛刷和吸尘软管清洁风管；小图为风管清洁前后对比（插图）",
+        "hi": "लाल यूनिफ़ॉर्म में Brigada का तकनीशियन छत के खुले हिस्से से घूमने वाले ब्रश और वैक्यूम होज़ से एयर डक्ट साफ़ कर रहा है; इनसेट में सफ़ाई से पहले और बाद की डक्ट (चित्रण)"
+      },
+      "sort": 35
+    },
+    {
+      "kind": "service",
       "service_slug": "emergency-ac-repair",
       "url": "/photos/emergency-ac-repair.jpg",
       "width": 1200,
