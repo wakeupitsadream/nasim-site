@@ -21,7 +21,7 @@ import { Button } from '@/components/ui/button';
 import { defaultSelection, initialState, reducer, type BookingState } from '@/lib/booking/state';
 import { dayOptions, dubaiClock } from '@/lib/booking/time';
 import { formatAED, formatDay, formatNumber } from '@/lib/i18n/format';
-import { quote, suggestBundle } from '@/lib/pricing';
+import { estimateFloor, quote, suggestBundle } from '@/lib/pricing';
 import { buildQuoteMessage } from '@/lib/whatsapp';
 
 /**
@@ -58,15 +58,18 @@ export function BookingWizard({ payload }: { payload: BookingPayload }) {
   const activeService = payload.services.find((s) => s.slug === state.acService) ?? null;
   const emergency = activeService?.emergency ?? false;
   const currentQuote = useMemo(
-    () => quote(pricing, state.selection, payload.vat),
-    [pricing, state.selection, payload.vat],
+    () => quote(pricing, state.selection, payload.vat, { firstBooking: state.firstBooking }),
+    [pricing, state.selection, payload.vat, state.firstBooking],
   );
+  // A bundle is sold at its displayed price, without the first-booking offer: once the offer
+  // is applied, "add a sofa for X more" would quote the wrong difference.
+  const offerApplied = currentQuote.offer?.applied ?? false;
   const suggestion = useMemo(
     () =>
-      state.category === 'upholstery' || state.category === 'ac'
+      !offerApplied && (state.category === 'upholstery' || state.category === 'ac')
         ? suggestBundle(pricing, state.selection)
         : null,
-    [pricing, state.selection, state.category],
+    [pricing, state.selection, state.category, offerApplied],
   );
 
   const chooseService = (service: BookingService) =>
@@ -105,11 +108,21 @@ export function BookingWizard({ payload }: { payload: BookingPayload }) {
       ...(currentQuote.estimate?.fromLines ?? []).map(
         (l) => payload.lineLabels[l.lineId]?.text ?? l.lineId,
       ),
+      ...(currentQuote.minimum
+        ? [`${t('summary.minimumRow')} ${formatAED(currentQuote.minimum.amount, locale)}`]
+        : []),
+      ...(currentQuote.offer?.applied
+        ? [`${tPrice('firstBooking.title')} −${formatAED(currentQuote.offer.discount, locale)}`]
+        : []),
     ];
+    // An estimate with nothing fixed up front reads "from AED 299", not "AED 0 + estimate".
+    const floor = estimateFloor(currentQuote);
     const total =
-      currentQuote.kind === 'estimate'
-        ? `${formatAED(currentQuote.total, locale)} ${tPrice('per.from')}`
-        : formatAED(currentQuote.total, locale);
+      floor !== null
+        ? t('summary.fromLine', { amount: formatAED(floor, locale) })
+        : currentQuote.kind === 'estimate'
+          ? `${formatAED(currentQuote.total, locale)} ${tPrice('per.from')}`
+          : formatAED(currentQuote.total, locale);
     return buildQuoteMessage({
       template: payload.template,
       brand: payload.brand,
@@ -185,6 +198,7 @@ export function BookingWizard({ payload }: { payload: BookingPayload }) {
                 onChooseService={chooseService}
                 onQty={(lineId, qty) => dispatch({ type: 'setQty', lineId, qty })}
                 onAddLines={(add) => dispatch({ type: 'addLines', add })}
+                onFirstBooking={(value) => dispatch({ type: 'setFirstBooking', value })}
               />
               <Nav back={() => go({ type: 'back' })} nextLabel={t('nav.toTime')} submit />
             </form>

@@ -28,9 +28,9 @@ import { blockSchemas } from '@/lib/validation/content';
 
 describe('seed files', () => {
   it('parse against the content schemas', () => {
-    expect(seedServices().length).toBe(12);
-    expect(seedPriceItems().length).toBe(17);
-    expect(seedPackages().length).toBe(4);
+    expect(seedServices().length).toBe(25);
+    expect(seedPriceItems().length).toBe(48);
+    expect(seedPackages().length).toBe(7);
     expect(seedAreas().length).toBe(16);
     expect(seedFaqs().length).toBe(19);
   });
@@ -43,6 +43,55 @@ describe('seed files', () => {
     }
     for (const slug of seedPricingRules().quote_only_services)
       expect(slugs.has(slug), slug).toBe(true);
+  });
+
+  it('offers the first-booking discount on the cleaning services only', () => {
+    // Routine servicing is cleaning too (filters, coil, drain); repairs and diagnostics are not.
+    expect(seedPricingRules().first_booking_offer).toEqual({
+      discount: 50,
+      min_total: 500,
+      service_slugs: [
+        'ac-cleaning',
+        'ducted-ac-fcu-service',
+        'ac-deep-cleaning',
+        'fcu-deep-coil-cleaning',
+        'ac-duct-cleaning',
+        'full-ac-system-cleaning',
+        'ac-filter-grille-cleaning',
+        'ac-outdoor-unit-cleaning',
+        'sofa-cleaning',
+        'mattress-cleaning',
+        'carpet-cleaning',
+        'curtain-cleaning',
+        'upholstery-extras',
+      ],
+    });
+    // The minimum order is a rule of exactly the deep-cleaning services.
+    expect(seedPricingRules().minimum_order).toEqual({
+      amount: 229,
+      service_slugs: seedServices()
+        .filter((s) => s.category === 'upholstery')
+        .map((s) => s.slug),
+    });
+    const priced = new Set(seedPriceItems().map((p) => p.service_slug));
+    for (const slug of seedPricingRules().first_booking_offer!.service_slugs)
+      expect(priced.has(slug), slug).toBe(true);
+  });
+
+  it('files the AC services under the three sections of the price list', () => {
+    const groups = (key: string) =>
+      seedServices()
+        .filter((s) => s.category === 'ac' && s.group === key)
+        .map((s) => s.slug);
+    expect(groups('service')).toEqual(['ac-cleaning', 'ducted-ac-fcu-service']);
+    expect(groups('cleaning')).toEqual([
+      'ac-deep-cleaning',
+      'fcu-deep-coil-cleaning',
+      'ac-duct-cleaning',
+      'full-ac-system-cleaning',
+    ]);
+    expect(groups('other')).toHaveLength(12);
+    expect(seedServices().filter((s) => s.category === 'ac' && !s.group)).toEqual([]);
   });
 
   it('bundle includes refer to price lines and the diagnostics item exists', () => {
@@ -62,7 +111,7 @@ describe('seed files', () => {
     for (const key of Object.keys(blockSchemas)) expect(keys.has(key), key).toBe(true);
   });
 
-  it('media files exist, service photos point at real services, every active service has one', () => {
+  it('media files exist, service photos point at real services, every described service has one', () => {
     const slugs = new Set(seedServices().map((s) => s.slug));
     const withPhoto = new Set<string>();
     for (const m of seedMedia()) {
@@ -76,7 +125,9 @@ describe('seed files', () => {
       }
       if (m.kind === 'category') expect(m.category, m.url).toBeDefined();
     }
-    for (const s of seedServices().filter((x) => x.status === 'active'))
+    // Services that only have the owner's short description so far (no visit steps written)
+    // have no photo yet: their pages keep the placeholder art.
+    for (const s of seedServices().filter((x) => x.status === 'active' && x.visit_steps.length > 0))
       expect(withPhoto.has(s.slug), s.slug).toBe(true);
   });
 });
@@ -90,21 +141,22 @@ describe('content getters', () => {
       'sofa-cleaning',
       'mattress-cleaning',
       'carpet-cleaning',
-      'stain-odour-removal',
+      'curtain-cleaning',
+      'upholstery-extras',
     ]);
     expect((await getServices({ status: ['coming_soon'] })).length).toBe(2);
   });
 
   it('find a service by slug and return null for unknown ones', async () => {
-    expect((await getServiceBySlug('ac-cleaning'))?.name.en).toBe('AC Cleaning');
+    expect((await getServiceBySlug('ac-cleaning'))?.name.en).toBe('Standard Split AC Service');
     expect(await getServiceBySlug('no-such-service')).toBeNull();
   });
 
   it('relate nearest services of the same category plus one from the other', async () => {
     const related = await getRelatedServices('ac-cleaning');
     expect(related.map((s) => s.slug)).toEqual([
-      'ac-deep-cleaning',
       'ducted-ac-fcu-service',
+      'ac-deep-cleaning',
       'sofa-cleaning',
     ]);
     expect((await getRelatedServices('sofa-cleaning')).map((s) => s.category)).toEqual([
@@ -116,7 +168,12 @@ describe('content getters', () => {
 
   it('filter price items by service and packages by type', async () => {
     expect((await getPriceItems({ serviceSlug: 'ac-cleaning' })).length).toBe(3);
-    expect((await getPackages({ type: 'bundle' })).map((p) => p.slug)).toEqual(['fresh-home']);
+    expect((await getPackages({ type: 'bundle' })).map((p) => p.slug)).toEqual([
+      'fresh-home',
+      'sofa-and-mattress',
+      'furniture-refresh',
+      'full-home',
+    ]);
     expect((await getPackages({ type: 'annual' })).length).toBe(3);
   });
 

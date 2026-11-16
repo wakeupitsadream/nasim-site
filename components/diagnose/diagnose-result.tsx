@@ -2,7 +2,7 @@
 
 import { ArrowRightIcon, MessageSquareIcon, RotateCcwIcon, TriangleAlertIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useId, type RefObject } from 'react';
+import { useId, type ReactNode, type RefObject } from 'react';
 import { Ltr } from '@/components/ltr';
 import { ServiceIcon } from '@/components/marketing/service-icon';
 import { Button } from '@/components/ui/button';
@@ -59,14 +59,17 @@ export function DiagnoseResult({
   const causesId = `${id}-causes`;
   const questionsId = `${id}-questions`;
   const { service } = result;
+  const figure = (chunks: ReactNode) => (
+    <Ltr className="text-h3 font-light text-foreground tabular-nums">{chunks}</Ltr>
+  );
   const price =
     service?.priceFrom && !service.comingSoon
-      ? tPrice.rich('from', {
-          amount: formatAED(service.priceFrom.amount, locale),
-          price: (chunks) => (
-            <Ltr className="text-h3 font-light text-foreground tabular-nums">{chunks}</Ltr>
-          ),
-        })
+      ? service.priceFrom.exact
+        ? figure(formatAED(service.priceFrom.amount, locale))
+        : tPrice.rich('from', {
+            amount: formatAED(service.priceFrom.amount, locale),
+            price: figure,
+          })
       : null;
   const priceUnit = service?.priceFrom ? tPrice(`per.${service.priceFrom.unit}`) : null;
 

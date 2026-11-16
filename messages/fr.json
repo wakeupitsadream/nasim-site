@@ -22,7 +22,7 @@
     },
     "annualContracts": {
       "title": "Contrats d’entretien annuels",
-      "description": "Formules d’entretien annuel de climatisation à Dubaï : trois visites par an, interventions prioritaires et remises sur les réparations. Comparez Essential, Comfort et Villa."
+      "description": "Entretien annuel de clim à Dubaï : visites planifiées, réservation prioritaire, −10 % sur la main-d’œuvre de réparation. Comparez Essential, Comfort et Villa."
     },
     "areas": {
       "title": "Zones desservies"
@@ -384,7 +384,7 @@
     "assistant": "Assistant"
   },
   "Services": {
-    "lead": "Dix services à prix fixe et deux bientôt disponibles. Chaque visite se termine par un rapport photo sur WhatsApp.",
+    "lead": "Des prix fixes quand ils peuvent être annoncés d’avance, un devis pour tout le reste. Chaque visite se termine par un rapport photo sur WhatsApp.",
     "category": {
       "ac": "Climatisation",
       "upholstery": "Canapés, matelas et tapis",
@@ -392,7 +392,7 @@
     },
     "summary": {
       "ac": "Nettoyage, nettoyage en profondeur, ventilo-convecteurs, réparations et fluide frigorigène.",
-      "upholstery": "Canapés, matelas, tapis, taches et odeurs — secs en quelques heures.",
+      "upholstery": "Nettoyage professionnel de canapés en tissu, matelas, tapis et rideaux. Envoyez-nous des photos : nous confirmons votre prix fixe avant la réservation.",
       "comingSoon": "Rejoignez la liste d’attente et nous vous écrirons en premier."
     },
     "card": {
@@ -405,8 +405,8 @@
       "availableFrom": "À partir de {date}"
     },
     "contract": {
-      "title": "Contrat annuel",
-      "text": "Trois visites par an, réservation prioritaire et remise sur les réparations.",
+      "title": "Formules annuelles d’entretien de climatisation",
+      "text": "Nettoyage et entretien planifiés tout au long de l’année, avec réservation prioritaire et les avantages sur les réparations prévus par votre formule. La couverture, le nombre d’unités et la fréquence des visites sont confirmés à la souscription.",
       "cta": "Comparer les formules"
     },
     "notSure": {
@@ -414,7 +414,13 @@
       "text": "Décrivez le problème ou envoyez une photo : l’assistant indique la cause probable et le service qui la règle, avec son prix fixe. Il répond aussi aux questions fréquentes.",
       "ask": "Demander à l’assistant",
       "price": "Ouvrir le calculateur"
-    }
+    },
+    "group": {
+      "service": "Entretien de climatiseurs",
+      "cleaning": "Nettoyage de climatiseurs",
+      "other": "Autres services de nettoyage et de réparation"
+    },
+    "onRequest": "Prix sur demande"
   },
   "Service": {
     "included": "Ce qui est inclus",
@@ -453,6 +459,10 @@
       "from": "Disponible à partir de {date}",
       "waitlist": "Rejoindre la liste d’attente",
       "note": "Nous vous écrivons en premier à l’ouverture. Pas de newsletter."
+    },
+    "quote": {
+      "title": "Demandez un devis pour ce service",
+      "text": "Indiquez-nous le type d’unité et combien vous en avez. Nous confirmons le périmètre et un prix fixe avant la visite."
     }
   },
   "Price": {
@@ -476,7 +486,12 @@
     "tierPlus": "{n}+",
     "tierRange": "{from}–{to}",
     "perYearRich": "<a>{amount}</a> par an",
-    "insteadRich": "au lieu de <s>{amount}</s>"
+    "insteadRich": "au lieu de <s>{amount}</s>",
+    "firstBooking": {
+      "title": "Offre première réservation",
+      "text": "<price>{discount}</price> de remise sur votre première réservation de nettoyage d’au moins <price>{min}</price>.",
+      "terms": "Valable une seule fois par client, sur les nettoyages réservés séparément, y compris aux tarifs dégressifs. Les forfaits et les formules annuelles sont proposés à leur prix final affiché."
+    }
   },
   "Pricing": {
     "lead": "Chaque prix ci-dessous est fixé avant la visite et inclut le déplacement. Les réparations commencent par des frais de diagnostic fixes, déduits du montant des travaux.",
@@ -494,11 +509,15 @@
       "ac": "Tarifs climatisation",
       "upholstery": "Tarifs canapés, matelas et tapis"
     },
-    "factors": {
-      "title": "Ce qui influence le prix"
+    "acNote": "Les frais de diagnostic sont déduits de la réparation ou des tests approuvés pour la même panne. Les interventions urgentes dépendent des disponibilités.",
+    "details": {
+      "title": "Conditions tarifaires"
     },
     "tiers": {
       "title": "Tarifs dégressifs"
+    },
+    "beforeYouBook": {
+      "title": "Avant de réserver"
     }
   },
   "Report": {
@@ -529,7 +548,7 @@
     "getPrice": "Obtenir un prix instantané"
   },
   "Contracts": {
-    "lead": "Un paiement par an, trois visites, une intervention prioritaire en cas de panne et une remise sur les réparations. Moins cher que de réserver chaque nettoyage séparément.",
+    "lead": "Un paiement par an pour des visites planifiées, avec réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation. Moins cher que de réserver chaque nettoyage séparément.",
     "plans": {
       "eyebrow": "Trois formules",
       "title": "Choisissez la formule de votre logement",
@@ -539,13 +558,15 @@
     "includes": {
       "units": "Jusqu’à {n} unités",
       "visits": "{n} visites par an",
-      "deep": "dont {n} nettoyage en profondeur",
-      "priority": "Intervention prioritaire sous {n} h",
-      "repairDiscount": "{n} % de remise sur les réparations"
+      "deep": "Une unité choisie est nettoyée en profondeur lors de l’une des visites",
+      "priority": "Réservation prioritaire",
+      "repairDiscount": "{n} % de remise sur la main-d’œuvre de réparation",
+      "custom": "Couverture adaptée à votre équipement"
     },
     "card": {
       "saving": "Réservé visite par visite : <s>{separate}</s>. Vous économisez <s>{saving}</s> ({pct} %).",
-      "cta": "Demander cette formule"
+      "cta": "Demander cette formule",
+      "quote": "Sur devis"
     },
     "savings": {
       "eyebrow": "Le calcul",
@@ -560,8 +581,8 @@
         "saving": "Vous économisez"
       },
       "visitsStd": "{standard} nettoyages standard × {units} unités",
-      "visitsMix": "{standard} standard + {deep} en profondeur × {units} unités",
-      "note": "La formule Villa est comptée ici en unités split ; les ventilo-convecteurs coûtent plus cher par visite, l’économie y est donc plus grande."
+      "visitsDeep": "{visits} visites × {units} unités, dont une unité nettoyée en profondeur",
+      "note": "La formule Villa fait l’objet d’un devis après inspection ; elle ne figure donc pas dans ce tableau."
     },
     "visit": {
       "eyebrow": "À chaque visite",
@@ -571,7 +592,7 @@
     "how": {
       "eyebrow": "Comment ça marche",
       "title": "Trois étapes par an",
-      "lead": "Si une unité tombe en panne entre deux visites, vous obtenez une intervention dans le délai de votre formule et sa remise sur la réparation."
+      "lead": "Si une unité tombe en panne entre deux visites, vous bénéficiez d’une réservation prioritaire et de la remise de votre formule sur la main-d’œuvre de réparation."
     },
     "steps": {
       "one": {
@@ -580,7 +601,7 @@
       },
       "two": {
         "title": "Première visite",
-        "text": "Nous nettoyons chaque unité, vérifions les évacuations et fixons avec vous les dates des deux visites suivantes."
+        "text": "Nous nettoyons chaque unité, vérifions les évacuations et fixons avec vous les dates des prochaines visites."
       },
       "three": {
         "title": "Nous vous rappelons",
@@ -651,6 +672,7 @@
     },
     "details": {
       "acQuestion": "Quel service ?",
+      "tiersHint": "Plus il y a d’unités lors d’une même visite, plus le prix par unité baisse.",
       "upholsteryQuestion": "Que nettoyons-nous ?",
       "qty": {
         "unit": "Unités",
@@ -674,10 +696,12 @@
       "credited": "déduit de la réparation",
       "fromLine": "à partir de {amount}",
       "repairEstimate": "Main-d’œuvre à partir de {amount}, pièces sur devis écrit",
-      "estimateNote": "Le montant final est confirmé par écrit avant toute réparation.",
+      "estimateNote": "Le montant final est confirmé par écrit avant le début des travaux.",
       "live": "Total : {total}",
       "minApplied": "facturation minimale",
-      "line": "{qty} × {price}"
+      "line": "{qty} × {price}",
+      "minimumRow": "Commande minimale",
+      "minimumNote": "Commande minimale de <price>{amount}</price> par adresse et par visite. Combinez plusieurs éléments pour atteindre le minimum."
     },
     "offer": {
       "text": "Ajoutez {items} pour {add} de plus — forfait {name}, économisez {savings}",
@@ -723,6 +747,9 @@
       "toTime": "Choisir un horaire",
       "toSend": "Vérifier et envoyer"
     },
-    "line": "{name} × {qty}"
+    "line": "{name} × {qty}",
+    "firstBooking": {
+      "apply": "C’est ma première réservation"
+    }
   }
 }

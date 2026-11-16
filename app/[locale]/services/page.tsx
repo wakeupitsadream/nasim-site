@@ -40,7 +40,9 @@ export default async function ServicesPage() {
     tPrice,
     settings,
     pricing,
-    ac,
+    servicing,
+    cleaning,
+    other,
     upholstery,
     soon,
     annual,
@@ -55,7 +57,9 @@ export default async function ServicesPage() {
     getTranslations('Price'),
     getSiteSettings(locale),
     getPricingConfig(),
-    getServices({ status: ['active'], category: 'ac' }),
+    getServices({ status: ['active'], category: 'ac', group: 'service' }),
+    getServices({ status: ['active'], category: 'ac', group: 'cleaning' }),
+    getServices({ status: ['active'], category: 'ac', group: 'other' }),
     getServices({ status: ['active'], category: 'upholstery' }),
     getServices({ status: ['coming_soon'] }),
     getPackages({ type: 'annual' }),
@@ -65,7 +69,7 @@ export default async function ServicesPage() {
   const whatsapp = whatsappTarget(settings.contacts);
   const emergencyEnabled = settings.flags.emergencyEnabled;
   const cheapestPlan = annual.reduce<number | null>(
-    (min, p) => (min === null || p.price < min ? p.price : min),
+    (min, p) => (p.price !== null && (min === null || p.price < min) ? p.price : min),
     null,
   );
 
@@ -93,13 +97,15 @@ export default async function ServicesPage() {
         />
       </Section>
 
+      {/* The AC catalogue in the owner's three sections (DECISIONS №65): routine servicing,
+          cleaning, and every other cleaning or repair service. */}
       <Section id="ac" tone="surface" aria-labelledby="ac-title">
         {/* The crew illustration beside each category header (owner's art, DECISIONS №57). */}
         <div className="mb-stack grid gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeader
             id="ac-title"
-            title={t('category.ac')}
-            lead={t('summary.ac')}
+            eyebrow={t('category.ac')}
+            title={t('group.service')}
             className="mb-0 lg:col-span-8"
           />
           {acArt ? (
@@ -115,12 +121,36 @@ export default async function ServicesPage() {
           ) : null}
         </div>
         <ServiceGrid
-          services={ac}
+          services={servicing}
           pricing={pricing}
           locale={locale}
           emergencyEnabled={emergencyEnabled}
         />
-        <div className="reveal mt-6 flex flex-col gap-4 rounded-card border border-border bg-background p-6 sm:flex-row sm:items-center sm:justify-between">
+      </Section>
+
+      <Section id="ac-cleaning" tone="sand" aria-labelledby="ac-cleaning-title">
+        <SectionHeader
+          id="ac-cleaning-title"
+          eyebrow={t('category.ac')}
+          title={t('group.cleaning')}
+        />
+        <ServiceGrid
+          services={cleaning}
+          pricing={pricing}
+          locale={locale}
+          emergencyEnabled={emergencyEnabled}
+        />
+      </Section>
+
+      <Section id="ac-other" tone="surface" aria-labelledby="ac-other-title">
+        <SectionHeader id="ac-other-title" eyebrow={t('category.ac')} title={t('group.other')} />
+        <ServiceGrid
+          services={other}
+          pricing={pricing}
+          locale={locale}
+          emergencyEnabled={emergencyEnabled}
+        />
+        <div className="reveal mt-6 flex flex-col gap-4 rounded-card border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-4">
             <span
               aria-hidden="true"
@@ -130,7 +160,7 @@ export default async function ServicesPage() {
             </span>
             <div className="flex flex-col gap-1">
               <h3 className="text-lead font-medium text-foreground">{t('contract.title')}</h3>
-              <p className="text-body text-muted-foreground">
+              <p className="text-body text-pretty text-muted-foreground">
                 {t('contract.text')}
                 {cheapestPlan !== null ? (
                   <>

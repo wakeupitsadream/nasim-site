@@ -23,6 +23,8 @@ export type PriceLine = {
   name: I18nText;
   note: I18nText;
   sort: number;
+  /** An extra on top of another line: it never sets the service's "from" price. */
+  addon: boolean;
 };
 
 export type BundleOffer = {
@@ -40,7 +42,13 @@ export type PricingRules = {
   diagnosticsCreditedToRepair: boolean;
   diagnosticsItemKey: string;
   quoteOnlyServices: string[];
+  /** Lines that already are a diagnosis (a leak test): no diagnostics fee is added next to them. */
+  diagnosticLineIds: string[];
   suggestBundleWhenCheaper: boolean;
+  /** A fixed discount on a first booking of the listed (cleaning) services, from a minimum total. */
+  firstBookingOffer: { discount: number; minTotal: number; serviceSlugs: string[] } | null;
+  /** Minimum order when only the listed services are booked (upholstery, rugs, curtains). */
+  minimumOrder: { amount: number; serviceSlugs: string[] } | null;
 };
 
 export type PricingConfig = { lines: PriceLine[]; bundles: BundleOffer[]; rules: PricingRules };
@@ -73,6 +81,14 @@ export type Quote = {
   total: number;
   savings: number;
   estimate: { fromLines: { lineId: string; from: number }[]; credited: boolean } | null;
+  /**
+   * The first-booking offer for this selection; null when the rule is off or nothing eligible
+   * is selected. `eligible`: the cleaning total reaches the minimum and the offer beats any
+   * bundle; `applied`: eligible and the customer said it is their first booking.
+   */
+  offer: { discount: number; minTotal: number; eligible: boolean; applied: boolean } | null;
+  /** Set when the minimum order raised the total: `topUp` is what was added to reach `amount`. */
+  minimum: { amount: number; topUp: number } | null;
   vat: { mode: 'none' | 'included' | 'added'; amount: number; totalWithVat: number };
 };
 
@@ -99,6 +115,8 @@ export function buildPricingConfig(
 ): PricingConfig {
   const groups = new Map<string, PriceItem[]>();
   for (const item of items) {
+    // Rows quoted individually are for the price tables only.
+    if (item.on_request) continue;
     const id = item.tier_group ?? item.key;
     groups.set(id, [...(groups.get(id) ?? []), item]);
   }
@@ -126,6 +144,7 @@ export function buildPricingConfig(
       name: base.name,
       note: base.note,
       sort: base.sort,
+      addon: base.addon ?? false,
     });
   }
   lines.sort((a, b) => a.sort - b.sort);
@@ -160,6 +179,17 @@ export function buildPricingConfig(
       diagnosticsCreditedToRepair: rules.diagnostics_credited_to_repair,
       diagnosticsItemKey: rules.diagnostics_item_key,
       quoteOnlyServices: rules.quote_only_services,
+      diagnosticLineIds: rules.diagnostic_line_ids ?? [],
+      firstBookingOffer: rules.first_booking_offer
+        ? {
+            discount: rules.first_booking_offer.discount,
+            minTotal: rules.first_booking_offer.min_total,
+            serviceSlugs: rules.first_booking_offer.service_slugs,
+          }
+        : null,
+      minimumOrder: rules.minimum_order
+        ? { amount: rules.minimum_order.amount, serviceSlugs: rules.minimum_order.service_slugs }
+        : null,
       suggestBundleWhenCheaper: rules.suggest_bundle_when_cheaper,
     },
   };
@@ -190,18 +220,24 @@ export function tierRanges(line: PriceLine): { from: number; to: number | null; 
   }));
 }
 
-/** Lowest price among a service's lines (what "from AED …" shows). */
+/**
+ * Lowest price among a service's lines (what "from AED …" shows). `exact`: the service has one
+ * fixed price and nothing else, so it reads "AED 199 per visit", without "from".
+ */
 export function priceFrom(
   cfg: PricingConfig,
   slug: string,
-): { amount: number; unit: PriceUnit } | null {
+): { amount: number; unit: PriceUnit; exact: boolean } | null {
+  const lines = linesForService(cfg, slug).filter((l) => !l.addon);
   let best: { amount: number; unit: PriceUnit } | null = null;
-  for (const line of linesForService(cfg, slug)) {
+  for (const line of lines) {
     for (const tier of line.tiers) {
       if (!best || tier.price < best.amount) best = { amount: tier.price, unit: line.unit };
     }
   }
-  return best;
+  if (!best) return null;
+  const only = lines.length === 1 ? lines[0]! : null;
+  return { ...best, exact: only !== null && only.tiers.length === 1 && only.unit !== 'from' };
 }
 
 export const bundleSavings = (bundle: BundleOffer): number | null =>
@@ -211,19 +247,16 @@ export const bundleSavings = (bundle: BundleOffer): number | null =>
 export const ANNUAL_PLAN_LINES = { standard: 'ac_clean', deep: 'ac_deep' } as const;
 
 export type AnnualPlanTerms = {
-  price: number;
-  includes: { units_max: number; visits: number; deep_cleans: number };
+  price: number | null;
+  includes: { units_max: number | null; visits: number; deep_units: number };
 };
 
 export type AnnualComparison = {
   units: number;
-  standardVisits: number;
-  deepVisits: number;
-  /** One standard clean of `units` split units, booked on its own (before VAT). */
-  standardVisit: number;
-  /** One deep clean of `units` split units, booked on its own; 0 when the plan has none. */
-  deepVisit: number;
-  /** All the plan's visits booked one by one. */
+  visits: number;
+  /** Units deep-cleaned during one of the visits, in place of their standard clean. */
+  deepUnits: number;
+  /** All the plan's visits booked one by one (before VAT). */
   separate: number;
   plan: number;
   saving: number;
@@ -233,30 +266,34 @@ export type AnnualComparison = {
 const NO_VAT: VatState = { registered: false, included: false };
 
 /**
- * What an annual plan's visits would cost booked one by one, at the plan's maximum number of
- * split units (the conservative reading for FCU plans, whose per-visit prices are higher).
- * Null when the price list lacks the standard-clean line or the plan has no visits.
+ * What an annual plan's visits would cost booked one by one, for the plan's number of split
+ * units. One visit may deep-clean some of the units instead of their standard clean; the rest of
+ * that visit is priced at the tier of the units that remain standard. Null when the plan is
+ * quoted after an inspection (no price or no unit count), has no visits, or the price list lacks
+ * a line it needs.
  */
 export function annualPlanComparison(
   cfg: PricingConfig,
   plan: AnnualPlanTerms,
   lines: { standard: string; deep: string } = ANNUAL_PLAN_LINES,
 ): AnnualComparison | null {
-  const units = Math.max(1, Math.floor(plan.includes.units_max));
-  const deepVisits = Math.min(Math.max(0, plan.includes.deep_cleans), plan.includes.visits);
-  const standardVisits = plan.includes.visits - deepVisits;
-  if (!findLine(cfg, lines.standard) || plan.includes.visits <= 0) return null;
-  if (deepVisits > 0 && !findLine(cfg, lines.deep)) return null;
+  const { units_max: unitsMax, visits } = plan.includes;
+  if (plan.price === null || unitsMax === null || visits <= 0) return null;
+  const units = Math.max(1, Math.floor(unitsMax));
+  const deepUnits = Math.min(Math.max(0, Math.floor(plan.includes.deep_units)), units);
+  if (!findLine(cfg, lines.standard)) return null;
+  if (deepUnits > 0 && !findLine(cfg, lines.deep)) return null;
   const standardVisit = quote(cfg, { [lines.standard]: units }, NO_VAT).total;
-  const deepVisit = deepVisits > 0 ? quote(cfg, { [lines.deep]: units }, NO_VAT).total : 0;
-  const separate = standardVisits * standardVisit + deepVisits * deepVisit;
+  const mixedVisit =
+    deepUnits > 0
+      ? quote(cfg, { [lines.standard]: units - deepUnits, [lines.deep]: deepUnits }, NO_VAT).total
+      : standardVisit;
+  const separate = (visits - 1) * standardVisit + mixedVisit;
   const saving = separate - plan.price;
   return {
     units,
-    standardVisits,
-    deepVisits,
-    standardVisit,
-    deepVisit,
+    visits,
+    deepUnits,
     separate,
     plan: plan.price,
     saving,
@@ -313,7 +350,17 @@ function bundlePath(
   return { total, covers: { ...bundle.includes } };
 }
 
-export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState): Quote {
+export type QuoteOptions = {
+  /** The customer says this is their first booking (the wizard's checkbox). */
+  firstBooking?: boolean;
+};
+
+export function quote(
+  cfg: PricingConfig,
+  rawSelection: Selection,
+  vat: VatState,
+  options: QuoteOptions = {},
+): Quote {
   const selection = cleanSelection(cfg, rawSelection);
   const lines: QuoteLine[] = [];
   const fromLines: { lineId: string; from: number }[] = [];
@@ -334,9 +381,12 @@ export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState
   const diagnosticsLine = cfg.lines.find((l) =>
     l.tiers.some((t) => t.itemKey === cfg.rules.diagnosticsItemKey),
   );
-  const needsDiagnostics = [...fixedByService].some(
-    ([slug, hasFixed]) => !hasFixed && cfg.rules.quoteOnlyServices.includes(slug),
-  );
+  const alreadyDiagnosed = lines.some((l) => cfg.rules.diagnosticLineIds.includes(l.lineId));
+  const needsDiagnostics =
+    !alreadyDiagnosed &&
+    [...fixedByService].some(
+      ([slug, hasFixed]) => !hasFixed && cfg.rules.quoteOnlyServices.includes(slug),
+    );
   if (needsDiagnostics && diagnosticsLine && !selection[diagnosticsLine.id]) {
     lines.push({ ...lineTotal(diagnosticsLine, 1), role: 'diagnostics' });
   }
@@ -360,6 +410,38 @@ export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState
     }
   }
 
+  // First-booking offer: a fixed amount off standalone cleaning. A bundle keeps its displayed
+  // price, so the two never stack: the customer gets whichever path is cheaper.
+  const rule = cfg.rules.firstBookingOffer;
+  let offer: Quote['offer'] = null;
+  if (rule) {
+    const cleaning = lines
+      .filter((l) => l.role === 'item' && rule.serviceSlugs.includes(l.serviceSlug))
+      .reduce((sum, l) => sum + l.total, 0);
+    if (cleaning > 0) {
+      const eligible = cleaning >= rule.minTotal && subtotal - rule.discount < total;
+      const applied = eligible && options.firstBooking === true;
+      offer = { discount: rule.discount, minTotal: rule.minTotal, eligible, applied };
+      if (applied) {
+        total = subtotal - rule.discount;
+        bundle = null;
+      }
+    }
+  }
+
+  // Minimum order: a visit for upholstery, rugs or curtains alone is billed at least this much.
+  const floorRule = cfg.rules.minimumOrder;
+  let minimum: Quote['minimum'] = null;
+  if (
+    floorRule &&
+    lines.length > 0 &&
+    lines.every((l) => floorRule.serviceSlugs.includes(l.serviceSlug)) &&
+    total < floorRule.amount
+  ) {
+    minimum = { amount: floorRule.amount, topUp: round(cfg, floorRule.amount - total) };
+    total = floorRule.amount;
+  }
+
   total = round(cfg, total);
   const roundedSubtotal = round(cfg, subtotal);
   const rate = cfg.rules.vatRate;
@@ -379,11 +461,22 @@ export function quote(cfg: PricingConfig, rawSelection: Selection, vat: VatState
     bundle,
     subtotal: roundedSubtotal,
     total,
-    savings: roundedSubtotal - total,
+    savings: Math.max(0, roundedSubtotal - total),
     estimate:
       fromLines.length > 0 ? { fromLines, credited: cfg.rules.diagnosticsCreditedToRepair } : null,
+    offer,
+    minimum,
     vat: vatOut,
   };
+}
+
+/**
+ * What an estimate starts from when nothing fixed is charged up front (drain unblocking,
+ * thermostat installation): the sum of its "from" lines. Null when the quote has a fixed part.
+ */
+export function estimateFloor(q: Quote): number | null {
+  if (!q.estimate || q.lines.length > 0) return null;
+  return q.estimate.fromLines.reduce((sum, l) => sum + l.from, 0);
 }
 
 /** Offer the bundle when the selection already overlaps it and completing it is cheaper. */
@@ -397,6 +490,8 @@ export function suggestBundle(
   const before = quote(cfg, selection, noVat);
   if (before.bundle) return null;
 
+  // With several bundles the one that costs least to complete is the natural next step.
+  let best: BundleSuggestion | null = null;
   for (const offer of cfg.bundles) {
     const overlaps = Object.keys(offer.includes).some((id) => (selection[id] ?? 0) > 0);
     if (!overlaps) continue;
@@ -409,9 +504,10 @@ export function suggestBundle(
     const merged: Selection = { ...selection };
     for (const [id, qty] of Object.entries(add)) merged[id] = (merged[id] ?? 0) + qty;
     const after = quote(cfg, merged, noVat);
-    if (after.bundle?.slug === offer.slug && after.savings > 0) {
-      return { slug: offer.slug, add, addCost: after.total - before.total, savings: after.savings };
-    }
+    if (after.bundle?.slug !== offer.slug || after.savings <= 0) continue;
+    const addCost = after.total - before.total;
+    if (!best || addCost < best.addCost)
+      best = { slug: offer.slug, add, addCost, savings: after.savings };
   }
-  return null;
+  return best;
 }

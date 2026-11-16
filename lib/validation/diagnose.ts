@@ -73,7 +73,14 @@ export const diagnoseServiceSchema = z.object({
   slug: z.string(),
   name: z.string(),
   href: z.string(),
-  priceFrom: z.object({ amount: z.number(), unit: z.enum(DIAGNOSE_PRICE_UNITS) }).nullable(),
+  priceFrom: z
+    .object({
+      amount: z.number(),
+      unit: z.enum(DIAGNOSE_PRICE_UNITS),
+      /** One fixed price: shown without "from". */
+      exact: z.boolean().optional(),
+    })
+    .nullable(),
   /** Repairs are priced as diagnostics plus an estimate, not a fixed sum. */
   estimate: z.boolean(),
   comingSoon: z.boolean(),

@@ -484,144 +484,108 @@
       "key": "service.ducted-ac-fcu-service.vs_split",
       "kind": "html",
       "value": {
-        "en": "<p>A split unit hangs on the wall and is cleaned in place. A fan coil unit (FCU) sits above the false ceiling of a corridor or bathroom and is reached through an access hatch: filters, the drain tray and the coil are serviced from below, the thermostat and the belt or motor are checked on the spot. Ducted systems in villas work the same way but have longer drain runs and more filters, so the visit takes longer and we price it per FCU. Duct cleaning itself needs a separate Dubai Municipality approval, so we arrange it through a licensed partner.</p>",
-        "ru": "<p>Сплит висит на стене и чистится на месте. Фанкойл (FCU) стоит над подвесным потолком коридора или ванной, доступ — через люк: фильтры, поддон дренажа и радиатор обслуживаются снизу, термостат и ремень или мотор проверяются на месте. Канальные системы в виллах устроены так же, но у них длиннее дренаж и больше фильтров, поэтому визит дольше, и мы считаем его по числу фанкойлов. Чистка самих воздуховодов требует отдельного разрешения муниципалитета Дубая — её делает лицензированный партнёр.</p>",
-        "ar": "<p>مكيف السبليت معلّق على الجدار ويُنظَّف في مكانه. أما وحدة الفان كويل (FCU) فتقع فوق السقف المستعار في الممر أو الحمّام ويُوصَل إليها عبر فتحة الصيانة: تُصان الفلاتر وصينية التصريف والملف من الأسفل، ويُفحص الثرموستات والسير أو المحرك في المكان. أنظمة الدكت في الفلل تعمل بالطريقة نفسها لكن خطوط تصريفها أطول وفلاترها أكثر، لذا تستغرق الزيارة وقتًا أطول ونحسبها لكل وحدة فان كويل. أما تنظيف مجاري الهواء نفسها فيتطلب تصريحًا منفصلًا من بلدية دبي، لذلك ننظّمه عبر شريك مرخّص.</p>",
-        "fr": "<p>Une unité split est fixée au mur et se nettoie sur place. Un ventilo-convecteur (FCU) se trouve au-dessus du faux plafond d’un couloir ou d’une salle de bain et s’atteint par une trappe d’accès : les filtres, le bac à condensats et l’échangeur sont entretenus par en dessous, le thermostat et la courroie ou le moteur sont vérifiés sur place. Les systèmes gainables des villas fonctionnent de la même manière, mais avec des conduites d’évacuation plus longues et plus de filtres ; la visite dure donc plus longtemps et nous la facturons par FCU. Le nettoyage des gaines lui-même exige un agrément distinct de la Municipalité de Dubaï, nous le confions donc à un partenaire agréé.</p>",
-        "de": "<p>Ein Split-Gerät hängt an der Wand und wird vor Ort gereinigt. Ein Gebläsekonvektor (FCU) sitzt über der abgehängten Decke eines Flurs oder Badezimmers und ist über eine Revisionsklappe erreichbar: Filter, Kondensatwanne und Wärmetauscher werden von unten gewartet, Thermostat und Riemen oder Motor vor Ort geprüft. Kanalsysteme in Villen funktionieren genauso, haben aber längere Ablaufleitungen und mehr Filter – der Besuch dauert deshalb länger, und wir berechnen ihn pro FCU. Die Reinigung der Luftkanäle selbst braucht eine separate Genehmigung der Dubai Municipality, deshalb organisieren wir sie über einen lizenzierten Partner.</p>",
-        "zh": "<p>分体式空调挂在墙上，原地清洗即可。风机盘管（FCU）装在走廊或卫生间的吊顶上方，通过检修口才能触及：滤网、接水盘和盘管从下方保养，温控器以及皮带或电机现场检查。别墅的中央空调系统原理相同，但排水管更长、滤网更多，所以上门时间更长，我们按每台风机盘管计价。风管清洗本身需要迪拜市政局的单独许可，我们会通过持牌合作伙伴安排。</p>",
-        "hi": "<p>स्प्लिट यूनिट दीवार पर लगी होती है और उसकी सफ़ाई वहीं होती है। फैन कॉइल यूनिट (FCU) गलियारे या बाथरूम की फ़ॉल्स सीलिंग के ऊपर होती है और उस तक एक्सेस हैच से पहुँचा जाता है: फ़िल्टर, ड्रेन ट्रे और कॉइल की सर्विस नीचे से होती है, थर्मोस्टैट और बेल्ट या मोटर की जाँच मौके पर। विला के डक्टेड सिस्टम इसी तरह काम करते हैं, लेकिन उनमें ड्रेन लाइन लंबी और फ़िल्टर ज़्यादा होते हैं, इसलिए विज़िट में ज़्यादा समय लगता है और हम कीमत प्रति FCU तय करते हैं। डक्ट की सफ़ाई के लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए, इसलिए हम इसे लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं।</p>"
+        "en": "<p>A split unit hangs on the wall and is cleaned in place. A fan coil unit (FCU) sits above the false ceiling of a corridor or bathroom and is reached through an access hatch: filters, the drain tray and the coil are serviced from below, the thermostat and the belt or motor are checked on the spot. Ducted systems in villas work the same way but have longer drain runs and more filters, so the visit takes longer and we price it per FCU.</p>",
+        "ru": "<p>Сплит висит на стене и чистится на месте. Фанкойл (FCU) стоит над подвесным потолком коридора или ванной, доступ — через люк: фильтры, поддон дренажа и радиатор обслуживаются снизу, термостат и ремень или мотор проверяются на месте. Канальные системы в виллах устроены так же, но у них длиннее дренаж и больше фильтров, поэтому визит дольше, и мы считаем его по числу фанкойлов.</p>",
+        "ar": "<p>مكيف السبليت معلّق على الجدار ويُنظَّف في مكانه. أما وحدة الفان كويل (FCU) فتقع فوق السقف المستعار في الممر أو الحمّام ويُوصَل إليها عبر فتحة الصيانة: تُصان الفلاتر وصينية التصريف والملف من الأسفل، ويُفحص الثرموستات والسير أو المحرك في المكان. أنظمة الدكت في الفلل تعمل بالطريقة نفسها لكن خطوط تصريفها أطول وفلاترها أكثر، لذا تستغرق الزيارة وقتًا أطول ونحسبها لكل وحدة فان كويل.</p>",
+        "fr": "<p>Une unité split est fixée au mur et se nettoie sur place. Un ventilo-convecteur (FCU) se trouve au-dessus du faux plafond d’un couloir ou d’une salle de bain et s’atteint par une trappe d’accès : les filtres, le bac à condensats et l’échangeur sont entretenus par en dessous, le thermostat et la courroie ou le moteur sont vérifiés sur place. Les systèmes gainables des villas fonctionnent de la même manière, mais avec des conduites d’évacuation plus longues et plus de filtres ; la visite dure donc plus longtemps et nous la facturons par FCU.</p>",
+        "de": "<p>Ein Split-Gerät hängt an der Wand und wird vor Ort gereinigt. Ein Gebläsekonvektor (FCU) sitzt über der abgehängten Decke eines Flurs oder Badezimmers und ist über eine Revisionsklappe erreichbar: Filter, Kondensatwanne und Wärmetauscher werden von unten gewartet, Thermostat und Riemen oder Motor vor Ort geprüft. Kanalsysteme in Villen funktionieren genauso, haben aber längere Ablaufleitungen und mehr Filter – der Besuch dauert deshalb länger, und wir berechnen ihn pro FCU.</p>",
+        "zh": "<p>分体式空调挂在墙上，原地清洗即可。风机盘管（FCU）装在走廊或卫生间的吊顶上方，通过检修口才能触及：滤网、接水盘和盘管从下方保养，温控器以及皮带或电机现场检查。别墅的中央空调系统原理相同，但排水管更长、滤网更多，所以上门时间更长，我们按每台风机盘管计价。</p>",
+        "hi": "<p>स्प्लिट यूनिट दीवार पर लगी होती है और उसकी सफ़ाई वहीं होती है। फैन कॉइल यूनिट (FCU) गलियारे या बाथरूम की फ़ॉल्स सीलिंग के ऊपर होती है और उस तक एक्सेस हैच से पहुँचा जाता है: फ़िल्टर, ड्रेन ट्रे और कॉइल की सर्विस नीचे से होती है, थर्मोस्टैट और बेल्ट या मोटर की जाँच मौके पर। विला के डक्टेड सिस्टम इसी तरह काम करते हैं, लेकिन उनमें ड्रेन लाइन लंबी और फ़िल्टर ज़्यादा होते हैं, इसलिए विज़िट में ज़्यादा समय लगता है और हम कीमत प्रति FCU तय करते हैं।</p>"
       }
     },
     {
-      "key": "pricing.factors",
+      "key": "pricing.details",
       "kind": "json",
       "value": {
         "en": [
-          {
-            "title": "How many units",
-            "text": "The price per unit drops from the second and the fourth unit. The call-out is always included."
-          },
-          {
-            "title": "Access to the outdoor unit",
-            "text": "A condenser on a balcony or roof is included. One that needs a ladder on a facade or a lift is quoted after a photo."
-          },
-          {
-            "title": "Villa or apartment",
-            "text": "Villas with ducted systems are priced per fan coil unit; apartments with splits — per unit."
-          },
-          {
-            "title": "Age and condition",
-            "text": "Units older than 8–10 years may need a deep clean or parts. We say so after the first look and never start extra work without your yes."
-          }
+          "Prices include the visit and VAT where applicable.",
+          "Quantity rates apply to the same service at one address during one visit.",
+          "Rates assume standard residential equipment and suitable existing access.",
+          "Any additional access work or specialist dismantling is quoted before booking."
         ],
         "ru": [
-          {
-            "title": "Сколько блоков",
-            "text": "Цена за блок снижается со второго и с четвёртого блока. Выезд всегда включён."
-          },
-          {
-            "title": "Доступ к наружному блоку",
-            "text": "Наружный блок на балконе или крыше — включено. Если нужен подъёмник или работа на фасаде — считаем по фото."
-          },
-          {
-            "title": "Вилла или квартира",
-            "text": "Виллы с канальными системами считаем по числу фанкойлов, квартиры со сплитами — по блокам."
-          },
-          {
-            "title": "Возраст и состояние",
-            "text": "Блокам старше 8–10 лет может понадобиться глубокая чистка или запчасти. Скажем после первого осмотра и не начнём лишнего без вашего согласия."
-          }
+          "Цены включают выезд и НДС (VAT), если он применяется.",
+          "Тарифы для нескольких блоков действуют при заказе одной и той же услуги по одному адресу за один визит.",
+          "Цены рассчитаны для стандартного оборудования жилых помещений с подходящим доступом.",
+          "Дополнительные работы для доступа к оборудованию и сложную разборку оцениваем до бронирования."
         ],
         "ar": [
-          {
-            "title": "عدد الوحدات",
-            "text": "ينخفض سعر الوحدة ابتداءً من الوحدة الثانية ثم الرابعة. رسوم الزيارة مشمولة دائمًا."
-          },
-          {
-            "title": "الوصول إلى الوحدة الخارجية",
-            "text": "الوحدة الخارجية على الشرفة أو السطح مشمولة. أما التي تحتاج إلى سلّم على الواجهة أو رافعة فنقدّم سعرها بعد صورة."
-          },
-          {
-            "title": "فيلا أم شقة",
-            "text": "الفلل بأنظمة الدكت تُحسب لكل وحدة فان كويل؛ والشقق بمكيفات السبليت لكل وحدة."
-          },
-          {
-            "title": "العمر والحالة",
-            "text": "الوحدات الأقدم من 8–10 سنوات قد تحتاج إلى تنظيف عميق أو قطع. نخبرك بذلك بعد النظرة الأولى ولا نبدأ أي عمل إضافي من دون موافقتك."
-          }
-        ],
-        "fr": [
-          {
-            "title": "Nombre d’unités",
-            "text": "Le prix par unité baisse à partir de la deuxième et de la quatrième unité. Le déplacement est toujours inclus."
-          },
-          {
-            "title": "Accès à l’unité extérieure",
-            "text": "Un condenseur sur un balcon ou un toit est inclus. S’il faut une échelle sur une façade ou une nacelle, nous chiffrons après une photo."
-          },
-          {
-            "title": "Villa ou appartement",
-            "text": "Les villas en gainable sont facturées par ventilo-convecteur ; les appartements avec splits — par unité."
-          },
-          {
-            "title": "Âge et état",
-            "text": "Les unités de plus de 8 à 10 ans peuvent nécessiter un nettoyage en profondeur ou des pièces. Nous le disons après un premier coup d’œil et ne commençons jamais de travail supplémentaire sans votre accord."
-          }
+          "الأسعار تشمل رسوم الزيارة وضريبة القيمة المضافة حيثما تنطبق.",
+          "الأسعار حسب الكمية تنطبق على الخدمة نفسها في عنوان واحد وخلال زيارة واحدة.",
+          "تفترض الأسعار أن المعدات سكنية قياسية وأن الوصول المتاح إليها حاليًا مناسب.",
+          "نقدّم عرض سعر لأي أعمال إضافية لتأمين الوصول أو فكّ متخصص قبل الحجز."
         ],
         "de": [
-          {
-            "title": "Wie viele Geräte",
-            "text": "Der Preis pro Gerät sinkt ab dem zweiten und ab dem vierten Gerät. Die Anfahrt ist immer inklusive."
-          },
-          {
-            "title": "Zugang zum Außengerät",
-            "text": "Ein Außengerät auf Balkon oder Dach ist inklusive. Eines, das eine Leiter an der Fassade oder einen Hubsteiger braucht, wird nach einem Foto angeboten."
-          },
-          {
-            "title": "Villa oder Apartment",
-            "text": "Villen mit Kanalsystem berechnen wir pro Gebläsekonvektor, Apartments mit Split-Geräten pro Gerät."
-          },
-          {
-            "title": "Alter und Zustand",
-            "text": "Geräte, die älter als 8–10 Jahre sind, brauchen eventuell eine Tiefenreinigung oder Ersatzteile. Wir sagen es nach dem ersten Blick und beginnen zusätzliche Arbeiten nie ohne Ihr Ja."
-          }
+          "Die Preise enthalten die Anfahrt und die MwSt., sofern sie anfällt.",
+          "Mengenpreise gelten für dieselbe Leistung an derselben Adresse im selben Besuch.",
+          "Die Preise setzen Standardgeräte für Wohnräume und einen geeigneten, bereits vorhandenen Zugang voraus.",
+          "Für zusätzliche Zugangsarbeiten oder eine Spezialdemontage erhalten Sie vor der Buchung ein Angebot."
         ],
         "zh": [
-          {
-            "title": "机器数量",
-            "text": "从第二台和第四台起，每台价格递减。上门费始终包含在内。"
-          },
-          {
-            "title": "室外机位置",
-            "text": "阳台或屋顶上的室外机已包含在内。需要在外墙架梯子或使用升降设备的，看照片后报价。"
-          },
-          {
-            "title": "别墅还是公寓",
-            "text": "装有中央空调的别墅按每台风机盘管计价；使用分体式空调的公寓按每台机器计价。"
-          },
-          {
-            "title": "机龄和状况",
-            "text": "使用 8–10 年以上的机器可能需要深度清洗或更换配件。我们看过第一眼后就会告诉您，未经您同意绝不开始额外的工作。"
-          }
+          "价格已包含上门费和增值税（如适用）。",
+          "数量阶梯价适用于同一地址、同一次上门的同一项服务。",
+          "价格按标准家用设备计算，并以现有条件下可正常触及设备为前提。",
+          "如需额外作业才能触及设备，或需要专业拆卸，均在预约前报价。"
         ],
         "hi": [
-          {
-            "title": "कितनी यूनिट",
-            "text": "प्रति यूनिट कीमत दूसरी और चौथी यूनिट से कम होती जाती है। विज़िट शुल्क हमेशा शामिल है।"
-          },
-          {
-            "title": "आउटडोर यूनिट तक पहुँच",
-            "text": "बालकनी या छत पर लगा कंडेनसर शामिल है। जिसके लिए बाहरी दीवार पर सीढ़ी या लिफ़्ट चाहिए, उसका कोटेशन फ़ोटो देखने के बाद दिया जाता है।"
-          },
-          {
-            "title": "विला या अपार्टमेंट",
-            "text": "डक्टेड सिस्टम वाले विला की कीमत प्रति फैन कॉइल यूनिट; स्प्लिट वाले अपार्टमेंट की — प्रति यूनिट।"
-          },
-          {
-            "title": "उम्र और हालत",
-            "text": "8–10 साल से पुरानी यूनिट को डीप क्लीनिंग या पुर्ज़ों की ज़रूरत हो सकती है। हम पहली नज़र के बाद बता देते हैं और आपकी हाँ के बिना कोई अतिरिक्त काम कभी शुरू नहीं करते।"
-          }
+          "कीमतों में विज़िट शुल्क और, जहाँ लागू हो, VAT शामिल है।",
+          "मात्रा के अनुसार कीमतें तब लागू होती हैं, जब एक ही सेवा एक ही पते पर एक ही विज़िट में ली जाए।",
+          "कीमतें यह मानकर तय की गई हैं कि उपकरण घरों में लगने वाले स्टैंडर्ड प्रकार के हैं और उन तक उपयुक्त पहुँच पहले से मौजूद है।",
+          "पहुँच बनाने के किसी भी अतिरिक्त काम या पुर्ज़े खोलने के विशेष काम का कोटेशन बुकिंग से पहले दिया जाता है।"
+        ],
+        "fr": [
+          "Les prix incluent le déplacement et la TVA lorsqu’elle s’applique.",
+          "Les tarifs dégressifs s’appliquent à un même service, à une même adresse, lors d’une même visite.",
+          "Les tarifs s’entendent pour des équipements résidentiels standard et un accès existant adapté.",
+          "Les travaux d’accès supplémentaires et tout démontage spécialisé font l’objet d’un devis avant la réservation."
+        ]
+      }
+    },
+    {
+      "key": "pricing.before_you_book",
+      "kind": "json",
+      "value": {
+        "en": [
+          "Minimum order AED 229 per address and visit. Combine items to reach the minimum.",
+          "Leather, delicate fabrics, handmade rugs and oversized items require a separate quote.",
+          "Stain and odour removal depends on the fabric and condition; complete removal is not guaranteed.",
+          "Drying time varies. We confirm any additional work and charges before booking."
+        ],
+        "ru": [
+          "Минимум 229 AED за один визит по одному адресу. Можно объединить несколько предметов.",
+          "Кожу, деликатные ткани, ковры ручной работы и крупные нестандартные предметы оцениваем отдельно.",
+          "Результат зависит от материала и состояния. Полное удаление пятен и запахов не гарантируется.",
+          "Время высыхания может различаться. Дополнительные работы и доплаты согласуем до бронирования."
+        ],
+        "zh": [
+          "每个地址每次上门最低消费 AED 229。可组合多个项目以达到最低消费。",
+          "皮革、娇贵面料、手工块毯和超大件物品需另行报价。",
+          "污渍和异味的去除效果取决于面料和状况；不保证完全去除。",
+          "晾干时间因情况而异。任何额外工作和费用，我们都会在预约前与您确认。"
+        ],
+        "de": [
+          "Mindestbestellwert 229 AED pro Adresse und Besuch. Kombinieren Sie mehrere Positionen, um den Mindestbestellwert zu erreichen.",
+          "Für Leder, empfindliche Stoffe, handgefertigte Teppiche und übergroße Stücke ist ein separates Angebot erforderlich.",
+          "Die Flecken- und Geruchsentfernung hängt von Stoff und Zustand ab; eine vollständige Entfernung ist nicht garantiert.",
+          "Die Trocknungszeit variiert. Etwaige zusätzliche Arbeiten und Kosten bestätigen wir vor der Buchung."
+        ],
+        "fr": [
+          "Commande minimale de 229 AED par adresse et par visite. Combinez plusieurs éléments pour atteindre le minimum.",
+          "Le cuir, les tissus délicats, les tapis faits main et les éléments de très grande taille font l’objet d’un devis séparé.",
+          "L’élimination des taches et des odeurs dépend du tissu et de son état ; leur disparition complète n’est pas garantie.",
+          "Le temps de séchage varie. Nous confirmons les éventuels travaux et frais supplémentaires avant la réservation."
+        ],
+        "hi": [
+          "न्यूनतम ऑर्डर AED 229, प्रति पता और प्रति विज़िट। न्यूनतम राशि पूरी करने के लिए अलग-अलग आइटम मिलाकर बुक करें।",
+          "लेदर, नाज़ुक कपड़ों, हाथ से बने रग और बहुत बड़े आइटम के लिए अलग कोटेशन ज़रूरी है।",
+          "दाग़ और बदबू का हटना कपड़े और उसकी हालत पर निर्भर करता है; इनके पूरी तरह हटने की गारंटी नहीं है।",
+          "सूखने में लगने वाला समय अलग-अलग होता है। किसी भी अतिरिक्त काम और शुल्क की पुष्टि हम बुकिंग से पहले करते हैं।"
+        ],
+        "ar": [
+          "الحد الأدنى للطلب 229 درهمًا لكل عنوان وزيارة. يمكن الجمع بين عدة قطع لبلوغ الحد الأدنى.",
+          "الجلد والأقمشة الحساسة والسجاد اليدوي الصنع والقطع الأكبر من الحجم القياسي تتطلب عرض سعر منفصلًا.",
+          "تعتمد إزالة البقع والروائح على القماش وحالته؛ والإزالة الكاملة غير مضمونة.",
+          "تتفاوت مدة الجفاف. نؤكد أي أعمال ورسوم إضافية قبل الحجز."
         ]
       }
     },
@@ -740,13 +704,13 @@
       "key": "about.not_doing",
       "kind": "html",
       "value": {
-        "en": "<p>We do not install new systems, do not repair large office VRF systems, and do not clean ducts or remove mould from walls ourselves — the last two need separate Dubai Municipality approvals, so we arrange them through a licensed partner. If your job is one of these, we will say so straight away.</p>",
-        "ru": "<p>Мы не устанавливаем новые системы, не ремонтируем большие офисные VRF и сами не чистим воздуховоды и не удаляем плесень со стен — последние два требуют отдельных разрешений Dubai Municipality, поэтому организуем их через лицензированного партнёра. Если ваша задача из этого списка — скажем сразу.</p>",
-        "ar": "<p>لا نركّب أنظمة جديدة، ولا نصلح أنظمة VRF الكبيرة في المكاتب، ولا ننظّف مجاري الهواء أو نزيل العفن من الجدران بأنفسنا — فالأخيران يتطلبان تصاريح منفصلة من بلدية دبي، لذلك ننظّمهما عبر شريك مرخّص. وإذا كان طلبك من هذا النوع فسنخبرك بذلك فورًا.</p>",
-        "fr": "<p>Nous n’installons pas de nouveaux systèmes, ne réparons pas les grands systèmes VRF de bureaux, et ne nettoyons pas les gaines ni ne traitons les moisissures sur les murs nous-mêmes — ces deux derniers travaux exigent des agréments distincts de la Municipalité de Dubaï, nous les confions donc à un partenaire agréé. Si votre demande relève de l’un de ces cas, nous vous le dirons tout de suite.</p>",
-        "de": "<p>Wir installieren keine neuen Anlagen, reparieren keine großen VRF-Anlagen in Büros und übernehmen weder Kanalreinigung noch Schimmelentfernung von Wänden selbst – beides braucht separate Genehmigungen der Dubai Municipality, deshalb organisieren wir es über einen lizenzierten Partner. Fällt Ihr Auftrag in eine dieser Kategorien, sagen wir es Ihnen sofort.</p>",
-        "zh": "<p>我们不安装新系统，不维修大型办公楼 VRF 系统，也不自己清洗风管或清除墙面霉菌——后两项需要迪拜市政局的单独许可，我们会通过持牌合作伙伴安排。如果您需要的正是这些，我们会直接告诉您。</p>",
-        "hi": "<p>हम नए सिस्टम नहीं लगाते, बड़े ऑफ़िस VRF सिस्टम की मरम्मत नहीं करते, और डक्ट की सफ़ाई या दीवारों से फफूंद हटाने का काम ख़ुद नहीं करते — आख़िरी दो के लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए, इसलिए हम इन्हें लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं। अगर आपका काम इनमें से कोई है, तो हम तुरंत बता देंगे।</p>"
+        "en": "<p>We do not install new systems, do not repair large office VRF systems and do not remove mould from walls ourselves — that needs a separate Dubai Municipality approval, so we arrange it through a licensed partner. If your job is one of these, we will say so straight away.</p>",
+        "ru": "<p>Мы не устанавливаем новые системы, не ремонтируем большие офисные VRF и сами не удаляем плесень со стен — для этого нужно отдельное разрешение Dubai Municipality, поэтому организуем через лицензированного партнёра. Если ваша задача из этого списка — скажем сразу.</p>",
+        "ar": "<p>لا نركّب أنظمة جديدة، ولا نصلح أنظمة VRF الكبيرة في المكاتب، ولا نزيل العفن من الجدران بأنفسنا — فذلك يتطلب تصريحًا منفصلًا من بلدية دبي، لذلك ننظّمه عبر شريك مرخّص. وإذا كان طلبك من هذا النوع فسنخبرك بذلك فورًا.</p>",
+        "fr": "<p>Nous n’installons pas de nouveaux systèmes, ne réparons pas les grands systèmes VRF de bureaux et ne traitons pas nous-mêmes les moisissures sur les murs — ce travail exige un agrément distinct de la Municipalité de Dubaï, nous le confions donc à un partenaire agréé. Si votre demande relève de l’un de ces cas, nous vous le dirons tout de suite.</p>",
+        "de": "<p>Wir installieren keine neuen Anlagen, reparieren keine großen VRF-Anlagen in Büros und entfernen Schimmel von Wänden nicht selbst – dafür ist eine separate Genehmigung der Dubai Municipality nötig, deshalb organisieren wir das über einen lizenzierten Partner. Fällt Ihr Auftrag in eine dieser Kategorien, sagen wir es Ihnen sofort.</p>",
+        "zh": "<p>我们不安装新系统，不维修大型办公楼 VRF 系统，也不自己清除墙面霉菌——这需要迪拜市政局的单独许可，所以我们会通过持牌合作伙伴安排。如果您需要的正是这些，我们会直接告诉您。</p>",
+        "hi": "<p>हम नए सिस्टम नहीं लगाते, बड़े ऑफ़िस VRF सिस्टम की मरम्मत नहीं करते और दीवारों से फफूंद हटाने का काम ख़ुद नहीं करते — इसके लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए, इसलिए हम इसे लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं। अगर आपका काम इनमें से कोई है, तो हम तुरंत बता देंगे।</p>"
       }
     },
     {
@@ -951,7 +915,7 @@
             "fan coil unit (FCU)": "фанкойл",
             "ducted AC": "канальный кондиционер",
             "deep cleaning": "глубокая чистка",
-            "refrigerant": "фреон",
+            "refrigerant": "хладагент",
             "call-out": "выезд",
             "annual contract": "годовой контракт"
           }

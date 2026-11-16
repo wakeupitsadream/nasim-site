@@ -13,10 +13,17 @@ type Props = {
   className?: string;
 };
 
-export function badgesFor(service: Service, emergencyEnabled: boolean): ServiceBadge[] {
+export function badgesFor(
+  service: Service,
+  emergencyEnabled: boolean,
+  pricing: PricingConfig,
+): ServiceBadge[] {
   const badges: ServiceBadge[] = [];
   if (service.slug === 'emergency-ac-repair' && emergencyEnabled) badges.push('sameDay');
-  if (service.pricing_unit === 'from') badges.push('estimate');
+  // "Diagnostics + estimate" only where a diagnostics fee is really charged first (repairs,
+  // recharge); a drain or thermostat job is an estimate without one.
+  if (service.pricing_unit === 'from' && pricing.rules.quoteOnlyServices.includes(service.slug))
+    badges.push('estimate');
   return badges;
 }
 
@@ -31,7 +38,7 @@ export function ServiceGrid({ services, pricing, locale, emergencyEnabled, class
             service={service}
             priceFrom={priceFrom(pricing, service.slug)}
             locale={locale}
-            badges={badgesFor(service, emergencyEnabled)}
+            badges={badgesFor(service, emergencyEnabled, pricing)}
           />
         </li>
       ))}

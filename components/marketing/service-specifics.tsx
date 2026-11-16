@@ -28,7 +28,7 @@ export const hasSpecifics = (slug: string): boolean =>
   [
     'ac-deep-cleaning',
     'emergency-ac-repair',
-    'refrigerant-leak-refill',
+    'refrigerant-leak-detection',
     'ducted-ac-fcu-service',
   ].includes(slug);
 
@@ -92,6 +92,7 @@ export async function ServiceSpecifics({ service, locale, tone, settings, pricin
                 <PriceFrom
                   amount={callout.tiers[0]!.price}
                   unit={callout.unit}
+                  exact
                   locale={locale}
                   size="lg"
                 />
@@ -113,7 +114,7 @@ export async function ServiceSpecifics({ service, locale, tone, settings, pricin
     );
   }
 
-  if (service.slug === 'refrigerant-leak-refill') {
+  if (service.slug === 'refrigerant-leak-detection') {
     const block = await getBlock('service.refrigerant-leak-refill.principle');
     const steps = pickLocalizedValue(block, locale);
     const fallback = steps.lang !== locale;

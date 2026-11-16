@@ -49,9 +49,15 @@ export const priceUnitSchema = z.enum(['unit', 'fcu', 'visit', 'seat', 'item', '
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'YYYY-MM-DD');
 
+/** The owner's three AC sections: routine servicing, cleaning, everything else. */
+export const serviceGroupSchema = z.enum(['service', 'cleaning', 'other']);
+export type ServiceGroup = z.infer<typeof serviceGroupSchema>;
+
 export const serviceSchema = z.object({
   slug: z.string().min(1),
   category: serviceCategorySchema,
+  /** Sub-section of the AC catalogue (DECISIONS №61); other categories have none. */
+  group: serviceGroupSchema.optional(),
   status: serviceStatusSchema,
   sort: z.number().int(),
   name: i18nTextRequired,
@@ -67,6 +73,8 @@ export const serviceSchema = z.object({
   available_from: isoDate.nullable(),
   seo_title: i18nText,
   seo_description: i18nText,
+  /** A note under the service's price rows (how curtains are measured, what photos confirm). */
+  price_note: i18nText.optional(),
 });
 
 export const priceItemSchema = z.object({
@@ -82,6 +90,14 @@ export const priceItemSchema = z.object({
   tier_from_qty: z.number().int().positive(),
   note: i18nText,
   sort: z.number().int(),
+  /**
+   * A row that is quoted individually (a rug over 10 m²): shown in price tables as "price on
+   * request", never part of a quote or of the calculator. Its `price` is ignored.
+   */
+  on_request: z.boolean().optional(),
+  /** An extra on top of another row (an extra seat, the second side of a mattress): it is
+   * never the service's "from" price. */
+  addon: z.boolean().optional(),
 });
 
 const packageBase = {
@@ -103,11 +119,17 @@ export const bundlePackageSchema = z.object({
 export const annualPackageSchema = z.object({
   ...packageBase,
   type: z.literal('annual'),
+  /** Null = quoted after an inspection (the Villa plan, DECISIONS №61). */
+  price: z.number().nonnegative().nullable(),
   includes: z.object({
-    units_max: z.number().int().positive(),
+    /** Split units covered; null when the plan is sized at the inspection. */
+    units_max: z.number().int().positive().nullable(),
     visits: z.number().int().positive(),
-    deep_cleans: z.number().int().nonnegative(),
-    priority_hours: z.number().int().positive(),
+    /** Units that get a deep clean during one visit, in place of their standard clean. */
+    deep_units: z.number().int().nonnegative(),
+    /** Priority scheduling (earlier slots, no promised response time). */
+    priority: z.boolean(),
+    /** Discount on repair labour, per cent. */
     repair_discount_pct: z.number().int().nonnegative(),
   }),
 });
@@ -123,7 +145,32 @@ export const pricingRulesSchema = z.object({
   diagnostics_credited_to_repair: z.boolean(),
   diagnostics_item_key: z.string().min(1),
   quote_only_services: z.array(z.string()),
+  /** Lines that are a diagnosis in themselves: no separate diagnostics fee next to them. */
+  diagnostic_line_ids: z.array(z.string()).default([]),
   suggest_bundle_when_cheaper: z.boolean(),
+  /**
+   * A fixed discount on a customer's first cleaning booking: counts the listed services only,
+   * from a minimum total. Bundles and annual plans are sold at their own prices.
+   */
+  first_booking_offer: z
+    .object({
+      discount: z.number().positive(),
+      min_total: z.number().positive(),
+      service_slugs: z.array(z.string().min(1)).min(1),
+    })
+    .nullable()
+    .default(null),
+  /**
+   * Minimum order per address and visit: applies when everything booked belongs to the listed
+   * services (upholstery, rugs, curtains) and the fixed total is below the amount.
+   */
+  minimum_order: z
+    .object({
+      amount: z.number().positive(),
+      service_slugs: z.array(z.string().min(1)).min(1),
+    })
+    .nullable()
+    .default(null),
 });
 
 export const areaSchema = z.object({
@@ -176,7 +223,8 @@ export const blockSchemas = {
   'service.ac-deep-cleaning.age_note': i18nText,
   'service.refrigerant-leak-refill.principle': i18nValue(z.array(titledItem)),
   'service.ducted-ac-fcu-service.vs_split': i18nText,
-  'pricing.factors': i18nValue(z.array(titledItem)),
+  'pricing.details': i18nValue(z.array(z.string().min(1))),
+  'pricing.before_you_book': i18nValue(z.array(z.string().min(1))),
   'about.body': i18nText,
   'about.not_doing': i18nText,
   'contact.response_note': i18nText,

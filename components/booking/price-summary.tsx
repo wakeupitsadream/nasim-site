@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Ltr } from '@/components/ltr';
 import type { BookingPayload } from '@/components/booking/types';
 import { formatAED, formatNumber } from '@/lib/i18n/format';
-import type { BundleSuggestion, Quote } from '@/lib/pricing';
+import { estimateFloor, type BundleSuggestion, type Quote } from '@/lib/pricing';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -13,25 +13,37 @@ type Props = {
   quote: Quote;
   suggestion?: BundleSuggestion | null;
   onAddSuggestion?: (add: Record<string, number>) => void;
+  /** The "this is my first booking" checkbox; without a handler only the applied row shows. */
+  firstBooking?: boolean;
+  onFirstBooking?: (value: boolean) => void;
   compact?: boolean;
 };
 
 /** Breakdown, bundle, estimate note and the total; the total alone is announced (debounced). */
-export function PriceSummary({ payload, quote, suggestion, onAddSuggestion, compact }: Props) {
+export function PriceSummary({
+  payload,
+  quote,
+  suggestion,
+  onAddSuggestion,
+  firstBooking = false,
+  onFirstBooking,
+  compact,
+}: Props) {
   const t = useTranslations('Booking');
   const tPrice = useTranslations('Price');
   const { locale } = payload;
   const money = (n: number) => formatAED(n, locale);
   const [announced, setAnnounced] = useState('');
+  // An estimate with nothing fixed up front (drain unblocking) totals "from AED 299".
+  const floor = estimateFloor(quote);
+  const totalText =
+    floor !== null ? t('summary.fromLine', { amount: money(floor) }) : money(quote.total);
 
   useEffect(() => {
-    const id = setTimeout(
-      () => setAnnounced(t('summary.live', { total: money(quote.total) })),
-      400,
-    );
+    const id = setTimeout(() => setAnnounced(t('summary.live', { total: totalText })), 400);
     return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [quote.total]);
+  }, [totalText]);
 
   const bundleName = (slug: string) => payload.bundleNames[slug]?.text ?? slug;
 
@@ -81,16 +93,32 @@ export function PriceSummary({ payload, quote, suggestion, onAddSuggestion, comp
             </dd>
           </div>
         ) : null}
+        {quote.minimum ? (
+          <div className="flex items-baseline justify-between gap-4">
+            <dt className="text-muted-foreground">{t('summary.minimumRow')}</dt>
+            <dd className="shrink-0 tabular-nums">
+              <Ltr>+{money(quote.minimum.topUp)}</Ltr>
+            </dd>
+          </div>
+        ) : null}
+        {quote.offer?.applied ? (
+          <div className="flex items-baseline justify-between gap-4 text-highlight-ink">
+            <dt>{tPrice('firstBooking.title')}</dt>
+            <dd className="shrink-0 tabular-nums">
+              <Ltr>−{money(quote.offer.discount)}</Ltr>
+            </dd>
+          </div>
+        ) : null}
       </dl>
 
       <div className="flex items-baseline justify-between gap-4 border-t border-border pt-3">
         <span className="font-medium text-foreground">{t('summary.total')}</span>
         <span className="text-h3 font-light text-primary tabular-nums">
           {/* Remounted on every change, so the total "pops" once (styles/motion.css `.pop`). */}
-          <Ltr key={quote.total} className="pop inline-block">
-            {money(quote.total)}
+          <Ltr key={totalText} className="pop inline-block">
+            {totalText}
           </Ltr>
-          {quote.kind === 'estimate' ? (
+          {quote.kind === 'estimate' && floor === null ? (
             <span className="ms-1 text-small font-normal text-muted-foreground">
               {tPrice('per.from')}
             </span>
@@ -105,10 +133,42 @@ export function PriceSummary({ payload, quote, suggestion, onAddSuggestion, comp
       {quote.kind === 'estimate' ? (
         <p className="text-small text-muted-foreground">{t('summary.estimateNote')}</p>
       ) : null}
+      {quote.minimum ? (
+        <p className="text-small text-muted-foreground">
+          {t.rich('summary.minimumNote', {
+            amount: money(quote.minimum.amount),
+            price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
+          })}
+        </p>
+      ) : null}
       {quote.bundle ? (
         <p className="text-small text-highlight-ink">
           {t('summary.save', { amount: money(quote.savings) })}
         </p>
+      ) : null}
+
+      {quote.offer && !compact ? (
+        <div className="flex flex-col gap-2 rounded-card bg-mist p-4 text-small text-foreground">
+          <p className="font-medium">{tPrice('firstBooking.title')}</p>
+          <p className="text-muted-foreground">
+            {tPrice.rich('firstBooking.text', {
+              discount: money(quote.offer.discount),
+              min: money(quote.offer.minTotal),
+              price: (chunks) => <Ltr className="tabular-nums">{chunks}</Ltr>,
+            })}
+          </p>
+          {quote.offer.eligible && onFirstBooking ? (
+            <label className="flex min-h-tap cursor-pointer items-center gap-3 font-medium">
+              <input
+                type="checkbox"
+                checked={firstBooking}
+                onChange={(event) => onFirstBooking(event.target.checked)}
+                className="size-5 shrink-0 accent-primary"
+              />
+              {t('firstBooking.apply')}
+            </label>
+          ) : null}
+        </div>
       ) : null}
 
       {suggestion && onAddSuggestion ? (

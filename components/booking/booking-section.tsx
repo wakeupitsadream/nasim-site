@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import { BookingWizard } from '@/components/booking/wizard';
 import type { BookingPayload, BookingService } from '@/components/booking/types';
 import {
@@ -40,12 +40,21 @@ export async function BookingSection({ initialService }: Props) {
       getPhoto({ kind: 'category', category: 'upholstery' }, locale),
     ]);
 
+  const tServices = await getTranslations('Services');
+
   const bookable: BookingService[] = services
-    .filter((s) => s.category === 'ac' || s.category === 'upholstery')
+    // Services priced on request have no price lines: they are booked by message, not here.
+    .filter(
+      (s) =>
+        (s.category === 'ac' || s.category === 'upholstery') &&
+        linesForService(pricing, s.slug).length > 0,
+    )
     .map((s) => ({
       slug: s.slug,
       category: s.category as BookingService['category'],
+      group: s.group ?? null,
       name: pickLocalized(s.name, locale),
+      short: pickLocalized(s.short, locale),
       priceFrom: priceFrom(pricing, s.slug),
       durationMin: s.duration_min,
       lines: linesForService(pricing, s.slug).map((l) => l.id),
@@ -53,10 +62,13 @@ export async function BookingSection({ initialService }: Props) {
     }));
 
   const lineLabels: BookingPayload['lineLabels'] = {};
+  const lineNotes: BookingPayload['lineNotes'] = {};
   for (const service of bookable) {
     for (const id of service.lines) {
       const line = pricing.lines.find((l) => l.id === id)!;
       lineLabels[id] = service.lines.length === 1 ? service.name : pickLocalized(line.name, locale);
+      const note = pickLocalized(line.note, locale).text;
+      if (note) lineNotes[id] = note;
     }
   }
 
@@ -69,6 +81,12 @@ export async function BookingSection({ initialService }: Props) {
     booking: settings.booking,
     services: bookable,
     lineLabels,
+    lineNotes,
+    groupLabels: {
+      service: tServices('group.service'),
+      cleaning: tServices('group.cleaning'),
+      other: tServices('group.other'),
+    },
     bundleNames: Object.fromEntries(bundles.map((b) => [b.slug, pickLocalized(b.name, locale)])),
     areas: areas.map((a) => ({ slug: a.slug, name: pickLocalized(a.name, locale) })),
     categoryPhotos: {

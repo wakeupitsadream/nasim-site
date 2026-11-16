@@ -39,12 +39,14 @@ export async function PlanCards({ plans, pricing, locale, targets }: Props) {
         const inc = plan.includes;
         const cmp = annualPlanComparison(pricing, plan);
         const features = [
-          t('includes.units', { n: formatNumber(inc.units_max, locale) }),
-          t('includes.visits', { n: formatNumber(inc.visits, locale) }),
-          ...(inc.deep_cleans > 0
-            ? [t('includes.deep', { n: formatNumber(inc.deep_cleans, locale) })]
+          ...(inc.units_max !== null
+            ? [t('includes.units', { n: formatNumber(inc.units_max, locale) })]
             : []),
-          t('includes.priority', { n: formatNumber(inc.priority_hours, locale) }),
+          t('includes.visits', { n: formatNumber(inc.visits, locale) }),
+          // Sized at the inspection: no unit count to show.
+          ...(inc.units_max === null ? [t('includes.custom')] : []),
+          ...(inc.deep_units > 0 ? [t('includes.deep')] : []),
+          ...(inc.priority ? [t('includes.priority')] : []),
           ...(inc.repair_discount_pct > 0
             ? [t('includes.repairDiscount', { n: formatNumber(inc.repair_discount_pct, locale) })]
             : []),
@@ -66,14 +68,18 @@ export async function PlanCards({ plans, pricing, locale, targets }: Props) {
               </h3>
               {plan.highlighted ? <Badge variant="highlight">{tPrice('recommended')}</Badge> : null}
             </div>
-            <p className="text-muted-foreground">
-              {tPrice.rich('perYearRich', {
-                amount: formatAED(plan.price, locale),
-                a: (chunks) => (
-                  <Ltr className="text-h2 font-semibold text-primary tabular-nums">{chunks}</Ltr>
-                ),
-              })}
-            </p>
+            {plan.price !== null ? (
+              <p className="text-muted-foreground">
+                {tPrice.rich('perYearRich', {
+                  amount: formatAED(plan.price, locale),
+                  a: (chunks) => (
+                    <Ltr className="text-h2 font-semibold text-primary tabular-nums">{chunks}</Ltr>
+                  ),
+                })}
+              </p>
+            ) : (
+              <p className="text-h3 font-medium text-primary">{t('card.quote')}</p>
+            )}
             <p className="text-body text-muted-foreground">
               <LocalizedText value={pickLocalized(plan.description, locale)} locale={locale} />
             </p>

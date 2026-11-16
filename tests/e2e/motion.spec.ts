@@ -64,10 +64,10 @@ test.describe('motion (styles/motion.css)', () => {
     await page.setViewportSize(DESKTOP);
     await page.goto('/en/services');
     expect(await page.evaluate(() => typeof document.startViewTransition)).toBe('function');
-    const card = page.getByRole('link', { name: 'AC Cleaning' }).first();
+    const card = page.getByRole('link', { name: 'Standard Split AC Service' }).first();
     await card.click();
     await expect(page).toHaveURL(/\/en\/services\/ac-cleaning$/);
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('AC Cleaning');
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Standard Split AC Service');
     await page
       .getByLabel(msg('en', 'Common.breadcrumbLabel'))
       .getByRole('link', { name: msg('en', 'Services.category.ac') })
@@ -163,7 +163,7 @@ test.describe('motion (styles/motion.css)', () => {
         return original(options as never);
       }) as typeof document.startViewTransition;
     });
-    await page.getByRole('link', { name: 'AC Cleaning' }).first().click();
+    await page.getByRole('link', { name: 'Standard Split AC Service' }).first().click();
     await expect(page).toHaveURL(/\/en\/services\/ac-cleaning$/);
     await page
       .getByRole('banner')

@@ -28,16 +28,24 @@ import type {
   PricingRulesRecord,
   Service,
   ServiceCategory,
+  ServiceGroup,
   ServiceStatus,
 } from '@/lib/validation/content';
 
-export type ServiceFilter = { status?: ServiceStatus[]; category?: ServiceCategory };
+export type ServiceFilter = {
+  status?: ServiceStatus[];
+  category?: ServiceCategory;
+  group?: ServiceGroup;
+};
 
 /** Services in display order. Hidden ones are never returned unless asked for by status. */
 export async function getServices(filter: ServiceFilter = {}): Promise<Service[]> {
   const status = filter.status ?? ['active', 'coming_soon'];
   return seedServices().filter(
-    (s) => status.includes(s.status) && (!filter.category || s.category === filter.category),
+    (s) =>
+      status.includes(s.status) &&
+      (!filter.category || s.category === filter.category) &&
+      (!filter.group || s.group === filter.group),
   );
 }
 
