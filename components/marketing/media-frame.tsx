@@ -3,10 +3,11 @@ import { AcUnitArt, ContourRings, SofaArt } from '@/components/marketing/illustr
 import type { Photo } from '@/lib/content/queries';
 import { cn } from '@/lib/utils';
 
-type Ratio = '4/5' | '4/3' | '16/9' | '1/1';
+type Ratio = '4/5' | '4/3' | '3/2' | '16/9' | '1/1';
 const RATIO: Record<Ratio, string> = {
   '4/5': 'aspect-4/5',
   '4/3': 'aspect-4/3',
+  '3/2': 'aspect-3/2',
   '16/9': 'aspect-video',
   '1/1': 'aspect-square',
 };

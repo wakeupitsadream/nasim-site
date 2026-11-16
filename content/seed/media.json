@@ -146,22 +146,18 @@
     {
       "kind": "service",
       "service_slug": "ac-cleaning",
-      "url": "/photos/ac-cleaning.jpg",
-      "width": 1200,
-      "height": 800,
+      "url": "/brand/split-service.jpg",
+      "width": 1280,
+      "height": 853,
+      "frame": "3/2",
       "alt": {
-        "en": "Wall-mounted split air conditioner indoor unit on a cream wall",
-        "ru": "Внутренний блок сплит-кондиционера на кремовой стене",
-        "ar": "وحدة داخلية لمكيف سبليت مثبتة على جدار كريمي",
-        "fr": "Unité intérieure murale d’un climatiseur split sur un mur crème",
-        "de": "Wandmontiertes Innengerät einer Split-Klimaanlage an einer cremefarbenen Wand",
-        "zh": "米色墙面上的壁挂分体式空调室内机",
-        "hi": "क्रीम रंग की दीवार पर लगी स्प्लिट एयर कंडीशनर की इनडोर यूनिट"
-      },
-      "credit": {
-        "author": "NEOSiAM",
-        "source": "https://www.pexels.com/photo/38788452/",
-        "license": "Pexels License (free for commercial use, no attribution required)"
+        "en": "A Brigada technician in a red cap and polo inspecting an opened wall-mounted split AC with a torch: dusty filters, a drop of water under the unit",
+        "ar": "فني من Brigada بقبعة وقميص بولو أحمرين يفحص بمصباح يدوي مكيف سبليت جداريًا مفتوحًا: فلاتر مغبرة وقطرة ماء تحت الوحدة",
+        "ru": "Техник Brigada в красной кепке и поло осматривает с фонариком открытый настенный сплит-кондиционер: пыльные фильтры, под блоком капля воды",
+        "fr": "Un technicien Brigada en casquette et polo rouges inspecte à la lampe torche un climatiseur split mural ouvert : filtres encrassés, une goutte d’eau sous l’unité",
+        "de": "Ein Brigada-Techniker mit roter Kappe und rotem Poloshirt prüft mit einer Taschenlampe eine geöffnete Split-Klimaanlage an der Wand: staubige Filter, ein Wassertropfen unter dem Gerät",
+        "zh": "头戴红帽、身穿红色 Polo 衫的 Brigada 技师用手电筒检查打开的壁挂分体空调：滤网积尘，机身下方有一滴水",
+        "hi": "लाल टोपी और पोलो शर्ट में Brigada का तकनीशियन टॉर्च से दीवार पर लगे खुले स्प्लिट एसी की जाँच कर रहा है: धूल भरे फ़िल्टर, यूनिट के नीचे पानी की एक बूँद"
       },
       "sort": 10
     },
