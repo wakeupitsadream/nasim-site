@@ -252,7 +252,8 @@
     "packages": {
       "eyebrow": "Forfaits",
       "title": "Économisez avec un forfait ou une formule annuelle",
-      "all": "Comparer les formules annuelles"
+      "all": "Comparer les formules annuelles",
+      "plansNote": "Essential et Comfort incluent la réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation."
     },
     "areas": {
       "eyebrow": "Où nous intervenons",
@@ -474,7 +475,8 @@
       "seat": "par place",
       "item": "par pièce",
       "sqm": "par m²",
-      "from": "+ devis"
+      "from": "+ devis",
+      "system": "par circuit"
     },
     "perYear": "{amount} par an",
     "save": "Économisez {amount}",
@@ -518,6 +520,11 @@
     },
     "beforeYouBook": {
       "title": "Avant de réserver"
+    },
+    "upholsteryNote": "Réservation minimale <price>{amount}</price> · Les prix finaux incluent la TVA lorsqu’elle s’applique.",
+    "cta": {
+      "quote": "Obtenir un devis",
+      "book": "Réserver sur WhatsApp"
     }
   },
   "Report": {
@@ -680,7 +687,8 @@
         "visit": "Visites",
         "seat": "Places",
         "item": "Pièces",
-        "sqm": "Mètres carrés"
+        "sqm": "Mètres carrés",
+        "system": "Circuits"
       },
       "inc": "Ajouter un : {item}",
       "dec": "Retirer un : {item}",

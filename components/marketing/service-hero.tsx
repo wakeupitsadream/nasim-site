@@ -101,7 +101,7 @@ export async function ServiceHero({
             ) : null}
             <Badge variant={estimate || onRequest ? 'outline' : 'highlight'} size="lg">
               {onRequest
-                ? tServices('onRequest')
+                ? (service.on_request_label?.[locale] ?? tServices('onRequest'))
                 : estimate
                   ? tServices('badge.estimate')
                   : t('fixedChip')}

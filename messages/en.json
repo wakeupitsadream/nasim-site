@@ -250,9 +250,10 @@
       "title": "If the issue returns, we got you!"
     },
     "packages": {
-      "eyebrow": "Packages",
+      "eyebrow": "Cleaning bundles",
       "title": "Save with a bundle or a yearly plan",
-      "all": "Compare annual plans"
+      "all": "Compare annual plans",
+      "plansNote": "Essential and Comfort include priority booking and 10% off repair labour."
     },
     "areas": {
       "eyebrow": "Where we work",
@@ -420,7 +421,7 @@
       "cleaning": "AC cleaning",
       "other": "Other cleaning and repair services"
     },
-    "onRequest": "Price on request"
+    "onRequest": "Request a quote"
   },
   "Service": {
     "included": "What's included",
@@ -474,7 +475,8 @@
       "seat": "per seat",
       "item": "per item",
       "sqm": "per m²",
-      "from": "+ estimate"
+      "from": "+ estimate",
+      "system": "per system"
     },
     "perYear": "{amount} a year",
     "save": "Save {amount}",
@@ -518,6 +520,11 @@
     },
     "beforeYouBook": {
       "title": "Before you book"
+    },
+    "upholsteryNote": "Minimum booking <price>{amount}</price> · Final prices include VAT where applicable.",
+    "cta": {
+      "quote": "Get a Quote",
+      "book": "Book on WhatsApp"
     }
   },
   "Report": {
@@ -680,7 +687,8 @@
         "visit": "Visits",
         "seat": "Seats",
         "item": "Items",
-        "sqm": "Square metres"
+        "sqm": "Square metres",
+        "system": "Systems"
       },
       "inc": "Add one: {item}",
       "dec": "Remove one: {item}",

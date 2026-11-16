@@ -66,6 +66,7 @@ export const DIAGNOSE_PRICE_UNITS = [
   'seat',
   'item',
   'sqm',
+  'system',
   'from',
 ] as const;
 

@@ -112,7 +112,7 @@ export async function PriceTable({
               {items.length === 0 ? (
                 <TableRow>
                   <TableCell colSpan={2} className="text-end font-medium text-foreground">
-                    {tServices('onRequest')}
+                    {service.on_request_label?.[locale] ?? tServices('onRequest')}
                   </TableCell>
                 </TableRow>
               ) : null}

@@ -252,7 +252,8 @@
     "packages": {
       "eyebrow": "套餐",
       "title": "组合套餐或年度方案更省钱",
-      "all": "比较年度方案"
+      "all": "比较年度方案",
+      "plansNote": "Essential 与 Comfort 含优先预约，维修人工费优惠 10%。"
     },
     "areas": {
       "eyebrow": "服务范围",
@@ -474,7 +475,8 @@
       "seat": "每座位",
       "item": "每件",
       "sqm": "每平方米",
-      "from": "+ 报价"
+      "from": "+ 报价",
+      "system": "每套系统"
     },
     "perYear": "{amount} / 年",
     "save": "节省 {amount}",
@@ -518,6 +520,11 @@
     },
     "beforeYouBook": {
       "title": "预约前须知"
+    },
+    "upholsteryNote": "最低消费 <price>{amount}</price> · 最终价格含增值税（如适用）。",
+    "cta": {
+      "quote": "获取报价",
+      "book": "通过 WhatsApp 预约"
     }
   },
   "Report": {
@@ -680,7 +687,8 @@
         "visit": "上门次数",
         "seat": "座位数",
         "item": "件数",
-        "sqm": "平方米"
+        "sqm": "平方米",
+        "system": "系统数"
       },
       "inc": "增加一个：{item}",
       "dec": "减少一个：{item}",

@@ -252,7 +252,8 @@
     "packages": {
       "eyebrow": "Pakete",
       "title": "Sparen Sie mit einem Paket oder einem Jahresvertrag",
-      "all": "Jahresverträge vergleichen"
+      "all": "Jahresverträge vergleichen",
+      "plansNote": "Essential und Comfort beinhalten bevorzugte Terminvergabe und 10 % Rabatt auf den Reparatur-Arbeitslohn."
     },
     "areas": {
       "eyebrow": "Wo wir arbeiten",
@@ -474,7 +475,8 @@
       "seat": "pro Sitzplatz",
       "item": "pro Stück",
       "sqm": "pro m²",
-      "from": "+ Kostenvoranschlag"
+      "from": "+ Kostenvoranschlag",
+      "system": "pro Anlage"
     },
     "perYear": "{amount} pro Jahr",
     "save": "Sparen Sie {amount}",
@@ -518,6 +520,11 @@
     },
     "beforeYouBook": {
       "title": "Vor der Buchung"
+    },
+    "upholsteryNote": "Mindestbestellwert <price>{amount}</price> · Endpreise inklusive MwSt., sofern sie anfällt.",
+    "cta": {
+      "quote": "Angebot einholen",
+      "book": "Über WhatsApp buchen"
     }
   },
   "Report": {
@@ -680,7 +687,8 @@
         "visit": "Besuche",
         "seat": "Sitzplätze",
         "item": "Stück",
-        "sqm": "Quadratmeter"
+        "sqm": "Quadratmeter",
+        "system": "Anlagen"
       },
       "inc": "Eins mehr: {item}",
       "dec": "Eins weniger: {item}",

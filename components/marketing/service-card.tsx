@@ -84,7 +84,9 @@ export async function ServiceCard({ service, priceFrom, locale, badges = [], cla
               locale={locale}
             />
           ) : !comingSoon ? (
-            <span className="text-small font-medium text-foreground">{t('onRequest')}</span>
+            <span className="text-small font-medium text-foreground">
+              {service.on_request_label?.[locale] ?? t('onRequest')}
+            </span>
           ) : null}
           {service.duration_min ? (
             <span className="flex items-center gap-1.5 text-small text-muted-foreground">

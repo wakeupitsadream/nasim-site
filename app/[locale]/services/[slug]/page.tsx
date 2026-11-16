@@ -387,7 +387,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
             <>
               <SectionHeader
                 id="book-title"
-                eyebrow={tServices('onRequest')}
+                eyebrow={service.on_request_label?.[locale] ?? tServices('onRequest')}
                 title={t('quote.title')}
                 lead={t('quote.text')}
               />

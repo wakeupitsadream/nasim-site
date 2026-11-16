@@ -155,6 +155,7 @@ export async function PackagesTeaser({
             </li>
           ))}
         </ul>
+        <p className="text-small text-muted-foreground">{t('packages.plansNote')}</p>
       </div>
     </Section>
   );
