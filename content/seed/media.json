@@ -224,6 +224,24 @@
     },
     {
       "kind": "service",
+      "service_slug": "fcu-deep-coil-cleaning",
+      "url": "/brand/fcu-deep-cleaning.jpg",
+      "width": 1280,
+      "height": 960,
+      "frame": "4/3",
+      "alt": {
+        "en": "A Brigada technician in a red T-shirt and cap cleaning the inside of an opened ceiling cassette unit with a steam hose",
+        "ar": "فني من Brigada بقميص وقبعة حمراوين ينظف من الداخل وحدة كاسيت سقفية مفتوحة بخرطوم بخار",
+        "ru": "Техник Brigada в красной футболке и кепке чистит изнутри открытый потолочный кассетный блок паровым шлангом",
+        "fr": "Un technicien Brigada en t-shirt et casquette rouges nettoie l’intérieur d’une cassette de plafond ouverte avec un tuyau à vapeur",
+        "de": "Ein Brigada-Techniker in rotem T-Shirt und roter Kappe reinigt das Innere eines geöffneten Deckenkassettengeräts mit einem Dampfschlauch",
+        "zh": "身穿红色T恤、头戴红帽的 Brigada 技师用蒸汽软管清洁打开的吊顶嵌入式空调内部",
+        "hi": "लाल टी-शर्ट और टोपी में Brigada का तकनीशियन स्टीम होज़ से खुली सीलिंग कैसेट यूनिट को अंदर से साफ़ कर रहा है"
+      },
+      "sort": 36
+    },
+    {
+      "kind": "service",
       "service_slug": "emergency-ac-repair",
       "url": "/photos/emergency-ac-repair.jpg",
       "width": 1200,
