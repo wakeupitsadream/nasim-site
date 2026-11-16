@@ -221,8 +221,11 @@ export function tierRanges(line: PriceLine): { from: number; to: number | null; 
 }
 
 /**
- * Lowest price among a service's lines (what "from AED …" shows). `exact`: the service has one
- * fixed price and nothing else, so it reads "AED 199 per visit", without "from".
+ * The price a service is advertised at: the lowest one-unit price among its lines. Quantity
+ * rates are never the headline — "from AED 499" read as the starting price when 499 was the rate
+ * from the second unit, so a tiered line counts at its price for one (the owner, DECISIONS №70).
+ * `exact`: the service has one fixed price line and nothing else, so it reads "AED 549 per
+ * unit", without "from"; several sizes (a sofa) or an estimate still read "from".
  */
 export function priceFrom(
   cfg: PricingConfig,
@@ -231,13 +234,12 @@ export function priceFrom(
   const lines = linesForService(cfg, slug).filter((l) => !l.addon);
   let best: { amount: number; unit: PriceUnit } | null = null;
   for (const line of lines) {
-    for (const tier of line.tiers) {
-      if (!best || tier.price < best.amount) best = { amount: tier.price, unit: line.unit };
-    }
+    const one = unitPrice(line, 1);
+    if (!best || one < best.amount) best = { amount: one, unit: line.unit };
   }
   if (!best) return null;
   const only = lines.length === 1 ? lines[0]! : null;
-  return { ...best, exact: only !== null && only.tiers.length === 1 && only.unit !== 'from' };
+  return { ...best, exact: only !== null && only.unit !== 'from' };
 }
 
 export const bundleSavings = (bundle: BundleOffer): number | null =>

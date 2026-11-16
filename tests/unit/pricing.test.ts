@@ -409,14 +409,19 @@ describe('seed consistency', () => {
     expect(priceFrom(cfg, 'humidity-mould-check')).toBeNull();
   });
 
-  it('marks one fixed price as exact; tiers, several lines and estimates stay "from"', () => {
+  it('advertises the price for one unit: quantity rates are never the headline', () => {
+    expect(priceFrom(cfg, 'ac-cleaning')).toEqual({ amount: 299, unit: 'unit', exact: true });
+    expect(priceFrom(cfg, 'ac-deep-cleaning')).toEqual({ amount: 549, unit: 'unit', exact: true });
+    expect(priceFrom(cfg, 'full-ac-system-cleaning')?.amount).toBe(899);
+  });
+
+  it('marks one fixed price as exact; several lines and estimates stay "from"', () => {
     expect(priceFrom(cfg, 'emergency-ac-repair')).toEqual({
       amount: 199,
       unit: 'visit',
       exact: true,
     });
     expect(priceFrom(cfg, 'ac-filter-grille-cleaning')?.exact).toBe(true);
-    expect(priceFrom(cfg, 'ac-cleaning')).toEqual({ amount: 249, unit: 'unit', exact: false });
     expect(priceFrom(cfg, 'ac-repair')).toEqual({ amount: 249, unit: 'from', exact: false });
     // An extra seat (110) and the second side of a mattress (79) are add-ons, not a "from".
     expect(priceFrom(cfg, 'sofa-cleaning')).toEqual({ amount: 129, unit: 'item', exact: false });

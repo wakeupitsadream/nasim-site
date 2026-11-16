@@ -27,10 +27,15 @@ describe('content with the admin edits on top of the seed', () => {
     const before = (await queries.getPackages({ type: 'bundle' })).find(
       (p) => p.slug === 'fresh-home',
     );
-    stored.price_item = { ac_clean_2_3: { price: 289 }, ac_clean_4plus: { price: 199 } };
+    stored.price_item = {
+      ac_clean_1: { price: 309 },
+      ac_clean_2_3: { price: 289 },
+      ac_clean_4plus: { price: 199 },
+    };
     const items = await queries.getPriceItems({ serviceSlug: 'ac-cleaning' });
-    expect(items.map((i) => i.price)).toEqual([299, 289, 199]);
-    expect(priceFrom(await queries.getPricingConfig(), 'ac-cleaning')?.amount).toBe(199);
+    expect(items.map((i) => i.price)).toEqual([309, 289, 199]);
+    // The advertised price is the one-unit price, not the cheapest quantity rate.
+    expect(priceFrom(await queries.getPricingConfig(), 'ac-cleaning')?.amount).toBe(309);
     // Fresh Home covers three split units: its "instead of" follows the 2–3 unit rate.
     const after = (await queries.getPackages({ type: 'bundle' })).find(
       (p) => p.slug === 'fresh-home',
