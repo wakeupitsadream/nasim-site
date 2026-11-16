@@ -22,6 +22,10 @@ type Props = {
   className?: string;
   /** A canned example shown while the assistant is not switched on: says so in a badge. */
   demo?: boolean;
+  /** Replaces the default "Message us" link to the contact page when no service fits. */
+  contact?: ReactNode;
+  /** Ways to reach a technician directly (WhatsApp, call), offered under a matched service. */
+  person?: ReactNode;
 };
 
 const URGENCY: Record<DiagnoseResponse['urgency'], string> = {
@@ -50,6 +54,8 @@ export function DiagnoseResult({
   onReset,
   className,
   demo = false,
+  contact,
+  person,
 }: Props) {
   const t = useTranslations('Diagnose');
   const tPrice = useTranslations('Price');
@@ -171,6 +177,12 @@ export function DiagnoseResult({
               <Link href={service.href}>{t('result.details')}</Link>
             </Button>
           </div>
+          {person ? (
+            <div className="flex flex-col gap-2 border-t border-primary/10 pt-4">
+              <p className="text-small text-muted-foreground">{t('result.person')}</p>
+              <div className="flex flex-wrap gap-2">{person}</div>
+            </div>
+          ) : null}
         </div>
       ) : (
         <div className="flex flex-col gap-4 rounded-card bg-mist p-5">
@@ -183,12 +195,14 @@ export function DiagnoseResult({
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Button variant="outline" asChild>
-              <Link href="/contact">
-                <MessageSquareIcon />
-                {t('result.contact')}
-              </Link>
-            </Button>
+            {contact ?? (
+              <Button variant="outline" asChild>
+                <Link href="/contact">
+                  <MessageSquareIcon />
+                  {t('result.contact')}
+                </Link>
+              </Button>
+            )}
             {!result.outOfScope ? (
               <Button variant="ghost" asChild>
                 {calculatorHref.startsWith('#') ? (

@@ -12,8 +12,12 @@ export { AiNetworkError, AiUpstreamError };
 
 /** Polza AI: OpenAI-compatible, billed in roubles, reachable from Russia (DECISIONS №51). */
 export const AI_DEFAULT_BASE_URL = 'https://polza.ai/api/v1';
-/** Gateway model ids carry the vendor prefix and a dotted version. */
-export const AI_DEFAULT_MODEL = 'anthropic/claude-opus-5.5';
+/**
+ * Gateway model ids carry the vendor prefix and a dotted version. Haiku since DECISIONS №84: the
+ * triage is a short classification over a fixed catalogue, and on the gateway's price list Haiku
+ * costs about 1/30 of Opus per token. `AI_MODEL` switches it without a code change.
+ */
+export const AI_DEFAULT_MODEL = 'anthropic/claude-haiku-5.5';
 export const AI_MODEL = process.env.AI_MODEL ?? AI_DEFAULT_MODEL;
 
 const EFFORTS = new Set(['low', 'medium', 'high']);
@@ -80,7 +84,8 @@ export async function diagnose(
     user: buildDiagnosisUserContent(input),
     schema: diagnosisSchema,
     schemaName: 'diagnosis',
-    maxTokens: 2048,
+    // Reasoning at low effort plus the JSON in the wordiest locale fits well inside this.
+    maxTokens: 1500,
   });
   if (result.kind === 'refused') throw new AiRefusedError();
   if (result.kind === 'unparsable') throw new AiParseError();

@@ -9,20 +9,20 @@ export type CtaTarget =
 
 const CONTACT: CtaTarget = { kind: 'internal', href: '/contact' };
 
-export function whatsappTarget(c: SiteContacts, text?: string): CtaTarget {
+export function whatsappTarget(c: Pick<SiteContacts, 'whatsapp'>, text?: string): CtaTarget {
   const url = waMeUrl(c.whatsapp, text);
   return url ? { kind: 'external', href: url, newTab: true } : CONTACT;
 }
 
 /** Ordinary phone call (WhatsApp/Telegram calls are blocked in the UAE — rule 16). */
-export function callTarget(c: SiteContacts): CtaTarget {
+export function callTarget(c: Pick<SiteContacts, 'phone'>): CtaTarget {
   const number = c.phone.replace(/[^\d+]/g, '');
   return number.replace(/\D/g, '').length >= 8
     ? { kind: 'external', href: `tel:${number}`, newTab: false }
     : CONTACT;
 }
 
-export function telegramTarget(c: SiteContacts): CtaTarget {
+export function telegramTarget(c: Pick<SiteContacts, 'telegram'>): CtaTarget {
   const handle = c.telegram.trim().replace(/^@|^https?:\/\/t\.me\//, '');
   return /^[A-Za-z0-9_]{5,32}$/.test(handle)
     ? { kind: 'external', href: `https://t.me/${handle}`, newTab: true }

@@ -318,7 +318,7 @@ audit_log(id, user_id, entity, entity_id, action, diff jsonb, created_at)
 | Email | Resend (бесплатный тариф: 3 000 писем/мес, 1 домен) | уведомления, авто-ответы, сброс пароля |
 | Уведомления | Telegram Bot API (fetch, без библиотек) | мгновенно и бесплатно |
 | Антиспам | Cloudflare Turnstile + honeypot + лимит в БД | бесплатно, без Redis |
-| AI (диагностика на сайте, позже админка) | шлюз Polza AI (OpenAI-совместимый, `fetch`), `anthropic/claude-opus-5.5` (env-переключатель на sonnet/haiku) — DECISIONS №51 | триаж, перевод/копирайт, см. §10 |
+| AI (диагностика на сайте, позже админка) | шлюз Polza AI (OpenAI-совместимый, `fetch`), `anthropic/claude-haiku-5.5` (env-переключатель на sonnet/opus) — DECISIONS №51, №84 | триаж, перевод/копирайт, см. §10 |
 | Rich text | Tiptap (минимальный набор: заголовки, списки, ссылки, жирный) | HTML в БД, санитизация `sanitize-html` на выходе |
 | Валидация | zod (общие схемы клиент/сервер) | |
 | Тесты | Vitest (pricing, whatsapp link, i18n fallback, формат чисел), Playwright 1.63 (закреплён под браузер контейнера; e2e в 3 локалях + скриншоты RTL), axe-core в Playwright | |
@@ -327,7 +327,7 @@ audit_log(id, user_id, entity, entity_id, action, diff jsonb, created_at)
 | Мониторинг | Vercel logs; Telegram-алерт при ошибке доставки лида (уже в пайплайне) | минимум |
 
 **Переменные окружения** (`.env.example` в репо):
-`DATABASE_URL` (pooled), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `POLZA_API_KEY`, `AI_MODEL` (default `anthropic/claude-opus-5.5`), `AI_BASE_URL`, `AI_EFFORT`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Telegram chat id, WhatsApp и контакты — в БД (settings), не в env.
+`DATABASE_URL` (pooled), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `POLZA_API_KEY`, `AI_MODEL` (default `anthropic/claude-haiku-5.5`), `AI_BASE_URL`, `AI_EFFORT`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Telegram chat id, WhatsApp и контакты — в БД (settings), не в env.
 
 **Стоимость в месяц**: Vercel Pro $20, Neon $0 (free), Resend $0, Turnstile $0, Blob в Pro, домен ~$12/год (.com) и/или .ae ~AED 100–150/год, Polza AI (Claude) ≈ 1,5–2 ₽ за AI-диагноз и сотни рублей в месяц на админку, ревью AR-текста одноразово $50–100. Итого ≈ $22/мес + разовые. Платит Миша картой ОАЭ (роль Billing у Vercel); российские карты эти сервисы не принимают.
 

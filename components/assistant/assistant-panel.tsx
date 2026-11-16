@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  CameraIcon,
-  Loader2Icon,
-  MessageSquareIcon,
-  SendHorizontalIcon,
-  SparklesIcon,
-  XIcon,
-} from 'lucide-react';
+import { CameraIcon, Loader2Icon, SendHorizontalIcon, SparklesIcon, XIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import {
   startTransition,
@@ -19,11 +12,22 @@ import {
   type FormEvent,
 } from 'react';
 import { ASSISTANT_OPEN_EVENT, type AssistantOpenDetail } from '@/components/assistant/events';
+import {
+  HandoffActions,
+  hasDirectContact,
+  type HandoffContacts,
+} from '@/components/assistant/handoff-actions';
 import { DiagnoseResult } from '@/components/diagnose/diagnose-result';
 import { ImageError, prepareImage, type PreparedImage } from '@/components/diagnose/image';
 import { Ltr } from '@/components/ltr';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import {
+  handoffContext,
+  MAX_MODEL_TURNS,
+  NUDGE_AFTER_TURNS,
+  type HandoffTurn,
+} from '@/lib/assistant/handoff';
 import { matchFaq, type FaqEntry } from '@/lib/assistant/match';
 import { requestDiagnosis, type DiagnoseFailure } from '@/lib/diagnose/client';
 import { formatNumber } from '@/lib/i18n/format';
@@ -39,6 +43,10 @@ type Props = {
   locale: Locale;
   /** The booking wizard for people who already know what they need. */
   calculatorHref: string;
+  /** The company name, for the WhatsApp message the window prepares. */
+  brand: string;
+  /** Phone and WhatsApp number from the settings; empty until the owner fills them in. */
+  contacts: HandoffContacts;
   /** FAQs of the locale, answers already sanitised on the server (rule 9). */
   faqs: FaqEntry[];
   /** Example complaints (UI strings) shown as chips; each is sent as typed. */
@@ -51,7 +59,14 @@ type Failure = DiagnoseFailure | 'photoType' | 'photoSize';
 type Draft =
   | { role: 'user'; text: string; photoUrl?: string }
   | { role: 'assistant'; kind: 'faq'; faq: FaqEntry }
-  | { role: 'assistant'; kind: 'result'; result: DiagnoseResponse; demo: boolean }
+  | {
+      role: 'assistant';
+      kind: 'result';
+      result: DiagnoseResponse;
+      demo: boolean;
+      /** The answer after which the assistant offers a person (NUDGE_AFTER_TURNS). */
+      nudge?: boolean;
+    }
   | { role: 'assistant'; kind: 'error'; error: Failure }
   | { role: 'assistant'; kind: 'pending' };
 
@@ -63,6 +78,7 @@ const subscribeNoop = () => () => {};
 const ERROR_KEY = {
   invalid: 'empty',
   rate_limited: 'rateLimited',
+  quota: 'quota',
   unavailable: 'unavailable',
   refused: 'refused',
   failed: 'failed',
@@ -71,7 +87,13 @@ const ERROR_KEY = {
   photoSize: 'photoSize',
 } as const satisfies Record<Failure, string>;
 
-const FALLBACK_ERRORS: ReadonlySet<Failure> = new Set(['unavailable', 'failed', 'network']);
+/** Failures after which the visitor is offered the calculator and a person instead. */
+const FALLBACK_ERRORS: ReadonlySet<Failure> = new Set([
+  'unavailable',
+  'failed',
+  'network',
+  'rate_limited',
+]);
 
 /**
  * Only a mouse/trackpad user gets the field focused for them: on a phone that would pop the
@@ -89,8 +111,20 @@ const CHIP =
  * other text, or a photo, goes to POST /api/diagnose and comes back as the verdict card. The
  * conversation lives in the layout, so it survives navigations; nothing is stored anywhere, no
  * clock, no cookies, so every page around it stays prerendered.
+ *
+ * The model is paid per answer, so the window does not talk forever (DECISIONS №84): after a few
+ * answers it offers a technician, and once the allowance is spent — here or on the server — a new
+ * question gets the hand-over to WhatsApp or a call instead of a bare refusal.
  */
-export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }: Props) {
+export function AssistantPanel({
+  locale,
+  calculatorHref,
+  brand,
+  contacts,
+  faqs,
+  examples,
+  demos,
+}: Props) {
   const t = useTranslations('Assistant');
   const tDiagnose = useTranslations('Diagnose');
   const pathname = usePathname();
@@ -106,6 +140,9 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
   const hintId = `${id}-hint`;
   const errorId = `${id}-error`;
   const nextId = useRef(1);
+  /** Questions this conversation has sent to the model; `spent` once the allowance is gone. */
+  const modelTurns = useRef(0);
+  const spent = useRef(false);
   const launcherRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLTextAreaElement>(null);
@@ -214,10 +251,19 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
         return;
       }
     }
-    const [, pending] = push(
-      { role: 'user', text: description, ...(photo ? { photoUrl: photo.previewUrl } : {}) },
-      { role: 'assistant', kind: 'pending' },
-    );
+    const question: Draft = {
+      role: 'user',
+      text: description,
+      ...(photo ? { photoUrl: photo.previewUrl } : {}),
+    };
+    if (spent.current || modelTurns.current >= MAX_MODEL_TURNS) {
+      // No request: the answer is the hand-over to a person, with the question passed along.
+      push(question, { role: 'assistant', kind: 'error', error: 'quota' });
+      return;
+    }
+    modelTurns.current += 1;
+    const turn = modelTurns.current;
+    const [, pending] = push(question, { role: 'assistant', kind: 'pending' });
     setBusy(true);
     const outcome = await requestDiagnosis({
       locale,
@@ -225,6 +271,7 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
       ...(photo ? { image: { mediaType: photo.mediaType, data: photo.data } } : {}),
     });
     setBusy(false);
+    if (!outcome.ok && outcome.error === 'quota') spent.current = true;
     const demo =
       !outcome.ok && outcome.error === 'unavailable'
         ? demos.find((d) => d.text === description)
@@ -234,7 +281,13 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
       demo
         ? { role: 'assistant', kind: 'result', result: demo.result, demo: true }
         : outcome.ok
-          ? { role: 'assistant', kind: 'result', result: outcome.data, demo: false }
+          ? {
+              role: 'assistant',
+              kind: 'result',
+              result: outcome.data,
+              demo: false,
+              nudge: turn === NUDGE_AFTER_TURNS,
+            }
           : { role: 'assistant', kind: 'error', error: outcome.error },
     );
   };
@@ -264,6 +317,20 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
   const lastResultId = [...entries]
     .reverse()
     .find((e) => e.role === 'assistant' && e.kind === 'result')?.id;
+  const direct = hasDirectContact(contacts);
+  const turns: HandoffTurn[] = entries.map((e) =>
+    e.role === 'user'
+      ? { role: 'user', text: e.text }
+      : { role: 'assistant', service: e.kind === 'result' ? e.result.service?.name : null },
+  );
+  /** WhatsApp text for the entry at `index`: the visitor's question and the suggested service. */
+  const handoffMessage = (index: number): string | undefined => {
+    const { question, service } = handoffContext(turns, index);
+    if (!question) return undefined;
+    return service
+      ? t('handoff.messageService', { brand, question, service })
+      : t('handoff.message', { brand, question });
+  };
 
   if (!open) {
     return (
@@ -374,7 +441,7 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
           </ChipGroup>
         </div>
 
-        {entries.map((entry) => {
+        {entries.map((entry, index) => {
           if (entry.role === 'user') {
             return (
               <Bubble key={entry.id} role="user">
@@ -415,6 +482,22 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
               </Bubble>
             );
           }
+          if (entry.kind === 'error' && entry.error === 'quota') {
+            // Not an error to the visitor: the assistant passes the conversation to a person.
+            return (
+              <Bubble key={entry.id} role="assistant">
+                <div data-testid="assistant-handoff" className="flex flex-col gap-3">
+                  <p>{tDiagnose('errors.quota')}</p>
+                  <div className="flex flex-wrap gap-2">
+                    <HandoffActions contacts={contacts} message={handoffMessage(index)} />
+                    <Button variant="ghost" size="sm" asChild>
+                      <Link href={calculatorHref}>{tDiagnose('calculatorCta')}</Link>
+                    </Button>
+                  </div>
+                </div>
+              </Bubble>
+            );
+          }
           if (entry.kind === 'error') {
             const showFallbacks = FALLBACK_ERRORS.has(entry.error);
             return (
@@ -425,21 +508,17 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
                     <Button variant="outline" size="sm" asChild>
                       <Link href={calculatorHref}>{tDiagnose('calculatorCta')}</Link>
                     </Button>
-                    <Button variant="outline" size="sm" asChild>
-                      <Link href="/contact">
-                        <MessageSquareIcon />
-                        {tDiagnose('result.contact')}
-                      </Link>
-                    </Button>
+                    <HandoffActions contacts={contacts} message={handoffMessage(index)} />
                   </div>
                 ) : null}
               </Bubble>
             );
           }
+          const message = handoffMessage(index);
           return (
             <div
               key={entry.id}
-              className="motion-safe:animate-in motion-safe:duration-(--nasim-dur) motion-safe:fill-mode-both motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
+              className="flex flex-col gap-4 motion-safe:animate-in motion-safe:duration-(--nasim-dur) motion-safe:fill-mode-both motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
             >
               <DiagnoseResult
                 result={entry.result}
@@ -448,7 +527,21 @@ export function AssistantPanel({ locale, calculatorHref, faqs, examples, demos }
                 calculatorHref={calculatorHref}
                 headingRef={entry.id === lastResultId ? resultRef : undefined}
                 className="p-4 shadow-none sm:p-4 lg:p-4"
+                contact={<HandoffActions contacts={contacts} message={message} size="default" />}
+                person={
+                  direct ? <HandoffActions contacts={contacts} message={message} /> : undefined
+                }
               />
+              {entry.nudge ? (
+                <Bubble role="assistant">
+                  <div data-testid="assistant-nudge" className="flex flex-col gap-3">
+                    <p>{t('handoff.nudge')}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <HandoffActions contacts={contacts} message={message} />
+                    </div>
+                  </div>
+                </Bubble>
+              ) : null}
             </div>
           );
         })}

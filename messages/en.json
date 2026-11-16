@@ -328,7 +328,8 @@
       "photoType": "We can't read this file. Try a JPEG, PNG or WebP photo.",
       "photoSize": "The photo is too large even after shrinking. Try another one.",
       "unavailable": "The AI diagnosis isn't switched on yet. Pick a service in the calculator or message us — we answer fast.",
-      "rateLimited": "That's a lot of questions in one minute. Give it a moment and try again.",
+      "rateLimited": "That's a lot of questions in one minute. Give it a moment and try again — or ask a technician directly.",
+      "quota": "That's as far as I can take it for today. A technician will pick it up from here — message us or call for an exact answer and a price.",
       "refused": "We couldn't analyse this request. Describe what the AC or the fabric is doing and try again.",
       "failed": "Something went wrong on our side. Try again in a moment, or message us.",
       "network": "No connection. Check the internet and try again."
@@ -367,6 +368,7 @@
       "questionsHint": "Add the answers to your booking message and the visit goes faster.",
       "again": "Ask about something else",
       "contact": "Message us",
+      "person": "Prefer to ask a person first?",
       "demoBadge": "Example answer — the live assistant is being connected"
     }
   },
@@ -382,7 +384,12 @@
     "send": "Send",
     "faqNote": "From our FAQ. Anything else — just type it.",
     "you": "You",
-    "assistant": "Assistant"
+    "assistant": "Assistant",
+    "handoff": {
+      "nudge": "If it's easier, a technician can take it from here — message us or call.",
+      "message": "Hi {brand}! I asked the assistant on your website: “{question}”",
+      "messageService": "Hi {brand}! I asked the assistant on your website: “{question}”. It suggested: {service}."
+    }
   },
   "Services": {
     "lead": "Fixed prices where we can name one upfront, a quote for everything else. Every visit ends with a photo report via WhatsApp.",

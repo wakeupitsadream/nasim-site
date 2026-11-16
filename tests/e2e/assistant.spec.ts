@@ -128,7 +128,63 @@ test.describe('floating assistant', () => {
     await expect(unavailable).toHaveCount(2);
   });
 
-  test('/en/services: the "not sure" strip opens the window; 429 asks to wait, out-of-scope points to the contact page', async ({
+  test('a spent allowance hands the conversation over to a person; the next question is not sent', async ({
+    page,
+  }) => {
+    const requests = await mockDiagnose(page, { error: 'quota' }, 429);
+    await page.goto('/en');
+    const dialog = await openAssistant(page);
+    const send = dialog.getByRole('button', { name: msg('en', 'Assistant.send') });
+    await dialog.getByRole('textbox').fill('Drips water inside');
+    await send.click();
+    const handoff = dialog.getByTestId('assistant-handoff');
+    await expect(handoff).toContainText(msg('en', 'Diagnose.errors.quota'));
+    // No phone or WhatsApp number in the settings yet: the hand-over leads to the contact page,
+    // never to an invented number.
+    await expect(
+      handoff.getByRole('link', { name: msg('en', 'Diagnose.result.contact') }),
+    ).toHaveAttribute('href', '/en/contact');
+    await expect(
+      handoff.getByRole('link', { name: msg('en', 'Diagnose.calculatorCta') }),
+    ).toHaveAttribute('href', '/en/pricing#book');
+    await expect(dialog.locator('a[href*="wa.me"], a[href^="tel:"]')).toHaveCount(0);
+
+    // The window remembers: the next question gets the hand-over without another request…
+    await dialog.getByRole('textbox').fill('And a loud rattling noise');
+    await send.click();
+    await expect(handoff).toHaveCount(2);
+    expect(requests).toHaveLength(1);
+    // …while the FAQ, which costs nothing, still answers.
+    await dialog.getByRole('button', { name: FAQ_QUESTION }).click();
+    await expect(dialog.getByTestId('assistant-faq-answer')).toContainText(FAQ_ANSWER);
+  });
+
+  test('after the third answer the assistant offers a technician, once', async ({ page }) => {
+    const requests = await mockDiagnose(page);
+    await page.goto('/en');
+    const dialog = await openAssistant(page);
+    const send = dialog.getByRole('button', { name: msg('en', 'Assistant.send') });
+    const nudge = dialog.getByTestId('assistant-nudge');
+    const questions = [
+      'Drips water inside',
+      'Ice on the copper pipe',
+      'A loud rattling noise',
+      'The remote does nothing',
+    ];
+    for (const [i, question] of questions.entries()) {
+      await dialog.getByRole('textbox').fill(question);
+      await send.click();
+      await expect(dialog.getByTestId('diagnose-result')).toHaveCount(i + 1);
+      await expect(nudge).toHaveCount(i >= 2 ? 1 : 0);
+    }
+    await expect(nudge).toContainText(msg('en', 'Assistant.handoff.nudge'));
+    await expect(
+      nudge.getByRole('link', { name: msg('en', 'Diagnose.result.contact') }),
+    ).toHaveAttribute('href', '/en/contact');
+    expect(requests).toHaveLength(4);
+  });
+
+  test('/en/services: the "not sure" strip opens the window; 429 asks to wait and offers a person, out-of-scope points to the contact page', async ({
     page,
   }) => {
     await mockDiagnose(page, { error: 'rate_limited' }, 429);
@@ -140,6 +196,9 @@ test.describe('floating assistant', () => {
     await dialog.getByRole('textbox').fill('Drips water inside');
     await dialog.getByRole('button', { name: msg('en', 'Assistant.send') }).click();
     await expect(dialog.getByText(msg('en', 'Diagnose.errors.rateLimited'))).toBeVisible();
+    await expect(
+      dialog.getByRole('link', { name: msg('en', 'Diagnose.result.contact') }),
+    ).toHaveAttribute('href', '/en/contact');
 
     await page.unroute('**/api/diagnose');
     await mockDiagnose(page, {

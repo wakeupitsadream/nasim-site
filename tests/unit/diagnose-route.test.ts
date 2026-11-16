@@ -1,4 +1,5 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { DIAGNOSE_LIMITS } from '@/lib/diagnose/guard';
 import { resetRateLimits } from '@/lib/ratelimit';
 
 const diagnose = vi.fn();
@@ -24,7 +25,7 @@ vi.mock('@/lib/ai', async () => {
     AiNetworkError,
     AiUpstreamError,
     isAiConfigured: () => true,
-    AI_MODEL: 'anthropic/claude-opus-5.5',
+    AI_MODEL: 'anthropic/claude-haiku-5.5',
   };
 });
 
@@ -54,6 +55,10 @@ describe('POST /api/diagnose', () => {
   beforeEach(() => {
     resetRateLimits();
     diagnose.mockReset();
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllEnvs();
   });
 
   it('rejects malformed and empty bodies', async () => {
@@ -125,11 +130,52 @@ describe('POST /api/diagnose', () => {
     expect((await ask()).status).toBe(500);
   });
 
-  it('rate-limits a visitor after six requests a minute', async () => {
+  it('stops a burst from one visitor with rate_limited, and leaves other visitors alone', async () => {
     diagnose.mockResolvedValue(diagnosis);
-    for (let i = 0; i < 6; i += 1)
-      expect((await post({ locale: 'en', text: 'drips water' }, '198.51.100.1')).status).toBe(200);
-    expect((await post({ locale: 'en', text: 'drips water' }, '198.51.100.1')).status).toBe(429);
-    expect((await post({ locale: 'en', text: 'drips water' }, '198.51.100.2')).status).toBe(200);
+    const ask = (ip: string) => post({ locale: 'en', text: 'drips water' }, ip);
+    for (let i = 0; i < DIAGNOSE_LIMITS.burst.limit; i += 1)
+      expect((await ask('198.51.100.1')).status).toBe(200);
+    const refused = await ask('198.51.100.1');
+    expect(refused.status).toBe(429);
+    expect(refused.headers.get('retry-after')).toBe('60');
+    expect(await refused.json()).toEqual({ error: 'rate_limited' });
+    expect((await ask('198.51.100.2')).status).toBe(200);
+    expect(diagnose).toHaveBeenCalledTimes(DIAGNOSE_LIMITS.burst.limit + 1);
+  });
+
+  it('answers quota once the hourly allowance of a visitor is spent, without calling the model', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-11-16T10:00:05Z'));
+    diagnose.mockResolvedValue(diagnosis);
+    const ask = (ip: string) => post({ locale: 'en', text: 'drips water' }, ip);
+    // Twenty seconds apart: slow enough for the burst check, all inside one hour.
+    for (let i = 0; i < DIAGNOSE_LIMITS.visitorHour.limit; i += 1) {
+      expect((await ask('198.51.100.7')).status).toBe(200);
+      vi.advanceTimersByTime(20_000);
+    }
+    const refused = await ask('198.51.100.7');
+    expect(refused.status).toBe(429);
+    expect(await refused.json()).toEqual({ error: 'quota' });
+    expect(diagnose).toHaveBeenCalledTimes(DIAGNOSE_LIMITS.visitorHour.limit);
+    // Another visitor is not affected; the first one is served again in the next hour.
+    expect((await ask('198.51.100.8')).status).toBe(200);
+    vi.setSystemTime(new Date('2026-11-16T11:00:05Z'));
+    expect((await ask('198.51.100.7')).status).toBe(200);
+  });
+
+  it('caps the whole site per day (AI_DAILY_LIMIT), whoever is asking', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-11-16T10:00:05Z'));
+    vi.stubEnv('AI_DAILY_LIMIT', '3');
+    diagnose.mockResolvedValue(diagnosis);
+    const ask = (ip: string) => post({ locale: 'en', text: 'drips water' }, ip);
+    for (let i = 1; i <= 3; i += 1) expect((await ask(`192.0.2.${i}`)).status).toBe(200);
+    const refused = await ask('192.0.2.4');
+    expect(await refused.json()).toEqual({ error: 'quota' });
+    expect(diagnose).toHaveBeenCalledTimes(3);
+    // A malformed request never spends the allowance.
+    expect((await post({ locale: 'en', text: '' }, '192.0.2.5')).status).toBe(400);
+    vi.setSystemTime(new Date('2026-11-17T00:00:05Z'));
+    expect((await ask('192.0.2.4')).status).toBe(200);
   });
 });

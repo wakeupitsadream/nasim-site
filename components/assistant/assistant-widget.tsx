@@ -3,6 +3,7 @@ import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import { AssistantPanel, type DemoVerdict } from '@/components/assistant/assistant-panel';
 import type { FaqEntry } from '@/lib/assistant/match';
 import { getFaqs, getPricingConfig, getServices } from '@/lib/content/queries';
+import { getSiteSettings } from '@/lib/content/site';
 import { pick, pickLocalized } from '@/lib/i18n/text';
 import { priceFrom } from '@/lib/pricing';
 import { sanitizeHtmlContent } from '@/lib/sanitize';
@@ -32,14 +33,16 @@ const DEMO: Record<
 /**
  * Server half of the floating assistant, mounted once in the locale layout: picks the FAQs for the
  * locale (answers sanitised here, rule 9 — the client never imports lib/sanitize), builds the demo
- * verdicts with real prices, and hands everything to the client window inside its own scoped
- * message provider. Reads no cookies or clock, so pages stay prerendered.
+ * verdicts with real prices, reads the phone and WhatsApp number the window hands people over to
+ * (DECISIONS №84), and passes everything to the client window inside its own scoped message
+ * provider. Reads no cookies or clock, so pages stay prerendered.
  */
 export async function AssistantWidget() {
   const locale = await getLocale();
-  const [t, messages, globalFaqs, contractFaqs, services, pricing] = await Promise.all([
+  const [t, messages, settings, globalFaqs, contractFaqs, services, pricing] = await Promise.all([
     getTranslations('Diagnose'),
     getMessages(),
+    getSiteSettings(locale),
     getFaqs('global'),
     getFaqs('contracts'),
     getServices({ status: ['active', 'coming_soon'] }),
@@ -101,12 +104,15 @@ export async function AssistantWidget() {
         Assistant: messages.Assistant,
         Diagnose: messages.Diagnose,
         Price: messages.Price,
+        Cta: messages.Cta,
         Common: messages.Common,
       }}
     >
       <AssistantPanel
         locale={locale}
         calculatorHref="/pricing#book"
+        brand={settings.brandName.text}
+        contacts={{ phone: settings.contacts.phone, whatsapp: settings.contacts.whatsapp }}
         faqs={faqs}
         examples={EXAMPLES.map((key) => t(`form.examples.${key}`))}
         demos={demos}

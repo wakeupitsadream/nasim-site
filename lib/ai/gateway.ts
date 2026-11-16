@@ -8,7 +8,7 @@ export type GatewayConfig = {
   /** e.g. https://polza.ai/api/v1 (a trailing slash is tolerated). */
   baseUrl: string;
   apiKey: string;
-  /** Gateway model id, e.g. anthropic/claude-opus-5.5. */
+  /** Gateway model id, e.g. anthropic/claude-haiku-5.5. */
   model: string;
   /** Reasoning effort hint (`reasoning.effort`); null leaves the provider default. */
   effort: 'low' | 'medium' | 'high' | null;

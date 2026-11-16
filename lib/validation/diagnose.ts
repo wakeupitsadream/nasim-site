@@ -97,6 +97,8 @@ export type DiagnoseResponse = z.infer<typeof diagnoseResponseSchema>;
 export const DIAGNOSE_ERRORS = [
   'invalid',
   'rate_limited',
+  /** The hour or day allowance is spent: the window hands the visitor over to a person. */
+  'quota',
   'unavailable',
   'refused',
   'failed',

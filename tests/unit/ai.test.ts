@@ -85,7 +85,8 @@ describe('diagnose() through the OpenAI-compatible gateway', () => {
     expect(init?.method).toBe('POST');
     expect((init?.headers as Record<string, string>).authorization).toBe('Bearer pza_test');
     const body = JSON.parse(init?.body as string) as Record<string, unknown>;
-    expect(body.model).toBe('anthropic/claude-opus-5.5');
+    expect(body.model).toBe('anthropic/claude-haiku-5.5');
+    expect(body.max_tokens).toBe(1500);
     expect(body.reasoning).toEqual({ effort: 'low' });
     const format = body.response_format as {
       type: string;
