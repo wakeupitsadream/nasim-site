@@ -49,3 +49,35 @@ export const settingsDefaultsSchema = z.looseObject({
 export type SettingsDefaults = z.infer<typeof settingsDefaultsSchema>;
 export type SettingsLocaleFields = z.infer<typeof localeFields>;
 export type BookingSettings = z.infer<typeof bookingSettingsSchema>;
+
+// ---- What the owner edits in /admin → Settings (stored as the `settings/site` content override) ----
+
+const text = (max: number) => z.string().trim().max(max);
+/** E.164 (`+971501234567`) or empty: an empty contact is hidden on the site, never invented. */
+const e164OrEmpty = text(20).refine((v) => v === '' || /^\+[1-9]\d{7,14}$/.test(v), 'phone');
+const emailOrEmpty = z.union([z.literal(''), z.email().max(120)]);
+const urlOrEmpty = z.union([z.literal(''), z.url({ protocol: /^https$/ }).max(200)]);
+
+export const siteOverrideSchema = z.object({
+  contacts: z.object({
+    phone: e164OrEmpty,
+    whatsapp: e164OrEmpty,
+    /** A handle without @ or a t.me link; lib/cta.ts accepts both. */
+    telegram: text(64),
+    email: emailOrEmpty,
+  }),
+  social: z.object({ instagram: urlOrEmpty, facebook: urlOrEmpty, tiktok: urlOrEmpty }),
+  legal: z.object({
+    legalName: text(120),
+    licenseNo: text(60),
+    trn: text(30),
+    address: text(200),
+  }),
+  vat: z.object({ registered: z.boolean(), included: z.boolean() }),
+  flags: z.object({
+    emergencyEnabled: z.boolean(),
+    showReviews: z.boolean(),
+    telegramCtaRu: z.boolean(),
+  }),
+});
+export type SiteOverride = z.infer<typeof siteOverrideSchema>;
