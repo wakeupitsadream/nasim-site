@@ -13,6 +13,7 @@ import { Guarantee } from '@/components/marketing/guarantee';
 import { MeasurementCompare } from '@/components/marketing/measurement-compare';
 import { PriceFrom } from '@/components/marketing/price-from';
 import { PriceTable } from '@/components/marketing/price-table';
+import { QuantityRates } from '@/components/marketing/quantity-rates';
 import { ServiceGrid } from '@/components/marketing/related-services';
 import { RichText } from '@/components/marketing/rich-text';
 import { Section, type SectionTone } from '@/components/marketing/section';
@@ -211,6 +212,11 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
                               locale={locale}
                               size="lg"
                             />
+                            {/* The headline is the price for one; the lower rates for two and
+                                more follow right under it (the owner, DECISIONS №70). */}
+                            {from.exact ? (
+                              <QuantityRates items={items} locale={locale} className="mt-3" />
+                            ) : null}
                           </dd>
                         </div>
                       ) : null}

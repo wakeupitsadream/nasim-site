@@ -22,7 +22,7 @@ export type PriceGroup = { service: Service; items: PriceItem[] };
 
 /** «Standard clean, 2–3 units» → «2–3 units»: under the service heading the quantity is enough. */
 const LAST_SEPARATOR = /[,،，](?=[^,،，]*$)/;
-function tierLabel(name: Localized): Localized {
+export function tierLabel(name: Localized): Localized {
   const at = name.text.search(LAST_SEPARATOR);
   return at === -1 ? name : { ...name, text: name.text.slice(at + 1).trim() };
 }

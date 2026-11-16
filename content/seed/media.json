@@ -107,22 +107,17 @@
     {
       "kind": "category",
       "category": "ac",
-      "url": "/photos/category-ac-interior.jpg",
-      "width": 1600,
-      "height": 1068,
+      "url": "/brand/category-ac.jpg",
+      "width": 1200,
+      "height": 599,
       "alt": {
-        "en": "Modern living room with a wall-mounted split air conditioner above a grey sofa and a TV wall",
-        "ru": "Современная гостиная: настенный сплит-кондиционер над серым диваном и стеной с телевизором",
-        "ar": "غرفة معيشة عصرية: مكيف سبليت جداري فوق أريكة رمادية وجدار التلفاز",
-        "fr": "Salon moderne : climatiseur split mural au-dessus d’un canapé gris et d’un mur TV",
-        "de": "Modernes Wohnzimmer: Split-Klimagerät an der Wand über einem grauen Sofa und einer TV-Wand",
-        "zh": "现代客厅：灰色沙发和电视墙上方的壁挂式分体空调",
-        "hi": "आधुनिक लिविंग रूम: ग्रे सोफ़े और टीवी वॉल के ऊपर दीवार पर लगा स्प्लिट एसी"
-      },
-      "credit": {
-        "author": "Max Vakhtbovych",
-        "source": "https://www.pexels.com/photo/cozy-living-room-with-sofas-and-television-set-6316067/",
-        "license": "Pexels License (free for commercial use, no attribution required)"
+        "en": "A wall-mounted split air conditioner in a bright office with floor-to-ceiling windows and a city skyline",
+        "ar": "مكيف سبليت جداري في مكتب مضيء بنوافذ ممتدة من الأرض إلى السقف تطل على أفق المدينة",
+        "ru": "Настенный сплит-кондиционер в светлом офисе с панорамными окнами и видом на город",
+        "fr": "Climatiseur split mural dans un bureau lumineux aux baies vitrées donnant sur la ville",
+        "de": "Wandmontierte Split-Klimaanlage in einem hellen Büro mit bodentiefen Fenstern und Blick auf die Skyline",
+        "zh": "明亮办公室里的壁挂式分体空调，落地窗外是城市天际线",
+        "hi": "फ़र्श से छत तक की खिड़कियों और शहर के नज़ारे वाले रोशन दफ़्तर में दीवार पर लगा स्प्लिट एयर कंडीशनर"
       },
       "sort": 10
     },
@@ -213,6 +208,23 @@
         "license": "Pexels License (free for commercial use, no attribution required)"
       },
       "sort": 30
+    },
+    {
+      "kind": "service",
+      "service_slug": "ac-duct-cleaning",
+      "url": "/brand/duct-cleaning.jpg",
+      "width": 1254,
+      "height": 1254,
+      "alt": {
+        "en": "A Brigada technician in a red uniform cleaning an air duct through a ceiling opening with a rotary brush and a vacuum hose; inset: the duct before and after cleaning (illustration)",
+        "ar": "فني من Brigada بزي أحمر ينظف مجرى الهواء عبر فتحة في السقف بفرشاة دوّارة وخرطوم شفط؛ في الإطار: المجرى قبل التنظيف وبعده (رسم توضيحي)",
+        "ru": "Техник Brigada в красной форме чистит воздуховод через проём в потолке вращающейся щёткой и вакуумным шлангом; во врезке — воздуховод до и после чистки (иллюстрация)",
+        "fr": "Un technicien Brigada en tenue rouge nettoie une gaine d’air par une ouverture au plafond, avec une brosse rotative et un tuyau d’aspiration ; en médaillon : la gaine avant et après nettoyage (illustration)",
+        "de": "Ein Brigada-Techniker in roter Arbeitskleidung reinigt einen Luftkanal durch eine Deckenöffnung mit Rotationsbürste und Saugschlauch; im Ausschnitt: der Kanal vor und nach der Reinigung (Illustration)",
+        "zh": "身穿红色工作服的 Brigada 技师通过天花板开口，用旋转毛刷和吸尘软管清洁风管；小图为风管清洁前后对比（插图）",
+        "hi": "लाल यूनिफ़ॉर्म में Brigada का तकनीशियन छत के खुले हिस्से से घूमने वाले ब्रश और वैक्यूम होज़ से एयर डक्ट साफ़ कर रहा है; इनसेट में सफ़ाई से पहले और बाद की डक्ट (चित्रण)"
+      },
+      "sort": 35
     },
     {
       "kind": "service",
