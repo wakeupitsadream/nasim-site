@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/migrate-if-db.mjs && next build",
+    "build": "node scripts/migrate-if-db.mjs && node scripts/admin-user.mjs --bootstrap && next build",
     "start": "next start",
     "typecheck": "next typegen && tsc --noEmit",
     "lint": "eslint && prettier --check . && node scripts/check-logical-css.mjs",
@@ -12,7 +12,8 @@
     "test": "vitest run",
     "e2e": "playwright test",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "db:migrate": "drizzle-kit migrate",
+    "admin:user": "node scripts/admin-user.mjs"
   },
   "dependencies": {
     "@vercel/functions": "^3.10.6",

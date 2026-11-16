@@ -1,12 +1,15 @@
-// TEMPORARY (phase 1): reads `settings.defaults` from content/seed/blocks.json (EN defaults +
-// locale overrides). Phase 2 swaps the body for a cached query in lib/db/queries ('use cache' +
-// cacheTag('settings')); the async signature and the SiteSettings type stay, callers do not change.
+// Site settings: `settings.defaults` from content/seed/blocks.json (EN defaults + locale
+// overrides) with what the owner saved in /admin → Settings on top (contacts, legal details,
+// VAT, flags). The stored part is cached under the `settings` tag.
 import blocks from '@/content/seed/blocks.json';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized, type I18nText, type Localized } from '@/lib/i18n/text';
+import { getOverrides } from '@/lib/db/queries/overrides';
 import {
   settingsDefaultsSchema,
+  siteOverrideSchema,
   type BookingSettings,
+  type SiteOverride,
   type SettingsDefaults,
   type SettingsLocaleFields,
 } from '@/lib/validation/settings';
@@ -91,8 +94,45 @@ export function readSiteSettings(locale: Locale): SiteSettings {
   };
 }
 
+/** The owner's stored settings (admin → Settings), or null: no database, nothing saved, or a
+ * stored value that no longer fits the schema (logged, the defaults are shown). */
+async function storedOverride(): Promise<Partial<SiteOverride> | null> {
+  const stored = (await getOverrides('settings')).site;
+  if (!stored) return null;
+  const parsed = siteOverrideSchema.partial().safeParse(stored);
+  if (parsed.success) return parsed.data;
+  console.error('[settings] stored settings do not match the schema; defaults are shown');
+  return null;
+}
+
 export async function getSiteSettings(locale: Locale): Promise<SiteSettings> {
-  return readSiteSettings(locale);
+  const base = readSiteSettings(locale);
+  const o = await storedOverride();
+  if (!o) return base;
+  return {
+    ...base,
+    contacts: { ...base.contacts, ...o.contacts },
+    social: { ...base.social, ...o.social },
+    legal: { ...base.legal, ...o.legal },
+    vat: o.vat ?? base.vat,
+    flags: { ...base.flags, ...o.flags },
+  };
+}
+
+/** The editable settings as the admin form shows them: stored values over the defaults. */
+export async function getEditableSettings(): Promise<SiteOverride> {
+  const s = await getSiteSettings('en');
+  return {
+    contacts: s.contacts,
+    social: s.social,
+    legal: s.legal,
+    vat: s.vat,
+    flags: {
+      emergencyEnabled: s.flags.emergencyEnabled,
+      showReviews: s.flags.showReviews,
+      telegramCtaRu: s.flags.telegramCtaRu,
+    },
+  };
 }
 
 /** True when at least one value is filled in. */

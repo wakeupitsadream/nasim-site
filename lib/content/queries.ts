@@ -1,7 +1,7 @@
-// Public-content getters with the signatures of the future lib/db/queries (PHASES, phase 2).
-// TEMPORARY bodies read the validated seed (lib/content/seed.ts); phase 2 replaces them with
-// 'use cache' + cacheTag queries and nothing above this layer changes. All functions are async
-// for that reason, and none read cookies, headers or the clock (ensureStatic pages depend on it).
+// Public-content getters. The content is the validated seed (lib/content/seed.ts) with the
+// admin's edits on top (lib/db/queries/overrides.ts, cached with 'use cache' + tags); without a
+// database the seed alone is served. All functions are async and none read cookies, headers or
+// the clock (ensureStatic pages depend on it).
 import {
   seedAreas,
   seedBlock,
@@ -12,9 +12,15 @@ import {
   seedPricingRules,
   seedServices,
 } from '@/lib/content/seed';
+import { getOverrides, type Overrides } from '@/lib/db/queries/overrides';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized } from '@/lib/i18n/text';
-import { buildPricingConfig, type PricingConfig } from '@/lib/pricing';
+import { buildPricingConfig, quote, type PricingConfig } from '@/lib/pricing';
+import {
+  packageSchema,
+  priceItemSchema,
+  serviceSchema,
+} from '@/lib/validation/content';
 import type {
   Area,
   BlockKey,
@@ -32,6 +38,55 @@ import type {
   ServiceStatus,
 } from '@/lib/validation/content';
 
+type Parser<T> = { safeParse: (v: unknown) => { success: true; data: T } | { success: false } };
+
+/** Seed entity + the admin's edited fields; an edit that no longer fits the schema is ignored. */
+function withOverride<T extends object>(schema: Parser<T>, base: T, patch: unknown, id: string): T {
+  if (!patch) return base;
+  const merged = schema.safeParse({ ...base, ...(patch as object) });
+  if (merged.success) return merged.data;
+  console.error(`[content] stored edit of "${id}" does not match the schema; the seed is shown`);
+  return base;
+}
+
+const edited = (o: Overrides): boolean => Object.keys(o).length > 0;
+const bySort = <T extends { sort: number }>(a: T, b: T) => a.sort - b.sort;
+
+/** Every service, hidden ones included (the admin lists them). */
+export async function allServices(): Promise<Service[]> {
+  const over = await getOverrides('service');
+  if (!edited(over)) return seedServices();
+  return seedServices()
+    .map((s) => withOverride(serviceSchema, s, over[s.slug], `service:${s.slug}`))
+    .sort(bySort);
+}
+
+export async function allPriceItems(): Promise<PriceItem[]> {
+  const over = await getOverrides('price_item');
+  if (!edited(over)) return seedPriceItems();
+  return seedPriceItems().map((p) =>
+    withOverride(priceItemSchema, p, over[p.key], `price_item:${p.key}`),
+  );
+}
+
+/**
+ * Every package. A bundle's "instead of" price is never stored: it is the à-la-carte sum of
+ * what the bundle covers at today's prices, so it follows a price edit by itself.
+ */
+export async function allPackages(): Promise<Package[]> {
+  const [over, items] = await Promise.all([getOverrides('package'), allPriceItems()]);
+  const packages = edited(over)
+    ? seedPackages().map((p) => withOverride(packageSchema, p, over[p.slug], `package:${p.slug}`))
+    : seedPackages();
+  const cfg = buildPricingConfig(items, packages, seedPricingRules());
+  const noVat = { registered: false, included: false };
+  return packages.map((p) =>
+    p.type === 'bundle'
+      ? { ...p, compare_price: quote({ ...cfg, bundles: [] }, p.includes, noVat).subtotal }
+      : p,
+  );
+}
+
 export type ServiceFilter = {
   status?: ServiceStatus[];
   category?: ServiceCategory;
@@ -41,7 +96,7 @@ export type ServiceFilter = {
 /** Services in display order. Hidden ones are never returned unless asked for by status. */
 export async function getServices(filter: ServiceFilter = {}): Promise<Service[]> {
   const status = filter.status ?? ['active', 'coming_soon'];
-  return seedServices().filter(
+  return (await allServices()).filter(
     (s) =>
       status.includes(s.status) &&
       (!filter.category || s.category === filter.category) &&
@@ -50,13 +105,14 @@ export async function getServices(filter: ServiceFilter = {}): Promise<Service[]
 }
 
 export async function getServiceBySlug(slug: string): Promise<Service | null> {
-  return seedServices().find((s) => s.slug === slug && s.status !== 'hidden') ?? null;
+  return (await allServices()).find((s) => s.slug === slug && s.status !== 'hidden') ?? null;
 }
 
 /** "Usually booked together": nearest active services of the same category, then one from the other. */
 export async function getRelatedServices(slug: string, limit = 3): Promise<Service[]> {
-  const all = seedServices().filter((s) => s.status === 'active' && s.slug !== slug);
-  const current = seedServices().find((s) => s.slug === slug);
+  const services = await allServices();
+  const all = services.filter((s) => s.status === 'active' && s.slug !== slug);
+  const current = services.find((s) => s.slug === slug);
   if (!current) return all.slice(0, limit);
   const same = all
     .filter((s) => s.category === current.category)
@@ -67,11 +123,13 @@ export async function getRelatedServices(slug: string, limit = 3): Promise<Servi
 }
 
 export async function getPriceItems(filter: { serviceSlug?: string } = {}): Promise<PriceItem[]> {
-  return seedPriceItems().filter((p) => !filter.serviceSlug || p.service_slug === filter.serviceSlug);
+  return (await allPriceItems()).filter(
+    (p) => !filter.serviceSlug || p.service_slug === filter.serviceSlug,
+  );
 }
 
 export async function getPackages(filter: { type?: Package['type'] } = {}): Promise<Package[]> {
-  return seedPackages().filter((p) => p.published && (!filter.type || p.type === filter.type));
+  return (await allPackages()).filter((p) => p.published && (!filter.type || p.type === filter.type));
 }
 
 export async function getPricingRules(): Promise<PricingRulesRecord> {
@@ -80,7 +138,8 @@ export async function getPricingRules(): Promise<PricingRulesRecord> {
 
 /** Serializable config for lib/pricing.ts (the booking wizard receives it as a prop). */
 export async function getPricingConfig(): Promise<PricingConfig> {
-  return buildPricingConfig(seedPriceItems(), seedPackages(), seedPricingRules());
+  const [items, packages] = await Promise.all([allPriceItems(), allPackages()]);
+  return buildPricingConfig(items, packages, seedPricingRules());
 }
 
 /** Published areas only (BRIEF §5: unpublished drafts never get a page or a link). */

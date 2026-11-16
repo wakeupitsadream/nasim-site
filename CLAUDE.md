@@ -6,7 +6,7 @@
 
 ## Стек
 
-Next.js 16.4 (App Router, TypeScript strict, React 19.3, Cache Components, Turbopack) · Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, стиль radix-nova, `rtl: true`) · next-intl v4.14 (`next/root-params`) · Drizzle ORM 0.45 (стабильная ветка, не 1.0-rc) + Neon Postgres (`pg` Pool) · Auth.js v5 (Credentials; см. предложение Better Auth в DECISIONS) · Vercel (Blob, Web Analytics, регион функций `fra1`) · Resend · Telegram Bot API (fetch) · Cloudflare Turnstile · Tiptap · zod · Vitest · Playwright · Polza AI (OpenAI-совместимый шлюз к Claude через `fetch`, только с сервера) · шрифты через `next/font`: IBM Plex Sans (тело), IBM Plex Sans Arabic (`/ar`), Noto Sans SC (`/zh`), IBM Plex Sans Devanagari (`/hi`), Unbounded (h1/h2 и словесный знак, DECISIONS №52; на `/zh` и `/hi` дисплей = шрифт текста, №57).
+Next.js 16.4 (App Router, TypeScript strict, React 19.3, Cache Components, Turbopack) · Tailwind CSS v4.3 (`@tailwindcss/postcss`) + shadcn/ui 4.23 (base radix, стиль radix-nova, `rtl: true`) · next-intl v4.14 (`next/root-params`) · Drizzle ORM 0.45 (стабильная ветка, не 1.0-rc) + Neon Postgres (`pg` Pool) · вход в админку — своя реализация на `node:crypto` (scrypt + подписанная cookie, DECISIONS №68; Auth.js не используем) · Vercel (Blob, Web Analytics, регион функций `fra1`) · Resend · Telegram Bot API (fetch) · Cloudflare Turnstile · Tiptap · zod · Vitest · Playwright · Polza AI (OpenAI-совместимый шлюз к Claude через `fetch`, только с сервера) · шрифты через `next/font`: IBM Plex Sans (тело), IBM Plex Sans Arabic (`/ar`), Noto Sans SC (`/zh`), IBM Plex Sans Devanagari (`/hi`), Unbounded (h1/h2 и словесный знак, DECISIONS №52; на `/zh` и `/hi` дисплей = шрифт текста, №57).
 
 ## Команды
 
@@ -16,10 +16,11 @@ pnpm typecheck      # next typegen && tsc --noEmit
 pnpm lint           # eslint + prettier --check + проверка логических CSS-классов
 pnpm test           # vitest (unit)
 pnpm e2e            # playwright против next start :3100 (сначала pnpm build) или BASE_URL; @playwright/test = 1.63.0 под браузер /opt/pw-browsers
-pnpm build          # применяет миграции (scripts/migrate-if-db.mjs), затем next build
+pnpm build          # применяет миграции (scripts/migrate-if-db.mjs), создаёт первого владельца админки, если задан (scripts/admin-user.mjs --bootstrap), затем next build
 pnpm db:generate    # drizzle-kit generate — после каждого изменения lib/db/schema.ts
 pnpm db:migrate     # применить миграции к DATABASE_URL_UNPOOLED (иначе DATABASE_URL)
 pnpm seed           # идемпотентный сид из content/seed/*.json (появляется в фазе 2)
+pnpm admin:user     # <email> [пароль] [--role owner|staff] — создать пользователя админки или сменить пароль
 ```
 
 Перед коммитом: `pnpm typecheck && pnpm lint && pnpm test && pnpm build` — зелёные.
@@ -30,10 +31,10 @@ pnpm seed           # идемпотентный сид из content/seed/*.json
 2. **Только логические CSS-свойства:** `ms-/me-/ps-/pe-/inset-s-/inset-e-/text-start/text-end/rounded-s-/rounded-e-/border-s/border-e`, никаких `ml-/mr-/pl-/pr-/left-/right-/text-left/text-right/rounded-l-/rounded-r-`; `start-*`/`end-*` устарели в Tailwind 4.2 — в новом коде `inset-s-*`/`inset-e-*`. Проверяется `pnpm lint` (`scripts/check-logical-css.mjs`). Направленные иконки (стрелки, шевроны) — класс `rtl:-scale-x-100` (в компонентах shadcn допустим их `rtl:rotate-180`). После каждого `shadcn add` — проверить `components/ui` на голые `rounded-l|rounded-r|rounded-tl|rounded-tr|rounded-bl|rounded-br` (баг shadcn #12475) и `start-`/`end-`, заменить логическими. Портальные компоненты (`*Content` у Popover/Tooltip/Select/Sheet/DropdownMenu) получают `dir={dir}`; у Sheet — логические стороны `inline-start`/`inline-end` (не `left`/`right`). Классы `dark:` запрещены; `cn` импортируется только из `@/lib/utils` (знает наши токены, DECISIONS №23); клиентские компоненты не импортируют `@/content/seed`, `@/lib/content`, `@/lib/ai`, `@/lib/sanitize`, `@/lib/ratelimit`; `new Date()`/`Date.now()` без аргументов в `app/` и `components/` запрещены (часы читаются в обработчике события и передаются значением, №37) — всё это проверяет `pnpm lint`. Телефоны, цены, email, URL, коды — всегда внутри `<span dir="ltr">` (компонент `<Ltr>`).
 3. **Числа и валюта** — только через `lib/i18n/format.ts` (`formatAED`, `formatNumber`); арабская локаль использует латинские цифры (`ar-AE-u-nu-latn`).
 4. **Все цены считаются в `lib/pricing.ts`** чистыми функциями с unit-тестами. Ни калькулятор, ни страницы не содержат арифметики цен.
-5. **Данные публичных страниц** — только через `lib/db/queries/*`: функции с `'use cache'` + `cacheLife('max')` + `cacheTag(...)` (теги `content`, `service:{slug}`, `area:{slug}`, `settings`). Включены Cache Components (`cacheComponents: true`, `partialPrefetching: true`): экспорты сегмента `revalidate`/`dynamic`/`dynamicParams`/`fetchCache`/`runtime` запрещены (ломают сборку). Инвалидация из админки — `updateTag(tag)` в server actions; из route handlers и вебхуков — `revalidateTag(tag, 'max')`. `unstable_cache` не используем и не смешиваем с `'use cache'` (GHSA-mfr8-8qww-v76h). `cookies()`/`headers()`/сессия — никогда внутри `'use cache'`, только внутри `<Suspense>`. Публичные страницы с `[slug]` экспортируют `ensureStatic = 'navigation'`, читают `params` и проверяют существование записи до любого `<Suspense>` — так неизвестный slug даёт настоящий 404, а не «мягкий» 200 (DECISIONS №17). Админка и API — динамические. Локаль внутри страниц — из `next/root-params` (через `getLocale()`); в server actions и route handlers root-params недоступен — локаль передаётся явно: `getTranslations({ locale, namespace })`.
+5. **Данные публичных страниц** — контент из `content/seed` с правками админки поверх (`content_overrides`, DECISIONS №68): геттеры `lib/content/queries.ts` и `lib/content/site.ts`, правки читает `lib/db/queries/overrides.ts`. Всё, что читает базу для публичных страниц, — только через `lib/db/queries/*`: функции с `'use cache'` + `cacheLife('max')` + `cacheTag(...)` (теги `content`, `content:{kind}`, `settings`). Включены Cache Components (`cacheComponents: true`, `partialPrefetching: true`): экспорты сегмента `revalidate`/`dynamic`/`dynamicParams`/`fetchCache`/`runtime` запрещены (ломают сборку). Инвалидация из админки — `updateTag(tag)` в server actions; из route handlers и вебхуков — `revalidateTag(tag, 'max')`. `unstable_cache` не используем и не смешиваем с `'use cache'` (GHSA-mfr8-8qww-v76h). `cookies()`/`headers()`/сессия — никогда внутри `'use cache'`, только внутри `<Suspense>`. Публичные страницы с `[slug]` экспортируют `ensureStatic = 'navigation'`, читают `params` и проверяют существование записи до любого `<Suspense>` — так неизвестный slug даёт настоящий 404, а не «мягкий» 200 (DECISIONS №17). Админка и API — динамические. Локаль внутри страниц — из `next/root-params` (через `getLocale()`); в server actions и route handlers root-params недоступен — локаль передаётся явно: `getTranslations({ locale, namespace })`.
 6. **Валидация на границе:** все `route.ts` и server actions начинаются с zod-схемы из `lib/validation/`. Один и тот же zod на клиенте и сервере.
 7. **PII не логируем.** В логах и `track_events` — никаких телефонов, имён, email. IP — только `sha256(ip + IP_HASH_SALT)`.
-8. **Админка закрыта**: `proxy.ts` (Next 16, всегда Node runtime; `middleware.ts` не используем) делает только оптимистичную проверку cookie сессии на `/admin/*` и `/api/admin/*`; настоящая проверка сессии и ролей `owner`/`staff` — в каждом server action и route handler (`requireRole`), не только в UI. Админка — на том же домене (`/admin`), не на поддомене: revalidate действует только на свой домен.
+8. **Админка закрыта**: `proxy.ts` (Next 16, всегда Node runtime; `middleware.ts` не используем) делает только оптимистичную проверку cookie сессии на `/admin/*` и `/api/admin/*`; настоящая проверка сессии и ролей `owner`/`staff` — в каждой странице админки, server action и route handler (`requireRole` из `lib/auth`), не только в UI. Строки админки — `messages/admin/{ru,en}.json` (ключи совпадают — `tests/unit/admin-forms.test.ts`), клиентским компонентам передаются пропсами; правка контента — `saveOverrides` + `updateTag`, разбор формы — чистые функции `lib/admin/forms.ts`. Админка — на том же домене (`/admin`), не на поддомене: revalidate действует только на свой домен.
 9. **HTML из редактора** всегда проходит `lib/sanitize.ts` при рендере.
 10. **Клиентские компоненты** (`'use client'`) — только где есть интерактив: калькулятор, форма, окно ассистента, слайдер до/после, аккордеон, переключатель языка, админка. Маркетинговые страницы — серверные.
 11. **AI** вызывается только из `lib/ai.ts` на сервере через OpenAI-совместимый шлюз (`lib/ai/gateway.ts`, `fetch` без SDK; по умолчанию Polza AI: `AI_BASE_URL` + `POLZA_API_KEY`), модель из `process.env.AI_MODEL ?? 'anthropic/claude-opus-5.5'`, structured outputs через `response_format: json_schema` (схема из zod, `z.toJSONSchema`) **и** обязательная повторная валидация zod на нашей стороне, результат никогда не записывается в БД без подтверждения пользователя в UI. Промпты — чистые функции в `lib/ai/*` (без сети), цены модель не называет — их подставляет сервер из `lib/pricing`; текст и фото клиента в промпте — данные, не инструкции (DECISIONS №45–47, №51).
@@ -50,9 +51,11 @@ pnpm seed           # идемпотентный сид из content/seed/*.json
 ```
 app/[locale]/…            публичные страницы (см. BRIEF §5)
 app/[locale]/layout.tsx   корневой layout сайта (app/layout.tsx нет — иначе ломается next/root-params)
-app/admin/…               админка (без локали в URL, UI RU/EN по cookie; свой корневой layout с <html>)
+app/admin/…               админка (без локали в URL, UI RU/EN по cookie; свой корневой layout с <html>): login, (panel)/{page,settings,prices,services}; actions.ts рядом со страницами
+lib/auth/{index,session,password}.ts  сессия и пароли админки   lib/admin/{forms,i18n,form-state,sections,changes}.ts   lib/db/{mutations.ts,queries/{overrides,audit}.ts}
+components/admin          оболочка (лок-ап, боковая панель / нижние вкладки, действия аккаунта), форма с плавающей панелью сохранения и подсветкой изменённых полей, поля, форма входа   messages/admin/{ru,en}.json  строки админки
 app/api/leads|track|auth|admin  app/api/diagnose  AI-диагностика (zod → lib/ai → цены из lib/pricing)
-proxy.ts                  next-intl; в фазе 5 — оптимистичная проверка сессии
+proxy.ts                  next-intl; на /admin и /api/admin — оптимистичная проверка cookie сессии
 components/marketing|admin|ui|icons  components/ltr.tsx  components/localized-text.tsx
 lib/db/{client,schema,queries}  lib/i18n/{routing,navigation,request,format,text}
 lib/{pricing,whatsapp,telegram,email,ai,auth,ratelimit,seo,sanitize}.ts
@@ -70,7 +73,7 @@ lib/ai/gateway.ts         OpenAI-совместимый шлюз (fetch, Polza) 
 app/[locale]/dev/ui       галерея компонентов (локально и на превью; на продакшене 404)
 messages/{en,ar,ru,fr,de,zh,hi}.json  UI-строки (порядок локалей = `routing.locales`)
 content/seed/*.json       стартовый контент
-drizzle/                  миграции    scripts/{seed.ts,migrate-if-db.mjs}
+drizzle/                  миграции    scripts/{seed.ts,migrate-if-db.mjs,admin-user.mjs}
 tests/unit  tests/e2e     docs/{BRIEF,PHASES,DECISIONS,RUNBOOK}.md
 ```
 
@@ -84,7 +87,7 @@ tests/unit  tests/e2e     docs/{BRIEF,PHASES,DECISIONS,RUNBOOK}.md
 
 ## Переменные окружения
 
-`DATABASE_URL` (pooled, runtime), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET`, `AUTH_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `POLZA_API_KEY` (или `AI_API_KEY` для другого шлюза), `AI_MODEL`, `AI_BASE_URL`, `AI_EFFORT`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Контакты, WhatsApp, Telegram chat id, лицензия — в таблице `settings`, не в env. Ключ Polza — аккаунт Максима, оплата в рублях; вызовы только с сервера. Кто владеет каким аккаунтом — `docs/INFRASTRUCTURE.md`.
+`DATABASE_URL` (pooled, runtime), `DATABASE_URL_UNPOOLED` (миграции), `AUTH_SECRET` (≥ 32 символов, иначе вход в админку отключён), `ADMIN_EMAIL` / `ADMIN_PASSWORD` (первый владелец, читаются при сборке, пока пользователей нет), `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `TELEGRAM_BOT_TOKEN`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `POLZA_API_KEY` (или `AI_API_KEY` для другого шлюза), `AI_MODEL`, `AI_BASE_URL`, `AI_EFFORT`, `NEXT_PUBLIC_SITE_URL`, `REVALIDATE_SECRET`, `IP_HASH_SALT`. Контакты, WhatsApp, Telegram chat id, лицензия — в таблице `settings`, не в env. Ключ Polza — аккаунт Максима, оплата в рублях; вызовы только с сервера. Кто владеет каким аккаунтом — `docs/INFRASTRUCTURE.md`.
 
 ## Коммиты
 
