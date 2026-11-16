@@ -280,3 +280,27 @@ describe('services folded into one card', () => {
     ]);
   });
 });
+
+// The owner's wording for the two visit cards (DECISIONS №82).
+describe('catalogue cards with their own wording', () => {
+  const card = (slug: string) => seedServices().find((s) => s.slug === slug)!.card!;
+
+  it('carry the price unit, the note, the button and the link as he wrote them', () => {
+    expect(seedServices().find((s) => s.slug === 'ac-repair')!.name.en).toBe(
+      'AC Repairs & Diagnostics',
+    );
+    expect(card('ac-repair').unit?.en).toBe('per diagnostic visit');
+    expect(card('ac-repair').note?.en).toBe('Repairs and parts quoted separately.');
+    expect(card('ac-repair').cta.en).toBe('Book a diagnostic visit');
+    expect(card('ac-repair').link?.en).toBe('View repair services and prices');
+    expect(card('emergency-ac-repair').cta.en).toBe('Check availability');
+    expect(card('emergency-ac-repair').note?.en).toBe('Repairs and parts quoted separately.');
+    expect(card('emergency-ac-repair').link).toBeUndefined();
+  });
+
+  it('are translated into every locale', () => {
+    for (const slug of ['ac-repair', 'emergency-ac-repair'])
+      for (const field of Object.values(card(slug)))
+        expect(Object.values(field).filter(Boolean)).toHaveLength(7);
+  });
+});

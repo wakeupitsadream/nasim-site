@@ -884,13 +884,13 @@
         "hi": "तत्काल एसी कॉल-आउट"
       },
       "short": {
-        "en": "Priority appointments for AC breakdowns, loss of cooling or water leaks. Contact us to confirm the earliest available visit.",
-        "ru": "Приоритетные записи при поломке кондиционера, отсутствии охлаждения или протечке. Свяжитесь с нами, чтобы уточнить ближайшее доступное время.",
-        "ar": "مواعيد ذات أولوية عند تعطل المكيف أو انقطاع التبريد أو تسرب الماء. تواصل معنا لتأكيد أقرب موعد متاح.",
-        "fr": "Rendez-vous prioritaires en cas de panne de climatiseur, de perte de refroidissement ou de fuite d’eau. Contactez-nous pour confirmer la première visite disponible.",
-        "de": "Bevorzugte Termine bei Ausfall der Klimaanlage, fehlender Kühlung oder Wasseraustritt. Kontaktieren Sie uns, dann bestätigen wir Ihnen den frühestmöglichen Termin.",
-        "zh": "空调故障、不制冷或漏水时，可优先安排上门。请联系我们，确认最早可上门的时间。",
-        "hi": "एसी ख़राब होने, कूलिंग बंद होने या पानी के लीक पर प्राथमिकता से अपॉइंटमेंट। सबसे जल्दी उपलब्ध विज़िट पक्की करने के लिए हमसे संपर्क करें।"
+        "en": "Priority diagnostic visits for AC breakdowns, loss of cooling or water leaks. Contact us to confirm the earliest available appointment.",
+        "ar": "زيارات تشخيص ذات أولوية لأعطال المكيف أو فقدان التبريد أو تسرب الماء. تواصل معنا لتأكيد أقرب موعد متاح.",
+        "ru": "Приоритетный выезд с диагностикой при поломке кондиционера, пропаже холода или протечке. Свяжитесь с нами — подтвердим ближайшее доступное время.",
+        "fr": "Visites de diagnostic prioritaires en cas de panne de climatiseur, de perte de froid ou de fuite d’eau. Contactez-nous pour confirmer le premier rendez-vous disponible.",
+        "de": "Diagnosebesuche mit Vorrang bei Ausfall der Klimaanlage, fehlender Kühlung oder Wasseraustritt. Kontaktieren Sie uns, um den frühestmöglichen Termin zu bestätigen.",
+        "zh": "空调故障、不制冷或漏水时优先安排检测上门。请联系我们确认最早可约时间。",
+        "hi": "एसी ख़राब होने, कूलिंग बंद होने या पानी के रिसाव पर प्राथमिकता वाली डायग्नोस्टिक विज़िट। सबसे जल्दी उपलब्ध समय की पुष्टि के लिए हमसे संपर्क करें।"
       },
       "description_html": {
         "en": "<p>An AC that stops in July is an emergency, and we treat it like one. Call or message before the cut-off time shown in our hours and a technician comes today.</p><p>The call-out includes diagnostics at a fixed price. If we repair on the spot, that fee is credited to the repair. If a part needs ordering, you get a written quote first and decide.</p>",
@@ -1038,6 +1038,26 @@
         "de": "Klimaanlage kühlt nicht oder tropft? Notdienst in Dubai noch heute. Diagnose 199 AED, auf die Reparatur angerechnet. Kostenvoranschlag vor jeder Arbeit.",
         "zh": "空调不制冷或漏水？迪拜当天紧急上门，AED 199 检测费计入维修费用，开工前提供书面报价。",
         "hi": "एसी ठंडा नहीं कर रहा या पानी टपक रहा है? दुबई में उसी दिन इमरजेंसी कॉल-आउट, AED 199 की जाँच मरम्मत में समायोजित, किसी भी काम से पहले लिखित कोटेशन।"
+      },
+      "card": {
+        "note": {
+          "en": "Repairs and parts quoted separately.",
+          "ar": "الإصلاح وقطع الغيار بعرض سعر منفصل.",
+          "ru": "Ремонт и детали — по отдельной смете.",
+          "fr": "Réparations et pièces sur devis séparé.",
+          "de": "Reparaturen und Teile nach separatem Angebot.",
+          "zh": "维修及配件另行报价。",
+          "hi": "मरम्मत और पुर्ज़ों का कोटेशन अलग से।"
+        },
+        "cta": {
+          "en": "Check availability",
+          "ar": "تحقق من المواعيد المتاحة",
+          "ru": "Узнать ближайшее время",
+          "fr": "Vérifier les disponibilités",
+          "de": "Verfügbarkeit prüfen",
+          "zh": "查询可约时间",
+          "hi": "उपलब्धता जाँचें"
+        }
       }
     },
     {
@@ -1089,7 +1109,7 @@
       "status": "active",
       "sort": 30,
       "name": {
-        "en": "AC Repairs and Diagnostics",
+        "en": "AC Repairs & Diagnostics",
         "ar": "إصلاح وتشخيص المكيفات",
         "ru": "Ремонт и диагностика кондиционеров",
         "fr": "Réparation et diagnostic de climatiseurs",
@@ -1098,13 +1118,13 @@
         "hi": "एसी की मरम्मत और जाँच"
       },
       "short": {
-        "en": "We inspect your AC, find the fault and fix it: weak cooling, water leaks and blocked drains, thermostats, refrigerant leaks and recharge, faulty parts. You get our findings and a written quotation before any repair.",
-        "ar": "نفحص مكيفك ونحدد العطل ونصلحه: ضعف التبريد، تسرب الماء وانسداد التصريف، الثرموستات، تسرب غاز التبريد وإعادة تعبئته، والقطع المعطلة. تحصل على نتائج الفحص وعرض سعر مكتوب قبل أي إصلاح.",
-        "ru": "Осматриваем кондиционер, находим неисправность и устраняем её: слабое охлаждение, протечки и засоры дренажа, термостаты, утечки и заправка хладагента, неисправные детали. До ремонта вы получаете результаты диагностики и письменную смету.",
-        "fr": "Nous inspectons votre climatiseur, identifions la panne et la réparons : manque de froid, fuites d’eau et évacuations bouchées, thermostats, fuites et recharge de fluide frigorigène, pièces défectueuses. Vous recevez notre diagnostic et un devis écrit avant toute réparation.",
-        "de": "Wir prüfen Ihre Klimaanlage, finden den Fehler und beheben ihn: schwache Kühlleistung, Wasseraustritt und verstopfte Abläufe, Thermostate, Kältemittellecks und Nachfüllung, defekte Bauteile. Vor jeder Reparatur erhalten Sie unseren Befund und ein schriftliches Angebot.",
-        "zh": "我们检查您的空调，找出故障并修复：制冷不足、漏水和排水堵塞、温控器、制冷剂泄漏与加注、损坏的部件。维修前您会收到检测结果和书面报价。",
-        "hi": "हम आपके एसी की जाँच करते हैं, ख़राबी ढूँढ़ते हैं और उसे ठीक करते हैं: कम कूलिंग, पानी का रिसाव और ड्रेन की रुकावट, थर्मोस्टैट, रेफ़्रिजरेंट का रिसाव और रीचार्ज, ख़राब पुर्ज़े। किसी भी मरम्मत से पहले आपको हमारी जाँच के नतीजे और लिखित कोटेशन मिलता है।"
+        "en": "We investigate weak cooling, water leaks, unusual noises and AC breakdowns. Repair costs are confirmed before work begins.",
+        "ar": "نفحص أسباب ضعف التبريد وتسرب الماء والأصوات غير المعتادة وأعطال المكيف. تُؤكَّد تكلفة الإصلاح قبل بدء العمل.",
+        "ru": "Выясняем причину слабого охлаждения, протечек, посторонних шумов и поломок кондиционера. Стоимость ремонта согласуем до начала работ.",
+        "fr": "Nous recherchons la cause d’un manque de froid, d’une fuite d’eau, de bruits inhabituels ou d’une panne de climatiseur. Le coût de la réparation est confirmé avant le début des travaux.",
+        "de": "Wir gehen schwacher Kühlleistung, Wasseraustritt, ungewöhnlichen Geräuschen und Ausfällen der Klimaanlage auf den Grund. Die Reparaturkosten werden vor Arbeitsbeginn bestätigt.",
+        "zh": "我们排查制冷不足、漏水、异响和空调故障的原因。维修费用在开工前确认。",
+        "hi": "हम कम कूलिंग, पानी के रिसाव, असामान्य आवाज़ों और एसी की ख़राबी की वजह पता लगाते हैं। मरम्मत की लागत काम शुरू होने से पहले तय की जाती है।"
       },
       "description_html": {
         "en": "<p>Most split-unit failures come down to a handful of parts: a swollen start capacitor, a failed fan motor, a dead temperature sensor, a drain pump that stopped pumping, or a control board after a power surge. We carry the common parts in the van and fix most of them in one visit.</p><p>We do not install new systems and do not take on complex office VRF repairs. If that is what you need, we will say so and point you to the right people.</p>",
@@ -1262,7 +1282,45 @@
         "refrigerant-leak-repair",
         "refrigerant-recharge",
         "ac-sanitisation"
-      ]
+      ],
+      "card": {
+        "unit": {
+          "en": "per diagnostic visit",
+          "ar": "لزيارة التشخيص",
+          "ru": "за диагностический визит",
+          "fr": "par visite de diagnostic",
+          "de": "pro Diagnosebesuch",
+          "zh": "每次检测上门",
+          "hi": "प्रति डायग्नोस्टिक विज़िट"
+        },
+        "note": {
+          "en": "Repairs and parts quoted separately.",
+          "ar": "الإصلاح وقطع الغيار بعرض سعر منفصل.",
+          "ru": "Ремонт и детали — по отдельной смете.",
+          "fr": "Réparations et pièces sur devis séparé.",
+          "de": "Reparaturen und Teile nach separatem Angebot.",
+          "zh": "维修及配件另行报价。",
+          "hi": "मरम्मत और पुर्ज़ों का कोटेशन अलग से।"
+        },
+        "cta": {
+          "en": "Book a diagnostic visit",
+          "ar": "احجز زيارة تشخيص",
+          "ru": "Заказать диагностику",
+          "fr": "Réserver une visite de diagnostic",
+          "de": "Diagnosebesuch buchen",
+          "zh": "预约检测上门",
+          "hi": "डायग्नोस्टिक विज़िट बुक करें"
+        },
+        "link": {
+          "en": "View repair services and prices",
+          "ar": "عرض خدمات الإصلاح وأسعارها",
+          "ru": "Виды ремонта и цены",
+          "fr": "Voir les réparations et les tarifs",
+          "de": "Reparaturleistungen und Preise ansehen",
+          "zh": "查看维修项目和价格",
+          "hi": "मरम्मत सेवाएँ और कीमतें देखें"
+        }
+      }
     },
     {
       "slug": "thermostat-installation",

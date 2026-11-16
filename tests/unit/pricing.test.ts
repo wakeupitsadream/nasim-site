@@ -443,8 +443,9 @@ describe('seed consistency', () => {
       exact: true,
     });
     expect(priceFrom(cfg, 'ac-filter-grille-cleaning')?.exact).toBe(true);
-    // Repairs and diagnostics are one service: the visit is the first thing paid (DECISIONS №81).
-    expect(priceFrom(cfg, 'ac-repair')).toEqual({ amount: 199, unit: 'visit', exact: false });
+    // Repairs and diagnostics are one service: the diagnostic visit is its one fixed price, the
+    // labour beside it is an estimate and does not turn the headline into "from" (№81–82).
+    expect(priceFrom(cfg, 'ac-repair')).toEqual({ amount: 199, unit: 'visit', exact: true });
     // An extra seat (110) and the second side of a mattress (79) are add-ons, not a "from".
     expect(priceFrom(cfg, 'sofa-cleaning')).toEqual({ amount: 129, unit: 'item', exact: false });
     expect(priceFrom(cfg, 'mattress-cleaning')?.amount).toBe(229);

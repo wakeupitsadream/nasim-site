@@ -94,6 +94,19 @@ export const serviceSchema = z.object({
    * price tables; they have no card, no page and no line in the calculator.
    */
   covers: z.array(z.string().min(1)).optional(),
+  /**
+   * The owner's own wording for the catalogue card of a service that is booked as a visit
+   * (repairs, urgent call-out; DECISIONS №82): the price unit («per diagnostic visit»), a line
+   * under the price, the booking button and a link to the service's price table.
+   */
+  card: z
+    .object({
+      unit: i18nText.optional(),
+      note: i18nText.optional(),
+      cta: i18nTextRequired,
+      link: i18nText.optional(),
+    })
+    .optional(),
 });
 
 export const priceItemSchema = z.object({

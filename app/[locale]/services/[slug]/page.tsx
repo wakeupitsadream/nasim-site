@@ -309,7 +309,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
           {
             key: 'prices',
             render: (tone: SectionTone) => (
-              <Section tone={tone} aria-labelledby="prices-title">
+              <Section id="prices" tone={tone} aria-labelledby="prices-title">
                 <SectionHeader id="prices-title" title={t('prices')} />
                 <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
                   <PriceTable
