@@ -8,8 +8,8 @@ import { z } from 'zod';
 const translated = routing.locales.filter((l) => l !== 'en');
 
 describe('locales', () => {
-  it('lists the seven site languages, EN first, Arabic the only RTL one', () => {
-    expect(routing.locales).toEqual(['en', 'ar', 'ru', 'fr', 'de', 'zh', 'hi']);
+  it('lists the eight site languages, EN first, Arabic the only RTL one', () => {
+    expect(routing.locales).toEqual(['en', 'ar', 'ru', 'fr', 'de', 'es', 'zh', 'hi']);
     expect(routing.locales.filter((l) => getDirection(l) === 'rtl')).toEqual(['ar']);
   });
 
@@ -24,6 +24,9 @@ describe('locales', () => {
     const norm = (s: string) => s.replace(/[  ]/g, ' ');
     expect(norm(formatAED(1499, 'fr'))).toBe('1 499 AED');
     expect(norm(formatAED(1499, 'de'))).toBe('1.499 AED');
+    // Spanish groups digits only from five figures on.
+    expect(norm(formatAED(1499, 'es'))).toBe('1499 AED');
+    expect(norm(formatAED(14999, 'es'))).toBe('14.999 AED');
     expect(norm(formatAED(1499, 'zh'))).toBe('AED 1,499');
     expect(norm(formatAED(1499, 'hi'))).toBe('AED 1,499');
     for (const l of routing.locales) {

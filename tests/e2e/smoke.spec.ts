@@ -7,6 +7,7 @@ const LOCALES = [
   { locale: 'ru', dir: 'ltr' },
   { locale: 'fr', dir: 'ltr' },
   { locale: 'de', dir: 'ltr' },
+  { locale: 'es', dir: 'ltr' },
   { locale: 'zh', dir: 'ltr' },
   { locale: 'hi', dir: 'ltr' },
 ] as const;
@@ -147,7 +148,7 @@ test('service pages carry the owner\'s text: bold lead-ins, closing notes, no "n
   page,
 }) => {
   await page.goto('/en/services/ac-repair');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Split AC Repair');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('AC Repairs & Diagnostics');
   await expect(
     page.getByText('Our technicians carry common replacement parts and complete most repairs'),
   ).toBeVisible();

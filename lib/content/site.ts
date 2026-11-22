@@ -66,6 +66,7 @@ function field(d: SettingsDefaults, key: FieldKey): I18nText {
     ru: d.ru?.[key],
     fr: d.fr?.[key],
     de: d.de?.[key],
+    es: d.es?.[key],
     zh: d.zh?.[key],
     hi: d.hi?.[key],
   };

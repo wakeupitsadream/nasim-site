@@ -125,6 +125,7 @@
       "ru": "Русский",
       "fr": "Français",
       "de": "Deutsch",
+      "es": "Español",
       "zh": "中文",
       "hi": "हिन्दी"
     },
@@ -134,6 +135,7 @@
       "ru": "RU",
       "fr": "FR",
       "de": "DE",
+      "es": "ES",
       "zh": "中",
       "hi": "हि"
     }
@@ -432,7 +434,7 @@
   },
   "Service": {
     "included": "Ce qui est inclus",
-    "symptoms": "Quand en avez-vous besoin",
+    "symptoms": "Quand en avez-vous besoin ?",
     "glance": "En bref",
     "prices": "Tarifs",
     "visit": "Déroulement de la visite",

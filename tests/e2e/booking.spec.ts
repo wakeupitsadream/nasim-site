@@ -37,7 +37,7 @@ test.describe('booking request wizard', () => {
       0,
     );
     await expect(servicing.getByRole('radio')).toHaveCount(4);
-    await expect(servicing.getByRole('radio', { name: /^Split AC Repair/ })).toBeVisible();
+    await expect(servicing.getByRole('radio', { name: /^AC Repairs & Diagnostics/ })).toBeVisible();
     await expect(servicing.getByRole('radio', { name: /^Urgent AC Call-Out/ })).toBeVisible();
     await expect(cleaning.getByRole('radio')).toHaveCount(4);
     await expect(book.getByText(msg('en', 'Booking.details.tiersHint'))).toHaveCount(1);
@@ -148,7 +148,7 @@ test.describe('booking request wizard', () => {
     // labour by estimate, with one diagnostics fee.
     await page.goto('/en/services/ac-repair');
     const repair = page.locator('#book');
-    await expect(repair.getByRole('radio', { name: /^Split AC Repair/ })).toBeChecked();
+    await expect(repair.getByRole('radio', { name: /^AC Repairs & Diagnostics/ })).toBeChecked();
     await expect(repair.getByText(msg('en', 'Booking.summary.estimateNote'))).toBeVisible();
     await expect(repair.getByText('AED 199').first()).toBeVisible();
     await expect(repair.getByText('AED 398')).toHaveCount(0);
@@ -161,7 +161,7 @@ test.describe('booking request wizard', () => {
 
   test('the repairs and urgent call-out cards book from the catalogue', async ({ page }) => {
     await page.goto('/en/services');
-    const repairs = page.locator('article', { hasText: 'Split AC Repair' });
+    const repairs = page.locator('article', { hasText: 'AC Repairs & Diagnostics' });
     await expect(repairs).toContainText('AED 199');
     await expect(repairs).toContainText('per diagnostic visit');
     await expect(repairs).toContainText('Repairs and parts quoted separately.');
@@ -169,7 +169,7 @@ test.describe('booking request wizard', () => {
     await repairs.getByRole('link', { name: 'Book a diagnostic visit' }).click();
     await expect(page).toHaveURL(/\/en\/services\/ac-repair#book$/);
     await expect(
-      page.locator('#book').getByRole('radio', { name: /^Split AC Repair/ }),
+      page.locator('#book').getByRole('radio', { name: /^AC Repairs & Diagnostics/ }),
     ).toBeChecked();
 
     await page.goto('/en/services');

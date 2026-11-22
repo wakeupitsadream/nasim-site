@@ -125,6 +125,7 @@
       "ru": "Русский",
       "fr": "Français",
       "de": "Deutsch",
+      "es": "Español",
       "zh": "中文",
       "hi": "हिन्दी"
     },
@@ -134,6 +135,7 @@
       "ru": "RU",
       "fr": "FR",
       "de": "DE",
+      "es": "ES",
       "zh": "中",
       "hi": "हि"
     }
@@ -349,7 +351,7 @@
       },
       "safety": "安全第一",
       "recommended": "推荐服务",
-      "comingSoon": "即将推出 — 可加入候补名单",
+      "comingSoon": "即将推出——可加入候补名单",
       "estimate": "固定检测费，然后出具书面报价",
       "book": "按此价格预约",
       "details": "服务详情",
@@ -369,7 +371,7 @@
       "again": "问点别的",
       "contact": "给我们发消息",
       "person": "想先问问真人？",
-      "demoBadge": "示例回答 — 在线助手正在接入"
+      "demoBadge": "示例回答——在线助手正在接入"
     }
   },
   "Assistant": {
@@ -704,7 +706,7 @@
       "minimumNote": "每个地址每次上门最低消费 <price>{amount}</price>。可组合多个项目以达到最低消费。"
     },
     "offer": {
-      "text": "再加 {add} 添加 {items} — {name} 套餐，节省 {savings}",
+      "text": "再加 {add} 添加 {items}——{name} 套餐，节省 {savings}",
       "add": "添加"
     },
     "time": {

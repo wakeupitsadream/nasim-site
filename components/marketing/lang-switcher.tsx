@@ -23,7 +23,7 @@ export function LangSwitcher(props: Props) {
   return <LangLinks pathname={usePathname()} {...props} />;
 }
 
-/** The header button: one control for all seven languages (DECISIONS №57). */
+/** The header button: one control for all eight languages (DECISIONS №57, №86). */
 export function LangMenu(props: Props) {
   return <LangMenuFor pathname={usePathname()} {...props} />;
 }

@@ -10,6 +10,7 @@
         "ar": "هواء نقي وبارد. بلا مفاجآت.",
         "fr": "De l’air propre et froid. Sans surprise.",
         "de": "Saubere, kalte Luft. Keine Überraschungen.",
+        "es": "Aire limpio y fresco. Precios sin sorpresas.",
         "zh": "洁净凉爽的空气。没有意外。",
         "hi": "साफ़, ठंडी हवा। कोई सरप्राइज़ नहीं।"
       }
@@ -23,6 +24,7 @@
         "ar": "تنظيف المكيفات وإصلاحها وتنظيف المفروشات في دبي. السعر ثابت قبل وصولنا، والفني يصل في موعد محدد بساعة واحدة، وتستلم تقريرًا مصوّرًا عبر واتساب.",
         "fr": "Nettoyage et réparation de climatiseurs, nettoyage de canapés, matelas et tapis à Dubaï. Le prix est fixé avant notre venue, le technicien arrive dans un créneau d’une heure, et vous recevez un rapport photo sur WhatsApp.",
         "de": "Klimaanlagen-Reinigung, Reparatur und Polsterreinigung in Dubai. Der Preis steht fest, bevor wir kommen, der Techniker kommt in einem Ein-Stunden-Zeitfenster, und Sie erhalten einen Fotobericht per WhatsApp.",
+        "es": "Brigada ofrece limpieza y reparación de aire acondicionado y limpieza de tapicería en Dubái. Le confirmamos el precio cerrado antes de la visita. El técnico llega dentro de la franja de una hora acordada y, al terminar el trabajo, le enviamos un informe fotográfico por WhatsApp.",
         "zh": "迪拜空调清洗、维修与软装清洁。上门前锁定价格，技师在一小时时段内到达，您会在 WhatsApp 上收到照片报告。",
         "hi": "दुबई में एसी की सफ़ाई, मरम्मत और सोफ़ा-गद्दों की सफ़ाई। कीमत हमारे आने से पहले तय होती है, तकनीशियन एक घंटे के स्लॉट में आता है, और आपको WhatsApp पर फ़ोटो रिपोर्ट मिलती है।"
       }
@@ -36,6 +38,7 @@
         "ar": "احجز عبر واتساب",
         "fr": "Réserver sur WhatsApp",
         "de": "Per WhatsApp buchen",
+        "es": "Reservar por WhatsApp",
         "zh": "通过 WhatsApp 预约",
         "hi": "WhatsApp पर बुक करें"
       }
@@ -49,6 +52,7 @@
         "ar": "احصل على السعر فورًا",
         "fr": "Obtenir un prix instantané",
         "de": "Sofortpreis erhalten",
+        "es": "Obtener presupuesto al instante",
         "zh": "立即获取价格",
         "hi": "तुरंत कीमत जानें"
       }
@@ -86,6 +90,12 @@
           "Ein-Stunden-Zeitfenster für die Ankunft",
           "Fotobericht per WhatsApp",
           "30 Tage Garantie"
+        ],
+        "es": [
+          "Precio cerrado confirmado antes de la visita",
+          "Franja de llegada de una hora",
+          "Informe fotográfico por WhatsApp",
+          "Garantía de 30 días"
         ],
         "zh": [
           "上门前锁定价格",
@@ -195,6 +205,24 @@
             "text": "Messwerte und Fotos per WhatsApp. Wir erinnern Sie, wenn die nächste Reinigung fällig ist."
           }
         ],
+        "es": [
+          {
+            "title": "Escríbanos",
+            "text": "Por WhatsApp o con el formulario. Díganos qué necesita, dónde y cuántos equipos."
+          },
+          {
+            "title": "Precio y franja confirmados",
+            "text": "Recibe por escrito el precio exacto y una franja de llegada de una hora."
+          },
+          {
+            "title": "Llega el técnico",
+            "text": "Cubiertas protectoras, fotos del antes, el trabajo y fotos del después."
+          },
+          {
+            "title": "Informe y recordatorio",
+            "text": "Mediciones y fotos por WhatsApp. Le avisamos cuando toque la próxima limpieza."
+          }
+        ],
         "zh": [
           {
             "title": "给我们发消息",
@@ -242,6 +270,7 @@
         "ar": "لماذا تهمّ الصيانة الدورية للمكيف في دبي",
         "fr": "Pourquoi un entretien régulier de la clim compte à Dubaï",
         "de": "Warum regelmäßige Klimaanlagen-Wartung in Dubai wichtig ist",
+        "es": "Por qué es importante el mantenimiento periódico del aire acondicionado en Dubái",
         "zh": "在迪拜为什么要定期保养空调",
         "hi": "दुबई में एसी की नियमित सर्विसिंग क्यों ज़रूरी है"
       }
@@ -252,7 +281,7 @@
       "value": {
         "en": [
           {
-            "title": "Dust buildup",
+            "title": "Dust build-up",
             "text": "Desert dust can build up on your AC filters and coils. This restricts airflow and makes it harder for your AC to cool your home."
           },
           {
@@ -320,6 +349,20 @@
             "text": "Mit einem verschmutzten Wärmetauscher läuft die Klimaanlage unter Umständen länger, bis die eingestellte Temperatur erreicht ist, und verbraucht mehr Strom. Regelmäßige Wartung hilft, die Anlage effizient zu halten."
           }
         ],
+        "es": [
+          {
+            "title": "Acumulación de polvo",
+            "text": "El polvo del desierto puede acumularse en los filtros y los serpentines de su aire acondicionado. Esto reduce el caudal de aire y hace que al equipo le cueste más enfriar su hogar."
+          },
+          {
+            "title": "Humedad y malos olores",
+            "text": "La humedad que queda dentro del aire acondicionado puede favorecer la aparición de moho. Es una de las posibles causas del olor a humedad que quizá note al encender el equipo."
+          },
+          {
+            "title": "Su factura de DEWA",
+            "text": "Con el serpentín sucio, el aire acondicionado puede tardar más en alcanzar la temperatura que usted ha fijado y consumir más electricidad. El mantenimiento periódico ayuda a que su sistema funcione de forma eficiente."
+          }
+        ],
         "zh": [
           {
             "title": "灰尘堆积",
@@ -359,6 +402,7 @@
         "ar": "<p><strong>التنظيف:</strong> 30 يومًا. إذا عادت الرائحة أو المشكلة التي عالجناها، نعيد التنظيف مجانًا.<br><strong>الإصلاح:</strong> 90 يومًا على القطع والعمل.</p>",
         "fr": "<p><strong>Nettoyage :</strong> 30 jours. Si l’odeur ou le problème que nous avons traité revient, nous recommençons gratuitement.<br><strong>Réparations :</strong> 90 jours pièces et main-d’œuvre.</p>",
         "de": "<p><strong>Reinigung:</strong> 30 Tage. Kommt der Geruch oder das Problem zurück, das wir beseitigt haben, reinigen wir kostenlos nach.<br><strong>Reparaturen:</strong> 90 Tage auf Teile und Arbeit.</p>",
+        "es": "<p><strong>Limpieza · garantía de 30 días</strong><br>Si el mismo olor o el mismo problema de limpieza reaparece en un plazo de 30 días, volvemos y repetimos la limpieza sin cargo adicional.</p><p><strong>Reparaciones · garantía de 90 días</strong><br>Nuestras reparaciones están cubiertas durante 90 días, piezas y mano de obra incluidas.</p>",
         "zh": "<p><strong>清洗：</strong>30 天。如果我们处理过的异味或问题再次出现，免费重做。<br><strong>维修：</strong>配件和人工保修 90 天。</p>",
         "hi": "<p><strong>सफ़ाई:</strong> 30 दिन। अगर जिस बदबू या समस्या की हमने सफ़ाई की, वह वापस आ जाए, तो हम उसे मुफ़्त दोबारा करते हैं।<br><strong>मरम्मत:</strong> पुर्ज़ों और मज़दूरी पर 90 दिन।</p>"
       }
@@ -437,6 +481,20 @@
             "text": "Gründliches Evakuieren, um Feuchtigkeit zu entfernen, dann Nachfüllen nach Gewicht gemäß Herstellerangabe. Die Ausblastemperatur wird gemessen und fotografiert."
           }
         ],
+        "es": [
+          {
+            "title": "Localizar la fuga",
+            "text": "Prueba de presión con nitrógeno y detector de fugas en las uniones, las válvulas y el serpentín. Una recarga sin este paso es dinero tirado: el gas vuelve a escaparse en pocas semanas."
+          },
+          {
+            "title": "Repararla",
+            "text": "Soldadura fuerte o una nueva conexión abocardada, un núcleo de válvula o un tramo de tubería. Las piezas se presupuestan por escrito antes de empezar."
+          },
+          {
+            "title": "Vacío y recarga",
+            "text": "Vacío profundo para eliminar la humedad y, después, recarga por peso según las especificaciones del fabricante. La temperatura de salida del aire se comprueba y se fotografía."
+          }
+        ],
         "zh": [
           {
             "title": "找到漏点",
@@ -476,6 +534,7 @@
         "ar": "<p>مكيف السبليت معلّق على الجدار ويُنظَّف في مكانه. أما وحدة الفان كويل (FCU) فتقع فوق السقف المستعار في الممر أو الحمّام ويُوصَل إليها عبر فتحة الصيانة: تُصان الفلاتر وصينية التصريف والملف من الأسفل، ويُفحص الثرموستات والسير أو المحرك في المكان. أنظمة الدكت في الفلل تعمل بالطريقة نفسها لكن خطوط تصريفها أطول وفلاترها أكثر، لذا تستغرق الزيارة وقتًا أطول ونحسبها لكل وحدة فان كويل.</p>",
         "fr": "<p>Une unité split est fixée au mur et se nettoie sur place. Un ventilo-convecteur (FCU) se trouve au-dessus du faux plafond d’un couloir ou d’une salle de bain et s’atteint par une trappe d’accès : les filtres, le bac à condensats et l’échangeur sont entretenus par en dessous, le thermostat et la courroie ou le moteur sont vérifiés sur place. Les systèmes gainables des villas fonctionnent de la même manière, mais avec des conduites d’évacuation plus longues et plus de filtres ; la visite dure donc plus longtemps et nous la facturons par FCU.</p>",
         "de": "<p>Ein Split-Gerät hängt an der Wand und wird vor Ort gereinigt. Ein Gebläsekonvektor (FCU) sitzt über der abgehängten Decke eines Flurs oder Badezimmers und ist über eine Revisionsklappe erreichbar: Filter, Kondensatwanne und Wärmetauscher werden von unten gewartet, Thermostat und Riemen oder Motor vor Ort geprüft. Kanalsysteme in Villen funktionieren genauso, haben aber längere Ablaufleitungen und mehr Filter – der Besuch dauert deshalb länger, und wir berechnen ihn pro FCU.</p>",
+        "es": "<p>Un aire acondicionado split va colgado en la pared y se limpia en su sitio. Un fancoil (FCU) se encuentra sobre el falso techo de un pasillo o de un baño y se accede a él por una trampilla de registro: los filtros, la bandeja de condensados y el serpentín se limpian y revisan desde abajo, y el termostato y la correa o el motor se comprueban allí mismo. Los sistemas de aire acondicionado por conductos de las villas funcionan igual, pero tienen desagües más largos y más filtros, por lo que la visita dura más y el precio se calcula por FCU.</p>",
         "zh": "<p>分体式空调挂在墙上，原地清洗即可。风机盘管（FCU）装在走廊或卫生间的吊顶上方，通过检修口才能触及：滤网、接水盘和盘管从下方保养，温控器以及皮带或电机现场检查。别墅的中央空调系统原理相同，但排水管更长、滤网更多，所以上门时间更长，我们按每台风机盘管计价。</p>",
         "hi": "<p>स्प्लिट यूनिट दीवार पर लगी होती है और उसकी सफ़ाई वहीं होती है। फैन कॉइल यूनिट (FCU) गलियारे या बाथरूम की फ़ॉल्स सीलिंग के ऊपर होती है और उस तक एक्सेस हैच से पहुँचा जाता है: फ़िल्टर, ड्रेन ट्रे और कॉइल की सर्विस नीचे से होती है, थर्मोस्टैट और बेल्ट या मोटर की जाँच मौके पर। विला के डक्टेड सिस्टम इसी तरह काम करते हैं, लेकिन उनमें ड्रेन लाइन लंबी और फ़िल्टर ज़्यादा होते हैं, इसलिए विज़िट में ज़्यादा समय लगता है और हम कीमत प्रति FCU तय करते हैं।</p>"
       }
@@ -507,6 +566,12 @@
           "Mengenpreise gelten für dieselbe Leistung an derselben Adresse im selben Besuch.",
           "Die Preise setzen Standardgeräte für Wohnräume und einen geeigneten, bereits vorhandenen Zugang voraus.",
           "Für zusätzliche Zugangsarbeiten oder eine Spezialdemontage erhalten Sie vor der Buchung ein Angebot."
+        ],
+        "es": [
+          "Los precios incluyen la visita y el IVA, cuando corresponda.",
+          "Las tarifas por cantidad se aplican al mismo servicio, en una misma dirección y durante una misma visita.",
+          "Las tarifas presuponen equipos residenciales estándar y un acceso existente adecuado.",
+          "Cualquier trabajo adicional de acceso o desmontaje especializado se presupuesta antes de la reserva."
         ],
         "zh": [
           "价格已包含上门费和增值税（如适用）。",
@@ -555,6 +620,12 @@
           "Für Leder, empfindliche Stoffe, handgefertigte Teppiche und übergroße Stücke ist ein separates Angebot erforderlich.",
           "Die Flecken- und Geruchsentfernung hängt von Stoff und Zustand ab; eine vollständige Entfernung ist nicht garantiert.",
           "Die Trocknungszeit variiert. Etwaige zusätzliche Arbeiten und Kosten bestätigen wir vor der Buchung."
+        ],
+        "es": [
+          "Pedido mínimo de 229 AED por dirección y visita. Combine varios artículos para alcanzar el mínimo.",
+          "El cuero, los tejidos delicados, las alfombras hechas a mano y las piezas de gran tamaño requieren un presupuesto aparte.",
+          "La eliminación de manchas y olores depende del tejido y de su estado; no se garantiza la eliminación completa.",
+          "El tiempo de secado varía. Le confirmamos cualquier trabajo o cargo adicional antes de la reserva."
         ],
         "fr": [
           "Commande minimale de 229 AED par adresse et par visite. Combinez plusieurs éléments pour atteindre le minimum.",
@@ -625,6 +696,15 @@
             "Nächste Reinigung fällig: in 5 Monaten"
           ]
         },
+        "es": {
+          "header": "Informe · Aire acondicionado del dormitorio",
+          "lines": [
+            "Antes: 16,8 °C en la salida de aire",
+            "Después: 11,2 °C en la salida de aire",
+            "Limpieza de filtros, serpentín, ventilador y desagüe",
+            "Próxima limpieza: dentro de 5 meses"
+          ]
+        },
         "zh": {
           "header": "报告 · 卧室空调",
           "lines": [
@@ -666,6 +746,9 @@
         "de": {
           "label": "Ausblastemperatur"
         },
+        "es": {
+          "label": "Temperatura del aire de salida"
+        },
         "zh": {
           "label": "出风温度"
         },
@@ -683,6 +766,7 @@
         "ru": "<p>Мы работаем с уже установленными домашними системами кондиционирования. Установка новых систем и ремонт больших офисных VRF-систем — не наш профиль. Удаление плесени со стен организуем через лицензированного партнёра.</p>",
         "fr": "<p>Nous intervenons sur les systèmes de climatisation résidentiels existants. Les nouvelles installations et la réparation de grands systèmes VRF de bureaux sortent de notre champ d’intervention. Pour l’élimination des moisissures sur les murs, nous pouvons faire appel à un partenaire agréé.</p>",
         "de": "<p>Wir konzentrieren uns auf bestehende Klimaanlagen in Wohnungen und Häusern. Neuinstallationen und Reparaturen an großen VRF-Anlagen in Büros gehören nicht zu unserem Leistungsumfang. Für die Schimmelentfernung an Wänden können wir einen lizenzierten Partner vermitteln.</p>",
+        "es": "<p>Nos centramos en los sistemas de aire acondicionado domésticos ya instalados. Las instalaciones nuevas y la reparación de grandes sistemas VRF de oficinas quedan fuera de nuestro ámbito. Para la eliminación de moho en paredes, podemos gestionar el servicio con una empresa colaboradora con licencia.</p>",
         "zh": "<p>我们专注于现有的家用空调系统。新装空调和大型办公室 VRF 系统的维修不在我们的服务范围内。墙面除霉可由我们安排持牌合作方处理。</p>",
         "hi": "<p>हम घरों में पहले से लगे एसी सिस्टम पर काम करते हैं। नई इंस्टॉलेशन और बड़े ऑफ़िस VRF सिस्टम की मरम्मत हमारे दायरे से बाहर है। दीवारों से फफूँद हटाने के लिए हम लाइसेंस प्राप्त पार्टनर की व्यवस्था कर सकते हैं।</p>"
       }
@@ -696,6 +780,7 @@
         "ar": "نرد عبر واتساب خلال 15 دقيقة في ساعات العمل.",
         "fr": "Nous répondons sur WhatsApp sous 15 minutes pendant les heures d’ouverture.",
         "de": "Wir antworten per WhatsApp innerhalb von 15 Minuten während der Öffnungszeiten.",
+        "es": "Respondemos por WhatsApp en menos de 15 minutos dentro del horario de atención.",
         "zh": "营业时间内，我们会在 15 分钟内通过 WhatsApp 回复。",
         "hi": "काम के घंटों में हम WhatsApp पर 15 मिनट के भीतर जवाब देते हैं।"
       }
@@ -709,6 +794,7 @@
         "ar": "تم الاستلام — سنعاود الاتصال بك",
         "fr": "Bien reçu — nous vous rappelons",
         "de": "Angekommen – wir rufen Sie zurück",
+        "es": "Recibido: le devolveremos la llamada",
         "zh": "收到了——我们会给您回电",
         "hi": "मिल गया — हम आपको कॉल बैक करेंगे"
       }
@@ -722,6 +808,7 @@
         "ar": "تريده أسرع؟ راسلنا عبر واتساب ونؤكد لك السعر والموعد فورًا.",
         "fr": "Encore plus vite ? Écrivez-nous sur WhatsApp : nous confirmons le prix et le créneau tout de suite.",
         "de": "Soll es schneller gehen? Schreiben Sie uns per WhatsApp, und wir bestätigen Preis und Zeitfenster sofort.",
+        "es": "¿Lo quiere más rápido? Escríbanos por WhatsApp y le confirmaremos el precio y la franja de inmediato.",
         "zh": "想更快？在 WhatsApp 上给我们发消息，我们马上确认价格和时段。",
         "hi": "और जल्दी चाहिए? हमें WhatsApp पर मैसेज करें और हम कीमत और स्लॉट तुरंत पक्का कर देंगे।"
       }
@@ -730,12 +817,13 @@
       "key": "wa.template.generic",
       "kind": "text",
       "value": {
-        "en": "Hi {brand}! I'd like to book {service}( — {units} units)( in {area}).( Preferred time: {time}.) — from website/{page}",
-        "ru": "Здравствуйте! Хочу заказать {service}( — {units} блоков)( в {area}).( Удобное время: {time}.) — с сайта/{page}",
+        "en": "Hi {brand}! I'd like to book {service}( — units: {units})( in {area}).( Preferred time: {time}.) — from website/{page}",
+        "ru": "Здравствуйте! Хочу заказать {service}( — блоков: {units})( в {area}).( Удобное время: {time}.) — с сайта/{page}",
         "ar": "مرحبًا {brand}! أود حجز {service}( — عدد الوحدات: {units})( في {area}).( الوقت المفضل: {time}.) — من الموقع/{page}",
         "fr": "Bonjour {brand} ! Je souhaite réserver : {service}( — {units} unités)( à {area}).( Horaire souhaité : {time}.) — depuis le site/{page}",
         "de": "Hallo {brand}! Ich möchte buchen: {service}( – {units} Geräte)( in {area}).( Wunschzeit: {time}.) – von der Website/{page}",
-        "zh": "{brand} 您好！我想预约{service}(，共 {units} 台)(，地点：{area})。(希望时间：{time}。) — 来自网站/{page}",
+        "es": "¡Hola, {brand}! Me gustaría reservar {service}( — equipos: {units})( en {area}).( Horario preferido: {time}.) — desde la web/{page}",
+        "zh": "{brand} 您好！我想预约{service}(，共 {units} 台)(，地点：{area})。(希望时间：{time}。)——来自网站/{page}",
         "hi": "नमस्ते {brand}! मुझे( {area} में) {service} के लिए बुकिंग करनी है( — {units} यूनिट)।( पसंदीदा समय: {time}।) — वेबसाइट/{page} से"
       }
     },
@@ -748,7 +836,8 @@
         "ar": "مرحبًا {brand}! حالة طارئة: المكيف {service}( في {area}). هل يمكنكم القدوم اليوم؟ — من الموقع/{page}",
         "fr": "Bonjour {brand} ! Urgence clim : {service}( à {area}). Pouvez-vous venir aujourd’hui ? — depuis le site/{page}",
         "de": "Hallo {brand}! Notfall mit meiner Klimaanlage: {service}( in {area}). Können Sie heute kommen? – von der Website/{page}",
-        "zh": "{brand} 您好！紧急情况：我的空调出故障了，需要{service}(，地点：{area})。今天能来吗？ — 来自网站/{page}",
+        "es": "¡Hola, {brand}! Urgencia con mi aire acondicionado: {service}( en {area}). ¿Pueden venir hoy? — desde la web/{page}",
+        "zh": "{brand} 您好！紧急情况：我的空调出故障了，需要{service}(，地点：{area})。今天能来吗？——来自网站/{page}",
         "hi": "नमस्ते {brand}! इमरजेंसी: मेरा एसी {service}( — {area} में)। क्या आप आज आ सकते हैं? — वेबसाइट/{page} से"
       }
     },
@@ -761,7 +850,8 @@
         "ar": "مرحبًا {brand}! أود حجز: {quote_lines}. المجموع {total}.( المنطقة: {area}.)( الوقت المفضل: {time}.) — من الموقع/الحاسبة",
         "fr": "Bonjour {brand} ! Je souhaite réserver ceci : {quote_lines}. Total {total}.( Zone : {area}.)( Horaire souhaité : {time}.) — depuis le site/calculateur",
         "de": "Hallo {brand}! Ich möchte Folgendes buchen: {quote_lines}. Gesamt {total}.( Gebiet: {area}.)( Wunschzeit: {time}.) – von der Website/calculator",
-        "zh": "{brand} 您好！我想预约以下项目：{quote_lines}。合计 {total}。(区域：{area}。)(希望时间：{time}。) — 来自网站/calculator",
+        "es": "¡Hola, {brand}! Me gustaría reservar lo siguiente: {quote_lines}. Total: {total}.( Zona: {area}.)( Horario preferido: {time}.) — desde la web/calculator",
+        "zh": "{brand} 您好！我想预约以下项目：{quote_lines}。合计 {total}。(区域：{area}。)(希望时间：{time}。)——来自网站/calculator",
         "hi": "नमस्ते {brand}! मुझे यह बुक करना है: {quote_lines}। कुल {total}।( क्षेत्र: {area}।)( पसंदीदा समय: {time}।) — वेबसाइट/calculator से"
       }
     },
@@ -769,12 +859,13 @@
       "key": "wa.template.contract",
       "kind": "text",
       "value": {
-        "en": "Hi {brand}! I'm interested in the {service} annual contract( for {units} units)( in {area}). — from website/annual-contracts",
-        "ru": "Здравствуйте! Интересует годовой контракт {service}( на {units} блоков)( в {area}). — с сайта/контракты",
+        "en": "Hi {brand}! I'm interested in the {service} annual contract(, units: {units})( in {area}). — from website/annual-contracts",
+        "ru": "Здравствуйте! Интересует годовой контракт {service}(, блоков: {units})( в {area}). — с сайта/контракты",
         "ar": "مرحبًا {brand}! أنا مهتم بالعقد السنوي {service}( لعدد {units} من الوحدات)( في {area}). — من الموقع/العقود السنوية",
         "fr": "Bonjour {brand} ! Le contrat annuel {service} m’intéresse( pour {units} unités)( à {area}). — depuis le site/contrats-annuels",
         "de": "Hallo {brand}! Ich interessiere mich für den Jahresvertrag {service}( für {units} Geräte)( in {area}). – von der Website/annual-contracts",
-        "zh": "{brand} 您好！我对 {service} 年度合同感兴趣(，共 {units} 台)(，地点：{area})。 — 来自网站/annual-contracts",
+        "es": "¡Hola, {brand}! Me interesa el contrato anual {service}(, equipos: {units})( en {area}). — desde la web/annual-contracts",
+        "zh": "{brand} 您好！我对 {service} 年度合同感兴趣(，共 {units} 台)(，地点：{area})。——来自网站/annual-contracts",
         "hi": "नमस्ते {brand}! मुझे( {area} में)( {units} यूनिट के लिए) {service} सालाना कॉन्ट्रैक्ट में रुचि है। — वेबसाइट/annual-contracts से"
       }
     },
@@ -787,7 +878,8 @@
         "ar": "مرحبًا {brand}! أرجو إضافتي إلى قائمة الانتظار لخدمة {service}( في {area}). — من الموقع/{page}",
         "fr": "Bonjour {brand} ! Merci de m’ajouter à la liste d’attente pour {service}( à {area}). — depuis le site/{page}",
         "de": "Hallo {brand}! Bitte setzen Sie mich auf die Warteliste für {service}( in {area}). – von der Website/{page}",
-        "zh": "{brand} 您好！请把我加入{service}的候补名单(，地点：{area})。 — 来自网站/{page}",
+        "es": "¡Hola, {brand}! Por favor, inclúyanme en la lista de espera para {service}( en {area}). — desde la web/{page}",
+        "zh": "{brand} 您好！请把我加入{service}的候补名单(，地点：{area})。——来自网站/{page}",
         "hi": "नमस्ते {brand}! कृपया मुझे {service} की प्रतीक्षा सूची में जोड़ें( — क्षेत्र: {area})। — वेबसाइट/{page} से"
       }
     },
@@ -800,6 +892,7 @@
         "ar": "مرحبًا {name}، معك {brand}. شكرًا لطلبك {service}. السعر {total} ويمكننا القدوم {time}. هل يناسبك ذلك؟",
         "fr": "Bonjour {name}, c’est {brand}. Merci pour votre demande concernant {service}. Le prix est de {total} et nous pouvons venir {time}. Cela vous convient-il ?",
         "de": "Hallo {name}, hier ist {brand}. Danke für Ihre Anfrage zu {service}. Der Preis beträgt {total}, und wir können {time} kommen. Passt das für Sie?",
+        "es": "Hola, {name}. Le escribe {brand}. Gracias por su solicitud de {service}. El precio es de {total} y podemos ir {time}. ¿Le viene bien?",
         "zh": "{name} 您好，我们是 {brand}。感谢您预约{service}。价格为 {total}，我们可以在 {time} 上门。这个时间方便吗？",
         "hi": "नमस्ते {name}, हम {brand} से हैं। {service} के आपके अनुरोध के लिए धन्यवाद। कीमत {total} है और हम {time} आ सकते हैं। क्या यह आपके लिए ठीक रहेगा?"
       }
@@ -813,6 +906,7 @@
         "ar": "مرحبًا {name}، معك {brand}. مرّت نحو 5 أشهر على تنظيف مكيفكم — وقت مناسب للتنظيف التالي قبل الحر. هل نحدد موعدًا؟",
         "fr": "Bonjour {name}, c’est {brand}. Cela fait environ 5 mois que nous avons nettoyé votre climatisation — le bon moment pour le prochain nettoyage avant les grosses chaleurs. Souhaitez-vous réserver un créneau ?",
         "de": "Hallo {name}, hier ist {brand}. Vor etwa 5 Monaten haben wir Ihre Klimaanlage gereinigt – ein guter Zeitpunkt für die nächste Reinigung, bevor die Hitze kommt. Sollen wir einen Termin vereinbaren?",
+        "es": "Hola, {name}. Le escribe {brand}. Han pasado unos 5 meses desde que limpiamos su aire acondicionado: es un buen momento para la próxima limpieza, antes de que llegue el calor. ¿Quiere que le reservemos una franja horaria?",
         "zh": "{name} 您好，我们是 {brand}。距离上次为您清洗空调已经大约 5 个月了——趁天气变热之前做下一次清洗正合适。要约个时间吗？",
         "hi": "नमस्ते {name}, हम {brand} से हैं। आपके एसी की सफ़ाई को लगभग 5 महीने हो गए हैं — गर्मी से पहले अगली सफ़ाई का यह सही समय है। क्या हम एक स्लॉट बुक कर लें?"
       }
@@ -826,6 +920,7 @@
         "ar": "<p>[مسودة في المرحلة 3 وفق BRIEF §16؛ النص النهائي في المرحلة 6 مع بيانات الشركة.]</p>",
         "fr": "<p>[Brouillon en phase 3 selon BRIEF §16 ; version finale en phase 6 avec les données de la société.]</p>",
         "de": "<p>[Entwurf in Phase 3 gemäß BRIEF §16; endgültige Fassung in Phase 6 mit Unternehmensdaten.]</p>",
+        "es": "<p>[Borrador en la fase 3 según BRIEF §16; versión final en la fase 6 con los datos de la empresa.]</p>",
         "zh": "<p>[第 3 阶段草稿，依据 BRIEF §16；第 6 阶段结合公司资料定稿。]</p>",
         "hi": "<p>[BRIEF §16 के अनुसार चरण 3 का ड्राफ़्ट; अंतिम संस्करण चरण 6 में कंपनी के डेटा के साथ।]</p>"
       }
@@ -839,6 +934,7 @@
         "ar": "<p>[مسودة في المرحلة 3 وفق BRIEF §16؛ النص النهائي في المرحلة 6 مع بيانات الشركة.]</p>",
         "fr": "<p>[Brouillon en phase 3 selon BRIEF §16 ; version finale en phase 6 avec les données de la société.]</p>",
         "de": "<p>[Entwurf in Phase 3 gemäß BRIEF §16; endgültige Fassung in Phase 6 mit Unternehmensdaten.]</p>",
+        "es": "<p>[Borrador en la fase 3 según BRIEF §16; versión final en la fase 6 con los datos de la empresa.]</p>",
         "zh": "<p>[第 3 阶段草稿，依据 BRIEF §16；第 6 阶段结合公司资料定稿。]</p>",
         "hi": "<p>[BRIEF §16 के अनुसार चरण 3 का ड्राफ़्ट; अंतिम संस्करण चरण 6 में कंपनी के डेटा के साथ।]</p>"
       }
@@ -921,6 +1017,13 @@
           "emergency_hours": "Einsätze noch am selben Tag bei Anfragen vor 16:00 Uhr; Notfalltelefon bis 22:00 Uhr",
           "service_area_note": "Dubai, alle Wohngebiete",
           "response_time_note": "Wir antworten innerhalb von 15 Minuten während der Öffnungszeiten"
+        },
+        "es": {
+          "brand_name": "Brigada",
+          "hours": "Todos los días, 8:00–20:00",
+          "emergency_hours": "Visitas en el mismo día para solicitudes recibidas antes de las 16:00; línea de urgencias hasta las 22:00",
+          "service_area_note": "Dubái, todas las zonas",
+          "response_time_note": "Respondemos en menos de 15 minutos dentro del horario de atención"
         },
         "zh": {
           "brand_name": "Brigada",

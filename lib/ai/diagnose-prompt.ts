@@ -39,6 +39,7 @@ const LANGUAGE: Record<DiagnoseRequest['locale'], string> = {
   ru: 'Russian',
   fr: 'French',
   de: 'German',
+  es: 'Spanish (neutral, formal «usted»)',
   zh: 'Simplified Chinese',
   hi: 'Hindi (Devanagari script)',
 };

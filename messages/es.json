@@ -1,0 +1,757 @@
+{
+  "Meta": {
+    "siteName": "Brigada",
+    "titleTemplate": "%s | Brigada Dubái",
+    "description": "Limpieza y reparación de aire acondicionado y limpieza de tapicería en Dubái. Precio fijo antes de la visita, franja de llegada de una hora e informe fotográfico por WhatsApp."
+  },
+  "Pages": {
+    "home": {
+      "title": "Limpieza de aire acondicionado y cuidado de tapicería en Dubái",
+      "description": "Limpieza y reparación de aire acondicionado y limpieza de tapicería en Dubái. Precio fijo antes de la visita, franja de llegada de una hora, informe fotográfico por WhatsApp."
+    },
+    "services": {
+      "title": "Servicios",
+      "description": "Limpieza de aire acondicionado, limpieza profunda, mantenimiento de fancoils, reparaciones, refrigerante y limpieza de sofás, colchones y alfombras en Dubái. Precios fijos e informes fotográficos."
+    },
+    "serviceDetail": {
+      "title": "Servicio"
+    },
+    "pricing": {
+      "title": "Precios",
+      "description": "Precios fijos de limpieza de aire acondicionado y tapicería en Dubái, descuentos por volumen, paquetes y calculadora instantánea."
+    },
+    "annualContracts": {
+      "title": "Contratos anuales de mantenimiento",
+      "description": "Planes anuales para el cuidado del aire acondicionado en Dubái: visitas programadas, reserva prioritaria y 10 % de descuento en la mano de obra de reparación. Compare Essential, Comfort y Villa."
+    },
+    "areas": {
+      "title": "Zonas donde trabajamos"
+    },
+    "areaDetail": {
+      "title": "Zona"
+    },
+    "about": {
+      "title": "Sobre nosotros",
+      "description": "Brigada: un equipo de Dubái para la limpieza y reparación de aire acondicionado y la limpieza profunda de tapicería. Cómo trabajamos, nuestros estándares y lo que no hacemos."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Contacte con Brigada en Dubái: WhatsApp, teléfono, horario y zona de servicio."
+    },
+    "privacy": {
+      "title": "Política de privacidad"
+    },
+    "terms": {
+      "title": "Condiciones del servicio"
+    },
+    "thankYou": {
+      "title": "¡Gracias! Nos pondremos en contacto con usted pronto."
+    }
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "lead": "Puede que la página se haya movido o que el enlace tuviera una errata. El equipo sigue aquí.",
+    "backHome": "Volver al inicio",
+    "services": "Ver servicios"
+  },
+  "Common": {
+    "skipToContent": "Saltar al contenido principal",
+    "close": "Cerrar",
+    "breadcrumbLabel": "Ruta de navegación",
+    "notifications": "Notificaciones",
+    "opensInNewTab": "(se abre en una pestaña nueva)"
+  },
+  "Nav": {
+    "label": "Principal",
+    "home": "Inicio",
+    "services": "Servicios",
+    "pricing": "Precios",
+    "annualContracts": "Contratos anuales",
+    "areas": "Zonas",
+    "about": "Sobre nosotros",
+    "contact": "Contacto",
+    "privacy": "Política de privacidad",
+    "terms": "Condiciones del servicio"
+  },
+  "Header": {
+    "homeLabel": "{brand}, página de inicio",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "menuTitle": "Menú",
+    "tagline": "Climatización y limpieza profunda · Dubái"
+  },
+  "Cta": {
+    "whatsapp": "Escribir por WhatsApp",
+    "whatsappShort": "WhatsApp",
+    "telegram": "Escribir por Telegram",
+    "telegramShort": "Telegram",
+    "call": "Llamar",
+    "email": "Enviar un correo"
+  },
+  "StickyBar": {
+    "label": "Contacto rápido"
+  },
+  "Footer": {
+    "navLabel": "Pie de página",
+    "tagline": "Limpieza y reparación de aire acondicionado y cuidado de tapicería en Dubái.",
+    "contactsTitle": "Contacto",
+    "phone": "Teléfono",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "Correo electrónico",
+    "contactPage": "Todas las formas de contacto",
+    "socialTitle": "Redes sociales",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "hoursTitle": "Horario",
+    "emergencyTitle": "Visitas urgentes",
+    "serviceAreaTitle": "Zona de servicio",
+    "linksTitle": "Sitio",
+    "languageTitle": "Idioma",
+    "legalTitle": "Empresa",
+    "legalName": "Razón social",
+    "licenseNo": "N.º de licencia",
+    "trn": "N.º fiscal (TRN)",
+    "address": "Dirección",
+    "photoCredits": "Fotos:",
+    "copyright": "© {brand}"
+  },
+  "LangSwitcher": {
+    "label": "Idioma",
+    "names": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch",
+      "es": "Español",
+      "zh": "中文",
+      "hi": "हिन्दी"
+    },
+    "short": {
+      "en": "EN",
+      "ar": "ع",
+      "ru": "RU",
+      "fr": "FR",
+      "de": "DE",
+      "es": "ES",
+      "zh": "中",
+      "hi": "हि"
+    }
+  },
+  "PhoneInput": {
+    "placeholder": "+971 5X XXX XXXX",
+    "hint": "Cualquier país. Si no indica el prefijo internacional, asumimos EAU (+971).",
+    "invalid": "Revise el número: parece incompleto."
+  },
+  "DevUi": {
+    "title": "Kit de UI",
+    "intro": "Página interna: todos los componentes del sistema de diseño en el idioma y la dirección actuales. No disponible en producción.",
+    "sections": {
+      "buttons": "Botones",
+      "cards": "Tarjetas",
+      "badges": "Insignias y chips",
+      "accordion": "Acordeón",
+      "table": "Tabla (primera columna fija en móvil)",
+      "forms": "Campos de formulario",
+      "phone": "Campo de teléfono",
+      "feedback": "Esqueleto y toast",
+      "stickyBar": "Barra de contacto móvil (con Telegram, como en /ru cuando está activado)",
+      "marketing": "Bloques de marketing",
+      "diagnose": "Resultado del diagnóstico con IA (ejemplo)",
+      "sheet": "Panel lateral",
+      "breadcrumbs": "Migas de pan",
+      "numbers": "Números, precios, correos y URL",
+      "longText": "Cadenas largas"
+    },
+    "samples": {
+      "primary": "Obtener precio al instante",
+      "secondary": "Ver todos los precios",
+      "ghost": "Más información",
+      "outline": "Todos los servicios",
+      "destructive": "Eliminar",
+      "link": "Leer las condiciones",
+      "disabled": "No disponible",
+      "iconLabel": "Siguiente",
+      "cardTitle": "Limpieza estándar de aire acondicionado",
+      "cardText": "Filtros, serpentín, ventilador y desagüe. Informe fotográfico por WhatsApp.",
+      "cardFrom": "desde <price>{amount}</price>",
+      "badgeFixed": "Precio fijo",
+      "badgeNew": "Nuevo",
+      "badgeSoon": "Próximamente",
+      "badgeDone": "Hecho",
+      "badgeWait": "A la espera de piezas",
+      "badgeDiag": "Primero, diagnóstico",
+      "chipArea": "Dubai Marina",
+      "chipAll": "Todas las zonas",
+      "q1": "¿Cada cuánto hay que limpiar el aire acondicionado?",
+      "a1": "Cada 4–6 meses si el equipo funciona a diario.",
+      "q2": "¿También limpian fancoils (FCU) en edificios antiguos de Dubái, donde el equipo está sobre un falso techo y solo se accede por una trampilla pequeña?",
+      "a2": "Sí. El técnico comprueba primero el tamaño de la trampilla; si no se puede llegar al equipo con seguridad, enviamos fotos y acordamos el siguiente paso antes de empezar cualquier trabajo, así nunca paga por una visita que no se puede completar.",
+      "tableCaption": "Precios de ejemplo del archivo de datos iniciales",
+      "tableService": "Servicio",
+      "tablePrice": "Precio",
+      "tableNote": "Nota",
+      "nameLabel": "Su nombre",
+      "namePlaceholder": "p. ej., Sara",
+      "areaLabel": "Zona",
+      "areaPlaceholder": "Elija una zona",
+      "messageLabel": "¿Qué hay que hacer?",
+      "messagePlaceholder": "Dos equipos split, olor al encenderlos",
+      "consentLabel": "Quiero recibir un recordatorio cuando toque la próxima limpieza (opcional)",
+      "phoneLabel": "Teléfono o WhatsApp",
+      "e164": "Guardado como",
+      "valid": "Válido",
+      "invalid": "Aún no es válido",
+      "toastButton": "Mostrar un toast",
+      "toastMessage": "Solicitud recibida. Respondemos en 15 minutos.",
+      "sheetEnd": "Abrir desde el final",
+      "sheetStart": "Abrir desde el inicio",
+      "sheetTitle": "Título del panel",
+      "sheetText": "Por defecto, el panel se abre desde el final de la línea: a la derecha en inglés, a la izquierda en árabe.",
+      "numbersText": "Precios: <ltr>{a}</ltr>, <ltr>{b}</ltr>, <ltr>{c}</ltr> y <ltr>{d}</ltr>. Un número: <ltr>{n}</ltr>. Correo: <ltr>{email}</ltr>. Enlace: <ltr>{url}</ltr>. Formato de teléfono: <ltr>{phone}</ltr>.",
+      "hoursText": "Horario según la configuración:",
+      "longParagraph": "Nuestros técnicos llegan con lonas protectoras, una aspiradora de líquidos y su propia escalera, así que no hay nada que preparar salvo dejar libre el acceso a la unidad interior. Tras la limpieza recibe por WhatsApp fotos del antes y el después y una nota sobre lo que convenga revisar más adelante. Si hay que cambiar una pieza, primero le enviamos el precio y esperamos su aprobación.",
+      "longWord": "Otorrinolaringológicamente-mantenimiento-de-aire-acondicionado",
+      "longButton": "Reservar una limpieza profunda de los cinco equipos split de la villa este sábado",
+      "diagSummary": "Lo más probable es que el serpentín interior y el desagüe estén sucios: el olor a humedad y el goteo apuntan a lo mismo. Una limpieza estándar suele resolver ambos; el técnico lo confirma in situ.",
+      "diagCause1Title": "Polvo y moho en el serpentín",
+      "diagCause1Text": "La humedad de Dubái convierte el polvo del serpentín en una película que huele al arrancar el ventilador.",
+      "diagCause2Title": "Desagüe obstruido por sedimentos",
+      "diagCause2Text": "El condensado se acumula en la bandeja y gotea del equipo.",
+      "diagQuestion1": "¿Qué antigüedad tiene el equipo y cuándo se limpió por última vez?",
+      "diagQuestion2": "¿El agua aparece solo al enfriar o también con el equipo apagado?",
+      "diagSafety": "Si el agua llega a un enchufe o a la lámpara del techo, desconecte el equipo desde el cuadro eléctrico hasta la visita."
+    }
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Aire acondicionado y tapicería · Dubái",
+      "diagnoseLead": "¿Necesita ayuda para identificar un problema del aire acondicionado?",
+      "diagnoseCta": "Probar el diagnóstico con IA"
+    },
+    "ticker": {
+      "label": "Nuestros servicios"
+    },
+    "team": {
+      "alt": "Dos técnicos de Brigada con camiseta negra, un cepillo para conductos y un pulverizador, con el horizonte nocturno de Dubái de fondo (ilustración)",
+      "caption": "El equipo de Brigada (ilustración)"
+    },
+    "book": {
+      "eyebrow": "Reserva en línea",
+      "title": "Su presupuesto en un minuto",
+      "lead": "Seleccione un servicio para ver el precio exacto y elija la fecha que prefiera. Le confirmaremos por WhatsApp su franja de llegada de una hora.",
+      "talk": "¿Prefiere hablar con nosotros?"
+    },
+    "why": {
+      "eyebrow": "Mantenimiento de aire acondicionado"
+    },
+    "guarantee": {
+      "eyebrow": "Nuestra garantía",
+      "title": "Si el problema vuelve, volvemos nosotros"
+    },
+    "packages": {
+      "eyebrow": "Paquetes de limpieza",
+      "title": "Ahorre con un paquete o un plan anual",
+      "all": "Comparar planes anuales",
+      "plansNote": "Essential y Comfort incluyen reserva prioritaria y 10 % de descuento en la mano de obra de reparación."
+    },
+    "areas": {
+      "eyebrow": "Dónde trabajamos",
+      "title": "En todo Dubái",
+      "all": "Todas las zonas"
+    },
+    "faq": {
+      "eyebrow": "Preguntas",
+      "title": "Antes de reservar"
+    },
+    "finalCta": {
+      "title": "Cuando usted quiera",
+      "lead": "Obtenga el precio en un minuto y elija el día. O escríbanos: respondemos rápido en horario de atención.",
+      "primary": "Obtener presupuesto al instante"
+    }
+  },
+  "Diagnose": {
+    "privacy": "La foto se analiza, no se guarda. No hace falta nombre ni teléfono.",
+    "calculatorCta": "Abrir la calculadora",
+    "demo": {
+      "smell": {
+        "summary": "El olor a humedad al encender el equipo casi siempre se debe a una película de polvo y moho en el serpentín interior y en la bandeja de condensados. Una limpieza estándar la elimina; el técnico lo confirma in situ.",
+        "cause1": "Polvo y moho en el serpentín",
+        "cause1Text": "La humedad de Dubái convierte el polvo del serpentín en una película que huele al arrancar el ventilador.",
+        "cause2": "Agua estancada en la bandeja de condensados",
+        "cause2Text": "Un desagüe lento retiene el condensado en la bandeja, donde proliferan las bacterias.",
+        "question": "¿Cuándo se limpió el equipo por última vez?"
+      },
+      "drip": {
+        "summary": "El agua que sale de la unidad interior suele indicar que el desagüe está obstruido por sedimentos o que el serpentín se ha congelado detrás de un filtro sucio. Una limpieza estándar despeja el desagüe; el técnico revisa el filtro y la pendiente del tubo.",
+        "cause1": "Desagüe obstruido por sedimentos",
+        "cause1Text": "El condensado se acumula en la bandeja y rebosa.",
+        "cause2": "Hielo en el serpentín",
+        "cause2Text": "Un filtro obstruido deja el serpentín sin caudal de aire; este se congela y gotea al derretirse.",
+        "question": "¿Gotea solo al enfriar o también después de apagar el equipo?"
+      },
+      "weak": {
+        "summary": "Si el equipo enfría poco aunque funcione todo el día, lo más probable es que el serpentín y el ventilador estén cubiertos de polvo; tras años sin mantenimiento, una limpieza profunda recupera el caudal de aire. Si sigue enfriando poco, el técnico revisa el refrigerante.",
+        "cause1": "Serpentín y ventilador cubiertos de polvo",
+        "cause1Text": "El caudal de aire baja y el equipo nunca alcanza la temperatura fijada.",
+        "cause2": "Poco refrigerante",
+        "cause2Text": "Una fuga lenta reduce el enfriamiento a lo largo de los meses; se comprueba in situ con manómetros.",
+        "question": "¿Qué antigüedad tiene el equipo y cuándo se le hizo el último mantenimiento?"
+      },
+      "stain": {
+        "summary": "Una mancha reciente de café en un tejido claro suele salir con inyección-extracción de agua caliente y un tratamiento para taninos. El técnico prueba primero en una zona oculta.",
+        "cause1": "Mancha de taninos en las fibras",
+        "cause1Text": "Los taninos del café se fijan rápido al algodón y al lino; cuanto antes se trate, más fácil.",
+        "cause2": "Fijada por un remedio casero",
+        "cause2Text": "Frotar o usar agua caliente puede fijar la mancha; hasta la visita, lo mejor es solo secar a toques.",
+        "question": "¿De qué tejido es el sofá y cuánto tiempo tiene la mancha?"
+      }
+    },
+    "form": {
+      "label": "¿Qué ocurre?",
+      "placeholder": "Describa el problema o haga una pregunta",
+      "counter": "{count} / {max}",
+      "examples": {
+        "smell": "Olor a humedad al encender el aire acondicionado",
+        "drip": "Gotea agua de la unidad interior",
+        "weak": "Enfría poco y funciona todo el día",
+        "stain": "Mancha de café en un sofá claro"
+      },
+      "photo": "Añadir una foto",
+      "photoAlt": "Su foto",
+      "removePhoto": "Quitar la foto",
+      "submitting": "Analizando…",
+      "disclaimer": "Es una estimación de la IA, no un veredicto: el técnico lo confirma todo in situ antes de empezar cualquier trabajo."
+    },
+    "errors": {
+      "empty": "Describa el problema en pocas palabras o añada una foto.",
+      "photoType": "No podemos leer este archivo. Pruebe con una foto en JPEG, PNG o WebP.",
+      "photoSize": "La foto es demasiado grande incluso después de reducirla. Pruebe con otra.",
+      "unavailable": "El diagnóstico con IA aún no está activado. Elija un servicio en la calculadora o escríbanos: respondemos rápido.",
+      "rateLimited": "Son muchas preguntas en un minuto. Espere un momento y vuelva a intentarlo, o pregunte directamente a un técnico.",
+      "quota": "Hasta aquí puedo llegar por hoy. Un técnico continuará desde este punto: escríbanos o llame para obtener una respuesta exacta y un precio.",
+      "refused": "No hemos podido analizar esta solicitud. Describa qué le ocurre al aire acondicionado o al tejido y vuelva a intentarlo.",
+      "failed": "Algo ha fallado por nuestra parte. Vuelva a intentarlo en un momento o escríbanos.",
+      "network": "Sin conexión. Compruebe su conexión a internet y vuelva a intentarlo."
+    },
+    "result": {
+      "title": "Lo que parece",
+      "urgency": {
+        "routine": "Sin prisa",
+        "soon": "Conviene hacerlo pronto",
+        "today": "Requiere atención hoy"
+      },
+      "confidence": {
+        "label": "Confianza: {level}",
+        "low": "baja",
+        "medium": "media",
+        "high": "alta"
+      },
+      "safety": "La seguridad, primero",
+      "recommended": "Servicio recomendado",
+      "comingSoon": "Próximamente: lista de espera abierta",
+      "estimate": "Tarifa fija de diagnóstico y, después, presupuesto por escrito",
+      "book": "Reservar a este precio",
+      "details": "Detalles del servicio",
+      "waitlist": "Unirse a la lista de espera",
+      "noService": "Podrían encajar varios servicios",
+      "noServiceText": "Añada uno o dos detalles, o escríbanos con una foto: le diremos qué reservar.",
+      "outOfScope": "Fuera de lo que hacemos",
+      "outOfScopeText": "Limpiamos y reparamos equipos de aire acondicionado y limpiamos tapicería. Esto requiere otro especialista: escríbanos y le indicaremos a quién acudir.",
+      "causes": "Causas probables",
+      "likelihood": {
+        "likely": "Probable",
+        "possible": "Posible",
+        "unlikely": "Menos probable"
+      },
+      "questions": "El técnico le preguntará",
+      "questionsHint": "Añada las respuestas a su mensaje de reserva y la visita será más rápida.",
+      "again": "Preguntar por otra cosa",
+      "contact": "Escribirnos",
+      "person": "¿Prefiere preguntar antes a una persona?",
+      "demoBadge": "Respuesta de ejemplo: el asistente en vivo se está conectando"
+    }
+  },
+  "Assistant": {
+    "launcher": "Asistente",
+    "launcherHint": "Diagnóstico con IA y respuestas rápidas",
+    "title": "Asistente de Brigada",
+    "subtitle": "Diagnóstico con IA y respuestas rápidas",
+    "close": "Cerrar el asistente",
+    "greeting": "¡Hola! Cuéntenos qué le ocurre al aire acondicionado o al sofá, envíe una foto o toque una de las preguntas de abajo.",
+    "faqGroup": "Preguntas frecuentes",
+    "examplesGroup": "O describa un problema",
+    "send": "Enviar",
+    "faqNote": "De nuestras preguntas frecuentes. Si tiene otra duda, escríbala.",
+    "you": "Usted",
+    "assistant": "Asistente",
+    "handoff": {
+      "nudge": "Si le resulta más cómodo, un técnico puede continuar desde aquí: escríbanos o llámenos.",
+      "message": "¡Hola, {brand}! Le pregunté al asistente de su sitio web: “{question}”",
+      "messageService": "¡Hola, {brand}! Le pregunté al asistente de su sitio web: “{question}”. Me sugirió: {service}."
+    }
+  },
+  "Services": {
+    "lead": "Precios fijos siempre que podemos indicarlos de antemano y presupuesto para todo lo demás. Cada visita termina con un informe fotográfico por WhatsApp.",
+    "category": {
+      "ac": "Aire acondicionado",
+      "upholstery": "Tapicería y alfombras",
+      "comingSoon": "Próximamente"
+    },
+    "summary": {
+      "ac": "Limpieza, limpieza profunda, fancoils, reparaciones y refrigerante.",
+      "upholstery": "Limpieza profesional de sofás de tela, colchones, alfombras y cortinas. Envíenos fotos para confirmar su precio fijo antes de reservar.",
+      "comingSoon": "Apúntese a la lista de espera y le avisaremos antes que a nadie."
+    },
+    "card": {
+      "more": "Detalles"
+    },
+    "badge": {
+      "sameDay": "En el mismo día",
+      "estimate": "Diagnóstico + presupuesto",
+      "comingSoon": "Próximamente",
+      "availableFrom": "Desde {date}"
+    },
+    "contract": {
+      "title": "Planes anuales de mantenimiento de aire acondicionado",
+      "text": "Limpieza y mantenimiento programados durante todo el año, con prioridad de reserva y las ventajas en reparaciones que indique su plan. La cobertura, el número de equipos y la frecuencia de las visitas se confirman al contratar.",
+      "cta": "Comparar planes"
+    },
+    "notSure": {
+      "title": "¿No sabe qué servicio necesita?",
+      "text": "Describa el problema o envíe una foto: el asistente indica la causa probable y el servicio que la resuelve, con su precio fijo. Allí mismo se responden también las preguntas frecuentes.",
+      "ask": "Preguntar al asistente",
+      "price": "Abrir la calculadora"
+    },
+    "group": {
+      "service": "Mantenimiento y reparación de aire acondicionado",
+      "cleaning": "Limpieza de aire acondicionado",
+      "other": "Otros servicios de limpieza y reparación"
+    },
+    "onRequest": "Solicitar presupuesto"
+  },
+  "Service": {
+    "included": "Qué incluye",
+    "symptoms": "Cuándo lo necesita",
+    "glance": "De un vistazo",
+    "prices": "Precios",
+    "visit": "Cómo es el servicio",
+    "visitDuration": "Duración del servicio: {duration}",
+    "beforeAfter": "Antes y después",
+    "guarantee": "Garantía",
+    "faq": "Preguntas sobre este servicio",
+    "related": "Suelen reservarse juntos",
+    "book": "Reservar este servicio",
+    "fixedChip": "Precio fijo",
+    "duration": "Duración",
+    "unit": "Se cobra",
+    "note": "Nota",
+    "specifics": {
+      "principle": "Primero localizar y reparar, después recargar",
+      "leakTest": "Prueba de fugas",
+      "refill": "Recarga",
+      "repairByEstimate": "Reparación con presupuesto por escrito",
+      "vsSplit": "En qué se diferencia de un split"
+    },
+    "comingSoon": {
+      "badge": "Próximamente",
+      "from": "Disponible desde {date}",
+      "waitlist": "Apuntarse a la lista de espera",
+      "note": "Le escribiremos antes que a nadie cuando esté disponible. Sin boletines."
+    },
+    "quote": {
+      "title": "Pida presupuesto para este servicio",
+      "text": "Indíquenos el tipo de equipo y cuántos tiene. Confirmamos el alcance y un precio fijo antes de la visita."
+    }
+  },
+  "Price": {
+    "from": "desde <price>{amount}</price>",
+    "per": {
+      "unit": "por equipo",
+      "fcu": "por fancoil",
+      "visit": "por visita",
+      "seat": "por plaza",
+      "item": "por pieza",
+      "sqm": "por m²",
+      "from": "+ presupuesto",
+      "system": "por sistema"
+    },
+    "perYear": "{amount} al año",
+    "save": "Ahorre {amount}",
+    "instead": "en lugar de {amount}",
+    "recommended": "Recomendado",
+    "vatIncluded": "Los precios incluyen el 5 % de IVA.",
+    "vatAdded": "Al total se añade el 5 % de IVA.",
+    "minimum": "Mínimo {qty}",
+    "tierPlus": "{n}+",
+    "tierRange": "{from}–{to}",
+    "perYearRich": "<a>{amount}</a> al año",
+    "insteadRich": "en lugar de <s>{amount}</s>",
+    "firstBooking": {
+      "title": "Oferta de primera reserva",
+      "text": "<price>{discount}</price> de descuento en su primera reserva de limpieza de <price>{min}</price> o más.",
+      "terms": "Válida una vez por cliente en reservas de limpieza individuales, incluidas las tarifas por cantidad. Los paquetes y los planes anuales mantienen el precio final indicado."
+    }
+  },
+  "Pricing": {
+    "lead": "Todos los precios de esta página se fijan antes de la visita e incluyen el desplazamiento.",
+    "leadRepairs": "Las reparaciones empiezan con una tarifa fija de diagnóstico que se descuenta del trabajo.",
+    "jump": {
+      "ac": "Aire acondicionado",
+      "upholstery": "Tapicería",
+      "packages": "Paquetes",
+      "calculator": "Calculadora"
+    },
+    "table": {
+      "item": "Servicio",
+      "price": "Precio"
+    },
+    "captions": {
+      "ac": "Precios de aire acondicionado",
+      "upholstery": "Precios de tapicería y alfombras"
+    },
+    "acNote": "La tarifa de diagnóstico se descuenta de las pruebas o la reparación aprobadas para la misma avería. Las visitas urgentes dependen de la disponibilidad.",
+    "details": {
+      "title": "Detalles de los precios"
+    },
+    "tiers": {
+      "title": "Precios por volumen"
+    },
+    "beforeYouBook": {
+      "title": "Antes de reservar"
+    },
+    "upholsteryNote": "Reserva mínima: <price>{amount}</price> · Los precios finales incluyen el IVA cuando corresponde.",
+    "cta": {
+      "quote": "Pedir presupuesto",
+      "book": "Reservar por WhatsApp"
+    }
+  },
+  "Report": {
+    "before": "Antes",
+    "after": "Después",
+    "example": "Ejemplo de un informe",
+    "sent": "Se envía después de la visita"
+  },
+  "Contact": {
+    "lead": "Escriba, llame o envíe una solicitud con el precio exacto: lo que le resulte más cómodo.",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "telegram": "Telegram"
+    },
+    "actions": {
+      "message": "Escribir",
+      "call": "Llamar",
+      "email": "Escribir"
+    },
+    "pending": "Estamos configurando nuestro teléfono y nuestro número de WhatsApp; aparecerán aquí antes de que empecemos a aceptar reservas.",
+    "pendingCta": "Ver precios y planificar la visita",
+    "hours": "Horario de atención",
+    "emergency": "Visitas urgentes",
+    "area": "Zona de servicio",
+    "legal": "Datos de la empresa",
+    "getPrice": "Obtener presupuesto al instante"
+  },
+  "Contracts": {
+    "lead": "Un pago al año por las visitas programadas, con prioridad de reserva y un 10 % de descuento en la mano de obra de las reparaciones. Más económico que reservar cada limpieza por separado.",
+    "plans": {
+      "eyebrow": "Tres planes",
+      "title": "Elija el plan para su hogar",
+      "lead": "Todos los planes cubren equipos split de una misma vivienda en Dubái. El número de equipos se confirma en la primera visita.",
+      "note": "Los precios son anuales y no incluyen IVA hasta que estemos registrados. ¿Tiene más equipos de los que admite el plan? Presupuestamos la diferencia por equipo."
+    },
+    "includes": {
+      "units": "Hasta {n} equipos",
+      "visits": "{n} visitas al año",
+      "deep": "Limpieza profunda de un equipo a su elección en una de las visitas",
+      "priority": "Prioridad de reserva",
+      "repairDiscount": "{n} % de descuento en la mano de obra de las reparaciones",
+      "custom": "Cobertura adaptada a sus equipos"
+    },
+    "card": {
+      "saving": "Reservando visita a visita: <s>{separate}</s>. Ahorra <s>{saving}</s> ({pct} %).",
+      "cta": "Consultar este plan",
+      "quote": "Solicitar presupuesto"
+    },
+    "savings": {
+      "eyebrow": "Las cuentas",
+      "title": "Cómo se calcula el ahorro",
+      "lead": "Contamos las visitas del plan a los precios por visita de la lista de precios, para el número máximo de equipos split que admite el plan.",
+      "caption": "Planes anuales frente a reservas por separado",
+      "cols": {
+        "plan": "Plan",
+        "visits": "Qué recibe",
+        "separate": "Reservado por separado",
+        "price": "Precio del plan",
+        "saving": "Ahorro"
+      },
+      "visitsStd": "{standard} limpiezas estándar × {units} equipos",
+      "visitsDeep": "{visits} visitas × {units} equipos, uno con limpieza profunda",
+      "note": "El plan Villa se presupuesta tras una inspección, por eso no figura en esta tabla."
+    },
+    "visit": {
+      "eyebrow": "Cada visita",
+      "title": "Una limpieza completa, siempre",
+      "lead": "La visita de contrato es la misma limpieza estándar que una reserva puntual, con el mismo informe fotográfico."
+    },
+    "how": {
+      "eyebrow": "Cómo funciona",
+      "title": "Tres pasos al año",
+      "lead": "Si un equipo se avería entre visitas, tiene prioridad de reserva y el descuento de su plan en la mano de obra de la reparación."
+    },
+    "steps": {
+      "one": {
+        "title": "Escríbanos",
+        "text": "Indíquenos el plan y cuántos equipos tiene. Confirmamos el precio y la primera cita por WhatsApp."
+      },
+      "two": {
+        "title": "Primera visita",
+        "text": "Limpiamos todos los equipos, revisamos los desagües y fijamos con usted las fechas de las próximas visitas."
+      },
+      "three": {
+        "title": "Le avisamos",
+        "text": "Antes de cada visita le escribimos para confirmar la hora. Las fotos y las mediciones llegan después de cada visita."
+      }
+    },
+    "faq": {
+      "eyebrow": "Preguntas",
+      "title": "Sobre el contrato"
+    },
+    "cta": {
+      "title": "¿Un año sin preocuparse por el aire acondicionado?",
+      "lead": "Elija un plan o escríbanos: le ayudaremos a encontrar el adecuado para su hogar.",
+      "primary": "Ver los planes"
+    }
+  },
+  "About": {
+    "lead": "Brigada ofrece limpieza y reparación de aire acondicionado y limpieza profunda de sofás, colchones y alfombras en todo Dubái. Nuestros técnicos le explican qué necesita su hogar y qué incluye el trabajo. Antes de la visita recibe un precio fijo que incluye el desplazamiento.",
+    "expect": {
+      "title": "Qué esperar de su visita",
+      "items": {
+        "one": "<b>Franja de llegada de una hora.</b> Le indicamos una franja horaria concreta para que pueda organizar su día.",
+        "two": "<b>Cuidado de su hogar.</b> El técnico cubre los suelos y los muebles cercanos antes de empezar y deja la habitación ordenada al terminar.",
+        "three": "<b>Un trabajo que puede comprobar.</b> Después de cada visita recibe un informe fotográfico por WhatsApp. En la limpieza de aire acondicionado incluye fotos del antes y el después del serpentín, los filtros y el desagüe. También medimos la temperatura del aire en la salida antes y después de la limpieza.",
+        "four": "<b>90 días de garantía en reparaciones de aire acondicionado.</b> Cubrimos piezas y mano de obra durante 90 días. Si la misma avería reaparece en ese plazo, volvemos sin coste."
+      }
+    },
+    "specialist": {
+      "title": "Trabajos especializados"
+    },
+    "legal": {
+      "title": "Datos de la empresa"
+    },
+    "areas": {
+      "eyebrow": "Dónde trabajamos",
+      "title": "En todo Dubái"
+    }
+  },
+  "Booking": {
+    "progressLabel": "Pasos de la reserva",
+    "progress": "Paso {step} de {total}",
+    "steps": {
+      "category": "Servicio",
+      "details": "Detalles",
+      "time": "Horario",
+      "send": "Enviar"
+    },
+    "category": {
+      "question": "Elija un servicio",
+      "ac": {
+        "title": "Servicios de aire acondicionado",
+        "text": "Limpieza de aire acondicionado, limpieza profunda y mantenimiento de fancoils.",
+        "textRepairs": "Limpieza de aire acondicionado, limpieza profunda, mantenimiento de fancoils y reparaciones.",
+        "price": "Desde <price>{amount}</price> {unit}"
+      },
+      "upholstery": {
+        "title": "Limpieza de tapicería y alfombras",
+        "text": "Limpieza profunda de sofás, colchones y alfombras. Tratamiento de manchas y olores.",
+        "price": "Limpieza de sofás desde <price>{amount}</price> {unit}"
+      }
+    },
+    "details": {
+      "acQuestion": "¿Qué servicio?",
+      "tiersHint": "Cuantos más equipos en una misma visita, menor es el precio por equipo.",
+      "upholsteryQuestion": "¿Qué limpiamos?",
+      "qty": {
+        "unit": "Equipos",
+        "fcu": "Fancoils",
+        "visit": "Visitas",
+        "seat": "Plazas",
+        "item": "Piezas",
+        "sqm": "Metros cuadrados",
+        "system": "Sistemas"
+      },
+      "inc": "Añadir uno: {item}",
+      "dec": "Quitar uno: {item}",
+      "min": "Cargo mínimo: {qty}",
+      "empty": "Elija al menos un elemento para continuar."
+    },
+    "summary": {
+      "subtotal": "Conceptos",
+      "total": "Total",
+      "bundle": "Paquete {name}",
+      "save": "Ahorra {amount}",
+      "diagnostics": "Diagnóstico",
+      "credited": "se descuenta de la reparación",
+      "fromLine": "desde {amount}",
+      "repairEstimate": "Mano de obra desde {amount}, piezas según presupuesto por escrito",
+      "estimateNote": "El importe final se confirma por escrito antes de empezar cualquier trabajo.",
+      "live": "Total: {total}",
+      "minApplied": "cargo mínimo",
+      "line": "{qty} × {price}",
+      "minimumRow": "Pedido mínimo",
+      "minimumNote": "Pedido mínimo de <price>{amount}</price> por dirección y visita. Combine varios servicios para alcanzar el mínimo."
+    },
+    "offer": {
+      "text": "Añada {items} por {add} más: paquete {name}, ahorre {savings}",
+      "add": "Añadir"
+    },
+    "time": {
+      "question": "¿Cuándo le viene bien?",
+      "day": "Día",
+      "window": "Momento del día",
+      "today": "Hoy",
+      "tomorrow": "Mañana",
+      "windows": {
+        "morning": "Por la mañana",
+        "afternoon": "Primera hora de la tarde",
+        "evening": "Última hora de la tarde",
+        "any": "A cualquier hora",
+        "asap": "Lo antes posible"
+      },
+      "tooLate": "Ya es tarde para hoy",
+      "confirmNote": "Confirmamos la franja exacta de una hora por WhatsApp.",
+      "area": "Su zona (opcional)",
+      "areaOther": "Otra",
+      "areaNone": "Sin elegir"
+    },
+    "send": {
+      "title": "Revisar y enviar",
+      "edit": "Editar",
+      "service": "Servicio",
+      "time": "Horario",
+      "area": "Zona",
+      "preview": "Su mensaje",
+      "whatsapp": "Enviar por WhatsApp",
+      "opened": "WhatsApp se abrió en una pestaña nueva. ¿No se abrió? Copie el mensaje y envíelo manualmente.",
+      "copy": "Copiar mensaje",
+      "copied": "Copiado",
+      "contact": "Opciones de contacto",
+      "pending": "La reserva en línea estará disponible pronto: nuestro número de WhatsApp aparecerá aquí. Por ahora, copie el mensaje o consulte las opciones de contacto.",
+      "startOver": "Empezar de nuevo"
+    },
+    "nav": {
+      "back": "Atrás",
+      "next": "Siguiente",
+      "toTime": "Elegir horario",
+      "toSend": "Revisar y enviar"
+    },
+    "line": "{name} × {qty}",
+    "firstBooking": {
+      "apply": "Es mi primera reserva"
+    }
+  }
+}

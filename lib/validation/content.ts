@@ -14,6 +14,7 @@ export const i18nText = z.object({
   ru: z.string().optional(),
   fr: z.string().optional(),
   de: z.string().optional(),
+  es: z.string().optional(),
   zh: z.string().optional(),
   hi: z.string().optional(),
 });
@@ -28,6 +29,7 @@ export const i18nValue = <T extends z.ZodTypeAny>(schema: T) => {
     ru: variant,
     fr: variant,
     de: variant,
+    es: variant,
     zh: variant,
     hi: variant,
   });
@@ -253,6 +255,7 @@ export const blockSchemas = {
     ar: readingsLabel,
     fr: readingsLabel,
     de: readingsLabel,
+    es: readingsLabel,
     zh: readingsLabel,
     hi: readingsLabel,
   }),

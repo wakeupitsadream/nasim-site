@@ -125,6 +125,7 @@
       "ru": "Русский",
       "fr": "Français",
       "de": "Deutsch",
+      "es": "Español",
       "zh": "中文",
       "hi": "हिन्दी"
     },
@@ -134,6 +135,7 @@
       "ru": "RU",
       "fr": "FR",
       "de": "DE",
+      "es": "ES",
       "zh": "中",
       "hi": "हि"
     }
@@ -545,7 +547,7 @@
       "call": "Call",
       "email": "Write"
     },
-    "pending": "Our phone and WhatsApp number are being set up and will appear here before we start taking bookings.",
+    "pending": "Our phone and WhatsApp numbers are being set up and will appear here before we start taking bookings.",
     "pendingCta": "See prices and plan your visit",
     "hours": "Working hours",
     "emergency": "Urgent visits",

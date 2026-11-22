@@ -24,7 +24,7 @@ describe('fillTemplate', () => {
       page: 'services/ac-cleaning',
     });
     expect(text).toBe(
-      "Hi Nasim! I'd like to book AC Cleaning — 3 units in JLT. Preferred time: tomorrow morning. — from website/services/ac-cleaning",
+      "Hi Nasim! I'd like to book AC Cleaning — units: 3 in JLT. Preferred time: tomorrow morning. — from website/services/ac-cleaning",
     );
   });
 

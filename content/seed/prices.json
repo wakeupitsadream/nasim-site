@@ -11,6 +11,7 @@
         "ar": "تنظيف قياسي، وحدة واحدة",
         "fr": "Nettoyage standard, 1 unité",
         "de": "Standardreinigung, 1 Gerät",
+        "es": "Limpieza estándar, 1 equipo",
         "zh": "标准清洗，1 台",
         "hi": "स्टैंडर्ड सफ़ाई, 1 यूनिट"
       },
@@ -24,6 +25,7 @@
         "ar": "رسوم الزيارة مشمولة",
         "fr": "Déplacement inclus",
         "de": "Anfahrt inklusive",
+        "es": "Desplazamiento incluido",
         "zh": "含上门费",
         "hi": "विज़िट शुल्क शामिल"
       },
@@ -39,6 +41,7 @@
         "ar": "تنظيف قياسي، 2–3 وحدات",
         "fr": "Nettoyage standard, 2–3 unités",
         "de": "Standardreinigung, 2–3 Geräte",
+        "es": "Limpieza estándar, 2–3 equipos",
         "zh": "标准清洗，2–3 台",
         "hi": "स्टैंडर्ड सफ़ाई, 2–3 यूनिट"
       },
@@ -52,6 +55,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -67,6 +71,7 @@
         "ar": "تنظيف قياسي، 4 وحدات فأكثر",
         "fr": "Nettoyage standard, 4 unités et plus",
         "de": "Standardreinigung, 4+ Geräte",
+        "es": "Limpieza estándar, 4 o más equipos",
         "zh": "标准清洗，4 台及以上",
         "hi": "स्टैंडर्ड सफ़ाई, 4+ यूनिट"
       },
@@ -80,6 +85,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -95,6 +101,7 @@
         "ar": "تنظيف عميق",
         "fr": "Nettoyage en profondeur",
         "de": "Tiefenreinigung",
+        "es": "Limpieza profunda",
         "zh": "深度清洗",
         "hi": "डीप क्लीनिंग"
       },
@@ -108,6 +115,7 @@
         "ar": "تفكيك كامل للوحدة الداخلية",
         "fr": "Démontage complet de l’unité intérieure",
         "de": "Komplette Demontage des Innengeräts",
+        "es": "Desmontaje completo de la unidad interior",
         "zh": "室内机完全拆机",
         "hi": "इनडोर यूनिट पूरी तरह खोलकर"
       },
@@ -123,6 +131,7 @@
         "ar": "صيانة وحدة فان كويل، وحدة واحدة",
         "fr": "Entretien de ventilo-convecteur, 1 unité",
         "de": "Gebläsekonvektor-Wartung, 1 Gerät",
+        "es": "Mantenimiento de fancoil (FCU), 1 equipo",
         "zh": "风机盘管保养，1 台",
         "hi": "फैन कॉइल यूनिट सर्विस, 1 यूनिट"
       },
@@ -136,6 +145,7 @@
         "ar": "رسوم الزيارة مشمولة",
         "fr": "Déplacement inclus",
         "de": "Anfahrt inklusive",
+        "es": "Desplazamiento incluido",
         "zh": "含上门费",
         "hi": "विज़िट शुल्क शामिल"
       },
@@ -151,6 +161,7 @@
         "ar": "صيانة وحدة فان كويل، 2–3 وحدات",
         "fr": "Entretien de ventilo-convecteur, 2–3 unités",
         "de": "Gebläsekonvektor-Wartung, 2–3 Geräte",
+        "es": "Mantenimiento de fancoil (FCU), 2–3 equipos",
         "zh": "风机盘管保养，2–3 台",
         "hi": "फैन कॉइल यूनिट सर्विस, 2–3 यूनिट"
       },
@@ -164,6 +175,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -179,6 +191,7 @@
         "ar": "صيانة وحدة فان كويل، 4 وحدات فأكثر",
         "fr": "Entretien de ventilo-convecteur, 4 unités et plus",
         "de": "Gebläsekonvektor-Wartung, 4+ Geräte",
+        "es": "Mantenimiento de fancoil (FCU), 4 o más equipos",
         "zh": "风机盘管保养，4 台及以上",
         "hi": "फैन कॉइल यूनिट सर्विस, 4+ यूनिट"
       },
@@ -192,6 +205,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -207,6 +221,7 @@
         "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU) ومروحتها، وحدة واحدة",
         "fr": "Nettoyage en profondeur de l’échangeur et du ventilateur de ventilo-convecteur (FCU), 1 unité",
         "de": "Tiefenreinigung von Wärmetauscher & Lüfter am Gebläsekonvektor (FCU), 1 Gerät",
+        "es": "Limpieza profunda de serpentín y ventilador de FCU, 1 equipo",
         "zh": "风机盘管（FCU）盘管与风机深度清洗，1 台",
         "hi": "FCU कॉइल और ब्लोअर की डीप क्लीनिंग, 1 यूनिट"
       },
@@ -220,6 +235,7 @@
         "ar": "رسوم الزيارة مشمولة",
         "fr": "Déplacement inclus",
         "de": "Anfahrt inklusive",
+        "es": "Desplazamiento incluido",
         "zh": "含上门费",
         "hi": "विज़िट शुल्क शामिल"
       },
@@ -235,6 +251,7 @@
         "ar": "التنظيف العميق لملف وحدة الفان كويل (FCU) ومروحتها، وحدتان فأكثر",
         "fr": "Nettoyage en profondeur de l’échangeur et du ventilateur de ventilo-convecteur (FCU), 2 unités et plus",
         "de": "Tiefenreinigung von Wärmetauscher & Lüfter am Gebläsekonvektor (FCU), 2+ Geräte",
+        "es": "Limpieza profunda de serpentín y ventilador de FCU, 2 o más equipos",
         "zh": "风机盘管（FCU）盘管与风机深度清洗，2 台及以上",
         "hi": "FCU कॉइल और ब्लोअर की डीप क्लीनिंग, 2+ यूनिट"
       },
@@ -248,6 +265,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -263,6 +281,7 @@
         "ar": "تنظيف مجاري الهواء، وحدة واحدة",
         "fr": "Nettoyage des gaines de climatisation, 1 unité",
         "de": "Luftkanalreinigung, 1 Gerät",
+        "es": "Limpieza de conductos de aire acondicionado, 1 equipo",
         "zh": "空调风管清洗，1 台",
         "hi": "एसी डक्ट की सफ़ाई, 1 यूनिट"
       },
@@ -276,6 +295,7 @@
         "ar": "رسوم الزيارة مشمولة",
         "fr": "Déplacement inclus",
         "de": "Anfahrt inklusive",
+        "es": "Desplazamiento incluido",
         "zh": "含上门费",
         "hi": "विज़िट शुल्क शामिल"
       },
@@ -291,6 +311,7 @@
         "ar": "تنظيف مجاري الهواء، 2–3 وحدات",
         "fr": "Nettoyage des gaines de climatisation, 2–3 unités",
         "de": "Luftkanalreinigung, 2–3 Geräte",
+        "es": "Limpieza de conductos de aire acondicionado, 2–3 equipos",
         "zh": "空调风管清洗，2–3 台",
         "hi": "एसी डक्ट की सफ़ाई, 2–3 यूनिट"
       },
@@ -304,6 +325,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -319,6 +341,7 @@
         "ar": "تنظيف مجاري الهواء، 4 وحدات فأكثر",
         "fr": "Nettoyage des gaines de climatisation, 4 unités et plus",
         "de": "Luftkanalreinigung, 4+ Geräte",
+        "es": "Limpieza de conductos de aire acondicionado, 4 o más equipos",
         "zh": "空调风管清洗，4 台及以上",
         "hi": "एसी डक्ट की सफ़ाई, 4+ यूनिट"
       },
@@ -332,6 +355,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -347,6 +371,7 @@
         "ar": "التنظيف الشامل لنظام التكييف، وحدة واحدة",
         "fr": "Nettoyage complet du système de climatisation, 1 unité",
         "de": "Komplettreinigung der Klimaanlage, 1 Gerät",
+        "es": "Limpieza completa del sistema de aire acondicionado, 1 equipo",
         "zh": "空调系统全面清洗，1 台",
         "hi": "पूरे एसी सिस्टम की सफ़ाई, 1 यूनिट"
       },
@@ -360,6 +385,7 @@
         "ar": "رسوم الزيارة مشمولة",
         "fr": "Déplacement inclus",
         "de": "Anfahrt inklusive",
+        "es": "Desplazamiento incluido",
         "zh": "含上门费",
         "hi": "विज़िट शुल्क शामिल"
       },
@@ -375,6 +401,7 @@
         "ar": "التنظيف الشامل لنظام التكييف، 2–3 وحدات",
         "fr": "Nettoyage complet du système de climatisation, 2–3 unités",
         "de": "Komplettreinigung der Klimaanlage, 2–3 Geräte",
+        "es": "Limpieza completa del sistema de aire acondicionado, 2–3 equipos",
         "zh": "空调系统全面清洗，2–3 台",
         "hi": "पूरे एसी सिस्टम की सफ़ाई, 2–3 यूनिट"
       },
@@ -388,6 +415,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -403,6 +431,7 @@
         "ar": "التنظيف الشامل لنظام التكييف، 4 وحدات فأكثر",
         "fr": "Nettoyage complet du système de climatisation, 4 unités et plus",
         "de": "Komplettreinigung der Klimaanlage, 4+ Geräte",
+        "es": "Limpieza completa del sistema de aire acondicionado, 4 o más equipos",
         "zh": "空调系统全面清洗，4 台及以上",
         "hi": "पूरे एसी सिस्टम की सफ़ाई, 4+ यूनिट"
       },
@@ -416,6 +445,7 @@
         "ar": "للوحدة",
         "fr": "Par unité",
         "de": "Pro Gerät",
+        "es": "Por equipo",
         "zh": "每台",
         "hi": "प्रति यूनिट"
       },
@@ -429,6 +459,7 @@
         "ru": "Чистка фильтров и решёток",
         "ar": "تنظيف الفلاتر والشبكات",
         "de": "Reinigung von Filtern & Lüftungsgittern",
+        "es": "Limpieza de filtros y rejillas",
         "zh": "滤网与风口格栅清洗",
         "hi": "फ़िल्टर और ग्रिल की सफ़ाई",
         "fr": "Nettoyage des filtres et des grilles"
@@ -442,6 +473,7 @@
         "ru": "За внутренний блок",
         "ar": "للوحدة الداخلية",
         "de": "Pro Innengerät",
+        "es": "Por unidad interior",
         "zh": "每台室内机",
         "hi": "प्रति इनडोर यूनिट",
         "fr": "Par unité intérieure"
@@ -456,6 +488,7 @@
         "ru": "Отдельная чистка наружного блока",
         "ar": "تنظيف وحدة التكثيف الخارجية، بحجز منفرد",
         "de": "Reinigung des Außengeräts, separat gebucht",
+        "es": "Limpieza del condensador exterior, contratada por separado",
         "zh": "室外机冷凝器清洗，单独预约",
         "hi": "आउटडोर कंडेनसर की सफ़ाई, अलग से बुक करने पर",
         "fr": "Nettoyage du condenseur extérieur, réservé séparément"
@@ -469,6 +502,7 @@
         "ru": "За наружный блок",
         "ar": "للوحدة الخارجية",
         "de": "Pro Außengerät",
+        "es": "Por unidad exterior",
         "zh": "每台室外机",
         "hi": "प्रति आउटडोर यूनिट",
         "fr": "Par unité extérieure"
@@ -483,6 +517,7 @@
         "ru": "Диагностика",
         "ar": "فحص أعطال المكيف",
         "de": "Klimaanlagen-Diagnose",
+        "es": "Diagnóstico de aire acondicionado",
         "zh": "空调检测",
         "hi": "एसी की जाँच",
         "fr": "Diagnostic de climatisation"
@@ -496,6 +531,7 @@
         "ru": "Засчитывается в оплату согласованной дополнительной проверки или ремонта той же неисправности",
         "ar": "تُحتسب من قيمة الاختبار أو الإصلاح الموافَق عليه للعطل نفسه",
         "de": "Wird auf die freigegebene Prüfung oder Reparatur desselben Defekts angerechnet",
+        "es": "Se descuenta de las pruebas o la reparación aprobadas de la misma avería",
         "zh": "计入经您确认的同一故障后续检测或维修费用",
         "hi": "उसी ख़राबी की मंज़ूर की गई टेस्टिंग या मरम्मत में समायोजित",
         "fr": "Déduit de la réparation ou des tests approuvés pour la même panne"
@@ -510,6 +546,7 @@
         "ru": "Устранение засора доступного дренажа",
         "ar": "إزالة انسداد تصريف ماء التكاثف الذي يمكن الوصول إليه",
         "de": "Beseitigung von Verstopfungen im zugänglichen Kondensatablauf",
+        "es": "Desatasco de desagüe de condensados accesible",
         "zh": "可触及的冷凝水排水管疏通",
         "hi": "पहुँच योग्य कंडेनसेट ड्रेन का जाम खोलना",
         "fr": "Débouchage d’une évacuation de condensats accessible"
@@ -524,6 +561,7 @@
         "ar": "",
         "fr": "",
         "de": "",
+        "es": "",
         "zh": "",
         "hi": ""
       },
@@ -537,6 +575,7 @@
         "ru": "Установка термостата: работа",
         "ar": "أجرة تركيب الثرموستات",
         "de": "Thermostat-Einbau, Arbeitslohn",
+        "es": "Mano de obra de instalación de termostato",
         "zh": "温控器安装人工费",
         "hi": "थर्मोस्टैट लगाने की मज़दूरी",
         "fr": "Main-d’œuvre d’installation de thermostat"
@@ -550,6 +589,7 @@
         "ru": "Стоимость термостата оплачивается отдельно",
         "ar": "الثرموستات يُسعَّر على حدة",
         "de": "Thermostat wird separat berechnet",
+        "es": "El termostato se cobra aparte",
         "zh": "温控器另行计价",
         "hi": "थर्मोस्टैट की कीमत अलग से",
         "fr": "Thermostat facturé à part"
@@ -565,6 +605,7 @@
         "ar": "زيارة طوارئ + فحص",
         "fr": "Déplacement d’urgence + diagnostic",
         "de": "Notfalleinsatz + Diagnose",
+        "es": "Visita urgente + diagnóstico",
         "zh": "紧急上门 + 检测",
         "hi": "तत्काल कॉल-आउट + जाँच"
       },
@@ -578,6 +619,7 @@
         "ar": "تُحتسب من قيمة الاختبار أو الإصلاح الموافَق عليه للعطل نفسه",
         "fr": "Déduit de la réparation ou des tests approuvés pour la même panne",
         "de": "Wird auf die freigegebene Prüfung oder Reparatur desselben Defekts angerechnet",
+        "es": "Se descuenta de las pruebas o la reparación aprobadas de la misma avería",
         "zh": "计入经您确认的同一故障后续检测或维修费用",
         "hi": "उसी ख़राबी की मंज़ूर की गई टेस्टिंग या मरम्मत में समायोजित"
       },
@@ -592,6 +634,7 @@
         "ar": "أجرة الإصلاح",
         "fr": "Main-d’œuvre de réparation",
         "de": "Reparatur, Arbeitslohn",
+        "es": "Mano de obra de reparación de aire acondicionado",
         "zh": "维修人工费",
         "hi": "मरम्मत की मज़दूरी"
       },
@@ -605,6 +648,7 @@
         "ar": "القطع تُسعَّر على حدة، ضمان 90 يومًا",
         "fr": "Pièces chiffrées à part, garantie 90 jours",
         "de": "Ersatzteile nach Kostenvoranschlag, 90 Tage Garantie",
+        "es": "Piezas presupuestadas aparte, garantía de 90 días",
         "zh": "配件另行报价，保修 90 天",
         "hi": "पुर्ज़ों का अलग कोटेशन, 90 दिन की वारंटी"
       },
@@ -619,6 +663,7 @@
         "ar": "اختبار تسرب بالنيتروجين",
         "fr": "Test d’étanchéité à l’azote",
         "de": "Stickstoff-Lecktest",
+        "es": "Prueba de fugas de refrigerante",
         "zh": "氮气泄漏检测",
         "hi": "नाइट्रोजन लीक टेस्ट"
       },
@@ -632,6 +677,7 @@
         "ar": "",
         "fr": "",
         "de": "",
+        "es": "",
         "zh": "",
         "hi": ""
       },
@@ -646,6 +692,7 @@
         "ar": "إصلاح تسرب غاز التبريد",
         "fr": "Réparation de fuite de fluide frigorigène",
         "de": "Kältemittel-Leckreparatur",
+        "es": "Reparación de fugas de refrigerante",
         "zh": "制冷剂泄漏修复",
         "hi": "रेफ़्रिजरेंट लीक की मरम्मत"
       },
@@ -668,6 +715,7 @@
         "ar": "تعبئة بعد إصلاح التسرب",
         "fr": "Recharge après réparation de la fuite",
         "de": "Nachfüllen nach Leckreparatur",
+        "es": "Recarga de refrigerante",
         "zh": "修漏后加注制冷剂",
         "hi": "लीक की मरम्मत के बाद गैस भरना"
       },
@@ -681,6 +729,7 @@
         "ar": "حسب نوع الغاز ووزنه",
         "fr": "Selon le type et le poids de fluide frigorigène",
         "de": "Nach Kältemittelart und Gewicht",
+        "es": "Según el tipo y el peso del refrigerante",
         "zh": "按制冷剂类型和重量计价",
         "hi": "रेफ़्रिजरेंट के प्रकार और वज़न के अनुसार"
       },
@@ -695,6 +744,7 @@
         "ar": "التعقيم الموجّه للمكيف",
         "fr": "Assainissement ciblé de climatiseur",
         "de": "Gezielte Hygienebehandlung der Klimaanlage",
+        "es": "Higienización específica del aire acondicionado",
         "zh": "空调针对性抗菌处理",
         "hi": "एसी का लक्षित सैनिटाइज़ेशन"
       },
@@ -716,6 +766,7 @@
         "ru": "1 место или кресло",
         "zh": "1 座沙发或扶手椅",
         "de": "1 Sitzplatz oder Sessel",
+        "es": "1 plaza o sillón",
         "fr": "1 place ou fauteuil",
         "hi": "1 सीट या आर्मचेयर",
         "ar": "مقعد واحد أو كرسي بذراعين"
@@ -737,6 +788,7 @@
         "ru": "Двухместный диван",
         "zh": "2 座沙发",
         "de": "2-Sitzer-Sofa",
+        "es": "Sofá de 2 plazas",
         "fr": "Canapé 2 places",
         "hi": "2 सीट वाला सोफ़ा",
         "ar": "أريكة بمقعدين"
@@ -758,6 +810,7 @@
         "ru": "Трёхместный диван",
         "zh": "3 座沙发",
         "de": "3-Sitzer-Sofa",
+        "es": "Sofá de 3 plazas",
         "fr": "Canapé 3 places",
         "hi": "3 सीट वाला सोफ़ा",
         "ar": "أريكة بثلاثة مقاعد"
@@ -779,6 +832,7 @@
         "ru": "Четырёхместный диван",
         "zh": "4 座沙发",
         "de": "4-Sitzer-Sofa",
+        "es": "Sofá de 4 plazas",
         "fr": "Canapé 4 places",
         "hi": "4 सीट वाला सोफ़ा",
         "ar": "أريكة بأربعة مقاعد"
@@ -800,6 +854,7 @@
         "ru": "Каждое дополнительное место",
         "zh": "每增加一个标准座位",
         "de": "Jeder weitere Standard-Sitzplatz",
+        "es": "Cada plaza estándar adicional",
         "fr": "Chaque place standard supplémentaire",
         "hi": "हर अतिरिक्त स्टैंडर्ड सीट",
         "ar": "كل مقعد قياسي إضافي"
@@ -822,6 +877,7 @@
         "ru": "Матрас Single",
         "zh": "Single 床垫",
         "de": "Matratze Single",
+        "es": "Colchón individual",
         "fr": "Matelas Single",
         "hi": "Single साइज़ गद्दा",
         "ar": "مرتبة مقاس Single"
@@ -843,6 +899,7 @@
         "ru": "Матрас Double",
         "zh": "Double 床垫",
         "de": "Matratze Double",
+        "es": "Colchón doble",
         "fr": "Matelas Double",
         "hi": "Double साइज़ गद्दा",
         "ar": "مرتبة مقاس Double"
@@ -864,6 +921,7 @@
         "ru": "Матрас Queen",
         "zh": "Queen 床垫",
         "de": "Matratze Queen",
+        "es": "Colchón queen",
         "fr": "Matelas Queen",
         "hi": "Queen साइज़ गद्दा",
         "ar": "مرتبة مقاس Queen"
@@ -885,6 +943,7 @@
         "ru": "Матрас King",
         "zh": "King 床垫",
         "de": "Matratze King",
+        "es": "Colchón king",
         "fr": "Matelas King",
         "hi": "King साइज़ गद्दा",
         "ar": "مرتبة مقاس King"
@@ -906,6 +965,7 @@
         "ru": "Матрас Super King",
         "zh": "Super King 床垫",
         "de": "Matratze Super King",
+        "es": "Colchón super king",
         "fr": "Matelas Super King",
         "hi": "Super King साइज़ गद्दा",
         "ar": "مرتبة مقاس Super King"
@@ -927,6 +987,7 @@
         "ru": "Вторая спальная поверхность",
         "zh": "床垫第二个睡眠面",
         "de": "Zweite Liegefläche",
+        "es": "Segunda cara del colchón",
         "fr": "Seconde face de couchage",
         "hi": "गद्दे की दूसरी सोने वाली सतह",
         "ar": "سطح النوم الثاني للمرتبة"
@@ -940,6 +1001,7 @@
         "ru": "Если материал и доступ позволяют",
         "zh": "在适合清洁且可触及的情况下",
         "de": "Sofern geeignet und zugänglich",
+        "es": "Si es adecuada y accesible",
         "fr": "Si la face s’y prête et qu’elle est accessible",
         "hi": "जहाँ उपयुक्त और पहुँच योग्य हो",
         "ar": "إذا كان مناسبًا وأمكن الوصول إليه"
@@ -955,6 +1017,7 @@
         "ru": "Ковёр до 3 м²",
         "zh": "块毯，不超过 3 平方米",
         "de": "Teppich bis 3 m²",
+        "es": "Alfombra de hasta 3 m²",
         "fr": "Tapis jusqu’à 3 m²",
         "hi": "3 वर्ग मीटर तक का रग",
         "ar": "سجادة حتى 3 م²"
@@ -976,6 +1039,7 @@
         "ru": "Ковёр свыше 3 до 6 м²",
         "zh": "块毯，超过 3 至 6 平方米",
         "de": "Teppich über 3 bis 6 m²",
+        "es": "Alfombra de más de 3 y hasta 6 m²",
         "fr": "Tapis de plus de 3 et jusqu’à 6 m²",
         "hi": "3 से ज़्यादा और 6 वर्ग मीटर तक का रग",
         "ar": "سجادة أكبر من 3 وحتى 6 م²"
@@ -997,6 +1061,7 @@
         "ru": "Ковёр свыше 6 до 10 м²",
         "zh": "块毯，超过 6 至 10 平方米",
         "de": "Teppich über 6 bis 10 m²",
+        "es": "Alfombra de más de 6 y hasta 10 m²",
         "fr": "Tapis de plus de 6 et jusqu’à 10 m²",
         "hi": "6 से ज़्यादा और 10 वर्ग मीटर तक का रग",
         "ar": "سجادة أكبر من 6 وحتى 10 م²"
@@ -1018,6 +1083,7 @@
         "ru": "Ковёр свыше 10 м²",
         "zh": "块毯，超过 10 平方米",
         "de": "Teppich über 10 m²",
+        "es": "Alfombra de más de 10 m²",
         "fr": "Tapis de plus de 10 m²",
         "hi": "10 वर्ग मीटर से ज़्यादा का रग",
         "ar": "سجادة أكبر من 10 م²"
@@ -1040,6 +1106,7 @@
         "ru": "Ковролин",
         "zh": "满铺地毯",
         "de": "Teppichboden",
+        "es": "Moqueta (alfombra de pared a pared)",
         "fr": "Moquette",
         "hi": "वॉल-टू-वॉल कालीन",
         "ar": "موكيت"
@@ -1061,6 +1128,7 @@
         "ru": "Чистка штор на дому",
         "zh": "窗帘上门清洁",
         "de": "Vorhangreinigung vor Ort",
+        "es": "Limpieza de cortinas a domicilio",
         "fr": "Nettoyage de rideaux sur place",
         "hi": "पर्दों की ऑन-साइट सफ़ाई",
         "ar": "تنظيف الستائر في مكانها"
@@ -1074,6 +1142,7 @@
         "ru": "За м² ткани",
         "zh": "每平方米面料",
         "de": "Pro m² Stoff",
+        "es": "Por m² de tela",
         "fr": "Par m² de tissu",
         "hi": "कपड़े के प्रति वर्ग मीटर",
         "ar": "لكل متر مربع من القماش"
@@ -1088,6 +1157,7 @@
         "ru": "Обеденный стул с тканевой обивкой",
         "zh": "布艺餐椅",
         "de": "Esszimmerstuhl mit Stoffbezug",
+        "es": "Silla de comedor de tela",
         "fr": "Chaise de salle à manger en tissu",
         "hi": "फ़ैब्रिक डाइनिंग चेयर",
         "ar": "كرسي طعام قماشي"
@@ -1109,6 +1179,7 @@
         "ru": "Офисное кресло с тканевой обивкой",
         "zh": "布艺办公椅",
         "de": "Bürostuhl mit Stoffbezug",
+        "es": "Silla de oficina de tela",
         "fr": "Chaise de bureau en tissu",
         "hi": "फ़ैब्रिक ऑफ़िस चेयर",
         "ar": "كرسي مكتب قماشي"
@@ -1130,6 +1201,7 @@
         "ru": "Пуф или банкетка",
         "zh": "脚凳或沙发凳",
         "de": "Fußhocker oder Polsterhocker",
+        "es": "Reposapiés u otomana",
         "fr": "Repose-pieds ou pouf",
         "hi": "फ़ुटस्टूल या ऑटोमन",
         "ar": "مسند قدمين أو أوتومان"
@@ -1151,6 +1223,7 @@
         "ru": "Мягкое изголовье кровати",
         "zh": "软包床头板",
         "de": "Gepolstertes Bettkopfteil",
+        "es": "Cabecera de cama tapizada",
         "fr": "Tête de lit rembourrée",
         "hi": "गद्देदार हेडबोर्ड",
         "ar": "لوح رأس سرير منجّد"
@@ -1172,6 +1245,7 @@
         "ru": "Мягкий каркас кровати",
         "zh": "软包床架",
         "de": "Gepolstertes Bettgestell",
+        "es": "Estructura de cama tapizada",
         "fr": "Cadre de lit rembourré",
         "hi": "गद्देदार बेड फ़्रेम",
         "ar": "هيكل سرير منجّد"
@@ -1194,6 +1268,7 @@
         "ru": "Специальная обработка пятен или запаха",
         "zh": "污渍或异味专项处理",
         "de": "Spezielle Flecken- oder Geruchsbehandlung",
+        "es": "Tratamiento especializado de manchas u olores",
         "fr": "Traitement spécialisé des taches ou des odeurs",
         "hi": "दाग़ या बदबू का विशेष ट्रीटमेंट",
         "ar": "معالجة متخصصة للبقع أو الروائح"
@@ -1207,6 +1282,7 @@
         "ru": "За предмет",
         "zh": "每件",
         "de": "Pro Stück",
+        "es": "Por pieza",
         "fr": "Par pièce",
         "hi": "प्रति आइटम",
         "ar": "للقطعة"
@@ -1227,6 +1303,7 @@
         "ar": "Fresh Home",
         "fr": "Fresh Home",
         "de": "Fresh Home",
+        "es": "Fresh Home",
         "zh": "Fresh Home",
         "hi": "Fresh Home"
       },
@@ -1236,6 +1313,7 @@
         "ar": "خدمة قياسية لـ 3 مكيفات سبليت + تنظيف أريكة قماشية واحدة بثلاثة مقاعد.",
         "fr": "Entretien standard de 3 climatiseurs split + nettoyage d’un canapé 3 places en tissu.",
         "de": "Standardreinigung & Wartung von 3 Split-Geräten + Reinigung eines 3-Sitzer-Stoffsofas.",
+        "es": "Servicio estándar para 3 aires acondicionados split + un sofá de tela de 3 plazas.",
         "zh": "3 台分体式空调标准清洗与保养 + 一张 3 座布艺沙发清洁。",
         "hi": "3 स्प्लिट एसी की स्टैंडर्ड सर्विस + 3 सीट वाले एक फ़ैब्रिक सोफ़े की सफ़ाई।"
       },
@@ -1258,6 +1336,7 @@
         "ru": "Sofa and Mattress",
         "fr": "Sofa and Mattress",
         "de": "Sofa and Mattress",
+        "es": "Sofa and Mattress",
         "zh": "Sofa and Mattress",
         "hi": "Sofa and Mattress"
       },
@@ -1266,6 +1345,7 @@
         "ru": "Трёхместный тканевый диван + матрас King.",
         "zh": "3 座布艺沙发 + King 床垫。",
         "de": "3-Sitzer-Stoffsofa + Matratze King.",
+        "es": "Sofá de tela de 3 plazas + colchón king.",
         "fr": "Canapé 3 places en tissu + matelas King.",
         "hi": "3 सीट वाला फ़ैब्रिक सोफ़ा + King साइज़ गद्दा।",
         "ar": "أريكة قماشية بثلاثة مقاعد + مرتبة مقاس King."
@@ -1289,6 +1369,7 @@
         "ru": "Furniture Refresh",
         "fr": "Furniture Refresh",
         "de": "Furniture Refresh",
+        "es": "Furniture Refresh",
         "zh": "Furniture Refresh",
         "hi": "Furniture Refresh"
       },
@@ -1297,6 +1378,7 @@
         "ru": "Трёхместный диван + матрас King + ковёр до 3 м².",
         "zh": "3 座沙发 + King 床垫 + 不超过 3 平方米的块毯。",
         "de": "3-Sitzer-Sofa + Matratze King + Teppich bis 3 m².",
+        "es": "Sofá de 3 plazas + colchón king + alfombra de hasta 3 m².",
         "fr": "Canapé 3 places + matelas King + tapis jusqu’à 3 m².",
         "hi": "3 सीट वाला सोफ़ा + King साइज़ गद्दा + 3 वर्ग मीटर तक का रग।",
         "ar": "أريكة بثلاثة مقاعد + مرتبة مقاس King + سجادة حتى 3 م²."
@@ -1321,6 +1403,7 @@
         "ru": "Full Home",
         "fr": "Full Home",
         "de": "Full Home",
+        "es": "Full Home",
         "zh": "Full Home",
         "hi": "Full Home"
       },
@@ -1329,6 +1412,7 @@
         "ru": "Комплексная чистка 1 канального блока кондиционера + трёхместный диван + матрас King + ковёр до 3 м².",
         "zh": "空调系统全面清洗（1 台风管式中央空调）+ 3 座沙发 + King 床垫 + 不超过 3 平方米的块毯。",
         "de": "Komplettreinigung der Klimaanlage für 1 Kanalgerät + 3-Sitzer-Sofa + Matratze King + Teppich bis 3 m².",
+        "es": "Limpieza completa del sistema para 1 aire acondicionado por conductos + sofá de 3 plazas + colchón king + alfombra de hasta 3 m².",
         "fr": "Nettoyage complet du système de climatisation pour 1 climatiseur gainable + canapé 3 places + matelas King + tapis jusqu’à 3 m².",
         "hi": "1 डक्टेड एसी के लिए पूरे एसी सिस्टम की सफ़ाई + 3 सीट वाला सोफ़ा + King साइज़ गद्दा + 3 वर्ग मीटर तक का रग।",
         "ar": "التنظيف الشامل لنظام التكييف لمكيف دكت واحد + أريكة بثلاثة مقاعد + مرتبة مقاس King + سجادة حتى 3 م²."
@@ -1354,6 +1438,7 @@
         "ar": "Essential",
         "fr": "Essential",
         "de": "Essential",
+        "es": "Essential",
         "zh": "Essential",
         "hi": "Essential"
       },
@@ -1363,6 +1448,7 @@
         "ar": "زيارتان للخدمة القياسية في السنة لـ 3 وحدات سبليت. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
         "fr": "2 visites de nettoyage standard par an pour 3 unités split. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
         "de": "2 Besuche pro Jahr mit Standardreinigung für 3 Split-Geräte. Bevorzugte Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen.",
+        "es": "3 aires acondicionados split · 2 visitas de servicio estándar",
         "zh": "每年 2 次标准清洗上门，适用于 3 台分体式空调。优先预约，维修人工费优惠 10%。",
         "hi": "3 स्प्लिट यूनिट के लिए साल में स्टैंडर्ड सर्विस की 2 विज़िट। प्राथमिकता से बुकिंग और मरम्मत की मज़दूरी पर 10% छूट।"
       },
@@ -1388,6 +1474,7 @@
         "ar": "Comfort",
         "fr": "Comfort",
         "de": "Comfort",
+        "es": "Comfort",
         "zh": "Comfort",
         "hi": "Comfort"
       },
@@ -1397,6 +1484,7 @@
         "ar": "زيارتان في السنة لـ 5 وحدات سبليت. تحصل وحدة واحدة مختارة على تنظيف عميق خلال إحدى الزيارتين بدلًا من تنظيفها القياسي. أولوية في حجز المواعيد وخصم 10% على أجور اليد العاملة في الإصلاح.",
         "fr": "2 visites par an pour 5 unités split. Lors de l’une des visites, une unité choisie reçoit un nettoyage en profondeur à la place de son nettoyage standard. Réservation prioritaire et 10 % de remise sur la main-d’œuvre de réparation.",
         "de": "2 Besuche pro Jahr für 5 Split-Geräte. Ein ausgewähltes Gerät erhält bei einem der Besuche eine Tiefenreinigung anstelle der Standardreinigung. Bevorzugte Terminvergabe und 10 % Rabatt auf die Arbeitskosten bei Reparaturen.",
+        "es": "5 aires acondicionados split · 2 visitas · en una de ellas, un equipo pasa de limpieza estándar a limpieza profunda",
         "zh": "每年 2 次上门，适用于 5 台分体式空调。其中一次上门时，一台选定的机器做深度清洗，以替代该机器当次的标准清洗。优先预约，维修人工费优惠 10%。",
         "hi": "5 स्प्लिट यूनिट के लिए साल में 2 विज़िट। किसी एक विज़िट में एक चुनी हुई यूनिट की स्टैंडर्ड सफ़ाई की जगह डीप क्लीनिंग होती है। प्राथमिकता से बुकिंग और मरम्मत की मज़दूरी पर 10% छूट।"
       },
@@ -1422,6 +1510,7 @@
         "ar": "Villa",
         "fr": "Villa",
         "de": "Villa",
+        "es": "Villa",
         "zh": "Villa",
         "hi": "Villa"
       },
@@ -1431,6 +1520,7 @@
         "ar": "3 زيارات مجدولة في السنة، والسعر بحسب نوع المعدات وعدد الوحدات وسهولة الوصول إليها.",
         "fr": "3 visites planifiées par an ; prix établi selon le type d’équipement, le nombre d’unités et l’accès.",
         "de": "3 geplante Besuche pro Jahr, Preis nach Gerätetyp, Anzahl der Geräte und Zugänglichkeit.",
+        "es": "3 visitas programadas · cobertura adaptada a sus equipos",
         "zh": "每年 3 次定期上门，按设备类型、机器数量和作业便利程度定价。",
         "hi": "साल में 3 तय विज़िट; कीमत उपकरण के प्रकार, यूनिट की संख्या और पहुँच के अनुसार।"
       },

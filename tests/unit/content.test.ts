@@ -292,8 +292,10 @@ describe('catalogue cards with their own wording', () => {
   const card = (slug: string) => seedServices().find((s) => s.slug === slug)!.card!;
 
   it('carry the price unit, the note, the button and the link as he wrote them', () => {
-    // The heading follows the owner's page copy of 22.11.2026 (DECISIONS №85).
-    expect(seedServices().find((s) => s.slug === 'ac-repair')!.name.en).toBe('Split AC Repair');
+    // The owner kept this name over the «Split AC Repair» of his later page copy (DECISIONS №85).
+    expect(seedServices().find((s) => s.slug === 'ac-repair')!.name.en).toBe(
+      'AC Repairs & Diagnostics',
+    );
     expect(card('ac-repair').unit?.en).toBe('per diagnostic visit');
     expect(card('ac-repair').note?.en).toBe('Repairs and parts quoted separately.');
     expect(card('ac-repair').cta.en).toBe('Book a diagnostic visit');
@@ -306,7 +308,7 @@ describe('catalogue cards with their own wording', () => {
   it('are translated into every locale', () => {
     for (const slug of ['ac-repair', 'emergency-ac-repair'])
       for (const field of Object.values(card(slug)))
-        expect(Object.values(field).filter(Boolean)).toHaveLength(7);
+        expect(Object.values(field).filter(Boolean)).toHaveLength(routing.locales.length);
   });
 });
 
