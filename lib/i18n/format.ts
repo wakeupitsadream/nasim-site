@@ -7,6 +7,7 @@ const INTL_LOCALE: Record<Locale, string> = {
   ru: 'ru',
   fr: 'fr-FR',
   de: 'de-DE',
+  es: 'es-ES',
   zh: 'zh-CN',
   hi: 'hi-IN',
 };
@@ -16,6 +17,7 @@ const AED_LABEL: Record<Locale, string> = {
   ru: 'AED',
   fr: 'AED',
   de: 'AED',
+  es: 'AED',
   zh: 'AED',
   hi: 'AED',
 };

@@ -42,6 +42,7 @@ export const settingsDefaultsSchema = z.looseObject({
   ru: localeFields.partial().optional(),
   fr: localeFields.partial().optional(),
   de: localeFields.partial().optional(),
+  es: localeFields.partial().optional(),
   zh: localeFields.partial().optional(),
   hi: localeFields.partial().optional(),
 });

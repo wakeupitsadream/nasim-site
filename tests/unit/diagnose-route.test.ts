@@ -88,6 +88,15 @@ describe('POST /api/diagnose', () => {
     expect(catalogue.length).toBe(15);
     expect(catalogue.map((c) => c.slug)).toContain('ac-repair');
     expect(catalogue.map((c) => c.slug)).not.toContain('thermostat-installation');
+    // The model reads the owner's page copy as plain text: no markup in the prompt.
+    const duct = diagnose.mock.calls[0]?.[2].find(
+      (c: { slug: string }) => c.slug === 'ac-duct-cleaning',
+    ) as { about: string; includes: string[] };
+    expect(duct.about).toBe(
+      'Choose this service if dust or debris has built up inside the ducts that carry air to and from your rooms.',
+    );
+    expect(duct.includes[0]).toMatch(/^Supply and return ducts\. We use mechanical cleaning tools/);
+    expect(JSON.stringify(diagnose.mock.calls[0]?.[2])).not.toContain('<strong>');
   });
 
   it('marks estimate-priced and coming-soon services, and never links to a hidden one', async () => {

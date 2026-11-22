@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
   getAreaBySlug,
@@ -24,7 +24,13 @@ import {
   seedPricingRules,
   seedServices,
 } from '@/lib/content/seed';
+import { routing } from '@/lib/i18n/routing';
 import { blockSchemas } from '@/lib/validation/content';
+
+const msgOf = (locale: string) =>
+  JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8')) as {
+    Service: Record<string, unknown>;
+  };
 
 describe('seed files', () => {
   it('parse against the content schemas', () => {
@@ -286,6 +292,7 @@ describe('catalogue cards with their own wording', () => {
   const card = (slug: string) => seedServices().find((s) => s.slug === slug)!.card!;
 
   it('carry the price unit, the note, the button and the link as he wrote them', () => {
+    // The owner kept this name over the «Split AC Repair» of his later page copy (DECISIONS №85).
     expect(seedServices().find((s) => s.slug === 'ac-repair')!.name.en).toBe(
       'AC Repairs & Diagnostics',
     );
@@ -301,6 +308,74 @@ describe('catalogue cards with their own wording', () => {
   it('are translated into every locale', () => {
     for (const slug of ['ac-repair', 'emergency-ac-repair'])
       for (const field of Object.values(card(slug)))
-        expect(Object.values(field).filter(Boolean)).toHaveLength(7);
+        expect(Object.values(field).filter(Boolean)).toHaveLength(routing.locales.length);
+  });
+});
+
+// The owner's page copy of 22.11.2026, pasted as written (DECISIONS №85).
+describe("the owner's service page copy", () => {
+  const COPIED = [
+    'ac-repair',
+    'emergency-ac-repair',
+    'ac-deep-cleaning',
+    'fcu-deep-coil-cleaning',
+    'ac-duct-cleaning',
+    'full-ac-system-cleaning',
+  ];
+  const service = (slug: string) => seedServices().find((s) => s.slug === slug)!;
+
+  it('keeps his sentences word for word, with the bold lead-ins', () => {
+    expect(service('ac-repair').description_html.en).toBe(
+      '<p>If your AC won’t start, switches off on its own or hums without the outdoor fan turning, we can help. Our technicians carry common replacement parts and complete most repairs in one visit.</p>',
+    );
+    expect(service('ac-repair').includes.map((i) => i.en)).toEqual([
+      '<strong>Diagnosis.</strong> Your technician identifies the fault and explains what needs fixing.',
+      '<strong>Repair.</strong> We replace the faulty part as needed. Common repairs include capacitors, temperature sensors, fan motors, control boards and drain pumps.',
+      '<strong>Testing.</strong> After the repair, we run the AC and check its operating readings to confirm it works properly.',
+      '<strong>90-day repair warranty.</strong> We cover parts and labour for 90 days.',
+    ]);
+    expect(service('emergency-ac-repair').description_html.en).toContain(
+      '<p><strong>AED 199 per visit, including diagnostics.</strong> If we complete the repair during the same visit, we deduct the full AED 199 from the repair bill.</p>',
+    );
+    expect(service('emergency-ac-repair').notes_html?.en).toBe(
+      '<p><strong>For a same-day visit, contact us before 16:00.</strong> The emergency line stays open until 22:00. Call or WhatsApp to confirm the earliest appointment.</p>',
+    );
+    expect(service('ac-duct-cleaning').notes_html?.en).toBe(
+      '<p>If you also want the cooling coil and fan inside your concealed AC unit cleaned, choose <strong>FCU Deep Coil &amp; Blower Cleaning</strong> as a separate service.</p>',
+    );
+    expect(service('ac-deep-cleaning').notes_html?.en).toContain(
+      '<p>Repairs and refrigerant work are separate services.</p>',
+    );
+    expect(service('full-ac-system-cleaning').includes).toHaveLength(4);
+    expect(service('fcu-deep-coil-cleaning').notes_html).toBeUndefined();
+  });
+
+  it('is translated into every locale with the same shape', () => {
+    for (const slug of COPIED) {
+      const s = service(slug);
+      for (const locale of routing.locales) {
+        expect(s.description_html[locale], `${slug} description ${locale}`).toMatch(/^<p>.+<\/p>$/);
+        for (const item of s.includes)
+          expect(item[locale], `${slug} included ${locale}`).toMatch(/^<strong>.+<\/strong>/);
+        if (s.notes_html) expect(s.notes_html[locale], `${slug} notes ${locale}`).toMatch(/^<p>/);
+      }
+      // The old "When you need it" and "How the service goes" lists are part of his text now.
+      expect(s.symptoms).toEqual([]);
+      expect(s.visit_steps).toEqual([]);
+    }
+  });
+
+  it('shows no "not included" list on any page a visitor can open', () => {
+    for (const s of seedServices().filter((x) => x.status !== 'hidden'))
+      expect(s.excludes, s.slug).toEqual([]);
+    for (const locale of routing.locales)
+      expect(msgOf(locale).Service.excluded, locale).toBeUndefined();
+  });
+
+  it('uses the price and the hours that the site itself runs on', () => {
+    // His text names AED 199, 16:00 and 22:00: if the price list or the booking hours change,
+    // this text has to be edited with them.
+    const callout = seedPriceItems().find((i) => i.key === 'emergency_callout')!;
+    expect(callout.price).toBe(199);
   });
 });

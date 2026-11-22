@@ -14,6 +14,7 @@ import { pick } from '@/lib/i18n/text';
 import { priceFrom } from '@/lib/pricing';
 import { allowBurst, consumeDiagnoseQuota } from '@/lib/diagnose/guard';
 import { clientIp, hashIp } from '@/lib/ratelimit';
+import { plainText } from '@/lib/sanitize';
 import {
   diagnoseRequestSchema,
   type DiagnoseError,
@@ -67,8 +68,11 @@ export async function POST(request: Request) {
     status: s.status === 'coming_soon' ? 'coming_soon' : 'active',
     name: s.name.en,
     short: s.short.en,
+    // The owner's page copy says when to choose the service (DECISIONS №85): the model reads it
+    // as plain text, without the markup.
+    about: plainText(s.description_html.en).slice(0, 500),
     symptoms: s.symptoms.map((x) => x.en),
-    includes: s.includes.map((x) => x.en),
+    includes: s.includes.map((x) => plainText(x.en)),
   }));
 
   try {

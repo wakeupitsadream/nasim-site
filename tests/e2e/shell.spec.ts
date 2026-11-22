@@ -13,7 +13,7 @@ test.describe('language switcher', () => {
     await page.goto('/en/pricing');
     // getByRole skips hidden nodes: Next keeps the previous locale's tree mounted in a hidden <Activity>.
     const header = page.getByRole('banner');
-    // The menu is one button for all seven languages; its items are the same page in each locale.
+    // The menu is one button for all eight languages; its items are the same page in each locale.
     const menu = page.getByRole('menu');
     const ar = menu.locator('a[hreflang="ar"]');
     // The button first renders as a Suspense fallback (links to each home page) and is swapped
@@ -41,6 +41,7 @@ test.describe('language switcher', () => {
     for (const [locale, dir] of [
       ['fr', 'ltr'],
       ['de', 'ltr'],
+      ['es', 'ltr'],
       ['zh', 'ltr'],
       ['hi', 'ltr'],
       ['ar', 'rtl'],

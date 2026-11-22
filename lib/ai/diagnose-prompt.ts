@@ -27,6 +27,8 @@ export type CatalogueEntry = {
   status: 'active' | 'coming_soon';
   name: string;
   short: string;
+  /** The service page's own description, as plain text; empty when there is none. */
+  about?: string;
   symptoms: string[];
   includes: string[];
 };
@@ -37,6 +39,7 @@ const LANGUAGE: Record<DiagnoseRequest['locale'], string> = {
   ru: 'Russian',
   fr: 'French',
   de: 'German',
+  es: 'Spanish (neutral, formal «usted»)',
   zh: 'Simplified Chinese',
   hi: 'Hindi (Devanagari script)',
 };
@@ -48,6 +51,7 @@ export function buildDiagnosisSystemPrompt(brand: string, catalogue: CatalogueEn
       `  name: ${s.name}`,
       `  what it is: ${s.short}`,
     ];
+    if (s.about) parts.push(`  when to choose it: ${s.about}`);
     if (s.symptoms.length > 0) parts.push(`  typical symptoms: ${s.symptoms.join('; ')}`);
     if (s.includes.length > 0) parts.push(`  includes: ${s.includes.join('; ')}`);
     return parts.join('\n');

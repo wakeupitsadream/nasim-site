@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { seedAreas, seedBlock, seedFaqs, seedServices } from '@/lib/content/seed';
-import { sanitizeHtmlContent } from '@/lib/sanitize';
+import { plainText, sanitizeHtmlContent, sanitizeInlineHtml } from '@/lib/sanitize';
 
 describe('sanitizeHtmlContent', () => {
   it('removes scripts, handlers, styles and javascript: links', () => {
@@ -34,5 +34,32 @@ describe('sanitizeHtmlContent', () => {
     );
     // sanitize-html serialises void tags as <br />; nothing else may change.
     for (const h of html) expect(sanitizeHtmlContent(h)).toBe(h.replace(/<br\s*\/?>/g, '<br />'));
+  });
+});
+
+describe('inline emphasis and plain text', () => {
+  it('keeps a bold lead-in and nothing else in a list item', () => {
+    expect(
+      sanitizeInlineHtml(
+        '<strong>Diagnosis.</strong> We <a href="https://x.test">look</a><p>inside</p>',
+      ),
+    ).toBe('<strong>Diagnosis.</strong> We lookinside');
+    expect(sanitizeInlineHtml('<img src=x onerror=alert(1)>Plain')).toBe('Plain');
+  });
+
+  it('every seeded "included" item survives the inline sanitiser unchanged', () => {
+    for (const service of seedServices())
+      for (const item of service.includes)
+        for (const [locale, text] of Object.entries(item))
+          expect(sanitizeInlineHtml(text), `${service.slug} ${locale}`).toBe(text);
+  });
+
+  it('turns editor HTML into one line of text for the assistant', () => {
+    expect(
+      plainText(
+        '<p>Choose <strong>FCU Deep Coil &amp; Blower Cleaning</strong>.</p><p>Second.</p>',
+      ),
+    ).toBe('Choose FCU Deep Coil & Blower Cleaning. Second.');
+    expect(plainText('')).toBe('');
   });
 });

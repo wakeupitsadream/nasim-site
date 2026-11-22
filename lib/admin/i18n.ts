@@ -1,5 +1,5 @@
 // The admin speaks Russian and English only (cookie `admin_locale`, Russian by default). Its
-// strings live in messages/admin/*.json, apart from the site's seven locales; server components
+// strings live in messages/admin/*.json, apart from the site's eight locales; server components
 // read the dictionary and hand plain strings to the few client components.
 import { cookies } from 'next/headers';
 import en from '@/messages/admin/en.json';

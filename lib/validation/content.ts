@@ -14,6 +14,7 @@ export const i18nText = z.object({
   ru: z.string().optional(),
   fr: z.string().optional(),
   de: z.string().optional(),
+  es: z.string().optional(),
   zh: z.string().optional(),
   hi: z.string().optional(),
 });
@@ -28,6 +29,7 @@ export const i18nValue = <T extends z.ZodTypeAny>(schema: T) => {
     ru: variant,
     fr: variant,
     de: variant,
+    es: variant,
     zh: variant,
     hi: variant,
   });
@@ -73,7 +75,11 @@ export const serviceSchema = z.object({
   name: i18nTextRequired,
   short: i18nText,
   description_html: i18nText,
+  /** "What's included": plain text, or the owner's «<strong>Lead.</strong> sentence» (№85). */
   includes: z.array(i18nText),
+  /** Paragraphs shown under the included list: who the service is for, what is separate (№85). */
+  notes_html: i18nText.optional(),
+  /** No longer shown on the site (the owner, №85); kept for the hidden services' data. */
   excludes: z.array(i18nText),
   symptoms: z.array(i18nText),
   visit_steps: z.array(i18nText),
@@ -249,15 +255,14 @@ export const blockSchemas = {
     ar: readingsLabel,
     fr: readingsLabel,
     de: readingsLabel,
+    es: readingsLabel,
     zh: readingsLabel,
     hi: readingsLabel,
   }),
-  'service.ac-deep-cleaning.age_note': i18nText,
   'service.refrigerant-leak-refill.principle': i18nValue(z.array(titledItem)),
   'service.ducted-ac-fcu-service.vs_split': i18nText,
   'pricing.details': i18nValue(z.array(z.string().min(1))),
   'pricing.before_you_book': i18nValue(z.array(z.string().min(1))),
-  'about.body': i18nText,
   'about.not_doing': i18nText,
   'contact.response_note': i18nText,
   'thankyou.title': i18nText,

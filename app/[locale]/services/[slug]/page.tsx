@@ -178,6 +178,7 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
   const faqs = faqsOwn.length > 0 ? faqsOwn : faqsGlobal.slice(0, 4);
   const note = items[0] ? pickLocalized(items[0].note, locale) : null;
   const description = pickLocalized(service.description_html, locale);
+  const notes = pickLocalized(service.notes_html ?? { en: '' }, locale);
   // Services priced on request have no price lines: the page asks for a quote instead of
   // running the wizard, and skips the sections the owner has not written yet (DECISIONS №61).
   const onRequest = lines.length === 0;
@@ -253,18 +254,21 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
             key: 'included',
             render: (tone: SectionTone) => (
               <Section tone={tone} aria-labelledby="included-title">
-                <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-                  <div className="flex flex-col gap-5">
+                {/* The owner's order (DECISIONS №85): the list, then his closing notes. There is no
+                    "Not included" column any more — what is separate is said in the notes. */}
+                <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+                  <div className="flex flex-col gap-5 lg:col-span-7">
                     <h2 id="included-title" className="text-h3 text-primary">
                       {t('included')}
                     </h2>
                     <CheckList items={service.includes} locale={locale} />
                   </div>
-                  {service.excludes.length > 0 ? (
-                    <div className="flex flex-col gap-5">
-                      <h2 className="text-h3 text-primary">{t('excluded')}</h2>
-                      <CheckList items={service.excludes} locale={locale} variant="exclude" />
-                    </div>
+                  {notes.text.trim() ? (
+                    <RichText
+                      value={notes}
+                      locale={locale}
+                      className="reveal h-fit rounded-panel border border-border bg-card p-6 text-body text-muted-foreground shadow-card lg:col-span-5"
+                    />
                   ) : null}
                 </div>
               </Section>
@@ -278,28 +282,19 @@ export default async function ServicePage({ params }: PageProps<'/[locale]/servi
             key: 'symptoms',
             render: (tone: SectionTone) => (
               <Section tone={tone} aria-labelledby="symptoms-title">
-                <SectionHeader
-                  id="symptoms-title"
-                  title={slug === 'emergency-ac-repair' ? t('causes') : t('symptoms')}
-                />
+                <SectionHeader id="symptoms-title" title={t('symptoms')} />
                 <SymptomList items={service.symptoms} locale={locale} />
               </Section>
             ),
           },
         ]
       : []),
-    ...(hasSpecifics(slug) && (slug !== 'emergency-ac-repair' || settings.flags.emergencyEnabled)
+    ...(hasSpecifics(slug)
       ? [
           {
             key: 'specifics',
             render: (tone: SectionTone) => (
-              <ServiceSpecifics
-                service={service}
-                locale={locale}
-                tone={tone}
-                settings={settings}
-                pricing={pricing}
-              />
+              <ServiceSpecifics service={service} locale={locale} tone={tone} pricing={pricing} />
             ),
           },
         ]

@@ -32,3 +32,19 @@ const OPTIONS: sanitizeHtml.IOptions = {
 export function sanitizeHtmlContent(html: string): string {
   return sanitizeHtml(html, OPTIONS);
 }
+
+/** One line of text with emphasis only (a list item with a bold lead-in): no blocks, no links. */
+export function sanitizeInlineHtml(html: string): string {
+  return sanitizeHtml(html, { allowedTags: ['strong', 'b', 'em', 'i'], allowedAttributes: {} });
+}
+
+/** The text of editor HTML, for places that take no markup (the assistant's catalogue). */
+export function plainText(html: string): string {
+  return sanitizeHtml(html.replace(/<\/(p|li|h2|h3)>/g, ' '), {
+    allowedTags: [],
+    allowedAttributes: {},
+  })
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
