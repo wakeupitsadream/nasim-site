@@ -432,9 +432,7 @@
   },
   "Service": {
     "included": "Was enthalten ist",
-    "excluded": "Nicht enthalten",
     "symptoms": "Wann Sie es brauchen",
-    "causes": "Typische Ursachen",
     "glance": "Auf einen Blick",
     "prices": "Preise",
     "visit": "So läuft der Besuch ab",
@@ -449,13 +447,6 @@
     "unit": "Abrechnung",
     "note": "Hinweis",
     "specifics": {
-      "deepVsStandard": "Standard- oder Tiefenreinigung?",
-      "standard": "Standardreinigung",
-      "deep": "Tiefenreinigung",
-      "ageNote": "Ältere Geräte",
-      "sameDay": "Einsätze noch am selben Tag",
-      "callout": "Anfahrt mit Diagnose",
-      "credited": "Wird auf eine Reparatur im selben Besuch angerechnet",
       "principle": "Erst finden und beheben, dann nachfüllen",
       "leakTest": "Lecktest",
       "refill": "Nachfüllen",
@@ -634,26 +625,18 @@
     }
   },
   "About": {
-    "lead": "Ein kleines Team aus Dubai für Klimaanlagen-Reinigung, Reparaturen und die Tiefenreinigung von Sofas, Matratzen und Teppichen. Festpreise, Ein-Stunden-Zeitfenster für die Ankunft und ein Fotobericht nach jedem Besuch.",
-    "story": {
-      "eyebrow": "Wer wir sind",
-      "title": "Warum wir mit Klimaanlagen angefangen haben"
-    },
-    "standards": {
-      "eyebrow": "Unsere Standards",
-      "title": "Was jeder Techniker tut",
-      "lead": "Dieselbe Checkliste in jedem Zuhause, egal welcher Auftrag.",
+    "lead": "Brigada bietet in ganz Dubai Klimaanlagenreinigung, Klimaanlagenreparaturen und Tiefenreinigung von Sofas, Matratzen und Teppichen. Unsere Techniker erklären, was Ihr Zuhause braucht und was die Arbeit umfasst. Vor dem Besuch erhalten Sie einen Festpreis, der die Anfahrt bereits enthält.",
+    "expect": {
+      "title": "Was Sie bei unserem Besuch erwarten können",
       "items": {
-        "one": "Bestätigt den Festpreis vor Beginn der Arbeiten",
-        "two": "Schützt Boden und Möbel mit Abdeckungen",
-        "three": "Misst die Ausblastemperatur vorher und nachher",
-        "four": "Fotografiert Wärmetauscher, Filter und Ablauf vorher und nachher",
-        "five": "Hinterlässt den Raum so sauber wie vorgefunden und sendet den Bericht per WhatsApp"
+        "one": "<b>Ein Ankunftsfenster von einer Stunde.</b> Wir nennen Ihnen ein konkretes Zeitfenster, damit Sie Ihren Tag planen können.",
+        "two": "<b>Sorgfalt in Ihrem Zuhause.</b> Ihr Techniker deckt Böden und Möbel in der Nähe ab, bevor er beginnt, und hinterlässt den Raum nach der Arbeit ordentlich.",
+        "three": "<b>Arbeit, die Sie prüfen können.</b> Nach jedem Besuch erhalten Sie einen Fotobericht per WhatsApp. Bei der Klimaanlagenreinigung enthält er Vorher-Nachher-Fotos von Wärmetauscher, Filtern und Kondensatablauf. Außerdem messen wir die Lufttemperatur am Auslass vor und nach der Reinigung.",
+        "four": "<b>90 Tage Garantie auf Klimaanlagenreparaturen.</b> Teile und Arbeit sind 90 Tage lang abgedeckt. Tritt derselbe Fehler in dieser Zeit erneut auf, kommen wir kostenlos wieder."
       }
     },
-    "notDoing": {
-      "eyebrow": "Ehrliche Grenzen",
-      "title": "Was wir nicht tun"
+    "specialist": {
+      "title": "Spezialarbeiten"
     },
     "legal": {
       "title": "Unternehmensangaben"

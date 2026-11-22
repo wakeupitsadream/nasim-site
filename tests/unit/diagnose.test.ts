@@ -105,6 +105,16 @@ describe('diagnosis prompt', () => {
     expect(system).toContain('Nasim Home Care');
   });
 
+  it("passes on the page's own description, when a service has one", () => {
+    const withAbout = buildDiagnosisSystemPrompt('Brigada', [
+      { ...catalogue[0]!, about: 'Choose this service if dust has built up inside the ducts.' },
+    ]);
+    expect(withAbout).toContain(
+      'when to choose it: Choose this service if dust has built up inside the ducts.',
+    );
+    expect(system).not.toContain('when to choose it:');
+  });
+
   it('spells out every field of the answer schema', () => {
     expect(system).toContain(ANSWER_SHAPE);
     for (const key of Object.keys(diagnosisSchema.shape)) {

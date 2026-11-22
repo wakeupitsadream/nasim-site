@@ -29,14 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const STANDARD_KEYS = ['one', 'two', 'three', 'four', 'five'] as const;
+const EXPECT_KEYS = ['one', 'two', 'three', 'four'] as const;
 
-// About (BRIEF §6.6) without invented facts: what we do and how (blocks `about.body`,
-// `about.not_doing`), the technician's checklist, company details only once the owner fills
-// them in, areas. Team photos and partners arrive with real media (kind `team`).
+// About (BRIEF §6.6) in the owner's words (DECISIONS №85): who we are, what to expect from a
+// visit, the scope (block `about.not_doing`), company details only once the owner fills them
+// in, areas. Team photos and partners arrive with real media (kind `team`).
 export default async function AboutPage() {
   const locale = await getLocale();
-  const [t, tPages, tNav, tHome, tCta, tFooter, settings, body, notDoing, trust, areas] =
+  const [t, tPages, tNav, tHome, tCta, tFooter, settings, notDoing, trust, areas] =
     await Promise.all([
       getTranslations('About'),
       getTranslations('Pages'),
@@ -45,7 +45,6 @@ export default async function AboutPage() {
       getTranslations('Cta'),
       getTranslations('Footer'),
       getSiteSettings(locale),
-      getBlock('about.body'),
       getBlock('about.not_doing'),
       getBlock('home.trust.items'),
       getAreas(),
@@ -99,45 +98,29 @@ export default async function AboutPage() {
         </div>
       </Section>
 
-      <Section tone="surface" aria-labelledby="story-title">
+      {/* The owner's copy of 22.11.2026 (DECISIONS №85): what a visit looks like, then the scope. */}
+      <Section tone="surface" aria-labelledby="expect-title">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <SectionHeader
-            id="story-title"
-            eyebrow={t('story.eyebrow')}
-            title={t('story.title')}
-            className="mb-0 lg:col-span-5"
-          />
-          <RichText
-            value={pickLocalized(body, locale)}
-            locale={locale}
-            className="reveal text-lead text-muted-foreground lg:col-span-7"
-          />
-        </div>
-      </Section>
-
-      <Section tone="sand" aria-labelledby="standards-title">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-          <SectionHeader
-            id="standards-title"
-            eyebrow={t('standards.eyebrow')}
-            title={t('standards.title')}
-            lead={t('standards.lead')}
+            id="expect-title"
+            title={t('expect.title')}
             className="mb-0 lg:col-span-5"
           />
           <CheckList
-            items={STANDARD_KEYS.map((key) => t(`standards.items.${key}`))}
+            items={EXPECT_KEYS.map((key) =>
+              t.rich(`expect.items.${key}`, { b: (chunks) => <strong>{chunks}</strong> }),
+            )}
             locale={locale}
             className="lg:col-span-7 lg:pt-2"
           />
         </div>
       </Section>
 
-      <Section tone="surface" aria-labelledby="not-doing-title">
-        <div className="reveal grid gap-6 rounded-panel border border-border bg-background p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-12">
+      <Section tone="sand" aria-labelledby="specialist-title">
+        <div className="reveal grid gap-6 rounded-panel border border-border bg-card p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-12">
           <SectionHeader
-            id="not-doing-title"
-            eyebrow={t('notDoing.eyebrow')}
-            title={t('notDoing.title')}
+            id="specialist-title"
+            title={t('specialist.title')}
             motion={false}
             className="mb-0 lg:col-span-5"
           />
@@ -164,7 +147,7 @@ export default async function AboutPage() {
         ) : null}
       </Section>
 
-      <Section tone="sand" aria-labelledby="areas-title" size="compact">
+      <Section tone="surface" aria-labelledby="areas-title" size="compact">
         <SectionHeader id="areas-title" eyebrow={t('areas.eyebrow')} title={t('areas.title')} />
         <AreaChips
           areas={areas}

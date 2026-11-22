@@ -31,7 +31,7 @@
       "title": "Area"
     },
     "about": {
-      "title": "About us",
+      "title": "About Us",
       "description": "Brigada: a Dubai team for AC cleaning, repairs and upholstery deep cleaning. How we work, our standards and what we don't do."
     },
     "contact": {
@@ -432,9 +432,7 @@
   },
   "Service": {
     "included": "What's included",
-    "excluded": "Not included",
     "symptoms": "When you need it",
-    "causes": "Typical causes",
     "glance": "At a glance",
     "prices": "Prices",
     "visit": "How the service goes",
@@ -449,13 +447,6 @@
     "unit": "Billed",
     "note": "Note",
     "specifics": {
-      "deepVsStandard": "Standard or deep clean?",
-      "standard": "Standard clean",
-      "deep": "Deep clean",
-      "ageNote": "Older units",
-      "sameDay": "Same-day visits",
-      "callout": "Call-out with diagnostics",
-      "credited": "Credited to a repair done in the same visit",
       "principle": "Find and fix first, then refill",
       "leakTest": "Leak test",
       "refill": "Refill",
@@ -634,26 +625,18 @@
     }
   },
   "About": {
-    "lead": "A small Dubai team for air-conditioning cleaning, repairs and deep cleaning of upholstery. Fixed prices, a one-hour arrival window and a photo report after every visit.",
-    "story": {
-      "eyebrow": "Who we are",
-      "title": "Why we started with air conditioners"
-    },
-    "standards": {
-      "eyebrow": "Our standards",
-      "title": "What every technician does",
-      "lead": "The same checklist in every home, whatever the job.",
+    "lead": "Brigada provides AC cleaning, AC repairs and deep cleaning for sofas, mattresses and carpets across Dubai. Our technicians explain what your home needs and what the work includes. Before your visit, you receive a fixed price that includes the call-out.",
+    "expect": {
+      "title": "What to expect from your visit",
       "items": {
-        "one": "Confirms the fixed price before starting any work",
-        "two": "Protects the floor and furniture with sheeting",
-        "three": "Measures the outlet temperature before and after",
-        "four": "Photographs the coil, filters and drain before and after",
-        "five": "Leaves the room as clean as it was found and sends the report via WhatsApp"
+        "one": "<b>A one-hour arrival window.</b> We give you a specific time window so you can plan your day.",
+        "two": "<b>Care for your home.</b> Your technician covers nearby floors and furniture before starting and leaves the room tidy when the job is done.",
+        "three": "<b>Work you can check.</b> After every visit, you receive a photo report via WhatsApp. For AC cleaning, it includes before-and-after photos of the coil, filters and drain. We also check the air temperature at the vent before and after cleaning.",
+        "four": "<b>90-day warranty on AC repairs.</b> We cover parts and labour for 90 days. If the same fault returns during that time, we come back free of charge."
       }
     },
-    "notDoing": {
-      "eyebrow": "Honest scope",
-      "title": "What we don't do"
+    "specialist": {
+      "title": "Specialist work"
     },
     "legal": {
       "title": "Company details"

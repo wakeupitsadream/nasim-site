@@ -364,19 +364,6 @@
       }
     },
     {
-      "key": "service.ac-deep-cleaning.age_note",
-      "kind": "text",
-      "value": {
-        "en": "Units older than 8–10 years: plastic clips and the fan bearing can be brittle. We check before disassembly and tell you if a deep clean is not worth the risk — then we do a thorough standard clean instead.",
-        "ru": "Блоки старше 8–10 лет: пластиковые защёлки и подшипник вентилятора могут быть хрупкими. Проверяем до разборки и честно говорим, если глубокая чистка не стоит риска — тогда делаем тщательную стандартную.",
-        "ar": "الوحدات الأقدم من 8–10 سنوات: مشابك البلاستيك ومحمل المروحة قد تكون هشّة. نفحصها قبل التفكيك ونخبرك إن كان التنظيف العميق لا يستحق المخاطرة — وعندها ننفّذ تنظيفًا قياسيًا دقيقًا بدلًا منه.",
-        "fr": "Unités de plus de 8 à 10 ans : les clips en plastique et le roulement du ventilateur peuvent être fragiles. Nous vérifions avant le démontage et vous disons si un nettoyage en profondeur ne vaut pas le risque — nous faisons alors un nettoyage standard minutieux à la place.",
-        "de": "Geräte, die älter als 8–10 Jahre sind: Kunststoffclips und das Lüfterlager können spröde sein. Wir prüfen vor der Demontage und sagen Ihnen, wenn eine Tiefenreinigung das Risiko nicht wert ist – dann machen wir stattdessen eine gründliche Standardreinigung.",
-        "zh": "使用 8–10 年以上的机器：塑料卡扣和风扇轴承可能已经变脆。我们会在拆机前检查，如果深度清洗不值得冒险，会告诉您——然后改做一次彻底的标准清洗。",
-        "hi": "8–10 साल से पुरानी यूनिट: प्लास्टिक की क्लिप और पंखे की बेयरिंग भुरभुरी हो सकती हैं। हम खोलने से पहले जाँचते हैं और अगर डीप क्लीनिंग जोखिम के लायक़ न हो, तो आपको बता देते हैं — फिर उसके बजाय पूरी तरह से स्टैंडर्ड सफ़ाई करते हैं।"
-      }
-    },
-    {
       "key": "service.refrigerant-leak-refill.principle",
       "kind": "json",
       "value": {
@@ -688,29 +675,16 @@
       }
     },
     {
-      "key": "about.body",
-      "kind": "html",
-      "value": {
-        "en": "<p>Brigada is a small Dubai team that cleans and repairs air conditioners and deep-cleans sofas, mattresses and carpets in apartments and villas. We started with the job every home here needs most: a split unit that is cleaned properly twice a year cools faster, uses less electricity and stops smelling.</p><p>We work the way we would want a service to work in our own home. The price is fixed before we come and includes the call-out. You get a one-hour arrival window, not a day. The technician protects the room, measures the outlet temperature before and after, and sends photos of the coil, filters and drain via WhatsApp, so you see what was done.</p><p>The standard is simple: no surprises on the bill, no “while we are here” upsells, and if the problem comes back within the warranty period, we come back for free.</p>",
-        "ru": "<p>Brigada — небольшая команда в Дубае: чистим и ремонтируем кондиционеры, делаем химчистку диванов, матрасов и ковров в квартирах и виллах. Начали с того, что здесь нужно каждому дому: сплит-система, которую как следует чистят два раза в год, быстрее охлаждает, меньше ест электричества и перестаёт пахнуть.</p><p>Работаем так, как хотели бы, чтобы работали у нас дома. Цена фиксируется до приезда и включает выезд. Вы получаете часовой слот приезда, а не «в течение дня». Техник укрывает комнату, замеряет температуру на выходе до и после и присылает в WhatsApp фото теплообменника, фильтров и дренажа — вы видите, что сделано.</p><p>Стандарт простой: без сюрпризов в счёте, без допродаж «раз уж мы приехали», а если проблема вернулась в срок гарантии — вернёмся и мы, бесплатно.</p>",
-        "ar": "<p>بريجادا فريق صغير في دبي ينظّف المكيفات ويصلحها وينظّف الأرائك والمراتب والسجاد تنظيفًا عميقًا في الشقق والفلل. بدأنا بما يحتاجه كل بيت هنا أكثر من غيره: مكيف سبليت يُنظَّف كما ينبغي مرتين في السنة يبرّد أسرع ويستهلك كهرباء أقل ويتوقف عن إصدار الروائح.</p><p>نعمل كما نحب أن تُقدَّم الخدمة في بيوتنا. السعر ثابت قبل وصولنا ويشمل رسوم الزيارة. تحصل على موعد وصول محدد بساعة واحدة، لا بيوم كامل. يحمي الفني الغرفة، ويقيس حرارة الهواء الخارج قبل العمل وبعده، ويرسل صور الملف والفلاتر والتصريف عبر واتساب، فترى ما أُنجز بنفسك.</p><p>المعيار بسيط: لا مفاجآت في الفاتورة، ولا عروض إضافية «ما دمنا هنا»، وإذا عادت المشكلة خلال فترة الضمان نعود نحن مجانًا.</p>",
-        "fr": "<p>Brigada est une petite équipe de Dubaï qui nettoie et répare les climatiseurs et nettoie en profondeur les canapés, matelas et tapis dans les appartements et les villas. Nous avons commencé par le travail dont chaque logement ici a le plus besoin : un split nettoyé correctement deux fois par an refroidit plus vite, consomme moins d’électricité et cesse de sentir mauvais.</p><p>Nous travaillons comme nous voudrions qu’un prestataire travaille chez nous. Le prix est fixé avant notre venue et inclut le déplacement. Vous recevez un créneau d’arrivée d’une heure, pas une journée entière. Le technicien protège la pièce, mesure la température de soufflage avant et après, et envoie sur WhatsApp les photos de l’échangeur, des filtres et de l’évacuation, pour que vous voyiez ce qui a été fait.</p><p>Le principe est simple : pas de surprise sur la facture, pas de vente forcée « puisqu’on est là », et si le problème revient pendant la garantie, nous revenons gratuitement.</p>",
-        "de": "<p>Brigada ist ein kleines Team in Dubai für die Reinigung und Reparatur von Klimaanlagen und die Tiefenreinigung von Sofas, Matratzen und Teppichen in Apartments und Villen. Angefangen haben wir mit der Arbeit, die hier jedes Zuhause am dringendsten braucht: Ein Split-Gerät, das zweimal im Jahr richtig gereinigt wird, kühlt schneller, verbraucht weniger Strom und hört auf zu riechen.</p><p>Wir arbeiten so, wie wir uns einen Service im eigenen Zuhause wünschen würden. Der Preis steht fest, bevor wir kommen, und enthält die Anfahrt. Sie bekommen ein Ein-Stunden-Zeitfenster, keinen ganzen Tag. Der Techniker schützt den Raum, misst die Ausblastemperatur vorher und nachher und schickt Fotos von Wärmetauscher, Filtern und Ablauf per WhatsApp, damit Sie sehen, was gemacht wurde.</p><p>Der Standard ist einfach: keine Überraschungen auf der Rechnung, keine „Wo wir schon mal da sind“-Zusatzverkäufe, und kommt das Problem innerhalb der Garantie zurück, kommen wir kostenlos wieder.</p>",
-        "zh": "<p>Brigada 是迪拜的一支小团队，为公寓和别墅清洗、维修空调，并深度清洁沙发、床垫和地毯。我们从这里每个家庭最需要的事做起：一台每年认真清洗两次的分体式空调，制冷更快、更省电，也不再有异味。</p><p>我们按自己家里希望得到的服务方式来工作。价格在上门前锁定，并已包含上门费。您得到的是一小时的到达时段，而不是一整天。技师会保护好房间，测量清洗前后的出风温度，并把蒸发器、滤网和排水管的照片发到 WhatsApp，让您看到做了什么。</p><p>标准很简单：账单没有意外，没有“既然来了顺便再做点”的推销，如果问题在保证期内再次出现，我们免费再来。</p>",
-        "hi": "<p>ब्रिगाडा दुबई की एक छोटी टीम है जो अपार्टमेंट और विला में एयर कंडीशनर की सफ़ाई और मरम्मत करती है और सोफ़ा, गद्दे और कालीन की डीप क्लीनिंग करती है। हमने उस काम से शुरुआत की जिसकी यहाँ हर घर को सबसे ज़्यादा ज़रूरत है: साल में दो बार ठीक से साफ़ की गई स्प्लिट यूनिट तेज़ी से ठंडा करती है, कम बिजली खाती है और बदबू देना बंद कर देती है।</p><p>हम वैसे काम करते हैं जैसा हम अपने घर में किसी सर्विस से चाहेंगे। कीमत हमारे आने से पहले तय होती है और उसमें विज़िट शुल्क शामिल है। आपको एक घंटे का आगमन स्लॉट मिलता है, पूरा दिन नहीं। तकनीशियन कमरे को सुरक्षित रखता है, पहले और बाद में आउटलेट का तापमान मापता है, और कॉइल, फ़िल्टर और ड्रेन की फ़ोटो WhatsApp पर भेजता है, ताकि आप देख सकें कि क्या किया गया।</p><p>मानक सीधा है: बिल में कोई सरप्राइज़ नहीं, “जब आए ही हैं तो यह भी करा लें” वाली कोई अतिरिक्त बिक्री नहीं, और अगर समस्या गारंटी के भीतर वापस आए, तो हम मुफ़्त में वापस आते हैं।</p>"
-      }
-    },
-    {
       "key": "about.not_doing",
       "kind": "html",
       "value": {
-        "en": "<p>We do not install new systems, do not repair large office VRF systems and do not remove mould from walls ourselves — that needs a separate Dubai Municipality approval, so we arrange it through a licensed partner. If your job is one of these, we will say so straight away.</p>",
-        "ru": "<p>Мы не устанавливаем новые системы, не ремонтируем большие офисные VRF и сами не удаляем плесень со стен — для этого нужно отдельное разрешение Dubai Municipality, поэтому организуем через лицензированного партнёра. Если ваша задача из этого списка — скажем сразу.</p>",
-        "ar": "<p>لا نركّب أنظمة جديدة، ولا نصلح أنظمة VRF الكبيرة في المكاتب، ولا نزيل العفن من الجدران بأنفسنا — فذلك يتطلب تصريحًا منفصلًا من بلدية دبي، لذلك ننظّمه عبر شريك مرخّص. وإذا كان طلبك من هذا النوع فسنخبرك بذلك فورًا.</p>",
-        "fr": "<p>Nous n’installons pas de nouveaux systèmes, ne réparons pas les grands systèmes VRF de bureaux et ne traitons pas nous-mêmes les moisissures sur les murs — ce travail exige un agrément distinct de la Municipalité de Dubaï, nous le confions donc à un partenaire agréé. Si votre demande relève de l’un de ces cas, nous vous le dirons tout de suite.</p>",
-        "de": "<p>Wir installieren keine neuen Anlagen, reparieren keine großen VRF-Anlagen in Büros und entfernen Schimmel von Wänden nicht selbst – dafür ist eine separate Genehmigung der Dubai Municipality nötig, deshalb organisieren wir das über einen lizenzierten Partner. Fällt Ihr Auftrag in eine dieser Kategorien, sagen wir es Ihnen sofort.</p>",
-        "zh": "<p>我们不安装新系统，不维修大型办公楼 VRF 系统，也不自己清除墙面霉菌——这需要迪拜市政局的单独许可，所以我们会通过持牌合作伙伴安排。如果您需要的正是这些，我们会直接告诉您。</p>",
-        "hi": "<p>हम नए सिस्टम नहीं लगाते, बड़े ऑफ़िस VRF सिस्टम की मरम्मत नहीं करते और दीवारों से फफूंद हटाने का काम ख़ुद नहीं करते — इसके लिए दुबई म्युनिसिपैलिटी की अलग मंज़ूरी चाहिए, इसलिए हम इसे लाइसेंस प्राप्त पार्टनर के ज़रिए कराते हैं। अगर आपका काम इनमें से कोई है, तो हम तुरंत बता देंगे।</p>"
+        "en": "<p>We focus on existing home AC systems. New installations and repairs to large office VRF systems are outside our scope. For mould removal from walls, we can arrange a licensed partner.</p>",
+        "ar": "<p>نركّز على أنظمة التكييف المنزلية القائمة. أما التركيبات الجديدة وإصلاح أنظمة VRF الكبيرة في المكاتب فهي خارج نطاق عملنا. ولإزالة العفن عن الجدران يمكننا ترتيب الأمر مع شريك مرخّص.</p>",
+        "ru": "<p>Мы работаем с уже установленными домашними системами кондиционирования. Установка новых систем и ремонт больших офисных VRF-систем — не наш профиль. Удаление плесени со стен организуем через лицензированного партнёра.</p>",
+        "fr": "<p>Nous intervenons sur les systèmes de climatisation résidentiels existants. Les nouvelles installations et la réparation de grands systèmes VRF de bureaux sortent de notre champ d’intervention. Pour l’élimination des moisissures sur les murs, nous pouvons faire appel à un partenaire agréé.</p>",
+        "de": "<p>Wir konzentrieren uns auf bestehende Klimaanlagen in Wohnungen und Häusern. Neuinstallationen und Reparaturen an großen VRF-Anlagen in Büros gehören nicht zu unserem Leistungsumfang. Für die Schimmelentfernung an Wänden können wir einen lizenzierten Partner vermitteln.</p>",
+        "zh": "<p>我们专注于现有的家用空调系统。新装空调和大型办公室 VRF 系统的维修不在我们的服务范围内。墙面除霉可由我们安排持牌合作方处理。</p>",
+        "hi": "<p>हम घरों में पहले से लगे एसी सिस्टम पर काम करते हैं। नई इंस्टॉलेशन और बड़े ऑफ़िस VRF सिस्टम की मरम्मत हमारे दायरे से बाहर है। दीवारों से फफूँद हटाने के लिए हम लाइसेंस प्राप्त पार्टनर की व्यवस्था कर सकते हैं।</p>"
       }
     },
     {

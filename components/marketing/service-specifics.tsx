@@ -1,14 +1,11 @@
-import { InfoIcon, SirenIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { LocalizedText } from '@/components/localized-text';
 import { Ltr } from '@/components/ltr';
-import { CheckList } from '@/components/marketing/check-list';
 import { PriceFrom } from '@/components/marketing/price-from';
 import { RichText } from '@/components/marketing/rich-text';
 import { Section, type SectionTone } from '@/components/marketing/section';
 import { SectionHeader } from '@/components/marketing/section-header';
-import { getBlock, getServiceBySlug } from '@/lib/content/queries';
-import type { SiteSettings } from '@/lib/content/site';
+import { getBlock } from '@/lib/content/queries';
 import { formatAED, formatNumber } from '@/lib/i18n/format';
 import type { Locale } from '@/lib/i18n/routing';
 import { pickLocalized, pickLocalizedValue } from '@/lib/i18n/text';
@@ -19,100 +16,16 @@ type Props = {
   service: Service;
   locale: Locale;
   tone: SectionTone;
-  settings: SiteSettings;
   pricing: PricingConfig;
 };
 
 /** Does this service have a specifics section? (Lets the page keep its tone alternation.) */
 export const hasSpecifics = (slug: string): boolean =>
-  [
-    'ac-deep-cleaning',
-    'emergency-ac-repair',
-    'refrigerant-leak-detection',
-    'ducted-ac-fcu-service',
-  ].includes(slug);
+  ['refrigerant-leak-detection', 'ducted-ac-fcu-service'].includes(slug);
 
 /** Per-service explanations from BRIEF §6.2, each built from seed data and typed blocks. */
-export async function ServiceSpecifics({ service, locale, tone, settings, pricing }: Props) {
+export async function ServiceSpecifics({ service, locale, tone, pricing }: Props) {
   const t = await getTranslations('Service');
-
-  if (service.slug === 'ac-deep-cleaning') {
-    const [standard, note] = await Promise.all([
-      getServiceBySlug('ac-cleaning'),
-      getBlock('service.ac-deep-cleaning.age_note'),
-    ]);
-    return (
-      <Section tone={tone} aria-labelledby="specifics-title">
-        <SectionHeader id="specifics-title" title={t('specifics.deepVsStandard')} />
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          {standard ? (
-            <div className="flex flex-col gap-4">
-              <h3 className="text-lead font-medium text-foreground">{t('specifics.standard')}</h3>
-              <CheckList items={standard.includes} locale={locale} />
-            </div>
-          ) : null}
-          <div className="flex flex-col gap-4 rounded-panel bg-mist p-6 lg:p-8">
-            <h3 className="text-lead font-medium text-foreground">{t('specifics.deep')}</h3>
-            <CheckList items={service.includes} locale={locale} />
-          </div>
-        </div>
-        <Callout title={t('specifics.ageNote')}>
-          <LocalizedText value={pickLocalized(note, locale)} locale={locale} />
-        </Callout>
-      </Section>
-    );
-  }
-
-  if (service.slug === 'emergency-ac-repair') {
-    if (!settings.flags.emergencyEnabled) return null;
-    const callout = pricing.lines.find((l) =>
-      l.tiers.some((tier) => tier.itemKey === pricing.rules.diagnosticsItemKey),
-    );
-    return (
-      <Section tone={tone} aria-labelledby="specifics-title">
-        <div className="grid gap-8 rounded-panel border border-border bg-card p-6 shadow-card lg:grid-cols-2 lg:gap-12 lg:p-10">
-          <div className="flex flex-col gap-4">
-            <span
-              aria-hidden="true"
-              className="inline-flex size-12 items-center justify-center rounded-xl bg-mist text-highlight-ink"
-            >
-              <SirenIcon strokeWidth={1.5} className="size-6" />
-            </span>
-            <h2 id="specifics-title" className="text-h2 text-balance text-primary">
-              {t('specifics.sameDay')}
-            </h2>
-            <p className="text-lead text-pretty text-muted-foreground">
-              <LocalizedText value={settings.emergencyHours} locale={locale} />
-            </p>
-          </div>
-          {callout ? (
-            <div className="flex flex-col gap-4 self-center rounded-card bg-background p-6">
-              <div className="flex flex-col gap-1">
-                <p className="text-small text-muted-foreground">{t('specifics.callout')}</p>
-                <PriceFrom
-                  amount={callout.tiers[0]!.price}
-                  unit={callout.unit}
-                  exact
-                  locale={locale}
-                  size="lg"
-                />
-              </div>
-              {pricing.rules.diagnosticsCreditedToRepair ? (
-                <p className="flex items-start gap-2 text-small text-foreground">
-                  <InfoIcon
-                    aria-hidden="true"
-                    strokeWidth={1.5}
-                    className="mt-0.5 size-4 shrink-0 text-highlight-ink"
-                  />
-                  {t('specifics.credited')}
-                </p>
-              ) : null}
-            </div>
-          ) : null}
-        </div>
-      </Section>
-    );
-  }
 
   if (service.slug === 'refrigerant-leak-detection') {
     const block = await getBlock('service.refrigerant-leak-refill.principle');
@@ -195,16 +108,4 @@ export async function ServiceSpecifics({ service, locale, tone, settings, pricin
   }
 
   return null;
-}
-
-function Callout({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="mt-10 flex items-start gap-4 rounded-card border border-warning/30 bg-warning-soft p-5 text-warning-ink">
-      <InfoIcon aria-hidden="true" strokeWidth={1.5} className="mt-0.5 size-5 shrink-0" />
-      <div className="flex flex-col gap-1">
-        <p className="text-body font-medium">{title}</p>
-        <p className="text-body">{children}</p>
-      </div>
-    </div>
-  );
 }

@@ -141,3 +141,57 @@ test('404 page is localized', async ({ page }) => {
   await page.goto('/ru/does-not-exist');
   await expect(page.locator('h1')).toHaveText('Страница не найдена');
 });
+
+// The owner's page copy of 22.11.2026 (DECISIONS №85).
+test('service pages carry the owner\'s text: bold lead-ins, closing notes, no "not included"', async ({
+  page,
+}) => {
+  await page.goto('/en/services/ac-repair');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Split AC Repair');
+  await expect(
+    page.getByText('Our technicians carry common replacement parts and complete most repairs'),
+  ).toBeVisible();
+  const included = page.locator('section', {
+    has: page.getByRole('heading', { name: "What's included" }),
+  });
+  await expect(included.getByRole('listitem')).toHaveCount(4);
+  await expect(included.locator('li strong').first()).toHaveText('Diagnosis.');
+  await expect(
+    included.getByText('For new AC installations or office VRF system repairs'),
+  ).toBeVisible();
+  await expect(page.getByText('Not included')).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'When you need it' })).toHaveCount(0);
+
+  await page.goto('/en/services/emergency-ac-repair');
+  await expect(page.getByText('AED 199 per visit, including diagnostics.')).toBeVisible();
+  await expect(page.getByText('For a same-day visit, contact us before 16:00.')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Same-day visits' })).toHaveCount(0);
+
+  // A service the document does not cover keeps its page, minus the "not included" list.
+  await page.goto('/en/services/ac-cleaning');
+  await expect(page.getByRole('heading', { name: "What's included" })).toBeVisible();
+  await expect(page.getByText('Not included')).toHaveCount(0);
+
+  await page.goto('/ar/services/ac-deep-cleaning');
+  await expect(page.locator('#included-title ~ ul li strong').first()).toBeVisible();
+});
+
+test("/about follows the owner's text", async ({ page }) => {
+  await page.goto('/en/about');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('About Us');
+  await expect(
+    page.getByText('Before your visit, you receive a fixed price that includes the call-out.'),
+  ).toBeVisible();
+  const expect_ = page.locator('section', {
+    has: page.getByRole('heading', { name: 'What to expect from your visit' }),
+  });
+  await expect(expect_.getByRole('listitem')).toHaveCount(4);
+  await expect(expect_.locator('li strong').first()).toHaveText('A one-hour arrival window.');
+  await expect(page.getByRole('heading', { name: 'Specialist work' })).toBeVisible();
+  await expect(
+    page.getByText('For mould removal from walls, we can arrange a licensed partner.'),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('heading', { name: 'Why we started with air conditioners' }),
+  ).toHaveCount(0);
+});

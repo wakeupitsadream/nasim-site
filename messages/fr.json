@@ -432,9 +432,7 @@
   },
   "Service": {
     "included": "Ce qui est inclus",
-    "excluded": "Non inclus",
     "symptoms": "Quand en avez-vous besoin",
-    "causes": "Causes typiques",
     "glance": "En bref",
     "prices": "Tarifs",
     "visit": "Déroulement de la visite",
@@ -449,13 +447,6 @@
     "unit": "Facturation",
     "note": "Remarque",
     "specifics": {
-      "deepVsStandard": "Nettoyage standard ou en profondeur ?",
-      "standard": "Nettoyage standard",
-      "deep": "Nettoyage en profondeur",
-      "ageNote": "Unités anciennes",
-      "sameDay": "Interventions le jour même",
-      "callout": "Déplacement avec diagnostic",
-      "credited": "Déduit d’une réparation effectuée lors de la même visite",
       "principle": "Trouver et réparer d’abord, recharger ensuite",
       "leakTest": "Test d’étanchéité",
       "refill": "Recharge",
@@ -634,26 +625,18 @@
     }
   },
   "About": {
-    "lead": "Une petite équipe de Dubaï pour le nettoyage et la réparation de climatiseurs et le nettoyage en profondeur des canapés, matelas et tapis. Prix fixes, créneau d’arrivée d’une heure et rapport photo après chaque visite.",
-    "story": {
-      "eyebrow": "Qui nous sommes",
-      "title": "Pourquoi nous avons commencé par les climatiseurs"
-    },
-    "standards": {
-      "eyebrow": "Nos standards",
-      "title": "Ce que fait chaque technicien",
-      "lead": "La même liste de contrôle dans chaque logement, quel que soit le travail.",
+    "lead": "Brigada assure le nettoyage et la réparation de climatiseurs ainsi que le nettoyage en profondeur de canapés, matelas et tapis dans tout Dubaï. Nos techniciens vous expliquent ce dont votre logement a besoin et ce que comprend l’intervention. Avant la visite, vous recevez un prix fixe, déplacement compris.",
+    "expect": {
+      "title": "À quoi vous attendre lors de la visite",
       "items": {
-        "one": "Confirme le prix fixe avant de commencer",
-        "two": "Protège le sol et les meubles avec des bâches",
-        "three": "Mesure la température de soufflage avant et après",
-        "four": "Photographie l’échangeur, les filtres et l’évacuation avant et après",
-        "five": "Laisse la pièce aussi propre qu’il l’a trouvée et envoie le rapport sur WhatsApp"
+        "one": "<b>Un créneau d’arrivée d’une heure.</b> Nous vous donnons un créneau précis pour que vous puissiez organiser votre journée.",
+        "two": "<b>Le respect de votre logement.</b> Votre technicien protège les sols et les meubles à proximité avant de commencer et laisse la pièce propre une fois le travail terminé.",
+        "three": "<b>Un travail que vous pouvez vérifier.</b> Après chaque visite, vous recevez un rapport photo sur WhatsApp. Pour le nettoyage de climatiseur, il comprend des photos avant/après de l’échangeur, des filtres et de l’évacuation. Nous mesurons aussi la température de l’air à la sortie avant et après le nettoyage.",
+        "four": "<b>Garantie de 90 jours sur les réparations de climatiseurs.</b> Pièces et main-d’œuvre sont couvertes pendant 90 jours. Si la même panne réapparaît pendant cette période, nous revenons gratuitement."
       }
     },
-    "notDoing": {
-      "eyebrow": "Périmètre honnête",
-      "title": "Ce que nous ne faisons pas"
+    "specialist": {
+      "title": "Travaux spécialisés"
     },
     "legal": {
       "title": "Coordonnées de la société"
