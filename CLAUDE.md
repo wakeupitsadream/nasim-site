@@ -1,6 +1,6 @@
 # nasim-site — CLAUDE.md
 
-Сайт сервисной компании **Brigada** в Дубае (чистка/ремонт кондиционеров + химчистка мебели) на семи языках (EN / AR / RU / FR / DE / ZH / HI, DECISIONS №57) с собственной админкой. Бриф — `docs/BRIEF.md`, фазы — `docs/PHASES.md`, журнал решений — `docs/DECISIONS.md`. Перед любой задачей прочитай все три. Инфраструктура и аккаунты — `docs/INFRASTRUCTURE.md`. Имя репо и неймспейс токенов `--nasim-*` — от прежнего рабочего имени, менять не нужно (DECISIONS №52).
+Сайт сервисной компании **Brigada** в Дубае (чистка/ремонт кондиционеров + химчистка мебели) на восьми языках (EN / AR / RU / FR / DE / ES / ZH / HI, DECISIONS №57, №86) с собственной админкой. Бриф — `docs/BRIEF.md`, фазы — `docs/PHASES.md`, журнал решений — `docs/DECISIONS.md`. Перед любой задачей прочитай все три. Инфраструктура и аккаунты — `docs/INFRASTRUCTURE.md`. Имя репо и неймспейс токенов `--nasim-*` — от прежнего рабочего имени, менять не нужно (DECISIONS №52).
 
 Специфика установленной версии Next.js — @AGENTS.md (читать docs из `node_modules/next/dist/docs`, они совпадают с версией в lockfile).
 
@@ -27,7 +27,7 @@ pnpm admin:user     # <email> [пароль] [--role owner|staff] — созда
 
 ## Жёсткие правила
 
-1. **Ни одной пользовательской строки в коде.** UI-строки — `messages/{en,ar,ru,fr,de,zh,hi}.json` через `useTranslations`/`getTranslations` (ключи, плейсхолдеры и rich-теги во всех семи файлах совпадают — `tests/unit/messages.test.ts`). Контент — в БД как поля `I18nText = { en: string } & Partial<Record<Locale, string>>` (локали — из `routing.locales`, новый язык добавляется только там). Читать через `pick(field, locale)` из `lib/i18n/text.ts` (fallback на `en`).
+1. **Ни одной пользовательской строки в коде.** UI-строки — `messages/{en,ar,ru,fr,de,es,zh,hi}.json` через `useTranslations`/`getTranslations` (ключи, плейсхолдеры и rich-теги во всех восьми файлах совпадают — `tests/unit/messages.test.ts`). Контент — в БД как поля `I18nText = { en: string } & Partial<Record<Locale, string>>` (локали — из `routing.locales`; новый язык — там, в схемах `i18nText`/`i18nValue`/настроек, в `lib/i18n/format.ts` и в `LANGUAGE` промпта ассистента, см. №86). Читать через `pick(field, locale)` из `lib/i18n/text.ts` (fallback на `en`).
 2. **Только логические CSS-свойства:** `ms-/me-/ps-/pe-/inset-s-/inset-e-/text-start/text-end/rounded-s-/rounded-e-/border-s/border-e`, никаких `ml-/mr-/pl-/pr-/left-/right-/text-left/text-right/rounded-l-/rounded-r-`; `start-*`/`end-*` устарели в Tailwind 4.2 — в новом коде `inset-s-*`/`inset-e-*`. Проверяется `pnpm lint` (`scripts/check-logical-css.mjs`). Направленные иконки (стрелки, шевроны) — класс `rtl:-scale-x-100` (в компонентах shadcn допустим их `rtl:rotate-180`). После каждого `shadcn add` — проверить `components/ui` на голые `rounded-l|rounded-r|rounded-tl|rounded-tr|rounded-bl|rounded-br` (баг shadcn #12475) и `start-`/`end-`, заменить логическими. Портальные компоненты (`*Content` у Popover/Tooltip/Select/Sheet/DropdownMenu) получают `dir={dir}`; у Sheet — логические стороны `inline-start`/`inline-end` (не `left`/`right`). Классы `dark:` запрещены; `cn` импортируется только из `@/lib/utils` (знает наши токены, DECISIONS №23); клиентские компоненты не импортируют `@/content/seed`, `@/lib/content`, `@/lib/ai`, `@/lib/sanitize`, `@/lib/ratelimit`; `new Date()`/`Date.now()` без аргументов в `app/` и `components/` запрещены (часы читаются в обработчике события и передаются значением, №37) — всё это проверяет `pnpm lint`. Телефоны, цены, email, URL, коды — всегда внутри `<span dir="ltr">` (компонент `<Ltr>`).
 3. **Числа и валюта** — только через `lib/i18n/format.ts` (`formatAED`, `formatNumber`); арабская локаль использует латинские цифры (`ar-AE-u-nu-latn`).
 4. **Все цены считаются в `lib/pricing.ts`** чистыми функциями с unit-тестами. Ни калькулятор, ни страницы не содержат арифметики цен.
@@ -72,7 +72,7 @@ content/seed/media.json  public/photos/  фото (kinds: hero, why, band, categ
 components/marketing/lang-switcher.tsx  кнопка языка в шапке (DropdownMenu на `radix-ui`, `components/ui/dropdown-menu.tsx`) и список языков в футере (№57)
 lib/ai/gateway.ts         OpenAI-совместимый шлюз (fetch, Polza)   lib/ai/diagnose-prompt.ts промпт триажа (чистые функции)   lib/diagnose/client.ts  запрос с клиента (zod + маппинг статусов)
 app/[locale]/dev/ui       галерея компонентов (локально и на превью; на продакшене 404)
-messages/{en,ar,ru,fr,de,zh,hi}.json  UI-строки (порядок локалей = `routing.locales`)
+messages/{en,ar,ru,fr,de,es,zh,hi}.json  UI-строки (порядок локалей = `routing.locales`)
 content/seed/*.json       стартовый контент
 drizzle/                  миграции    scripts/{seed.ts,migrate-if-db.mjs,admin-user.mjs}
 tests/unit  tests/e2e     docs/{BRIEF,PHASES,DECISIONS,RUNBOOK}.md
@@ -81,7 +81,7 @@ tests/unit  tests/e2e     docs/{BRIEF,PHASES,DECISIONS,RUNBOOK}.md
 ## Definition of Done для любого PR
 
 - typecheck, lint, unit, build — зелёные; e2e — зелёные, если затронуты страницы/формы/админка.
-- Новые строки добавлены во все семь `messages/*.json` (не-EN можно черновиком с пометкой `// TODO <locale>-review` в DECISIONS, не в JSON).
+- Новые строки добавлены во все восемь `messages/*.json` (не-EN можно черновиком с пометкой `// TODO <locale>-review` в DECISIONS, не в JSON).
 - Скриншот (или Playwright-снимок) EN и AR для любого нового визуального блока.
 - Запись в `docs/DECISIONS.md`, если принималось архитектурное решение или добавлялась зависимость.
 - Миграция сгенерирована и применяется на пустой БД.

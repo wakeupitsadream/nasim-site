@@ -133,7 +133,7 @@
         "de": "Gebläsekonvektor-Wartung, 1 Gerät",
         "es": "Mantenimiento de fancoil (FCU), 1 equipo",
         "zh": "风机盘管保养，1 台",
-        "hi": "फैन कॉइल यूनिट सर्विस, 1 यूनिट"
+        "hi": "फ़ैन कॉइल यूनिट सर्विस, 1 यूनिट"
       },
       "unit": "fcu",
       "price": 349,
@@ -163,7 +163,7 @@
         "de": "Gebläsekonvektor-Wartung, 2–3 Geräte",
         "es": "Mantenimiento de fancoil (FCU), 2–3 equipos",
         "zh": "风机盘管保养，2–3 台",
-        "hi": "फैन कॉइल यूनिट सर्विस, 2–3 यूनिट"
+        "hi": "फ़ैन कॉइल यूनिट सर्विस, 2–3 यूनिट"
       },
       "unit": "fcu",
       "price": 329,
@@ -193,7 +193,7 @@
         "de": "Gebläsekonvektor-Wartung, 4+ Geräte",
         "es": "Mantenimiento de fancoil (FCU), 4 o más equipos",
         "zh": "风机盘管保养，4 台及以上",
-        "hi": "फैन कॉइल यूनिट सर्विस, 4+ यूनिट"
+        "hi": "फ़ैन कॉइल यूनिट सर्विस, 4+ यूनिट"
       },
       "unit": "fcu",
       "price": 299,
